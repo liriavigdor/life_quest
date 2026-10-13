@@ -1,0 +1,445 @@
+export const BUILD_CATEGORIES = [
+  'הכל',
+  'מבנים ובתים',
+  'טבע וצמחים',
+  'מים וגשרים',
+  'שבילים וגבולות',
+  'פינות ישיבה ואווירה'
+];
+
+export const BUILD_CATALOG = [
+  // --- מבנים ובתים (Architecture & Cottages) ---
+  {
+    id: 'wooden_cabin',
+    name: 'בקתת היצירה והחלומות',
+    category: 'מבנים ובתים',
+    tag: 'יצירה מהלב',
+    desc: 'מוקדשת לפרויקט אישי, קוד, כתיבה או ציור שאתה יוצר מאהבה טהורה.',
+    reflectionPrompt: 'במה יצרת או התקדמת היום בקצב שלך?',
+    costSeeds: 35,
+    renderType: 'wooden_cabin',
+    emoji: '🏡'
+  },
+  {
+    id: 'bakery',
+    name: 'מאפיית הבוקר הכפרית',
+    category: 'מבנים ובתים',
+    tag: 'חום והזנה',
+    desc: 'מאפייה חמימה עם גג רעפים, שולחן מאפים וארובה שמפיצה ניחוח לחם טרי.',
+    reflectionPrompt: 'איזה פינוק חם ומשמח הענקת לעצמך היום?',
+    costSeeds: 25,
+    renderType: 'bakery',
+    emoji: '🥖'
+  },
+  {
+    id: 'windmill',
+    name: 'טחנת רוח ציורית',
+    category: 'מבנים ובתים',
+    tag: 'זרימה ותנועה',
+    desc: 'טחנת רוח כפרית קלאסית עם כנפיים המסתובבות בעדינות ברוח הנעימה.',
+    reflectionPrompt: 'באיזה תחום אתה מרגיש שהרוח הטובה בגבך?',
+    costSeeds: 30,
+    renderType: 'windmill',
+    emoji: '🌾'
+  },
+  {
+    id: 'art_studio',
+    name: 'סטודיו לאמנות וציור',
+    category: 'מבנים ובתים',
+    tag: 'ביטוי עצמי',
+    desc: 'בית מלאכה מואר עם כני ציור, צבעי מים וחלונות פנורמיים ליער.',
+    reflectionPrompt: 'איך ביטאת היום את הקול והייחודיות שלך?',
+    costSeeds: 30,
+    renderType: 'art_studio',
+    emoji: '🎨'
+  },
+  {
+    id: 'greenhouse',
+    name: 'חממת זכוכית ובוטניקה',
+    category: 'מבנים ובתים',
+    tag: 'צמיחה שקטה',
+    desc: 'משתלת זכוכית חמימה עם עציצים, צמחי תבלין ושרכים. מקום שבו רעיונות מלבלבים לאט.',
+    reflectionPrompt: 'איזה רעיון או תשוקה חדשה היית רוצה לטפח בעדינות?',
+    costSeeds: 25,
+    renderType: 'greenhouse',
+    emoji: '🪴'
+  },
+  {
+    id: 'farm',
+    name: 'חוות תבואה ואסם עץ',
+    category: 'מבנים ובתים',
+    tag: 'תבואה וקמח',
+    desc: 'אסם עץ חמים, שדות חיטה ומבנה כפרי ציורי המעניק תחושת יציבות ושפע.',
+    reflectionPrompt: 'איזה תהליך שהשקעת בו מתחיל להניב פירות?',
+    costSeeds: 28,
+    renderType: 'farm',
+    emoji: '🌾'
+  },
+  {
+    id: 'crystal_mine',
+    name: 'מכרה קריסטלים זוהרים',
+    category: 'מבנים ובתים',
+    tag: 'חוזק פנימי',
+    desc: 'פיר מנהרה מאבן עתיקה המנצנץ בגבישי קריסטל תכולים וזוהרים.',
+    reflectionPrompt: 'איזה חוזק פנימי עמוק גילית בעצמך לאחרונה?',
+    costSeeds: 30,
+    renderType: 'crystal_mine',
+    emoji: '💎'
+  },
+
+  // --- טבע וצמחים (Nature & Plants) ---
+  {
+    id: 'sakura_tree',
+    name: 'עץ דובדבן פורח (סאקורה)',
+    category: 'טבע וצמחים',
+    tag: 'יופי והתחדשות',
+    desc: 'עץ דובדבן מרהיב בפריחה ורודה עדינה עם עלי כותרת מרחפים בעדינות באוויר.',
+    reflectionPrompt: 'איזה דבר עדין ויפה ראית היום שהעלה בך חיוך?',
+    costSeeds: 18,
+    renderType: 'sakura_tree',
+    emoji: '🌸'
+  },
+  {
+    id: 'oak_tree',
+    name: 'עץ אלון של סקרנות',
+    category: 'טבע וצמחים',
+    tag: 'התפתחות אישית',
+    desc: 'עץ רחב צמרת שצומח עם כל דף שקראת, פודקאסט מעשיר או הבנה חדשה על העולם.',
+    reflectionPrompt: 'מה למדת או גילית לאחרונה שעורר בך עניין?',
+    costSeeds: 18,
+    renderType: 'oak_tree',
+    emoji: '🌳'
+  },
+  {
+    id: 'willow_tree',
+    name: 'ערבה בוכייה קסומה',
+    category: 'טבע וצמחים',
+    tag: 'רוגע וחסות',
+    desc: 'עץ ערבה עם ענפים ירוקים משתפלים עד האדמה, מרחב מוצל ומנחם.',
+    reflectionPrompt: 'איזה מקום או רגע מאפשר לך להרפות ולהירגע?',
+    costSeeds: 18,
+    renderType: 'willow_tree',
+    emoji: '🍃'
+  },
+  {
+    id: 'pine_tree',
+    name: 'ברוש של חוסן ועוצמה',
+    category: 'טבע וצמחים',
+    tag: 'תנועה טבעית',
+    desc: 'מוקדש לפעילות גופנית, מתיחות, יוגה או הליכה נעימה שחיברה אותך לגוף.',
+    reflectionPrompt: 'איזו תנועה גרמה לך להרגיש חיוני היום?',
+    costSeeds: 15,
+    renderType: 'pine_tree',
+    emoji: '🌲'
+  },
+  {
+    id: 'sunflower_patch',
+    name: 'שדה חמניות שמש',
+    category: 'טבע וצמחים',
+    tag: 'אופטימיות ואור',
+    desc: 'ערוגת חמניות גבוהות וזהובות המפנות את פניהן בחום אל אור השמש.',
+    reflectionPrompt: 'מה ממלא אותך באור ובאנרגיה טובה היום?',
+    costSeeds: 12,
+    renderType: 'sunflower_patch',
+    emoji: '🌻'
+  },
+  {
+    id: 'flower_garden',
+    name: 'ערוגת פרחי שדה',
+    category: 'טבע וצמחים',
+    tag: 'רגע של חמלה',
+    desc: 'נשתל כשעצרת לנשום, ישנת טוב או הענקת לעצמך מנוחה ללא רגשות אשם.',
+    reflectionPrompt: 'איזה רגע של שלווה לקחת לעצמך היום?',
+    costSeeds: 10,
+    renderType: 'flower_garden',
+    emoji: '🌺'
+  },
+  {
+    id: 'veggie_garden',
+    name: 'ערוגות ירק וגזרים',
+    category: 'טבע וצמחים',
+    tag: 'הזנה ובריאות',
+    desc: 'ערוגות אדמה תחוחה וגזרים רעננים המזכירים להזין את הגוף באהבה.',
+    reflectionPrompt: 'איזה הרגל מזין או ארוחה טובה הענקת לגוף שלך היום?',
+    costSeeds: 15,
+    renderType: 'veggie_garden',
+    emoji: '🥕'
+  },
+  {
+    id: 'bush',
+    name: 'שיח פטל ופטריות בר',
+    category: 'טבע וצמחים',
+    tag: 'צעד קטן',
+    desc: 'הזנת את הגוף: שתיית מים, תה מנחם או יציאה קצרה לאוויר הפתוח.',
+    reflectionPrompt: 'איך דאגת לגוף שלך היום בצעד קטן?',
+    costSeeds: 8,
+    renderType: 'bush',
+    emoji: '🫐'
+  },
+  {
+    id: 'glow_mushrooms',
+    name: 'פטריות יער זוהרות',
+    category: 'טבע וצמחים',
+    tag: 'קסם וסקרנות',
+    desc: 'מקבץ פטריות קסומות המאירות באור תכלכל-סגלגל רך ומשרה שלווה בלילה.',
+    reflectionPrompt: 'מתי לאחרונה אפשרת לסקרנות או לדמיון שלך להוביל?',
+    costSeeds: 12,
+    renderType: 'glow_mushrooms',
+    emoji: '🍄'
+  },
+
+  // --- מים וגשרים (Water & Bridges) ---
+  {
+    id: 'river_tile',
+    name: 'פלג מים זורם',
+    category: 'מים וגשרים',
+    tag: 'שחרור וזרימה',
+    desc: 'פלג מים צלול וקריר עם חלוקי נחל וגלים עדינים. מסמל לדעת לשחרר ולזרום עם החיים.',
+    reflectionPrompt: 'איזה מתח הצלחת לשחרר היום ולתת לו לזרום הלאה?',
+    costSeeds: 8,
+    renderType: 'river_tile',
+    emoji: '🌊'
+  },
+  {
+    id: 'water_lily_pond',
+    name: 'בריכת נימפאות ושושני מים',
+    category: 'מים וגשרים',
+    tag: 'טוהר ושקט',
+    desc: 'בריכת מים שקטה עם עלי נופר צפים ופרחי נימפאה ורודים המפיצים שלווה.',
+    reflectionPrompt: 'איזה רגע של שלווה צלולה חווית לאחרונה?',
+    costSeeds: 16,
+    renderType: 'water_lily_pond',
+    emoji: '🪷'
+  },
+  {
+    id: 'wooden_bridge',
+    name: 'גשר עץ מעל המים',
+    category: 'מים וגשרים',
+    tag: 'גשר מעל קושי',
+    desc: 'גשר עץ מקושת שעובר מעל המים. מסמל מעבר של תקופה מאתגרת וחיבור פנימי.',
+    reflectionPrompt: 'איזה גשר בנית לאחרונה — כלפי עצמך או כלפי אדם אחר?',
+    costSeeds: 18,
+    renderType: 'wooden_bridge',
+    emoji: '🌉'
+  },
+  {
+    id: 'stone_bridge',
+    name: 'גשר אבן עתיק וקשתות',
+    category: 'מים וגשרים',
+    tag: 'יציבות וחיבור',
+    desc: 'גשר קשתות מאבן מסותתת עם מעקה מעוטר וקיסוס מטפס, מקשר בין חלקי הכפר.',
+    reflectionPrompt: 'איזה קשר או חיבור אנושי עמוק העניק לך כוח?',
+    costSeeds: 20,
+    renderType: 'stone_bridge',
+    emoji: '🏛️'
+  },
+  {
+    id: 'fountain',
+    name: 'מזרקת אבן שקטה',
+    category: 'מים וגשרים',
+    tag: 'רחש מים מרגיע',
+    desc: 'מזרקת אבן טבעית עם צליל פכפוך עדין של מים. מקום להרפות את הכתפיים ולנשום.',
+    reflectionPrompt: 'מתי עצרת היום רק כדי לנשום עמוק ולהרפות?',
+    costSeeds: 20,
+    renderType: 'fountain',
+    emoji: '⛲'
+  },
+  {
+    id: 'wishing_well',
+    name: 'באר משאלות עתיקה',
+    category: 'מים וגשרים',
+    tag: 'משאלה אישית',
+    desc: 'באר אבן עמוקה עם גג רעפים ומים צלולים. מקום להפקיד בו משאלה כמוסה לעתיד לבוא.',
+    reflectionPrompt: 'איזו משאלה קטנה היית רוצה להביע עבור עצמך?',
+    costSeeds: 20,
+    renderType: 'wishing_well',
+    emoji: '🪣'
+  },
+
+  // --- שבילים וגבולות (Paths & Fences) ---
+  {
+    id: 'stone_path',
+    name: 'שביל חלוקי נחל',
+    category: 'שבילים וגבולות',
+    tag: 'בהירות וסדר',
+    desc: 'אבני מדרך טבעיות שמתוות מסלול נעים ומסמלות צעדים קטנים שעושים סדר בראש.',
+    reflectionPrompt: 'איזה סדר קטן עזר לך להרגיש קלילות ובהירות?',
+    costSeeds: 4,
+    renderType: 'stone_path',
+    emoji: '🪨'
+  },
+  {
+    id: 'wood_path',
+    name: 'שביל לוחות עץ כפרי',
+    category: 'שבילים וגבולות',
+    tag: 'דרך בטוחה',
+    desc: 'לוחות עץ ארז חמימים עם ברגים ומרווחים עדינים, יוצרים טיילת מזמינה.',
+    reflectionPrompt: 'איזה צעד יומיומי פשוט שומר עליך במסלול הנכון?',
+    costSeeds: 4,
+    renderType: 'wood_path',
+    emoji: '🪵'
+  },
+  {
+    id: 'brick_path',
+    name: 'שביל לבנים אדומות',
+    category: 'שבילים וגבולות',
+    tag: 'סדר וחיבור',
+    desc: 'ריצוף לבנים אדומות קלאסי ומסודר שיוצר מראה כפרי ציורי ומלא אופי.',
+    reflectionPrompt: 'מה עוזר לך להרגיש יציבות ובסיס איתן היום?',
+    costSeeds: 4,
+    renderType: 'brick_path',
+    emoji: '🧱'
+  },
+  {
+    id: 'wooden_fence',
+    name: 'גדר עץ כפרית',
+    category: 'שבילים וגבולות',
+    tag: 'גבולות בריאים',
+    desc: 'קורות עץ טבעיות המגדירות חצרות ופינות ירוקות בעדינות ובנועם.',
+    reflectionPrompt: 'איזה גבול בריא הצבת היום כדי לשמור על האנרגיה שלך?',
+    costSeeds: 4,
+    renderType: 'wooden_fence',
+    emoji: '🪵'
+  },
+  {
+    id: 'floral_arch',
+    name: 'שער קשת פרחים מטפסים',
+    category: 'שבילים וגבולות',
+    tag: 'התחלה חדשה',
+    desc: 'קשת עץ אלגנטית שזורה בפרחי ורדים מטפסים, פתח מזמין לכל פינה קסומה בכפר.',
+    reflectionPrompt: 'איזו דלת חדשה פתחת או היית רוצה לפתוח עבורך?',
+    costSeeds: 14,
+    renderType: 'floral_arch',
+    emoji: '💐'
+  },
+
+  // --- פינות ישיבה ואווירה (Cozy Living & Leisure) ---
+  {
+    id: 'reading_bench',
+    name: 'ספסל הרהורים מעץ',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'מרחב מחשבה',
+    desc: 'מקום לשבת, להתבונן במחשבות, לקרוא ספר אהוב או לשתות כוס תה בנחת.',
+    reflectionPrompt: 'מתי הרגשת לאחרונה בנוכחות מלאה ובשלווה ברגע?',
+    costSeeds: 10,
+    renderType: 'reading_bench',
+    emoji: '🪵'
+  },
+  {
+    id: 'tea_table',
+    name: 'פינת תה כפרית ועוגיות',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'חמימות מנחמת',
+    desc: 'שולחן עץ עגול עם קנקן תה מהביל, כוסות ועוגיות. הזמנה ליהנות מרגע קטן של חסד.',
+    reflectionPrompt: 'איזה טעם או פינוק קטן ניחם אותך היום?',
+    costSeeds: 12,
+    renderType: 'tea_table',
+    emoji: '🍵'
+  },
+  {
+    id: 'picnic_blanket',
+    name: 'פיקניק וכריות בדשא',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'הפוגה ומנוחה',
+    desc: 'שמיכת פיקניק משובצת, סלסילת פירות ומאפים וכריות רכות למנוחה באוויר הפתוח.',
+    reflectionPrompt: 'מתי הענקת לעצמך הפסקה אמיתית ורגע של חוסר מעש מבורך?',
+    costSeeds: 12,
+    renderType: 'picnic_blanket',
+    emoji: '🧺'
+  },
+  {
+    id: 'hammock',
+    name: 'ערסל צל בין ענפים',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'שחרור עמוק',
+    desc: 'ערסל מפנק המתנדנד בעדינות ברוח הקלילה בין שני עצים מוצלים.',
+    reflectionPrompt: 'מה עוזר לך לשחרר את כל המתח מהגוף ומהראש?',
+    costSeeds: 14,
+    renderType: 'hammock',
+    emoji: '🌴'
+  },
+  {
+    id: 'bonfire',
+    name: 'מדורה של חום ולב',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'חיבור אמיתי',
+    desc: 'אש עצים מרצדת ומחממת שסביבה אפשר לשבת, לחלוק סיפורים ולהרגיש ביחד.',
+    reflectionPrompt: 'למי אמרת תודה או עם מי חלקת רגע חם ומחזק?',
+    costSeeds: 15,
+    renderType: 'bonfire',
+    emoji: '🔥'
+  },
+  {
+    id: 'lantern_post',
+    name: 'עמוד פנס חם',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'אור ותקווה',
+    desc: 'פנס רחוב עתיק המפיץ אור צהוב וחם בשעות הערב, שמזכיר שאתה אף פעם לא בחושך.',
+    reflectionPrompt: 'איזו מחשבה או אדם האירו לך את היום?',
+    costSeeds: 8,
+    renderType: 'lantern_post',
+    emoji: '🏮'
+  },
+  {
+    id: 'cozy_tent',
+    name: 'אוהל קריאה ומחבוא',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'מרחב מוגן',
+    desc: 'אוהל בד אינטימי עם כריות רכות. המקום שלך להסתתר מהעולם כשצריך קצת שקט.',
+    reflectionPrompt: 'מה עוזר לך להרגיש הכי בטוח ומוגן כשמציף בחוץ?',
+    costSeeds: 20,
+    renderType: 'cozy_tent',
+    emoji: '⛺'
+  }
+];
+
+export const INITIAL_INTENTIONS = [
+  {
+    id: 'i_1',
+    text: 'להקשיב לגוף, לשתות מים בנחת ולנשום',
+    category: 'שלווה ונפש',
+    seedsEarned: 15,
+    completed: false,
+    note: 'רגע של דאגה עצמית'
+  },
+  {
+    id: 'i_2',
+    text: 'לפנות 15 דקות לקריאה בספר או האזנה למוזיקה שקטה',
+    category: 'מנוחה ונפש',
+    seedsEarned: 20,
+    completed: false,
+    note: 'הזנת המחשבה בשקט'
+  },
+  {
+    id: 'i_3',
+    text: 'לצאת להליכה קצרה באוויר הפתוח ללא טלפון',
+    category: 'תנועה ובריאות',
+    seedsEarned: 20,
+    completed: false,
+    note: 'נשימה עמוקה וחיבור לטבע'
+  },
+  {
+    id: 'i_4',
+    text: 'לשתות כוס תה חם ולהרפות את הכתפיים',
+    category: 'רגעים קטנים',
+    seedsEarned: 15,
+    completed: false,
+    note: 'הפוגה מנחמת'
+  },
+  {
+    id: 'i_5',
+    text: 'להגיד לעצמי מילה טובה על הדרך שעשיתי',
+    category: 'מקום בטוח',
+    seedsEarned: 25,
+    completed: false,
+    note: 'חמלה עצמית'
+  }
+];
+
+export const WARM_AFFIRMATIONS = [
+  'זהו המרחב הבטוח שלך — כאן אין שיפוט, אין ממהרים, רק צמיחה שקטה.',
+  'הכפר שלך גדל בקצב שלך, בדיוק כמו שמתאים לך היום.',
+  'כל עץ קטן, ספסל או מזרקה הם עדות לרגע שבו בחרת בטוב עבורך.',
+  'מותר לעצור, מותר לנוח, מותר פשוט להיות כאן ועכשיו.',
+  'הדברים היפים ביותר בחיים צומחים לאט ובאהבה.'
+];

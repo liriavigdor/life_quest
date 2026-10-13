@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeQuest - מעקב מטרות ופיתוח כפר חיים</title>
+    <!-- Google Fonts for crisp gaming & modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('Captured Window Error:', e.error || e.message);
+        const el = document.createElement('pre');
+        el.id = 'debug-error';
+        el.style.cssText = 'color:#ff4444;background:#111;padding:20px;font-size:16px;position:fixed;top:0;left:0;right:0;z-index:999999;white-space:pre-wrap;';
+        el.textContent = 'ERROR: ' + e.message + '\n' + (e.error ? e.error.stack : '');
+        document.body.appendChild(el);
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
