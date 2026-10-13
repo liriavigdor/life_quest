@@ -386,12 +386,18 @@ export default function App() {
   });
 
   // Helper to determine if a tile is part of the cleared / cultivated meadow
-  const isTileClearedHelper = (gx, gy, tier, cultivatedList) => {
+  const isTileClearedHelper = (gx, gy, tier, cultivatedList, placedList) => {
+    // 1. Any specifically cultivated plot added by the player
     if (cultivatedList && cultivatedList.some(p => p.gx === gx && p.gy === gy)) {
       return true;
     }
+    // 2. Any tile containing an existing placed object (safeguard so all player creations remain planted)
+    if (placedList && placedList.some(o => o.gx === gx && o.gy === gy)) {
+      return true;
+    }
+    // 3. Intimate clearing glade radius
     const tierData = EXPANSION_TIERS.find(t => t.tier === tier) || EXPANSION_TIERS[0];
-    const baseRadius = tierData.radius;
+    const baseRadius = tierData.radius; // Tier 1: 8.5
     const dx = gx - 11;
     const dy = gy - 11;
     const dist = Math.sqrt(dx * dx + dy * dy);
@@ -401,30 +407,30 @@ export default function App() {
   };
 
   // Helper to determine if a tile is an uncultivated frontier plot bordering cleared land
-  const isCultivableFrontierHelper = (gx, gy, tier, cultivatedList) => {
-    if (isTileClearedHelper(gx, gy, tier, cultivatedList)) return false;
+  const isCultivableFrontierHelper = (gx, gy, tier, cultivatedList, placedList) => {
+    if (isTileClearedHelper(gx, gy, tier, cultivatedList, placedList)) return false;
     if (gx < 1 || gx >= GRID_SIZE - 1 || gy < 1 || gy >= GRID_SIZE - 1) return false;
     const dx = gx - 11;
     const dy = gy - 11;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist > 15.0) return false;
+    if (dist > 16.0) return false;
 
     const neighbors = [
       [-1, 0], [1, 0], [0, -1], [0, 1],
       [-1, -1], [1, 1], [-1, 1], [1, -1]
     ];
-    return neighbors.some(([ox, oy]) => isTileClearedHelper(gx + ox, gy + oy, tier, cultivatedList));
+    return neighbors.some(([ox, oy]) => isTileClearedHelper(gx + ox, gy + oy, tier, cultivatedList, placedList));
   };
 
   // High-performance precomputed tile grid cache (avoids 6000+ trig calculations per frame)
   const tileGridCacheRef = useRef(null);
-  const computeTileGrid = (tier, cultivated) => {
+  const computeTileGrid = (tier, cultivated, placed) => {
     const grid = [];
     for (let gy = 0; gy < GRID_SIZE; gy++) {
       const row = [];
       for (let gx = 0; gx < GRID_SIZE; gx++) {
-        const inClearing = isTileClearedHelper(gx, gy, tier, cultivated);
-        const isFrontier = !inClearing && isCultivableFrontierHelper(gx, gy, tier, cultivated);
+        const inClearing = isTileClearedHelper(gx, gy, tier, cultivated, placed);
+        const isFrontier = !inClearing && isCultivableFrontierHelper(gx, gy, tier, cultivated, placed);
         const isCultivated = cultivated ? cultivated.some(p => p.gx === gx && p.gy === gy) : false;
         const isWildflower = (gx * 17 + gy * 23) % 9 === 0;
 
@@ -449,11 +455,11 @@ export default function App() {
   };
 
   // Helper to compute natural borders of trees and rocks along the bottom (east) and right (north) of the clearing
-  const computeBorderScenery = (tier, cultivated) => {
+  const computeBorderScenery = (tier, cultivated, placed) => {
     const scenery = [];
     for (let gy = 0; gy < GRID_SIZE; gy++) {
       for (let gx = 0; gx < GRID_SIZE; gx++) {
-        const inCleared = isTileClearedHelper(gx, gy, tier, cultivated);
+        const inCleared = isTileClearedHelper(gx, gy, tier, cultivated, placed);
         if (inCleared) continue;
 
         // Find distance to cleared land
@@ -462,7 +468,7 @@ export default function App() {
           for (let dx = -2; dx <= 2; dx++) {
             const nx = gx + dx;
             const ny = gy + dy;
-            if (nx >= 0 && nx < GRID_SIZE && ny >= 0 && ny < GRID_SIZE && isTileClearedHelper(nx, ny, tier, cultivated)) {
+            if (nx >= 0 && nx < GRID_SIZE && ny >= 0 && ny < GRID_SIZE && isTileClearedHelper(nx, ny, tier, cultivated, placed)) {
               const d = Math.hypot(dx, dy);
               if (d < minDist) minDist = d;
             }
@@ -476,11 +482,11 @@ export default function App() {
         const screenDx = (gx - gy) * (TILE_W / 2);
         const screenDy = (gx + gy - 22) * (TILE_H / 2);
 
-        // 1. "בצד ימין (צפון)": Right side of the screen
-        const isRightSide = screenDx >= 80 && screenDy >= -160 && screenDy <= 180;
+        // 1. Right side of the clearing rim
+        const isRightSide = screenDx >= 45 && screenDy >= -180 && screenDy <= 200;
 
-        // 2. "בתחתית המסך (מזרח)": Bottom of the screen
-        const isBottomSide = screenDy >= 130 && Math.abs(screenDx) <= 220;
+        // 2. Bottom of the clearing rim
+        const isBottomSide = screenDy >= 80 && Math.abs(screenDx) <= 240;
 
         if (!isRightSide && !isBottomSide) continue;
 
@@ -521,28 +527,28 @@ export default function App() {
 
   const borderSceneryRef = useRef(null);
   if (!borderSceneryRef.current) {
-    borderSceneryRef.current = computeBorderScenery(expansionTier, cultivatedPlots);
+    borderSceneryRef.current = computeBorderScenery(expansionTier, cultivatedPlots, placedObjects);
   }
 
   if (!tileGridCacheRef.current) {
-    tileGridCacheRef.current = computeTileGrid(expansionTier, cultivatedPlots);
+    tileGridCacheRef.current = computeTileGrid(expansionTier, cultivatedPlots, placedObjects);
   }
 
   useEffect(() => {
-    tileGridCacheRef.current = computeTileGrid(expansionTier, cultivatedPlots);
-    borderSceneryRef.current = computeBorderScenery(expansionTier, cultivatedPlots);
-  }, [expansionTier, cultivatedPlots]);
+    tileGridCacheRef.current = computeTileGrid(expansionTier, cultivatedPlots, placedObjects);
+    borderSceneryRef.current = computeBorderScenery(expansionTier, cultivatedPlots, placedObjects);
+  }, [expansionTier, cultivatedPlots, placedObjects]);
 
   // Helper to determine if a tile is part of the organic forest clearing or cultivated land
   const checkClearing = (gx, gy) => {
     if (gx < 0 || gx >= GRID_SIZE || gy < 0 || gy >= GRID_SIZE) return false;
-    return tileGridCacheRef.current?.[gy]?.[gx]?.inClearing ?? isTileClearedHelper(gx, gy, expansionTierRef.current, cultivatedPlotsRef.current);
+    return tileGridCacheRef.current?.[gy]?.[gx]?.inClearing ?? isTileClearedHelper(gx, gy, expansionTierRef.current, cultivatedPlotsRef.current, placedObjectsRef.current);
   };
 
   // Check if a tile is a frontier plot bordering cleared land
   const checkFrontier = (gx, gy) => {
     if (gx < 0 || gx >= GRID_SIZE || gy < 0 || gy >= GRID_SIZE) return false;
-    return tileGridCacheRef.current?.[gy]?.[gx]?.isFrontier ?? isCultivableFrontierHelper(gx, gy, expansionTierRef.current, cultivatedPlotsRef.current);
+    return tileGridCacheRef.current?.[gy]?.[gx]?.isFrontier ?? isCultivableFrontierHelper(gx, gy, expansionTierRef.current, cultivatedPlotsRef.current, placedObjectsRef.current);
   };
 
   // Canvas render engine
@@ -4134,6 +4140,248 @@ export default function App() {
       ctx.restore();
     };
 
+    // Natural lush forest border directly on the screen's right and bottom edges
+    const drawScreenEdgeForest = (w, h, isSunset, isNight) => {
+      ctx.save();
+
+      const pineDark = isNight ? '#022c22' : (isSunset ? '#064e3b' : '#064e3b');
+      const pineMid  = isNight ? '#064e3b' : (isSunset ? '#115e59' : '#059669');
+      const pineLit  = isNight ? '#059669' : (isSunset ? '#eab308' : '#34d399');
+
+      const oakDark  = isNight ? '#022c22' : (isSunset ? '#3f6212' : '#15803d');
+      const oakMid   = isNight ? '#064e3b' : (isSunset ? '#65a30d' : '#16a34a');
+      const oakLit   = isNight ? '#047857' : (isSunset ? '#facc15' : '#4ade80');
+
+      const shadowCol = isNight ? 'rgba(0, 0, 0, 0.45)' : (isSunset ? 'rgba(40, 20, 5, 0.35)' : 'rgba(15, 35, 10, 0.28)');
+
+      const drawEdgePine = (x, y, s = 1.0, isTall = false) => {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(s, s);
+
+        ctx.fillStyle = shadowCol;
+        ctx.beginPath();
+        ctx.ellipse(2, 6, 20, 9, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#3e200c';
+        ctx.fillRect(-3, -16, 6, 20);
+
+        const drawTier = (baseY, coneW, coneH) => {
+          ctx.fillStyle = pineDark;
+          ctx.beginPath();
+          ctx.moveTo(-coneW, baseY);
+          ctx.quadraticCurveTo(0, baseY + 4, coneW, baseY);
+          ctx.lineTo(0, baseY - coneH);
+          ctx.closePath();
+          ctx.fill();
+
+          ctx.fillStyle = pineMid;
+          ctx.beginPath();
+          ctx.moveTo(-coneW, baseY);
+          ctx.quadraticCurveTo(-coneW * 0.4, baseY + 2, 0, baseY);
+          ctx.lineTo(0, baseY - coneH);
+          ctx.closePath();
+          ctx.fill();
+
+          ctx.strokeStyle = pineLit;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(-coneW + 2, baseY - 1);
+          ctx.lineTo(0, baseY - coneH);
+          ctx.stroke();
+        };
+
+        drawTier(-6, 22, 22);
+        drawTier(-18, 18, 21);
+        drawTier(-30, 13, 21);
+        if (isTall) drawTier(-42, 8, 18);
+
+        ctx.restore();
+      };
+
+      const drawEdgeOak = (x, y, s = 1.0) => {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(s, s);
+
+        ctx.fillStyle = shadowCol;
+        ctx.beginPath();
+        ctx.ellipse(3, 7, 24, 11, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#451a03';
+        ctx.beginPath();
+        ctx.moveTo(-5, 6);
+        ctx.lineTo(-4, -16);
+        ctx.lineTo(4, -16);
+        ctx.lineTo(6, 6);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = oakDark;
+        ctx.beginPath();
+        ctx.arc(0, -22, 20, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = oakMid;
+        ctx.beginPath();
+        ctx.arc(-7, -26, 16, 0, Math.PI * 2);
+        ctx.arc(8, -23, 14, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = oakLit;
+        ctx.beginPath();
+        ctx.arc(-3, -33, 11, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      };
+
+      const drawEdgeBush = (x, y, s = 1.0, flowerColor = '#f472b6') => {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(s, s);
+
+        ctx.fillStyle = shadowCol;
+        ctx.beginPath();
+        ctx.ellipse(0, 4, 16, 7, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = oakDark;
+        ctx.beginPath();
+        ctx.arc(0, -8, 14, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = oakMid;
+        ctx.beginPath();
+        ctx.arc(-4, -10, 11, 0, Math.PI * 2);
+        ctx.arc(4, -9, 10, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = flowerColor;
+        ctx.beginPath();
+        ctx.arc(-6, -12, 2.2, 0, Math.PI * 2);
+        ctx.arc(3, -14, 2, 0, Math.PI * 2);
+        ctx.arc(7, -8, 2.2, 0, Math.PI * 2);
+        ctx.arc(-2, -6, 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      };
+
+      const drawEdgeRock = (x, y, s = 1.0) => {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(s, s);
+
+        ctx.fillStyle = shadowCol;
+        ctx.beginPath();
+        ctx.ellipse(0, 4, 16, 8, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = isNight ? '#1e293b' : '#334155';
+        ctx.beginPath();
+        ctx.moveTo(-16, 2);
+        ctx.lineTo(-13, -11);
+        ctx.lineTo(-2, -18);
+        ctx.lineTo(13, -12);
+        ctx.lineTo(17, 2);
+        ctx.lineTo(2, 7);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = isNight ? '#334155' : (isSunset ? '#78716c' : '#64748b');
+        ctx.beginPath();
+        ctx.moveTo(-16, 2);
+        ctx.lineTo(-13, -11);
+        ctx.lineTo(-2, -18);
+        ctx.lineTo(0, -2);
+        ctx.lineTo(-4, 5);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+      };
+
+      // 1. RIGHT SCREEN EDGE: Vertical woodland border cascading down the right margin
+      const rx = w;
+      const rightTrees = [
+        { x: rx - 20,  y: h * 0.28, type: 'pine', s: 1.1, tall: true },
+        { x: rx - 65,  y: h * 0.34, type: 'oak',  s: 1.05 },
+        { x: rx - 28,  y: h * 0.42, type: 'pine', s: 1.25, tall: true },
+        { x: rx - 90,  y: h * 0.48, type: 'bush', s: 1.2, flower: '#fef08a' },
+        { x: rx - 45,  y: h * 0.55, type: 'oak',  s: 1.3 },
+        { x: rx - 95,  y: h * 0.62, type: 'rock', s: 1.1 },
+        { x: rx - 25,  y: h * 0.68, type: 'pine', s: 1.35, tall: true },
+        { x: rx - 75,  y: h * 0.76, type: 'oak',  s: 1.25 },
+        { x: rx - 35,  y: h * 0.85, type: 'pine', s: 1.4, tall: true },
+        { x: rx - 85,  y: h * 0.92, type: 'bush', s: 1.3, flower: '#f472b6' }
+      ];
+
+      // 2. BOTTOM SCREEN EDGE: Horizontal treeline & meadow ridge framing the bottom margin
+      const by = h;
+      const bottomTrees = [
+        { x: w * 0.04, y: by - 16, type: 'pine', s: 1.25, tall: true },
+        { x: w * 0.11, y: by - 28, type: 'oak',  s: 1.1 },
+        { x: w * 0.18, y: by - 10, type: 'bush', s: 1.2, flower: '#f472b6' },
+        { x: w * 0.25, y: by - 22, type: 'rock', s: 1.1 },
+        { x: w * 0.33, y: by - 14, type: 'pine', s: 1.15 },
+        { x: w * 0.42, y: by - 30, type: 'oak',  s: 1.2 },
+        { x: w * 0.50, y: by - 12, type: 'bush', s: 1.15, flower: '#fef08a' },
+        { x: w * 0.59, y: by - 24, type: 'pine', s: 1.2, tall: true },
+        { x: w * 0.68, y: by - 16, type: 'rock', s: 1.15 },
+        { x: w * 0.77, y: by - 28, type: 'oak',  s: 1.3 },
+        { x: w * 0.86, y: by - 14, type: 'pine', s: 1.3, tall: true },
+        { x: w * 0.94, y: by - 22, type: 'oak',  s: 1.35 }
+      ];
+
+      // Atmospheric edge soft shade
+      const bottomRidgeGrad = ctx.createLinearGradient(0, h - 65, 0, h);
+      if (isNight) {
+        bottomRidgeGrad.addColorStop(0, 'rgba(10, 30, 15, 0)');
+        bottomRidgeGrad.addColorStop(1, 'rgba(6, 20, 10, 0.45)');
+      } else if (isSunset) {
+        bottomRidgeGrad.addColorStop(0, 'rgba(50, 25, 5, 0)');
+        bottomRidgeGrad.addColorStop(1, 'rgba(40, 20, 5, 0.22)');
+      } else {
+        bottomRidgeGrad.addColorStop(0, 'rgba(20, 50, 10, 0)');
+        bottomRidgeGrad.addColorStop(1, 'rgba(15, 40, 10, 0.18)');
+      }
+      ctx.fillStyle = bottomRidgeGrad;
+      ctx.fillRect(0, h - 65, w, 65);
+
+      const rightRidgeGrad = ctx.createLinearGradient(w - 80, 0, w, 0);
+      if (isNight) {
+        rightRidgeGrad.addColorStop(0, 'rgba(10, 30, 15, 0)');
+        rightRidgeGrad.addColorStop(1, 'rgba(6, 20, 10, 0.4)');
+      } else if (isSunset) {
+        rightRidgeGrad.addColorStop(0, 'rgba(50, 25, 5, 0)');
+        rightRidgeGrad.addColorStop(1, 'rgba(40, 20, 5, 0.2)');
+      } else {
+        rightRidgeGrad.addColorStop(0, 'rgba(20, 50, 10, 0)');
+        rightRidgeGrad.addColorStop(1, 'rgba(15, 40, 10, 0.15)');
+      }
+      ctx.fillStyle = rightRidgeGrad;
+      ctx.fillRect(w - 80, h * 0.25, 80, h * 0.75);
+
+      rightTrees.forEach(t => {
+        if (t.type === 'pine') drawEdgePine(t.x, t.y, t.s, t.tall);
+        else if (t.type === 'oak') drawEdgeOak(t.x, t.y, t.s);
+        else if (t.type === 'bush') drawEdgeBush(t.x, t.y, t.s, t.flower);
+        else if (t.type === 'rock') drawEdgeRock(t.x, t.y, t.s);
+      });
+
+      bottomTrees.forEach(t => {
+        if (t.type === 'pine') drawEdgePine(t.x, t.y, t.s, t.tall);
+        else if (t.type === 'oak') drawEdgeOak(t.x, t.y, t.s);
+        else if (t.type === 'bush') drawEdgeBush(t.x, t.y, t.s, t.flower);
+        else if (t.type === 'rock') drawEdgeRock(t.x, t.y, t.s);
+      });
+
+      ctx.restore();
+    };
+
     // Cute cozy isometric villager with custom wardrobe, swimming, activities & styling
     const drawVillager = (v, origin, isSunset, isNight) => {
       const { x: sx, y: sy } = toScreen(v.currGx, v.currGy, origin.x, origin.y);
@@ -4216,7 +4464,7 @@ export default function App() {
         skyGrad.addColorStop(0, '#38bdf8');
         skyGrad.addColorStop(0.5, '#7dd3fc');
         skyGrad.addColorStop(0.8, '#bae6fd');
-        skyGrad.addColorStop(1, '#3f6212');
+        skyGrad.addColorStop(1, '#5aa32a');
       }
       ctx.fillStyle = skyGrad;
       ctx.fillRect(0, 0, width, height);
@@ -4265,24 +4513,24 @@ export default function App() {
       }
 
       // 2. WESTERN HORIZON, COASTAL WATER & ROLLING HILLS (Harmonious Organic Backdrop)
-      // Soft atmospheric rolling ridge behind the meadow
-      const hillGrad = ctx.createLinearGradient(0, height * 0.25, 0, height * 0.65);
+      // Soft atmospheric rolling ridge behind and beneath the meadow
+      const hillGrad = ctx.createLinearGradient(0, height * 0.22, 0, height * 0.72);
       if (isNight) {
         hillGrad.addColorStop(0, '#0c1a2e');
-        hillGrad.addColorStop(0.6, '#0f291e');
-        hillGrad.addColorStop(1, '#062015');
+        hillGrad.addColorStop(0.35, '#0f291e');
+        hillGrad.addColorStop(1, '#163812');
       } else if (isSunset) {
         hillGrad.addColorStop(0, '#831843'); // Dusky plum hill
-        hillGrad.addColorStop(0.4, '#9a3412'); // Amber slopes
-        hillGrad.addColorStop(0.8, '#527918'); // Warm hillside green
-        hillGrad.addColorStop(1, '#365314');
+        hillGrad.addColorStop(0.32, '#9a3412'); // Amber slopes
+        hillGrad.addColorStop(0.68, '#65961d'); // Warm hillside green
+        hillGrad.addColorStop(1, '#598918'); // Exactly matches sunset grass2 (#598918)!
       } else {
         hillGrad.addColorStop(0, '#0284c7');
-        hillGrad.addColorStop(0.5, '#0d9488');
-        hillGrad.addColorStop(1, '#15803d');
+        hillGrad.addColorStop(0.35, '#0d9488');
+        hillGrad.addColorStop(1, '#5aa32a'); // Exactly matches daytime grass2 (#5aa32a)!
       }
 
-      // Distant rolling mountain silhouette (Soft Bézier curve)
+      // Distant rolling mountain silhouette (Soft Bézier curve across full width)
       ctx.fillStyle = hillGrad;
       ctx.beginPath();
       ctx.moveTo(0, height * 0.28);
@@ -4326,10 +4574,10 @@ export default function App() {
       ridgeGrad.addColorStop(1, isNight ? '#0b3518' : (isSunset ? '#4d7515' : '#16a34a'));
       ctx.fillStyle = ridgeGrad;
       ctx.beginPath();
-      ctx.moveTo(width * 0.18, height * 0.32);
-      ctx.bezierCurveTo(width * 0.45, height * 0.25, width * 0.75, height * 0.35, width, height * 0.28);
-      ctx.lineTo(width, height * 0.52);
-      ctx.lineTo(width * 0.18, height * 0.52);
+      ctx.moveTo(0, height * 0.33);
+      ctx.bezierCurveTo(width * 0.35, height * 0.26, width * 0.7, height * 0.36, width, height * 0.29);
+      ctx.lineTo(width, height * 0.48);
+      ctx.lineTo(0, height * 0.48);
       ctx.closePath();
       ctx.fill();
 
@@ -4385,29 +4633,23 @@ export default function App() {
                 ctx.lineTo(sx - TILE_W / 2, sy + TILE_H / 2);
                 ctx.closePath();
 
-                if (isCultivating) {
+                if (isCultivating || isHovered) {
                   const pulse = Math.sin(Date.now() / 240) * 0.15 + 0.85;
                   ctx.fillStyle = isHovered
-                    ? 'rgba(234, 179, 8, 0.45)'
-                    : `rgba(45, 62, 25, ${0.42 * pulse})`;
+                    ? 'rgba(254, 240, 138, 0.45)'
+                    : `rgba(163, 230, 53, ${0.22 * pulse})`;
                   ctx.fill();
 
-                  ctx.strokeStyle = isHovered ? '#fef08a' : 'rgba(234, 179, 8, 0.8)';
+                  ctx.strokeStyle = isHovered ? '#fef08a' : 'rgba(234, 179, 8, 0.75)';
                   ctx.lineWidth = isHovered ? 2.5 : 1.5;
                   ctx.setLineDash([4, 3]);
                   ctx.stroke();
                   ctx.setLineDash([]);
 
-                  ctx.font = '12px "Segoe UI Emoji", sans-serif';
+                  ctx.font = 'bold 12px "Segoe UI Emoji", sans-serif';
                   ctx.textAlign = 'center';
                   ctx.textBaseline = 'middle';
-                  ctx.fillText('🌱', sx, sy + TILE_H / 2);
-                } else if (isHovered) {
-                  ctx.fillStyle = 'rgba(234, 179, 8, 0.25)';
-                  ctx.fill();
-                  ctx.strokeStyle = 'rgba(253, 224, 71, 0.7)';
-                  ctx.lineWidth = 1.6;
-                  ctx.stroke();
+                  ctx.fillText(isHovered ? '➕' : '🌱', sx, sy + TILE_H / 2);
                 }
                 ctx.restore();
               }
@@ -4828,7 +5070,10 @@ export default function App() {
         }
       }
 
-      // 5. NATURE CREATURES (Fluttering Butterflies, Glowing Crickets/Fireflies)
+      // 5. SCREEN-EDGE BORDER TREES (Natural scenic framing on right and bottom edges)
+      drawScreenEdgeForest(width, height, isSunset, isNight);
+
+      // 6. NATURE CREATURES (Fluttering Butterflies, Glowing Crickets/Fireflies)
 
       // B. Fluttering colorful butterflies over the meadow
       butterflies.forEach(bf => {
@@ -5584,6 +5829,35 @@ export default function App() {
       const gy = downInfo.clickGy ?? downInfo.gy;
       const existing = downInfo.item || placedObjects.find(o => o.gx === gx && o.gy === gy);
 
+      // Frontier Plot Click (Expanding / Cultivating Land)
+      const isFrontier = checkFrontier(gx, gy);
+      if (isFrontier && !existing) {
+        if (selectedBuildItem && selectedBuildItem.renderType === 'cultivated_plot_tile') {
+          handleCultivatePlot(gx, gy);
+          if (!continuousBuild) setSelectedBuildItem(null);
+          pointerDownInfoRef.current = null;
+          return;
+        }
+
+        if (isCultivatingMode || (!selectedBuildItem && !movingObject && !isDemolishMode)) {
+          handleCultivatePlot(gx, gy);
+          pointerDownInfoRef.current = null;
+          return;
+        }
+
+        if (selectedBuildItem) {
+          const totalCost = selectedBuildItem.costSeeds + PLOT_CULTIVATION_COST;
+          if (seeds < totalCost) {
+            sounds.playTap();
+            alert(`חלקה זו עדיין פראית. נדרשים ${PLOT_CULTIVATION_COST} זרעים להכשרת המשבצת ועוד ${selectedBuildItem.costSeeds} לבנייה (סה"כ ${totalCost} זרעים). השלם כוונות ביומן או לחץ "+100 ✨"!`);
+            pointerDownInfoRef.current = null;
+            return;
+          }
+          // Cultivate frontier plot and place item
+          handleCultivatePlot(gx, gy);
+        }
+      }
+
       // Meadow Tile or Object Click:
       if (existing || checkClearing(gx, gy)) {
         // Demolish Mode
@@ -5974,6 +6248,24 @@ export default function App() {
             <span className="build-nav-label">בנייה ויצירה 🛠️</span>
           </button>
 
+          {/* Territory Expansion Control */}
+          <button
+            className={`sanctuary-btn expand-nav-btn ${isCultivatingMode ? 'active' : ''}`}
+            onClick={() => {
+              sounds.playTap();
+              setIsCultivatingMode(!isCultivatingMode);
+              if (!isCultivatingMode) {
+                setSelectedBuildItem(null);
+                setMovingObject(null);
+                setIsDemolishMode(false);
+              }
+            }}
+            title="הרחבת שטח הכפר — הוסף משבצות חדשות (Tiles) לקצוות הכפר"
+          >
+            <Sprout size={17} className="text-emerald" />
+            <span className="expand-nav-label">הרחבת שטח 🌱</span>
+          </button>
+
           <button
             className="sanctuary-btn journal-nav-btn"
             onClick={() => {
@@ -5987,6 +6279,19 @@ export default function App() {
           </button>
         </div>
       </header>
+
+      {/* Floating Cultivate / Add Tiles Mode Banner */}
+      {isCultivatingMode && (
+        <div className="wholesome-cultivate-banner">
+          <span>🌱 מצב הרחבת שטח פעיל: לחץ על החלקות המהבהבות בגבול הכפר להוספת Tile חדש (עלות: {PLOT_CULTIVATION_COST} זרעים)</span>
+          <button
+            className="cancel-cultivate-pill"
+            onClick={() => setIsCultivatingMode(false)}
+          >
+            סיום ✕
+          </button>
+        </div>
+      )}
 
       {/* Floating Building Mode Banner */}
       {selectedBuildItem && (
@@ -6120,6 +6425,34 @@ export default function App() {
             </div>
 
             <div className="build-mode-toggles">
+              <button
+                className={`tool-toggle-btn expand-btn ${isCultivatingMode ? 'active' : ''}`}
+                onClick={() => {
+                  sounds.playTap();
+                  setIsCultivatingMode(!isCultivatingMode);
+                  if (!isCultivatingMode) {
+                    setSelectedBuildItem(null);
+                    setShowPlantingDrawer(false);
+                  }
+                }}
+                title="הוספת חלקות (Tiles) — לחץ על גבולות הכפר להרחבת השטח"
+              >
+                <Sprout size={13} />
+                <span>הוסף Tiles 🌱</span>
+              </button>
+
+              <button
+                className="tool-toggle-btn tier-btn"
+                onClick={() => {
+                  sounds.playTap();
+                  setShowExpansionModal(true);
+                  setShowPlantingDrawer(false);
+                }}
+                title="שדרוג נחלה — פתח את תפריט דרגות שטח הכפר"
+              >
+                <span>שדרוג נחלה 🏰</span>
+              </button>
+
               <button
                 className={`tool-toggle-btn ${continuousBuild ? 'active' : ''}`}
                 onClick={() => {
@@ -6293,6 +6626,130 @@ export default function App() {
           onRemove={handleRemoveObject}
           onVisit={handleDirectVillagerToItem}
         />
+      )}
+
+      {/* Village Territory Expansion & Land Cultivation Modal */}
+      {showExpansionModal && (
+        <div className="journal-backdrop expansion-backdrop" onClick={() => setShowExpansionModal(false)}>
+          <div className="expansion-modal glass-card" onClick={e => e.stopPropagation()}>
+            <div className="expansion-header">
+              <div className="expansion-title-wrap">
+                <Sprout size={26} className="text-emerald" />
+                <div>
+                  <h2>הרחבת שטח וגבולות הכפר</h2>
+                  <span className="expansion-sub">הגדל את שטח הכפר, הכשר חלקות אדמה חדשות ובנה עולם שליו ורחב ידיים</span>
+                </div>
+              </div>
+              <button className="close-mini-btn" onClick={() => setShowExpansionModal(false)}>
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Quick Actions & Stats Banner */}
+            <div className="expansion-quick-bar">
+              <div className="expansion-stat-pill">
+                <span className="stat-label">דרגת נחלה נוכחית:</span>
+                <strong className="stat-val">{EXPANSION_TIERS.find(t => t.tier === expansionTier)?.name || 'קרחת יער שלווה'} ({expansionTier}/4)</strong>
+              </div>
+              <div className="expansion-stat-pill">
+                <span className="stat-label">חלקות שהוכשרו:</span>
+                <strong className="stat-val">{cultivatedPlots.length} משבצות 🌱</strong>
+              </div>
+              <div className="expansion-stat-pill">
+                <span className="stat-label">יתרת זרעים:</span>
+                <strong className="stat-val">{seeds} זרעים</strong>
+              </div>
+            </div>
+
+            {/* Direct manual adding mode trigger */}
+            <div className="expansion-mode-callout">
+              <div className="callout-text">
+                <strong>רוצה להוסיף חלקות בודדות במפה?</strong>
+                <span>הפעל את מצב הרחבת שטח ולחץ ישירות על גבולות הכפר (10 זרעים לחלקה)</span>
+              </div>
+              <button
+                className={`callout-action-btn ${isCultivatingMode ? 'active' : ''}`}
+                onClick={() => {
+                  sounds.playTap();
+                  setIsCultivatingMode(true);
+                  setShowExpansionModal(false);
+                  setShowPlantingDrawer(false);
+                }}
+              >
+                <Plus size={16} />
+                <span>הוספת Tiles על המפה 🌱</span>
+              </button>
+            </div>
+
+            {/* Tiers List */}
+            <div className="expansion-tiers-list">
+              <h4 className="tiers-title">דרגות נחלה ושדרוג שטח:</h4>
+              {EXPANSION_TIERS.map(t => {
+                const isCurrent = t.tier === expansionTier;
+                const isUnlocked = t.tier <= expansionTier;
+                const canAfford = seeds >= t.costSeeds;
+
+                return (
+                  <div
+                    key={t.tier}
+                    className={`expansion-tier-card ${isCurrent ? 'current-tier' : ''} ${isUnlocked ? 'unlocked' : ''}`}
+                  >
+                    <div className="tier-badge-col">
+                      <span className="tier-emoji">{t.badge}</span>
+                      <span className="tier-num">דרגה {t.tier}</span>
+                    </div>
+
+                    <div className="tier-info-col">
+                      <div className="tier-top-row">
+                        <strong className="tier-name">{t.name}</strong>
+                        <span className="tier-tag">{t.tag}</span>
+                      </div>
+                      <p className="tier-desc">{t.desc}</p>
+                    </div>
+
+                    <div className="tier-action-col">
+                      {isCurrent ? (
+                        <div className="current-badge-pill">נחלה נוכחית ✓</div>
+                      ) : isUnlocked ? (
+                        <div className="unlocked-badge-pill">הושלם ✓</div>
+                      ) : (
+                        <button
+                          className={`upgrade-tier-btn ${!canAfford ? 'disabled' : ''}`}
+                          onClick={() => handleUpgradeTier(t.tier, t.costSeeds)}
+                          disabled={!canAfford}
+                        >
+                          <Sparkles size={14} />
+                          <span>שדרוג ({t.costSeeds} זרעים)</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Batch Expansion Tool */}
+            <div className="batch-cultivate-row">
+              <span className="batch-label">הכשרה מהירה:</span>
+              <button
+                className="batch-btn"
+                onClick={() => handleBatchCultivate(5, 45)}
+                disabled={seeds < 45}
+                title="הכשר 5 חלקות סמוכות בבת אחת (חסכון של 5 זרעים!)"
+              >
+                <span>הכשרת 5 חלקות 🌾 (45 זרעים)</span>
+              </button>
+              <button
+                className="batch-btn"
+                onClick={() => handleBatchCultivate(10, 85)}
+                disabled={seeds < 85}
+                title="הכשר 10 חלקות סמוכות בבת אחת (חסכון של 15 זרעים!)"
+              >
+                <span>הכשרת 10 חלקות ✨ (85 זרעים)</span>
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

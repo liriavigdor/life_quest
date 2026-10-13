@@ -258,6 +258,17 @@ export const BUILD_CATALOG = [
 
   // --- שבילים וגבולות (Paths & Fences) ---
   {
+    id: 'cultivated_plot_tile',
+    name: 'חלקת דשא מעובדת (Tile חדש)',
+    category: 'שבילים וגבולות',
+    tag: 'הרחבת גבולות',
+    desc: 'הוספת משבצת אדמה מעובדת לכפר — מרחיבה את גבולות הכפר ומאפשרת לבנות עליה.',
+    reflectionPrompt: 'איזה תחום חדש בחיים בחרת לפתוח ולהרחיב לאחרונה?',
+    costSeeds: 10,
+    renderType: 'cultivated_plot_tile',
+    emoji: '🌱'
+  },
+  {
     id: 'stone_path',
     name: 'שביל חלוקי נחל',
     category: 'שבילים וגבולות',
