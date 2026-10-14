@@ -6,7 +6,10 @@ import {
   Edit3, 
   Check, 
   Trash2, 
-  Footprints 
+  Footprints,
+  DoorOpen,
+  Tag,
+  Heart
 } from 'lucide-react';
 import { BUILD_CATALOG } from '../data/catalog';
 import { sounds } from '../utils/sound';
@@ -16,44 +19,49 @@ export function InspectedMemoryCard({
   onClose,
   onUpdateMemory,
   onRemove,
-  onVisit
+  onVisit,
+  onEnterInterior
 }) {
   if (!object) return null;
 
   const catalogItem = BUILD_CATALOG.find(c => c.renderType === object.type);
 
   // Parse memory & date safely with defaults
-  const initialMemory = object.memory || object.dedicatedTo || 'רגע מיוחד של שקט והודיה';
+  const initialMemory = object.memory || object.dedicatedTo || 'עוגן מרחבי אישי בכפר';
+  const initialCustomTitle = object.customName || catalogItem?.name || 'פינת כפר אישית';
   
   const parseInitialDate = () => {
     if (object.date) return object.date;
-    // Check if memory ends with (DD/MM/YYYY)
     const match = (object.dedicatedTo || '').match(/\(([^)]+)\)$/);
     if (match) return match[1];
     return new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
   };
 
   const [isEditing, setIsEditing] = useState(false);
+  const [customTitle, setCustomTitle] = useState(initialCustomTitle);
   const [memoryText, setMemoryText] = useState(initialMemory);
   const [dateText, setDateText] = useState(parseInitialDate());
 
   // Keep state synced when a different object is clicked
   useEffect(() => {
-    setMemoryText(object.memory || object.dedicatedTo || 'רגע מיוחד של שקט והודיה');
+    setCustomTitle(object.customName || catalogItem?.name || 'פינת כפר אישית');
+    setMemoryText(object.memory || object.dedicatedTo || 'עוגן מרחבי אישי בכפר');
     setDateText(parseInitialDate());
     setIsEditing(false);
-  }, [object.gx, object.gy, object.type]);
+  }, [object.gx, object.gy, object.type, object.customName]);
 
   const handleSave = (e) => {
     e?.preventDefault();
-    if (!memoryText.trim()) return;
-    onUpdateMemory(object.gx, object.gy, memoryText.trim(), dateText.trim());
+    onUpdateMemory(object.gx, object.gy, memoryText.trim(), dateText.trim(), customTitle.trim());
     setIsEditing(false);
     sounds.playTap();
   };
 
-  const displayName = catalogItem?.name || 'פינת כפר מיוחדת';
-  const displayEmoji = catalogItem?.emoji || '🌿';
+  const displayName = customTitle || catalogItem?.name || 'פינת כפר מיוחדת';
+  const displayEmoji = catalogItem?.emoji || (object.isAnimal ? '🐾' : '🌿');
+  const hasInterior = catalogItem?.hasInterior || object.hasInterior || [
+    'animal_coop', 'wooden_cabin', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio'
+  ].includes(object.type);
 
   return (
     <div className="inspected-memory-card glass-card" onClick={(e) => e.stopPropagation()}>
@@ -64,7 +72,20 @@ export function InspectedMemoryCard({
             <span>{displayEmoji}</span>
           </div>
           <div className="memory-card-titles">
-            <h3 className="memory-card-title">{displayName}</h3>
+            {isEditing ? (
+              <input 
+                type="text"
+                value={customTitle}
+                onChange={(e) => setCustomTitle(e.target.value)}
+                placeholder="תן שם או אסוציאציה (למשל: מברשת שיניים)..."
+                className="memory-edit-input memory-title-input"
+              />
+            ) : (
+              <h3 className="memory-card-title">{displayName}</h3>
+            )}
+            {catalogItem?.name && catalogItem.name !== displayName && (
+              <span className="memory-card-sub">{catalogItem.name}</span>
+            )}
           </div>
         </div>
 
@@ -86,13 +107,13 @@ export function InspectedMemoryCard({
             <Calendar size={16} className="text-amber" />
           </div>
           <div className="memory-date-content">
-            <span className="memory-date-label">תאריך ההנצחה בכפר:</span>
+            <span className="memory-date-label">תאריך הצבה בכפר:</span>
             {isEditing ? (
               <input 
                 type="text" 
                 value={dateText}
                 onChange={(e) => setDateText(e.target.value)}
-                placeholder="למשל 13/10/2026"
+                placeholder="למשל 14/10/2026"
                 className="memory-edit-input memory-date-input"
               />
             ) : (
@@ -103,18 +124,18 @@ export function InspectedMemoryCard({
           </div>
         </div>
 
-        {/* Memory Content */}
+        {/* Association & Memory Content */}
         <div className="memory-quote-box">
           <div className="memory-quote-header">
             <div className="memory-quote-title">
               <Sparkles size={15} className="text-emerald" />
-              <span>הזיכרון והמשמעות שהונצחו:</span>
+              <span>משמעות ואסוציאציה אישית:</span>
             </div>
             {!isEditing && (
               <button 
                 className="memory-edit-toggle-btn"
                 onClick={() => setIsEditing(true)}
-                title="ערוך זיכרון או תאריך"
+                title="ערוך שם אישי, אסוציאציה או תאריך"
               >
                 <Edit3 size={13} />
                 <span>עריכה</span>
@@ -128,7 +149,7 @@ export function InspectedMemoryCard({
                 value={memoryText}
                 onChange={(e) => setMemoryText(e.target.value)}
                 rows={3}
-                placeholder="כתוב כאן את הזיכרון, הרגע או ההקדשה של הפינה הזו..."
+                placeholder="כתוב כאן מה העוגן הזה מסמל עבורך, שגרה שתרצה לזכור, או סיפור הדרך..."
                 className="memory-edit-textarea"
                 autoFocus
               />
@@ -139,12 +160,13 @@ export function InspectedMemoryCard({
                   onClick={handleSave}
                 >
                   <Check size={14} />
-                  <span>שמור זיכרון</span>
+                  <span>שמור שינויים</span>
                 </button>
                 <button 
                   type="button" 
                   className="memory-cancel-btn"
                   onClick={() => {
+                    setCustomTitle(initialCustomTitle);
                     setMemoryText(initialMemory);
                     setDateText(parseInitialDate());
                     setIsEditing(false);
@@ -165,6 +187,17 @@ export function InspectedMemoryCard({
 
         {/* Action Buttons Row */}
         <div className="memory-actions-row">
+          {hasInterior && onEnterInterior && (
+            <button 
+              className="mem-action-btn mem-interior-btn"
+              onClick={() => onEnterInterior(object, catalogItem)}
+              title="כניסה לתוך חלל הפנים המעוצב של המבנה"
+            >
+              <DoorOpen size={16} />
+              <span>היכנס פנימה 🚪</span>
+            </button>
+          )}
+
           <button 
             className="mem-action-btn mem-visit-btn"
             onClick={() => onVisit(object)}
@@ -177,7 +210,7 @@ export function InspectedMemoryCard({
           <button 
             className="mem-action-btn mem-remove-btn"
             onClick={() => onRemove(object)}
-            title="הסרת הפריט מהכפר וקבלת הזרעים חזרה"
+            title="הסרת הפריט מהכפר"
           >
             <Trash2 size={15} />
             <span>הסר 🧹</span>

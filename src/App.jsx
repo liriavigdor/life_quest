@@ -4,7 +4,10 @@ import { BUILD_CATALOG, BUILD_CATEGORIES, INITIAL_INTENTIONS, WARM_AFFIRMATIONS 
 import { OUTFITS, ACTIVITIES, VILLAGER_THOUGHTS, DEFAULT_VILLAGER_LOOK } from './data/wardrobe';
 import { WardrobeModal } from './components/WardrobeModal';
 import { InspectedMemoryCard } from './components/InspectedMemoryCard';
+import { BuildingInteriorModal } from './components/BuildingInteriorModal';
 import { drawCompleteVillager } from './utils/villagerRenderer';
+import { drawAnimal } from './utils/animalRenderer';
+import { loadSavedAnimals, saveAnimals, createAnimal, updateAnimalsSimulation } from './utils/animalSimulation';
 import { sounds } from './utils/sound';
 import {
   Sprout,
@@ -18,11 +21,13 @@ import {
   Sunset,
   Sun,
   Moon,
-  RotateCcw,
   Hammer,
   Trash2,
   Search,
-  RefreshCw
+  RefreshCw,
+  Brain,
+  Tag,
+  DoorOpen
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
 import './App.css';
@@ -5617,7 +5622,7 @@ export default function App() {
   };
 
 
-  // Mouse / Touch Down: Initiate click, long-press drag, or camera pan
+  // Mouse / Touch Down: Initiate click or item drag (Village itself cannot be moved)
   const handlePointerDown = (e) => {
     const coords = getTileCoordsFromEvent(e);
     if (!coords) return;
@@ -5680,7 +5685,7 @@ export default function App() {
     };
   };
 
-  // Mouse / Touch Move: Update hover tile, instant drag, or pan camera (0 React re-renders during move)
+  // Mouse / Touch Move: Update hover tile or instant item drag (Village position is strictly fixed)
   const handlePointerMove = (e) => {
     const coords = getTileCoordsFromEvent(e);
     if (!coords) return;
@@ -5734,6 +5739,7 @@ export default function App() {
         downInfo.hasMoved = true;
 
         // Instant Direct Drag & Drop: Pick up item immediately upon moving mouse
+        // Note: The village itself is strictly fixed and cannot be panned or moved
         if (downInfo.item && !activeDragRef.current && !isDemolishModeRef.current && !selectedBuildItemRef.current) {
           activeDragRef.current = {
             item: downInfo.item,
@@ -5747,18 +5753,6 @@ export default function App() {
           if (canvas) {
             canvas.style.cursor = 'grabbing';
           }
-        } else if (!downInfo.item && !activeDragRef.current) {
-          // Butter-smooth camera pan directly in ref
-          const deltaX = clientX - downInfo.lastX;
-          const deltaY = clientY - downInfo.lastY;
-          if (cameraPanRef.current) {
-            cameraPanRef.current = {
-              x: cameraPanRef.current.x + deltaX,
-              y: cameraPanRef.current.y + deltaY
-            };
-          }
-          downInfo.lastX = clientX;
-          downInfo.lastY = clientY;
         }
       }
     }
@@ -5814,11 +5808,8 @@ export default function App() {
       return;
     }
 
-    // Sync camera pan state once when drag pan ends
+    // Pointer moved without dragging an item: village itself stays anchored in place
     if (downInfo && downInfo.hasMoved && !downInfo.item) {
-      if (cameraPanRef.current) {
-        setCameraPan({ ...cameraPanRef.current });
-      }
       pointerDownInfoRef.current = null;
       return;
     }
@@ -6343,21 +6334,9 @@ export default function App() {
           onTouchStart={handlePointerDown}
           onTouchMove={handlePointerMove}
           onTouchEnd={handlePointerUp}
-          style={{ cursor: draggingObject ? 'grabbing' : isCultivatingMode ? 'crosshair' : 'pointer' }}
+          style={{ cursor: draggingObject ? 'grabbing' : isCultivatingMode ? 'crosshair' : 'default' }}
         />
       </main>
-
-      {/* Recenter Camera Button (Shown if camera is panned) */}
-      {(cameraPan.x !== 0 || cameraPan.y !== 0) && (
-        <button
-          className="recenter-cam-btn"
-          onClick={() => { sounds.playTap(); setCameraPan({ x: 0, y: 0 }); }}
-          title="מרכז את התצוגה למרכז הכפר"
-        >
-          <RotateCcw size={14} />
-          <span>מרכז מבט</span>
-        </button>
-      )}
 
 
       {/* Rich Building & Creation Center Studio */}
