@@ -231,6 +231,24 @@ export default function App() {
 
   const [showInstitutionsModal, setShowInstitutionsModal] = useState(false);
 
+  // Living Autonomous Animals State
+  const [animals, setAnimals] = useState(loadSavedAnimals);
+  const animalsRef = useRef(animals);
+  useEffect(() => {
+    animalsRef.current = animals;
+    saveAnimals(animals);
+  }, [animals]);
+
+  // Mind Map Associative Tags Overlay
+  const [showMindMapTags, setShowMindMapTags] = useState(true);
+  const showMindMapTagsRef = useRef(showMindMapTags);
+  useEffect(() => {
+    showMindMapTagsRef.current = showMindMapTags;
+  }, [showMindMapTags]);
+
+  // Multi-dimensional Interior Building State
+  const [interiorBuilding, setInteriorBuilding] = useState(null);
+
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY_INSTITUTION_RESOURCES, JSON.stringify(villageResources));
   }, [villageResources]);
