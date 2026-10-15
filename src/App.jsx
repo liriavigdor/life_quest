@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import confetti from 'canvas-confetti';
 import { BUILD_CATALOG, BUILD_CATEGORIES, INITIAL_INTENTIONS, WARM_AFFIRMATIONS } from './data/catalog';
 import { OUTFITS, ACTIVITIES, VILLAGER_THOUGHTS, DEFAULT_VILLAGER_LOOK } from './data/wardrobe';
 import { WardrobeModal } from './components/WardrobeModal';
@@ -6061,31 +6060,6 @@ export default function App() {
     setCultivatedPlots(prev => [...prev, newPlot]);
     setFrontierInspectTile(null);
 
-    const canvas = canvasRef.current;
-    if (canvas) {
-      const zoom = cameraZoomRef.current || 1;
-      const origin = {
-        x: canvas.width / 2 + cameraPan.x,
-        y: canvas.height * GRID_ORIGIN_Y_RATIO + cameraPan.y
-      };
-      const worldX = origin.x + (gx - gy) * (TILE_W / 2);
-      const worldY = origin.y + (gx + gy) * (TILE_H / 2);
-      const screenPos = {
-        x: origin.x + (worldX - origin.x) * zoom,
-        y: origin.y + (worldY - origin.y) * zoom
-      };
-      const rect = canvas.getBoundingClientRect();
-      confetti({
-        particleCount: 26,
-        spread: 45,
-        origin: {
-          x: Math.max(0, Math.min(1, (screenPos.x + rect.left) / window.innerWidth)),
-          y: Math.max(0, Math.min(1, (screenPos.y + rect.top) / window.innerHeight))
-        },
-        colors: ['#a3e635', '#fde047', '#34d399', '#ca8a04']
-      });
-    }
-
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.hopVy = -5.8;
@@ -6100,13 +6074,6 @@ export default function App() {
   const handleUpgradeTier = (targetTier) => {
     sounds.playTerritoryExpand();
     setExpansionTier(targetTier);
-
-    confetti({
-      particleCount: 75,
-      spread: 85,
-      origin: { y: 0.5 },
-      colors: ['#f472b6', '#34d399', '#fde047', '#60a5fa', '#a855f7']
-    });
 
     const tierName = EXPANSION_TIERS.find(t => t.tier === targetTier)?.name || '';
     const v = animEntitiesRef.current.villager;
@@ -6137,12 +6104,6 @@ export default function App() {
 
     if (newPlots.length > 0) {
       setCultivatedPlots(prev => [...prev, ...newPlots]);
-      confetti({
-        particleCount: 45,
-        spread: 60,
-        origin: { y: 0.6 },
-        colors: ['#10b981', '#fde047', '#a3e635']
-      });
       const v = animEntitiesRef.current.villager;
       if (v) {
         v.hopVy = -6.0;
@@ -6183,12 +6144,6 @@ export default function App() {
 
     // Play building upgrade fanfare sound
     sounds.playBuildingUpgrade();
-    confetti({
-      particleCount: 55,
-      spread: 70,
-      origin: { y: 0.55 },
-      colors: ['#f59e0b', '#10b981', '#3b82f6', '#ec4899', '#fde047']
-    });
 
     // Update placed object level
     setPlacedObjects(prev => prev.map(o => {
@@ -6232,14 +6187,6 @@ export default function App() {
       return o;
     }));
 
-    // Harvesting confetti
-    confetti({
-      particleCount: 30,
-      spread: 50,
-      origin: { y: 0.65 },
-      colors: ['#34d399', '#fde047', '#f472b6', '#38bdf8']
-    });
-
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.hopVy = -5.0;
@@ -6264,13 +6211,6 @@ export default function App() {
     setInspectedObject(null);
     setMovingObject(null);
 
-    confetti({
-      particleCount: 18,
-      spread: 40,
-      origin: { y: 0.65 },
-      colors: ['#a7f3d0', '#6ee7b7', '#fde047']
-    });
-
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.bubble = { text: 'הפריט הוסר והמשבצת פונתה בהצלחה! 🧹', timer: 260 };
@@ -6283,12 +6223,6 @@ export default function App() {
   const handleAddInspirationSeeds = () => {
     sounds.playNourish();
     setSeeds(s => s + 100);
-    confetti({
-      particleCount: 40,
-      spread: 65,
-      origin: { y: 0.5 },
-      colors: ['#34d399', '#fde047', '#60a5fa', '#f472b6']
-    });
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.hopVy = -5.8;
@@ -6397,13 +6331,6 @@ export default function App() {
       customEmoji: newCustomEmoji !== undefined ? newCustomEmoji : prev.customEmoji
     } : null);
 
-    confetti({
-      particleCount: 22,
-      spread: 45,
-      origin: { y: 0.65 },
-      colors: ['#34d399', '#fde047', '#60a5fa']
-    });
-
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.hopVy = -4.5;
@@ -6453,13 +6380,6 @@ export default function App() {
       lastCaredDate: todayStr,
       completed: true
     } : null);
-
-    confetti({
-      particleCount: 35,
-      spread: 60,
-      origin: { y: 0.6 },
-      colors: ['#34d399', '#fde047', '#60a5fa', '#f472b6']
-    });
 
     const v = animEntitiesRef.current.villager;
     if (v) {
@@ -6517,25 +6437,12 @@ export default function App() {
       v.emote = '💖';
       v.emoteTimer = 140;
     }
-
-    confetti({
-      particleCount: 28,
-      spread: 55,
-      origin: { y: 0.6 },
-      colors: ['#34d399', '#60a5fa', '#fde047', '#a7f3d0']
-    });
   };
 
   // Pick fruit from fruit tree or bush
   const handlePickFruit = (obj) => {
     sounds.playNourish();
     setFruitsEaten(f => f + 1);
-    confetti({
-      particleCount: 20,
-      spread: 45,
-      origin: { y: 0.6 },
-      colors: ['#ef4444', '#f87171', '#fde047']
-    });
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.hopVy = -5.0;
@@ -6633,15 +6540,6 @@ export default function App() {
         v.hopY = -1;
         v.emote = '👗';
         v.emoteTimer = 130;
-        confetti({
-          particleCount: 22,
-          spread: 45,
-          origin: {
-            x: clientX / window.innerWidth,
-            y: (clientY - 20) / window.innerHeight
-          },
-          colors: ['#f472b6', '#fde047', '#6ee7b7']
-        });
         setWardrobeInitialTab('wardrobe');
         setShowWardrobe(true);
         pointerDownInfoRef.current = null;
@@ -6859,11 +6757,6 @@ export default function App() {
             }
             return o;
           }));
-          confetti({
-            particleCount: 22,
-            spread: 45,
-            origin: { y: 0.65 }
-          });
           const v = animEntitiesRef.current.villager;
           if (v) {
             v.emote = '🏡';
@@ -6942,11 +6835,6 @@ export default function App() {
               setPlacedObjects(prev => prev.map(o => (o.gx === movingObject.gx && o.gy === movingObject.gy) ? { ...o, gx, gy } : o));
               setMovingObject(null);
               setIsMoveToolActive(false);
-              confetti({
-                particleCount: 24,
-                spread: 45,
-                origin: { y: 0.65 }
-              });
               const v = animEntitiesRef.current.villager;
               if (v) {
                 v.emote = '🏡';
@@ -7020,12 +6908,6 @@ export default function App() {
               setAnimals([...animalsRef.current]);
             }
 
-            confetti({
-              particleCount: isModular ? 8 : 25,
-              spread: isModular ? 25 : 45,
-              origin: { y: 0.65 }
-            });
-
             // For modular items (walls, fences, paths), keep tool selected so user can place in stacks!
             if (!continuousBuild && !isModular) {
               setSelectedBuildItem(null);
@@ -7077,12 +6959,6 @@ export default function App() {
         const nextState = !item.completed;
         if (nextState) {
           sounds.playNourish();
-          confetti({
-            particleCount: 45,
-            spread: 60,
-            origin: { y: 0.55 },
-            colors: ['#f472b6', '#34d399', '#fde047', '#60a5fa']
-          });
           setSeeds(s => s + item.seedsEarned);
         } else {
           setSeeds(s => Math.max(0, s - item.seedsEarned));
@@ -7129,11 +7005,6 @@ export default function App() {
       v.emote = '✨';
       v.emoteTimer = 130;
     }
-    confetti({
-      particleCount: 22,
-      spread: 45,
-      origin: { y: 0.6 }
-    });
   };
 
   // Handle direct request to perform an activity
