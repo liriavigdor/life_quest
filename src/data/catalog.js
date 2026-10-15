@@ -459,6 +459,18 @@ export const BUILD_CATALOG = [
     emoji: '🧱'
   },
   {
+    id: 'dirt_trail',
+    name: 'שביל עפר כפרי (Dirt Trail)',
+    category: 'שבילים וגבולות',
+    tag: 'טבע וחיבור',
+    desc: 'שביל אדמה כפרי טבעי עם שוליים רכים ואבני חצץ עדינות. מחבר ברצף ובנוחות בין שדות, פינות מרעה ומבנים.',
+    reflectionPrompt: 'איזה נתיב טבעי ונעים מוביל אותך לשקט היום?',
+    costSeeds: 0,
+    renderType: 'dirt_trail',
+    isModular: true,
+    emoji: '🍂'
+  },
+  {
     id: 'stone_wall',
     name: 'חומת אבן מבצר (סגנון קלאש)',
     category: 'שבילים וגבולות',

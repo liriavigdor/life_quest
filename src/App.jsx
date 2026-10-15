@@ -51,7 +51,8 @@ const TILE_W = 68;
 const TILE_H = 34;
 const GRID_ORIGIN_Y_RATIO = 0.065;
 
-// Calculate optimal camera zoom and pan to fit the active village beautifully on any screen size
+// Calculate optimal camera zoom and pan to fit the active village beautifully on any screen size,
+// with dedicated mobile landscape optimization (Clash of Clans style)
 function getOptimalCameraFit(w, h, placedList = [], cultivatedList = []) {
   let minGx = 8, maxGx = 17, minGy = 8, maxGy = 17;
 
@@ -89,17 +90,45 @@ function getOptimalCameraFit(w, h, placedList = [], cultivatedList = []) {
   const spanGx = maxGx - minGx + 1;
   const spanGy = maxGy - minGy + 1;
   const isoSpanW = (spanGx + spanGy) * (TILE_W / 2);
+  const isoSpanH = (spanGx + spanGy) * (TILE_H / 2) + 95; // Account for 2.5D building/tree heights
 
-  // Target width to frame comfortably
-  const targetW = Math.max(w < 500 ? 580 : 720, isoSpanW);
-  const paddingX = w < 500 ? 16 : 80;
-  const optimalZoom = Math.min(1.25, Math.max(0.38, (w - paddingX) / targetW));
+  // Distinguish display modes
+  const isLandscape = w > h;
+  const isMobileLandscape = isLandscape && h < 560;
+  const isMobilePortrait = !isLandscape && w < 540;
+
+  let optimalZoom;
+  let targetScreenY;
+
+  if (isMobileLandscape) {
+    // Clash of Clans Mobile Landscape Mode:
+    // Screen is wide (e.g. 740-950px) but short (320-430px).
+    // Height is the primary constraint. We frame both width & height comfortably!
+    const availableH = h - 45; // Small margin for top/bottom HUD
+    const availableW = w - 140; // Margin for side dock
+    const zoomByH = availableH / Math.max(370, isoSpanH);
+    const zoomByW = availableW / Math.max(540, isoSpanW);
+    optimalZoom = Math.min(0.85, Math.max(0.36, Math.min(zoomByH, zoomByW)));
+    // Dead center vertically on landscape screens
+    targetScreenY = h * 0.52;
+  } else if (isMobilePortrait) {
+    const targetW = Math.max(520, isoSpanW);
+    optimalZoom = Math.min(0.85, Math.max(0.36, (w - 20) / targetW));
+    targetScreenY = h * 0.46;
+  } else {
+    // Desktop / Large screen
+    const targetW = Math.max(680, isoSpanW);
+    const targetH = Math.max(460, isoSpanH);
+    const zoomW = (w - 100) / targetW;
+    const zoomH = (h - 90) / targetH;
+    optimalZoom = Math.min(1.2, Math.max(0.40, Math.min(zoomW, zoomH)));
+    targetScreenY = h * 0.49;
+  }
 
   // Center in world coordinates relative to origin
   const centerWorldX = (centerGx - centerGy) * (TILE_W / 2);
   const centerWorldY = (centerGx + centerGy) * (TILE_H / 2);
 
-  const targetScreenY = h * (w < 500 ? 0.44 : 0.48);
   const panX = Math.round(-centerWorldX * optimalZoom);
   const panY = Math.round(targetScreenY - (h * GRID_ORIGIN_Y_RATIO) - (centerWorldY * optimalZoom));
 
@@ -243,6 +272,7 @@ export default function App() {
   const isMoveToolActiveRef = useRef(false);
   const [showSanctuaryJournal, setShowSanctuaryJournal] = useState(false);
   const [showPlantingDrawer, setShowPlantingDrawer] = useState(false);
+  const [showPathsPalette, setShowPathsPalette] = useState(false);
   const [soundMuted, setSoundMuted] = useState(false);
   const [newIntentionText, setNewIntentionText] = useState('');
   const [newIntentionCategory, setNewIntentionCategory] = useState('מנוחה ונפש');
@@ -300,6 +330,41 @@ export default function App() {
 
   const hasUserPannedOrZoomedRef = useRef(false);
   const pinchRef = useRef(null);
+
+  // Mobile Landscape Detection & Orientation Helper (Clash of Clans style)
+  const lastOrientationRef = useRef(
+    typeof window !== 'undefined' ? (window.innerWidth > window.innerHeight ? 'landscape' : 'portrait') : 'landscape'
+  );
+  const [isMobilePortrait, setIsMobilePortrait] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerHeight > window.innerWidth && window.innerWidth < 640;
+  });
+  const [dismissedOrientationPrompt, setDismissedOrientationPrompt] = useState(false);
+
+  // Fullscreen / Landscape toggle
+  const handleToggleFullscreen = async () => {
+    sounds.playTap();
+    try {
+      if (!document.fullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        }
+        if (screen.orientation && screen.orientation.lock) {
+          try {
+            await screen.orientation.lock('landscape');
+          } catch (e) {
+            console.log('Orientation lock unavailable', e);
+          }
+        }
+      } else {
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+        }
+      }
+    } catch (e) {
+      console.log('Fullscreen error', e);
+    }
+  };
 
   // Reset & Center view to perfectly frame the village
   const handleFitToScreen = () => {
@@ -688,8 +753,17 @@ export default function App() {
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      // Auto-adapt camera framing on resize or screen rotation if user hasn't manually panned
-      if (!hasUserPannedOrZoomedRef.current) {
+
+      const currentOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+      const orientationChanged = currentOrientation !== lastOrientationRef.current;
+      lastOrientationRef.current = currentOrientation;
+
+      setIsMobilePortrait(window.innerHeight > window.innerWidth && window.innerWidth < 640);
+
+      // Auto-adapt camera framing on resize or screen rotation!
+      // If the orientation changed (e.g. phone turned to landscape), ALWAYS re-fit perfectly!
+      if (orientationChanged || !hasUserPannedOrZoomedRef.current) {
+        hasUserPannedOrZoomedRef.current = false;
         const fit = getOptimalCameraFit(
           window.innerWidth,
           window.innerHeight,
@@ -704,6 +778,11 @@ export default function App() {
     };
     resize();
     window.addEventListener('resize', resize);
+    const onOrient = () => {
+      setTimeout(resize, 80);
+      setTimeout(resize, 260);
+    };
+    window.addEventListener('orientationchange', onOrient);
 
     // Desktop smooth mouse wheel zooming
     const handleCanvasWheel = (e) => {
@@ -1684,6 +1763,40 @@ export default function App() {
 
         case 'cobblestone_road': {
           ctx.save();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+          const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+
+          // Base connector ribbons for continuous road underlay
+          const drawRoadConnector = (p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) => {
+            ctx.fillStyle = '#26221f';
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y);
+            ctx.lineTo(p2x, p2y);
+            ctx.lineTo(p3x, p3y);
+            ctx.lineTo(p4x, p4y);
+            ctx.closePath();
+            ctx.fill();
+            ctx.fillStyle = '#44403c';
+            ctx.beginPath();
+            ctx.moveTo(p1x * 0.9 + cx * 0.1, p1y * 0.9 + cy * 0.1);
+            ctx.lineTo(p2x * 0.9 + cx * 0.1, p2y * 0.9 + cy * 0.1);
+            ctx.lineTo(p3x * 0.9 + cx * 0.1, p3y * 0.9 + cy * 0.1);
+            ctx.lineTo(p4x * 0.9 + cx * 0.1, p4y * 0.9 + cy * 0.1);
+            ctx.closePath();
+            ctx.fill();
+          };
+
+          if (hasEast) drawRoadConnector(cx - 6, cy + 3, cx + 6, cy - 3, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
+          if (hasWest) drawRoadConnector(cx + 6, cy - 3, cx - 6, cy + 3, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
+          if (hasSouth) drawRoadConnector(cx - 6, cy - 3, cx + 6, cy + 3, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
+          if (hasNorth) drawRoadConnector(cx + 6, cy + 3, cx - 6, cy - 3, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+
           // Pass 1: Foundation base mortar bed (slightly recessed diamond with feathered edges)
           ctx.fillStyle = '#26221f';
           ctx.beginPath();
@@ -1720,6 +1833,24 @@ export default function App() {
             { cx: 0, cy: -13, rx: 3.8, ry: 2.2, col: '#6b7280', light: '#9ca3af' },
             { cx: 0, cy: 13, rx: 3.8, ry: 2.2, col: '#57534e', light: '#78716c' },
           ];
+
+          // Dynamic connector stones extending across edges to neighbors
+          if (hasEast) {
+            cobbles.push({ cx: 17, cy: 8.5, rx: 5.5, ry: 3.2, col: '#78716c', light: '#a8a29e' });
+            cobbles.push({ cx: 25, cy: 12, rx: 4.2, ry: 2.5, col: '#64748b', light: '#94a3b8' });
+          }
+          if (hasWest) {
+            cobbles.push({ cx: -17, cy: -8.5, rx: 5.5, ry: 3.2, col: '#6b7280', light: '#9ca3af' });
+            cobbles.push({ cx: -25, cy: -12, rx: 4.2, ry: 2.5, col: '#57534e', light: '#78716c' });
+          }
+          if (hasSouth) {
+            cobbles.push({ cx: -17, cy: 8.5, rx: 5.5, ry: 3.2, col: '#71717a', light: '#a1a1aa' });
+            cobbles.push({ cx: -25, cy: 12, rx: 4.2, ry: 2.5, col: '#64748b', light: '#94a3b8' });
+          }
+          if (hasNorth) {
+            cobbles.push({ cx: 17, cy: -8.5, rx: 5.5, ry: 3.2, col: '#57534e', light: '#854d0e' });
+            cobbles.push({ cx: 25, cy: -12, rx: 4.2, ry: 2.5, col: '#78716c', light: '#a8a29e' });
+          }
 
           cobbles.forEach(c => {
             const sx = cx + c.cx;
@@ -1770,12 +1901,27 @@ export default function App() {
 
         case 'stone_path': {
           ctx.save();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+          const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+
           // Flagstone stepping stones with natural variation, beveled edges and grass tufts
           const stones = [
             { x: cx - 12, y: cy - 2, rx: 7.5, ry: 4.5, baseCol: '#cbd5e1', lightCol: '#f1f5f9' },
             { x: cx + 9, y: cy - 4, rx: 8.5, ry: 5.2, baseCol: '#94a3b8', lightCol: '#e2e8f0' },
             { x: cx - 2, y: cy + 4, rx: 9.5, ry: 5.5, baseCol: '#64748b', lightCol: '#cbd5e1' }
           ];
+
+          // Seamless stepping stones towards neighbors
+          if (hasEast) stones.push({ x: cx + 17, y: cy + 7, rx: 7.8, ry: 4.8, baseCol: '#94a3b8', lightCol: '#f1f5f9' });
+          if (hasWest) stones.push({ x: cx - 17, y: cy - 7, rx: 7.5, ry: 4.5, baseCol: '#64748b', lightCol: '#cbd5e1' });
+          if (hasSouth) stones.push({ x: cx - 17, y: cy + 7, rx: 7.8, ry: 4.8, baseCol: '#cbd5e1', lightCol: '#f1f5f9' });
+          if (hasNorth) stones.push({ x: cx + 17, y: cy - 7, rx: 7.5, ry: 4.5, baseCol: '#94a3b8', lightCol: '#e2e8f0' });
 
           stones.forEach(s => {
             // Shadow beneath stone
@@ -1805,25 +1951,114 @@ export default function App() {
           break;
         }
 
+        case 'dirt_trail': {
+          ctx.save();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+          const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+
+          // Base earth colors
+          const dirtDark = '#45260f';
+          const dirtMid = '#78471c';
+          const dirtLight = '#9a602f';
+
+          // Helper to draw connecting dirt strip to adjacent tiles
+          const drawDirtConnector = (p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) => {
+            ctx.fillStyle = dirtDark;
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y + 1);
+            ctx.lineTo(p2x, p2y + 1);
+            ctx.lineTo(p3x, p3y + 1);
+            ctx.lineTo(p4x, p4y + 1);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = dirtMid;
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y);
+            ctx.lineTo(p2x, p2y);
+            ctx.lineTo(p3x, p3y);
+            ctx.lineTo(p4x, p4y);
+            ctx.closePath();
+            ctx.fill();
+          };
+
+          if (hasEast) drawDirtConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
+          if (hasWest) drawDirtConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
+          if (hasSouth) drawDirtConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
+          if (hasNorth) drawDirtConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+
+          // Center packed earth bed
+          ctx.fillStyle = dirtDark;
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 1.5, 23, 11.5, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = dirtMid;
+          ctx.beginPath();
+          ctx.ellipse(cx, cy, 21, 10.5, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Soft center path wear (lighter sun-baked soil)
+          ctx.fillStyle = dirtLight;
+          ctx.beginPath();
+          ctx.ellipse(cx, cy - 0.5, 14, 6.5, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Embedded rustic gravel pebbles
+          const pebbles = [
+            { x: cx - 11, y: cy - 2, rx: 2.2, ry: 1.4, col: '#a8a29e' },
+            { x: cx + 10, y: cy + 1, rx: 2.5, ry: 1.5, col: '#78716c' },
+            { x: cx - 2, y: cy + 4, rx: 1.8, ry: 1.2, col: '#94a3b8' },
+            { x: cx + 4, y: cy - 3.5, rx: 2.0, ry: 1.3, col: '#a8a29e' },
+            { x: cx - 6, y: cy - 4, rx: 1.6, ry: 1.1, col: '#78716c' }
+          ];
+          pebbles.forEach(pb => {
+            ctx.fillStyle = 'rgba(20, 10, 5, 0.4)';
+            ctx.beginPath();
+            ctx.ellipse(pb.x, pb.y + 0.8, pb.rx, pb.ry, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = pb.col;
+            ctx.beginPath();
+            ctx.ellipse(pb.x, pb.y, pb.rx, pb.ry, 0, 0, Math.PI * 2);
+            ctx.fill();
+          });
+
+          // Soft border wild grass blades
+          ctx.fillStyle = '#65a30d';
+          ctx.fillRect(cx - 15, cy + 2, 1.2, 2.8);
+          ctx.fillRect(cx + 14, cy - 3, 1.2, 2.5);
+          ctx.fillRect(cx - 5, cy - 7, 1.2, 2.4);
+
+          ctx.restore();
+          break;
+        }
+
         case 'stone_wall': {
           ctx.save();
           const ogx = objData.gx;
           const ogy = objData.gy;
           const objs = placedObjectsRef.current || [];
           
-          // Check adjacent stone walls for seamless modular Clash of Clans connections
+          // Check adjacent stone walls for seamless modular connections
           const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
           const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
           const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
           const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
 
-          // Pass 1: Ground contact ambient shadow
-          ctx.fillStyle = 'rgba(15, 23, 42, 0.42)';
+          // Pass 1: Scaled-down ground contact ambient shadow
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.38)';
           ctx.beginPath();
-          ctx.ellipse(cx, cy + 5, 22, 10, 0, 0, Math.PI * 2);
+          ctx.ellipse(cx, cy + 3.5, 14, 6.5, 0, 0, Math.PI * 2);
           ctx.fill();
 
-          const wallH = 19; // Height of fortress wall extrusion
+          // Proportionate low fortress rampart height (down from 19 to 9.5)
+          const wallH = 9.5;
 
           // Helper to draw an isometric wall block segment
           const drawWallBlock = (x1, y1, x2, y2, x3, y3, x4, y4, height) => {
@@ -1854,10 +2089,10 @@ export default function App() {
             ctx.closePath();
             ctx.fill();
 
-            // Horizontal Ashlar Mortar Grooves
+            // Horizontal Ashlar Mortar Groove
             ctx.strokeStyle = '#1e293b';
-            ctx.lineWidth = 0.9;
-            [-0.33, -0.66].forEach(f => {
+            ctx.lineWidth = 0.8;
+            [-0.5].forEach(f => {
               ctx.beginPath();
               ctx.moveTo(x4, y4 + height * f);
               ctx.lineTo(x1, y1 + height * f);
@@ -1884,7 +2119,7 @@ export default function App() {
 
             // Top Cap Beveled Rim & Sunlit Keylight
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(x4, y4 - height);
             ctx.lineTo(x1, y1 - height);
@@ -1895,52 +2130,52 @@ export default function App() {
           // Draw connectors to neighbors first (so center pillar caps sit neatly on top)
           if (hasEast) {
             // Connector down-right towards (cx + 17, cy + 8.5)
-            drawWallBlock(cx + 8, cy + 7, cx + 18, cy + 2, cx + 10, cy - 2, cx, cy + 3, wallH - 1);
+            drawWallBlock(cx + 4.5, cy + 4, cx + 17, cy + 0.5, cx + 11.5, cy - 2.5, cx, cy + 1, wallH - 0.8);
           }
           if (hasWest) {
             // Connector up-left towards (cx - 17, cy - 8.5)
-            drawWallBlock(cx, cy + 3, cx + 10, cy - 2, cx, cy - 7, cx - 10, cy - 2, wallH - 1);
+            drawWallBlock(cx, cy + 1, cx + 5.5, cy - 2, cx - 7, cy - 8.5, cx - 12.5, cy - 5.5, wallH - 0.8);
           }
           if (hasSouth) {
             // Connector down-left towards (cx - 17, cy + 8.5)
-            drawWallBlock(cx - 8, cy + 7, cx, cy + 3, cx - 10, cy - 2, cx - 18, cy + 2, wallH - 1);
+            drawWallBlock(cx - 4.5, cy + 4, cx, cy + 1, cx - 11.5, cy - 2.5, cx - 17, cy + 0.5, wallH - 0.8);
           }
           if (hasNorth) {
             // Connector up-right towards (cx + 17, cy - 8.5)
-            drawWallBlock(cx, cy + 3, cx + 18, cy - 6, cx + 10, cy - 11, cx, cy - 2, wallH - 1);
+            drawWallBlock(cx, cy + 1, cx + 12.5, cy - 5.5, cx + 7, cy - 8.5, cx - 5.5, cy - 2, wallH - 0.8);
           }
 
-          // Main Center Fortress Wall Bastion Pillar (cx, cy)
-          drawWallBlock(cx, cy + 4, cx + 13, cy - 2.5, cx, cy - 9, cx - 13, cy - 2.5, wallH);
+          // Main Center Fortress Wall Bastion Pillar (cx, cy) - scaled down to width 15, depth 8
+          drawWallBlock(cx, cy + 2.5, cx + 7.5, cy - 1.5, cx, cy - 5.5, cx - 7.5, cy - 1.5, wallH);
 
-          // Fortress Crenellations / Battlements (Clash of Clans iconic merlons!)
+          // Fortress Crenellations / Battlements (scaled down merlons)
           const merlons = [
-            { x: cx - 10, y: cy - 2.5 - wallH - 2, w: 4.5, h: 4.5 },
-            { x: cx + 7, y: cy - 2.5 - wallH - 2, w: 4.5, h: 4.5 },
-            { x: cx - 2, y: cy + 3 - wallH - 2, w: 4.5, h: 4.5 },
-            { x: cx - 2, y: cy - 8 - wallH - 2, w: 4.5, h: 4.5 }
+            { x: cx - 6.5, y: cy - 1.5 - wallH - 1.5, w: 2.6, h: 2.2 },
+            { x: cx + 4, y: cy - 1.5 - wallH - 1.5, w: 2.6, h: 2.2 },
+            { x: cx - 1.3, y: cy + 1.8 - wallH - 1.5, w: 2.6, h: 2.2 },
+            { x: cx - 1.3, y: cy - 4.8 - wallH - 1.5, w: 2.6, h: 2.2 }
           ];
           merlons.forEach(m => {
             ctx.fillStyle = '#64748b';
             ctx.fillRect(m.x, m.y, m.w, m.h);
             ctx.fillStyle = '#f1f5f9';
-            ctx.fillRect(m.x, m.y, m.w, 1.5);
+            ctx.fillRect(m.x, m.y, m.w, 0.8);
             ctx.fillStyle = '#334155';
-            ctx.fillRect(m.x + m.w - 1.2, m.y, 1.2, m.h);
+            ctx.fillRect(m.x + m.w - 0.8, m.y, 0.8, m.h);
           });
 
-          // Heavy Bronze Reinforcement Studs
+          // Bronze Reinforcement Stud
           ctx.fillStyle = '#f59e0b';
           ctx.beginPath();
-          ctx.arc(cx - 5, cy - 6, 1.2, 0, Math.PI * 2);
-          ctx.arc(cx + 5, cy - 6, 1.2, 0, Math.PI * 2);
+          ctx.arc(cx - 3, cy - 3.5, 0.9, 0, Math.PI * 2);
+          ctx.arc(cx + 3, cy - 3.5, 0.9, 0, Math.PI * 2);
           ctx.fill();
 
           // Creeping Base Ivy / Moss
           ctx.fillStyle = '#4d7c0f';
           ctx.beginPath();
-          ctx.arc(cx - 8, cy + 2, 2.2, 0, Math.PI * 2);
-          ctx.arc(cx + 6, cy + 3, 2, 0, Math.PI * 2);
+          ctx.arc(cx - 5, cy + 1.5, 1.5, 0, Math.PI * 2);
+          ctx.arc(cx + 4, cy + 2, 1.3, 0, Math.PI * 2);
           ctx.fill();
 
           ctx.restore();
@@ -4169,6 +4404,48 @@ export default function App() {
 
         case 'wood_path': {
           ctx.save();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+          const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+
+          // Helper to draw connecting wooden boardwalk deck
+          const drawWoodConnector = (p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) => {
+            ctx.fillStyle = '#78350f';
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y + 1);
+            ctx.lineTo(p2x, p2y + 1);
+            ctx.lineTo(p3x, p3y + 1);
+            ctx.lineTo(p4x, p4y + 1);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = '#b45309';
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y);
+            ctx.lineTo(p2x, p2y);
+            ctx.lineTo(p3x, p3y);
+            ctx.lineTo(p4x, p4y);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.strokeStyle = '#451a03';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo((p1x + p4x) / 2, (p1y + p4y) / 2);
+            ctx.lineTo((p2x + p3x) / 2, (p2y + p3y) / 2);
+            ctx.stroke();
+          };
+
+          if (hasEast) drawWoodConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
+          if (hasWest) drawWoodConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
+          if (hasSouth) drawWoodConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
+          if (hasNorth) drawWoodConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+
           // Timber boardwalk slats across isometric tile
           const wTileGrad = ctx.createLinearGradient(sx - TILE_W / 2, sy, sx + TILE_W / 2, sy + TILE_H);
           wTileGrad.addColorStop(0, '#b45309');
@@ -4207,6 +4484,48 @@ export default function App() {
 
         case 'brick_path': {
           ctx.save();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+          const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+
+          // Helper to draw connecting terracotta brick strip
+          const drawBrickConnector = (p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) => {
+            ctx.fillStyle = '#7f1d1d';
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y + 1);
+            ctx.lineTo(p2x, p2y + 1);
+            ctx.lineTo(p3x, p3y + 1);
+            ctx.lineTo(p4x, p4y + 1);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = '#b91c1c';
+            ctx.beginPath();
+            ctx.moveTo(p1x, p1y);
+            ctx.lineTo(p2x, p2y);
+            ctx.lineTo(p3x, p3y);
+            ctx.lineTo(p4x, p4y);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.strokeStyle = 'rgba(254, 240, 138, 0.35)';
+            ctx.lineWidth = 0.9;
+            ctx.beginPath();
+            ctx.moveTo((p1x + p4x) / 2, (p1y + p4y) / 2);
+            ctx.lineTo((p2x + p3x) / 2, (p2y + p3y) / 2);
+            ctx.stroke();
+          };
+
+          if (hasEast) drawBrickConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
+          if (hasWest) drawBrickConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
+          if (hasSouth) drawBrickConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
+          if (hasNorth) drawBrickConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+
           // Red terracotta cobblestones / herringbone bricks
           const bpGrad = ctx.createLinearGradient(sx - TILE_W / 2, sy, sx + TILE_W / 2, sy + TILE_H);
           bpGrad.addColorStop(0, '#dc2626');
@@ -4249,40 +4568,40 @@ export default function App() {
           const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'wooden_fence' || o.type === 'fence'));
           const isConnected = hasEast || hasWest || hasSouth || hasNorth;
 
-          // Contact ground shadow
-          ctx.fillStyle = 'rgba(15, 30, 10, 0.35)';
+          // Scaled down contact ground shadow
+          ctx.fillStyle = 'rgba(15, 30, 10, 0.3)';
           ctx.beginPath();
-          ctx.ellipse(cx, cy + 4, 18, 7.5, 0, 0, Math.PI * 2);
+          ctx.ellipse(cx, cy + 2.5, 12, 4.8, 0, 0, Math.PI * 2);
           ctx.fill();
 
           // Helper to draw isometric wooden rails between two points
           const drawRail = (x1, y1, x2, y2) => {
             // Upper rail
             ctx.strokeStyle = '#451a03';
-            ctx.lineWidth = 3.2;
+            ctx.lineWidth = 2.0;
             ctx.beginPath();
-            ctx.moveTo(x1, y1 - 10);
-            ctx.lineTo(x2, y2 - 10);
+            ctx.moveTo(x1, y1 - 6.5);
+            ctx.lineTo(x2, y2 - 6.5);
             ctx.stroke();
             ctx.strokeStyle = '#b45309';
-            ctx.lineWidth = 1.8;
+            ctx.lineWidth = 1.0;
             ctx.beginPath();
-            ctx.moveTo(x1, y1 - 10.5);
-            ctx.lineTo(x2, y2 - 10.5);
+            ctx.moveTo(x1, y1 - 6.8);
+            ctx.lineTo(x2, y2 - 6.8);
             ctx.stroke();
 
             // Lower rail
             ctx.strokeStyle = '#451a03';
-            ctx.lineWidth = 3.2;
+            ctx.lineWidth = 2.0;
             ctx.beginPath();
-            ctx.moveTo(x1, y1 - 4);
-            ctx.lineTo(x2, y2 - 4);
+            ctx.moveTo(x1, y1 - 2.5);
+            ctx.lineTo(x2, y2 - 2.5);
             ctx.stroke();
             ctx.strokeStyle = '#b45309';
-            ctx.lineWidth = 1.8;
+            ctx.lineWidth = 1.0;
             ctx.beginPath();
-            ctx.moveTo(x1, y1 - 4.5);
-            ctx.lineTo(x2, y2 - 4.5);
+            ctx.moveTo(x1, y1 - 2.8);
+            ctx.lineTo(x2, y2 - 2.8);
             ctx.stroke();
           };
 
@@ -4294,50 +4613,50 @@ export default function App() {
 
           // If standalone fence (no neighbors), show classic double-rail segment with pickets
           if (!isConnected) {
-            drawRail(cx - 14, cy - 3, cx + 14, cy + 3);
+            drawRail(cx - 11, cy - 2.5, cx + 11, cy + 2.5);
             // Flanking pickets
-            [-8, 8].forEach(px => {
-              const py = cy + (px * 3 / 14);
+            [-6, 6].forEach(px => {
+              const py = cy + (px * 2.5 / 11);
               ctx.fillStyle = '#78350f';
-              ctx.fillRect(cx + px - 1.5, py - 13, 3, 14);
+              ctx.fillRect(cx + px - 1.1, py - 8.5, 2.2, 9);
               ctx.fillStyle = '#d97706';
-              ctx.fillRect(cx + px - 1.5, py - 13, 1.8, 14);
+              ctx.fillRect(cx + px - 1.1, py - 8.5, 1.2, 9);
               ctx.beginPath();
-              ctx.moveTo(cx + px - 1.5, py - 13);
-              ctx.lineTo(cx + px, py - 15.5);
-              ctx.lineTo(cx + px + 1.5, py - 13);
+              ctx.moveTo(cx + px - 1.1, py - 8.5);
+              ctx.lineTo(cx + px, py - 10.2);
+              ctx.lineTo(cx + px + 1.1, py - 8.5);
               ctx.closePath();
               ctx.fill();
             });
           }
 
-          // Central Sturdy Carved Timber Post (Clash of Clans Ranch Style)
-          const postW = 5.5;
-          const postH = 17;
+          // Central Sturdy Carved Timber Post (low, proportionate height 9.5, width 3.4)
+          const postW = 3.4;
+          const postH = 9.5;
           // Shadow facet (East)
           ctx.fillStyle = '#451a03';
-          ctx.fillRect(cx - postW / 2, cy - postH, postW, postH + 4);
+          ctx.fillRect(cx - postW / 2, cy - postH, postW, postH + 2.5);
           // Sunlit facet (West)
           ctx.fillStyle = '#b45309';
-          ctx.fillRect(cx - postW / 2, cy - postH, postW * 0.55, postH + 4);
+          ctx.fillRect(cx - postW / 2, cy - postH, postW * 0.55, postH + 2.5);
           
           // Pyramidal Carved Post Cap
           ctx.beginPath();
           ctx.moveTo(cx - postW / 2, cy - postH);
-          ctx.lineTo(cx, cy - postH - 4.5);
+          ctx.lineTo(cx, cy - postH - 2.8);
           ctx.lineTo(cx + postW / 2, cy - postH);
           ctx.closePath();
           ctx.fillStyle = '#d97706';
           ctx.fill();
           ctx.strokeStyle = '#78350f';
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 0.6;
           ctx.stroke();
 
           // Iron Reinforcement Bracket & Studs
           ctx.fillStyle = '#334155';
-          ctx.fillRect(cx - postW / 2 - 0.5, cy - 8, postW + 1, 2.2);
+          ctx.fillRect(cx - postW / 2 - 0.4, cy - 5, postW + 0.8, 1.6);
           ctx.fillStyle = '#94a3b8';
-          ctx.fillRect(cx - 1, cy - 7.5, 1.4, 1.2);
+          ctx.fillRect(cx - 0.6, cy - 4.7, 1.0, 0.9);
 
           ctx.restore();
           break;
@@ -5641,12 +5960,25 @@ export default function App() {
                 if (dScreenX < 0) v.facingLeft = true;
                 else if (dScreenX > 0) v.facingLeft = false;
               } else {
-                // Free wandering: 1 step to adjacent cleared tile
+                // Free wandering: 1 step to adjacent cleared tile, with natural preference for paths!
                 const deltas = [
                   [-1, 0], [1, 0], [0, -1], [0, 1],
                   [-1, -1], [1, 1], [-1, 1], [1, -1]
                 ];
                 deltas.sort(() => Math.random() - 0.5);
+
+                const pathTypes = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
+                const isPathTile = (gx, gy) => currentPlaced.some(o => o.gx === gx && o.gy === gy && pathTypes.includes(o.type));
+
+                // 80% bias to follow player-built trails and paths!
+                if (Math.random() < 0.80) {
+                  deltas.sort((a, b) => {
+                    const aPath = isPathTile(v.gx + a[0], v.gy + a[1]) ? 1 : 0;
+                    const bPath = isPathTile(v.gx + b[0], v.gy + b[1]) ? 1 : 0;
+                    return bPath - aPath;
+                  });
+                }
+
                 let chosen = null;
                 for (const [dx, dy] of deltas) {
                   const nx = v.gx + dx;
@@ -5674,7 +6006,9 @@ export default function App() {
         }
 
         // Sync to React status only when state actually changes (avoids constant re-renders)
-        let actLabel = 'מטייל בנחת בכפר 🍃';
+        const pathTypes = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
+        const isOnPath = currentPlaced.some(o => o.gx === Math.round(v.currGx) && o.gy === Math.round(v.currGy) && pathTypes.includes(o.type));
+        let actLabel = isOnPath ? 'פוסע בנחת על השביל 🐾' : 'מטייל בנחת בכפר 🍃';
         if (v.inWater) actLabel = 'שוחה במים (בגד ים) 🌊';
         else if (v.activity === 'drinking_tea') actLabel = 'שותה תה בפינת התה 🍵';
         else if (v.activity === 'gardening') actLabel = 'מטפח ומשקה את הגינה 🌱';
@@ -5956,6 +6290,7 @@ export default function App() {
 
     return () => {
       window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', onOrient);
       canvas.removeEventListener('wheel', handleCanvasWheel);
       cancelAnimationFrame(animationFrameId);
     };
@@ -6553,6 +6888,35 @@ export default function App() {
     // Smart hit detection: check if an object is clicked (including vertical bounds & isometric silhouette)
     const itemOnTile = findPlacedObjectAtPos(clientX, clientY, gx, gy);
 
+    const currentBuildItem = selectedBuildItemRef.current;
+    const isModularBuild = currentBuildItem && (
+      currentBuildItem.isModular || 
+      ['stone_wall', 'wooden_fence', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'fence'].includes(currentBuildItem.renderType)
+    );
+
+    let placedOnDownGx = null;
+    let placedOnDownGy = null;
+
+    // Instant placement on initial click/touch for paths & walls (makes drag-to-pave feel ultra-responsive)
+    if (isModularBuild && !itemOnTile && inClearing && !isDemolishModeRef.current) {
+      placedOnDownGx = gx;
+      placedOnDownGy = gy;
+      const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+      const memoryText = `רגע של ${currentBuildItem.tag}`;
+      const newObj = {
+        gx,
+        gy,
+        type: currentBuildItem.renderType,
+        dedicatedTo: memoryText,
+        memory: memoryText,
+        date: todayStr,
+        createdAt: Date.now(),
+        customName: ''
+      };
+      setPlacedObjects(prev => [...prev, newObj]);
+      sounds.playPlant();
+    }
+
     pointerDownInfoRef.current = {
       gx: itemOnTile ? itemOnTile.gx : gx,
       gy: itemOnTile ? itemOnTile.gy : gy,
@@ -6565,8 +6929,8 @@ export default function App() {
       lastX: clientX,
       lastY: clientY,
       hasMoved: false,
-      lastPlacedGx: null,
-      lastPlacedGy: null,
+      lastPlacedGx: placedOnDownGx,
+      lastPlacedGy: placedOnDownGy,
       item: itemOnTile
     };
   };
@@ -6659,7 +7023,7 @@ export default function App() {
       const currentBuildItem = selectedBuildItemRef.current;
       const isModularBuild = currentBuildItem && (
         currentBuildItem.isModular || 
-        ['stone_wall', 'wooden_fence', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'fence'].includes(currentBuildItem.renderType)
+        ['stone_wall', 'wooden_fence', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'fence'].includes(currentBuildItem.renderType)
       );
 
       // Support smooth drag-painting for modular items (walls, fences, paths)
@@ -6871,7 +7235,7 @@ export default function App() {
             };
             const isModular = selectedBuildItem.isModular || [
               'stone_wall', 'wooden_fence', 'cobblestone_road', 
-              'stone_path', 'wood_path', 'brick_path', 'fence'
+              'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'fence'
             ].includes(selectedBuildItem.renderType);
 
             // If placing a living animal from catalog, spawn into autonomous animals list!
@@ -7172,11 +7536,42 @@ export default function App() {
           onClick={() => {
             sounds.playTap();
             setShowPlantingDrawer(!showPlantingDrawer);
+            setShowPathsPalette(false);
           }}
           title="בנייה ויצירה 🛠️"
         >
           <Hammer size={20} className="text-amber" />
           <span className="dock-btn-label">בנייה</span>
+        </button>
+
+        {/* 1.5. Dedicated Path & Road Paving Studio */}
+        <button
+          className={`dock-btn paths-dock-btn ${showPathsPalette ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            const next = !showPathsPalette;
+            setShowPathsPalette(next);
+            if (next) {
+              setShowPlantingDrawer(false);
+              setIsDemolishMode(false);
+              setMovingObject(null);
+              // If not already holding a path/fence, select default dirt trail
+              const pathTypes = ['dirt_trail', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'wooden_fence', 'stone_wall'];
+              if (!selectedBuildItem || !pathTypes.includes(selectedBuildItem.renderType)) {
+                const trailItem = BUILD_CATALOG.find(c => c.renderType === 'dirt_trail') || BUILD_CATALOG.find(c => c.renderType === 'cobblestone_road');
+                if (trailItem) {
+                  setSelectedBuildItem(trailItem);
+                  setContinuousBuild(true);
+                }
+              }
+            } else {
+              setSelectedBuildItem(null);
+            }
+          }}
+          title="סלילת שבילים וגבולות 🛤️"
+        >
+          <span style={{ fontSize: '18px', lineHeight: 1 }}>🛤️</span>
+          <span className="dock-btn-label">שבילים</span>
         </button>
 
         {/* 2. Mood & Landscape Switcher (Day / Sunset / Night) */}
@@ -7228,6 +7623,83 @@ export default function App() {
         </button>
       </aside>
 
+      {/* Floating Dedicated Paths & Roads Paving Palette */}
+      {showPathsPalette && (
+        <div className="wholesome-paths-palette glass-card" role="toolbar" aria-label="סרגל סלילת שבילים">
+          <div className="paths-palette-head">
+            <div className="paths-palette-title">
+              <span className="palette-icon">🛤️</span>
+              <div>
+                <strong>סלילת שבילים וחיבור מקומות</strong>
+                <span className="palette-sub">לחץ או גרור ברצף עם העכבר/אצבע לסלילת נתיב רציף ומחבר</span>
+              </div>
+            </div>
+            <button
+              className="close-mini-btn"
+              onClick={() => {
+                sounds.playTap();
+                setShowPathsPalette(false);
+                setSelectedBuildItem(null);
+              }}
+              title="סגור סרגל שבילים"
+            >
+              <X size={16} />
+            </button>
+          </div>
+
+          <div className="paths-palette-items">
+            {[
+              { id: 'dirt_trail', name: 'שביל עפר', emoji: '🍂', desc: 'אדמה כפרית טבעית' },
+              { id: 'cobblestone_road', name: 'שביל אבן', emoji: '🛤️', desc: 'ריצוף אבנים רחב ורציף' },
+              { id: 'stone_path', name: 'אבני מדרך', emoji: '🪨', desc: 'אבני מדרך טבעיות' },
+              { id: 'wood_path', name: 'שביל עץ', emoji: '🪵', desc: 'לוחות עץ כפריים' },
+              { id: 'brick_path', name: 'שביל לבנים', emoji: '🧱', desc: 'ריצוף לבנים אדומות' },
+              { id: 'wooden_fence', name: 'גדר נמוכה', emoji: '🪵', desc: 'גדר עץ קומפקטית' },
+              { id: 'stone_wall', name: 'חומת אבן', emoji: '🧱', desc: 'חומת מבצר קטנה' }
+            ].map(p => {
+              const catalogItem = BUILD_CATALOG.find(c => c.renderType === p.id);
+              const isActive = !isDemolishMode && selectedBuildItem?.renderType === p.id;
+
+              return (
+                <button
+                  key={p.id}
+                  className={`path-palette-pill ${isActive ? 'active' : ''}`}
+                  onClick={() => {
+                    sounds.playTap();
+                    setIsDemolishMode(false);
+                    setMovingObject(null);
+                    setContinuousBuild(true);
+                    if (catalogItem) {
+                      setSelectedBuildItem(catalogItem);
+                    }
+                  }}
+                  title={`${p.name} — ${p.desc}`}
+                >
+                  <span className="path-pill-emoji">{p.emoji}</span>
+                  <span className="path-pill-name">{p.name}</span>
+                </button>
+              );
+            })}
+
+            {/* Path Eraser / Demolish Mode */}
+            <button
+              className={`path-palette-pill path-eraser-pill ${isDemolishMode ? 'active' : ''}`}
+              onClick={() => {
+                sounds.playTap();
+                setIsDemolishMode(!isDemolishMode);
+                if (!isDemolishMode) {
+                  setSelectedBuildItem(null);
+                }
+              }}
+              title="מחיקת שביל — לחץ על משבצת שביל לפינוי והחזרתה לדשא"
+            >
+              <Trash2 size={14} />
+              <span className="path-pill-name">מחק 🧹</span>
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Floating Cultivate / Add Tiles Mode Banner */}
       {isCultivatingMode && (
         <div className="wholesome-cultivate-banner">
@@ -7242,13 +7714,15 @@ export default function App() {
       )}
 
       {/* Floating Building Mode Banner */}
-      {selectedBuildItem && (
+      {selectedBuildItem && !showPathsPalette && (
         <div className="wholesome-plant-banner">
           <span>
             🛠️ בונה כעת: <strong>{selectedBuildItem.name}</strong>{' '}
-            {selectedBuildItem.isModular || ['stone_wall', 'wooden_fence', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'fence'].includes(selectedBuildItem.renderType)
-              ? '🧱 (בנייה חופשית בערמות — לחץ על משבצות או גרור עם העכבר להנחה רציפה)'
-              : (continuousBuild ? '🌿 (בנייה רציפה פעילה 🔁)' : '')}
+            {['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'].includes(selectedBuildItem.renderType)
+              ? '🛤️ (סלילת שבילים — לחץ או גרור עם העכבר/אצבע לסלילת דרך רציפה וחלקה)'
+              : (selectedBuildItem.isModular || ['stone_wall', 'wooden_fence', 'fence'].includes(selectedBuildItem.renderType)
+                ? '🧱 (בנייה חופשית בערמות — לחץ על משבצות או גרור עם העכבר להנחה רציפה)'
+                : (continuousBuild ? '🌿 (בנייה רציפה פעילה 🔁)' : ''))}
             {' '}— לחץ על משבצת בדשא להנחה
           </span>
           <button
@@ -7345,8 +7819,55 @@ export default function App() {
           >
             <ZoomOut size={17} />
           </button>
+
+          <button
+            className="zoom-hud-btn zoom-fullscreen-btn"
+            onClick={handleToggleFullscreen}
+            title="מסך מלא לרוחב (כמו Clash of Clans) 📲"
+            aria-label="מסך מלא לרוחב"
+          >
+            <span style={{ fontSize: '1.05rem', lineHeight: 1 }}>📲</span>
+          </button>
         </div>
       </main>
+
+      {/* Clash of Clans Mobile Landscape Orientation Guide Overlay */}
+      {isMobilePortrait && !dismissedOrientationPrompt && (
+        <div className="mobile-landscape-prompt-overlay" onClick={() => setDismissedOrientationPrompt(true)}>
+          <div className="landscape-prompt-card glass-card" onClick={e => e.stopPropagation()}>
+            <div className="rotate-phone-animation">
+              <span className="phone-icon-animated">📱</span>
+              <span className="rotate-arrow">⤹</span>
+              <span className="phone-icon-landscape">📲</span>
+            </div>
+            <h3 className="landscape-prompt-title">מומלץ לשחק לרוחב 🏰🌾</h3>
+            <p className="landscape-prompt-desc">
+              כדי לראות את כל הכפר במלוא הדרו (כמו ב-Clash of Clans),
+              סובב את המכשיר למצב שוכב (Landscape)
+            </p>
+            <div className="landscape-prompt-actions">
+              <button
+                className="enter-fullscreen-btn"
+                onClick={async () => {
+                  await handleToggleFullscreen();
+                  setDismissedOrientationPrompt(true);
+                }}
+              >
+                <span>מעבר למסך מלא לרוחב 📲</span>
+              </button>
+              <button
+                className="continue-portrait-btn"
+                onClick={() => {
+                  sounds.playTap();
+                  setDismissedOrientationPrompt(true);
+                }}
+              >
+                המשך לאורך בינתיים
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
 
       {/* Rich Building & Creation Center Studio */}
@@ -7617,6 +8138,9 @@ export default function App() {
           onAddAnimalToBuilding={(type, gx, gy, name) => {
             const newAnim = createAnimal(type, gx, gy, name, '', { gx, gy });
             setAnimals(prev => [...prev, newAnim]);
+          }}
+          onEarnSeeds={(amount) => {
+            setSeeds(s => s + amount);
           }}
         />
       )}

@@ -16,6 +16,7 @@ import {
   Leaf
 } from 'lucide-react';
 import { sounds } from '../utils/sound';
+import { RealCoopInterior } from './RealCoopInterior';
 
 export function BuildingInteriorModal({
   building,
@@ -24,7 +25,8 @@ export function BuildingInteriorModal({
   onUpdateBuildingData,
   animals = [],
   onUpdateAnimal,
-  onAddAnimalToBuilding
+  onAddAnimalToBuilding,
+  onEarnSeeds
 }) {
   if (!building) return null;
 
@@ -198,177 +200,164 @@ export function BuildingInteriorModal({
           </button>
         </div>
 
-        {/* Room Header & Atmospheric Title */}
-        <div className="interior-header-section">
-          {isEditingHeader ? (
-            <div className="interior-edit-header-box">
-              <input 
-                type="text" 
-                value={editTitle}
-                onChange={(e) => setEditTitle(e.target.value)}
-                placeholder="שם החלל / מטרת החדר..."
-                className="interior-input-title"
-                autoFocus
-              />
-              <textarea 
-                value={editNote}
-                onChange={(e) => setEditNote(e.target.value)}
-                rows={2}
-                placeholder="תיאור האסוציאציה או השגרה של החדר הזה..."
-                className="interior-input-note"
-              />
-              <div className="interior-edit-actions">
-                <button className="interior-save-btn" onClick={handleSaveHeader}>
-                  <Check size={14} />
-                  <span>שמור הגדרות</span>
-                </button>
-                <button className="interior-cancel-btn" onClick={() => setIsEditingHeader(false)}>
-                  ביטול
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="interior-title-display">
-              <div className="title-row">
-                <h2 className="interior-room-title">{interiorData.roomTitle}</h2>
-                <button 
-                  className="interior-edit-toggle-btn"
-                  onClick={() => {
-                    setEditTitle(interiorData.roomTitle);
-                    setEditNote(interiorData.roomNote);
-                    setIsEditingHeader(true);
-                  }}
-                  title="ערוך את שם ותיאור החלל הזה"
-                >
-                  <Edit3 size={14} />
-                  <span>התאמה אישית</span>
-                </button>
-              </div>
-              <p className="interior-room-note">{interiorData.roomNote}</p>
-            </div>
-          )}
-        </div>
-
-        {/* Visual Atmospheric Stage (The Interior Scenery) */}
-        <div className="interior-scenery-view">
-          {isCoop && (
-            <div className="scenery-coop-backdrop">
-              <div className="straw-bedding">
-                <div className="straw-tuft tuft-1">🌾</div>
-                <div className="straw-tuft tuft-2">🌾</div>
-                <div className="straw-tuft tuft-3">🌾</div>
-              </div>
-              <div className="nest-boxes-row">
-                <div className="nest-box">
-                  <span className="nest-label">תא הטלה 1</span>
-                  <span className="nest-straw">🪹 🥚</span>
+        {isCoop ? (
+          <RealCoopInterior
+            building={building}
+            interiorData={interiorData}
+            onUpdateInteriorData={setInteriorData}
+            onAddAnimalToVillage={onAddAnimalToBuilding}
+            onEarnSeeds={onEarnSeeds}
+          />
+        ) : (
+          <>
+            {/* Room Header & Atmospheric Title */}
+            <div className="interior-header-section">
+              {isEditingHeader ? (
+                <div className="interior-edit-header-box">
+                  <input 
+                    type="text" 
+                    value={editTitle}
+                    onChange={(e) => setEditTitle(e.target.value)}
+                    placeholder="שם החלל / מטרת החדר..."
+                    className="interior-input-title"
+                    autoFocus
+                  />
+                  <textarea 
+                    value={editNote}
+                    onChange={(e) => setEditNote(e.target.value)}
+                    rows={2}
+                    placeholder="תיאור האסוציאציה או השגרה של החדר הזה..."
+                    className="interior-input-note"
+                  />
+                  <div className="interior-edit-actions">
+                    <button className="interior-save-btn" onClick={handleSaveHeader}>
+                      <Check size={14} />
+                      <span>שמור הגדרות</span>
+                    </button>
+                    <button className="interior-cancel-btn" onClick={() => setIsEditingHeader(false)}>
+                      ביטול
+                    </button>
+                  </div>
                 </div>
-                <div className="nest-box">
-                  <span className="nest-label">תא הטלה 2</span>
-                  <span className="nest-straw">🪹 🥚</span>
+              ) : (
+                <div className="interior-title-display">
+                  <div className="title-row">
+                    <h2 className="interior-room-title">{interiorData.roomTitle}</h2>
+                    <button 
+                      className="interior-edit-toggle-btn"
+                      onClick={() => {
+                        setEditTitle(interiorData.roomTitle);
+                        setEditNote(interiorData.roomNote);
+                        setIsEditingHeader(true);
+                      }}
+                      title="ערוך את שם ותיאור החלל הזה"
+                    >
+                      <Edit3 size={14} />
+                      <span>התאמה אישית</span>
+                    </button>
+                  </div>
+                  <p className="interior-room-note">{interiorData.roomNote}</p>
                 </div>
-                <div className="nest-box">
-                  <span className="nest-label">תא הטלה 3</span>
-                  <span className="nest-straw">🪹 🥚</span>
+              )}
+            </div>
+
+            {/* Visual Atmospheric Stage (The Interior Scenery) */}
+            <div className="interior-scenery-view">
+              {isGreenhouse && (
+                <div className="scenery-greenhouse-backdrop">
+                  <div className="glass-panes"></div>
+                  <div className="plant-benches">
+                    <span className="bench-plant">🪴</span>
+                    <span className="bench-plant">🌿</span>
+                    <span className="bench-plant">🌱</span>
+                    <span className="bench-plant">🌺</span>
+                  </div>
                 </div>
-              </div>
-              <div className="warm-sunbeam"></div>
-            </div>
-          )}
+              )}
 
-          {isGreenhouse && (
-            <div className="scenery-greenhouse-backdrop">
-              <div className="glass-panes"></div>
-              <div className="plant-benches">
-                <span className="bench-plant">🪴</span>
-                <span className="bench-plant">🌿</span>
-                <span className="bench-plant">🌱</span>
-                <span className="bench-plant">🌺</span>
-              </div>
-            </div>
-          )}
-
-          {isCabin && (
-            <div className="scenery-cabin-backdrop">
-              <div className="fireplace-glow">
-                <Flame size={28} className="flame-icon animate-pulse text-amber-500" />
-                <span className="fire-hearth">אח מבוערת ונעימה 🔥</span>
-              </div>
-              <div className="cozy-rug">🪵 שטיח עץ ופינת קריאה</div>
-            </div>
-          )}
-
-          {isLibrary && (
-            <div className="scenery-library-backdrop">
-              <div className="bookshelves-row">
-                <span className="book-shelf">📚 📖 📜 📚 📖</span>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Associative Items / Loci Checklist Container */}
-        <div className="interior-items-container">
-          <div className="items-header">
-            <div className="items-title-wrap">
-              <Sparkles size={16} className="text-amber" />
-              <h3>עוגנים ופריטים בחדר זה ({interiorData.items.filter(i => i.completed).length}/{interiorData.items.length})</h3>
-            </div>
-            <span className="items-hint">לחץ על פריט כדי לסמן שהושלם / נמצא עליך</span>
-          </div>
-
-          {/* Items List */}
-          <div className="interior-items-grid">
-            {interiorData.items.map((item) => (
-              <div 
-                key={item.id} 
-                className={`interior-item-card ${item.completed ? 'completed' : ''}`}
-                onClick={() => handleToggleItem(item.id)}
-              >
-                <div className="item-check-circle">
-                  {item.completed && <Check size={14} className="check-mark" />}
+              {isCabin && (
+                <div className="scenery-cabin-backdrop">
+                  <div className="fireplace-glow">
+                    <Flame size={28} className="flame-icon animate-pulse text-amber-500" />
+                    <span className="fire-hearth">אח מבוערת ונעימה 🔥</span>
+                  </div>
+                  <div className="cozy-rug">🪵 שטיח עץ ופינת קריאה</div>
                 </div>
+              )}
 
-                <div className="item-icon-tag">{item.icon}</div>
+              {isLibrary && (
+                <div className="scenery-library-backdrop">
+                  <div className="bookshelves-row">
+                    <span className="book-shelf">📚 📖 📜 📚 📖</span>
+                  </div>
+                </div>
+              )}
+            </div>
 
-                <span className="item-name-text">{item.name}</span>
+            {/* Associative Items / Loci Checklist Container */}
+            <div className="interior-items-container">
+              <div className="items-header">
+                <div className="items-title-wrap">
+                  <Sparkles size={16} className="text-amber" />
+                  <h3>עוגנים ופריטים בחדר זה ({interiorData.items.filter(i => i.completed).length}/{interiorData.items.length})</h3>
+                </div>
+                <span className="items-hint">לחץ על פריט כדי לסמן שהושלם / נמצא עליך</span>
+              </div>
 
-                <button 
-                  className="item-delete-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleRemoveItem(item.id);
-                  }}
-                  title="מחק עוגן זה"
-                >
-                  <Trash2 size={13} />
+              {/* Items List */}
+              <div className="interior-items-grid">
+                {interiorData.items.map((item) => (
+                  <div 
+                    key={item.id} 
+                    className={`interior-item-card ${item.completed ? 'completed' : ''}`}
+                    onClick={() => handleToggleItem(item.id)}
+                  >
+                    <div className="item-check-circle">
+                      {item.completed && <Check size={14} className="check-mark" />}
+                    </div>
+
+                    <div className="item-icon-tag">{item.icon}</div>
+
+                    <span className="item-name-text">{item.name}</span>
+
+                    <button 
+                      className="item-delete-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleRemoveItem(item.id);
+                      }}
+                      title="מחק עוגן זה"
+                    >
+                      <Trash2 size={13} />
+                    </button>
+                  </div>
+                ))}
+
+                {interiorData.items.length === 0 && (
+                  <div className="empty-room-state">
+                    <Feather size={28} className="text-amber opacity-60" />
+                    <p>החלל הזה פתוח לחלוטין. הוסף למטה את הדבר הראשון שתרצה לעגן כאן!</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Add New Associative Item Form */}
+              <form className="interior-add-item-form" onSubmit={handleAddItem}>
+                <input 
+                  type="text" 
+                  value={newItemName}
+                  onChange={(e) => setNewItemName(e.target.value)}
+                  placeholder="הוסף עוגן חדש לחדר זה..."
+                  className="interior-new-item-input"
+                />
+                <button type="submit" className="interior-add-submit-btn" disabled={!newItemName.trim()}>
+                  <Plus size={16} />
+                  <span>הוסף עוגן 🌾</span>
                 </button>
-              </div>
-            ))}
-
-            {interiorData.items.length === 0 && (
-              <div className="empty-room-state">
-                <Feather size={28} className="text-amber opacity-60" />
-                <p>החלל הזה פתוח לחלוטין. הוסף למטה את הדבר הראשון שתרצה לעגן כאן!</p>
-              </div>
-            )}
-          </div>
-
-          {/* Add New Associative Item Form */}
-          <form className="interior-add-item-form" onSubmit={handleAddItem}>
-            <input 
-              type="text" 
-              value={newItemName}
-              onChange={(e) => setNewItemName(e.target.value)}
-              placeholder={isCoop ? "שם פריט או תרנגולת (למשל: דסקית, חוגר, ארנק)..." : "הוסף עוגן חדש לחדר זה..."}
-              className="interior-new-item-input"
-            />
-            <button type="submit" className="interior-add-submit-btn" disabled={!newItemName.trim()}>
-              <Plus size={16} />
-              <span>הוסף עוגן 🌾</span>
-            </button>
-          </form>
-        </div>
+              </form>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
