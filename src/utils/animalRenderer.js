@@ -2,7 +2,7 @@
 // Renders adorable, peaceful living animals with idle/walk/peck animations and mind map tags
 
 export function drawAnimal(ctx, animal, screenPos, options = {}) {
-  const { isSunset = false, isNight = false, showTag = true, isHovered = false } = options;
+  const { isSunset = false, isNight = false, showTag = true, isHovered = false, todayStr = '' } = options;
   const { x: cx, y: cy } = screenPos;
   const facingLeft = animal.facingLeft;
   const walkCycle = animal.walkCycle || 0;
@@ -59,7 +59,7 @@ export function drawAnimal(ctx, animal, screenPos, options = {}) {
 
   // Floating Mind Map Label / Name Tag
   if (showTag && animal.name) {
-    drawAnimalNameTag(ctx, cx, cy - 22 + hopY, animal.name, animal.completed, isHovered);
+    drawAnimalNameTag(ctx, cx, cy - 22 + hopY, animal.name, animal.completed, isHovered, animal.customEmoji);
   }
 }
 
@@ -561,10 +561,11 @@ function drawCozyRabbit(ctx, walkCycle, state, time, isSunset, isNight) {
 }
 
 // Floating Mind Map Badge for Animals
-function drawAnimalNameTag(ctx, x, y, name, completed, isHovered) {
+function drawAnimalNameTag(ctx, x, y, name, completed, isHovered, customEmoji = '') {
   ctx.save();
   ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
-  const textWidth = ctx.measureText(name).width;
+  const labelText = customEmoji ? `${customEmoji} ${name}` : name;
+  const textWidth = ctx.measureText(labelText).width;
   const badgeW = textWidth + (completed ? 28 : 18);
   const badgeH = 18;
   const badgeX = x - badgeW / 2;
@@ -591,7 +592,7 @@ function drawAnimalNameTag(ctx, x, y, name, completed, isHovered) {
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   const textOffsetX = completed ? 5 : 0;
-  ctx.fillText(name, x + textOffsetX, badgeY + badgeH / 2);
+  ctx.fillText(labelText, x + textOffsetX, badgeY + badgeH / 2);
 
   if (completed) {
     ctx.fillStyle = '#22c55e';

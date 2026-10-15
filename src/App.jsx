@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
 import { BUILD_CATALOG, BUILD_CATEGORIES, INITIAL_INTENTIONS, WARM_AFFIRMATIONS } from './data/catalog';
 import { OUTFITS, ACTIVITIES, VILLAGER_THOUGHTS, DEFAULT_VILLAGER_LOOK } from './data/wardrobe';
@@ -47,6 +47,7 @@ const STORAGE_KEY_INSTITUTION_RESOURCES = 'lifequest_cozy_institution_resources_
 const GRID_SIZE = 26;
 const TILE_W = 68;
 const TILE_H = 34;
+const GRID_ORIGIN_Y_RATIO = 0.065;
 
 export default function App() {
   const canvasRef = useRef(null);
@@ -249,6 +250,11 @@ export default function App() {
   // Multi-dimensional Interior Building State
   const [interiorBuilding, setInteriorBuilding] = useState(null);
 
+  // Gentle Daily Village Care Ritual State (מים לצמחים ואוכל לחיות)
+  const todayStrDate = useMemo(() => new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' }), []);
+  const [lastVillageCareDate, setLastVillageCareDate] = useState(() => localStorage.getItem('lifequest_village_care_date') || '');
+  const isVillageCaredToday = lastVillageCareDate === todayStrDate;
+
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY_INSTITUTION_RESOURCES, JSON.stringify(villageResources));
   }, [villageResources]);
@@ -436,7 +442,7 @@ export default function App() {
     const dx = gx - 11;
     const dy = gy - 11;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist > 16.0) return false;
+    if (dist > 18.5) return false;
 
     const neighbors = [
       [-1, 0], [1, 0], [0, -1], [0, 1],
@@ -598,7 +604,7 @@ export default function App() {
 
     const getOrigin = (w, h) => ({
       x: w / 2 + (cameraPanRef.current ? cameraPanRef.current.x : 0),
-      y: h * 0.17 + (cameraPanRef.current ? cameraPanRef.current.y : 0)
+      y: h * GRID_ORIGIN_Y_RATIO + (cameraPanRef.current ? cameraPanRef.current.y : 0)
     });
 
     const toScreen = (gx, gy, ox, oy) => ({
@@ -1182,6 +1188,296 @@ export default function App() {
           break;
         }
 
+        case 'cypress_tree': {
+          ctx.save();
+          // Elongated Mediterranean ground shadow
+          ctx.fillStyle = 'rgba(15, 35, 10, 0.35)';
+          ctx.beginPath();
+          ctx.ellipse(cx + 4, cy + 8, 14, 7, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Trunk
+          ctx.fillStyle = '#451a03';
+          ctx.fillRect(cx - 2.5, cy - 8, 5, 15);
+
+          // Flame-shaped tall Cypress silhouette
+          // Shadow side (East)
+          ctx.fillStyle = '#064e3b';
+          ctx.beginPath();
+          ctx.moveTo(cx, cy + 2);
+          ctx.quadraticCurveTo(cx + 10, cy - 25, cx, cy - 58);
+          ctx.lineTo(cx, cy + 2);
+          ctx.fill();
+
+          // Lit side (West)
+          const cypressGrad = ctx.createLinearGradient(cx - 10, cy - 30, cx + 5, cy);
+          cypressGrad.addColorStop(0, '#047857');
+          cypressGrad.addColorStop(0.6, '#059669');
+          cypressGrad.addColorStop(1, '#065f46');
+          ctx.fillStyle = cypressGrad;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy + 2);
+          ctx.quadraticCurveTo(cx - 10, cy - 25, cx, cy - 58);
+          ctx.lineTo(cx, cy + 2);
+          ctx.fill();
+
+          // Feathery foliage textures
+          ctx.strokeStyle = '#10b981';
+          ctx.lineWidth = 1.2;
+          ctx.beginPath();
+          ctx.moveTo(cx - 7, cy - 18);
+          ctx.quadraticCurveTo(cx - 9, cy - 26, cx - 2, cy - 38);
+          ctx.stroke();
+
+          // Sunlit golden tip highlight
+          ctx.fillStyle = '#34d399';
+          ctx.beginPath();
+          ctx.ellipse(cx - 1, cy - 52, 2.5, 6, -0.1, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.restore();
+          break;
+        }
+
+        case 'fruit_tree': {
+          ctx.save();
+          // Soft shadow
+          ctx.fillStyle = 'rgba(15, 35, 10, 0.32)';
+          ctx.beginPath();
+          ctx.ellipse(cx + 6, cy + 8, 22, 11, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Trunk
+          ctx.fillStyle = '#5c2c16';
+          ctx.fillRect(cx - 3, cy - 14, 6, 20);
+
+          // Lush rounded foliage
+          const fruitTreeGrad = ctx.createLinearGradient(cx - 20, cy - 45, cx + 20, cy);
+          fruitTreeGrad.addColorStop(0, '#15803d');
+          fruitTreeGrad.addColorStop(1, '#166534');
+          ctx.fillStyle = fruitTreeGrad;
+          ctx.beginPath();
+          ctx.arc(cx - 7, cy - 24, 16, 0, Math.PI * 2);
+          ctx.arc(cx + 7, cy - 24, 16, 0, Math.PI * 2);
+          ctx.arc(cx, cy - 34, 17, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Ripe golden lemons / fruits
+          const fruits = [
+            [-8, -20], [5, -28], [-2, -32], [9, -18], [-9, -30], [2, -22]
+          ];
+          fruits.forEach(([fx, fy]) => {
+            ctx.fillStyle = '#facc15';
+            ctx.beginPath();
+            ctx.arc(cx + fx, cy + fy, 2.8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(cx + fx - 0.7, cy + fy - 0.7, 0.8, 0, Math.PI * 2);
+            ctx.fill();
+          });
+
+          ctx.restore();
+          break;
+        }
+
+        case 'custom_totem': {
+          ctx.save();
+          // Ground shadow
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 6, 16, 8, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Carved stone pedestal
+          const pedGrad = ctx.createLinearGradient(cx - 10, cy - 14, cx + 10, cy + 5);
+          pedGrad.addColorStop(0, '#94a3b8');
+          pedGrad.addColorStop(0.5, '#64748b');
+          pedGrad.addColorStop(1, '#475569');
+          ctx.fillStyle = pedGrad;
+          // Base
+          ctx.beginPath();
+          ctx.roundRect(cx - 11, cy + 1, 22, 6, 3);
+          ctx.fill();
+          // Pillar shaft
+          ctx.beginPath();
+          ctx.roundRect(cx - 7, cy - 10, 14, 12, 2);
+          ctx.fill();
+          // Capital / Top plate
+          ctx.beginPath();
+          ctx.roundRect(cx - 9, cy - 14, 18, 5, 2);
+          ctx.fill();
+
+          // Small moss/vines on stone
+          ctx.fillStyle = '#22c55e';
+          ctx.beginPath();
+          ctx.arc(cx - 6, cy + 2, 2, 0, Math.PI * 2);
+          ctx.arc(cx + 5, cy - 4, 1.8, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Floating bobbing custom symbol/emoji
+          const chosenSymbol = objData?.customEmoji || '🍭';
+          const bobY = Math.sin(Date.now() * 0.003 + (cx % 10)) * 3;
+          
+          // Soft golden/magic aura under floating symbol
+          ctx.fillStyle = 'rgba(253, 230, 138, 0.45)';
+          ctx.beginPath();
+          ctx.ellipse(cx, cy - 18 + bobY, 12, 5, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.font = '22px system-ui, -apple-system, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(chosenSymbol, cx, cy - 25 + bobY);
+
+          ctx.restore();
+          break;
+        }
+
+        case 'animal_coop': {
+          ctx.save();
+          // Ground shadow
+          ctx.fillStyle = 'rgba(20, 20, 10, 0.35)';
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 8, 28, 14, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Wooden Coop Walls
+          ctx.fillStyle = '#b45309';
+          ctx.fillRect(cx - 18, cy - 16, 36, 22);
+
+          // Wooden horizontal slats
+          ctx.strokeStyle = '#78350f';
+          ctx.lineWidth = 1;
+          for (let y = cy - 12; y <= cy + 4; y += 4) {
+            ctx.beginPath();
+            ctx.moveTo(cx - 18, y);
+            ctx.lineTo(cx + 18, y);
+            ctx.stroke();
+          }
+
+          // Little arched doorway
+          ctx.fillStyle = '#451a03';
+          ctx.beginPath();
+          ctx.roundRect(cx - 6, cy - 5, 12, 11, [6, 6, 0, 0]);
+          ctx.fill();
+
+          // Little wooden ramp
+          ctx.fillStyle = '#d97706';
+          ctx.beginPath();
+          ctx.moveTo(cx - 4, cy + 6);
+          ctx.lineTo(cx - 8, cy + 13);
+          ctx.lineTo(cx + 8, cy + 13);
+          ctx.lineTo(cx + 4, cy + 6);
+          ctx.closePath();
+          ctx.fill();
+
+          // Cedar red pitched roof
+          const roofGrad = ctx.createLinearGradient(cx - 22, cy - 30, cx + 22, cy - 14);
+          roofGrad.addColorStop(0, '#dc2626');
+          roofGrad.addColorStop(1, '#991b1b');
+          ctx.fillStyle = roofGrad;
+          ctx.beginPath();
+          ctx.moveTo(cx - 22, cy - 14);
+          ctx.lineTo(cx, cy - 30);
+          ctx.lineTo(cx + 22, cy - 14);
+          ctx.closePath();
+          ctx.fill();
+          ctx.strokeStyle = '#7f1d1d';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // Chicken silhouette on top of roof
+          ctx.fillStyle = '#fbbf24';
+          ctx.font = '14px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('🐔', cx, cy - 32);
+
+          // Little fence on side
+          ctx.strokeStyle = '#d97706';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(cx + 18, cy + 4);
+          ctx.lineTo(cx + 26, cy + 4);
+          ctx.moveTo(cx + 22, cy);
+          ctx.lineTo(cx + 22, cy + 8);
+          ctx.stroke();
+
+          ctx.restore();
+          break;
+        }
+
+        case 'library': {
+          ctx.save();
+          // Ground shadow
+          ctx.fillStyle = 'rgba(15, 20, 30, 0.38)';
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 10, 30, 15, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Stone and dark cedar walls
+          ctx.fillStyle = '#475569';
+          ctx.fillRect(cx - 20, cy - 20, 40, 26);
+
+          // Arched stained glass window glowing warm
+          ctx.fillStyle = '#fef08a';
+          ctx.beginPath();
+          ctx.roundRect(cx - 7, cy - 14, 14, 16, [7, 7, 0, 0]);
+          ctx.fill();
+          ctx.strokeStyle = '#0f172a';
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+          // Window grid
+          ctx.beginPath();
+          ctx.moveTo(cx, cy - 14);
+          ctx.lineTo(cx, cy + 2);
+          ctx.moveTo(cx - 7, cy - 6);
+          ctx.lineTo(cx + 7, cy - 6);
+          ctx.stroke();
+
+          // Grand pitched slate roof
+          const libRoof = ctx.createLinearGradient(cx - 24, cy - 36, cx + 24, cy - 18);
+          libRoof.addColorStop(0, '#3b82f6');
+          libRoof.addColorStop(1, '#1e3a8a');
+          ctx.fillStyle = libRoof;
+          ctx.beginPath();
+          ctx.moveTo(cx - 24, cy - 18);
+          ctx.lineTo(cx, cy - 36);
+          ctx.lineTo(cx + 24, cy - 18);
+          ctx.closePath();
+          ctx.fill();
+          ctx.strokeStyle = '#1e40af';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+
+          // Book spire icon
+          ctx.fillStyle = '#fef08a';
+          ctx.font = '14px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('📚', cx, cy - 38);
+
+          ctx.restore();
+          break;
+        }
+
+        case 'animal_chicken':
+        case 'animal_cat':
+        case 'animal_dog':
+        case 'animal_sheep':
+        case 'animal_duck':
+        case 'animal_rabbit': {
+          const aType = type.replace('animal_', '');
+          drawAnimal(ctx, { 
+            type: aType, 
+            state: 'idle', 
+            facingLeft: false, 
+            walkCycle: 0, 
+            hopY: 0, 
+            name: objData?.customName 
+          }, { x: cx, y: cy }, { isHovered: !!isInspected, showTag: false });
+          break;
+        }
+
         case 'reading_bench': {
           ctx.save();
           // Contact shadow
@@ -1262,6 +1558,92 @@ export default function App() {
           break;
         }
 
+        case 'cobblestone_road': {
+          ctx.save();
+          // Pass 1: Foundation base mortar bed (slightly recessed diamond with feathered edges)
+          ctx.fillStyle = '#26221f';
+          ctx.beginPath();
+          ctx.moveTo(cx, cy - 16.5);
+          ctx.lineTo(cx + 33.5, cy);
+          ctx.lineTo(cx, cy + 16.5);
+          ctx.lineTo(cx - 33.5, cy);
+          ctx.closePath();
+          ctx.fill();
+
+          // Pass 2: Base gravel underlay
+          ctx.fillStyle = '#44403c';
+          ctx.beginPath();
+          ctx.moveTo(cx, cy - 14.5);
+          ctx.lineTo(cx + 30.5, cy);
+          ctx.lineTo(cx, cy + 14.5);
+          ctx.lineTo(cx - 30.5, cy);
+          ctx.closePath();
+          ctx.fill();
+
+          // Pass 3: Interlocking hand-hewn river cobblestones
+          const cobbles = [
+            { cx: 0, cy: 0, rx: 7, ry: 4, col: '#78716c', light: '#a8a29e' },
+            { cx: -12, cy: -3, rx: 5.5, ry: 3.3, col: '#64748b', light: '#94a3b8' },
+            { cx: 12, cy: 3, rx: 6, ry: 3.5, col: '#6b7280', light: '#9ca3af' },
+            { cx: 0, cy: -8.5, rx: 6.5, ry: 3.4, col: '#57534e', light: '#854d0e' },
+            { cx: -13, cy: -7.5, rx: 4.8, ry: 2.8, col: '#71717a', light: '#a1a1aa' },
+            { cx: 13, cy: -5, rx: 5.2, ry: 3, col: '#78716c', light: '#a8a29e' },
+            { cx: 0, cy: 8.5, rx: 6.5, ry: 3.4, col: '#64748b', light: '#94a3b8' },
+            { cx: -13, cy: 5, rx: 5.4, ry: 3.1, col: '#57534e', light: '#78716c' },
+            { cx: 13, cy: 8, rx: 5, ry: 2.9, col: '#71717a', light: '#a1a1aa' },
+            { cx: -23, cy: 0, rx: 4.2, ry: 2.6, col: '#64748b', light: '#94a3b8' },
+            { cx: 23, cy: 0, rx: 4.2, ry: 2.6, col: '#78716c', light: '#a8a29e' },
+            { cx: 0, cy: -13, rx: 3.8, ry: 2.2, col: '#6b7280', light: '#9ca3af' },
+            { cx: 0, cy: 13, rx: 3.8, ry: 2.2, col: '#57534e', light: '#78716c' },
+          ];
+
+          cobbles.forEach(c => {
+            const sx = cx + c.cx;
+            const sy = cy + c.cy;
+            // Contact shadow
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.45)';
+            ctx.beginPath();
+            ctx.ellipse(sx, sy + 1.2, c.rx, c.ry, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Cobblestone core
+            ctx.fillStyle = c.col;
+            ctx.beginPath();
+            ctx.ellipse(sx, sy, c.rx, c.ry, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Sunlit beveled rim
+            ctx.strokeStyle = c.light;
+            ctx.lineWidth = 0.9;
+            ctx.beginPath();
+            ctx.ellipse(sx - 0.4, sy - 0.5, c.rx * 0.78, c.ry * 0.75, 0, Math.PI * 0.75, Math.PI * 1.85);
+            ctx.stroke();
+
+            // Bottom shadow facet
+            ctx.strokeStyle = 'rgba(28, 25, 23, 0.55)';
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.ellipse(sx + 0.3, sy + 0.4, c.rx * 0.82, c.ry * 0.8, 0, 0, Math.PI * 0.85);
+            ctx.stroke();
+          });
+
+          // Crevice moss & wildflower
+          ctx.fillStyle = '#84cc16';
+          ctx.fillRect(cx - 5, cy + 2.5, 1.4, 2);
+          ctx.fillRect(cx + 6, cy - 4.5, 1.8, 1.5);
+          ctx.fillRect(cx - 18, cy + 1, 1.5, 1.8);
+          // Tiny white chamomile daisy
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(cx - 4.5, cy + 1.8, 0.9, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#f59e0b';
+          ctx.fillRect(cx - 4.8, cy + 1.5, 0.6, 0.6);
+
+          ctx.restore();
+          break;
+        }
+
         case 'stone_path': {
           ctx.save();
           // Flagstone stepping stones with natural variation, beveled edges and grass tufts
@@ -1295,6 +1677,148 @@ export default function App() {
             ctx.fillStyle = '#84cc16';
             ctx.fillRect(s.x - 2, s.y + 1, 1.2, 2.5);
           });
+          ctx.restore();
+          break;
+        }
+
+        case 'stone_wall': {
+          ctx.save();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+          
+          // Check adjacent stone walls for seamless modular Clash of Clans connections
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
+
+          // Pass 1: Ground contact ambient shadow
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.42)';
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 5, 22, 10, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          const wallH = 19; // Height of fortress wall extrusion
+
+          // Helper to draw an isometric wall block segment
+          const drawWallBlock = (x1, y1, x2, y2, x3, y3, x4, y4, height) => {
+            // Front-Left Face (Lit side, West)
+            const leftGrad = ctx.createLinearGradient(x4, y4 - height, x1, y1);
+            leftGrad.addColorStop(0, '#94a3b8');
+            leftGrad.addColorStop(0.5, '#64748b');
+            leftGrad.addColorStop(1, '#475569');
+            ctx.fillStyle = leftGrad;
+            ctx.beginPath();
+            ctx.moveTo(x4, y4);
+            ctx.lineTo(x1, y1);
+            ctx.lineTo(x1, y1 - height);
+            ctx.lineTo(x4, y4 - height);
+            ctx.closePath();
+            ctx.fill();
+
+            // Front-Right Face (Shadow side, East)
+            const rightGrad = ctx.createLinearGradient(x1, y1 - height, x2, y2);
+            rightGrad.addColorStop(0, '#475569');
+            rightGrad.addColorStop(1, '#334155');
+            ctx.fillStyle = rightGrad;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x2, y2 - height);
+            ctx.lineTo(x1, y1 - height);
+            ctx.closePath();
+            ctx.fill();
+
+            // Horizontal Ashlar Mortar Grooves
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 0.9;
+            [-0.33, -0.66].forEach(f => {
+              ctx.beginPath();
+              ctx.moveTo(x4, y4 + height * f);
+              ctx.lineTo(x1, y1 + height * f);
+              ctx.stroke();
+              ctx.beginPath();
+              ctx.moveTo(x1, y1 + height * f);
+              ctx.lineTo(x2, y2 + height * f);
+              ctx.stroke();
+            });
+
+            // Top Cap Stone (Rhombus)
+            const capGrad = ctx.createLinearGradient(x4, y4 - height, x2, y2 - height);
+            capGrad.addColorStop(0, '#f1f5f9');
+            capGrad.addColorStop(0.4, '#e2e8f0');
+            capGrad.addColorStop(1, '#cbd5e1');
+            ctx.fillStyle = capGrad;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1 - height);
+            ctx.lineTo(x2, y2 - height);
+            ctx.lineTo(x3, y3 - height);
+            ctx.lineTo(x4, y4 - height);
+            ctx.closePath();
+            ctx.fill();
+
+            // Top Cap Beveled Rim & Sunlit Keylight
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(x4, y4 - height);
+            ctx.lineTo(x1, y1 - height);
+            ctx.lineTo(x2, y2 - height);
+            ctx.stroke();
+          };
+
+          // Draw connectors to neighbors first (so center pillar caps sit neatly on top)
+          if (hasEast) {
+            // Connector down-right towards (cx + 17, cy + 8.5)
+            drawWallBlock(cx + 8, cy + 7, cx + 18, cy + 2, cx + 10, cy - 2, cx, cy + 3, wallH - 1);
+          }
+          if (hasWest) {
+            // Connector up-left towards (cx - 17, cy - 8.5)
+            drawWallBlock(cx, cy + 3, cx + 10, cy - 2, cx, cy - 7, cx - 10, cy - 2, wallH - 1);
+          }
+          if (hasSouth) {
+            // Connector down-left towards (cx - 17, cy + 8.5)
+            drawWallBlock(cx - 8, cy + 7, cx, cy + 3, cx - 10, cy - 2, cx - 18, cy + 2, wallH - 1);
+          }
+          if (hasNorth) {
+            // Connector up-right towards (cx + 17, cy - 8.5)
+            drawWallBlock(cx, cy + 3, cx + 18, cy - 6, cx + 10, cy - 11, cx, cy - 2, wallH - 1);
+          }
+
+          // Main Center Fortress Wall Bastion Pillar (cx, cy)
+          drawWallBlock(cx, cy + 4, cx + 13, cy - 2.5, cx, cy - 9, cx - 13, cy - 2.5, wallH);
+
+          // Fortress Crenellations / Battlements (Clash of Clans iconic merlons!)
+          const merlons = [
+            { x: cx - 10, y: cy - 2.5 - wallH - 2, w: 4.5, h: 4.5 },
+            { x: cx + 7, y: cy - 2.5 - wallH - 2, w: 4.5, h: 4.5 },
+            { x: cx - 2, y: cy + 3 - wallH - 2, w: 4.5, h: 4.5 },
+            { x: cx - 2, y: cy - 8 - wallH - 2, w: 4.5, h: 4.5 }
+          ];
+          merlons.forEach(m => {
+            ctx.fillStyle = '#64748b';
+            ctx.fillRect(m.x, m.y, m.w, m.h);
+            ctx.fillStyle = '#f1f5f9';
+            ctx.fillRect(m.x, m.y, m.w, 1.5);
+            ctx.fillStyle = '#334155';
+            ctx.fillRect(m.x + m.w - 1.2, m.y, 1.2, m.h);
+          });
+
+          // Heavy Bronze Reinforcement Studs
+          ctx.fillStyle = '#f59e0b';
+          ctx.beginPath();
+          ctx.arc(cx - 5, cy - 6, 1.2, 0, Math.PI * 2);
+          ctx.arc(cx + 5, cy - 6, 1.2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Creeping Base Ivy / Moss
+          ctx.fillStyle = '#4d7c0f';
+          ctx.beginPath();
+          ctx.arc(cx - 8, cy + 2, 2.2, 0, Math.PI * 2);
+          ctx.arc(cx + 6, cy + 3, 2, 0, Math.PI * 2);
+          ctx.fill();
+
           ctx.restore();
           break;
         }
@@ -3590,46 +4114,106 @@ export default function App() {
 
         case 'wooden_fence': {
           ctx.save();
-          // Contact shadow
-          ctx.fillStyle = 'rgba(15, 30, 10, 0.28)';
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const objs = placedObjectsRef.current || [];
+
+          // Check adjacent wooden fences for seamless modular ranch / palisade connections
+          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && (o.type === 'wooden_fence' || o.type === 'fence'));
+          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && (o.type === 'wooden_fence' || o.type === 'fence'));
+          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && (o.type === 'wooden_fence' || o.type === 'fence'));
+          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'wooden_fence' || o.type === 'fence'));
+          const isConnected = hasEast || hasWest || hasSouth || hasNorth;
+
+          // Contact ground shadow
+          ctx.fillStyle = 'rgba(15, 30, 10, 0.35)';
           ctx.beginPath();
-          ctx.ellipse(cx, cy + 5, 20, 7, 0, 0, Math.PI * 2);
+          ctx.ellipse(cx, cy + 4, 18, 7.5, 0, 0, Math.PI * 2);
           ctx.fill();
 
-          // Two round corner posts
-          const fPosts = [-14, 14];
-          fPosts.forEach(fx => {
-            ctx.fillStyle = '#451a03';
-            ctx.fillRect(cx + fx - 2, cy - 14, 4, 18);
-            ctx.fillStyle = '#b45309';
-            ctx.fillRect(cx + fx - 2, cy - 14, 2.5, 18);
-            // Post pointed cap
+          // Helper to draw isometric wooden rails between two points
+          const drawRail = (x1, y1, x2, y2) => {
+            // Upper rail
+            ctx.strokeStyle = '#451a03';
+            ctx.lineWidth = 3.2;
             ctx.beginPath();
-            ctx.moveTo(cx + fx - 2, cy - 14);
-            ctx.lineTo(cx + fx, cy - 17);
-            ctx.lineTo(cx + fx + 2, cy - 14);
-            ctx.closePath();
-            ctx.fill();
-          });
-
-          // Horizontal rails
-          ctx.fillStyle = '#92400e';
-          ctx.fillRect(cx - 15, cy - 10, 30, 2.5);
-          ctx.fillRect(cx - 15, cy - 3, 30, 2.5);
-
-          // Pickets
-          [-6, 0, 6].forEach(px => {
-            ctx.fillStyle = '#78350f';
-            ctx.fillRect(cx + px - 1.5, cy - 13, 3, 16);
-            ctx.fillStyle = '#d97706';
-            ctx.fillRect(cx + px - 1.5, cy - 13, 1.8, 16);
+            ctx.moveTo(x1, y1 - 10);
+            ctx.lineTo(x2, y2 - 10);
+            ctx.stroke();
+            ctx.strokeStyle = '#b45309';
+            ctx.lineWidth = 1.8;
             ctx.beginPath();
-            ctx.moveTo(cx + px - 1.5, cy - 13);
-            ctx.lineTo(cx + px, cy - 15.5);
-            ctx.lineTo(cx + px + 1.5, cy - 13);
-            ctx.closePath();
-            ctx.fill();
-          });
+            ctx.moveTo(x1, y1 - 10.5);
+            ctx.lineTo(x2, y2 - 10.5);
+            ctx.stroke();
+
+            // Lower rail
+            ctx.strokeStyle = '#451a03';
+            ctx.lineWidth = 3.2;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1 - 4);
+            ctx.lineTo(x2, y2 - 4);
+            ctx.stroke();
+            ctx.strokeStyle = '#b45309';
+            ctx.lineWidth = 1.8;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1 - 4.5);
+            ctx.lineTo(x2, y2 - 4.5);
+            ctx.stroke();
+          };
+
+          // Draw connecting rails to neighbors
+          if (hasEast) drawRail(cx, cy, cx + 17, cy + 8.5);
+          if (hasWest) drawRail(cx - 17, cy - 8.5, cx, cy);
+          if (hasSouth) drawRail(cx, cy, cx - 17, cy + 8.5);
+          if (hasNorth) drawRail(cx + 17, cy - 8.5, cx, cy);
+
+          // If standalone fence (no neighbors), show classic double-rail segment with pickets
+          if (!isConnected) {
+            drawRail(cx - 14, cy - 3, cx + 14, cy + 3);
+            // Flanking pickets
+            [-8, 8].forEach(px => {
+              const py = cy + (px * 3 / 14);
+              ctx.fillStyle = '#78350f';
+              ctx.fillRect(cx + px - 1.5, py - 13, 3, 14);
+              ctx.fillStyle = '#d97706';
+              ctx.fillRect(cx + px - 1.5, py - 13, 1.8, 14);
+              ctx.beginPath();
+              ctx.moveTo(cx + px - 1.5, py - 13);
+              ctx.lineTo(cx + px, py - 15.5);
+              ctx.lineTo(cx + px + 1.5, py - 13);
+              ctx.closePath();
+              ctx.fill();
+            });
+          }
+
+          // Central Sturdy Carved Timber Post (Clash of Clans Ranch Style)
+          const postW = 5.5;
+          const postH = 17;
+          // Shadow facet (East)
+          ctx.fillStyle = '#451a03';
+          ctx.fillRect(cx - postW / 2, cy - postH, postW, postH + 4);
+          // Sunlit facet (West)
+          ctx.fillStyle = '#b45309';
+          ctx.fillRect(cx - postW / 2, cy - postH, postW * 0.55, postH + 4);
+          
+          // Pyramidal Carved Post Cap
+          ctx.beginPath();
+          ctx.moveTo(cx - postW / 2, cy - postH);
+          ctx.lineTo(cx, cy - postH - 4.5);
+          ctx.lineTo(cx + postW / 2, cy - postH);
+          ctx.closePath();
+          ctx.fillStyle = '#d97706';
+          ctx.fill();
+          ctx.strokeStyle = '#78350f';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+
+          // Iron Reinforcement Bracket & Studs
+          ctx.fillStyle = '#334155';
+          ctx.fillRect(cx - postW / 2 - 0.5, cy - 8, postW + 1, 2.2);
+          ctx.fillStyle = '#94a3b8';
+          ctx.fillRect(cx - 1, cy - 7.5, 1.4, 1.2);
 
           ctx.restore();
           break;
@@ -4492,52 +5076,69 @@ export default function App() {
       ctx.fillStyle = skyGrad;
       ctx.fillRect(0, 0, width, height);
 
-      // Distant Sunset Sun & Sky Highlights
+      // Distant Sun, Moon & Sky Highlights
       if (isSunset) {
-        const sunX = width * 0.22;
-        const sunY = height * 0.24;
-        const sunGrad = ctx.createRadialGradient(sunX, sunY, 10, sunX, sunY, 260);
+        const sunX = width * 0.20;
+        const sunY = height * 0.06;
+        const sunGrad = ctx.createRadialGradient(sunX, sunY, 6, sunX, sunY, 150);
         sunGrad.addColorStop(0, 'rgba(254, 240, 138, 0.95)');
         sunGrad.addColorStop(0.2, 'rgba(249, 115, 22, 0.7)');
         sunGrad.addColorStop(0.5, 'rgba(217, 70, 239, 0.35)');
         sunGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = sunGrad;
         ctx.beginPath();
-        ctx.arc(sunX, sunY, 260, 0, Math.PI * 2);
+        ctx.arc(sunX, sunY, 150, 0, Math.PI * 2);
         ctx.fill();
 
         // Sunset Orb
         ctx.fillStyle = '#fef08a';
         ctx.beginPath();
-        ctx.arc(sunX, sunY, 32, 0, Math.PI * 2);
+        ctx.arc(sunX, sunY, 22, 0, Math.PI * 2);
         ctx.fill();
       } else if (isNight) {
         // Gentle crescent moon & stars
-        const moonX = width * 0.24;
-        const moonY = height * 0.18;
+        const moonX = width * 0.22;
+        const moonY = height * 0.055;
         ctx.fillStyle = 'rgba(254, 243, 199, 0.15)';
         ctx.beginPath();
-        ctx.arc(moonX, moonY, 40, 0, Math.PI * 2);
+        ctx.arc(moonX, moonY, 30, 0, Math.PI * 2);
         ctx.fill();
         ctx.fillStyle = '#fef3c7';
         ctx.beginPath();
-        ctx.arc(moonX, moonY, 20, 0, Math.PI * 2);
+        ctx.arc(moonX, moonY, 15, 0, Math.PI * 2);
         ctx.fill();
 
         // Star twinkle
         ctx.fillStyle = '#ffffff';
         [
-          [0.1, 0.12], [0.18, 0.08], [0.32, 0.15], [0.45, 0.09], [0.65, 0.14], [0.8, 0.1]
+          [0.1, 0.035], [0.18, 0.02], [0.32, 0.04], [0.45, 0.025], [0.65, 0.045], [0.8, 0.025]
         ].forEach(([px, py]) => {
           ctx.beginPath();
           ctx.arc(width * px, height * py, 1.2, 0, Math.PI * 2);
           ctx.fill();
         });
+      } else {
+        // Bright peaceful afternoon Sun
+        const sunX = width * 0.18;
+        const sunY = height * 0.05;
+        const sunGrad = ctx.createRadialGradient(sunX, sunY, 5, sunX, sunY, 95);
+        sunGrad.addColorStop(0, 'rgba(255, 255, 245, 0.95)');
+        sunGrad.addColorStop(0.3, 'rgba(254, 240, 138, 0.55)');
+        sunGrad.addColorStop(1, 'rgba(254, 240, 138, 0)');
+        ctx.fillStyle = sunGrad;
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, 95, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#fef08a';
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, 16, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       // 2. WESTERN HORIZON, COASTAL WATER & ROLLING HILLS (Harmonious Organic Backdrop)
       // Soft atmospheric rolling ridge behind and beneath the meadow
-      const hillGrad = ctx.createLinearGradient(0, height * 0.22, 0, height * 0.72);
+      const hillGrad = ctx.createLinearGradient(0, height * 0.06, 0, height * 0.45);
       if (isNight) {
         hillGrad.addColorStop(0, '#0c1a2e');
         hillGrad.addColorStop(0.35, '#0f291e');
@@ -4556,22 +5157,22 @@ export default function App() {
       // Distant rolling mountain silhouette (Soft Bézier curve across full width)
       ctx.fillStyle = hillGrad;
       ctx.beginPath();
-      ctx.moveTo(0, height * 0.28);
-      ctx.bezierCurveTo(width * 0.25, height * 0.22, width * 0.55, height * 0.35, width, height * 0.26);
+      ctx.moveTo(0, height * 0.095);
+      ctx.bezierCurveTo(width * 0.25, height * 0.06, width * 0.55, height * 0.125, width, height * 0.085);
       ctx.lineTo(width, height);
       ctx.lineTo(0, height);
       ctx.closePath();
       ctx.fill();
 
       // Gentle mountain haze / sunset mist band
-      const mistGrad = ctx.createLinearGradient(0, height * 0.24, 0, height * 0.42);
+      const mistGrad = ctx.createLinearGradient(0, height * 0.07, 0, height * 0.15);
       mistGrad.addColorStop(0, isSunset ? 'rgba(253, 230, 138, 0.35)' : 'rgba(255, 255, 255, 0.25)');
       mistGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
       ctx.fillStyle = mistGrad;
-      ctx.fillRect(0, height * 0.22, width, height * 0.2);
+      ctx.fillRect(0, height * 0.06, width, height * 0.09);
 
       // Distant tranquil lake shimmer on the horizon (nestled gently in the valley hills)
-      const lakeGrad = ctx.createLinearGradient(0, height * 0.28, width * 0.22, height * 0.36);
+      const lakeGrad = ctx.createLinearGradient(0, height * 0.09, width * 0.22, height * 0.13);
       if (isNight) {
         lakeGrad.addColorStop(0, 'rgba(2, 132, 199, 0.45)');
         lakeGrad.addColorStop(1, 'rgba(3, 43, 67, 0.2)');
@@ -4585,22 +5186,22 @@ export default function App() {
       }
       ctx.fillStyle = lakeGrad;
       ctx.beginPath();
-      ctx.moveTo(0, height * 0.29);
-      ctx.bezierCurveTo(width * 0.08, height * 0.28, width * 0.16, height * 0.32, width * 0.22, height * 0.35);
-      ctx.bezierCurveTo(width * 0.14, height * 0.37, width * 0.06, height * 0.36, 0, height * 0.35);
+      ctx.moveTo(0, height * 0.098);
+      ctx.bezierCurveTo(width * 0.08, height * 0.09, width * 0.16, height * 0.11, width * 0.22, height * 0.125);
+      ctx.bezierCurveTo(width * 0.14, height * 0.135, width * 0.06, height * 0.13, 0, height * 0.125);
       ctx.closePath();
       ctx.fill();
 
       // 3. LAYERED NATURAL FOREST (Serene Woodland Horizon Silhouette)
-      const ridgeGrad = ctx.createLinearGradient(0, height * 0.24, 0, height * 0.44);
+      const ridgeGrad = ctx.createLinearGradient(0, height * 0.08, 0, height * 0.18);
       ridgeGrad.addColorStop(0, isNight ? '#052210' : (isSunset ? '#2c4a09' : '#14532d'));
       ridgeGrad.addColorStop(1, isNight ? '#0b3518' : (isSunset ? '#4d7515' : '#16a34a'));
       ctx.fillStyle = ridgeGrad;
       ctx.beginPath();
-      ctx.moveTo(0, height * 0.33);
-      ctx.bezierCurveTo(width * 0.35, height * 0.26, width * 0.7, height * 0.36, width, height * 0.29);
-      ctx.lineTo(width, height * 0.48);
-      ctx.lineTo(0, height * 0.48);
+      ctx.moveTo(0, height * 0.115);
+      ctx.bezierCurveTo(width * 0.35, height * 0.08, width * 0.7, height * 0.13, width, height * 0.10);
+      ctx.lineTo(width, height * 0.18);
+      ctx.lineTo(0, height * 0.18);
       ctx.closePath();
       ctx.fill();
 
@@ -4688,13 +5289,6 @@ export default function App() {
             const isOccupied = occupiedSet.has((gx << 8) | gy);
 
             drawTile(sx, sy, color, isHovered, (currentBuildItem || movingObjectRef.current) && !isOccupied);
-
-            if (tile.isCultivated) {
-              ctx.fillStyle = 'rgba(253, 224, 71, 0.5)';
-              ctx.beginPath();
-              ctx.arc(sx, sy + TILE_H / 2, 2.2, 0, Math.PI * 2);
-              ctx.fill();
-            }
 
             if (tile.isWildflower) {
               ctx.fillStyle = isSunset ? '#fef08a' : '#f472b6';
@@ -4979,6 +5573,11 @@ export default function App() {
         };
       }
 
+      // Update autonomous animals simulation
+      if (animalsRef.current && animalsRef.current.length > 0) {
+        updateAnimalsSimulation(animalsRef.current, dt, checkClearing, currentPlaced, GRID_SIZE);
+      }
+
       // Build unified render list sorted by isometric depth (gx + gy)
       const renderEntities = [];
       const activeDrag = activeDragRef.current || currentDragging;
@@ -5013,7 +5612,21 @@ export default function App() {
         });
       }
 
+      // Add living animals to depth-sorted render list
+      if (animalsRef.current && animalsRef.current.length > 0) {
+        animalsRef.current.forEach(animal => {
+          renderEntities.push({
+            kind: 'animal',
+            depth: animal.currGx + animal.currGy + 0.08,
+            animal
+          });
+        });
+      }
+
       renderEntities.sort((a, b) => a.depth - b.depth);
+
+      const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+      const animTime = Date.now() * 0.003;
 
       renderEntities.forEach(item => {
         if (item.kind === 'border_scenery') {
@@ -5037,6 +5650,63 @@ export default function App() {
           }
 
           drawItem(item.obj.type, sx, sy, isInspected || isSelectedMove, item.obj);
+
+          // Associative Mind Map Badge floating above object
+          if (showMindMapTagsRef.current && item.obj.customName) {
+            ctx.save();
+            ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+            const nameText = item.obj.customEmoji ? `${item.obj.customEmoji} ${item.obj.customName}` : item.obj.customName;
+            const isCared = item.obj.lastCaredDate === todayStr;
+            const textWidth = ctx.measureText(nameText).width;
+            const tagW = textWidth + (isCared ? 28 : 18);
+            const tagH = 18;
+            const tagX = sx - tagW / 2;
+            const tagY = sy - 28;
+
+            ctx.fillStyle = isCared ? 'rgba(22, 101, 52, 0.92)' : 'rgba(15, 23, 42, 0.88)';
+            ctx.strokeStyle = isCared ? '#4ade80' : 'rgba(56, 189, 248, 0.6)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.roundRect(tagX, tagY, tagW, tagH, 9);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = isCared ? '#86efac' : '#38bdf8';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            const textOffsetX = isCared ? 5 : 0;
+            ctx.fillText(nameText, sx + textOffsetX, tagY + tagH / 2);
+
+            if (isCared) {
+              ctx.fillStyle = '#22c55e';
+              ctx.beginPath();
+              ctx.arc(tagX + 9, tagY + tagH / 2, 4, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.fillStyle = '#ffffff';
+              ctx.font = 'bold 8px sans-serif';
+              ctx.fillText('✓', tagX + 9, tagY + tagH / 2);
+            }
+
+            // Pointer triangle
+            ctx.fillStyle = isCared ? 'rgba(22, 101, 52, 0.92)' : 'rgba(15, 23, 42, 0.88)';
+            ctx.beginPath();
+            ctx.moveTo(sx - 3, tagY + tagH);
+            ctx.lineTo(sx + 3, tagY + tagH);
+            ctx.lineTo(sx, tagY + tagH + 3);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+          }
+        } else if (item.kind === 'animal') {
+          const { x: sx, y: sy } = toScreen(item.animal.currGx, item.animal.currGy, origin.x, origin.y);
+          item.animal.screenPos = { x: sx, y: sy + TILE_H / 2 };
+          drawAnimal(ctx, item.animal, { x: sx, y: sy + TILE_H / 2 }, {
+            isSunset,
+            isNight,
+            showTag: showMindMapTagsRef.current,
+            isHovered: currentHovered?.gx === item.animal.gx && currentHovered?.gy === item.animal.gy,
+            todayStr
+          });
         } else if (item.kind === 'villager') {
           drawVillager(item.villager, origin, isSunset, isNight);
         }
@@ -5164,7 +5834,7 @@ export default function App() {
     const mouseY = clientY - rect.top;
 
     const originX = canvas.width / 2 + (cameraPanRef.current ? cameraPanRef.current.x : 0);
-    const originY = canvas.height * 0.17 + (cameraPanRef.current ? cameraPanRef.current.y : 0);
+    const originY = canvas.height * GRID_ORIGIN_Y_RATIO + (cameraPanRef.current ? cameraPanRef.current.y : 0);
 
     const relX = mouseX - originX;
     const relY = mouseY - originY;
@@ -5193,7 +5863,7 @@ export default function App() {
     const mouseY = clientY - rect.top;
 
     const originX = canvas.width / 2 + (cameraPanRef.current ? cameraPanRef.current.x : 0);
-    const originY = canvas.height * 0.17 + (cameraPanRef.current ? cameraPanRef.current.y : 0);
+    const originY = canvas.height * GRID_ORIGIN_Y_RATIO + (cameraPanRef.current ? cameraPanRef.current.y : 0);
 
     // Filter to tall objects only (trees, buildings) sorted front-to-back
     const tallObjects = placed
@@ -5237,16 +5907,9 @@ export default function App() {
     return null;
   };
 
-  // Cultivate single frontier plot
+  // Cultivate single frontier plot (Free & unrestricted)
   const handleCultivatePlot = (gx, gy) => {
-    if (seeds < PLOT_CULTIVATION_COST) {
-      sounds.playTap();
-      alert(`נדרשים ${PLOT_CULTIVATION_COST} זרעי טיפוח כדי להכשיר חלקה זו. השלם כוונות ביומן כדי לצבור זרעים!`);
-      return;
-    }
-
     sounds.playCultivate();
-    setSeeds(s => s - PLOT_CULTIVATION_COST);
 
     const newPlot = { gx, gy, cultivatedAt: Date.now() };
     setCultivatedPlots(prev => [...prev, newPlot]);
@@ -5256,7 +5919,7 @@ export default function App() {
     if (canvas) {
       const origin = {
         x: canvas.width / 2 + cameraPan.x,
-        y: canvas.height * 0.17 + cameraPan.y
+        y: canvas.height * GRID_ORIGIN_Y_RATIO + cameraPan.y
       };
       const screenPos = {
         x: origin.x + (gx - gy) * (TILE_W / 2),
@@ -5284,16 +5947,9 @@ export default function App() {
     }
   };
 
-  // Upgrade Territory Tier
-  const handleUpgradeTier = (targetTier, cost) => {
-    if (seeds < cost) {
-      sounds.playTap();
-      alert(`נדרשים ${cost} זרעי טיפוח לשדרוג נחלה זו.`);
-      return;
-    }
-
+  // Upgrade Territory Tier (Free & unrestricted)
+  const handleUpgradeTier = (targetTier) => {
     sounds.playTerritoryExpand();
-    setSeeds(s => s - cost);
     setExpansionTier(targetTier);
 
     confetti({
@@ -5316,11 +5972,9 @@ export default function App() {
     }
   };
 
-  // Batch Cultivate
-  const handleBatchCultivate = (count, cost) => {
-    if (seeds < cost) return;
+  // Batch Cultivate (Free & unrestricted)
+  const handleBatchCultivate = (count) => {
     sounds.playTerritoryExpand();
-    setSeeds(s => s - cost);
 
     const newPlots = [];
     for (let gy = 0; gy < GRID_SIZE; gy++) {
@@ -5449,14 +6103,15 @@ export default function App() {
     }
   };
 
-  // Remove placed object with seed refund
+  // Remove placed object (Free clearing)
   const handleRemoveObject = (obj) => {
     if (!obj) return;
-    const catItem = BUILD_CATALOG.find(c => c.renderType === obj.type);
-    const refund = catItem?.costSeeds || 10;
     sounds.playTap();
-    setSeeds(s => s + refund);
     setPlacedObjects(prev => prev.filter(o => !(o.gx === obj.gx && o.gy === obj.gy)));
+    if (obj.animalId) {
+      setAnimals(prev => prev.filter(a => a.id !== obj.animalId));
+    }
+    setAnimals(prev => prev.filter(a => !(a.gx === obj.gx && a.gy === obj.gy && a.type === obj.type?.replace('animal_', ''))));
     setInspectedObject(null);
     setMovingObject(null);
 
@@ -5469,7 +6124,7 @@ export default function App() {
 
     const v = animEntitiesRef.current.villager;
     if (v) {
-      v.bubble = { text: `הפריט הוסר מהכפר וקיבלנו חזרה ${refund} זרעי טיפוח! 🧹🌱`, timer: 260 };
+      v.bubble = { text: 'הפריט הוסר והמשבצת פונתה בהצלחה! 🧹', timer: 260 };
       v.emote = '🧹';
       v.emoteTimer = 110;
     }
@@ -5547,25 +6202,50 @@ export default function App() {
     v.emoteTimer = 120;
   };
 
-  // Update commemorated memory and date for an object
-  const handleUpdateObjectMemory = (gx, gy, newMemory, newDate) => {
+  // Update commemorated memory, custom name, custom emoji and date for an object or animal
+  const handleUpdateObjectMemory = (gx, gy, newMemory, newDate, newCustomName, animalId, newCustomEmoji) => {
     sounds.playNourish();
+
+    // 1. Update placed static objects (if matched by tile)
     setPlacedObjects(prev => prev.map(o => {
       if (o.gx === gx && o.gy === gy) {
         return {
           ...o,
           memory: newMemory,
           dedicatedTo: newMemory,
-          date: newDate
+          date: newDate,
+          customName: newCustomName !== undefined ? newCustomName : o.customName,
+          customEmoji: newCustomEmoji !== undefined ? newCustomEmoji : o.customEmoji
         };
       }
       return o;
     }));
+
+    // 2. Update animals by unique animalId (or fallback to gx, gy)
+    if (animalsRef.current && animalsRef.current.length > 0) {
+      animalsRef.current = animalsRef.current.map(a => {
+        const isTarget = animalId ? (a.id === animalId) : (a.gx === gx && a.gy === gy);
+        if (isTarget) {
+          return {
+            ...a,
+            name: newCustomName !== undefined ? newCustomName : a.name,
+            customNote: newMemory !== undefined ? newMemory : a.customNote,
+            customEmoji: newCustomEmoji !== undefined ? newCustomEmoji : a.customEmoji
+          };
+        }
+        return a;
+      });
+      saveAnimals(animalsRef.current);
+      setAnimals([...animalsRef.current]);
+    }
+
     setInspectedObject(prev => prev ? {
       ...prev,
       memory: newMemory,
       dedicatedTo: newMemory,
-      date: newDate
+      date: newDate,
+      customName: newCustomName !== undefined ? newCustomName : prev.customName,
+      customEmoji: newCustomEmoji !== undefined ? newCustomEmoji : prev.customEmoji
     } : null);
 
     confetti({
@@ -5578,10 +6258,123 @@ export default function App() {
     const v = animEntitiesRef.current.villager;
     if (v) {
       v.hopVy = -4.5;
-      v.bubble = { text: 'הזיכרון נשמר והונצח בפינה זו באהבה! 💭✨', timer: 260 };
+      v.bubble = { text: 'העוגן והאסוציאציה נשמרו בפינה זו באהבה! 💭✨', timer: 260 };
       v.emote = '💖';
       v.emoteTimer = 110;
     }
+  };
+
+  // Active Recall & Daily Care Routine (חזרתיות ותרגול הזיכרון)
+  const handleNourishRecall = (obj) => {
+    sounds.playNourish();
+    const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+
+    // 1. If it's an animal
+    if (obj.animalId || obj.isAnimal) {
+      if (animalsRef.current) {
+        animalsRef.current = animalsRef.current.map(a => {
+          if (a.id === obj.animalId || (a.gx === obj.gx && a.gy === obj.gy)) {
+            return {
+              ...a,
+              lastCaredDate: todayStr,
+              completed: true
+            };
+          }
+          return a;
+        });
+        saveAnimals(animalsRef.current);
+        setAnimals([...animalsRef.current]);
+      }
+    } else {
+      // 2. If it's a placed object
+      setPlacedObjects(prev => prev.map(o => {
+        if (o.gx === obj.gx && o.gy === obj.gy) {
+          return {
+            ...o,
+            lastCaredDate: todayStr
+          };
+        }
+        return o;
+      }));
+    }
+
+    // Update current inspected object
+    setInspectedObject(prev => prev ? {
+      ...prev,
+      lastCaredDate: todayStr,
+      completed: true
+    } : null);
+
+    confetti({
+      particleCount: 35,
+      spread: 60,
+      origin: { y: 0.6 },
+      colors: ['#34d399', '#fde047', '#60a5fa', '#f472b6']
+    });
+
+    const v = animEntitiesRef.current.villager;
+    if (v) {
+      v.hopVy = -5.0;
+      const targetName = obj.customName || 'העוגן';
+      v.bubble = { 
+        text: `מעולה! הזיכרון של "${targetName}" חודד וטופח היום בהצלחה! 🌟`, 
+        timer: 300 
+      };
+      v.emote = '✨';
+      v.emoteTimer = 130;
+    }
+  };
+
+  // Gentle Daily Village Care Ritual (מים לצמחים ואוכל לחיות בנחת)
+  const handleDailyVillageCare = () => {
+    sounds.playNourish();
+    const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+
+    setLastVillageCareDate(todayStr);
+    localStorage.setItem('lifequest_village_care_date', todayStr);
+
+    // 1. Mark all placed objects as cared today
+    setPlacedObjects(prev => prev.map(o => ({
+      ...o,
+      lastCaredDate: todayStr
+    })));
+
+    // 2. Mark all animals as cared today
+    if (animalsRef.current && animalsRef.current.length > 0) {
+      animalsRef.current = animalsRef.current.map(a => ({
+        ...a,
+        lastCaredDate: todayStr,
+        completed: true
+      }));
+      saveAnimals(animalsRef.current);
+      setAnimals([...animalsRef.current]);
+    }
+
+    // 3. Update inspected object if open
+    setInspectedObject(prev => prev ? {
+      ...prev,
+      lastCaredDate: todayStr,
+      completed: true
+    } : null);
+
+    // 4. Cheerful, relaxing villager animation
+    const v = animEntitiesRef.current.villager;
+    if (v) {
+      v.hopVy = -5.0;
+      v.bubble = { 
+        text: 'השקית את הצמחים ונתת אוכל לחיות! 🌿💧 כל הכפר רגוע ושבע.', 
+        timer: 320 
+      };
+      v.emote = '💖';
+      v.emoteTimer = 140;
+    }
+
+    confetti({
+      particleCount: 28,
+      spread: 55,
+      origin: { y: 0.6 },
+      colors: ['#34d399', '#60a5fa', '#fde047', '#a7f3d0']
+    });
   };
 
   // Pick fruit from fruit tree or bush
@@ -5655,7 +6448,7 @@ export default function App() {
       const clickScreenY = clientY - rect.top;
       const vScreen = v.screenPos || {
         x: (canvas ? canvas.width / 2 : 0) + (cameraPanRef.current?.x || 0) + (v.currGx - v.currGy) * (TILE_W / 2),
-        y: (canvas ? canvas.height * 0.17 : 0) + (cameraPanRef.current?.y || 0) + (v.currGx + v.currGy) * (TILE_H / 2) + TILE_H / 2
+        y: (canvas ? canvas.height * GRID_ORIGIN_Y_RATIO : 0) + (cameraPanRef.current?.y || 0) + (v.currGx + v.currGy) * (TILE_H / 2) + TILE_H / 2
       };
       const dist = Math.hypot(clickScreenX - vScreen.x, clickScreenY - (vScreen.y - 18));
       const gridDist = Math.hypot(gx - v.currGx, gy - v.currGy);
@@ -5699,6 +6492,8 @@ export default function App() {
       lastX: clientX,
       lastY: clientY,
       hasMoved: false,
+      lastPlacedGx: null,
+      lastPlacedGy: null,
       item: itemOnTile
     };
   };
@@ -5751,6 +6546,38 @@ export default function App() {
 
     const downInfo = pointerDownInfoRef.current;
     if (downInfo) {
+      const currentBuildItem = selectedBuildItemRef.current;
+      const isModularBuild = currentBuildItem && (
+        currentBuildItem.isModular || 
+        ['stone_wall', 'wooden_fence', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'fence'].includes(currentBuildItem.renderType)
+      );
+
+      // Support smooth drag-painting for modular items (walls, fences, paths)
+      if (isModularBuild && (inClearing || checkClearing(gx, gy))) {
+        if (downInfo.lastPlacedGx !== gx || downInfo.lastPlacedGy !== gy) {
+          const isOccupied = placedObjectsRef.current.some(o => o.gx === gx && o.gy === gy);
+          if (!isOccupied) {
+            downInfo.hasMoved = true;
+            downInfo.lastPlacedGx = gx;
+            downInfo.lastPlacedGy = gy;
+            const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+            const memoryText = `רגע של ${currentBuildItem.tag}`;
+            const newObj = {
+              gx,
+              gy,
+              type: currentBuildItem.renderType,
+              dedicatedTo: memoryText,
+              memory: memoryText,
+              date: todayStr,
+              createdAt: Date.now(),
+              customName: ''
+            };
+            setPlacedObjects(prev => [...prev, newObj]);
+            sounds.playPlant();
+          }
+        }
+      }
+
       const totalDist = Math.hypot(clientX - downInfo.startX, clientY - downInfo.startY);
 
       if (totalDist > 5) {
@@ -5855,13 +6682,6 @@ export default function App() {
         }
 
         if (selectedBuildItem) {
-          const totalCost = selectedBuildItem.costSeeds + PLOT_CULTIVATION_COST;
-          if (seeds < totalCost) {
-            sounds.playTap();
-            alert(`חלקה זו עדיין פראית. נדרשים ${PLOT_CULTIVATION_COST} זרעים להכשרת המשבצת ועוד ${selectedBuildItem.costSeeds} לבנייה (סה"כ ${totalCost} זרעים). השלם כוונות ביומן או לחץ "+100 ✨"!`);
-            pointerDownInfoRef.current = null;
-            return;
-          }
           // Cultivate frontier plot and place item
           handleCultivatePlot(gx, gy);
         }
@@ -5912,17 +6732,13 @@ export default function App() {
           return;
         }
 
-        // Building Mode: Place item from catalog
+        // Building Mode: Place item from catalog (Free & unrestricted)
         if (selectedBuildItem) {
           if (existing) {
             sounds.playTap();
             alert('משבצת זו כבר תפוסה על ידי פריט אחר.');
-          } else if (seeds < selectedBuildItem.costSeeds) {
-            sounds.playTap();
-            alert('עוד לא נצברו מספיק זרעי טיפוח. לחץ על "+100 ✨" בסרגל העליון כדי לקבל זרעים חופשיים!');
           } else {
             sounds.playPlant();
-            setSeeds(prev => Math.max(0, prev - selectedBuildItem.costSeeds));
             const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
             const memoryText = `רגע של ${selectedBuildItem.tag}`;
             const newObj = {
@@ -5932,19 +6748,56 @@ export default function App() {
               dedicatedTo: memoryText,
               memory: memoryText,
               date: todayStr,
-              createdAt: Date.now()
+              createdAt: Date.now(),
+              customName: selectedBuildItem.isAnimal ? selectedBuildItem.name : ''
             };
-            setPlacedObjects(prev => [...prev, newObj]);
-            setFrontierInspectTile(null);
-            setInspectedObject(newObj);
+            const isModular = selectedBuildItem.isModular || [
+              'stone_wall', 'wooden_fence', 'cobblestone_road', 
+              'stone_path', 'wood_path', 'brick_path', 'fence'
+            ].includes(selectedBuildItem.renderType);
+
+            // If placing a living animal from catalog, spawn into autonomous animals list!
+            if (selectedBuildItem.isAnimal) {
+              const newAnimal = createAnimal(selectedBuildItem.animalType, gx, gy, selectedBuildItem.name);
+              animalsRef.current = [...(animalsRef.current || []), newAnimal];
+              saveAnimals(animalsRef.current);
+              setAnimals([...animalsRef.current]);
+              setFrontierInspectTile(null);
+              setInspectedObject({
+                gx: newAnimal.gx,
+                gy: newAnimal.gy,
+                type: `animal_${newAnimal.type}`,
+                customName: newAnimal.name,
+                memory: newAnimal.customNote || 'חיה כפרית שלווה',
+                date: todayStr,
+                isAnimal: true,
+                animalId: newAnimal.id
+              });
+            } else {
+              setPlacedObjects(prev => [...prev, newObj]);
+              setFrontierInspectTile(null);
+              // For modular walls and paths, DO NOT pop up inspect modal so user can build stacks freely!
+              if (!isModular) {
+                setInspectedObject(newObj);
+              }
+            }
+
+            // If placing animal coop, also spawn an initial happy chicken nearby!
+            if (selectedBuildItem.renderType === 'animal_coop') {
+              const coopChick = createAnimal('chicken', Math.min(GRID_SIZE - 2, gx + 1), gy, 'תרנגולת כפרית', 'דסקית, חוגר, ארנק...', { gx, gy });
+              animalsRef.current = [...(animalsRef.current || []), coopChick];
+              saveAnimals(animalsRef.current);
+              setAnimals([...animalsRef.current]);
+            }
 
             confetti({
-              particleCount: 25,
-              spread: 45,
+              particleCount: isModular ? 8 : 25,
+              spread: isModular ? 25 : 45,
               origin: { y: 0.65 }
             });
 
-            if (!continuousBuild) {
+            // For modular items (walls, fences, paths), keep tool selected so user can place in stacks!
+            if (!continuousBuild && !isModular) {
               setSelectedBuildItem(null);
             }
           }
@@ -5952,9 +6805,28 @@ export default function App() {
           return;
         }
 
-        // Direct clicking on any existing building:
-        // OPEN MEMORY AND DATE!
-        if (existing) {
+        // Check if an animal was clicked near this tile
+        const clickedAnimal = animalsRef.current?.find(a => 
+          (Math.abs(a.currGx - gx) < 0.85 && Math.abs(a.currGy - gy) < 0.85) ||
+          (a.gx === gx && a.gy === gy)
+        );
+
+        if (clickedAnimal) {
+          sounds.playTap();
+          setInspectedObject({
+            gx: clickedAnimal.gx,
+            gy: clickedAnimal.gy,
+            type: `animal_${clickedAnimal.type}`,
+            customName: clickedAnimal.name,
+            customEmoji: clickedAnimal.customEmoji || '',
+            memory: clickedAnimal.customNote || 'חיה כפרית שלווה',
+            date: new Date().toLocaleDateString('he-IL'),
+            isAnimal: true,
+            animalId: clickedAnimal.id,
+            lastCaredDate: clickedAnimal.lastCaredDate || null
+          });
+          setMovingObject(null);
+        } else if (existing) {
           sounds.playTap();
           setInspectedObject(existing);
           setMovingObject(null);
@@ -6191,108 +7063,74 @@ export default function App() {
 
   return (
     <div className="wholesome-sanctuary-root">
-      {/* Top Intimate HUD */}
-      <header className="sanctuary-header">
-        <div className="header-left">
-          <div className="seeds-badge" title="זרעי טיפוח שנצברו מרגעים של דאגה עצמית">
-            <Sprout size={20} className="sprout-icon" />
-            <div className="seeds-text-wrap">
-              <span className="seeds-count">{seeds}</span>
-              <span className="seeds-title">זרעי טיפוח</span>
-            </div>
-            <button
-              className="quick-seeds-pill"
-              onClick={(e) => { e.stopPropagation(); handleAddInspirationSeeds(); }}
-              title="קבל 100 זרעי השראה לבנייה ויצירה חופשית"
-            >
-              +100 ✨
-            </button>
-          </div>
-        </div>
+      {/* Sleek Right-Side Floating Control Dock (Unobtrusive & Clean) */}
+      <aside className="sanctuary-side-dock" aria-label="תפריט שליטה ראשי">
+        {/* 1. Core Building & Creation Control */}
+        <button
+          className={`dock-btn build-dock-btn ${showPlantingDrawer ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowPlantingDrawer(!showPlantingDrawer);
+          }}
+          title="בנייה ויצירה 🛠️"
+        >
+          <Hammer size={20} className="text-amber" />
+          <span className="dock-btn-label">בנייה</span>
+        </button>
 
-        <div className="header-right">
-          {/* Time of Day Mood Switcher */}
-          <div className="tod-switcher-pill" title="זמן ביממה">
-            <button
-              className={`tod-btn ${timeOfDay === 'day' ? 'active' : ''}`}
-              onClick={() => { sounds.playTap(); setTimeOfDay('day'); }}
-              title="שעות יום"
-            >
-              <Sun size={15} />
-            </button>
-            <button
-              className={`tod-btn ${timeOfDay === 'sunset' ? 'active' : ''}`}
-              onClick={() => { sounds.playTap(); setTimeOfDay('sunset'); }}
-              title="שעת שקיעה רומנטית"
-            >
-              <Sunset size={15} />
-            </button>
-            <button
-              className={`tod-btn ${timeOfDay === 'night' ? 'active' : ''}`}
-              onClick={() => { sounds.playTap(); setTimeOfDay('night'); }}
-              title="לילה זרוע כוכבים וגחליליות"
-            >
-              <Moon size={15} />
-            </button>
-          </div>
-
+        {/* 2. Mood & Landscape Switcher (Day / Sunset / Night) */}
+        <div className="dock-tod-group" title="שינוי מוד ואווירה בנוף">
           <button
-            className="calm-icon-btn"
-            onClick={toggleSound}
-            title={soundMuted ? 'השמע צלילי טבע' : 'השתק'}
+            className={`dock-tod-btn ${timeOfDay === 'day' ? 'active' : ''}`}
+            onClick={() => { sounds.playTap(); setTimeOfDay('day'); }}
+            title="שעות יום ☀️"
           >
-            {soundMuted ? <VolumeX size={17} /> : <Volume2 size={17} />}
+            <Sun size={16} />
           </button>
-
-          {/* Core Building & Creation Control */}
           <button
-            className={`sanctuary-btn build-nav-btn ${showPlantingDrawer ? 'active' : ''}`}
-            onClick={() => {
-              sounds.playTap();
-              setShowPlantingDrawer(!showPlantingDrawer);
-            }}
-            title="מרכז הבנייה והיצירה — בחר מבנים, עצים, שבילים וגשרים להקמה"
+            className={`dock-tod-btn ${timeOfDay === 'sunset' ? 'active' : ''}`}
+            onClick={() => { sounds.playTap(); setTimeOfDay('sunset'); }}
+            title="שעת שקיעה 🌅"
           >
-            <Hammer size={17} className="text-amber" />
-            <span className="build-nav-label">בנייה ויצירה 🛠️</span>
+            <Sunset size={16} />
           </button>
-
-          {/* Territory Expansion Control */}
           <button
-            className={`sanctuary-btn expand-nav-btn ${isCultivatingMode ? 'active' : ''}`}
-            onClick={() => {
-              sounds.playTap();
-              setIsCultivatingMode(!isCultivatingMode);
-              if (!isCultivatingMode) {
-                setSelectedBuildItem(null);
-                setMovingObject(null);
-                setIsDemolishMode(false);
-              }
-            }}
-            title="הרחבת שטח הכפר — הוסף משבצות חדשות (Tiles) לקצוות הכפר"
+            className={`dock-tod-btn ${timeOfDay === 'night' ? 'active' : ''}`}
+            onClick={() => { sounds.playTap(); setTimeOfDay('night'); }}
+            title="לילה זרוע כוכבים 🌙"
           >
-            <Sprout size={17} className="text-emerald" />
-            <span className="expand-nav-label">הרחבת שטח 🌱</span>
-          </button>
-
-          <button
-            className="sanctuary-btn journal-nav-btn"
-            onClick={() => {
-              sounds.playTap();
-              setShowSanctuaryJournal(true);
-            }}
-            title="יומן הכוונות שלי"
-          >
-            <BookHeart size={17} />
-            <span>יומן כוונות</span>
+            <Moon size={16} />
           </button>
         </div>
-      </header>
+
+        {/* 3. Sound Ambience Toggle */}
+        <button
+          className={`dock-btn sound-dock-btn ${soundMuted ? 'muted' : ''}`}
+          onClick={toggleSound}
+          title={soundMuted ? 'השמע צלילי טבע' : 'השתק צלילים'}
+        >
+          {soundMuted ? <VolumeX size={19} /> : <Volume2 size={19} />}
+          <span className="dock-btn-label">{soundMuted ? 'מושתק' : 'סאונד'}</span>
+        </button>
+
+        {/* 4. Sanctuary Intentions Journal */}
+        <button
+          className="dock-btn journal-dock-btn"
+          onClick={() => {
+            sounds.playTap();
+            setShowSanctuaryJournal(true);
+          }}
+          title="יומן כוונות ומחשבות 📖"
+        >
+          <BookHeart size={19} />
+          <span className="dock-btn-label">יומן</span>
+        </button>
+      </aside>
 
       {/* Floating Cultivate / Add Tiles Mode Banner */}
       {isCultivatingMode && (
         <div className="wholesome-cultivate-banner">
-          <span>🌱 מצב הרחבת שטח פעיל: לחץ על החלקות המהבהבות בגבול הכפר להוספת Tile חדש (עלות: {PLOT_CULTIVATION_COST} זרעים)</span>
+          <span>🌱 מצב הרחבת שטח פעיל: לחץ על החלקות המהבהבות בגבול הכפר להוספת משבצות חדשות</span>
           <button
             className="cancel-cultivate-pill"
             onClick={() => setIsCultivatingMode(false)}
@@ -6305,7 +7143,13 @@ export default function App() {
       {/* Floating Building Mode Banner */}
       {selectedBuildItem && (
         <div className="wholesome-plant-banner">
-          <span>🛠️ בונה כעת: <strong>{selectedBuildItem.name}</strong> 🌿 {continuousBuild ? '(בנייה רציפה פעילה 🔁)' : ''} — לחץ על משבצת בדשא להנחה</span>
+          <span>
+            🛠️ בונה כעת: <strong>{selectedBuildItem.name}</strong>{' '}
+            {selectedBuildItem.isModular || ['stone_wall', 'wooden_fence', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'fence'].includes(selectedBuildItem.renderType)
+              ? '🧱 (בנייה חופשית בערמות — לחץ על משבצות או גרור עם העכבר להנחה רציפה)'
+              : (continuousBuild ? '🌿 (בנייה רציפה פעילה 🔁)' : '')}
+            {' '}— לחץ על משבצת בדשא להנחה
+          </span>
           <button
             className="cancel-plant-pill"
             onClick={() => setSelectedBuildItem(null)}
@@ -6370,22 +7214,6 @@ export default function App() {
             </div>
             <button className="close-mini-btn" onClick={() => setShowPlantingDrawer(false)}>
               <X size={18} />
-            </button>
-          </div>
-
-          {/* Seeds balance & Creative Inspiration Boost */}
-          <div className="build-seeds-bar">
-            <div className="build-seeds-val">
-              <Sprout size={16} className="text-emerald" />
-              <span>יתרת זרעים: <strong>{seeds}</strong> 🌱</span>
-            </div>
-            <button
-              className="inspiration-seeds-btn"
-              onClick={handleAddInspirationSeeds}
-              title="הענק לעצמך 100 זרעי השראה לבנייה ויצירה חופשית"
-            >
-              <Sparkles size={14} />
-              <span>+100 זרעי השראה ✨</span>
             </button>
           </div>
 
@@ -6469,7 +7297,7 @@ export default function App() {
                   setIsDemolishMode(!isDemolishMode);
                   if (!isDemolishMode) setSelectedBuildItem(null);
                 }}
-                title="מצב פינוי — לחץ על פריטים בלוח להסרתם וקבלת הזרעים חזרה"
+                title="מצב פינוי — לחץ על פריטים בלוח להסרתם ופינוי המשבצת"
               >
                 <Trash2 size={13} />
                 <span>פינוי 🧹</span>
@@ -6490,12 +7318,11 @@ export default function App() {
               })
               .map(item => {
                 const isSelected = selectedBuildItem?.id === item.id;
-                const canAfford = seeds >= item.costSeeds;
 
                 return (
                   <div
                     key={item.id}
-                    className={`wholesome-card ${isSelected ? 'selected' : ''} ${!canAfford ? 'needs-nourish' : ''}`}
+                    className={`wholesome-card ${isSelected ? 'selected' : ''}`}
                     onClick={() => {
                       sounds.playTap();
                       setSelectedBuildItem(item);
@@ -6511,7 +7338,6 @@ export default function App() {
                         <span className="emoji-icon">{item.emoji}</span>
                         <strong className="card-name">{item.name}</strong>
                       </span>
-                      <span className="seed-cost-pill">{item.costSeeds} זרעים</span>
                     </div>
                     <div className="card-cat-badge">{item.category} • {item.tag}</div>
                     <p className="card-desc">{item.desc}</p>
@@ -6559,8 +7385,7 @@ export default function App() {
                       <span className="cat-chip">{item.category}</span>
                     </div>
                     <div className="intention-meta">
-                      <span className="seeds-earned-text">+{item.seedsEarned} זרעי טיפוח</span>
-                      {item.completed && <span className="nourished-badge">טופח באהבה 🌱</span>}
+                      {item.completed && <span className="nourished-badge">טופח באהבה ✨</span>}
                     </div>
                   </div>
                 </div>
@@ -6622,6 +7447,29 @@ export default function App() {
           onUpdateMemory={handleUpdateObjectMemory}
           onRemove={handleRemoveObject}
           onVisit={handleDirectVillagerToItem}
+          onNourishRecall={handleNourishRecall}
+          onEnterInterior={(obj, catItem) => {
+            sounds.playTap();
+            setInteriorBuilding({ building: obj, catalogItem: catItem });
+            setInspectedObject(null);
+          }}
+        />
+      )}
+
+      {/* Building Interior Modal (Multi-Dimensional Depth) */}
+      {interiorBuilding && (
+        <BuildingInteriorModal
+          building={interiorBuilding.building}
+          catalogItem={interiorBuilding.catalogItem}
+          onClose={() => setInteriorBuilding(null)}
+          animals={animals}
+          onUpdateAnimal={(animalId, updates) => {
+            setAnimals(prev => prev.map(a => a.id === animalId ? { ...a, ...updates } : a));
+          }}
+          onAddAnimalToBuilding={(type, gx, gy, name) => {
+            const newAnim = createAnimal(type, gx, gy, name, '', { gx, gy });
+            setAnimals(prev => [...prev, newAnim]);
+          }}
         />
       )}
 
@@ -6652,17 +7500,13 @@ export default function App() {
                 <span className="stat-label">חלקות שהוכשרו:</span>
                 <strong className="stat-val">{cultivatedPlots.length} משבצות 🌱</strong>
               </div>
-              <div className="expansion-stat-pill">
-                <span className="stat-label">יתרת זרעים:</span>
-                <strong className="stat-val">{seeds} זרעים</strong>
-              </div>
             </div>
 
             {/* Direct manual adding mode trigger */}
             <div className="expansion-mode-callout">
               <div className="callout-text">
                 <strong>רוצה להוסיף חלקות בודדות במפה?</strong>
-                <span>הפעל את מצב הרחבת שטח ולחץ ישירות על גבולות הכפר (10 זרעים לחלקה)</span>
+                <span>הפעל את מצב הרחבת שטח ולחץ ישירות על גבולות הכפר (הכשרה חופשית ללא עלות)</span>
               </div>
               <button
                 className={`callout-action-btn ${isCultivatingMode ? 'active' : ''}`}
@@ -6684,7 +7528,6 @@ export default function App() {
               {EXPANSION_TIERS.map(t => {
                 const isCurrent = t.tier === expansionTier;
                 const isUnlocked = t.tier <= expansionTier;
-                const canAfford = seeds >= t.costSeeds;
 
                 return (
                   <div
@@ -6711,12 +7554,11 @@ export default function App() {
                         <div className="unlocked-badge-pill">הושלם ✓</div>
                       ) : (
                         <button
-                          className={`upgrade-tier-btn ${!canAfford ? 'disabled' : ''}`}
-                          onClick={() => handleUpgradeTier(t.tier, t.costSeeds)}
-                          disabled={!canAfford}
+                          className="upgrade-tier-btn"
+                          onClick={() => handleUpgradeTier(t.tier)}
                         >
                           <Sparkles size={14} />
-                          <span>שדרוג ({t.costSeeds} זרעים)</span>
+                          <span>שדרוג נחלה ✨</span>
                         </button>
                       )}
                     </div>
@@ -6730,19 +7572,17 @@ export default function App() {
               <span className="batch-label">הכשרה מהירה:</span>
               <button
                 className="batch-btn"
-                onClick={() => handleBatchCultivate(5, 45)}
-                disabled={seeds < 45}
-                title="הכשר 5 חלקות סמוכות בבת אחת (חסכון של 5 זרעים!)"
+                onClick={() => handleBatchCultivate(5)}
+                title="הכשר 5 חלקות סמוכות בבת אחת"
               >
-                <span>הכשרת 5 חלקות 🌾 (45 זרעים)</span>
+                <span>הכשרת 5 חלקות 🌾</span>
               </button>
               <button
                 className="batch-btn"
-                onClick={() => handleBatchCultivate(10, 85)}
-                disabled={seeds < 85}
-                title="הכשר 10 חלקות סמוכות בבת אחת (חסכון של 15 זרעים!)"
+                onClick={() => handleBatchCultivate(10)}
+                title="הכשר 10 חלקות סמוכות בבת אחת"
               >
-                <span>הכשרת 10 חלקות ✨ (85 זרעים)</span>
+                <span>הכשרת 10 חלקות ✨</span>
               </button>
             </div>
           </div>

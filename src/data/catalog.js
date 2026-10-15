@@ -236,7 +236,7 @@ export const BUILD_CATALOG = [
     tag: 'יופי והתחדשות',
     desc: 'עץ דובדבן מרהיב בפריחה ורודה עדינה עם עלי כותרת מרחפים בעדינות באוויר.',
     reflectionPrompt: 'איזה דבר עדין ויפה ראית היום שהעלה בך חיוך?',
-    costSeeds: 18,
+    costSeeds: 0,
     renderType: 'sakura_tree',
     emoji: '🌸'
   },
@@ -247,7 +247,7 @@ export const BUILD_CATALOG = [
     tag: 'התפתחות אישית',
     desc: 'עץ רחב צמרת שצומח עם כל דף שקראת, פודקאסט מעשיר או הבנה חדשה על העולם.',
     reflectionPrompt: 'מה למדת או גילית לאחרונה שעורר בך עניין?',
-    costSeeds: 18,
+    costSeeds: 0,
     renderType: 'oak_tree',
     emoji: '🌳'
   },
@@ -258,7 +258,7 @@ export const BUILD_CATALOG = [
     tag: 'רוגע וחסות',
     desc: 'עץ ערבה עם ענפים ירוקים משתפלים עד האדמה, מרחב מוצל ומנחם.',
     reflectionPrompt: 'איזה מקום או רגע מאפשר לך להרפות ולהירגע?',
-    costSeeds: 18,
+    costSeeds: 0,
     renderType: 'willow_tree',
     emoji: '🍃'
   },
@@ -269,7 +269,7 @@ export const BUILD_CATALOG = [
     tag: 'תנועה טבעית',
     desc: 'מוקדש לפעילות גופנית, מתיחות, יוגה או הליכה נעימה שחיברה אותך לגוף.',
     reflectionPrompt: 'איזו תנועה גרמה לך להרגיש חיוני היום?',
-    costSeeds: 15,
+    costSeeds: 0,
     renderType: 'pine_tree',
     emoji: '🌲'
   },
@@ -280,7 +280,7 @@ export const BUILD_CATALOG = [
     tag: 'אופטימיות ואור',
     desc: 'ערוגת חמניות גבוהות וזהובות המפנות את פניהן בחום אל אור השמש.',
     reflectionPrompt: 'מה ממלא אותך באור ובאנרגיה טובה היום?',
-    costSeeds: 12,
+    costSeeds: 0,
     renderType: 'sunflower_patch',
     emoji: '🌻'
   },
@@ -291,7 +291,7 @@ export const BUILD_CATALOG = [
     tag: 'רגע של חמלה',
     desc: 'נשתל כשעצרת לנשום, ישנת טוב או הענקת לעצמך מנוחה ללא רגשות אשם.',
     reflectionPrompt: 'איזה רגע של שלווה לקחת לעצמך היום?',
-    costSeeds: 10,
+    costSeeds: 0,
     renderType: 'flower_garden',
     emoji: '🌺'
   },
@@ -302,7 +302,7 @@ export const BUILD_CATALOG = [
     tag: 'הזנה ובריאות',
     desc: 'ערוגות אדמה תחוחה וגזרים רעננים המזכירים להזין את הגוף באהבה.',
     reflectionPrompt: 'איזה הרגל מזין או ארוחה טובה הענקת לגוף שלך היום?',
-    costSeeds: 15,
+    costSeeds: 0,
     renderType: 'veggie_garden',
     emoji: '🥕'
   },
@@ -313,7 +313,7 @@ export const BUILD_CATALOG = [
     tag: 'צעד קטן',
     desc: 'הזנת את הגוף: שתיית מים, תה מנחם או יציאה קצרה לאוויר הפתוח.',
     reflectionPrompt: 'איך דאגת לגוף שלך היום בצעד קטן?',
-    costSeeds: 8,
+    costSeeds: 0,
     renderType: 'bush',
     emoji: '🫐'
   },
@@ -324,7 +324,7 @@ export const BUILD_CATALOG = [
     tag: 'קסם וסקרנות',
     desc: 'מקבץ פטריות קסומות המאירות באור תכלכל-סגלגל רך ומשרה שלווה בלילה.',
     reflectionPrompt: 'מתי לאחרונה אפשרת לסקרנות או לדמיון שלך להוביל?',
-    costSeeds: 12,
+    costSeeds: 0,
     renderType: 'glow_mushrooms',
     emoji: '🍄'
   },
@@ -337,7 +337,7 @@ export const BUILD_CATALOG = [
     tag: 'שחרור וזרימה',
     desc: 'פלג מים צלול וקריר עם חלוקי נחל וגלים עדינים. מסמל לדעת לשחרר ולזרום עם החיים.',
     reflectionPrompt: 'איזה מתח הצלחת לשחרר היום ולתת לו לזרום הלאה?',
-    costSeeds: 8,
+    costSeeds: 0,
     renderType: 'river_tile',
     emoji: '🌊'
   },
@@ -348,7 +348,7 @@ export const BUILD_CATALOG = [
     tag: 'טוהר ושקט',
     desc: 'בריכת מים שקטה עם עלי נופר צפים ופרחי נימפאה ורודים המפיצים שלווה.',
     reflectionPrompt: 'איזה רגע של שלווה צלולה חווית לאחרונה?',
-    costSeeds: 16,
+    costSeeds: 0,
     renderType: 'water_lily_pond',
     emoji: '🪷'
   },
@@ -359,7 +359,7 @@ export const BUILD_CATALOG = [
     tag: 'גשר מעל קושי',
     desc: 'גשר עץ מקושת שעובר מעל המים. מסמל מעבר של תקופה מאתגרת וחיבור פנימי.',
     reflectionPrompt: 'איזה גשר בנית לאחרונה — כלפי עצמך או כלפי אדם אחר?',
-    costSeeds: 18,
+    costSeeds: 0,
     renderType: 'wooden_bridge',
     emoji: '🌉'
   },
@@ -370,7 +370,7 @@ export const BUILD_CATALOG = [
     tag: 'יציבות וחיבור',
     desc: 'גשר קשתות מאבן מסותתת עם מעקה מעוטר וקיסוס מטפס, מקשר בין חלקי הכפר.',
     reflectionPrompt: 'איזה קשר או חיבור אנושי עמוק העניק לך כוח?',
-    costSeeds: 20,
+    costSeeds: 0,
     renderType: 'stone_bridge',
     emoji: '🏛️'
   },
@@ -381,7 +381,7 @@ export const BUILD_CATALOG = [
     tag: 'רחש מים מרגיע',
     desc: 'מזרקת אבן טבעית עם צליל פכפוך עדין של מים. מקום להרפות את הכתפיים ולנשום.',
     reflectionPrompt: 'מתי עצרת היום רק כדי לנשום עמוק ולהרפות?',
-    costSeeds: 20,
+    costSeeds: 0,
     renderType: 'fountain',
     emoji: '⛲'
   },
@@ -392,7 +392,7 @@ export const BUILD_CATALOG = [
     tag: 'משאלה אישית',
     desc: 'באר אבן עמוקה עם גג רעפים ומים צלולים. מקום להפקיד בו משאלה כמוסה לעתיד לבוא.',
     reflectionPrompt: 'איזו משאלה קטנה היית רוצה להביע עבור עצמך?',
-    costSeeds: 20,
+    costSeeds: 0,
     renderType: 'wishing_well',
     emoji: '🪣'
   },
@@ -405,19 +405,33 @@ export const BUILD_CATALOG = [
     tag: 'הרחבת גבולות',
     desc: 'הוספת משבצת אדמה מעובדת לכפר — מרחיבה את גבולות הכפר ומאפשרת לבנות עליה.',
     reflectionPrompt: 'איזה תחום חדש בחיים בחרת לפתוח ולהרחיב לאחרונה?',
-    costSeeds: 10,
+    costSeeds: 0,
     renderType: 'cultivated_plot_tile',
+    isModular: true,
     emoji: '🌱'
   },
   {
+    id: 'cobblestone_road',
+    name: 'שביל אבן מרוצף (Cobblestone Road)',
+    category: 'שבילים וגבולות',
+    tag: 'סיפור דרך ומעברים',
+    desc: 'ריצוף אבנים רחב, שלם ורציף שמתווה דרך ברורה בין עוגני הזיכרון, הבתים והפינות בכפר.',
+    reflectionPrompt: 'איזה חיבור או דרך בין דברים תרצה לסלול היום?',
+    costSeeds: 0,
+    renderType: 'cobblestone_road',
+    isModular: true,
+    emoji: '🛤️'
+  },
+  {
     id: 'stone_path',
-    name: 'שביל חלוקי נחל',
+    name: 'שביל אבני מדרך טבעי',
     category: 'שבילים וגבולות',
     tag: 'בהירות וסדר',
     desc: 'אבני מדרך טבעיות שמתוות מסלול נעים ומסמלות צעדים קטנים שעושים סדר בראש.',
     reflectionPrompt: 'איזה סדר קטן עזר לך להרגיש קלילות ובהירות?',
-    costSeeds: 4,
+    costSeeds: 0,
     renderType: 'stone_path',
+    isModular: true,
     emoji: '🪨'
   },
   {
@@ -427,8 +441,9 @@ export const BUILD_CATALOG = [
     tag: 'דרך בטוחה',
     desc: 'לוחות עץ ארז חמימים עם ברגים ומרווחים עדינים, יוצרים טיילת מזמינה.',
     reflectionPrompt: 'איזה צעד יומיומי פשוט שומר עליך במסלול הנכון?',
-    costSeeds: 4,
+    costSeeds: 0,
     renderType: 'wood_path',
+    isModular: true,
     emoji: '🪵'
   },
   {
@@ -438,19 +453,33 @@ export const BUILD_CATALOG = [
     tag: 'סדר וחיבור',
     desc: 'ריצוף לבנים אדומות קלאסי ומסודר שיוצר מראה כפרי ציורי ומלא אופי.',
     reflectionPrompt: 'מה עוזר לך להרגיש יציבות ובסיס איתן היום?',
-    costSeeds: 4,
+    costSeeds: 0,
     renderType: 'brick_path',
+    isModular: true,
+    emoji: '🧱'
+  },
+  {
+    id: 'stone_wall',
+    name: 'חומת אבן מבצר (סגנון קלאש)',
+    category: 'שבילים וגבולות',
+    tag: 'מבצר ותיחום',
+    desc: 'יחידת חומת אבן גזית מסותתת עם כיסוי מודולרי בסגנון Clash of Clans לבנייה בערמות. יוצרת חומות ומכלאות איתנות שבעלי החיים אינם יכולים לחצות!',
+    reflectionPrompt: 'איזה גבול איתן וברור בנית כדי לשמור על הרוגע שלך?',
+    costSeeds: 0,
+    renderType: 'stone_wall',
+    isModular: true,
     emoji: '🧱'
   },
   {
     id: 'wooden_fence',
-    name: 'גדר עץ כפרית',
+    name: 'גדר עץ כפרית (מכלאה)',
     category: 'שבילים וגבולות',
-    tag: 'גבולות בריאים',
-    desc: 'קורות עץ טבעיות המגדירות חצרות ופינות ירוקות בעדינות ובנועם.',
+    tag: 'מכלאה כפרית',
+    desc: 'גדר קורות עץ מודולרית איסומטרית לבנייה בערמות. מצוינת לתחימת מכלאות לחיות וחצרות פרטיות (בעלי החיים אינם יכולים לחצות אותה!).',
     reflectionPrompt: 'איזה גבול בריא הצבת היום כדי לשמור על האנרגיה שלך?',
-    costSeeds: 4,
+    costSeeds: 0,
     renderType: 'wooden_fence',
+    isModular: true,
     emoji: '🪵'
   },
   {
@@ -460,12 +489,25 @@ export const BUILD_CATALOG = [
     tag: 'התחלה חדשה',
     desc: 'קשת עץ אלגנטית שזורה בפרחי ורדים מטפסים, פתח מזמין לכל פינה קסומה בכפר.',
     reflectionPrompt: 'איזו דלת חדשה פתחת או היית רוצה לפתוח עבורך?',
-    costSeeds: 14,
+    costSeeds: 0,
     renderType: 'floral_arch',
     emoji: '💐'
   },
 
   // --- פינות ישיבה ואווירה (Cozy Living & Leisure) ---
+  {
+    id: 'custom_totem',
+    name: 'פסל עוגן חופשי (אימוג\'י וסמל אישי)',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'אסוציאציה חופשית',
+    desc: 'עמוד אבן מעוצב המאפשר לבחור כל סמל או אימוג\'י בעולם (כמו סוכריית ספירלה 🍭, שעון חול ⏳ ועוד) כעוגן אסוציאטיבי אישי!',
+    reflectionPrompt: 'איזה סמל אישי ואסוציאציה תרצה להעניק לעוגן הזה?',
+    costSeeds: 0,
+    renderType: 'custom_totem',
+    isCustomTotem: true,
+    defaultEmoji: '🍭',
+    emoji: '🍭'
+  },
   {
     id: 'reading_bench',
     name: 'ספסל הרהורים מעץ',
@@ -473,7 +515,7 @@ export const BUILD_CATALOG = [
     tag: 'מרחב מחשבה',
     desc: 'מקום לשבת, להתבונן במחשבות, לקרוא ספר אהוב או לשתות כוס תה בנחת.',
     reflectionPrompt: 'מתי הרגשת לאחרונה בנוכחות מלאה ובשלווה ברגע?',
-    costSeeds: 10,
+    costSeeds: 0,
     renderType: 'reading_bench',
     emoji: '🪵'
   },
@@ -484,7 +526,7 @@ export const BUILD_CATALOG = [
     tag: 'חמימות מנחמת',
     desc: 'שולחן עץ עגול עם קנקן תה מהביל, כוסות ועוגיות. הזמנה ליהנות מרגע קטן של חסד.',
     reflectionPrompt: 'איזה טעם או פינוק קטן ניחם אותך היום?',
-    costSeeds: 12,
+    costSeeds: 0,
     renderType: 'tea_table',
     emoji: '🍵'
   },
@@ -495,7 +537,7 @@ export const BUILD_CATALOG = [
     tag: 'הפוגה ומנוחה',
     desc: 'שמיכת פיקניק משובצת, סלסילת פירות ומאפים וכריות רכות למנוחה באוויר הפתוח.',
     reflectionPrompt: 'מתי הענקת לעצמך הפסקה אמיתית ורגע של חוסר מעש מבורך?',
-    costSeeds: 12,
+    costSeeds: 0,
     renderType: 'picnic_blanket',
     emoji: '🧺'
   },
@@ -506,7 +548,7 @@ export const BUILD_CATALOG = [
     tag: 'שחרור עמוק',
     desc: 'ערסל מפנק המתנדנד בעדינות ברוח הקלילה בין שני עצים מוצלים.',
     reflectionPrompt: 'מה עוזר לך לשחרר את כל המתח מהגוף ומהראש?',
-    costSeeds: 14,
+    costSeeds: 0,
     renderType: 'hammock',
     emoji: '🌴'
   },
@@ -517,7 +559,7 @@ export const BUILD_CATALOG = [
     tag: 'חיבור אמיתי',
     desc: 'אש עצים מרצדת ומחממת שסביבה אפשר לשבת, לחלוק סיפורים ולהרגיש ביחד.',
     reflectionPrompt: 'למי אמרת תודה או עם מי חלקת רגע חם ומחזק?',
-    costSeeds: 15,
+    costSeeds: 0,
     renderType: 'bonfire',
     emoji: '🔥'
   },
@@ -528,7 +570,7 @@ export const BUILD_CATALOG = [
     tag: 'אור ותקווה',
     desc: 'פנס רחוב עתיק המפיץ אור צהוב וחם בשעות הערב, שמזכיר שאתה אף פעם לא בחושך.',
     reflectionPrompt: 'איזו מחשבה או אדם האירו לך את היום?',
-    costSeeds: 8,
+    costSeeds: 0,
     renderType: 'lantern_post',
     emoji: '🏮'
   },
@@ -539,7 +581,7 @@ export const BUILD_CATALOG = [
     tag: 'מרחב מוגן',
     desc: 'אוהל בד אינטימי עם כריות רכות. המקום שלך להסתתר מהעולם כשצריך קצת שקט.',
     reflectionPrompt: 'מה עוזר לך להרגיש הכי בטוח ומוגן כשמציף בחוץ?',
-    costSeeds: 20,
+    costSeeds: 0,
     renderType: 'cozy_tent',
     emoji: '⛺'
   }

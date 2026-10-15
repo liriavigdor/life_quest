@@ -9,10 +9,19 @@ import {
   Footprints,
   DoorOpen,
   Tag,
-  Heart
+  Heart,
+  Droplet,
+  Wheat,
+  Smile
 } from 'lucide-react';
 import { BUILD_CATALOG } from '../data/catalog';
 import { sounds } from '../utils/sound';
+
+const QUICK_EMOJIS = [
+  '🍭', '⏳', '🪥', '🔑', '💡', '🧭', '🎯', '📚', 
+  '🎨', '🎸', '☕', '💊', '👓', '💎', '🌿', '🕊️', 
+  '🚀', '🍎', '💧', '🏠', '🕯️', '⚓', '🧸', '🔮'
+];
 
 export function InspectedMemoryCard({
   object,
@@ -20,7 +29,8 @@ export function InspectedMemoryCard({
   onUpdateMemory,
   onRemove,
   onVisit,
-  onEnterInterior
+  onEnterInterior,
+  onNourishRecall
 }) {
   if (!object) return null;
 
@@ -29,6 +39,7 @@ export function InspectedMemoryCard({
   // Parse memory & date safely with defaults
   const initialMemory = object.memory || object.dedicatedTo || 'עוגן מרחבי אישי בכפר';
   const initialCustomTitle = object.customName || catalogItem?.name || 'פינת כפר אישית';
+  const initialCustomEmoji = object.customEmoji || catalogItem?.defaultEmoji || (object.type === 'custom_totem' ? '🍭' : '');
   
   const parseInitialDate = () => {
     if (object.date) return object.date;
@@ -39,26 +50,50 @@ export function InspectedMemoryCard({
 
   const [isEditing, setIsEditing] = useState(false);
   const [customTitle, setCustomTitle] = useState(initialCustomTitle);
+  const [customEmoji, setCustomEmoji] = useState(initialCustomEmoji);
   const [memoryText, setMemoryText] = useState(initialMemory);
   const [dateText, setDateText] = useState(parseInitialDate());
 
-  // Keep state synced when a different object is clicked
+  // Today string for care check
+  const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+  const isCaredToday = object.lastCaredDate === todayStr;
+
+  const isAnimal = !!object.isAnimal || object.type?.startsWith('animal_');
+  const isPlant = ['pine_tree', 'cypress_tree', 'oak_tree', 'fruit_tree', 'sakura_tree', 'willow_tree', 'flower_garden', 'veggie_garden', 'sunflower_patch', 'bush'].includes(object.type);
+  const isTotem = object.type === 'custom_totem' || object.isCustomTotem;
+
+  // Keep state synced when a different object or animal is clicked
   useEffect(() => {
     setCustomTitle(object.customName || catalogItem?.name || 'פינת כפר אישית');
+    setCustomEmoji(object.customEmoji || catalogItem?.defaultEmoji || (object.type === 'custom_totem' ? '🍭' : ''));
     setMemoryText(object.memory || object.dedicatedTo || 'עוגן מרחבי אישי בכפר');
     setDateText(parseInitialDate());
     setIsEditing(false);
-  }, [object.gx, object.gy, object.type, object.customName]);
+  }, [object.animalId, object.gx, object.gy, object.type]);
 
   const handleSave = (e) => {
     e?.preventDefault();
-    onUpdateMemory(object.gx, object.gy, memoryText.trim(), dateText.trim(), customTitle.trim());
+    onUpdateMemory(
+      object.gx, 
+      object.gy, 
+      memoryText.trim(), 
+      dateText.trim(), 
+      customTitle.trim(),
+      object.animalId,
+      customEmoji.trim()
+    );
     setIsEditing(false);
     sounds.playTap();
   };
 
+  const handleTriggerCare = () => {
+    if (onNourishRecall) {
+      onNourishRecall(object);
+    }
+  };
+
   const displayName = customTitle || catalogItem?.name || 'פינת כפר מיוחדת';
-  const displayEmoji = catalogItem?.emoji || (object.isAnimal ? '🐾' : '🌿');
+  const displayEmoji = customEmoji || catalogItem?.emoji || (isAnimal ? '🐾' : (isTotem ? '🍭' : '🌿'));
   const hasInterior = catalogItem?.hasInterior || object.hasInterior || [
     'animal_coop', 'wooden_cabin', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio'
   ].includes(object.type);
@@ -77,7 +112,7 @@ export function InspectedMemoryCard({
                 type="text"
                 value={customTitle}
                 onChange={(e) => setCustomTitle(e.target.value)}
-                placeholder="תן שם או אסוציאציה (למשל: מברשת שיניים)..."
+                placeholder="תן שם או אסוציאציה (למשל: מברשת שיניים, חזרתיות)..."
                 className="memory-edit-input memory-title-input"
               />
             ) : (
@@ -101,6 +136,46 @@ export function InspectedMemoryCard({
 
       {/* Main Memory & Commemoration Date Body */}
       <div className="memory-card-body">
+        
+        {/* Custom Totem Emoji Selector (When editing or on custom totem) */}
+        {(isEditing || isTotem) && (
+          <div className="totem-symbol-picker-box">
+            <div className="picker-title-row">
+              <Smile size={14} className="text-amber" />
+              <span>בחר סמל או אימוג'י לאסוציאציה שלך:</span>
+            </div>
+            
+            <div className="quick-emoji-scroll-row">
+              {QUICK_EMOJIS.map(em => (
+                <button
+                  key={em}
+                  type="button"
+                  className={`quick-emoji-btn ${customEmoji === em ? 'active' : ''}`}
+                  onClick={() => {
+                    setCustomEmoji(em);
+                    sounds.playTap();
+                  }}
+                  title={`בחר ${em}`}
+                >
+                  {em}
+                </button>
+              ))}
+            </div>
+
+            <div className="custom-emoji-input-row">
+              <span className="custom-emoji-label">או הקלד כל אימוג'י / סמל מהמקלדת:</span>
+              <input 
+                type="text"
+                value={customEmoji}
+                onChange={(e) => setCustomEmoji(e.target.value)}
+                placeholder="למשל 🍭, 🎷, ⏳..."
+                className="custom-emoji-field"
+                maxLength={4}
+              />
+            </div>
+          </div>
+        )}
+
         {/* Date Row */}
         <div className="memory-date-strip">
           <div className="memory-date-icon-box">
@@ -113,13 +188,48 @@ export function InspectedMemoryCard({
                 type="text" 
                 value={dateText}
                 onChange={(e) => setDateText(e.target.value)}
-                placeholder="למשל 14/10/2026"
+                placeholder="למשל 15/10/2026"
                 className="memory-edit-input memory-date-input"
               />
             ) : (
               <strong className="memory-date-value">
                 {dateText}
               </strong>
+            )}
+          </div>
+        </div>
+
+        {/* Gentle Care Strip (מים לצמחים ואוכל לחיות) */}
+        <div className={`daily-care-card ${isCaredToday ? 'cared-complete' : 'cared-pending'}`}>
+          <div className="care-header-row">
+            <div className="care-title-wrap">
+              <span className="care-icon-badge">
+                {isAnimal ? '🌾' : (isPlant ? '💧' : '✨')}
+              </span>
+              <div>
+                <strong>{isAnimal ? 'טיפוח והאכלת החיה' : (isPlant ? 'השקיית הצמח' : 'רענון העוגן')}</strong>
+                <span className="care-sub-text">
+                  {isCaredToday 
+                    ? (isAnimal ? 'החיה שבעה, שלווה ומגרגרת בנחת ✓' : (isPlant ? 'הצמח שותה ומלבלב ברוגע ✓' : 'העוגן רענן ומואר בנחת ✓'))
+                    : (isAnimal ? 'אפשר לתת קצת אוכל וגרגרים בנחת' : (isPlant ? 'אפשר לתת מים רעננים לצמח' : 'רענון עדין לעוגן בכפר'))}
+                </span>
+              </div>
+            </div>
+
+            {isCaredToday ? (
+              <div className="cared-badge-pill">
+                <Check size={14} />
+                <span>טופח בנחת ✓</span>
+              </div>
+            ) : (
+              <button 
+                type="button" 
+                className="care-action-btn"
+                onClick={handleTriggerCare}
+                title={isAnimal ? 'תן אוכל לחיה בנחת' : (isPlant ? 'השקה את הצמח בנחת' : 'רענן את העוגן')}
+              >
+                <span>{isAnimal ? 'תן אוכל 🌾' : (isPlant ? 'תן מים 💧' : 'רענן ✨')}</span>
+              </button>
             )}
           </div>
         </div>
@@ -135,7 +245,7 @@ export function InspectedMemoryCard({
               <button 
                 className="memory-edit-toggle-btn"
                 onClick={() => setIsEditing(true)}
-                title="ערוך שם אישי, אסוציאציה או תאריך"
+                title="ערוך שם אישי, סמל אימוג'י, או אסוציאציה"
               >
                 <Edit3 size={13} />
                 <span>עריכה</span>
@@ -167,6 +277,7 @@ export function InspectedMemoryCard({
                   className="memory-cancel-btn"
                   onClick={() => {
                     setCustomTitle(initialCustomTitle);
+                    setCustomEmoji(initialCustomEmoji);
                     setMemoryText(initialMemory);
                     setDateText(parseInitialDate());
                     setIsEditing(false);

@@ -82,6 +82,8 @@ export function saveAnimals(animals) {
       type: a.type,
       name: a.name,
       customNote: a.customNote,
+      customEmoji: a.customEmoji || null,
+      lastCaredDate: a.lastCaredDate || null,
       completed: a.completed,
       gx: a.gx,
       gy: a.gy,
@@ -108,6 +110,8 @@ export function createAnimal(type, gx, gy, name = '', customNote = '', attachedB
     type,
     name: name || defaultNames[type] || 'חיה כפרית',
     customNote: customNote || '',
+    customEmoji: '',
+    lastCaredDate: null,
     completed: false,
     gx,
     gy,
@@ -172,8 +176,23 @@ export function updateAnimalsSimulation(animals, dt, isTileClearedFn, placedObje
         a.state = 'swimming';
       }
 
+      // Collision check helper: walls and fences block animal movement!
+      const isBlockedByWall = (tx, ty) => placedObjects.some(o => 
+        o.gx === tx && o.gy === ty && (
+          o.type === 'stone_wall' || 
+          o.type === 'wooden_fence' || 
+          o.type === 'fence' || 
+          o.type.includes('wall')
+        )
+      );
+
+      // If an animal is currently on a wall (e.g. wall was just placed on it), wake up immediately to step off
+      if (isBlockedByWall(a.gx, a.gy)) {
+        a.idleTimer = 0;
+      }
+
       if (a.idleTimer <= 0) {
-        // Pick an adjacent step within cleared land
+        // Pick an adjacent step within cleared land that is NOT blocked by walls/fences
         const deltas = [
           [-1, 0], [1, 0], [0, -1], [0, 1],
           [-1, -1], [1, 1], [-1, 1], [1, -1]
@@ -183,9 +202,16 @@ export function updateAnimalsSimulation(animals, dt, isTileClearedFn, placedObje
         for (const [dx, dy] of deltas) {
           const nx = a.gx + dx;
           const ny = a.gy + dy;
-          if (nx >= 2 && nx < gridSize - 2 && ny >= 2 && ny < gridSize - 2) {
-            if (isTileClearedFn(nx, ny)) {
-              // If attached to a building, prefer staying within 4 tiles radius
+          if (nx >= 1 && nx < gridSize - 1 && ny >= 1 && ny < gridSize - 1) {
+            if (isTileClearedFn(nx, ny) && !isBlockedByWall(nx, ny)) {
+              // Prevent slipping diagonally through corner seams between two walls/fences
+              if (dx !== 0 && dy !== 0) {
+                if (isBlockedByWall(a.gx + dx, a.gy) && isBlockedByWall(a.gx, a.gy + dy)) {
+                  continue;
+                }
+              }
+
+              // If attached to a building, prefer staying within 4.5 tiles radius
               if (a.attachedBuilding) {
                 const bDist = Math.hypot(nx - a.attachedBuilding.gx, ny - a.attachedBuilding.gy);
                 if (bDist > 4.5) continue;
