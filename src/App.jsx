@@ -27,7 +27,10 @@ import {
   RefreshCw,
   Brain,
   Tag,
-  DoorOpen
+  DoorOpen,
+  ZoomIn,
+  ZoomOut,
+  Maximize2
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
 import './App.css';
@@ -48,6 +51,64 @@ const GRID_SIZE = 26;
 const TILE_W = 68;
 const TILE_H = 34;
 const GRID_ORIGIN_Y_RATIO = 0.065;
+
+// Calculate optimal camera zoom and pan to fit the active village beautifully on any screen size
+function getOptimalCameraFit(w, h, placedList = [], cultivatedList = []) {
+  let minGx = 8, maxGx = 17, minGy = 8, maxGy = 17;
+
+  if (placedList && placedList.length > 0) {
+    placedList.forEach(o => {
+      if (typeof o.gx === 'number' && typeof o.gy === 'number') {
+        minGx = Math.min(minGx, o.gx);
+        maxGx = Math.max(maxGx, o.gx);
+        minGy = Math.min(minGy, o.gy);
+        maxGy = Math.max(maxGy, o.gy);
+      }
+    });
+  }
+
+  if (cultivatedList && cultivatedList.length > 0) {
+    cultivatedList.forEach(p => {
+      if (typeof p.gx === 'number' && typeof p.gy === 'number') {
+        minGx = Math.min(minGx, p.gx);
+        maxGx = Math.max(maxGx, p.gx);
+        minGy = Math.min(minGy, p.gy);
+        maxGy = Math.max(maxGy, p.gy);
+      }
+    });
+  }
+
+  // Margin around active plots
+  minGx = Math.max(0, minGx - 1);
+  maxGx = Math.min(GRID_SIZE - 1, maxGx + 1);
+  minGy = Math.max(0, minGy - 1);
+  maxGy = Math.min(GRID_SIZE - 1, maxGy + 1);
+
+  const centerGx = (minGx + maxGx) / 2;
+  const centerGy = (minGy + maxGy) / 2;
+
+  const spanGx = maxGx - minGx + 1;
+  const spanGy = maxGy - minGy + 1;
+  const isoSpanW = (spanGx + spanGy) * (TILE_W / 2);
+
+  // Target width to frame comfortably
+  const targetW = Math.max(w < 500 ? 580 : 720, isoSpanW);
+  const paddingX = w < 500 ? 16 : 80;
+  const optimalZoom = Math.min(1.25, Math.max(0.38, (w - paddingX) / targetW));
+
+  // Center in world coordinates relative to origin
+  const centerWorldX = (centerGx - centerGy) * (TILE_W / 2);
+  const centerWorldY = (centerGx + centerGy) * (TILE_H / 2);
+
+  const targetScreenY = h * (w < 500 ? 0.44 : 0.48);
+  const panX = Math.round(-centerWorldX * optimalZoom);
+  const panY = Math.round(targetScreenY - (h * GRID_ORIGIN_Y_RATIO) - (centerWorldY * optimalZoom));
+
+  return {
+    zoom: Number(optimalZoom.toFixed(2)),
+    pan: { x: panX, y: panY }
+  };
+}
 
 export default function App() {
   const canvasRef = useRef(null);
@@ -218,7 +279,50 @@ export default function App() {
   const [showExpansionModal, setShowExpansionModal] = useState(false);
   const [isCultivatingMode, setIsCultivatingMode] = useState(false);
   const [frontierInspectTile, setFrontierInspectTile] = useState(null);
-  const [cameraPan, setCameraPan] = useState({ x: 0, y: 0 });
+
+  // Responsive camera zoom & pan state
+  const [cameraZoom, setCameraZoom] = useState(() => {
+    if (typeof window === 'undefined') return 1;
+    return getOptimalCameraFit(window.innerWidth, window.innerHeight).zoom;
+  });
+  const cameraZoomRef = useRef(cameraZoom);
+  useEffect(() => {
+    cameraZoomRef.current = cameraZoom;
+  }, [cameraZoom]);
+
+  const [cameraPan, setCameraPan] = useState(() => {
+    if (typeof window === 'undefined') return { x: 0, y: 0 };
+    return getOptimalCameraFit(window.innerWidth, window.innerHeight).pan;
+  });
+  const cameraPanRef = useRef(cameraPan);
+  useEffect(() => {
+    cameraPanRef.current = cameraPan;
+  }, [cameraPan]);
+
+  const hasUserPannedOrZoomedRef = useRef(false);
+  const pinchRef = useRef(null);
+
+  // Reset & Center view to perfectly frame the village
+  const handleFitToScreen = () => {
+    sounds.playTap();
+    const fit = getOptimalCameraFit(
+      window.innerWidth,
+      window.innerHeight,
+      placedObjectsRef.current,
+      cultivatedPlotsRef.current
+    );
+    setCameraZoom(fit.zoom);
+    setCameraPan(fit.pan);
+    cameraZoomRef.current = fit.zoom;
+    cameraPanRef.current = fit.pan;
+    hasUserPannedOrZoomedRef.current = false;
+    const v = animEntitiesRef.current?.villager;
+    if (v) {
+      v.emote = '🧭';
+      v.emoteTimer = 90;
+      v.hopVy = -4.5;
+    }
+  };
 
   // Village Institutions Resources State
   const [villageResources, setVillageResources] = useState(() => {
@@ -272,7 +376,6 @@ export default function App() {
   const expansionTierRef = useRef(expansionTier);
   const cultivatedPlotsRef = useRef(cultivatedPlots);
   const isCultivatingModeRef = useRef(isCultivatingMode);
-  const cameraPanRef = useRef(cameraPan);
 
   useEffect(() => {
     isMoveToolActiveRef.current = isMoveToolActive;
@@ -299,10 +402,6 @@ export default function App() {
   useEffect(() => {
     isCultivatingModeRef.current = isCultivatingMode;
   }, [isCultivatingMode]);
-
-  useEffect(() => {
-    cameraPanRef.current = cameraPan;
-  }, [cameraPan]);
 
   // Pointer down info ref
   const pointerDownInfoRef = useRef(null);
@@ -590,9 +689,35 @@ export default function App() {
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      // Auto-adapt camera framing on resize or screen rotation if user hasn't manually panned
+      if (!hasUserPannedOrZoomedRef.current) {
+        const fit = getOptimalCameraFit(
+          window.innerWidth,
+          window.innerHeight,
+          placedObjectsRef.current,
+          cultivatedPlotsRef.current
+        );
+        setCameraZoom(fit.zoom);
+        setCameraPan(fit.pan);
+        cameraZoomRef.current = fit.zoom;
+        cameraPanRef.current = fit.pan;
+      }
     };
     resize();
     window.addEventListener('resize', resize);
+
+    // Desktop smooth mouse wheel zooming
+    const handleCanvasWheel = (e) => {
+      e.preventDefault();
+      hasUserPannedOrZoomedRef.current = true;
+      const factor = e.deltaY < 0 ? 1.08 : 0.92;
+      setCameraZoom(prev => {
+        const nextZoom = Math.min(1.7, Math.max(0.35, Number((prev * factor).toFixed(3))));
+        cameraZoomRef.current = nextZoom;
+        return nextZoom;
+      });
+    };
+    canvas.addEventListener('wheel', handleCanvasWheel, { passive: false });
 
     const { butterflies, birds, fireflies, cloudShadows } = animEntitiesRef.current;
 
@@ -5047,6 +5172,7 @@ export default function App() {
 
       const width = canvas.width;
       const height = canvas.height;
+      const zoom = cameraZoomRef.current || 1;
       const origin = getOrigin(width, height);
 
       const tod = timeOfDayRef.current;
@@ -5206,6 +5332,11 @@ export default function App() {
       ctx.fill();
 
       // 4. EXPANSIVE MEADOW CLEARING & CULTIVABLE FRONTIER TILES
+      ctx.save();
+      ctx.translate(origin.x, origin.y);
+      ctx.scale(zoom, zoom);
+      ctx.translate(-origin.x, -origin.y);
+
       const currentTier = expansionTierRef.current;
       const isCultivating = isCultivatingModeRef.current;
 
@@ -5568,8 +5699,8 @@ export default function App() {
         // Cache screen position for interaction
         const vPos = toScreen(v.currGx, v.currGy, origin.x, origin.y);
         v.screenPos = {
-          x: vPos.x,
-          y: vPos.y + TILE_H / 2
+          x: origin.x + (vPos.x - origin.x) * zoom,
+          y: origin.y + (vPos.y + TILE_H / 2 - origin.y) * zoom
         };
       }
 
@@ -5699,7 +5830,10 @@ export default function App() {
           }
         } else if (item.kind === 'animal') {
           const { x: sx, y: sy } = toScreen(item.animal.currGx, item.animal.currGy, origin.x, origin.y);
-          item.animal.screenPos = { x: sx, y: sy + TILE_H / 2 };
+          item.animal.screenPos = {
+            x: origin.x + (sx - origin.x) * zoom,
+            y: origin.y + (sy + TILE_H / 2 - origin.y) * zoom
+          };
           drawAnimal(ctx, item.animal, { x: sx, y: sy + TILE_H / 2 }, {
             isSunset,
             isNight,
@@ -5763,8 +5897,12 @@ export default function App() {
         }
       }
 
-      // 5. SCREEN-EDGE BORDER TREES (Natural scenic framing on right and bottom edges)
-      drawScreenEdgeForest(width, height, isSunset, isNight);
+      ctx.restore();
+
+      // 5. SCREEN-EDGE BORDER TREES (Natural scenic framing on right and bottom edges, scaled on wider screens)
+      if (width >= 640) {
+        drawScreenEdgeForest(width, height, isSunset, isNight);
+      }
 
       // 6. NATURE CREATURES (Fluttering Butterflies, Glowing Crickets/Fireflies)
 
@@ -5819,6 +5957,7 @@ export default function App() {
 
     return () => {
       window.removeEventListener('resize', resize);
+      canvas.removeEventListener('wheel', handleCanvasWheel);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -5828,16 +5967,18 @@ export default function App() {
     const canvas = canvasRef.current;
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    const clientX = e.touches ? (e.touches[0] ? e.touches[0].clientX : e.changedTouches?.[0]?.clientX) : e.clientX;
+    const clientY = e.touches ? (e.touches[0] ? e.touches[0].clientY : e.changedTouches?.[0]?.clientY) : e.clientY;
+    if (clientX === undefined || clientY === undefined) return null;
     const mouseX = clientX - rect.left;
     const mouseY = clientY - rect.top;
 
+    const zoom = cameraZoomRef.current || 1;
     const originX = canvas.width / 2 + (cameraPanRef.current ? cameraPanRef.current.x : 0);
     const originY = canvas.height * GRID_ORIGIN_Y_RATIO + (cameraPanRef.current ? cameraPanRef.current.y : 0);
 
-    const relX = mouseX - originX;
-    const relY = mouseY - originY;
+    const relX = (mouseX - originX) / zoom;
+    const relY = (mouseY - originY) / zoom;
 
     const gx = Math.floor((relY / (TILE_H / 2) + relX / (TILE_W / 2)) / 2);
     const gy = Math.floor((relY / (TILE_H / 2) - relX / (TILE_W / 2)) / 2);
@@ -5862,8 +6003,13 @@ export default function App() {
     const mouseX = clientX - rect.left;
     const mouseY = clientY - rect.top;
 
+    const zoom = cameraZoomRef.current || 1;
     const originX = canvas.width / 2 + (cameraPanRef.current ? cameraPanRef.current.x : 0);
     const originY = canvas.height * GRID_ORIGIN_Y_RATIO + (cameraPanRef.current ? cameraPanRef.current.y : 0);
+
+    // Convert screen coordinates to world coordinates
+    const worldMouseX = originX + (mouseX - originX) / zoom;
+    const worldMouseY = originY + (mouseY - originY) / zoom;
 
     // Filter to tall objects only (trees, buildings) sorted front-to-back
     const tallObjects = placed
@@ -5896,8 +6042,8 @@ export default function App() {
       }
 
       // Check within tall canopy bounds (above the tile base)
-      const inX = Math.abs(mouseX - cx) <= halfWidth;
-      const inY = mouseY >= (cy - topOffset) && mouseY < cy;
+      const inX = Math.abs(worldMouseX - cx) <= halfWidth;
+      const inY = worldMouseY >= (cy - topOffset) && worldMouseY < cy;
 
       if (inX && inY) {
         return obj;
@@ -5917,13 +6063,16 @@ export default function App() {
 
     const canvas = canvasRef.current;
     if (canvas) {
+      const zoom = cameraZoomRef.current || 1;
       const origin = {
         x: canvas.width / 2 + cameraPan.x,
         y: canvas.height * GRID_ORIGIN_Y_RATIO + cameraPan.y
       };
+      const worldX = origin.x + (gx - gy) * (TILE_W / 2);
+      const worldY = origin.y + (gx + gy) * (TILE_H / 2);
       const screenPos = {
-        x: origin.x + (gx - gy) * (TILE_W / 2),
-        y: origin.y + (gx + gy) * (TILE_H / 2)
+        x: origin.x + (worldX - origin.x) * zoom,
+        y: origin.y + (worldY - origin.y) * zoom
       };
       const rect = canvas.getBoundingClientRect();
       confetti({
@@ -6421,20 +6570,39 @@ export default function App() {
     sounds.playTap();
     setShowInstitutionsModal(false);
 
+    const zoom = cameraZoomRef.current || 1;
     const dx = (placedObj.gx - placedObj.gy) * (TILE_W / 2);
     const dy = (placedObj.gx + placedObj.gy) * (TILE_H / 2);
 
+    hasUserPannedOrZoomedRef.current = true;
     setCameraPan({
-      x: -dx,
-      y: -dy + (canvas.height * 0.15)
+      x: Math.round(-dx * zoom),
+      y: Math.round(canvas.height * 0.44 - canvas.height * GRID_ORIGIN_Y_RATIO - dy * zoom)
     });
 
     setInspectedObject(placedObj);
   };
 
 
-  // Mouse / Touch Down: Initiate click or item drag (Village itself cannot be moved)
+  // Mouse / Touch Down: Initiate click, item drag, or world pan/zoom
   const handlePointerDown = (e) => {
+    // Multi-touch pinch start
+    if (e.touches && e.touches.length >= 2) {
+      const p1 = e.touches[0];
+      const p2 = e.touches[1];
+      const dist = Math.hypot(p1.clientX - p2.clientX, p1.clientY - p2.clientY);
+      const midX = (p1.clientX + p2.clientX) / 2;
+      const midY = (p1.clientY + p2.clientY) / 2;
+      pinchRef.current = {
+        startDist: dist,
+        startZoom: cameraZoomRef.current,
+        lastMidX: midX,
+        lastMidY: midY
+      };
+      pointerDownInfoRef.current = null;
+      return;
+    }
+
     const coords = getTileCoordsFromEvent(e);
     if (!coords) return;
     const { gx, gy, clientX, clientY } = coords;
@@ -6446,11 +6614,18 @@ export default function App() {
       const rect = canvas ? canvas.getBoundingClientRect() : { left: 0, top: 0 };
       const clickScreenX = clientX - rect.left;
       const clickScreenY = clientY - rect.top;
-      const vScreen = v.screenPos || {
-        x: (canvas ? canvas.width / 2 : 0) + (cameraPanRef.current?.x || 0) + (v.currGx - v.currGy) * (TILE_W / 2),
-        y: (canvas ? canvas.height * GRID_ORIGIN_Y_RATIO : 0) + (cameraPanRef.current?.y || 0) + (v.currGx + v.currGy) * (TILE_H / 2) + TILE_H / 2
-      };
-      const dist = Math.hypot(clickScreenX - vScreen.x, clickScreenY - (vScreen.y - 18));
+
+      const zoom = cameraZoomRef.current || 1;
+      const originX = (canvas ? canvas.width / 2 : 0) + (cameraPanRef.current?.x || 0);
+      const originY = (canvas ? canvas.height * GRID_ORIGIN_Y_RATIO : 0) + (cameraPanRef.current?.y || 0);
+
+      // Compare in world space
+      const worldClickX = originX + (clickScreenX - originX) / zoom;
+      const worldClickY = originY + (clickScreenY - originY) / zoom;
+      const vWorldX = originX + (v.currGx - v.currGy) * (TILE_W / 2);
+      const vWorldY = originY + (v.currGx + v.currGy) * (TILE_H / 2) + TILE_H / 2;
+
+      const dist = Math.hypot(worldClickX - vWorldX, worldClickY - (vWorldY - 18));
       const gridDist = Math.hypot(gx - v.currGx, gy - v.currGy);
       if (dist < 34 || gridDist < 0.95) {
         sounds.playTap();
@@ -6498,8 +6673,37 @@ export default function App() {
     };
   };
 
-  // Mouse / Touch Move: Update hover tile or instant item drag (Village position is strictly fixed)
+  // Mouse / Touch Move: Update hover tile, pan world, or drag item
   const handlePointerMove = (e) => {
+    // Multi-touch pinch move
+    if (e.touches && e.touches.length >= 2 && pinchRef.current) {
+      const p1 = e.touches[0];
+      const p2 = e.touches[1];
+      const dist = Math.hypot(p1.clientX - p2.clientX, p1.clientY - p2.clientY);
+      const midX = (p1.clientX + p2.clientX) / 2;
+      const midY = (p1.clientY + p2.clientY) / 2;
+
+      hasUserPannedOrZoomedRef.current = true;
+
+      // Zoom
+      const scaleFactor = dist / pinchRef.current.startDist;
+      const newZoom = Math.min(1.7, Math.max(0.35, Number((pinchRef.current.startZoom * scaleFactor).toFixed(3))));
+      setCameraZoom(newZoom);
+      cameraZoomRef.current = newZoom;
+
+      // Two-finger pan
+      const dMidX = midX - pinchRef.current.lastMidX;
+      const dMidY = midY - pinchRef.current.lastMidY;
+      setCameraPan(prev => {
+        const next = { x: prev.x + dMidX, y: prev.y + dMidY };
+        cameraPanRef.current = next;
+        return next;
+      });
+      pinchRef.current.lastMidX = midX;
+      pinchRef.current.lastMidY = midY;
+      return;
+    }
+
     const coords = getTileCoordsFromEvent(e);
     if (!coords) return;
     const { gx, gy, clientX, clientY } = coords;
@@ -6519,8 +6723,16 @@ export default function App() {
     if (canvas && !activeDragRef.current) {
       const v = animEntitiesRef.current.villager;
       const rect = canvas.getBoundingClientRect();
+      const zoom = cameraZoomRef.current || 1;
+      const originX = canvas.width / 2 + (cameraPanRef.current ? cameraPanRef.current.x : 0);
+      const originY = canvas.height * GRID_ORIGIN_Y_RATIO + (cameraPanRef.current ? cameraPanRef.current.y : 0);
+      const worldClickX = originX + (clientX - rect.left - originX) / zoom;
+      const worldClickY = originY + (clientY - rect.top - originY) / zoom;
+      const vWorldX = originX + (v?.currGx - v?.currGy) * (TILE_W / 2);
+      const vWorldY = originY + (v?.currGx + v?.currGy) * (TILE_H / 2) + TILE_H / 2;
+
       const isOverVillager = v && (
-        (v.screenPos && Math.hypot(clientX - rect.left - v.screenPos.x, clientY - rect.top - (v.screenPos.y - 18)) < 34) ||
+        Math.hypot(worldClickX - vWorldX, worldClickY - (vWorldY - 18)) < 34 ||
         Math.hypot(gx - v.currGx, gy - v.currGy) < 0.95
       );
 
@@ -6580,11 +6792,10 @@ export default function App() {
 
       const totalDist = Math.hypot(clientX - downInfo.startX, clientY - downInfo.startY);
 
-      if (totalDist > 5) {
+      if (totalDist > 6) {
         downInfo.hasMoved = true;
 
-        // Instant Direct Drag & Drop: Pick up item immediately upon moving mouse
-        // Note: The village itself is strictly fixed and cannot be panned or moved
+        // Instant Direct Drag & Drop: Pick up item immediately upon moving pointer
         if (downInfo.item && !activeDragRef.current && !isDemolishModeRef.current && !selectedBuildItemRef.current) {
           activeDragRef.current = {
             item: downInfo.item,
@@ -6598,6 +6809,21 @@ export default function App() {
           if (canvas) {
             canvas.style.cursor = 'grabbing';
           }
+        } else if (!activeDragRef.current && !selectedBuildItemRef.current && !isDemolishModeRef.current && !isModularBuild) {
+          // Smooth Ground Panning: Move camera across sanctuary
+          const dx = clientX - downInfo.lastX;
+          const dy = clientY - downInfo.lastY;
+          downInfo.lastX = clientX;
+          downInfo.lastY = clientY;
+          hasUserPannedOrZoomedRef.current = true;
+          setCameraPan(prev => {
+            const next = { x: prev.x + dx, y: prev.y + dy };
+            cameraPanRef.current = next;
+            return next;
+          });
+          if (canvas) {
+            canvas.style.cursor = 'grabbing';
+          }
         }
       }
     }
@@ -6605,7 +6831,11 @@ export default function App() {
 
   // Mouse / Touch Up: Complete drag-and-drop OR trigger click / move / build
   const handlePointerUp = () => {
+    pinchRef.current = null;
     const downInfo = pointerDownInfoRef.current;
+    if (canvasRef.current) {
+      canvasRef.current.style.cursor = 'default';
+    }
 
     // A. Drop active dragging item
     if (activeDragRef.current) {
@@ -6653,7 +6883,7 @@ export default function App() {
       return;
     }
 
-    // Pointer moved without dragging an item: village itself stays anchored in place
+    // Pointer moved without dragging an item: was a camera pan or modular drag!
     if (downInfo && downInfo.hasMoved && !downInfo.item) {
       pointerDownInfoRef.current = null;
       return;
@@ -7198,6 +7428,53 @@ export default function App() {
           onTouchEnd={handlePointerUp}
           style={{ cursor: draggingObject ? 'grabbing' : isCultivatingMode ? 'crosshair' : 'default' }}
         />
+
+        {/* Floating Zoom & Screen Adaptation Controls HUD */}
+        <div className="sanctuary-zoom-hud" aria-label="בקרי תצוגה והתאמה למסך">
+          <button
+            className="zoom-hud-btn"
+            onClick={() => {
+              sounds.playTap();
+              hasUserPannedOrZoomedRef.current = true;
+              setCameraZoom(z => {
+                const next = Math.min(1.7, Number((z * 1.15).toFixed(2)));
+                cameraZoomRef.current = next;
+                return next;
+              });
+            }}
+            title="התקרב (+)"
+            aria-label="התקרב"
+          >
+            <ZoomIn size={17} />
+          </button>
+
+          <button
+            className="zoom-hud-btn zoom-fit-btn"
+            onClick={handleFitToScreen}
+            title="התאם למסך ומרכז כפר 🎯"
+            aria-label="התאם למסך ומרכז כפר"
+          >
+            <Maximize2 size={16} />
+            <span className="zoom-percentage-label">{Math.round(cameraZoom * 100)}%</span>
+          </button>
+
+          <button
+            className="zoom-hud-btn"
+            onClick={() => {
+              sounds.playTap();
+              hasUserPannedOrZoomedRef.current = true;
+              setCameraZoom(z => {
+                const next = Math.max(0.35, Number((z / 1.15).toFixed(2)));
+                cameraZoomRef.current = next;
+                return next;
+              });
+            }}
+            title="התרחק (-)"
+            aria-label="התרחק"
+          >
+            <ZoomOut size={17} />
+          </button>
+        </div>
       </main>
 
 
