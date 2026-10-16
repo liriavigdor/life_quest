@@ -31,7 +31,8 @@ import {
   ZoomOut,
   Maximize2,
   Compass,
-  MapPin
+  MapPin,
+  Layers
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
 import {
@@ -42,7 +43,9 @@ import {
   loadVillagesRegistry,
   saveVillagesRegistry
 } from './data/villages';
+import { VILLAGE_TEMPLATES } from './data/villageTemplates';
 import { WorldRealmMapModal } from './components/WorldRealmMapModal';
+import { VillageTemplatesModal } from './components/VillageTemplatesModal';
 import './App.css';
 
 const STORAGE_KEY_PLACED = 'lifequest_cozy_objects_v3';
@@ -336,6 +339,7 @@ export default function App() {
   });
 
   const [showRealmMap, setShowRealmMap] = useState(false);
+  const [showTemplatesModal, setShowTemplatesModal] = useState(false);
   const [travelingNotice, setTravelingNotice] = useState(null);
 
   // Keep active village data in sync with villagesRegistry
@@ -6768,6 +6772,50 @@ export default function App() {
     });
   };
 
+  // Apply Village Framework / Template or Clean Slate
+  const handleApplyVillageTemplate = (template) => {
+    if (!template) return;
+    const newObjs = (template.items || []).map(item => ({ ...item }));
+    setPlacedObjects(newObjs);
+    placedObjectsRef.current = newObjs;
+
+    // Update village in registry
+    setVillagesRegistry(prev => {
+      const updated = {
+        ...prev,
+        [currentVillageId]: {
+          ...prev[currentVillageId],
+          placedObjects: newObjs,
+          lastVisited: new Date().toISOString()
+        }
+      };
+      saveVillagesRegistry(updated);
+      return updated;
+    });
+
+    // Recompute grid cache and border scenery
+    tileGridCacheRef.current = computeTileGrid(expansionTier, cultivatedPlots, newObjs);
+    borderSceneryRef.current = computeBorderScenery(expansionTier, cultivatedPlots, newObjs);
+
+    // Villager celebration
+    const v = animEntitiesRef.current?.villager;
+    if (v) {
+      v.currGx = 11;
+      v.currGy = 11;
+      v.targetGx = 11;
+      v.targetGy = 11;
+      v.hopVy = -8.0;
+      v.emote = template.icon || '🏛️';
+      v.emoteTimer = 220;
+      v.bubble = {
+        text: template.id === 'blank'
+          ? 'דף חלק ונקי! כעת יש לנו חופש מוחלט לבנות את הכפר מחדש שלב אחר שלב 🌱✨'
+          : `תבנית "${template.name}" הוחלה בהצלחה! בוא נטמיע בה את הזיכרונות והכוונות שלנו! 🏛️✨`,
+        timer: 360
+      };
+    }
+  };
+
   // Build institution from modal
   const handleBuildInstitution = (inst) => {
     const catalogItem = BUILD_CATALOG.find(c => c.renderType === inst.id);
@@ -7907,6 +7955,19 @@ export default function App() {
           <span className="dock-btn-label">מפה</span>
         </button>
 
+        {/* 1.3. Village Frameworks & Starter Templates */}
+        <button
+          className={`dock-btn templates-dock-btn ${showTemplatesModal ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowTemplatesModal(true);
+          }}
+          title="תבניות כפר ומסגרות לוגיות 🏛️"
+        >
+          <Layers size={20} className="text-amber" />
+          <span className="dock-btn-label">תבניות</span>
+        </button>
+
         {/* 1.5. Dedicated Path & Road Paving Studio */}
         <button
           className={`dock-btn paths-dock-btn ${showPathsPalette ? 'active' : ''}`}
@@ -8311,6 +8372,19 @@ export default function App() {
               </button>
 
               <button
+                className="tool-toggle-btn templates-btn"
+                onClick={() => {
+                  sounds.playTap();
+                  setShowTemplatesModal(true);
+                  setShowPlantingDrawer(false);
+                }}
+                title="תבניות כפר — בחר מסגרת מאורגנת או התחל מאפס"
+              >
+                <Layers size={13} />
+                <span>תבניות 🏛️</span>
+              </button>
+
+              <button
                 className={`tool-toggle-btn ${continuousBuild ? 'active' : ''}`}
                 onClick={() => {
                   sounds.playTap();
@@ -8632,6 +8706,14 @@ export default function App() {
         villagesRegistry={villagesRegistry}
         onSelectVillage={handleSwitchVillage}
         onRenameVillage={handleRenameVillage}
+      />
+
+      {/* Village Frameworks & Logical Templates Modal */}
+      <VillageTemplatesModal
+        isOpen={showTemplatesModal}
+        onClose={() => setShowTemplatesModal(false)}
+        currentPlacedObjects={placedObjects}
+        onApplyTemplate={handleApplyVillageTemplate}
       />
     </div>
   );
