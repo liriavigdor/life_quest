@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   X, 
   Sparkles, 
-  Hammer, 
-  Wheat, 
-  Carrot, 
-  Gem, 
-  ArrowUpRight, 
-  Check, 
+  Brain, 
+  DoorOpen, 
   MapPin, 
-  User, 
-  PackageCheck,
-  TrendingUp,
-  Sprout,
-  DoorOpen
+  Check, 
+  Layers, 
+  Compass,
+  RotateCcw
 } from 'lucide-react';
 import { INSTITUTIONS_CONFIG } from '../data/institutions';
 import { sounds } from '../utils/sound';
@@ -21,19 +16,76 @@ import { sounds } from '../utils/sound';
 export const VillageInstitutionsModal = ({
   isOpen,
   onClose,
-  placedObjects,
-  villageResources,
-  seeds,
-  onBuildInstitution,
-  onUpgradeInstitution,
-  onCollectProduce,
-  onSendVillagerToWork,
+  placedObjects = [],
   onFocusInstitution,
   onEnterInterior
 }) => {
   if (!isOpen) return null;
 
   const institutionsList = Object.values(INSTITUTIONS_CONFIG);
+
+  // Cultivation & Repetition status state stored in localStorage
+  const [cultivationDates, setCultivationDates] = useState(() => {
+    try {
+      const saved = localStorage.getItem('lifequest_institutions_cultivation_log');
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
+  const [toastMessage, setToastMessage] = useState('');
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(''), 2400);
+  };
+
+  const handleCultivate = (instId, instName) => {
+    sounds.playTap?.();
+    const today = new Date().toISOString().split('T')[0];
+    const updated = {
+      ...cultivationDates,
+      [instId]: {
+        lastReviewed: today,
+        repetitionStreak: (cultivationDates[instId]?.repetitionStreak || 0) + 1
+      }
+    };
+    setCultivationDates(updated);
+    try {
+      localStorage.setItem('lifequest_institutions_cultivation_log', JSON.stringify(updated));
+    } catch (e) {
+      console.error(e);
+    }
+    showToast(`טופח בהצלחה: "${instName}" רוענן בזיכרון 🧠✨`);
+  };
+
+  // Helper to get active loci count for an institution from localStorage
+  const getActiveAnchorsCount = (inst) => {
+    try {
+      if (inst.id === 'wooden_cabin') {
+        const saved = localStorage.getItem(`lifequest_stardew_farmhouse_loci_0_0`);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          const fixedCount = Object.values(parsed.fixedLoci || {}).filter(l => l.title?.trim()).length;
+          const customCount = (parsed.customAnchors || []).length;
+          return fixedCount + customCount;
+        }
+      } else if (inst.id === 'community_center') {
+        const saved = localStorage.getItem(`lifequest_institution_complex_loci_0_0`);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          const fixedCount = Object.values(parsed.fixedLoci || {}).filter(l => l.title?.trim()).length;
+          const customCount = (parsed.customAnchors || []).length;
+          return fixedCount + customCount;
+        }
+      }
+    } catch {
+      // fallback
+    }
+    return 0;
+  };
+
+  const todayStr = new Date().toISOString().split('T')[0];
 
   return (
     <div className="institutions-backdrop" onClick={onClose}>
@@ -42,12 +94,12 @@ export const VillageInstitutionsModal = ({
         <div className="institutions-header">
           <div className="institutions-title-wrap">
             <div className="institutions-icon-bubble">
-              <Hammer size={24} className="text-amber" />
+              <Brain size={26} className="text-amber" />
             </div>
             <div>
-              <h2>מוסדות הכפר והתפתחות המשק</h2>
+              <h2>מוסדות הכפר ומרחבי הזיכרון (Method of Loci)</h2>
               <span className="institutions-subtitle">
-                בנה, שדרג והרחב את מבני הייצור והחקלאות של הכפר — שגשוג מתמשך שנבנה בקצב שלך
+                ארמונות זיכרון מרחביים לקידוד ויזואלי של מידע, משימות והרגלים — טיפוח מתמיד דרך חזרתיות פעילה
               </span>
             </div>
           </div>
@@ -56,209 +108,144 @@ export const VillageInstitutionsModal = ({
           </button>
         </div>
 
-        {/* Resources Bar */}
-        <div className="institution-resources-strip">
+        {/* Floating Toast Notification */}
+        {toastMessage && (
+          <div className="institutions-toast-banner animate-bounce-gentle">
+            <Sparkles size={16} className="text-amber" />
+            <span>{toastMessage}</span>
+          </div>
+        )}
+
+        {/* Top Repetition & Cultivation Summary Strip */}
+        <div className="institution-resources-strip memory-summary-strip">
           <div className="res-pill">
-            <Sprout size={16} className="text-emerald" />
+            <Compass size={18} className="text-amber" />
             <div className="res-meta">
-              <span className="res-count">{seeds}</span>
-              <span className="res-name">זרעי טיפוח</span>
+              <span className="res-count">{institutionsList.length}</span>
+              <span className="res-name">מרחבי זיכרון</span>
             </div>
           </div>
 
           <div className="res-pill">
-            <span className="res-emoji">🥕</span>
+            <Layers size={18} className="text-cyan" />
             <div className="res-meta">
-              <span className="res-count">{villageResources.veggies || 0}</span>
-              <span className="res-name">ירקות טריים</span>
+              <span className="res-count">
+                {institutionsList.reduce((acc, inst) => acc + getActiveAnchorsCount(inst), 0)}
+              </span>
+              <span className="res-name">עוגנים ויזואליים פעילים</span>
             </div>
           </div>
 
           <div className="res-pill">
-            <span className="res-emoji">🌾</span>
+            <Brain size={18} className="text-emerald" />
             <div className="res-meta">
-              <span className="res-count">{villageResources.harvest || 0}</span>
-              <span className="res-name">תבואה וקמח</span>
-            </div>
-          </div>
-
-          <div className="res-pill">
-            <span className="res-emoji">💎</span>
-            <div className="res-meta">
-              <span className="res-count">{villageResources.crystals || 0}</span>
-              <span className="res-name">קריסטלים זוהרים</span>
+              <span className="res-count">
+                {Object.values(cultivationDates).filter(d => d.lastReviewed === todayStr).length} / {institutionsList.length}
+              </span>
+              <span className="res-name">מרחבים שטופחו היום</span>
             </div>
           </div>
         </div>
 
-        {/* Institutions Cards List */}
+        {/* Institutions Memory Palaces Scroll */}
         <div className="institutions-cards-scroll">
           {institutionsList.map((inst) => {
             const placed = placedObjects.find(o => o.type === inst.id);
-            const currentLevel = placed ? (placed.level || 1) : 0;
-            const levelData = inst.levels.find(l => l.level === currentLevel) || inst.levels[0];
-            const nextLevelData = inst.levels.find(l => l.level === currentLevel + 1);
-            const readyProduce = placed ? (placed.readyProduce || 0) : 0;
-
-            // Check if can afford next upgrade
-            let canAffordUpgrade = false;
-            let missingDetails = [];
-            if (nextLevelData && nextLevelData.upgradeCost) {
-              const cost = nextLevelData.upgradeCost;
-              canAffordUpgrade = true;
-              if (cost.seeds && seeds < cost.seeds) {
-                canAffordUpgrade = false;
-                missingDetails.push(`${cost.seeds - seeds} זרעים`);
-              }
-              if (cost.veggies && (villageResources.veggies || 0) < cost.veggies) {
-                canAffordUpgrade = false;
-                missingDetails.push(`${cost.veggies - (villageResources.veggies || 0)} ירקות`);
-              }
-              if (cost.harvest && (villageResources.harvest || 0) < cost.harvest) {
-                canAffordUpgrade = false;
-                missingDetails.push(`${cost.harvest - (villageResources.harvest || 0)} תבואה`);
-              }
-              if (cost.crystals && (villageResources.crystals || 0) < cost.crystals) {
-                canAffordUpgrade = false;
-                missingDetails.push(`${cost.crystals - (villageResources.crystals || 0)} קריסטלים`);
-              }
-            }
-
-            // Check if can afford base construction
-            const canAffordBuild = seeds >= inst.baseCost.seeds;
+            const activeAnchors = getActiveAnchorsCount(inst);
+            const cultRecord = cultivationDates[inst.id] || {};
+            const isReviewedToday = cultRecord.lastReviewed === todayStr;
 
             return (
-              <div key={inst.id} className={`inst-card ${placed ? 'is-built' : 'not-built'}`}>
+              <div key={inst.id} className="inst-card memory-palace-card">
                 {/* Card Top Row */}
                 <div className="inst-card-top">
                   <div className="inst-title-group">
-                    <span className="inst-emoji-badge">{inst.emoji}</span>
+                    <div className="inst-palace-icon-circle">
+                      <Brain size={22} className="text-amber" />
+                    </div>
                     <div>
                       <div className="inst-cat-tag">{inst.category}</div>
                       <h3 className="inst-name">{inst.name}</h3>
                     </div>
                   </div>
 
-                  {placed ? (
-                    <div className="inst-level-badge">
-                      <span className="level-num">רמה {currentLevel}</span>
-                      <span className="level-subtitle">{levelData.subtitle}</span>
-                    </div>
-                  ) : (
-                    <div className="inst-not-built-badge">
-                      <span>טרם נבנה בכפר 🏗️</span>
-                    </div>
-                  )}
+                  <div className={`memory-cultivation-badge ${isReviewedToday ? 'is-fresh' : 'needs-review'}`}>
+                    {isReviewedToday ? (
+                      <>
+                        <Check size={14} className="text-emerald" />
+                        <span>רוענן היום בזיכרון ✨</span>
+                      </>
+                    ) : (
+                      <>
+                        <RotateCcw size={14} className="text-amber" />
+                        <span>ממתין לחזרה יומית</span>
+                      </>
+                    )}
+                  </div>
                 </div>
 
                 {/* Card Description */}
-                <p className="inst-desc">{placed ? levelData.desc : inst.desc}</p>
+                <p className="inst-desc">{inst.desc}</p>
 
-                {/* Active Features of current level */}
-                {placed && (
-                  <div className="inst-features-row">
-                    {levelData.features.map((feat, fIdx) => (
-                      <span key={fIdx} className="feature-chip">
-                        <Check size={12} className="text-emerald" />
-                        <span>{feat}</span>
+                {/* Spatial Loci List */}
+                <div className="inst-loci-preview">
+                  <span className="loci-label">משבצות עוגן מרחביות בחלל זה ({inst.loci?.length || 0}):</span>
+                  <div className="loci-chips-wrap">
+                    {(inst.loci || []).map(locus => (
+                      <span key={locus.id} className="locus-chip-pill">
+                        <span>•</span>
+                        <span>{locus.name}</span>
                       </span>
                     ))}
                   </div>
-                )}
+                </div>
 
-                {/* Harvesting & Production Strip */}
-                {placed && (
-                  <div className="inst-production-box">
-                    <div className="prod-info-row">
-                      <span className="prod-label">תוצרת מוכנה לאיסוף:</span>
-                      <strong className="prod-amount">
-                        {readyProduce} / {levelData.maxCapacity} {inst.resourceIcon}
-                      </strong>
-                    </div>
-
-                    <button
-                      className={`collect-btn ${readyProduce > 0 ? 'ready' : 'empty'}`}
-                      disabled={readyProduce === 0}
-                      onClick={() => onCollectProduce(placed)}
-                    >
-                      <PackageCheck size={16} />
-                      <span>
-                        {readyProduce > 0 ? `אסוף ${readyProduce} ${inst.resourceName}` : 'ממתין לתנובה...'}
-                      </span>
-                    </button>
-                  </div>
-                )}
-
-                {/* Actions Footer */}
-                <div className="inst-card-footer">
-                  {!placed ? (
-                    <button
-                      className={`build-inst-btn ${canAffordBuild ? 'can-afford' : 'disabled'}`}
-                      disabled={!canAffordBuild}
-                      onClick={() => onBuildInstitution(inst)}
-                    >
-                      <Hammer size={16} />
-                      <span>
-                        {canAffordBuild 
-                          ? `בנה מוסד זה (${inst.baseCost.seeds} זרעים)` 
-                          : `חסרים עוד ${inst.baseCost.seeds - seeds} זרעים`}
-                      </span>
-                    </button>
-                  ) : (
-                    <div className="inst-upgrades-bar">
-                      {nextLevelData ? (
-                        <div className="upgrade-block">
-                          <button
-                            className={`upgrade-btn ${canAffordUpgrade ? 'ready' : 'locked'}`}
-                            disabled={!canAffordUpgrade}
-                            onClick={() => onUpgradeInstitution(placed, nextLevelData)}
-                          >
-                            <TrendingUp size={16} />
-                            <span>
-                              {canAffordUpgrade 
-                                ? `שדרג לרמה ${nextLevelData.level}: ${nextLevelData.title}` 
-                                : `שדרוג נעול (חסרים: ${missingDetails.join(', ')})`}
-                            </span>
-                          </button>
-                        </div>
-                      ) : (
-                        <span className="max-level-pill">
-                          ⭐ המוסד פועל במלוא תפארתו ברמה המרבית!
-                        </span>
-                      )}
-
-                      <div className="secondary-inst-actions">
-                        {onEnterInterior && (
-                          <button 
-                            className="enter-interior-inst-btn"
-                            onClick={() => onEnterInterior(placed, inst)}
-                            title="היכנס לרובד הפנימי — מרחב עוגנים וזיכרונות בסגנון סטארדיו 🏡"
-                          >
-                            <DoorOpen size={14} />
-                            <span>היכנס פנימה 🚪</span>
-                          </button>
-                        )}
-
-                        <button 
-                          className="work-btn"
-                          onClick={() => onSendVillagerToWork(inst.id)}
-                          title="שלח את איש הכפר לעבוד במוסד זה"
-                        >
-                          <User size={14} />
-                          <span>שלח לעבודה</span>
-                        </button>
-
-                        <button 
-                          className="locate-btn"
-                          onClick={() => onFocusInstitution(placed)}
-                          title="הצג מיקום במפה"
-                        >
-                          <MapPin size={14} />
-                          <span>אתר במפה</span>
-                        </button>
-                      </div>
-                    </div>
+                {/* Anchors Stats Strip */}
+                <div className="inst-anchors-stat-box">
+                  <span className="anchors-count-label">
+                    עוגנים מוגדרים בחלל זה: <strong>{activeAnchors} פעילים</strong>
+                  </span>
+                  {cultRecord.repetitionStreak > 0 && (
+                    <span className="streak-tag">
+                      רצף חזרות: {cultRecord.repetitionStreak} ימים 🧠
+                    </span>
                   )}
+                </div>
+
+                {/* Action Buttons: Enter Interior & Cultivate/Repeat */}
+                <div className="inst-card-footer">
+                  <div className="memory-palace-actions-row">
+                    {onEnterInterior && (
+                      <button 
+                        className="enter-interior-inst-btn primary-pulse"
+                        onClick={() => onEnterInterior(placed || { gx: 0, gy: 0, type: inst.id }, inst)}
+                        title="היכנס פנימה אל תוך החלל הוויזואלי לעיגון וצפייה"
+                      >
+                        <DoorOpen size={16} />
+                        <span>היכנס למרחב הזיכרון 🚪</span>
+                      </button>
+                    )}
+
+                    <button 
+                      className={`cultivate-memory-btn ${isReviewedToday ? 'already-done' : ''}`}
+                      onClick={() => handleCultivate(inst.id, inst.name)}
+                      title="רענן את הזיכרון בחלל זה (חזרתיות יומית)"
+                    >
+                      <Brain size={15} />
+                      <span>{isReviewedToday ? 'רוענן היום ✓' : 'טפח ורענן בזיכרון 🧠'}</span>
+                    </button>
+
+                    {placed && onFocusInstitution && (
+                      <button 
+                        className="locate-btn"
+                        onClick={() => onFocusInstitution(placed)}
+                        title="הצג מיקום המבנה במפת הכפר"
+                      >
+                        <MapPin size={15} />
+                        <span>אתר בכפר</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             );

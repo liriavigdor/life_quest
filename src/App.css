@@ -5806,10 +5806,13 @@ body, html {
 }
 
 .chicken-name-pill {
-  background: rgba(15, 23, 42, 0.9);
-  border: 1.5px solid rgba(245, 158, 11, 0.65);
-  color: #fef3c7;
-  border-radius: 12px;
+  background: #f4efe6;
+  border: 1px solid rgba(139, 111, 71, 0.55);
+  box-shadow: 
+    0 4px 12px rgba(74, 59, 50, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  color: #4a3b32;
+  border-radius: 8px;
   padding: 2px 8px;
   font-size: 0.72rem;
   font-weight: 700;
@@ -5817,9 +5820,7 @@ body, html {
   align-items: center;
   gap: 4px;
   white-space: nowrap;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
-  margin-bottom: 2px;
-  backdrop-filter: blur(4px);
+  margin-bottom: 3px;
   pointer-events: none;
 }
 
@@ -9315,141 +9316,172 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 16px;
+  padding: 6px 16px;
   z-index: 100;
   pointer-events: auto;
+  gap: 12px;
 }
 
 .stardew-hud-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .stardew-exit-pill-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(180deg, #b45309 0%, #78350f 100%);
-  border: 2px solid #fde68a;
+  background: linear-gradient(180deg, #4a2816 0%, #2b160b 100%);
+  border: 1.5px solid #d4a359;
   color: #fef3c7;
   border-radius: 20px;
   padding: 6px 14px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transition: all 0.15s ease;
+  box-shadow: 
+    0 4px 12px rgba(18, 10, 7, 0.7),
+    inset 0 1px 0 rgba(255, 235, 180, 0.35);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .stardew-exit-pill-btn:hover {
   filter: brightness(1.15);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  border-color: #fde047;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .stardew-room-indicator {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(30, 20, 14, 0.75);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  padding: 5px 12px;
-  border-radius: 12px;
+  background: #f4efe6;
+  border: 1.5px solid #c4a469;
+  padding: 5px 14px;
+  border-radius: 14px;
   font-size: 0.85rem;
-  color: #fde68a;
+  font-weight: 700;
+  color: #4a3b32;
+  box-shadow: 0 4px 12px rgba(42, 22, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.stardew-mode-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(180deg, #3d2315 0%, #24130a 100%);
+  border: 1.5px solid #b8863f;
+  color: #fef08a;
+  border-radius: 14px;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.18s ease;
+}
+
+.stardew-mode-switch-btn:hover {
+  transform: translateY(-1.5px);
+  filter: brightness(1.15);
+  border-color: #fde047;
 }
 
 /* Toolbelt Slots (Stardew Quickbar) */
 .stardew-toolbelt-strip {
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: #78350f;
-  padding: 4px;
-  border-radius: 8px;
-  border: 2px solid #b45309;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.6);
+  gap: 5px;
+  background: linear-gradient(180deg, #442413 0%, #261208 100%);
+  padding: 5px;
+  border-radius: 10px;
+  border: 1.5px solid #99622d;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6), 0 6px 16px rgba(18, 10, 7, 0.6);
 }
 
 .toolbelt-slot {
   width: 42px;
   height: 42px;
-  background: #d97706;
-  border: 2px solid #451a03;
-  border-radius: 6px;
+  background: #f4efe6;
+  border: 1.5px solid #a37b42;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
   cursor: pointer;
-  box-shadow: inset 0 1px 2px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.3);
-  transition: all 0.12s ease;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.7), 0 2px 4px rgba(42, 22, 11, 0.25);
+  transition: all 0.16s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .toolbelt-slot:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.12);
+  transform: translateY(-2.5px);
+  border-color: #f59e0b;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.45);
 }
 
 .toolbelt-slot.active {
-  border-color: #fef08a;
-  box-shadow: 0 0 8px rgba(254, 240, 138, 0.8), inset 0 0 6px rgba(255,255,255,0.5);
-  background: #f59e0b;
+  border-color: #b45309;
+  background: #fef08a;
+  box-shadow: 0 0 10px rgba(254, 240, 138, 0.9), inset 0 0 6px rgba(255,255,255,0.8);
 }
 
 /* Right HUD: Gold, Clock & Energy */
 .stardew-hud-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .stardew-currency-box {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #78350f;
-  border: 2px solid #b45309;
-  padding: 4px 10px;
-  border-radius: 8px;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+  gap: 8px;
+  background: #f4efe6;
+  border: 1.5px solid #b8863f;
+  padding: 5px 12px;
+  border-radius: 12px;
+  color: #4a3b32;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(42, 22, 11, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .gold-amount {
-  font-family: monospace;
-  font-size: 1.05rem;
+  font-family: inherit;
+  font-size: 0.92rem;
   font-weight: 800;
-  color: #fde047;
-  letter-spacing: 0.5px;
+  color: #854d0e;
+  letter-spacing: 0.3px;
 }
 
 /* Stardew Clock Frame */
 .stardew-clock-frame {
-  background: linear-gradient(180deg, #d97706 0%, #92400e 100%);
-  border: 2px solid #fef08a;
-  border-radius: 10px;
-  padding: 4px 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background: linear-gradient(180deg, #442413 0%, #261208 100%);
+  border: 1.5px solid #d4a359;
+  border-radius: 12px;
+  padding: 4px 12px;
+  box-shadow: 0 4px 14px rgba(18, 10, 7, 0.65), inset 0 1px 0 rgba(255, 230, 180, 0.3);
   text-align: center;
-  min-width: 90px;
+  min-width: 95px;
 }
 
 .clock-date-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
   font-size: 0.78rem;
   font-weight: 800;
-  color: #451a03;
+  color: #fde68a;
 }
 
 .clock-time-val {
-  font-family: monospace;
-  font-size: 0.95rem;
-  font-weight: 900;
+  font-size: 0.88rem;
+  font-weight: 800;
   color: #fef3c7;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 /* Energy Gauge */
@@ -9818,12 +9850,11 @@ body, html {
   border-radius: 2px;
 }
 
-/* Dining & Work Table Set with Steaming Mug */
+/* Dining & Work Table Set with Vector SVGs */
 .furniture-table-set {
   position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  width: 95px;
+  height: 65px;
   cursor: pointer;
   z-index: 20;
   transition: transform 0.15s ease;
@@ -9833,87 +9864,32 @@ body, html {
   transform: scale(1.05);
 }
 
-.table-wooden-desk {
-  width: 76px;
-  height: 54px;
-  background: #92400e;
-  border: 3px solid #451a03;
-  border-radius: 4px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
-
-.table-wooden-chair {
-  width: 28px;
-  height: 48px;
-  background: #78350f;
-  border: 2px solid #451a03;
-  border-radius: 4px;
-}
-
-.table-steaming-mug {
-  position: relative;
-}
-
-.mug-emoji {
-  font-size: 1.25rem;
-}
-
-.steam-curl {
-  position: absolute;
-  top: -10px;
-  width: 4px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  animation: steamRise 1s infinite linear;
-}
-
-.steam-curl.s1 { left: 4px; animation-delay: 0s; }
-.steam-curl.s2 { left: 10px; animation-delay: 0.5s; }
-
-@keyframes steamRise {
-  0% { transform: translateY(0) scale(0.6); opacity: 0.8; }
-  100% { transform: translateY(-12px) scale(1.2); opacity: 0; }
-}
-
 /* Potted Plant */
 .furniture-potted-plant {
   position: absolute;
+  width: 55px;
+  height: 70px;
   cursor: pointer;
   z-index: 20;
   transition: transform 0.15s ease;
 }
 
 .furniture-potted-plant:hover {
-  transform: scale(1.12);
-}
-
-.plant-terracotta-pot {
-  font-size: 1.8rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+  transform: scale(1.1);
 }
 
 /* Wrapped Gift Parcel */
 .furniture-gift-parcel {
   position: absolute;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
   z-index: 20;
-  transition: transform 0.2s ease;
+  transition: transform 0.18s ease;
 }
 
 .furniture-gift-parcel:hover {
-  transform: scale(1.18);
-}
-
-.gift-emoji {
-  font-size: 1.8rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+  transform: scale(1.15);
 }
 
 /* Woven Patterned Rug */
@@ -9940,55 +9916,18 @@ body, html {
   transform: rotate(45deg);
 }
 
-/* Cozy Wooden Bed */
+/* Cozy Wooden Bed with Vector SVG */
 .furniture-cozy-bed {
   position: absolute;
   width: 88px;
-  height: 110px;
-  background: #78350f;
-  border: 3px solid #451a03;
-  border-radius: 6px;
+  height: 115px;
   z-index: 22;
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
   transition: transform 0.15s ease;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 
 .furniture-cozy-bed:hover {
   transform: scale(1.04);
-}
-
-.bed-headboard {
-  height: 18px;
-  background: #522504;
-  border-bottom: 2px solid #3b1702;
-}
-
-.bed-mattress {
-  flex: 1;
-  background: #f1f5f9;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.bed-plush-pillow {
-  width: 60px;
-  height: 22px;
-  margin: 4px auto;
-  background: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.bed-red-quilt {
-  flex: 1;
-  background: #b91c1c;
-  border-top: 4px solid #fde047;
-  box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Custom Floor Placed Anchors */
@@ -10525,25 +10464,39 @@ body, html {
   height: 530px;
   max-width: 96vw;
   max-height: 82vh;
-  margin-top: 30px;
-  background: #d97706;
-  background-image: repeating-linear-gradient(
-    90deg,
-    #d97706 0px,
-    #d97706 28px,
-    #b45309 29px,
-    #b45309 30px
-  );
-  border-left: 20px solid #78350f;
-  border-right: 20px solid #78350f;
-  border-top: 16px solid #451a03;
+  margin-top: 24px;
+  background: #120a07;
+  border: 4px solid #3d2215;
+  border-radius: 12px;
   box-shadow: 
-    0 0 0 2px #291203,
+    0 0 0 3px #1c0f08,
     0 35px 90px rgba(0, 0, 0, 0.98),
-    inset 0 0 50px rgba(0, 0, 0, 0.35);
+    inset 0 0 80px rgba(0, 0, 0, 0.85);
   cursor: crosshair;
-  border-radius: 6px;
-  overflow: visible;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Ant-Farm Multi-Zone Camera Rig Wrapper */
+.complex-world-camera-rig {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1900px;
+  height: 1180px;
+  transform-origin: 0 0;
+  pointer-events: auto;
+  will-change: transform;
+}
+
+@keyframes lamplightPulse {
+  0%, 100% { opacity: 0.88; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.complex-light-pool {
+  transform-origin: center;
+  animation: lamplightPulse 3.5s infinite ease-in-out;
 }
 
 /* Back Wall Multi-Zone Structure */
@@ -10589,22 +10542,9 @@ body, html {
 }
 
 .store-wall-shelves-backdrop {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 190px;
+  width: 250px;
+  height: 125px;
   margin-right: 14px;
-}
-
-.shelf-tier {
-  background: #92400e;
-  border-bottom: 3px solid #451a03;
-  padding: 2px 6px;
-  border-radius: 3px;
-  display: flex;
-  gap: 8px;
-  font-size: 1.15rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
 }
 
 .store-window-arched {
@@ -10675,8 +10615,9 @@ body, html {
 
 .grand-brick-chimney-complex {
   position: absolute;
-  top: -6px;
-  width: 120px;
+  top: 2px;
+  width: 145px;
+  height: 125px;
   cursor: pointer;
   z-index: 14;
   transition: filter 0.2s ease;
@@ -10684,90 +10625,6 @@ body, html {
 
 .grand-brick-chimney-complex:hover {
   filter: brightness(1.15);
-}
-
-.brick-flue-stack {
-  width: 74px;
-  height: 60px;
-  margin: 0 auto;
-  background: repeating-linear-gradient(
-    180deg,
-    #991b1b 0px,
-    #991b1b 10px,
-    #7f1d1d 11px,
-    #450a0a 12px
-  );
-  border: 2px solid #450a0a;
-}
-
-.chimney-carved-mantel {
-  width: 120px;
-  height: 14px;
-  background: #78350f;
-  border: 2px solid #451a03;
-  border-radius: 3px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  align-items: center;
-  font-size: 0.8rem;
-}
-
-.chimney-open-firebox {
-  width: 104px;
-  height: 74px;
-  margin: 0 auto;
-  background: #1c1917;
-  border: 6px solid #7f1d1d;
-  border-top: none;
-  border-radius: 30px 30px 0 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.9);
-}
-
-.fire-dancing-flames {
-  position: absolute;
-  bottom: 8px;
-  display: flex;
-  gap: 4px;
-}
-
-.hearth-ambient-light {
-  position: absolute;
-  bottom: -30px;
-  left: -40px;
-  right: -40px;
-  height: 90px;
-  background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.5) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 5;
-}
-
-.hearth-wall-portraits {
-  position: absolute;
-  top: 24px;
-  display: flex;
-  gap: 16px;
-  width: 100%;
-  justify-content: space-between;
-  padding: 0 24px;
-}
-
-.mini-framed-picture {
-  width: 32px;
-  height: 38px;
-  background: #1e1b18;
-  border: 3px solid #78350f;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.5);
-  font-size: 0.85rem;
 }
 
 /* Wing C: Shrine Wall Zone */
@@ -10781,8 +10638,8 @@ body, html {
 }
 
 .golden-altar-monument {
-  width: 130px;
-  height: 110px;
+  width: 135px;
+  height: 115px;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -10795,37 +10652,6 @@ body, html {
   transform: scale(1.05);
 }
 
-.altar-golden-chest {
-  width: 74px;
-  height: 48px;
-  background: linear-gradient(180deg, #fef08a 0%, #f59e0b 50%, #b45309 100%);
-  border: 3px solid #78350f;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 16px rgba(254, 240, 138, 0.8), inset 0 2px 4px rgba(255,255,255,0.6);
-  z-index: 2;
-}
-
-.altar-relic-gem {
-  font-size: 1.5rem;
-  animation: altarPulse 1.2s infinite alternate;
-}
-
-@keyframes altarPulse {
-  0% { transform: scale(0.9); filter: drop-shadow(0 0 4px #fef08a); }
-  100% { transform: scale(1.2); filter: drop-shadow(0 0 12px #fde047); }
-}
-
-.altar-golden-pillars {
-  display: flex;
-  justify-content: space-between;
-  width: 120px;
-  margin-top: -30px;
-  font-size: 1.4rem;
-}
-
 /* Floor Carpets & Runways */
 .community-central-carpet {
   position: absolute;
@@ -10833,26 +10659,16 @@ body, html {
   left: 410px;
   width: 200px;
   height: 200px;
-  background: #78350f;
-  border: 8px solid #b45309;
   border-radius: 50%;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.5), inset 0 0 14px rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 12;
+  cursor: pointer;
+  transition: transform 0.15s ease;
 }
-
-.carpet-inner-medallion {
-  width: 100px;
-  height: 100px;
-  background: #fde68a;
-  border: 4px dashed #92400e;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
+.community-central-carpet:hover {
+  transform: scale(1.03);
 }
 
 .store-welcome-mat {
@@ -10860,7 +10676,7 @@ body, html {
   top: 260px;
   left: 55px;
   width: 140px;
-  height: 40px;
+  height: 36px;
   background: #991b1b;
   border: 3px solid #78350f;
   border-radius: 4px;
@@ -10877,171 +10693,50 @@ body, html {
 .furniture-store-counter {
   position: absolute;
   top: 175px;
-  left: 60px;
-  width: 140px;
-  height: 64px;
+  left: 55px;
+  width: 155px;
+  height: 75px;
   cursor: pointer;
   z-index: 20;
-}
-
-.counter-clerk-npc {
-  position: absolute;
-  top: -30px;
-  right: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.clerk-sprite {
-  font-size: 1.8rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
-}
-
-.clerk-tag {
-  background: #1c1917;
-  border: 1px solid #d97706;
-  padding: 1px 6px;
-  border-radius: 6px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #fef08a;
-  white-space: nowrap;
-}
-
-.counter-wooden-bar {
-  width: 100%;
-  height: 48px;
-  background: #78350f;
-  border: 3px solid #451a03;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
-  font-size: 1.2rem;
-}
-
-/* Center Aisle Shelves */
-.store-center-aisle-shelf {
-  position: absolute;
-  left: 200px;
-  width: 120px;
-  cursor: pointer;
-  z-index: 20;
-  transition: transform 0.15s ease;
-}
-.store-center-aisle-shelf:hover { transform: scale(1.05); }
-
-.store-center-aisle-shelf.shelf-top { top: 220px; }
-.store-center-aisle-shelf.shelf-bottom { top: 320px; }
-
-.aisle-wooden-framework {
-  background: #92400e;
-  border: 3px solid #451a03;
-  border-radius: 4px;
-  padding: 4px;
-  box-shadow: 0 8px 14px rgba(0,0,0,0.5);
-}
-
-.aisle-row {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.2rem;
 }
 
 .store-produce-bins {
   position: absolute;
-  top: 400px;
-  left: 60px;
-  display: flex;
-  gap: 10px;
-  z-index: 20;
-}
-
-.produce-bin {
-  width: 36px;
-  height: 36px;
-  background: #78350f;
-  border: 2px solid #451a03;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-}
-
-/* NPC Villagers in Salon */
-.npc-villager-sprite {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  top: 395px;
+  left: 55px;
+  width: 140px;
+  height: 50px;
   cursor: pointer;
-  z-index: 22;
-  transition: transform 0.15s ease;
-}
-.npc-villager-sprite:hover { transform: scale(1.15); }
-
-.npc-villager-sprite.caroline-npc { top: 270px; left: 435px; }
-.npc-villager-sprite.abigail-npc { top: 270px; left: 565px; }
-
-.npc-speech-bubble-dot {
-  font-size: 0.9rem;
-  animation: bounceBubble 0.8s infinite alternate;
-}
-
-.npc-avatar {
-  font-size: 2rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
-}
-
-.npc-label {
-  background: #18181b;
-  border: 1px solid #fde047;
-  padding: 1px 6px;
-  border-radius: 6px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #fff;
+  z-index: 20;
 }
 
 .salon-potted-ficus {
   position: absolute;
-  top: 155px;
-  font-size: 2.2rem;
+  top: 160px;
+  width: 55px;
+  height: 65px;
   z-index: 18;
 }
 .salon-potted-ficus.left { left: 360px; }
 .salon-potted-ficus.right { left: 650px; }
 
-.salon-cushion-stool {
-  position: absolute;
-  font-size: 1.6rem;
-  z-index: 18;
-}
-.salon-cushion-stool.s1 { top: 205px; left: 430px; }
-.salon-cushion-stool.s2 { top: 205px; left: 570px; }
-
 .salon-tea-station {
   position: absolute;
-  top: 360px;
+  top: 345px;
   left: 495px;
-  font-size: 1.3rem;
+  width: 95px;
+  height: 65px;
+  cursor: pointer;
   z-index: 18;
 }
 
 /* Shrine Blue Benches */
 .shrine-blue-benches-complex {
   position: absolute;
-  top: 250px;
-  right: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  top: 245px;
+  right: 55px;
+  width: 150px;
+  height: 75px;
   cursor: pointer;
   z-index: 20;
 }
@@ -11620,6 +11315,285 @@ body, html {
   gap: 6px;
   cursor: pointer;
 }
+
+/* ==========================================================================
+   7. VECTOR TOKENS & MEMORY PALACE CULTIVATION STYLES
+   ========================================================================== */
+
+/* Vector Token Picker Strip */
+.vector-token-picker-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1.5px solid #78350f;
+  border-radius: 12px;
+  padding: 10px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.token-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: rgba(45, 26, 14, 0.85);
+  border: 1.5px solid #78350f;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 58px;
+}
+
+.token-btn:hover {
+  transform: translateY(-2px);
+  border-color: #fde047;
+  background: #522504;
+}
+
+.token-btn.selected {
+  border-color: #fde047;
+  background: #b45309;
+  box-shadow: 0 0 10px rgba(253, 224, 71, 0.6);
+  transform: scale(1.05);
+}
+
+.token-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #fde68a;
+}
+
+.dialog-vector-icon-badge {
+  width: 44px;
+  height: 44px;
+  background: rgba(40, 20, 10, 0.9);
+  border: 2px solid #fde047;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* Cultivate Locus Button */
+.cultivate-locus-btn {
+  background: linear-gradient(180deg, #10b981 0%, #047857 100%);
+  border: 1.5px solid #6ee7b7;
+  color: #ecfdf5;
+  font-weight: 800;
+  font-size: 0.88rem;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.15s ease;
+}
+
+.cultivate-locus-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* Memory Palaces Cards */
+.memory-summary-strip {
+  background: rgba(26, 20, 16, 0.95);
+  border: 1.5px solid #b45309;
+  border-radius: 14px;
+  padding: 10px 18px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+}
+
+.memory-palace-card {
+  background: rgba(30, 22, 16, 0.94);
+  border: 2px solid #78350f;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.18s ease;
+}
+
+.memory-palace-card:hover {
+  border-color: #f59e0b;
+}
+
+.inst-palace-icon-circle {
+  width: 42px;
+  height: 42px;
+  background: rgba(45, 26, 14, 0.9);
+  border: 1.5px solid #fde047;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-cultivation-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.memory-cultivation-badge.is-fresh {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #a7f3d0;
+}
+
+.memory-cultivation-badge.needs-review {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid #f59e0b;
+  color: #fde68a;
+}
+
+.inst-loci-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(0,0,0,0.3);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 53, 15, 0.5);
+}
+
+.loci-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.loci-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.locus-chip-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(45, 26, 14, 0.8);
+  border: 1px solid #78350f;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  color: #fef3c7;
+}
+
+.inst-anchors-stat-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #fde68a;
+  border-top: 1px dashed rgba(120, 53, 15, 0.5);
+  padding-top: 8px;
+}
+
+.streak-tag {
+  background: #451a03;
+  border: 1px solid #d97706;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fef08a;
+}
+
+.memory-palace-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.enter-interior-inst-btn.primary-pulse {
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+  border: 2px solid #fde047;
+  color: #451a03;
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.cultivate-memory-btn {
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+  border: 1.5px solid #6ee7b7;
+  color: #ecfdf5;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.cultivate-memory-btn.already-done {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #10b981;
+  color: #a7f3d0;
+}
+
+.cultivate-memory-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* NPC and In-Room Labels */
+.clerk-tag-badge {
+  position: absolute;
+  top: -24px;
+  right: 20px;
+  background: #1c1917;
+  border: 1.5px solid #fde047;
+  color: #fef08a;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  z-index: 22;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.npc-salon-tag-marker {
+  position: absolute;
+  top: 240px;
+  background: #1c1917;
+  border: 1.5px solid #fde047;
+  color: #fef08a;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  z-index: 22;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+.npc-salon-tag-marker.caroline-tag { left: 415px; }
+.npc-salon-tag-marker.abigail-tag { left: 555px; }
+
 
 
 

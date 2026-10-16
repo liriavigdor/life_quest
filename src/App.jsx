@@ -7,6 +7,7 @@ import { BuildingInteriorModal } from './components/BuildingInteriorModal';
 import { VillageInstitutionsModal } from './components/VillageInstitutionsModal';
 import { drawCompleteVillager } from './utils/villagerRenderer';
 import { drawAnimal } from './utils/animalRenderer';
+import { drawParchmentBadge, stepBadgeReveal } from './utils/badgeRenderer';
 import { loadSavedAnimals, saveAnimals, createAnimal, updateAnimalsSimulation } from './utils/animalSimulation';
 import { PlayerController, drawDestinationIndicator } from './utils/playerController';
 import { sounds } from './utils/sound';
@@ -882,19 +883,86 @@ export default function App() {
       y: oy + (gx + gy) * (TILE_H / 2)
     });
 
-    const drawTile = (sx, sy, color, isHovered, isBuildable) => {
+    // Ground-shadow lookup (visual only): flat ground pieces never get a shadow; radius is per-type footprint
+    const FLAT_GROUND_TYPES = new Set([
+      'river_tile', 'water_lily_pond', 'wooden_bridge', 'stone_bridge', 'cobblestone_road', 'stone_path',
+      'dirt_trail', 'wood_path', 'brick_path', 'picnic_blanket', 'flower_garden', 'veggie_garden'
+    ]);
+    const SHADOW_RADIUS = {
+      oak_tree: 26, pine_tree: 22, cypress_tree: 18, fruit_tree: 24, sakura_tree: 26, willow_tree: 28,
+      bush: 15, custom_totem: 16, animal_coop: 32, library: 34, wooden_cabin: 34, greenhouse: 32, bakery: 32,
+      farm: 34, crystal_mine: 30, windmill: 30, art_studio: 32, cozy_tent: 26, fountain: 26, wishing_well: 20,
+      reading_bench: 18, bonfire: 14, lantern_post: 9, tea_table: 16, stone_wall: 16, wooden_fence: 16,
+      floral_arch: 18, hammock: 24, sunflower_patch: 16, glow_mushrooms: 10
+    };
+    const hexToRgba = (hex, a) => {
+      const n = parseInt(hex.slice(1), 16);
+      return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
+    };
+
+    // Optional trailing args (visual only): seed = deterministic per-tile hash, featherBase = underlying
+    // grass color so highlight tiles (dirt / meadow patches) melt softly into their neighbours.
+    const drawTile = (sx, sy, color, isHovered, isBuildable, seed, featherBase) => {
+      // Seam softening: the painted diamond overdraws its neighbours by ~0.5px so no hairlines show through
+      const ex = 1.0, ey = 0.5;
       ctx.beginPath();
-      ctx.moveTo(sx, sy);
-      ctx.lineTo(sx + TILE_W / 2, sy + TILE_H / 2);
-      ctx.lineTo(sx, sy + TILE_H);
-      ctx.lineTo(sx - TILE_W / 2, sy + TILE_H / 2);
+      ctx.moveTo(sx, sy - ey);
+      ctx.lineTo(sx + TILE_W / 2 + ex, sy + TILE_H / 2);
+      ctx.lineTo(sx, sy + TILE_H + ey);
+      ctx.lineTo(sx - TILE_W / 2 - ex, sy + TILE_H / 2);
       ctx.closePath();
 
-      ctx.fillStyle = color;
-      ctx.fill();
+      if (featherBase) {
+        // Feathered patch: base grass + radial fade of the patch colour (fades to the SAME hue at alpha 0,
+        // so there is no muddy dark halo), clipped to the diamond. Dense core = pool of sunlight.
+        ctx.fillStyle = featherBase;
+        ctx.fill();
+        ctx.save();
+        ctx.clip();
+        const fcx = sx, fcy = sy + TILE_H / 2;
+        const feather = ctx.createRadialGradient(fcx, fcy, 1, fcx, fcy, TILE_W * 0.55);
+        feather.addColorStop(0, color);
+        feather.addColorStop(0.55, color);
+        feather.addColorStop(1, hexToRgba(color, 0));
+        ctx.fillStyle = feather;
+        ctx.fillRect(sx - TILE_W / 2 - 2, sy - 1, TILE_W + 4, TILE_H + 2);
+        ctx.restore();
+      } else {
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+
+      if (seed !== undefined) {
+        // Seeded jitter: gentle cream / plum-brown tonal wash (max ~7% alpha) breaks the checkerboard
+        let h = (Math.imul(seed ^ 0x9e3779b9, 1664525) + 1013904223) >>> 0;
+        const r1 = h / 4294967296;
+        const a = Math.abs(r1 - 0.5) * 0.14;
+        ctx.fillStyle = r1 < 0.5 ? `rgba(42, 24, 16, ${a})` : `rgba(255, 244, 214, ${a})`;
+        ctx.fill();
+
+        // Tiny hand-drawn grass blades (single batched path per tile)
+        ctx.beginPath();
+        for (let i = 0; i < 3; i++) {
+          h = (Math.imul(h, 1664525) + 1013904223) >>> 0;
+          const bx = sx + ((h & 0xff) / 255 - 0.5) * TILE_W * 0.5;
+          h = (Math.imul(h, 1664525) + 1013904223) >>> 0;
+          const by = sy + TILE_H * 0.3 + ((h & 0xff) / 255) * TILE_H * 0.4;
+          ctx.moveTo(bx - 1.2, by);
+          ctx.lineTo(bx, by - 3.2);
+          ctx.lineTo(bx + 1.2, by);
+        }
+        ctx.fillStyle = r1 < 0.5 ? 'rgba(255, 244, 214, 0.16)' : 'rgba(42, 24, 16, 0.14)';
+        ctx.fill();
+      }
 
       // Only stroke and highlight when tile is hovered or active (eliminates 34,500+ heavy stroke calls/sec)
       if (isHovered) {
+        ctx.beginPath();
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(sx + TILE_W / 2, sy + TILE_H / 2);
+        ctx.lineTo(sx, sy + TILE_H);
+        ctx.lineTo(sx - TILE_W / 2, sy + TILE_H / 2);
+        ctx.closePath();
         ctx.strokeStyle = isBuildable ? '#fde047' : '#f87171';
         ctx.lineWidth = 2.5;
         ctx.stroke();
@@ -918,6 +986,23 @@ export default function App() {
         ctx.strokeStyle = '#f59e0b';
         ctx.lineWidth = 1.5;
         ctx.stroke();
+        ctx.restore();
+      }
+
+      // Soft ground contact shadow (ambient occlusion) so objects sit on the grass instead of floating
+      if (typeof type === 'string' && !FLAT_GROUND_TYPES.has(type) && !type.startsWith('animal_')) {
+        const shadowR = SHADOW_RADIUS[type] || 16;
+        ctx.save();
+        ctx.translate(cx, cy + 3);
+        ctx.scale(1, 0.5);
+        const sg = ctx.createRadialGradient(0, 0, shadowR * 0.15, 0, 0, shadowR);
+        sg.addColorStop(0, 'rgba(45, 31, 24, 0.3)');
+        sg.addColorStop(0.6, 'rgba(45, 31, 24, 0.18)');
+        sg.addColorStop(1, 'rgba(45, 31, 24, 0)');
+        ctx.fillStyle = sg;
+        ctx.beginPath();
+        ctx.arc(0, 0, shadowR, 0, Math.PI * 2);
+        ctx.fill();
         ctx.restore();
       }
 
@@ -6147,7 +6232,11 @@ export default function App() {
 
             const isOccupied = occupiedSet.has((gx << 8) | gy);
 
-            drawTile(sx, sy, color, isHovered, (currentBuildItem || movingObjectRef.current) && !isOccupied);
+            drawTile(
+              sx, sy, color, isHovered, (currentBuildItem || movingObjectRef.current) && !isOccupied,
+              ((gx * 73856093) ^ (gy * 19349663)) >>> 0,
+              tile.colorType === 3 ? grass1 : undefined
+            );
 
             if (tile.isWildflower) {
               ctx.fillStyle = flowerColor || (isSunset ? '#fef08a' : '#f472b6');
@@ -6329,6 +6418,7 @@ export default function App() {
 
       const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
       const animTime = Date.now() * 0.003;
+      const BADGE_PROXIMITY_TILES = 2.5; // villager distance (in tiles) that reveals a name badge
 
       renderEntities.forEach(item => {
         if (item.kind === 'border_scenery') {
@@ -6353,51 +6443,23 @@ export default function App() {
 
           drawItem(item.obj.type, sx, sy, isInspected || isSelectedMove, item.obj);
 
-          // Associative Mind Map Badge floating above object
+          // Associative Mind Map Badge floating above object (visual only):
+          // hidden by default; revealed on mouse hover, villager proximity, or while inspected.
           if (showMindMapTagsRef.current && item.obj.customName) {
-            ctx.save();
-            ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
-            const nameText = item.obj.customEmoji ? `${item.obj.customEmoji} ${item.obj.customName}` : item.obj.customName;
-            const isCared = item.obj.lastCaredDate === todayStr;
-            const textWidth = ctx.measureText(nameText).width;
-            const tagW = textWidth + (isCared ? 28 : 18);
-            const tagH = 18;
-            const tagX = sx - tagW / 2;
-            const tagY = sy - 28;
-
-            ctx.fillStyle = isCared ? 'rgba(22, 101, 52, 0.92)' : 'rgba(15, 23, 42, 0.88)';
-            ctx.strokeStyle = isCared ? '#4ade80' : 'rgba(56, 189, 248, 0.6)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.roundRect(tagX, tagY, tagW, tagH, 9);
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.fillStyle = isCared ? '#86efac' : '#38bdf8';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            const textOffsetX = isCared ? 5 : 0;
-            ctx.fillText(nameText, sx + textOffsetX, tagY + tagH / 2);
-
-            if (isCared) {
-              ctx.fillStyle = '#22c55e';
-              ctx.beginPath();
-              ctx.arc(tagX + 9, tagY + tagH / 2, 4, 0, Math.PI * 2);
-              ctx.fill();
-              ctx.fillStyle = '#ffffff';
-              ctx.font = 'bold 8px sans-serif';
-              ctx.fillText('✓', tagX + 9, tagY + tagH / 2);
+            const isHoveredObj = !!currentHovered && currentHovered.gx === item.obj.gx && currentHovered.gy === item.obj.gy;
+            const nearVillager = !!v && Math.hypot(v.currGx - item.obj.gx, v.currGy - item.obj.gy) < BADGE_PROXIMITY_TILES;
+            const reveal = stepBadgeReveal(`o:${item.obj.gx},${item.obj.gy}`, isHoveredObj || nearVillager || isInspected);
+            if (reveal > 0.01) {
+              const nameText = item.obj.customEmoji ? `${item.obj.customEmoji} ${item.obj.customName}` : item.obj.customName;
+              drawParchmentBadge(ctx, {
+                x: sx,
+                tipY: sy - 6,
+                text: nameText,
+                cared: item.obj.lastCaredDate === todayStr,
+                reveal,
+                key: `o:${item.obj.gx},${item.obj.gy}`
+              });
             }
-
-            // Pointer triangle
-            ctx.fillStyle = isCared ? 'rgba(22, 101, 52, 0.92)' : 'rgba(15, 23, 42, 0.88)';
-            ctx.beginPath();
-            ctx.moveTo(sx - 3, tagY + tagH);
-            ctx.lineTo(sx + 3, tagY + tagH);
-            ctx.lineTo(sx, tagY + tagH + 3);
-            ctx.closePath();
-            ctx.fill();
-            ctx.restore();
           }
         } else if (item.kind === 'animal') {
           const { x: sx, y: sy } = toScreen(item.animal.currGx, item.animal.currGy, origin.x, origin.y);
@@ -6405,10 +6467,16 @@ export default function App() {
             x: origin.x + (sx - origin.x) * zoom,
             y: origin.y + (sy + TILE_H / 2 - origin.y) * zoom
           };
+          // Name tag is hidden by default; reveal on hover over the animal's tile or villager proximity
+          const animalHovered = !!currentHovered &&
+            currentHovered.gx === Math.round(item.animal.currGx) && currentHovered.gy === Math.round(item.animal.currGy);
+          const animalNear = !!v && Math.hypot(v.currGx - item.animal.currGx, v.currGy - item.animal.currGy) < BADGE_PROXIMITY_TILES;
+          const animalReveal = stepBadgeReveal(`a:${item.animal.id || item.animal.name}`, animalHovered || animalNear);
           drawAnimal(ctx, item.animal, { x: sx, y: sy + TILE_H / 2 }, {
             isSunset,
             isNight,
             showTag: showMindMapTagsRef.current,
+            tagReveal: animalReveal,
             isHovered: currentHovered?.gx === item.animal.gx && currentHovered?.gy === item.animal.gy,
             todayStr
           });
@@ -8769,18 +8837,12 @@ export default function App() {
         />
       )}
 
-      {/* Village Institutions & Production Modal */}
+      {/* Village Institutions & Spatial Memory Palaces Modal */}
       {showInstitutionsModal && (
         <VillageInstitutionsModal
           isOpen={showInstitutionsModal}
           onClose={() => setShowInstitutionsModal(false)}
           placedObjects={placedObjects}
-          villageResources={villageResources}
-          seeds={seeds}
-          onBuildInstitution={handleBuildInstitution}
-          onUpgradeInstitution={handleUpgradeInstitution}
-          onCollectProduce={handleCollectProduce}
-          onSendVillagerToWork={handleSendVillagerToWork}
           onFocusInstitution={handleFocusInstitution}
           onEnterInterior={(placedObj, inst) => {
             sounds.playTap();

@@ -58,13 +58,20 @@ export function drawCompleteVillager(ctx, {
     ctx.ellipse(0, 3, ripInner, ripInner * 0.45, 0, 0, Math.PI * 2);
     ctx.stroke();
   } else {
-    ctx.fillStyle = isNight 
-      ? 'rgba(0, 0, 0, 0.45)' 
-      : (isSunset ? 'rgba(67, 20, 7, 0.32)' : 'rgba(15, 30, 10, 0.28)');
-    ctx.beginPath();
     const shadowScale = Math.max(0.6, 1 + hopY * 0.03);
-    ctx.ellipse(0, 1, 10 * shadowScale, 5 * shadowScale, 0, 0, Math.PI * 2);
+    ctx.save();
+    ctx.translate(0, 1);
+    ctx.scale(1, 0.5);
+    const aoR = 12 * shadowScale;
+    const aoGrad = ctx.createRadialGradient(0, 0, aoR * 0.1, 0, 0, aoR);
+    aoGrad.addColorStop(0, isNight ? 'rgba(45, 31, 24, 0.45)' : 'rgba(45, 31, 24, 0.3)');
+    aoGrad.addColorStop(0.65, isNight ? 'rgba(45, 31, 24, 0.28)' : 'rgba(45, 31, 24, 0.18)');
+    aoGrad.addColorStop(1, 'rgba(45, 31, 24, 0)');
+    ctx.fillStyle = aoGrad;
+    ctx.beginPath();
+    ctx.arc(0, 0, aoR, 0, Math.PI * 2);
     ctx.fill();
+    ctx.restore();
   }
 
   // 2. Vertical bobbing

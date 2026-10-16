@@ -25,24 +25,24 @@ export const VILLAGE_PRESETS = [
     accentBg: 'linear-gradient(135deg, rgba(101, 163, 13, 0.25), rgba(77, 124, 15, 0.15))',
     terrainColors: {
       day: {
-        grass1: '#2f6029',
-        grass2: '#265121',
-        grass3: '#1e421a',
-        grassHi: '#3c7935',
+        grass1: '#6a9434',
+        grass2: '#628c30',
+        grass3: '#58802b',
+        grassHi: '#8fb344',
         flower: '#67e8f9'
       },
       sunset: {
-        grass1: '#3d5220',
-        grass2: '#33441a',
-        grass3: '#293714',
-        grassHi: '#857519',
+        grass1: '#7a9230',
+        grass2: '#718a2c',
+        grass3: '#667d27',
+        grassHi: '#DE7A22',
         flower: '#fde047'
       },
       night: {
-        grass1: '#122e1b',
-        grass2: '#0e2415',
-        grass3: '#091b10',
-        grassHi: '#1c4428',
+        grass1: '#27401f',
+        grass2: '#223819',
+        grass3: '#1d2f16',
+        grassHi: '#35542a',
         flower: '#a78bfa'
       }
     },
@@ -86,24 +86,24 @@ export const VILLAGE_PRESETS = [
     accentBg: 'linear-gradient(135deg, rgba(217, 119, 6, 0.25), rgba(180, 83, 9, 0.15))',
     terrainColors: {
       day: {
-        grass1: '#64748b',
-        grass2: '#475569',
-        grass3: '#334155',
-        grassHi: '#94a3b8',
+        grass1: '#8aac45',
+        grass2: '#82a441',
+        grass3: '#779a3b',
+        grassHi: '#b4cc62',
         flower: '#facc15'
       },
       sunset: {
-        grass1: '#6366f1',
-        grass2: '#4f46e5',
-        grass3: '#4338ca',
-        grassHi: '#a5b4fc',
+        grass1: '#9aa443',
+        grass2: '#919b3d',
+        grass3: '#859035',
+        grassHi: '#E29548',
         flower: '#fbbf24'
       },
       night: {
-        grass1: '#1e1b4b',
-        grass2: '#17143a',
-        grass3: '#0f0e26',
-        grassHi: '#312e81',
+        grass1: '#2f3f27',
+        grass2: '#293722',
+        grass3: '#232f1d',
+        grassHi: '#3e5231',
         flower: '#38bdf8'
       }
     },
@@ -142,24 +142,24 @@ export const VILLAGE_PRESETS = [
     accentBg: 'linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.15))',
     terrainColors: {
       day: {
-        grass1: '#64af32',
-        grass2: '#5aa32a',
-        grass3: '#509623',
-        grassHi: '#6ebc37',
+        grass1: '#7aa63a',
+        grass2: '#729e36',
+        grass3: '#669030',
+        grassHi: '#a4c752',
         flower: '#f472b6'
       },
       sunset: {
-        grass1: '#65961d',
-        grass2: '#598918',
-        grass3: '#4d7515',
-        grassHi: '#c2850c',
+        grass1: '#88a336',
+        grass2: '#7f9a31',
+        grass3: '#738c2b',
+        grassHi: '#E29548',
         flower: '#fef08a'
       },
       night: {
-        grass1: '#1c4217',
-        grass2: '#163812',
-        grass3: '#112c0e',
-        grassHi: '#24521d',
+        grass1: '#2a4421',
+        grass2: '#243b1c',
+        grass3: '#1f3217',
+        grassHi: '#385a2b',
         flower: '#a855f7'
       }
     },

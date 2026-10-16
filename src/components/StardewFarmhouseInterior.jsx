@@ -1,37 +1,31 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
-  Flame, 
   DoorOpen, 
-  Coffee, 
-  Gift, 
   Sparkles, 
-  Tv, 
   Check, 
   Plus, 
   X, 
   Trash2, 
-  Edit3, 
-  Image as ImageIcon,
-  Droplets,
-  Bed as BedIcon
+  Brain,
+  Compass
 } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { drawCompleteVillager } from '../utils/villagerRenderer';
-
-// Visual Icon Catalog for Spatial Memory Anchoring
-const VISUAL_ICONS = [
-  '🔑', '🪪', '📱', '💼', '🚗', '🏠', '☕', '💎', '📜', '🎨', 
-  '🎸', '📚', '🏆', '🧭', '🍎', '🛡️', '⚔️', '🍞', '📦', '🪴', 
-  '🧸', '🪞', '🔦', '🧩', '⏰', '🌿', '🌾', '🌊', '☀️', '🌙', 
-  '🌟', '🎯', '🧺', '🕯️', '🫖', '🍾', '🥕', '🫙', '🧪', '🧀'
-];
+import { 
+  GrandHearthSVG, 
+  RetroTvSVG, 
+  TeaTableSVG, 
+  CozyBedSVG, 
+  PottedPlantSVG, 
+  GiftParcelSVG,
+  VectorAnchorToken,
+  VECTOR_ANCHOR_TOKENS
+} from './stardewArt/StardewVectorAssets';
 
 export function StardewFarmhouseInterior({
   building,
   catalogItem,
   onClose,
-  seeds = 0,
-  onEarnSeeds,
   villagerLook = {},
   currentOutfit = 'autumn_sweater',
   onSwitchToComplex
@@ -51,13 +45,13 @@ export function StardewFarmhouseInterior({
     return {
       roomName: building?.customName || catalogItem?.name || 'בקתת החווה והמשכן האישי',
       fixedLoci: {
-        fireplace: { id: 'fireplace', name: 'אח מבוערת', icon: '🔥', title: '', note: '' },
-        bed: { id: 'bed', name: 'מיטה כפרית', icon: '🛏️', title: '', note: '' },
-        table: { id: 'table', name: 'שולחן עץ', icon: '☕', title: '', note: '' },
-        tv: { id: 'tv', name: 'טלוויזיה', icon: '📺', title: '', note: '' },
-        picture: { id: 'picture', name: 'תמונה תלויה', icon: '🖼️', title: '', note: '' },
-        plant: { id: 'plant', name: 'עציץ ירוק', icon: '🪴', title: '', note: '' },
-        gift: { id: 'gift', name: 'תיבת חבילה', icon: '🎁', title: '', note: '' }
+        fireplace: { id: 'fireplace', name: 'אח מבוערת', icon: 'star', title: '', note: '', lastCultivated: null },
+        bed: { id: 'bed', name: 'מיטה כפרית', icon: 'shield', title: '', note: '', lastCultivated: null },
+        table: { id: 'table', name: 'שולחן עבודה', icon: 'coffee', title: '', note: '', lastCultivated: null },
+        tv: { id: 'tv', name: 'טלוויזיה נוסטלגית', icon: 'clock', title: '', note: '', lastCultivated: null },
+        picture: { id: 'picture', name: 'תמונה תלויה', icon: 'scroll', title: '', note: '', lastCultivated: null },
+        plant: { id: 'plant', name: 'עציץ ירוק', icon: 'wheat', title: '', note: '', lastCultivated: null },
+        gift: { id: 'gift', name: 'תיבת חבילה', icon: 'gem', title: '', note: '', lastCultivated: null }
       },
       customAnchors: []
     };
@@ -74,13 +68,13 @@ export function StardewFarmhouseInterior({
 
   // Locus Editor Modal State
   const [editingLocusKey, setEditingLocusKey] = useState(null);
-  const [locusFormIcon, setLocusFormIcon] = useState('📌');
+  const [locusFormIcon, setLocusFormIcon] = useState('key');
   const [locusFormTitle, setLocusFormTitle] = useState('');
   const [locusFormNote, setLocusFormNote] = useState('');
 
   // Custom Anchor Modal State
   const [isAddingCustomAnchor, setIsAddingCustomAnchor] = useState(false);
-  const [customFormIcon, setCustomFormIcon] = useState('📌');
+  const [customFormIcon, setCustomFormIcon] = useState('key');
   const [customFormTitle, setCustomFormTitle] = useState('');
   const [customFormNote, setCustomFormNote] = useState('');
 
@@ -242,7 +236,7 @@ export function StardewFarmhouseInterior({
     fireplace: { x: 490, y: 150, name: 'אח מבוערת', locusKey: 'fireplace' },
     bed: { x: 500, y: 350, name: 'מיטה כפרית', locusKey: 'bed' },
     table: { x: 310, y: 220, name: 'שולחן עץ', locusKey: 'table' },
-    tv: { x: 120, y: 190, name: 'טלוויזיה', locusKey: 'tv' },
+    tv: { x: 120, y: 190, name: 'טלוויזיה נוסטלגית', locusKey: 'tv' },
     plant: { x: 100, y: 390, name: 'עציץ ירוק', locusKey: 'plant' },
     gift: { x: 230, y: 290, name: 'תיבת חבילה', locusKey: 'gift' },
     picture: { x: 375, y: 130, name: 'תמונה תלויה', locusKey: 'picture' },
@@ -277,7 +271,7 @@ export function StardewFarmhouseInterior({
     sounds.playTap?.();
     const current = lociData.fixedLoci[locusKey];
     if (current) {
-      setLocusFormIcon(current.icon || '📌');
+      setLocusFormIcon(current.icon || 'key');
       setLocusFormTitle(current.title || '');
       setLocusFormNote(current.note || '');
       setEditingLocusKey(locusKey);
@@ -297,13 +291,31 @@ export function StardewFarmhouseInterior({
           ...prev.fixedLoci[editingLocusKey],
           icon: locusFormIcon,
           title: locusFormTitle.trim(),
-          note: locusFormNote.trim()
+          note: locusFormNote.trim(),
+          lastCultivated: new Date().toISOString().split('T')[0]
         }
       }
     }));
 
     setEditingLocusKey(null);
     showToast('עוגן ויזואלי עודכן בהצלחה ✓');
+  };
+
+  const handleCultivateLocus = () => {
+    if (!editingLocusKey) return;
+    sounds.playTap?.();
+    const today = new Date().toISOString().split('T')[0];
+    setLociData(prev => ({
+      ...prev,
+      fixedLoci: {
+        ...prev.fixedLoci,
+        [editingLocusKey]: {
+          ...prev.fixedLoci[editingLocusKey],
+          lastCultivated: today
+        }
+      }
+    }));
+    showToast('עוגן זה רוענן בזיכרון (חזרתיות פעילה) 🧠✨');
   };
 
   const handleClearLocus = () => {
@@ -316,7 +328,8 @@ export function StardewFarmhouseInterior({
         [editingLocusKey]: {
           ...prev.fixedLoci[editingLocusKey],
           title: '',
-          note: ''
+          note: '',
+          lastCultivated: null
         }
       }
     }));
@@ -335,7 +348,8 @@ export function StardewFarmhouseInterior({
       y: playerPos.y,
       icon: customFormIcon,
       title: customFormTitle.trim(),
-      note: customFormNote.trim()
+      note: customFormNote.trim(),
+      lastCultivated: new Date().toISOString().split('T')[0]
     };
 
     setLociData(prev => ({
@@ -357,6 +371,8 @@ export function StardewFarmhouseInterior({
     }));
     showToast('העוגן הוסר ✓');
   };
+
+  const activeCount = Object.values(lociData.fixedLoci).filter(l => l.title?.trim()).length + lociData.customAnchors.length;
 
   return (
     <div className="stardew-void-viewport" onClick={() => {
@@ -391,52 +407,47 @@ export function StardewFarmhouseInterior({
           )}
         </div>
 
-        {/* Center: Toolbelt Quick Slots */}
+        {/* Center: Toolbelt Quick Slots (Vector Tokens) */}
         <div className="stardew-toolbelt-strip">
           <div className="toolbelt-slot active" title="אח מבוערת" onClick={() => openLocusEditor('fireplace')}>
-            <span>🔥</span>
+            <VectorAnchorToken icon="star" size={24} />
           </div>
           <div className="toolbelt-slot" title="מיטה" onClick={() => openLocusEditor('bed')}>
-            <span>🛏️</span>
+            <VectorAnchorToken icon="shield" size={24} />
           </div>
           <div className="toolbelt-slot" title="שולחן" onClick={() => openLocusEditor('table')}>
-            <span>☕</span>
+            <VectorAnchorToken icon="coffee" size={24} />
           </div>
           <div className="toolbelt-slot" title="טלוויזיה" onClick={() => openLocusEditor('tv')}>
-            <span>📺</span>
+            <VectorAnchorToken icon="clock" size={24} />
           </div>
           <div className="toolbelt-slot" title="עציץ" onClick={() => openLocusEditor('plant')}>
-            <span>🪴</span>
+            <VectorAnchorToken icon="wheat" size={24} />
           </div>
           <div className="toolbelt-slot" title="תמונה" onClick={() => openLocusEditor('picture')}>
-            <span>🖼️</span>
+            <VectorAnchorToken icon="scroll" size={24} />
           </div>
           <div className="toolbelt-slot" title="תיבת חבילה" onClick={() => openLocusEditor('gift')}>
-            <span>🎁</span>
+            <VectorAnchorToken icon="gem" size={24} />
           </div>
           <div className="toolbelt-slot" title="הוסף עוגן ברצפה" onClick={() => setIsAddingCustomAnchor(true)}>
-            <span>📍</span>
+            <VectorAnchorToken icon="compass" size={24} />
           </div>
         </div>
 
-        {/* Right: Currency & Clock HUD */}
+        {/* Right: Anchors Count & Memory Cultivation Status */}
         <div className="stardew-hud-right">
-          <div className="stardew-currency-box" title="זרעים">
-            <span className="gold-coin-badge">🟡</span>
-            <span className="gold-amount">{seeds.toLocaleString()} G</span>
+          <div className="stardew-currency-box memory-counter-box" title="עוגנים פעילים בחלל זה">
+            <Brain size={16} className="text-amber" />
+            <span className="gold-amount">{activeCount} עוגנים</span>
           </div>
 
           <div className="stardew-clock-frame">
             <div className="clock-date-row">
               <span className="clock-sun-icon">☀️</span>
-              <span className="clock-day-label">יום ב' • 1</span>
+              <span className="clock-day-label">משכן אישי</span>
             </div>
-            <div className="clock-time-val">06:10 am</div>
-          </div>
-
-          <div className="stardew-energy-bar" title="מד אנרגיה (270/270 E)">
-            <div className="energy-meter-fill"></div>
-            <span className="energy-letter">E</span>
+            <div className="clock-time-val">רענון יומי</div>
           </div>
         </div>
       </header>
@@ -484,13 +495,11 @@ export function StardewFarmhouseInterior({
             title="תמונה תלויה — לחץ לעריכת עוגן"
           >
             <div className="painting-canvas">
-              <span className="painting-landscape">
-                {lociData.fixedLoci.picture?.title ? lociData.fixedLoci.picture.icon : '🏔️'}
-              </span>
+              <VectorAnchorToken icon={lociData.fixedLoci.picture?.title ? lociData.fixedLoci.picture.icon : 'scroll'} size={26} />
             </div>
             {lociData.fixedLoci.picture?.title && (
               <div className="locus-visual-tag">
-                <span>{lociData.fixedLoci.picture.icon}</span>
+                <VectorAnchorToken icon={lociData.fixedLoci.picture.icon} size={20} />
                 <small>{lociData.fixedLoci.picture.title}</small>
               </div>
             )}
@@ -505,20 +514,10 @@ export function StardewFarmhouseInterior({
             }}
             title="אח מבוערת — לחץ לעריכת עוגן"
           >
-            <div className="chimney-brick-stack"></div>
-            <div className="fireplace-mantel"></div>
-            <div className="fireplace-hearth-arch">
-              <div className="fire-logs">🪵</div>
-              <div className="fire-animated-flames">
-                <span className="flame-spark f-1">🔥</span>
-                <span className="flame-spark f-2">✨</span>
-                <span className="flame-spark f-3">🔥</span>
-              </div>
-            </div>
-            <div className="hearth-radial-glow"></div>
+            <GrandHearthSVG />
             {lociData.fixedLoci.fireplace?.title && (
               <div className="locus-visual-tag hearth-tag">
-                <span>{lociData.fixedLoci.fireplace.icon}</span>
+                <VectorAnchorToken icon={lociData.fixedLoci.fireplace.icon} size={20} />
                 <small>{lociData.fixedLoci.fireplace.title}</small>
               </div>
             )}
@@ -529,7 +528,7 @@ export function StardewFarmhouseInterior({
         <div className="farmhouse-left-wall"></div>
         <div className="farmhouse-right-wall"></div>
 
-        {/* === FURNITURE & ANCHOR STATIONS === */}
+        {/* === FURNITURE & ANCHOR STATIONS (VECTOR CRAFTED) === */}
 
         {/* Retro CRT TV (Left Side) */}
         <div 
@@ -539,26 +538,12 @@ export function StardewFarmhouseInterior({
             e.stopPropagation();
             openLocusEditor('tv');
           }}
-          title="טלוויזיה — לחץ לעריכת עוגן"
+          title="טלוויזיה נוסטלגית — לחץ לעריכת עוגן"
         >
-          <div className="tv-rabbit-ears"></div>
-          <div className="tv-cabinet screen-on">
-            <div className="tv-glass-screen">
-              <div className="tv-scanlines">
-                <span className="tv-pixel-icon">
-                  {lociData.fixedLoci.tv?.title ? lociData.fixedLoci.tv.icon : '📺'}
-                </span>
-              </div>
-            </div>
-            <div className="tv-knobs-panel">
-              <span className="tv-knob"></span>
-              <span className="tv-knob"></span>
-            </div>
-          </div>
-          <div className="tv-wooden-stand"></div>
+          <RetroTvSVG />
           {lociData.fixedLoci.tv?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.tv.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.tv.icon} size={20} />
               <small>{lociData.fixedLoci.tv.title}</small>
             </div>
           )}
@@ -574,24 +559,10 @@ export function StardewFarmhouseInterior({
           }}
           title="שולחן עץ — לחץ לעריכת עוגן"
         >
-          <div className="table-wooden-chair">
-            <div className="chair-backrest"></div>
-            <div className="chair-seat"></div>
-            <div className="chair-legs"></div>
-          </div>
-
-          <div className="table-wooden-desk">
-            <div className="table-steaming-mug">
-              <div className="steam-curl s1"></div>
-              <div className="steam-curl s2"></div>
-              <span className="mug-emoji">
-                {lociData.fixedLoci.table?.title ? lociData.fixedLoci.table.icon : '☕'}
-              </span>
-            </div>
-          </div>
+          <TeaTableSVG />
           {lociData.fixedLoci.table?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.table.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.table.icon} size={20} />
               <small>{lociData.fixedLoci.table.title}</small>
             </div>
           )}
@@ -607,11 +578,10 @@ export function StardewFarmhouseInterior({
           }}
           title="עציץ ירוק — לחץ לעריכת עוגן"
         >
-          <div className="plant-greenery">🌿</div>
-          <div className="plant-terracotta-pot">🪴</div>
+          <PottedPlantSVG />
           {lociData.fixedLoci.plant?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.plant.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.plant.icon} size={20} />
               <small>{lociData.fixedLoci.plant.title}</small>
             </div>
           )}
@@ -627,25 +597,13 @@ export function StardewFarmhouseInterior({
           }}
           title="תיבת חבילה — לחץ לעריכת עוגן"
         >
-          <div className="gift-box-wrap">
-            <span className="gift-emoji">
-              {lociData.fixedLoci.gift?.title ? lociData.fixedLoci.gift.icon : '🎁'}
-            </span>
-          </div>
+          <GiftParcelSVG />
           {lociData.fixedLoci.gift?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.gift.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.gift.icon} size={20} />
               <small>{lociData.fixedLoci.gift.title}</small>
             </div>
           )}
-        </div>
-
-        {/* Woven Patterned Rug in front of Bed */}
-        <div 
-          className="furniture-woven-rug"
-          style={{ left: `${OBJECT_LOCATIONS.bed.x - 110}px`, top: `${OBJECT_LOCATIONS.bed.y - 20}px` }}
-        >
-          <div className="rug-diamond"></div>
         </div>
 
         {/* The Cozy Bed (Bottom-Right) */}
@@ -658,14 +616,10 @@ export function StardewFarmhouseInterior({
           }}
           title="מיטה כפרית — לחץ לעריכת עוגן"
         >
-          <div className="bed-headboard"></div>
-          <div className="bed-mattress">
-            <div className="bed-plush-pillow"></div>
-            <div className="bed-red-quilt"></div>
-          </div>
+          <CozyBedSVG />
           {lociData.fixedLoci.bed?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.bed.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.bed.icon} size={20} />
               <small>{lociData.fixedLoci.bed.title}</small>
             </div>
           )}
@@ -684,7 +638,7 @@ export function StardewFarmhouseInterior({
             title={`${anchor.title}: ${anchor.note} (לחץ להסרה)`}
           >
             <div className="anchor-pin-head">
-              <span className="anchor-icon">{anchor.icon}</span>
+              <VectorAnchorToken icon={anchor.icon} size={20} />
             </div>
             <span className="anchor-label-tag">{anchor.title}</span>
           </div>
@@ -733,18 +687,20 @@ export function StardewFarmhouseInterior({
       <footer className="stardew-controls-hint">
         <span>🎮 תנועה: חיצים / WASD / לחיצה בעכבר</span>
         <span>• עריכת עוגן: לחץ על כל רהיט או מקש רווח בקרבתו</span>
-        <span>• הוספת עוגן ברצפה: סמל 📍 בסרגל העליון</span>
+        <span>• הוספת עוגן ברצפה: סמל מצפן בסרגל העליון</span>
       </footer>
 
       {/* =========================================================================
-          CLEAN VISUAL LOCUS EDITOR MODAL (NO PREACHY TEXTS)
+          CLEAN VECTOR LOCUS EDITOR MODAL
           ========================================================================= */}
       {editingLocusKey && (
         <div className="anchor-modal-backdrop" onClick={() => setEditingLocusKey(null)}>
           <div className="anchor-dialog-card glass-card" onClick={e => e.stopPropagation()}>
             <div className="dialog-header">
               <div className="dialog-title-wrap">
-                <span className="text-3xl">{locusFormIcon}</span>
+                <div className="dialog-vector-icon-badge">
+                  <VectorAnchorToken icon={locusFormIcon} size={28} />
+                </div>
                 <div>
                   <h3>{lociData.fixedLoci[editingLocusKey]?.name}</h3>
                   <span className="dialog-sub">משבצת עוגן ויזואלי בחדר</span>
@@ -756,16 +712,18 @@ export function StardewFarmhouseInterior({
             </div>
 
             <form onSubmit={handleSaveLocus} className="clean-locus-form">
-              <label>בחר סמל ויזואלי ברור:</label>
-              <div className="emoji-picker-strip">
-                {VISUAL_ICONS.map(icon => (
+              <label>בחר סמל ויזואלי ייעודי:</label>
+              <div className="vector-token-picker-strip">
+                {VECTOR_ANCHOR_TOKENS.map(token => (
                   <button 
-                    key={icon} 
+                    key={token.id} 
                     type="button" 
-                    className={`emoji-btn ${locusFormIcon === icon ? 'selected' : ''}`}
-                    onClick={() => setLocusFormIcon(icon)}
+                    className={`token-btn ${locusFormIcon === token.id ? 'selected' : ''}`}
+                    onClick={() => setLocusFormIcon(token.id)}
+                    title={token.label}
                   >
-                    {icon}
+                    <VectorAnchorToken icon={token.id} size={24} />
+                    <span className="token-label">{token.label}</span>
                   </button>
                 ))}
               </div>
@@ -791,6 +749,19 @@ export function StardewFarmhouseInterior({
                 <button type="submit" className="save-locus-btn">
                   <span>שמור עוגן ויזואלי 📌</span>
                 </button>
+
+                {lociData.fixedLoci[editingLocusKey]?.title && (
+                  <button 
+                    type="button" 
+                    className="cultivate-locus-btn"
+                    onClick={handleCultivateLocus}
+                    title="רענן עוגן זה בזיכרון (חזרתיות פעילה)"
+                  >
+                    <Brain size={15} />
+                    <span>רענן בזיכרון 🧠</span>
+                  </button>
+                )}
+
                 {lociData.fixedLoci[editingLocusKey]?.title && (
                   <button type="button" className="clear-locus-btn" onClick={handleClearLocus}>
                     <Trash2 size={15} />
@@ -809,7 +780,9 @@ export function StardewFarmhouseInterior({
           <div className="anchor-dialog-card glass-card" onClick={e => e.stopPropagation()}>
             <div className="dialog-header">
               <div className="dialog-title-wrap">
-                <span className="text-3xl">{customFormIcon}</span>
+                <div className="dialog-vector-icon-badge">
+                  <VectorAnchorToken icon={customFormIcon} size={28} />
+                </div>
                 <div>
                   <h3>הצבת עוגן ויזואלי ברצפת החדר</h3>
                   <span className="dialog-sub">מיקום הדמות: ({Math.round(playerPos.x)}, {Math.round(playerPos.y)})</span>
@@ -822,15 +795,17 @@ export function StardewFarmhouseInterior({
 
             <form onSubmit={handleAddCustomAnchor} className="clean-locus-form">
               <label>בחר סמל ויזואלי:</label>
-              <div className="emoji-picker-strip">
-                {VISUAL_ICONS.map(icon => (
+              <div className="vector-token-picker-strip">
+                {VECTOR_ANCHOR_TOKENS.map(token => (
                   <button 
-                    key={icon} 
+                    key={token.id} 
                     type="button" 
-                    className={`emoji-btn ${customFormIcon === icon ? 'selected' : ''}`}
-                    onClick={() => setCustomFormIcon(icon)}
+                    className={`token-btn ${customFormIcon === token.id ? 'selected' : ''}`}
+                    onClick={() => setCustomFormIcon(token.id)}
+                    title={token.label}
                   >
-                    {icon}
+                    <VectorAnchorToken icon={token.id} size={24} />
+                    <span className="token-label">{token.label}</span>
                   </button>
                 ))}
               </div>

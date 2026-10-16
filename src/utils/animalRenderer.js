@@ -1,8 +1,9 @@
 // Animal Isometric Renderer for Life Quest
 // Renders adorable, peaceful living animals with idle/walk/peck animations and mind map tags
+import { drawParchmentBadge } from './badgeRenderer';
 
 export function drawAnimal(ctx, animal, screenPos, options = {}) {
-  const { isSunset = false, isNight = false, showTag = true, isHovered = false, todayStr = '' } = options;
+  const { isSunset = false, isNight = false, showTag = true, isHovered = false, todayStr = '', tagReveal = 1 } = options;
   const { x: cx, y: cy } = screenPos;
   const facingLeft = animal.facingLeft;
   const walkCycle = animal.walkCycle || 0;
@@ -12,13 +13,21 @@ export function drawAnimal(ctx, animal, screenPos, options = {}) {
   ctx.save();
   ctx.translate(cx, cy + hopY);
 
-  // Soft ground contact shadow
-  ctx.fillStyle = isNight ? 'rgba(5, 15, 30, 0.45)' : 'rgba(20, 35, 15, 0.25)';
-  ctx.beginPath();
+  // Soft ground contact shadow (warm plum-brown, feathered edge)
   const shadowW = animal.type === 'sheep' ? 16 : (animal.type === 'dog' ? 14 : (animal.type === 'duck' || animal.type === 'cat' ? 12 : 9));
   const shadowH = shadowW * 0.45;
-  ctx.ellipse(0, 4 - hopY * 0.3, shadowW, shadowH, 0, 0, Math.PI * 2);
+  ctx.save();
+  ctx.translate(0, 4 - hopY * 0.3);
+  ctx.scale(1, shadowH / shadowW);
+  const aoGrad = ctx.createRadialGradient(0, 0, shadowW * 0.1, 0, 0, shadowW * 1.15);
+  aoGrad.addColorStop(0, isNight ? 'rgba(45, 31, 24, 0.45)' : 'rgba(45, 31, 24, 0.3)');
+  aoGrad.addColorStop(0.65, isNight ? 'rgba(45, 31, 24, 0.28)' : 'rgba(45, 31, 24, 0.18)');
+  aoGrad.addColorStop(1, 'rgba(45, 31, 24, 0)');
+  ctx.fillStyle = aoGrad;
+  ctx.beginPath();
+  ctx.arc(0, 0, shadowW * 1.15, 0, Math.PI * 2);
   ctx.fill();
+  ctx.restore();
 
   if (facingLeft) {
     ctx.scale(-1, 1);
@@ -57,9 +66,17 @@ export function drawAnimal(ctx, animal, screenPos, options = {}) {
 
   ctx.restore();
 
-  // Floating Mind Map Label / Name Tag
-  if (showTag && animal.name) {
-    drawAnimalNameTag(ctx, cx, cy - 22 + hopY, animal.name, animal.completed, isHovered, animal.customEmoji);
+  // Floating Mind Map Label / Name Tag (parchment sign; hidden unless revealed by hover / proximity)
+  if (showTag && animal.name && tagReveal > 0.01) {
+    const labelText = animal.customEmoji ? `${animal.customEmoji} ${animal.name}` : animal.name;
+    drawParchmentBadge(ctx, {
+      x: cx,
+      tipY: cy - 22 + hopY,
+      text: labelText,
+      cared: !!animal.completed,
+      reveal: tagReveal,
+      key: `a:${animal.id || animal.name}`
+    });
   }
 }
 

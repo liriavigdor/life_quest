@@ -15,6 +15,7 @@ import {
   Flame
 } from 'lucide-react';
 import { sounds } from '../utils/sound';
+import { CoopArchitectureSVG } from './stardewArt/CoopArchitecture';
 
 export function RealCoopInterior({
   building,
@@ -473,6 +474,9 @@ export function RealCoopInterior({
 
       {/* 3. The Playable Interactive Coop Stage */}
       <div className="coop-stage-wrapper">
+        {/* Handcrafted Architectural Multi-Zone SVG Backdrop with Volumetric Dividers & Cast Shadows */}
+        <CoopArchitectureSVG />
+
         {/* Sunbeam pouring through window */}
         <div className="coop-sunbeam-effect"></div>
 

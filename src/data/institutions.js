@@ -1,195 +1,98 @@
-// Village Institutions Configuration, Levels & Production Data
+// Village Memory Palaces & Spatial Institutions Configuration
+// Replaces game economy/upgrades with cognitive memory loci, visual anchors, and cultivation (חזרתיות פעילה)
 
 export const INSTITUTIONS_CONFIG = {
   farmhouse: {
     id: 'wooden_cabin',
-    name: 'בית החווה והאחוזה הכפרית',
-    englishName: 'Cozy Farmhouse Sanctuary',
+    name: 'בקתת החווה והמשכן האישי',
+    englishName: 'Personal Cabin Memory Sanctuary',
     icon: 'Home',
-    category: 'משכן וזיכרון',
-    tag: 'עוגני זיכרון וארמון מרחבי',
-    resourceKey: 'seeds',
-    resourceName: 'זרעי זיכרון',
-    resourceIcon: '✨',
-    emoji: '🏡',
-    desc: 'משכנו החמים של איש הכפר — ארמון זיכרון מרחבי עם אח לבנים, מיטה, שולחן ומוקדי עוגנים ויזואליים.',
+    category: 'משכן אישי ועוגני שגרה',
+    tag: 'ארמון הזיכרון האישי',
+    desc: 'משכנו החמים של איש הכפר — ארמון זיכרון מרחבי עם אח אבן, מיטה כפרית, שולחן עבודה, טלוויזיה נוסטלגית, עציץ ותמונת קיר.',
     reflectionPrompt: 'איזה עוגן ויזואלי תרצה למקם בחדר היום?',
-    baseCost: { seeds: 0 },
-    levels: [
-      {
-        level: 1,
-        title: 'בקתת חווה נעימה ואח מבוערת',
-        subtitle: 'משכן כפרי אינטימי',
-        desc: 'רצפת עץ חמימה, אח לבנים, מיטה מרווחת, טלוויזיה נוסטלגית וחלון המאיר את החדר באור בוקר מוזהב.',
-        productionRate: 3,
-        maxCapacity: 10,
-        upgradeCost: { seeds: 40 },
-        features: ['אח מבוערת כעוגן מרחבי', 'מיטה ושולחן מיקוד', 'טלוויזיה ותמונת קיר', 'הצבת עוגנים ויזואליים חופשית']
-      },
-      {
-        level: 2,
-        title: 'אחוזת חווה מרווחת ומרפסת שמש',
-        subtitle: 'משכן כפרי מפותח',
-        desc: 'הרחבת חלל המגורים, שטיחים ארוגים, ארון ספרים עשיר ופינת עבודה מרווחת ליד האח.',
-        productionRate: 6,
-        maxCapacity: 18,
-        upgradeCost: { seeds: 75, veggies: 6 },
-        features: ['מרחב עוגנים מורחב', 'ארון זיכרונות ותצוגה', 'תפוקה: 6 זרעים למחזור']
-      },
-      {
-        level: 3,
-        title: 'אחוזת נחלה מלכותית וקומת גלריה',
-        subtitle: 'אחוזת חלומות כפרית',
-        desc: 'קומת גלריה מפוארת, נברשת ברזל עתיקה, חלונות פנורמיים לכפר ומרחב עוגנים שלם ומפואר.',
-        productionRate: 10,
-        maxCapacity: 30,
-        upgradeCost: null,
-        features: ['קומת גלריה ומרפסת כוכבים', 'תפוקה מרבית: 10 זרעים למחזור']
-      }
+    loci: [
+      { id: 'fireplace', name: 'אח מבוערת', defaultIcon: 'fire' },
+      { id: 'bed', name: 'מיטה כפרית', defaultIcon: 'bed' },
+      { id: 'table', name: 'שולחן עבודה', defaultIcon: 'coffee' },
+      { id: 'tv', name: 'טלוויזיה נוסטלגית', defaultIcon: 'clock' },
+      { id: 'plant', name: 'עציץ ירוק', defaultIcon: 'plant' },
+      { id: 'picture', name: 'תמונה תלויה', defaultIcon: 'star' },
+      { id: 'gift', name: 'תיבת חבילה', defaultIcon: 'gem' }
+    ]
+  },
+
+  complex: {
+    id: 'community_center',
+    name: 'מתחם מוסדות הכפר והקהילה',
+    englishName: 'Grand Community Center Complex',
+    icon: 'Store',
+    category: 'קהילה, מסחר ועוגני ידע',
+    tag: 'ארמון הזיכרון הראשי',
+    desc: 'מתחם רב-אגפי בהשראת חנות האספקה של פייר, סלון אח האבן המרכזית והיכל המזבח המקודש — מתחם רחב ידיים עם עוגנים ויזואליים עשירים.',
+    reflectionPrompt: 'איזה מידע חשוב ברצונך לקודד ויזואלית במוסדות הכפר?',
+    loci: [
+      { id: 'shop_counter', name: 'דלפק החנות והקופה', defaultIcon: 'scroll' },
+      { id: 'shelf_top', name: 'מדף עליון בחנות', defaultIcon: 'potion' },
+      { id: 'shelf_bottom', name: 'מדף תחתון בחנות', defaultIcon: 'bread' },
+      { id: 'produce_bin', name: 'ארגז תוצרת', defaultIcon: 'wheat' },
+      { id: 'notice_board', name: 'לוח מודעות ורשימות', defaultIcon: 'book' },
+      { id: 'grand_hearth', name: 'אח האבן המרכזית', defaultIcon: 'fire' },
+      { id: 'community_carpet', name: 'שטיח הסלון העגול', defaultIcon: 'compass' },
+      { id: 'tea_table', name: 'שולחן המפגש והתה', defaultIcon: 'coffee' },
+      { id: 'golden_altar', name: 'מזבח הזהב והקריסטל', defaultIcon: 'gem' },
+      { id: 'shrine_benches', name: 'ספסלי הקטיפה בהיכל', defaultIcon: 'shield' }
     ]
   },
 
   veggie_garden: {
     id: 'veggie_garden',
-    name: 'גינת ירק וערוגות גידול',
-    englishName: 'Vegetable Garden',
+    name: 'גינת ירק וערוגות הבוטניקה',
+    englishName: 'Botanical & Habit Garden',
     icon: 'Carrot',
-    category: 'חקלאות ותזונה',
-    tag: 'ירקות טריים',
-    resourceKey: 'veggies',
-    resourceName: 'ירקות טריים',
-    resourceIcon: '🥕',
-    emoji: '🥕',
-    desc: 'ערוגות אדמה פורחות ומטופחות המניבות גזרים, עגבניות, חסה ודלעות להזנת אנשי הכפר.',
-    reflectionPrompt: 'איזה הרגל מזין או ארוחה טובה הענקת לגוף שלך היום?',
-    baseCost: { seeds: 20 },
-    levels: [
-      {
-        level: 1,
-        title: 'ערוגות ראשוניות ודחליל חביב',
-        subtitle: 'חלקת ירק בסיסית',
-        desc: 'תלמי אדמה תחוחה עם גזרים צעירים, גבולות בולי עץ ודחליל קש קטן ושמח ששומר על השתילים.',
-        productionRate: 2, // produce per harvest cycle
-        maxCapacity: 5,
-        upgradeCost: { seeds: 35 },
-        features: ['גידול גזרים טריים', 'דחליל עץ שומר', 'תפוקה: 2 ירקות למחזור']
-      },
-      {
-        level: 2,
-        title: 'גינת ירק שופעת עם השקיה',
-        subtitle: 'ערוגות מגודרות ומפותחות',
-        desc: 'גדר עץ פסטורלית, תעלות השקיה מאבן צלולה, עגבניות אדומות על מקלות טיפוס וראשי חסה פריכים.',
-        productionRate: 4,
-        maxCapacity: 10,
-        upgradeCost: { seeds: 65, veggies: 8 },
-        features: ['ערוגות עגבניות וגזרים', 'תעלות השקיה מאבן', 'משפך גינה לאיש הכפר', 'תפוקה: 4 ירקות למחזור']
-      },
-      {
-        level: 3,
-        title: 'מתחם חקלאי אורגני ודלעות ענק',
-        subtitle: 'אחוזת גננות מלכותית',
-        desc: 'סוכת גפנים פורחת, דלעות ענקיות מזהיבות בשמש, סלי ירקות גדושים ומנורת לילה מאירה מעל השער.',
-        productionRate: 7,
-        maxCapacity: 20,
-        upgradeCost: null, // Max level
-        features: ['סוכת דלעות וגפנים', 'סלי קציר גדושים', 'פנס לילה מאיר', 'תפוקה מרבית: 7 ירקות למחזור']
-      }
+    category: 'הרגלים, טבע ובריאות',
+    tag: 'עוגני צמיחה והרגלים',
+    desc: 'ערוגות אדמה פורחות ומטופחות עם תעלות השקיה וסוכת גפנים — מרחב ייעודי לקידוד הרגלי חיים, פעילות גופנית ותזונה.',
+    reflectionPrompt: 'איזה הרגל יומיומי מזין את החיים שלך היום?',
+    loci: [
+      { id: 'plot_1', name: 'ערוגת גזרים', defaultIcon: 'plant' },
+      { id: 'plot_2', name: 'ערוגת עגבניות', defaultIcon: 'plant' },
+      { id: 'scarecrow', name: 'דחליל השמירה', defaultIcon: 'shield' },
+      { id: 'water_basin', name: 'בריכת השקיה', defaultIcon: 'potion' }
     ]
   },
 
   farm: {
     id: 'farm',
     name: 'חוות תבואה וטחנת רוח כפרית',
-    englishName: 'Cozy Windmill Farmstead',
+    englishName: 'Windmill & Projects Granary',
     icon: 'Wheat',
-    category: 'ייצור ומלאכה',
-    tag: 'תבואה וקמח',
-    resourceKey: 'harvest',
-    resourceName: 'תבואה וקמח',
-    resourceIcon: '🌾',
-    emoji: '🌾',
-    desc: 'חוות איכרים חמימה עם ערימות חציר, שדות חיטה זהובים וטחנת רוח המייצרת קמח טרי ומזין.',
-    reflectionPrompt: 'איזה תהליך או פרויקט שהשקעת בו לאחרונה מתחיל להניב פירות?',
-    baseCost: { seeds: 30 },
-    levels: [
-      {
-        level: 1,
-        title: 'אסם כפרי וחבילות חציר',
-        subtitle: 'אסם עץ חמים',
-        desc: 'אסם עץ צבוע באדום כפרי עם גג קש זהוב, דלתות ברזל מסורתיות וחבילות חציר קשורות בחבל.',
-        productionRate: 2,
-        maxCapacity: 5,
-        upgradeCost: { seeds: 45, veggies: 4 },
-        features: ['אסם עץ אדום', 'ערימות חציר זהובות', 'תפוקה: 2 שקי תבואה למחזור']
-      },
-      {
-        level: 2,
-        title: 'חוות תבואה עם טחנת קמח פעילה',
-        subtitle: 'טחנת קמח וממגורה',
-        desc: 'כנפי טחנת רוח מסתובבות ברוח, ממגורת אבן שומרת על הגרעינים ושקי קמח לבן מונחים על משטחי עץ.',
-        productionRate: 5,
-        maxCapacity: 12,
-        upgradeCost: { seeds: 80, harvest: 10 },
-        features: ['כנפי טחנה מסתובבות', 'שקי קמח טריים', 'שבשבת רוח תרנגול', 'תפוקה: 5 שקי תבואה למחזור']
-      },
-      {
-        level: 3,
-        title: 'אחוזת איכרים שופעת וממגורת זהב',
-        subtitle: 'טחנת רוח הולנדית מפוארת',
-        desc: 'טחנת רוח מתומנת מאבן עתיקה, חלונות מוארים באור נרות, עגלת תבואה עמוסה במחיצות חיטה וגג נחושת ירוק.',
-        productionRate: 8,
-        maxCapacity: 25,
-        upgradeCost: null,
-        features: ['טחנת רוח ענקית מפוארת', 'עגלת חיטה רתומה', 'ארובה מעלת עשן', 'תפוקה מרבית: 8 שקי תבואה למחזור']
-      }
+    category: 'פרויקטים, תהליכים ומטרות',
+    tag: 'עוגני פרויקטים ומלאכה',
+    desc: 'חוות איכרים עם ערימות חציר, ממגורת תבואה וטחנת רוח כפרית — מרחב לסידור שלבי פרויקטים ארוכי טווח ומטרות מורכבות.',
+    reflectionPrompt: 'איזה פרויקט ארוך טווח דורש ממך חזרתיות ומיקוד עקבי?',
+    loci: [
+      { id: 'barn_loft', name: 'עליית הגג באסם', defaultIcon: 'book' },
+      { id: 'hay_bales', name: 'ערימות חציר', defaultIcon: 'wheat' },
+      { id: 'mill_wheel', name: 'גלגל הטחנה', defaultIcon: 'compass' },
+      { id: 'silo', name: 'ממגורת התבואה', defaultIcon: 'scroll' }
     ]
   },
 
   crystal_mine: {
     id: 'crystal_mine',
-    name: 'מכרה קריסטלים ואבני חן',
-    englishName: 'Luminous Crystal Mine',
+    name: 'מכרה קריסטלים ועומק',
+    englishName: 'Luminous Crystal Core',
     icon: 'Gem',
-    category: 'משאבי עומק ועושר',
-    tag: 'קריסטלים זוהרים',
-    resourceKey: 'crystals',
-    resourceName: 'קריסטלים זוהרים',
-    resourceIcon: '💎',
-    emoji: '💎',
-    desc: 'פיר כרייה בעומק ההר המפיק גבישי קריסטל זוהרים, אבני חן יקרות ערך ומחצבים נדירים לשדרוגים.',
-    reflectionPrompt: 'איזה חוזק פנימי עמוק גילית בעצמך בתקופה האחרונה?',
-    baseCost: { seeds: 40, harvest: 4 },
-    levels: [
-      {
-        level: 1,
-        title: 'פיר כרייה ראשוני ופנס עץ',
-        subtitle: 'פיר כרייה תומך',
-        desc: 'פתח מנהרה חצוב בסלע הנתמך בקורות עץ גסות, עם פנס נפט מאיר וערימת עפר עם שברי קריסטל נוצצים.',
-        productionRate: 1,
-        maxCapacity: 4,
-        upgradeCost: { seeds: 55, harvest: 8 },
-        features: ['פיר כניסה עמוק', 'פנס נפט תלוי', 'מכוש כורים נשען', 'תפוקה: 1 קריסטל למחזור']
-      },
-      {
-        level: 2,
-        title: 'מכרה עמוק עם מסילה ועגלת כורים',
-        subtitle: 'תשתית כרייה מחוזקת',
-        desc: 'מסילת ברזל היוצאת מתוך המערה עם עגלת כורים עמוסה בקריסטלים זוהרים בסגול וטורקיז וחישוקי פלדה.',
-        productionRate: 3,
-        maxCapacity: 8,
-        upgradeCost: { seeds: 90, crystals: 6, harvest: 12 },
-        features: ['מסילת עגלות כורים', 'עגלה מלאה בגבישים זוהרים', 'תמיכות ברזל מחוזקות', 'תפוקה: 3 קריסטלים למחזור']
-      },
-      {
-        level: 3,
-        title: 'קומפלקס כרייה מלכותי וגאודות ענק',
-        subtitle: 'מערת הבדולח הקסומה',
-        desc: 'שער אבן גמדי מגולף עם רונות עתיקות, גבישי ענק פועמים באור קסום, מעלית גלגלת עמוקה ועגלות מלאות יהלומים.',
-        productionRate: 6,
-        maxCapacity: 18,
-        upgradeCost: null,
-        features: ['שער אבן גמדי מפואר', 'גאודות קריסטל פועמות באור', 'מעלית גלגלת עמוקה', 'תפוקה מרבית: 6 קריסטלים למחזור']
-      }
+    category: 'עקרונות, חזון וערכים',
+    tag: 'עוגני עקרונות ועוצמות',
+    desc: 'פיר אבן ומערת קריסטלים זוהרים — מרחב לקידוד עקרונות ברזל, ערכי ליבה בלתי מתפשרים ותובנות חיים עמוקות.',
+    reflectionPrompt: 'איזה ערך מוביל אותך בקבלת החלטות?',
+    loci: [
+      { id: 'crystal_vein', name: 'עורק קריסטל זוהר', defaultIcon: 'gem' },
+      { id: 'mine_cart', name: 'עגלת מחצבים', defaultIcon: 'shield' },
+      { id: 'carved_arch', name: 'קשת אבן חצובה', defaultIcon: 'star' },
+      { id: 'deep_well', name: 'באר המעמקים', defaultIcon: 'compass' }
     ]
   }
 };

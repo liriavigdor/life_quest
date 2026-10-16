@@ -1,46 +1,47 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
-  Flame, 
-  Sun, 
-  Sparkles, 
   DoorOpen, 
-  Coffee, 
-  Gift, 
-  ShoppingBag, 
-  BookOpen, 
-  Coins, 
+  Sparkles, 
   Check, 
   Plus, 
   X, 
   Trash2, 
-  Edit3, 
-  Store, 
-  Award, 
-  Compass, 
-  Layers,
-  MapPin,
-  Gem
+  Brain, 
+  Compass,
+  RotateCcw
 } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { drawCompleteVillager } from '../utils/villagerRenderer';
-
-// Rich Visual Icon Catalog for Memory Palace Anchoring
-const VISUAL_ICONS = [
-  '🔑', '🪪', '📱', '💼', '🚗', '🏠', '☕', '💎', '📜', '🎨', 
-  '🎸', '📚', '🏆', '🧭', '🍎', '🛡️', '⚔️', '🍞', '📦', '🪴', 
-  '🧸', '🪞', '🔦', '🧩', '⏰', '🌿', '🌾', '🌊', '☀️', '🌙', 
-  '🌟', '🎯', '🧺', '🕯️', '🫖', '🍾', '🥕', '🫙', '🧪', '🧀'
-];
+import { 
+  StoreShelvesSVG, 
+  StoreCounterSVG, 
+  ProduceBinsSVG, 
+  GrandHearthSVG, 
+  CentralCarpetSVG, 
+  ShrineAltarSVG, 
+  ShrineBenchesSVG, 
+  TeaTableSVG, 
+  PottedPlantSVG,
+  VectorAnchorToken,
+  VECTOR_ANCHOR_TOKENS
+} from './stardewArt/StardewVectorAssets';
+import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/ComplexArchitecture';
+import {
+  COMPLEX_PAD,
+  COMPLEX_WORLD_W,
+  COMPLEX_WORLD_H,
+  resolveMove,
+  snapToWalkable,
+  buildRoute,
+  computeCamera
+} from '../utils/complexNavigation';
 
 export function StardewInstitutionComplex({
   building,
   catalogItem,
   onClose,
-  seeds = 0,
-  onEarnSeeds,
   villagerLook = {},
   currentOutfit = 'autumn_sweater',
-  villageResources = { veggies: 8, harvest: 5, crystals: 2 },
   onSwitchToCabin
 }) {
   // Persistent storage key
@@ -56,20 +57,18 @@ export function StardewInstitutionComplex({
     }
 
     return {
-      // Fixed Architectural Loci in the Building (Clean slate)
       fixedLoci: {
-        shop_counter: { id: 'shop_counter', name: 'דלפק החנות', icon: '🛍️', title: '', note: '' },
-        shelf_top: { id: 'shelf_top', name: 'מדף עליון בחנות', icon: '🍞', title: '', note: '' },
-        shelf_bottom: { id: 'shelf_bottom', name: 'מדף תחתון בחנות', icon: '🍾', title: '', note: '' },
-        produce_bin: { id: 'produce_bin', name: 'ארגז תוצרת', icon: '🥕', title: '', note: '' },
-        notice_board: { id: 'notice_board', name: 'לוח מודעות ורשימות', icon: '📌', title: 'לוח משימות', items: [] },
-        grand_hearth: { id: 'grand_hearth', name: 'אח האבן המרכזית', icon: '🔥', title: '', note: '' },
-        community_carpet: { id: 'community_carpet', name: 'השטיח העגול בסלון', icon: '🛋️', title: '', note: '' },
-        tea_table: { id: 'tea_table', name: 'שולחן המפגש', icon: '☕', title: '', note: '' },
-        golden_altar: { id: 'golden_altar', name: 'מזבח הזהב והקריסטל', icon: '✨', title: '', note: '' },
-        shrine_benches: { id: 'shrine_benches', name: 'ספסלי הקטיפה בהיכל', icon: '🕯️', title: '', note: '' }
+        shop_counter: { id: 'shop_counter', name: 'דלפק החנות והקופה', icon: 'scroll', title: '', note: '', lastCultivated: null },
+        shelf_top: { id: 'shelf_top', name: 'מדף עליון בחנות', icon: 'potion', title: '', note: '', lastCultivated: null },
+        shelf_bottom: { id: 'shelf_bottom', name: 'מדף תחתון בחנות', icon: 'bread', title: '', note: '', lastCultivated: null },
+        produce_bin: { id: 'produce_bin', name: 'ארגז תוצרת טרייה', icon: 'wheat', title: '', note: '', lastCultivated: null },
+        notice_board: { id: 'notice_board', name: 'לוח מודעות ורשימות', icon: 'book', title: 'לוח משימות', items: [] },
+        grand_hearth: { id: 'grand_hearth', name: 'אח האבן המרכזית', icon: 'star', title: '', note: '', lastCultivated: null },
+        community_carpet: { id: 'community_carpet', name: 'השטיח העגול בסלון', icon: 'compass', title: '', note: '', lastCultivated: null },
+        tea_table: { id: 'tea_table', name: 'שולחן המפגש והתה', icon: 'coffee', title: '', note: '', lastCultivated: null },
+        golden_altar: { id: 'golden_altar', name: 'מזבח הזהב והקריסטל', icon: 'gem', title: '', note: '', lastCultivated: null },
+        shrine_benches: { id: 'shrine_benches', name: 'ספסלי הקטיפה בהיכל', icon: 'shield', title: '', note: '', lastCultivated: null }
       },
-      // Custom placed user anchors anywhere on the floor
       customAnchors: []
     };
   });
@@ -83,8 +82,8 @@ export function StardewInstitutionComplex({
   }, [lociData, storageKey]);
 
   // Active Locus Editor Modal
-  const [editingLocusKey, setEditingLocusKey] = useState(null); // string key or null
-  const [locusFormIcon, setLocusFormIcon] = useState('📌');
+  const [editingLocusKey, setEditingLocusKey] = useState(null);
+  const [locusFormIcon, setLocusFormIcon] = useState('key');
   const [locusFormTitle, setLocusFormTitle] = useState('');
   const [locusFormNote, setLocusFormNote] = useState('');
 
@@ -93,7 +92,7 @@ export function StardewInstitutionComplex({
 
   // Custom Anchor Modal
   const [isAddingCustomAnchor, setIsAddingCustomAnchor] = useState(false);
-  const [customFormIcon, setCustomFormIcon] = useState('📌');
+  const [customFormIcon, setCustomFormIcon] = useState('key');
   const [customFormTitle, setCustomFormTitle] = useState('');
   const [customFormNote, setCustomFormNote] = useState('');
 
@@ -103,13 +102,23 @@ export function StardewInstitutionComplex({
     setTimeout(() => setToastMessage(''), 2400);
   };
 
-  // --- Player Positioning & Real-time Canvas Rendering ---
+  // Player Positioning & Real-time Canvas Rendering
   const [playerPos, setPlayerPos] = useState({ x: 500, y: 460 });
   const [isPlayerWalking, setIsPlayerWalking] = useState(false);
   const [playerFacingLeft, setPlayerFacingLeft] = useState(false);
   const playerTargetRef = useRef(null);
   const animationFrameRef = useRef(null);
   const canvasRef = useRef(null);
+
+  // Camera / multi-zone navigation (visual layout layer): the stage is a camera window onto a larger world
+  const stageRef = useRef(null);
+  const worldRef = useRef(null);
+  const camRef = useRef({ x: 0, y: 0, ready: false });
+  const playerPosRef = useRef({ x: 500, y: 460 });
+  const routeRef = useRef([]);
+  useEffect(() => {
+    playerPosRef.current = playerPos;
+  }, [playerPos]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -143,9 +152,13 @@ export function StardewInstitutionComplex({
         return;
       }
 
+      // Any manual key press cancels an in-progress click-to-move route
+      playerTargetRef.current = null;
+      routeRef.current = [];
+
       setPlayerPos(prev => {
-        const nextX = Math.max(50, Math.min(910, prev.x + dx));
-        const nextY = Math.max(140, Math.min(480, prev.y + dy));
+        // Walls are enforced by the zone map: sliding along walls, passing through door openings
+        const { x: nextX, y: nextY } = resolveMove(prev, dx, dy);
 
         if (nextX >= 470 && nextX <= 530 && nextY >= 475) {
           showToast('יציאה לכפר 🍃');
@@ -170,22 +183,23 @@ export function StardewInstitutionComplex({
     };
   }, [editingLocusKey, isAddingCustomAnchor, onClose]);
 
-  // Click-to-Move
+  // Click-to-Move (camera-aware: converts the click into world coordinates and routes through doorways)
   const handleFloorClick = (e) => {
     if (editingLocusKey || isAddingCustomAnchor) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickY = e.clientY - rect.top;
+    const clickX = e.clientX - rect.left + camRef.current.x;
+    const clickY = e.clientY - rect.top + camRef.current.y;
 
-    const targetX = Math.max(50, Math.min(910, clickX));
-    const targetY = Math.max(140, Math.min(480, clickY));
+    const { x: targetX, y: targetY } = snapToWalkable(clickX, clickY);
+    const route = buildRoute(playerPosRef.current, { x: targetX, y: targetY });
 
-    setPlayerFacingLeft(targetX < playerPos.x);
-    playerTargetRef.current = { x: targetX, y: targetY };
+    setPlayerFacingLeft(route[0].x < playerPosRef.current.x);
+    playerTargetRef.current = route[0];
+    routeRef.current = route.slice(1);
     setIsPlayerWalking(true);
   };
 
-  // Continuous loop for character motion and canvas drawing
+  // Continuous loop: Character motion and Canvas Rendering with Native Stardew NPCs!
   useEffect(() => {
     let lastTime = performance.now();
 
@@ -194,45 +208,95 @@ export function StardewInstitutionComplex({
       lastTime = time;
 
       if (playerTargetRef.current) {
-        setPlayerPos(curr => {
-          const target = playerTargetRef.current;
-          if (!target) return curr;
+        const curPos = playerPosRef.current;
+        const target = playerTargetRef.current;
+        const dx = target.x - curPos.x;
+        const dy = target.y - curPos.y;
+        const dist = Math.hypot(dx, dy);
 
-          const dx = target.x - curr.x;
-          const dy = target.y - curr.y;
-          const dist = Math.hypot(dx, dy);
-
-          if (dist < 4) {
+        if (dist < 4) {
+          if (routeRef.current.length > 0) {
+            // Reached a doorway waypoint: continue to the next one
+            playerTargetRef.current = routeRef.current.shift();
+          } else {
             playerTargetRef.current = null;
             setIsPlayerWalking(false);
 
-            if (curr.x >= 470 && curr.x <= 530 && curr.y >= 475) {
+            if (curPos.x >= 470 && curPos.x <= 530 && curPos.y >= 475) {
               showToast('יציאה לכפר 🍃');
               setTimeout(() => onClose(), 180);
             }
-
-            return { x: target.x, y: target.y };
           }
-
+          const arrived = { x: target.x, y: target.y };
+          playerPosRef.current = arrived;
+          setPlayerPos(arrived);
+        } else {
           const speed = 210;
           const moveDist = Math.min(dist, speed * dt);
-          const nextX = curr.x + (dx / dist) * moveDist;
-          const nextY = curr.y + (dy / dist) * moveDist;
+          const next = resolveMove(curPos, (dx / dist) * moveDist, (dy / dist) * moveDist);
 
-          setPlayerFacingLeft(dx < 0);
-          return { x: nextX, y: nextY };
-        });
+          if (next.x === curPos.x && next.y === curPos.y) {
+            // Blocked by a wall: stop instead of pushing forever
+            playerTargetRef.current = null;
+            routeRef.current = [];
+            setIsPlayerWalking(false);
+          } else {
+            setPlayerFacingLeft(dx < 0);
+            playerPosRef.current = next;
+            setPlayerPos(next);
+          }
+        }
       }
 
-      // Draw Villager
+      // Draw Characters on Canvas (Player + Animated NPCs!)
       const canvas = canvasRef.current;
       if (canvas) {
         const ctx = canvas.getContext('2d');
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Canvas covers the whole world; shift so drawing stays in the hall's origin space
+        ctx.setTransform(1, 0, 0, 1, COMPLEX_PAD, COMPLEX_PAD);
 
+        // 1. NPC Pierre behind store counter
         drawCompleteVillager(ctx, {
-          cx: playerPos.x,
-          cy: playerPos.y,
+          cx: 140,
+          cy: 185,
+          scale: 0.9,
+          look: { skinTone: 'light', hairColor: 'auburn', hairStyle: 'slicked', glasses: 'wire_round' },
+          outfit: 'blacksmith_apron',
+          activity: null,
+          facingLeft: false,
+          timestamp: time
+        });
+
+        // 2. NPC Caroline in the Salon Lounge
+        drawCompleteVillager(ctx, {
+          cx: 440,
+          cy: 285,
+          scale: 0.88,
+          look: { skinTone: 'fair', hairColor: 'green', hairStyle: 'long_wavy' },
+          outfit: 'gardener_dungarees',
+          activity: 'drinking_tea',
+          facingLeft: false,
+          timestamp: time
+        });
+
+        // 3. NPC Abigail in the Salon Lounge
+        drawCompleteVillager(ctx, {
+          cx: 580,
+          cy: 285,
+          scale: 0.88,
+          look: { skinTone: 'fair', hairColor: 'purple', hairStyle: 'short_bob' },
+          outfit: 'autumn_sweater',
+          activity: null,
+          facingLeft: true,
+          timestamp: time
+        });
+
+        // 4. Main Player Character
+        drawCompleteVillager(ctx, {
+          cx: playerPosRef.current.x,
+          cy: playerPosRef.current.y,
           scale: 0.95,
           outfit: currentOutfit,
           facingLeft: playerFacingLeft,
@@ -243,33 +307,46 @@ export function StardewInstitutionComplex({
         });
       }
 
+      // Smooth camera: glide the world so the villager stays centred (clamped to the outer void margin)
+      const stageEl = stageRef.current;
+      const worldEl = worldRef.current;
+      if (stageEl && worldEl) {
+        const want = computeCamera(playerPosRef.current, stageEl.clientWidth, stageEl.clientHeight);
+        const cam = camRef.current;
+        if (!cam.ready) {
+          cam.x = want.x;
+          cam.y = want.y;
+          cam.ready = true;
+        } else {
+          const k = Math.min(1, dt * 6);
+          cam.x += (want.x - cam.x) * k;
+          cam.y += (want.y - cam.y) * k;
+        }
+        worldEl.style.transform = `translate3d(${-(cam.x + COMPLEX_PAD)}px, ${-(cam.y + COMPLEX_PAD)}px, 0)`;
+      }
+
       animationFrameRef.current = requestAnimationFrame(loop);
     };
 
     animationFrameRef.current = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(animationFrameRef.current);
-  }, [playerPos, playerFacingLeft, isPlayerWalking, currentOutfit, villagerLook, onClose]);
+  }, [playerFacingLeft, isPlayerWalking, currentOutfit, villagerLook, onClose]);
 
-  // Physical landmarks / loci positions
+  // Physical stations / loci
   const STATIONS = {
-    // Left Wing (Store)
     shop_counter: { x: 130, y: 220, name: 'דלפק החנות', locusKey: 'shop_counter' },
     shelf_top: { x: 235, y: 240, name: 'מדף עליון בחנות', locusKey: 'shelf_top' },
     shelf_bottom: { x: 235, y: 340, name: 'מדף תחתון בחנות', locusKey: 'shelf_bottom' },
     produce_bin: { x: 100, y: 410, name: 'ארגז תוצרת', locusKey: 'produce_bin' },
     notice_board: { x: 275, y: 150, name: 'לוח מודעות ורשימות', locusKey: 'notice_board' },
-    // Center Wing (Hearth Salon)
     grand_hearth: { x: 505, y: 155, name: 'אח האבן המרכזית', locusKey: 'grand_hearth' },
     community_carpet: { x: 510, y: 330, name: 'השטיח העגול בסלון', locusKey: 'community_carpet' },
     tea_table: { x: 495, y: 375, name: 'שולחן המפגש', locusKey: 'tea_table' },
-    // Right Wing (Shrine Sanctuary)
     golden_altar: { x: 840, y: 160, name: 'מזבח הזהב והקריסטל', locusKey: 'golden_altar' },
     shrine_benches: { x: 840, y: 280, name: 'ספסלי הקטיפה בהיכל', locusKey: 'shrine_benches' },
-    // Exit
     exit_door: { x: 500, y: 495, name: 'יציאה לכפר', locusKey: null }
   };
 
-  // Find nearest locus
   const nearestStation = useMemo(() => {
     let nearest = null;
     let minDist = 75;
@@ -294,23 +371,21 @@ export function StardewInstitutionComplex({
     }
   };
 
-  // Open Locus Editor for any landmark
   const openLocusEditor = (locusKey) => {
-    sounds.playTap();
+    sounds.playTap?.();
     const current = lociData.fixedLoci[locusKey];
     if (current) {
-      setLocusFormIcon(current.icon || '📌');
+      setLocusFormIcon(current.icon || 'key');
       setLocusFormTitle(current.title || '');
       setLocusFormNote(current.note || '');
       setEditingLocusKey(locusKey);
     }
   };
 
-  // Save changes to a fixed locus
   const handleSaveLocus = (e) => {
     e?.preventDefault();
     if (!editingLocusKey) return;
-    sounds.playTap();
+    sounds.playTap?.();
 
     setLociData(prev => ({
       ...prev,
@@ -320,7 +395,8 @@ export function StardewInstitutionComplex({
           ...prev.fixedLoci[editingLocusKey],
           icon: locusFormIcon,
           title: locusFormTitle.trim(),
-          note: locusFormNote.trim()
+          note: locusFormNote.trim(),
+          lastCultivated: new Date().toISOString().split('T')[0]
         }
       }
     }));
@@ -329,10 +405,26 @@ export function StardewInstitutionComplex({
     showToast('עוגן ויזואלי עודכן בהצלחה ✓');
   };
 
-  // Clear a locus
+  const handleCultivateLocus = () => {
+    if (!editingLocusKey) return;
+    sounds.playTap?.();
+    const today = new Date().toISOString().split('T')[0];
+    setLociData(prev => ({
+      ...prev,
+      fixedLoci: {
+        ...prev.fixedLoci,
+        [editingLocusKey]: {
+          ...prev.fixedLoci[editingLocusKey],
+          lastCultivated: today
+        }
+      }
+    }));
+    showToast('עוגן זה רוענן בזיכרון (חזרתיות פעילה) 🧠✨');
+  };
+
   const handleClearLocus = () => {
     if (!editingLocusKey) return;
-    sounds.playTap();
+    sounds.playTap?.();
     setLociData(prev => ({
       ...prev,
       fixedLoci: {
@@ -340,7 +432,8 @@ export function StardewInstitutionComplex({
         [editingLocusKey]: {
           ...prev.fixedLoci[editingLocusKey],
           title: '',
-          note: ''
+          note: '',
+          lastCultivated: null
         }
       }
     }));
@@ -348,9 +441,8 @@ export function StardewInstitutionComplex({
     showToast('העוגן פונה מהמיקום ✓');
   };
 
-  // Notice board item toggle
   const handleToggleBoardItem = (idx) => {
-    sounds.playTap();
+    sounds.playTap?.();
     setLociData(prev => {
       const items = [...(prev.fixedLoci.notice_board?.items || [])];
       if (items[idx]) {
@@ -369,11 +461,10 @@ export function StardewInstitutionComplex({
     });
   };
 
-  // Notice board add item
   const handleAddBoardItem = (e) => {
     e?.preventDefault();
     if (!newBoardItem.trim()) return;
-    sounds.playTap();
+    sounds.playTap?.();
     setLociData(prev => {
       const items = [...(prev.fixedLoci.notice_board?.items || [])];
       items.push({ id: Date.now().toString(), text: newBoardItem.trim(), completed: false });
@@ -391,18 +482,18 @@ export function StardewInstitutionComplex({
     setNewBoardItem('');
   };
 
-  // Add custom anchor anywhere on floor
   const handleAddCustomAnchor = (e) => {
     e?.preventDefault();
     if (!customFormTitle.trim()) return;
-    sounds.playTap();
+    sounds.playTap?.();
     const newA = {
       id: Date.now().toString(),
       x: playerPos.x,
       y: playerPos.y,
       icon: customFormIcon,
       title: customFormTitle.trim(),
-      note: customFormNote.trim()
+      note: customFormNote.trim(),
+      lastCultivated: new Date().toISOString().split('T')[0]
     };
     setLociData(prev => ({
       ...prev,
@@ -411,11 +502,11 @@ export function StardewInstitutionComplex({
     setCustomFormTitle('');
     setCustomFormNote('');
     setIsAddingCustomAnchor(false);
-    showToast('עוגן ויזואלי חדש הוצב בחדר 📌');
+    showToast('עוגן ויזואלי חדש הוצב ברצפה 📌');
   };
 
   const handleRemoveCustomAnchor = (id) => {
-    sounds.playTap();
+    sounds.playTap?.();
     setLociData(prev => ({
       ...prev,
       customAnchors: prev.customAnchors.filter(a => a.id !== id)
@@ -423,12 +514,15 @@ export function StardewInstitutionComplex({
     showToast('העוגן הוסר ✓');
   };
 
+  // Active anchors count
+  const activeCount = Object.values(lociData.fixedLoci).filter(l => l.title?.trim()).length + lociData.customAnchors.length;
+
   return (
     <div className="stardew-void-viewport" onClick={() => {
       setEditingLocusKey(null);
       setIsAddingCustomAnchor(false);
     }}>
-      {/* 1. Stardew Top HUD Bar */}
+      {/* 1. Elevated Stardew Top HUD Bar */}
       <header className="stardew-top-hud" onClick={e => e.stopPropagation()}>
         <div className="stardew-hud-left">
           <button 
@@ -442,7 +536,7 @@ export function StardewInstitutionComplex({
           
           <div className="stardew-room-indicator">
             <span className="room-cottage-icon">🏛️</span>
-            <span className="room-indicator-title">מתחם מוסדות הכפר</span>
+            <span className="room-indicator-title">מתחם מוסדות הכפר והזיכרון</span>
           </div>
 
           {onSwitchToCabin && (
@@ -456,49 +550,44 @@ export function StardewInstitutionComplex({
           )}
         </div>
 
-        {/* Center: Quick Action Belt */}
+        {/* Center: Memory Palace Loci Quick Access Belt */}
         <div className="stardew-toolbelt-strip">
           <div className="toolbelt-slot active" title="דלפק החנות" onClick={() => openLocusEditor('shop_counter')}>
-            <span>🛍️</span>
+            <VectorAnchorToken icon="scroll" size={24} />
           </div>
           <div className="toolbelt-slot" title="מדף עליון" onClick={() => openLocusEditor('shelf_top')}>
-            <span>🍞</span>
+            <VectorAnchorToken icon="potion" size={24} />
           </div>
           <div className="toolbelt-slot" title="מדף תחתון" onClick={() => openLocusEditor('shelf_bottom')}>
-            <span>🍾</span>
+            <VectorAnchorToken icon="bread" size={24} />
           </div>
           <div className="toolbelt-slot" title="אח האבן" onClick={() => openLocusEditor('grand_hearth')}>
-            <span>🔥</span>
+            <VectorAnchorToken icon="star" size={24} />
           </div>
           <div className="toolbelt-slot" title="מזבח הזהב" onClick={() => openLocusEditor('golden_altar')}>
-            <span>✨</span>
+            <VectorAnchorToken icon="gem" size={24} />
           </div>
           <div className="toolbelt-slot" title="לוח מודעות" onClick={() => openLocusEditor('notice_board')}>
-            <span>📌</span>
+            <VectorAnchorToken icon="book" size={24} />
           </div>
           <div className="toolbelt-slot" title="הוסף עוגן אישי ברצפה" onClick={() => setIsAddingCustomAnchor(true)}>
-            <span>📍</span>
+            <VectorAnchorToken icon="compass" size={24} />
           </div>
         </div>
 
-        {/* Right: Currency & Clock */}
+        {/* Right: Cognitive Cultivation & Anchors Count */}
         <div className="stardew-hud-right">
-          <div className="stardew-currency-box" title="זרעים">
-            <span className="gold-coin-badge">🟡</span>
-            <span className="gold-amount">{seeds.toLocaleString()} G</span>
+          <div className="stardew-currency-box memory-counter-box" title="עוגנים ויזואליים פעילים בחלל זה">
+            <Brain size={16} className="text-amber" />
+            <span className="gold-amount">{activeCount} עוגנים</span>
           </div>
 
           <div className="stardew-clock-frame">
             <div className="clock-date-row">
               <span className="clock-sun-icon">☀️</span>
-              <span className="clock-day-label">יום ג' • 2</span>
+              <span className="clock-day-label">ארמון הזיכרון</span>
             </div>
-            <div className="clock-time-val">12:50 pm</div>
-          </div>
-
-          <div className="stardew-energy-bar" title="אנרגיה (270/270 E)">
-            <div className="energy-meter-fill"></div>
-            <span className="energy-letter">E</span>
+            <div className="clock-time-val">רענון יומי</div>
           </div>
         </div>
       </header>
@@ -511,38 +600,28 @@ export function StardewInstitutionComplex({
         </div>
       )}
 
-      {/* 3. The Grand Multi-Wing Stardew Institution Complex Stage */}
+      {/* 3. The Grand Multi-Wing Stardew Complex Stage (Vector-Crafted!) */}
       <div 
+        ref={stageRef}
         className="stardew-complex-stage"
         onClick={e => {
           e.stopPropagation();
           handleFloorClick(e);
         }}
       >
+        <div ref={worldRef} className="complex-world-camera-rig">
+          <ComplexArchitectureSVG />
         {/* =========================================================
-            LAYER 1: BACK TIMBER WALLS & ARCHITECTURAL WAINSCOTING
+            LAYER 1: ARCHITECTURAL BACK WALL & ART ASSETS
             ========================================================= */}
         <div className="complex-back-wall-structure">
           <div className="wall-crown-molding"></div>
           <div className="wall-wainscot-panels"></div>
 
-          {/* Left Wing: Store Shelves & Notice Board */}
+          {/* Left Wing: Store Wall Shelves & Notice Board */}
           <div className="store-wall-zone">
             <div className="store-wall-shelves-backdrop">
-              <div className="shelf-tier s-1">
-                <span className="jar">🫙</span>
-                <span className="bottle">🍾</span>
-                <span className="jar">🍯</span>
-                <span className="box">📦</span>
-                <span className="bread">🥖</span>
-              </div>
-              <div className="shelf-tier s-2">
-                <span className="seeds-pack">🌾</span>
-                <span className="seeds-pack">🥕</span>
-                <span className="jar">🫙</span>
-                <span className="potion">🧪</span>
-                <span className="jam">🍓</span>
-              </div>
+              <StoreShelvesSVG />
             </div>
 
             {/* Arched Window with Sunbeam */}
@@ -560,14 +639,14 @@ export function StardewInstitutionComplex({
               }}
               title="לוח מודעות ורשימות — לחץ לעריכה"
             >
-              <div className="board-pin">📌</div>
+              <div className="board-pin">📍</div>
               <div className="board-sticky-note n1">
                 {lociData.fixedLoci.notice_board?.title || 'לוח רשימות'}
               </div>
             </div>
           </div>
 
-          {/* Center Wing: Grand Brick Hearth & Mantelpiece */}
+          {/* Center Wing: Grand Hearth Chimney */}
           <div className="hearth-wall-zone">
             <div 
               className="grand-brick-chimney-complex"
@@ -577,33 +656,11 @@ export function StardewInstitutionComplex({
               }}
               title="אח האבן המרכזית — לחץ לעריכת עוגן"
             >
-              <div className="brick-flue-stack">
-                <div className="chimney-relief-bricks"></div>
-              </div>
-              <div className="chimney-carved-mantel">
-                <span className="mantel-clock">🕰️</span>
-                <span className="mantel-candle">🕯️</span>
-              </div>
-              <div className="chimney-open-firebox">
-                <div className="fire-embers-bed">🪵</div>
-                <div className="fire-dancing-flames">
-                  <span className="flame-spark f1">🔥</span>
-                  <span className="flame-spark f2">✨</span>
-                  <span className="flame-spark f3">🔥</span>
-                </div>
-              </div>
-              <div className="hearth-ambient-light"></div>
-            </div>
-
-            {/* Wall Portraits */}
-            <div className="hearth-wall-portraits">
-              <div className="mini-framed-picture p1">🌄</div>
-              <div className="mini-framed-picture p2">🌻</div>
-              <div className="mini-framed-picture p3">🌲</div>
+              <GrandHearthSVG />
             </div>
           </div>
 
-          {/* Right Wing: Sacred Golden Altar */}
+          {/* Right Wing: Sacred Golden Altar & Crystal */}
           <div className="shrine-wall-zone">
             <div 
               className="golden-altar-monument"
@@ -613,17 +670,7 @@ export function StardewInstitutionComplex({
               }}
               title="מזבח הזהב והקריסטל — לחץ לעריכת עוגן"
             >
-              <div className="altar-canopy-arch"></div>
-              <div className="altar-golden-chest">
-                <span className="altar-relic-gem">
-                  {lociData.fixedLoci.golden_altar?.title ? lociData.fixedLoci.golden_altar.icon : '🌟'}
-                </span>
-                <div className="altar-sacred-glow"></div>
-              </div>
-              <div className="altar-golden-pillars">
-                <span className="pillar left">🏛️</span>
-                <span className="pillar right">🏛️</span>
-              </div>
+              <ShrineAltarSVG />
             </div>
           </div>
         </div>
@@ -641,17 +688,12 @@ export function StardewInstitutionComplex({
             }}
             title="השטיח העגול — לחץ לעריכת עוגן"
           >
-            <div className="carpet-fringe-border"></div>
-            <div className="carpet-inner-medallion">
-              <span className="medallion-icon">
-                {lociData.fixedLoci.community_carpet?.title ? lociData.fixedLoci.community_carpet.icon : '🌿'}
-              </span>
-            </div>
+            <CentralCarpetSVG />
           </div>
 
           {/* Store Welcome Rug */}
           <div className="store-welcome-mat">
-            <span>חנות האספקה 🌾</span>
+            <span>חנות האספקה</span>
           </div>
 
           {/* Shrine Sacred Runner */}
@@ -659,11 +701,11 @@ export function StardewInstitutionComplex({
         </div>
 
         {/* =========================================================
-            LAYER 3: 2.5D FURNITURE & VISUAL LOCI BADGES
+            LAYER 3: 2.5D VECTOR FURNITURE & VISUAL LOCI
             ========================================================= */}
 
         {/* --- ZONE A: STORE WING --- */}
-        {/* Store Counter with Clerk */}
+        {/* Store Counter with Vector Register, Scale, Ledger */}
         <div 
           className="furniture-store-counter"
           onClick={e => {
@@ -672,74 +714,12 @@ export function StardewInstitutionComplex({
           }}
           title="דלפק החנות — לחץ לעריכת עוגן"
         >
-          <div className="counter-clerk-npc">
-            <span className="clerk-sprite">👩‍💼</span>
-            <span className="clerk-tag">דלפק כניסה</span>
-          </div>
-          <div className="counter-wooden-bar">
-            <div className="counter-top-props">
-              <span className="register-machine">📟</span>
-              <span className="brass-scale">⚖️</span>
-              <span className="ledger-book">📖</span>
-            </div>
-          </div>
+          <div className="clerk-tag-badge">פייר (החנווני)</div>
+          <StoreCounterSVG />
           {lociData.fixedLoci.shop_counter?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.shop_counter.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.shop_counter.icon} size={20} />
               <small>{lociData.fixedLoci.shop_counter.title}</small>
-            </div>
-          )}
-        </div>
-
-        {/* Center Display Shelving Racks */}
-        <div 
-          className="store-center-aisle-shelf shelf-top"
-          onClick={e => {
-            e.stopPropagation();
-            openLocusEditor('shelf_top');
-          }}
-          title="מדף עליון — לחץ לעריכת עוגן"
-        >
-          <div className="aisle-wooden-framework">
-            <div className="aisle-row">
-              <span>🥫</span>
-              <span>🫙</span>
-              <span>🍞</span>
-              <span>🫒</span>
-              <span>🧀</span>
-              <span>🍯</span>
-            </div>
-          </div>
-          {lociData.fixedLoci.shelf_top?.title && (
-            <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.shelf_top.icon}</span>
-              <small>{lociData.fixedLoci.shelf_top.title}</small>
-            </div>
-          )}
-        </div>
-
-        <div 
-          className="store-center-aisle-shelf shelf-bottom"
-          onClick={e => {
-            e.stopPropagation();
-            openLocusEditor('shelf_bottom');
-          }}
-          title="מדף תחתון — לחץ לעריכת עוגן"
-        >
-          <div className="aisle-wooden-framework">
-            <div className="aisle-row">
-              <span>🍾</span>
-              <span>🫙</span>
-              <span>🥖</span>
-              <span>🧂</span>
-              <span>🍵</span>
-              <span>🍶</span>
-            </div>
-          </div>
-          {lociData.fixedLoci.shelf_bottom?.title && (
-            <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.shelf_bottom.icon}</span>
-              <small>{lociData.fixedLoci.shelf_bottom.title}</small>
             </div>
           )}
         </div>
@@ -753,25 +733,27 @@ export function StardewInstitutionComplex({
           }}
           title="ארגז תוצרת — לחץ לעריכת עוגן"
         >
-          <div className="produce-bin">🥕</div>
-          <div className="produce-bin">🍎</div>
-          <div className="produce-bin">🥔</div>
+          <ProduceBinsSVG />
           {lociData.fixedLoci.produce_bin?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.produce_bin.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.produce_bin.icon} size={20} />
               <small>{lociData.fixedLoci.produce_bin.title}</small>
             </div>
           )}
         </div>
 
         {/* --- ZONE B: HEARTH SALON --- */}
-        <div className="salon-potted-ficus left">🪴</div>
-        <div className="salon-potted-ficus right">🌴</div>
+        <div className="salon-potted-ficus left">
+          <PottedPlantSVG />
+        </div>
+        <div className="salon-potted-ficus right">
+          <PottedPlantSVG />
+        </div>
 
         {/* Hearth Visual Locus Tag */}
         {lociData.fixedLoci.grand_hearth?.title && (
           <div className="locus-visual-tag hearth-tag">
-            <span>{lociData.fixedLoci.grand_hearth.icon}</span>
+            <VectorAnchorToken icon={lociData.fixedLoci.grand_hearth.icon} size={20} />
             <small>{lociData.fixedLoci.grand_hearth.title}</small>
           </div>
         )}
@@ -779,24 +761,18 @@ export function StardewInstitutionComplex({
         {/* Central Carpet Visual Locus Tag */}
         {lociData.fixedLoci.community_carpet?.title && (
           <div className="locus-visual-tag carpet-tag">
-            <span>{lociData.fixedLoci.community_carpet.icon}</span>
+            <VectorAnchorToken icon={lociData.fixedLoci.community_carpet.icon} size={20} />
             <small>{lociData.fixedLoci.community_carpet.title}</small>
           </div>
         )}
 
-        {/* Decorative NPCs in Salon */}
-        <div className="npc-villager-sprite caroline-npc" title="דמות בכפר (קרוליין)">
-          <div className="npc-avatar">👩‍🌾</div>
-          <span className="npc-label">קרוליין</span>
+        {/* NPC Labels in Salon (Villagers rendered on Canvas!) */}
+        <div className="npc-salon-tag-marker caroline-tag" title="קרוליין יושבת בסלון">
+          <span>קרוליין</span>
         </div>
-
-        <div className="npc-villager-sprite abigail-npc" title="דמות בכפר (אביגיל)">
-          <div className="npc-avatar">🧝‍♀️</div>
-          <span className="npc-label">אביגיל</span>
+        <div className="npc-salon-tag-marker abigail-tag" title="אביגיל">
+          <span>אביגיל</span>
         </div>
-
-        <div className="salon-cushion-stool s1">🛋️</div>
-        <div className="salon-cushion-stool s2">🛋️</div>
 
         {/* Tea Table */}
         <div 
@@ -807,10 +783,10 @@ export function StardewInstitutionComplex({
           }}
           title="שולחן המפגש — לחץ לעריכת עוגן"
         >
-          <span>🫖 ☕</span>
+          <TeaTableSVG />
           {lociData.fixedLoci.tea_table?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.tea_table.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.tea_table.icon} size={20} />
               <small>{lociData.fixedLoci.tea_table.title}</small>
             </div>
           )}
@@ -820,12 +796,12 @@ export function StardewInstitutionComplex({
         {/* Shrine Altar Tag */}
         {lociData.fixedLoci.golden_altar?.title && (
           <div className="locus-visual-tag altar-tag">
-            <span>{lociData.fixedLoci.golden_altar.icon}</span>
+            <VectorAnchorToken icon={lociData.fixedLoci.golden_altar.icon} size={20} />
             <small>{lociData.fixedLoci.golden_altar.title}</small>
           </div>
         )}
 
-        {/* Blue Velvet Benches */}
+        {/* Velvet Benches */}
         <div 
           className="shrine-blue-benches-complex"
           onClick={e => {
@@ -834,27 +810,14 @@ export function StardewInstitutionComplex({
           }}
           title="ספסלי ההיכל — לחץ לעריכת עוגן"
         >
-          <div className="bench-row">
-            <span className="blue-velvet-cushion">🟦</span>
-            <span className="blue-velvet-cushion">🟦</span>
-            <span className="blue-velvet-cushion">🟦</span>
-            <span className="blue-velvet-cushion">🟦</span>
-          </div>
-          <div className="bench-row">
-            <span className="blue-velvet-cushion">🟦</span>
-            <span className="blue-velvet-cushion">🟦</span>
-            <span className="blue-velvet-cushion">🟦</span>
-            <span className="blue-velvet-cushion">🟦</span>
-          </div>
+          <ShrineBenchesSVG />
           {lociData.fixedLoci.shrine_benches?.title && (
             <div className="locus-visual-tag">
-              <span>{lociData.fixedLoci.shrine_benches.icon}</span>
+              <VectorAnchorToken icon={lociData.fixedLoci.shrine_benches.icon} size={20} />
               <small>{lociData.fixedLoci.shrine_benches.title}</small>
             </div>
           )}
         </div>
-
-        <div className="shrine-candle-holder">🕯️</div>
 
         {/* --- PLACED CUSTOM USER ANCHORS --- */}
         {lociData.customAnchors.map((anchor) => (
@@ -869,19 +832,31 @@ export function StardewInstitutionComplex({
             title={`${anchor.title}: ${anchor.note} (לחץ להסרה)`}
           >
             <div className="anchor-icon-circle">
-              <span>{anchor.icon}</span>
+              <VectorAnchorToken icon={anchor.icon} size={20} />
             </div>
             <span className="anchor-title-chip">{anchor.title}</span>
           </div>
         ))}
 
-        {/* Canvas for Character Motion */}
+        {/* Canvas for Character Motion (Player + Villager NPCs!) */}
         <canvas 
           ref={canvasRef} 
-          width={960} 
-          height={520} 
+          width={COMPLEX_WORLD_W} 
+          height={COMPLEX_WORLD_H} 
           className="complex-player-canvas"
+          style={{
+            position: 'absolute',
+            left: `${-COMPLEX_PAD}px`,
+            top: `${-COMPLEX_PAD}px`,
+            width: `${COMPLEX_WORLD_W}px`,
+            height: `${COMPLEX_WORLD_H}px`,
+            pointerEvents: 'none',
+            zIndex: 30
+          }}
         />
+
+        {/* Dynamic Warm Ambient Lamplight Pools */}
+        <ComplexLightingSVG />
 
         {/* Proximity Interaction Hint Bubble */}
         {nearestStation && (
@@ -912,24 +887,27 @@ export function StardewInstitutionComplex({
             <span>יציאה לכפר 🍃</span>
           </div>
         </div>
+        </div>
       </div>
 
       {/* 4. Controls Footer Bar */}
       <footer className="stardew-controls-hint">
         <span>🎮 תנועה: חיצים / WASD / לחיצה בעכבר</span>
         <span>• עריכת עוגן: לחץ על כל חפץ או מקש רווח בקרבתו</span>
-        <span>• הוספת עוגן ברצפה: סמל 📍 בסרגל העליון</span>
+        <span>• הוספת עוגן ברצפה: סמל מצפן בסרגל העליון</span>
       </footer>
 
       {/* =========================================================
-          CLEAN VISUAL LOCUS EDITOR MODAL (NO PREACHY TEXTS)
+          CLEAN VECTOR LOCUS EDITOR MODAL (NO EMOJIS, NO PREACHING)
           ========================================================= */}
       {editingLocusKey && (
         <div className="anchor-modal-backdrop" onClick={() => setEditingLocusKey(null)}>
           <div className="anchor-dialog-card glass-card" onClick={e => e.stopPropagation()}>
             <div className="dialog-header">
               <div className="dialog-title-wrap">
-                <span className="text-3xl">{locusFormIcon}</span>
+                <div className="dialog-vector-icon-badge">
+                  <VectorAnchorToken icon={locusFormIcon} size={28} />
+                </div>
                 <div>
                   <h3>{lociData.fixedLoci[editingLocusKey]?.name}</h3>
                   <span className="dialog-sub">משבצת עוגן ויזואלי במרחב הזיכרון</span>
@@ -976,18 +954,20 @@ export function StardewInstitutionComplex({
                 </form>
               </div>
             ) : (
-              /* Standard Clean Locus Form */
+              /* Standard Clean Vector Locus Form */
               <form onSubmit={handleSaveLocus} className="clean-locus-form">
-                <label>בחר סמל ויזואלי ברור:</label>
-                <div className="emoji-picker-strip">
-                  {VISUAL_ICONS.map(icon => (
+                <label>בחר סמל ויזואלי ייעודי:</label>
+                <div className="vector-token-picker-strip">
+                  {VECTOR_ANCHOR_TOKENS.map(token => (
                     <button 
-                      key={icon} 
+                      key={token.id} 
                       type="button" 
-                      className={`emoji-btn ${locusFormIcon === icon ? 'selected' : ''}`}
-                      onClick={() => setLocusFormIcon(icon)}
+                      className={`token-btn ${locusFormIcon === token.id ? 'selected' : ''}`}
+                      onClick={() => setLocusFormIcon(token.id)}
+                      title={token.label}
                     >
-                      {icon}
+                      <VectorAnchorToken icon={token.id} size={24} />
+                      <span className="token-label">{token.label}</span>
                     </button>
                   ))}
                 </div>
@@ -1013,6 +993,19 @@ export function StardewInstitutionComplex({
                   <button type="submit" className="save-locus-btn">
                     <span>שמור עוגן ויזואלי 📌</span>
                   </button>
+
+                  {lociData.fixedLoci[editingLocusKey]?.title && (
+                    <button 
+                      type="button" 
+                      className="cultivate-locus-btn"
+                      onClick={handleCultivateLocus}
+                      title="רענן עוגן זה בזיכרון (חזרתיות)"
+                    >
+                      <Brain size={15} />
+                      <span>רענן בזיכרון 🧠</span>
+                    </button>
+                  )}
+
                   {lociData.fixedLoci[editingLocusKey]?.title && (
                     <button type="button" className="clear-locus-btn" onClick={handleClearLocus}>
                       <Trash2 size={15} />
@@ -1032,7 +1025,9 @@ export function StardewInstitutionComplex({
           <div className="anchor-dialog-card glass-card" onClick={e => e.stopPropagation()}>
             <div className="dialog-header">
               <div className="dialog-title-wrap">
-                <span className="text-3xl">{customFormIcon}</span>
+                <div className="dialog-vector-icon-badge">
+                  <VectorAnchorToken icon={customFormIcon} size={28} />
+                </div>
                 <div>
                   <h3>הצבת עוגן ויזואלי ברצפת החדר</h3>
                   <span className="dialog-sub">מיקום הדמות: ({Math.round(playerPos.x)}, {Math.round(playerPos.y)})</span>
@@ -1045,15 +1040,17 @@ export function StardewInstitutionComplex({
 
             <form onSubmit={handleAddCustomAnchor} className="clean-locus-form">
               <label>בחר סמל ויזואלי:</label>
-              <div className="emoji-picker-strip">
-                {VISUAL_ICONS.map(icon => (
+              <div className="vector-token-picker-strip">
+                {VECTOR_ANCHOR_TOKENS.map(token => (
                   <button 
-                    key={icon} 
+                    key={token.id} 
                     type="button" 
-                    className={`emoji-btn ${customFormIcon === icon ? 'selected' : ''}`}
-                    onClick={() => setCustomFormIcon(icon)}
+                    className={`token-btn ${customFormIcon === token.id ? 'selected' : ''}`}
+                    onClick={() => setCustomFormIcon(token.id)}
+                    title={token.label}
                   >
-                    {icon}
+                    <VectorAnchorToken icon={token.id} size={24} />
+                    <span className="token-label">{token.label}</span>
                   </button>
                 ))}
               </div>
