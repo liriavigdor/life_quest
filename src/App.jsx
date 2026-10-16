@@ -6738,7 +6738,7 @@ export default function App() {
     handleFitToScreen();
 
     // 6. Villager celebration upon arrival
-    const v = animEntitiesRef.current.villager;
+    const v = animEntitiesRef.current?.villager;
     if (v) {
       v.currGx = 10;
       v.currGy = 10;
