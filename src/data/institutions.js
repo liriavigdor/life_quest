@@ -1,6 +1,54 @@
 // Village Institutions Configuration, Levels & Production Data
 
 export const INSTITUTIONS_CONFIG = {
+  farmhouse: {
+    id: 'wooden_cabin',
+    name: 'בית החווה והאחוזה הכפרית',
+    englishName: 'Cozy Farmhouse Sanctuary',
+    icon: 'Home',
+    category: 'משכן וזיכרון',
+    tag: 'עוגני זיכרון וארמון מרחבי',
+    resourceKey: 'seeds',
+    resourceName: 'זרעי זיכרון',
+    resourceIcon: '✨',
+    emoji: '🏡',
+    desc: 'משכנו החמים של איש הכפר — ארמון זיכרון מרחבי עם אח לבנים, מיטה, שולחן ומוקדי עוגנים ויזואליים.',
+    reflectionPrompt: 'איזה עוגן ויזואלי תרצה למקם בחדר היום?',
+    baseCost: { seeds: 0 },
+    levels: [
+      {
+        level: 1,
+        title: 'בקתת חווה נעימה ואח מבוערת',
+        subtitle: 'משכן כפרי אינטימי',
+        desc: 'רצפת עץ חמימה, אח לבנים, מיטה מרווחת, טלוויזיה נוסטלגית וחלון המאיר את החדר באור בוקר מוזהב.',
+        productionRate: 3,
+        maxCapacity: 10,
+        upgradeCost: { seeds: 40 },
+        features: ['אח מבוערת כעוגן מרחבי', 'מיטה ושולחן מיקוד', 'טלוויזיה ותמונת קיר', 'הצבת עוגנים ויזואליים חופשית']
+      },
+      {
+        level: 2,
+        title: 'אחוזת חווה מרווחת ומרפסת שמש',
+        subtitle: 'משכן כפרי מפותח',
+        desc: 'הרחבת חלל המגורים, שטיחים ארוגים, ארון ספרים עשיר ופינת עבודה מרווחת ליד האח.',
+        productionRate: 6,
+        maxCapacity: 18,
+        upgradeCost: { seeds: 75, veggies: 6 },
+        features: ['מרחב עוגנים מורחב', 'ארון זיכרונות ותצוגה', 'תפוקה: 6 זרעים למחזור']
+      },
+      {
+        level: 3,
+        title: 'אחוזת נחלה מלכותית וקומת גלריה',
+        subtitle: 'אחוזת חלומות כפרית',
+        desc: 'קומת גלריה מפוארת, נברשת ברזל עתיקה, חלונות פנורמיים לכפר ומרחב עוגנים שלם ומפואר.',
+        productionRate: 10,
+        maxCapacity: 30,
+        upgradeCost: null,
+        features: ['קומת גלריה ומרפסת כוכבים', 'תפוקה מרבית: 10 זרעים למחזור']
+      }
+    ]
+  },
+
   veggie_garden: {
     id: 'veggie_garden',
     name: 'גינת ירק וערוגות גידול',

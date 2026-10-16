@@ -12,7 +12,8 @@ import {
   User, 
   PackageCheck,
   TrendingUp,
-  Sprout
+  Sprout,
+  DoorOpen
 } from 'lucide-react';
 import { INSTITUTIONS_CONFIG } from '../data/institutions';
 import { sounds } from '../utils/sound';
@@ -27,7 +28,8 @@ export const VillageInstitutionsModal = ({
   onUpgradeInstitution,
   onCollectProduce,
   onSendVillagerToWork,
-  onFocusInstitution
+  onFocusInstitution,
+  onEnterInterior
 }) => {
   if (!isOpen) return null;
 
@@ -226,6 +228,17 @@ export const VillageInstitutionsModal = ({
                       )}
 
                       <div className="secondary-inst-actions">
+                        {onEnterInterior && (
+                          <button 
+                            className="enter-interior-inst-btn"
+                            onClick={() => onEnterInterior(placed, inst)}
+                            title="היכנס לרובד הפנימי — מרחב עוגנים וזיכרונות בסגנון סטארדיו 🏡"
+                          >
+                            <DoorOpen size={14} />
+                            <span>היכנס פנימה 🚪</span>
+                          </button>
+                        )}
+
                         <button 
                           className="work-btn"
                           onClick={() => onSendVillagerToWork(inst.id)}

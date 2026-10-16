@@ -20,7 +20,12 @@ export const VillagerPortrait = ({
     const ctx = canvas.getContext('2d');
     let animId;
 
-    const render = () => {
+    let lastRenderTime = 0;
+    const render = (time = performance.now()) => {
+      animId = requestAnimationFrame(render);
+      if (time - lastRenderTime < 32) return; // Clean 30 FPS cap for side portrait
+      lastRenderTime = time;
+
       ctx.clearRect(0, 0, width, height);
 
       // Ambient pedestal glow
@@ -60,10 +65,8 @@ export const VillagerPortrait = ({
         isNight: false,
         isSunset: false,
         look,
-        timestamp: Date.now()
+        timestamp: time
       });
-
-      animId = requestAnimationFrame(render);
     };
 
     render();

@@ -4,11 +4,14 @@ import { OUTFITS, ACTIVITIES, VILLAGER_THOUGHTS, DEFAULT_VILLAGER_LOOK } from '.
 import { WardrobeModal } from './components/WardrobeModal';
 import { InspectedMemoryCard } from './components/InspectedMemoryCard';
 import { BuildingInteriorModal } from './components/BuildingInteriorModal';
+import { VillageInstitutionsModal } from './components/VillageInstitutionsModal';
 import { drawCompleteVillager } from './utils/villagerRenderer';
 import { drawAnimal } from './utils/animalRenderer';
 import { loadSavedAnimals, saveAnimals, createAnimal, updateAnimalsSimulation } from './utils/animalSimulation';
+import { PlayerController, drawDestinationIndicator } from './utils/playerController';
 import { sounds } from './utils/sound';
 import {
+  Wheat,
   Sprout,
   Sparkles,
   CheckCircle2,
@@ -46,6 +49,7 @@ import {
 import { VILLAGE_TEMPLATES } from './data/villageTemplates';
 import { WorldRealmMapModal } from './components/WorldRealmMapModal';
 import { VillageTemplatesModal } from './components/VillageTemplatesModal';
+import { CognitiveSurveyModal } from './components/CognitiveSurveyModal';
 import './App.css';
 
 const STORAGE_KEY_PLACED = 'lifequest_cozy_objects_v3';
@@ -190,52 +194,19 @@ export default function App() {
   });
 
   const [placedObjects, setPlacedObjects] = useState(() => {
-    const starterSanctuary = [
-      { gx: 10, gy: 10, type: 'reading_bench', dedicatedTo: 'רגע שקט של בוקר עם כוס קפה', memory: 'רגע שקט של בוקר עם כוס קפה', date: '10/10/2026' },
-      { gx: 10, gy: 11, type: 'oak_tree', dedicatedTo: 'ספר שעורר בי השראה', memory: 'ספר שעורר בי השראה', date: '11/10/2026' },
-      { gx: 12, gy: 10, type: 'flower_garden', dedicatedTo: 'שנת לילה עמוקה ומנוחה', memory: 'שנת לילה עמוקה ומנוחה', date: '11/10/2026' },
-      { gx: 9, gy: 12, type: 'bush', dedicatedTo: 'הליכה נעימה בשקיעה', memory: 'הליכה נעימה בשקיעה', date: '12/10/2026' },
-      { gx: 8, gy: 11, type: 'tea_table', dedicatedTo: 'פינת תה כפרית להפוגה חמימה', memory: 'פינת תה כפרית להפוגה חמימה', date: '12/10/2026' },
-      { gx: 13, gy: 11, type: 'bonfire', dedicatedTo: 'מדורה של חום וחיבור אמיתי', memory: 'מדורה של חום וחיבור אמיתי', date: '13/10/2026' },
-      { gx: 11, gy: 13, type: 'river_tile', dedicatedTo: 'פלג מים לשחרור וזרימה', memory: 'פלג מים לשחרור וזרימה', date: '13/10/2026' },
-      { gx: 12, gy: 13, type: 'river_tile', dedicatedTo: 'מים צלולים לשחייה ורעננות', memory: 'מים צלולים לשחייה ורעננות', date: '13/10/2026' }
-    ];
-
     try {
-      const obj = localStorage.getItem(STORAGE_KEY_PLACED);
-      if (obj) {
-        const parsed = JSON.parse(obj);
-        if (Array.isArray(parsed)) {
-          let list = parsed;
-          // If old starter save with only 4 items, enrich with water, tea table and bonfire
-          if (list.length <= 4 && !list.some(o => o.type === 'river_tile')) {
-            list = [...list, starterSanctuary[4], starterSanctuary[5], starterSanctuary[6], starterSanctuary[7]];
-          }
-          return list.map((item, idx) => {
-            let memory = item.memory || item.dedicatedTo || 'רגע של שלווה והודיה';
-            let date = item.date;
-            if (!date) {
-              const match = memory.match(/\(([^)]+)\)$/);
-              if (match) {
-                date = match[1];
-                memory = memory.replace(/\s*\([^)]+\)$/, '').trim();
-              } else {
-                date = `${10 + (idx % 4)}/10/2026`;
-              }
-            }
-            return {
-              ...item,
-              memory,
-              dedicatedTo: memory,
-              date
-            };
-          });
+      const activeVid = localStorage.getItem(STORAGE_KEY_ACTIVE_VILLAGE) || 'military';
+      const rawReg = localStorage.getItem(STORAGE_KEY_VILLAGES_REGISTRY);
+      if (rawReg) {
+        const parsedReg = JSON.parse(rawReg);
+        if (parsedReg && parsedReg[activeVid] && Array.isArray(parsedReg[activeVid].placedObjects) && parsedReg[activeVid].placedObjects.length > 0) {
+          return parsedReg[activeVid].placedObjects;
         }
-        return starterSanctuary;
       }
-      return starterSanctuary;
+      const initialPreset = VILLAGE_PRESETS.find(p => p.id === activeVid) || VILLAGE_PRESETS[0];
+      return initialPreset.starterObjects;
     } catch {
-      return starterSanctuary;
+      return VILLAGE_PRESETS[0].starterObjects;
     }
   });
 
@@ -326,9 +297,9 @@ export default function App() {
   // Multi-Village & Biomes World Realm State (Method of Loci / Memory Sanctuaries)
   const [currentVillageId, setCurrentVillageId] = useState(() => {
     try {
-      return localStorage.getItem(STORAGE_KEY_ACTIVE_VILLAGE) || 'hills';
+      return localStorage.getItem(STORAGE_KEY_ACTIVE_VILLAGE) || 'military';
     } catch {
-      return 'hills';
+      return 'military';
     }
   });
   const currentVillageIdRef = useRef(currentVillageId);
@@ -340,6 +311,7 @@ export default function App() {
 
   const [showRealmMap, setShowRealmMap] = useState(false);
   const [showTemplatesModal, setShowTemplatesModal] = useState(false);
+  const [showSurveyModal, setShowSurveyModal] = useState(false);
   const [travelingNotice, setTravelingNotice] = useState(null);
 
   // Keep active village data in sync with villagesRegistry
@@ -628,6 +600,49 @@ export default function App() {
       emoteTimer: 130
     }
   });
+
+  // Active Player Movement Controller (WASD, Arrows, Click-to-Move, Pathfinding)
+  const playerControllerRef = useRef(null);
+  if (!playerControllerRef.current) {
+    playerControllerRef.current = new PlayerController({
+      get current() {
+        return animEntitiesRef.current?.villager;
+      }
+    }, {
+      getPlacedObjects: () => placedObjectsRef.current,
+      getAnimals: () => animalsRef.current || [],
+      onProximityInteract: (interactable) => {
+        if (interactable.type === 'building') {
+          const catItem = BUILD_CATALOG.find(c => c.renderType === interactable.target.type || c.id === interactable.target.type);
+          sounds.playTap();
+          setInteriorBuilding({ building: interactable.target, catalogItem: catItem });
+          setInspectedObject(null);
+        } else if (interactable.type === 'animal') {
+          sounds.playTap();
+          const v = animEntitiesRef.current?.villager;
+          if (v) {
+            v.hopVy = -5.5;
+            v.emote = '❤️';
+            v.emoteTimer = 110;
+          }
+          const animal = interactable.target;
+          if (animal) {
+            animal.hopVy = -6.0;
+            animal.emote = '❤️';
+            animal.emoteTimer = 120;
+          }
+        }
+      }
+    });
+  }
+
+  useEffect(() => {
+    const controller = playerControllerRef.current;
+    if (controller) {
+      controller.attachListeners();
+      return () => controller.detachListeners();
+    }
+  }, []);
 
   // Helper to determine if a tile is part of the cleared / cultivated meadow
   const isTileClearedHelper = (gx, gy, tier, cultivatedList, placedList) => {
@@ -5564,80 +5579,233 @@ export default function App() {
         ctx.restore();
       };
 
-      // 1. RIGHT SCREEN EDGE: Vertical woodland border cascading down the right margin
-      const rx = w;
-      const rightTrees = [
-        { x: rx - 20,  y: h * 0.28, type: 'pine', s: 1.1, tall: true },
-        { x: rx - 65,  y: h * 0.34, type: 'oak',  s: 1.05 },
-        { x: rx - 28,  y: h * 0.42, type: 'pine', s: 1.25, tall: true },
-        { x: rx - 90,  y: h * 0.48, type: 'bush', s: 1.2, flower: '#fef08a' },
-        { x: rx - 45,  y: h * 0.55, type: 'oak',  s: 1.3 },
-        { x: rx - 95,  y: h * 0.62, type: 'rock', s: 1.1 },
-        { x: rx - 25,  y: h * 0.68, type: 'pine', s: 1.35, tall: true },
-        { x: rx - 75,  y: h * 0.76, type: 'oak',  s: 1.25 },
-        { x: rx - 35,  y: h * 0.85, type: 'pine', s: 1.4, tall: true },
-        { x: rx - 85,  y: h * 0.92, type: 'bush', s: 1.3, flower: '#f472b6' }
-      ];
+      // 1. Dynamic contiguous island border scenery showing neighboring village outskirts
+      const activeVid = currentVillageIdRef.current || 'military';
 
-      // 2. BOTTOM SCREEN EDGE: Horizontal treeline & meadow ridge framing the bottom margin
-      const by = h;
-      const bottomTrees = [
-        { x: w * 0.04, y: by - 16, type: 'pine', s: 1.25, tall: true },
-        { x: w * 0.11, y: by - 28, type: 'oak',  s: 1.1 },
-        { x: w * 0.18, y: by - 10, type: 'bush', s: 1.2, flower: '#f472b6' },
-        { x: w * 0.25, y: by - 22, type: 'rock', s: 1.1 },
-        { x: w * 0.33, y: by - 14, type: 'pine', s: 1.15 },
-        { x: w * 0.42, y: by - 30, type: 'oak',  s: 1.2 },
-        { x: w * 0.50, y: by - 12, type: 'bush', s: 1.15, flower: '#fef08a' },
-        { x: w * 0.59, y: by - 24, type: 'pine', s: 1.2, tall: true },
-        { x: w * 0.68, y: by - 16, type: 'rock', s: 1.15 },
-        { x: w * 0.77, y: by - 28, type: 'oak',  s: 1.3 },
-        { x: w * 0.86, y: by - 14, type: 'pine', s: 1.3, tall: true },
-        { x: w * 0.94, y: by - 22, type: 'oak',  s: 1.35 }
-      ];
+      // Helper for Ocean Waves wrapping the isolated island
+      // Draw ocean waves helper for island coastal shores (GPU-friendly single-pass path)
+      const drawOceanWaves = (startX, startY, width, height) => {
+        ctx.save();
+        const oceanGrad = ctx.createLinearGradient(startX, startY, startX, startY + height);
+        oceanGrad.addColorStop(0, isNight ? '#041220' : (isSunset ? '#1a2e45' : '#0369a1'));
+        oceanGrad.addColorStop(1, isNight ? '#020b14' : (isSunset ? '#0e1e30' : '#02456b'));
+        ctx.fillStyle = oceanGrad;
+        ctx.fillRect(startX, startY, width, height);
 
-      // Atmospheric edge soft shade
-      const bottomRidgeGrad = ctx.createLinearGradient(0, h - 65, 0, h);
-      if (isNight) {
-        bottomRidgeGrad.addColorStop(0, 'rgba(10, 30, 15, 0)');
-        bottomRidgeGrad.addColorStop(1, 'rgba(6, 20, 10, 0.45)');
-      } else if (isSunset) {
-        bottomRidgeGrad.addColorStop(0, 'rgba(50, 25, 5, 0)');
-        bottomRidgeGrad.addColorStop(1, 'rgba(40, 20, 5, 0.22)');
+        // Coastal beach sand strip
+        ctx.fillStyle = isNight ? '#78716c' : (isSunset ? '#d97706' : '#fde68a');
+        ctx.fillRect(startX, startY, width, 4);
+
+        // Silky smooth wave lines
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+        ctx.lineWidth = 1.2;
+        const wavePhase = (Date.now() / 900) % (Math.PI * 2);
+        const y1 = startY + 14;
+        const y2 = startY + 28;
+        if (y1 < startY + height) {
+          ctx.beginPath();
+          ctx.moveTo(startX, y1);
+          for (let wx = startX; wx < startX + width; wx += 40) {
+            ctx.quadraticCurveTo(wx + 12, y1 + Math.sin(wavePhase + wx * 0.04) * 2.2, wx + 24, y1);
+          }
+          ctx.stroke();
+        }
+        if (y2 < startY + height) {
+          ctx.beginPath();
+          ctx.moveTo(startX, y2);
+          for (let wx = startX + 15; wx < startX + width; wx += 40) {
+            ctx.quadraticCurveTo(wx + 12, y2 + Math.cos(wavePhase + wx * 0.04) * 2.2, wx + 24, y2);
+          }
+          ctx.stroke();
+        }
+        ctx.restore();
+      };
+
+      // Helper for Modern Business Slate Pavements & Lampposts on the border
+      const drawBusinessOutskirts = (bx, by, s = 1.0) => {
+        ctx.save();
+        ctx.translate(bx, by);
+        ctx.scale(s, s);
+
+        // Slate paving block
+        ctx.fillStyle = isNight ? '#1e293b' : '#475569';
+        ctx.fillRect(-22, -4, 44, 18);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(-22, -4, 44, 18);
+
+        // Modern geometric stone post
+        ctx.fillStyle = isNight ? '#334155' : '#cbd5e1';
+        ctx.fillRect(-6, -26, 12, 22);
+        ctx.fillStyle = '#f59e0b';
+        ctx.fillRect(-4, -30, 8, 4);
+
+        // Glowing lamp glow
+        const lampAura = ctx.createRadialGradient(0, -28, 1, 0, -28, 16);
+        lampAura.addColorStop(0, 'rgba(251, 191, 36, 0.6)');
+        lampAura.addColorStop(1, 'rgba(251, 191, 36, 0)');
+        ctx.fillStyle = lampAura;
+        ctx.beginPath();
+        ctx.arc(0, -28, 16, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      };
+
+      // Helper for Pastoral Sanctuary River & Cottage Outskirts on the border
+      const drawSanctuaryOutskirts = (sx, sy, s = 1.0) => {
+        ctx.save();
+        ctx.translate(sx, sy);
+        ctx.scale(s, s);
+
+        // Lush green grass patch
+        ctx.fillStyle = isNight ? '#064e3b' : (isSunset ? '#65a30d' : '#84cc16');
+        ctx.beginPath();
+        ctx.ellipse(0, 4, 30, 14, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Little red cottage roof
+        ctx.fillStyle = '#dc2626';
+        ctx.beginPath();
+        ctx.moveTo(-16, -10);
+        ctx.lineTo(0, -26);
+        ctx.lineTo(16, -10);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = '#fed7aa';
+        ctx.fillRect(-12, -10, 24, 14);
+
+        // Cottage Chimney & smoke puff
+        ctx.fillStyle = '#78716c';
+        ctx.fillRect(4, -28, 4, 8);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+        ctx.beginPath();
+        ctx.arc(6, -34, 3, 0, Math.PI * 2);
+        ctx.arc(8, -40, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      };
+
+      // Helper for Military Rampart & Watchtower Outskirts on the border
+      const drawMilitaryOutskirts = (mx, my, s = 1.0) => {
+        ctx.save();
+        ctx.translate(mx, my);
+        ctx.scale(s, s);
+
+        // Stone rampart wall
+        ctx.fillStyle = isNight ? '#18181b' : '#3f3f46';
+        ctx.fillRect(-22, -12, 44, 20);
+        ctx.fillStyle = isNight ? '#27272a' : '#52525b';
+        ctx.fillRect(-18, -18, 10, 6);
+        ctx.fillRect(8, -18, 10, 6);
+
+        // Watchtower silhouette
+        ctx.fillStyle = '#27272a';
+        ctx.fillRect(-8, -38, 16, 26);
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(0, -46, 12, 7); // Red military flag
+        ctx.strokeStyle = '#71717a';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(0, -38);
+        ctx.lineTo(0, -48);
+        ctx.stroke();
+
+        ctx.restore();
+      };
+
+      // Draw border scenery depending on activeVid
+      if (activeVid === 'military') {
+        // RIGHT MARGIN: The start of Business Village (כפר היזמות)!
+        const rightRidgeGrad = ctx.createLinearGradient(w - 110, 0, w, 0);
+        rightRidgeGrad.addColorStop(0, 'rgba(71, 85, 105, 0)');
+        rightRidgeGrad.addColorStop(1, isNight ? 'rgba(30, 41, 59, 0.7)' : 'rgba(71, 85, 105, 0.45)');
+        ctx.fillStyle = rightRidgeGrad;
+        ctx.fillRect(w - 110, 0, 110, h);
+
+        // Business outskirts landmarks
+        drawBusinessOutskirts(w - 35, h * 0.32, 1.15);
+        drawBusinessOutskirts(w - 75, h * 0.48, 1.1);
+        drawBusinessOutskirts(w - 30, h * 0.65, 1.2);
+        drawBusinessOutskirts(w - 70, h * 0.82, 1.15);
+
+        // BOTTOM MARGIN: The start of Sanctuary Village (כפר החיים)!
+        const bottomRidgeGrad = ctx.createLinearGradient(0, h - 90, 0, h);
+        bottomRidgeGrad.addColorStop(0, 'rgba(101, 163, 13, 0)');
+        bottomRidgeGrad.addColorStop(1, isNight ? 'rgba(20, 83, 45, 0.7)' : 'rgba(101, 163, 13, 0.45)');
+        ctx.fillStyle = bottomRidgeGrad;
+        ctx.fillRect(0, h - 90, w, 90);
+
+        // Flowing river strip along bottom
+        ctx.fillStyle = '#0284c7';
+        ctx.beginPath();
+        ctx.moveTo(0, h - 22);
+        ctx.bezierCurveTo(w * 0.3, h - 35, w * 0.7, h - 12, w, h - 25);
+        ctx.lineTo(w, h);
+        ctx.lineTo(0, h);
+        ctx.closePath();
+        ctx.fill();
+
+        // Sanctuary cottages & oaks peeking through
+        drawSanctuaryOutskirts(w * 0.22, h - 45, 1.1);
+        drawSanctuaryOutskirts(w * 0.65, h - 50, 1.15);
+        drawEdgeOak(w * 0.42, h - 35, 1.2);
+        drawEdgeOak(w * 0.84, h - 38, 1.1);
+
+      } else if (activeVid === 'business') {
+        // LEFT MARGIN: The start of Military Village (כפר הצבא)!
+        const leftRidgeGrad = ctx.createLinearGradient(0, 0, 110, 0);
+        leftRidgeGrad.addColorStop(1, 'rgba(20, 83, 45, 0)');
+        leftRidgeGrad.addColorStop(0, isNight ? 'rgba(5, 46, 22, 0.7)' : 'rgba(20, 83, 45, 0.5)');
+        ctx.fillStyle = leftRidgeGrad;
+        ctx.fillRect(0, 0, 110, h);
+
+        drawMilitaryOutskirts(40, h * 0.35, 1.15);
+        drawEdgePine(55, h * 0.52, 1.2, true);
+        drawMilitaryOutskirts(45, h * 0.70, 1.2);
+        drawEdgePine(60, h * 0.86, 1.3, true);
+
+        // BOTTOM MARGIN: Sanctuary Village!
+        const bottomRidgeGrad = ctx.createLinearGradient(0, h - 90, 0, h);
+        bottomRidgeGrad.addColorStop(0, 'rgba(101, 163, 13, 0)');
+        bottomRidgeGrad.addColorStop(1, isNight ? 'rgba(20, 83, 45, 0.7)' : 'rgba(101, 163, 13, 0.45)');
+        ctx.fillStyle = bottomRidgeGrad;
+        ctx.fillRect(0, h - 90, w, 90);
+
+        drawSanctuaryOutskirts(w * 0.35, h - 45, 1.1);
+        drawSanctuaryOutskirts(w * 0.75, h - 48, 1.15);
+        drawEdgeOak(w * 0.55, h - 35, 1.2);
+
+        // RIGHT MARGIN: Ocean!
+        drawOceanWaves(w - 55, h * 0.25, 55, h * 0.75);
+
       } else {
-        bottomRidgeGrad.addColorStop(0, 'rgba(20, 50, 10, 0)');
-        bottomRidgeGrad.addColorStop(1, 'rgba(15, 40, 10, 0.18)');
+        // activeVid === 'sanctuary'
+        // TOP-LEFT MARGIN: Up towards Military Village!
+        const tlGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 220);
+        tlGrad.addColorStop(0, isNight ? 'rgba(5, 46, 22, 0.75)' : 'rgba(20, 83, 45, 0.5)');
+        tlGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = tlGrad;
+        ctx.fillRect(0, 0, 220, 220);
+
+        drawEdgePine(60, 90, 1.2, true);
+        drawMilitaryOutskirts(75, 140, 1.05);
+
+        // TOP-RIGHT MARGIN: Up towards Business Village!
+        const trGrad = ctx.createRadialGradient(w, 0, 10, w, 0, 220);
+        trGrad.addColorStop(0, isNight ? 'rgba(30, 41, 59, 0.75)' : 'rgba(71, 85, 105, 0.5)');
+        trGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = trGrad;
+        ctx.fillRect(w - 220, 0, 220, 220);
+
+        drawBusinessOutskirts(w - 75, 100, 1.1);
+        drawBusinessOutskirts(w - 120, 150, 1.05);
+
+        // BOTTOM MARGIN: Ocean estuary!
+        drawOceanWaves(0, h - 50, w, 50);
       }
-      ctx.fillStyle = bottomRidgeGrad;
-      ctx.fillRect(0, h - 65, w, 65);
-
-      const rightRidgeGrad = ctx.createLinearGradient(w - 80, 0, w, 0);
-      if (isNight) {
-        rightRidgeGrad.addColorStop(0, 'rgba(10, 30, 15, 0)');
-        rightRidgeGrad.addColorStop(1, 'rgba(6, 20, 10, 0.4)');
-      } else if (isSunset) {
-        rightRidgeGrad.addColorStop(0, 'rgba(50, 25, 5, 0)');
-        rightRidgeGrad.addColorStop(1, 'rgba(40, 20, 5, 0.2)');
-      } else {
-        rightRidgeGrad.addColorStop(0, 'rgba(20, 50, 10, 0)');
-        rightRidgeGrad.addColorStop(1, 'rgba(15, 40, 10, 0.15)');
-      }
-      ctx.fillStyle = rightRidgeGrad;
-      ctx.fillRect(w - 80, h * 0.25, 80, h * 0.75);
-
-      rightTrees.forEach(t => {
-        if (t.type === 'pine') drawEdgePine(t.x, t.y, t.s, t.tall);
-        else if (t.type === 'oak') drawEdgeOak(t.x, t.y, t.s);
-        else if (t.type === 'bush') drawEdgeBush(t.x, t.y, t.s, t.flower);
-        else if (t.type === 'rock') drawEdgeRock(t.x, t.y, t.s);
-      });
-
-      bottomTrees.forEach(t => {
-        if (t.type === 'pine') drawEdgePine(t.x, t.y, t.s, t.tall);
-        else if (t.type === 'oak') drawEdgeOak(t.x, t.y, t.s);
-        else if (t.type === 'bush') drawEdgeBush(t.x, t.y, t.s, t.flower);
-        else if (t.type === 'rock') drawEdgeRock(t.x, t.y, t.s);
-      });
 
       ctx.restore();
     };
@@ -5658,7 +5826,7 @@ export default function App() {
         activity: v.activity,
         activityTimer: v.activityTimer,
         facingLeft: v.facingLeft,
-        isWalking: v.progress < 1,
+        isWalking: v.isWalking !== undefined ? v.isWalking : v.progress < 1,
         walkCycle: v.walkCycle,
         hopY: v.hopY,
         isNight,
@@ -5849,7 +6017,12 @@ export default function App() {
       ctx.fill();
 
       // Active village preset and biome configuration
-      const activePreset = VILLAGE_PRESETS.find(p => p.id === currentVillageIdRef.current) || VILLAGE_PRESETS[0];
+      const activeVid = currentVillageIdRef.current;
+      const activeVillageData = villagesRegistry[activeVid];
+      const targetBiome = activeVillageData?.biome || 'forest';
+      const activePreset = VILLAGE_PRESETS.find(p => p.id === activeVid)
+        || VILLAGE_PRESETS.find(p => p.biome === targetBiome)
+        || VILLAGE_PRESETS[0];
       const isDesert = activePreset.biome === 'desert';
       const isForest = activePreset.biome === 'forest';
 
@@ -5906,7 +6079,7 @@ export default function App() {
       const isCultivating = isCultivatingModeRef.current;
 
       // Biome-specific ground palette tailored to time of day
-      const terrainSet = activePreset.terrainColors[timeOfDay] || activePreset.terrainColors.day;
+      const terrainSet = activePreset.terrainColors[tod] || activePreset.terrainColors.day;
       let grass1 = terrainSet.grass1;
       let grass2 = terrainSet.grass2;
       let grass3 = terrainSet.grass3;
@@ -5986,6 +6159,11 @@ export default function App() {
         }
       }
 
+      // 4.5 CLICK DESTINATION RUNE (Stardew-style golden pulsing ring on ground)
+      if (playerControllerRef.current?.destinationMarker) {
+        drawDestinationIndicator(ctx, playerControllerRef.current.destinationMarker, toScreen, origin, zoom, TILE_W, TILE_H);
+      }
+
       // 5. PLACED COZY SANCTUARY ITEMS & VILLAGER (Unified Depth Sorted)
       const currentDragging = draggingObjectRef.current;
       const v = animEntitiesRef.current.villager;
@@ -6043,209 +6221,32 @@ export default function App() {
 
         // Active Activity Timer countdown
         if (v.activity) {
-          if (v.activity === 'picking_fruit' && v.activityTimer === 250) {
+          if (v.activity === 'picking_fruit' && v.activityTimer === 120) {
             sounds.playChomp();
             v.emote = '🍎';
-            v.emoteTimer = 130;
+            v.emoteTimer = 90;
           }
 
           v.activityTimer--;
           if (v.activityTimer <= 0) {
             v.activity = null;
-            v.idleTimer = 80 + Math.floor(Math.random() * 100);
+            v.idleTimer = 40 + Math.floor(Math.random() * 50); // ~0.7-1.5s idle before next movement
             v.emote = '✨';
-            v.emoteTimer = 110;
+            v.emoteTimer = 80;
           }
         }
 
-        // Constant calm walking speed (~0.72 tiles per second => ~1.39s per tile across all directions and distances)
-        const SPEED_TILES_PER_SEC = 0.72;
-
-        if (v.progress < 1) {
-          const dx = v.targetGx - v.startGx;
-          const dy = v.targetGy - v.startGy;
-          const gridDist = Math.hypot(dx, dy);
-
-          // Time in seconds strictly proportional to grid distance
-          const durationSec = gridDist > 0 ? gridDist / SPEED_TILES_PER_SEC : 0.001;
-          const dProg = dt / durationSec;
-          v.progress = Math.min(1, v.progress + dProg);
-          v.walkCycle += (Math.PI * 2) * SPEED_TILES_PER_SEC * dt;
-
-          v.currGx = v.startGx + dx * v.progress;
-          v.currGy = v.startGy + dy * v.progress;
-
-          if (v.progress >= 1) {
-            v.progress = 1;
-            v.gx = v.targetGx;
-            v.gy = v.targetGy;
-            v.currGx = v.targetGx;
-            v.currGy = v.targetGy;
-
-            if (v.activityTarget) {
-              // Reached destination! Enjoy the spot!
-              v.activity = v.activityTarget.type;
-              v.activityTimer = 420 + Math.floor(Math.random() * 220); // ~7-11 seconds
-              v.hopVy = -4.2;
-
-              // Face the visited item
-              const itemScreenX = (v.activityTarget.gx - v.activityTarget.gy) * 34;
-              const vScreenX = (v.currGx - v.currGy) * 34;
-              if (itemScreenX < vScreenX) v.facingLeft = true;
-              else if (itemScreenX > vScreenX) v.facingLeft = false;
-
-              const actList = VILLAGER_THOUGHTS[v.activity] || VILLAGER_THOUGHTS.strolling;
-              v.bubble = {
-                text: actList[Math.floor(Math.random() * actList.length)],
-                timer: 320
-              };
-              v.emote = v.activity === 'drinking_tea' ? '🍵' :
-                (v.activity === 'gardening' ? '🌱' :
-                  (v.activity === 'bonfire_warming' ? '🔥' :
-                    (v.activity === 'swimming' ? '🌊' :
-                      (v.activity === 'picking_fruit' ? '🍎' :
-                        (v.activity === 'tending_crops' ? '🥕' :
-                          (v.activity === 'farming_wheat' ? '🌾' :
-                            (v.activity === 'mining_gems' ? '💎' : '📖')))))));
-              v.emoteTimer = 140;
-              v.activityTarget = null;
-              v.idleTimer = 0;
-            } else if (!v.activity) {
-              // Idle pause between wander steps
-              v.idleTimer = 70 + Math.floor(Math.random() * 130);
-              if (Math.random() < 0.35) {
-                const emotes = ['❤️', '🎵', '🌱', '✨', '☕', '🌸', '🍎'];
-                v.emote = emotes[Math.floor(Math.random() * emotes.length)];
-                v.emoteTimer = 110;
-              }
-            }
-          }
-        } else if (!v.activity) {
-          v.idleTimer--;
-          if (v.idleTimer <= 0) {
-            if (v.activityTarget) {
-              // Launch route to assigned activity target
-              const startGx = v.currGx;
-              const startGy = v.currGy;
-              const dx = v.activityTarget.gx - startGx;
-              const dy = v.activityTarget.gy - startGy;
-              const dist = Math.hypot(dx, dy);
-              let destGx = v.activityTarget.gx;
-              let destGy = v.activityTarget.gy;
-              if (dist > 0.85) {
-                destGx = v.activityTarget.gx - (dx / dist) * 0.8;
-                destGy = v.activityTarget.gy - (dy / dist) * 0.8;
-              }
-              v.startGx = startGx;
-              v.startGy = startGy;
-              v.targetGx = destGx;
-              v.targetGy = destGy;
-              v.progress = 0;
-              const dScreenX = (destGx - destGy) - (startGx - startGy);
-              if (dScreenX < 0) v.facingLeft = true;
-              else if (dScreenX > 0) v.facingLeft = false;
-            } else {
-              // Autonomous behavior: chance to choose an interesting spot in the village!
-              const roll = Math.random();
-              const waterTiles = currentPlaced.filter(o => o.type === 'river_tile' || o.type === 'water_lily_pond');
-              const teaTiles = currentPlaced.filter(o => o.type === 'tea_table');
-              const gardenTiles = currentPlaced.filter(o => o.type === 'flower_garden' || o.type === 'greenhouse');
-              const fireTiles = currentPlaced.filter(o => o.type === 'bonfire');
-              const benchTiles = currentPlaced.filter(o => o.type === 'reading_bench');
-              const treeTiles = currentPlaced.filter(o => o.type === 'oak_tree' || o.type === 'bush');
-
-              let pickedTarget = null;
-              if (roll < 0.10 && waterTiles.length > 0) {
-                const w = waterTiles[Math.floor(Math.random() * waterTiles.length)];
-                pickedTarget = { gx: w.gx, gy: w.gy, type: 'swimming' };
-              } else if (roll < 0.20 && teaTiles.length > 0) {
-                const t = teaTiles[Math.floor(Math.random() * teaTiles.length)];
-                pickedTarget = { gx: t.gx, gy: t.gy, type: 'drinking_tea' };
-              } else if (roll < 0.30 && gardenTiles.length > 0) {
-                const g = gardenTiles[Math.floor(Math.random() * gardenTiles.length)];
-                pickedTarget = { gx: g.gx, gy: g.gy, type: 'gardening' };
-              } else if (roll < 0.38 && fireTiles.length > 0) {
-                const f = fireTiles[Math.floor(Math.random() * fireTiles.length)];
-                pickedTarget = { gx: f.gx, gy: f.gy, type: 'bonfire_warming' };
-              } else if (roll < 0.46 && benchTiles.length > 0) {
-                const b = benchTiles[Math.floor(Math.random() * benchTiles.length)];
-                pickedTarget = { gx: b.gx, gy: b.gy, type: 'reading_book' };
-              } else if (roll < 0.56 && treeTiles.length > 0) {
-                const tr = treeTiles[Math.floor(Math.random() * treeTiles.length)];
-                pickedTarget = { gx: tr.gx, gy: tr.gy, type: 'picking_fruit' };
-              }
-
-              if (pickedTarget) {
-                const startGx = v.currGx;
-                const startGy = v.currGy;
-                const dx = pickedTarget.gx - startGx;
-                const dy = pickedTarget.gy - startGy;
-                const dist = Math.hypot(dx, dy);
-                let destGx = pickedTarget.gx;
-                let destGy = pickedTarget.gy;
-                if (dist > 0.85) {
-                  destGx = pickedTarget.gx - (dx / dist) * 0.8;
-                  destGy = pickedTarget.gy - (dy / dist) * 0.8;
-                }
-                v.startGx = startGx;
-                v.startGy = startGy;
-                v.targetGx = destGx;
-                v.targetGy = destGy;
-                v.progress = 0;
-                v.activityTarget = pickedTarget;
-                const dScreenX = (destGx - destGy) - (startGx - startGy);
-                if (dScreenX < 0) v.facingLeft = true;
-                else if (dScreenX > 0) v.facingLeft = false;
-              } else {
-                // Free wandering: 1 step to adjacent cleared tile, with natural preference for paths!
-                const deltas = [
-                  [-1, 0], [1, 0], [0, -1], [0, 1],
-                  [-1, -1], [1, 1], [-1, 1], [1, -1]
-                ];
-                deltas.sort(() => Math.random() - 0.5);
-
-                const pathTypes = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
-                const isPathTile = (gx, gy) => currentPlaced.some(o => o.gx === gx && o.gy === gy && pathTypes.includes(o.type));
-
-                // 80% bias to follow player-built trails and paths!
-                if (Math.random() < 0.80) {
-                  deltas.sort((a, b) => {
-                    const aPath = isPathTile(v.gx + a[0], v.gy + a[1]) ? 1 : 0;
-                    const bPath = isPathTile(v.gx + b[0], v.gy + b[1]) ? 1 : 0;
-                    return bPath - aPath;
-                  });
-                }
-
-                let chosen = null;
-                for (const [dx, dy] of deltas) {
-                  const nx = v.gx + dx;
-                  const ny = v.gy + dy;
-                  if (nx >= 3 && nx < GRID_SIZE - 3 && ny >= 3 && ny < GRID_SIZE - 3 && checkClearing(nx, ny)) {
-                    chosen = { nx, ny };
-                    break;
-                  }
-                }
-                if (chosen) {
-                  v.startGx = v.gx;
-                  v.startGy = v.gy;
-                  v.targetGx = chosen.nx;
-                  v.targetGy = chosen.ny;
-                  v.progress = 0;
-                  const dScreenX = (chosen.nx - chosen.ny) - (v.gx - v.gy);
-                  if (dScreenX < 0) v.facingLeft = true;
-                  else if (dScreenX > 0) v.facingLeft = false;
-                } else {
-                  v.idleTimer = 60;
-                }
-              }
-            }
-          }
+        // Controlled Player Movement Engine (WASD & Click-to-Move, 60 FPS silky smooth)
+        if (playerControllerRef.current) {
+          playerControllerRef.current.update(dt, {
+            checkClearing,
+            placedObjects: currentPlaced,
+            gridSize: GRID_SIZE
+          });
         }
 
         // Sync to React status only when state actually changes (avoids constant re-renders)
-        const pathTypes = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
-        const isOnPath = currentPlaced.some(o => o.gx === Math.round(v.currGx) && o.gy === Math.round(v.currGy) && pathTypes.includes(o.type));
-        let actLabel = isOnPath ? 'פוסע בנחת על השביל 🐾' : 'מטייל בנחת בכפר 🍃';
+        let actLabel = 'מטייל בנחת בכפר 🍃';
         if (v.inWater) actLabel = 'שוחה במים (בגד ים) 🌊';
         else if (v.activity === 'drinking_tea') actLabel = 'שותה תה בפינת התה 🍵';
         else if (v.activity === 'gardening') actLabel = 'מטפח ומשקה את הגינה 🌱';
@@ -6737,13 +6738,21 @@ export default function App() {
     // 5. Re-fit camera
     handleFitToScreen();
 
-    // 6. Villager celebration upon arrival
+    // 6. Villager celebration upon arrival (fully reset to integer grid coordinates)
     const v = animEntitiesRef.current?.villager;
     if (v) {
-      v.currGx = 10;
-      v.currGy = 10;
-      v.targetGx = 10;
-      v.targetGy = 10;
+      v.gx = 11;
+      v.gy = 11;
+      v.currGx = 11;
+      v.currGy = 11;
+      v.startGx = 11;
+      v.startGy = 11;
+      v.targetGx = 11;
+      v.targetGy = 11;
+      v.progress = 1;
+      v.activity = null;
+      v.activityTarget = null;
+      v.idleTimer = 30;
       v.hopVy = -7.5;
       v.emote = targetVillage.icon || '🏰';
       v.emoteTimer = 180;
@@ -6756,6 +6765,82 @@ export default function App() {
     setTimeout(() => {
       setTravelingNotice(null);
     }, 1100);
+  };
+
+  // Apply Compiled Cognitive Survey Blueprint to Realm
+  const handleApplyBlueprint = (blueprint) => {
+    if (!blueprint || !blueprint.villages || blueprint.villages.length === 0) return;
+
+    sounds.playChime();
+    setTravelingNotice(`מכונן את ארץ הזכרונות המותאמת שלך... 🧠✨`);
+
+    // 1. Build updated registry including the new customized villages
+    const updatedRegistry = { ...villagesRegistry };
+    blueprint.villages.forEach(v => {
+      updatedRegistry[v.id] = {
+        id: v.id,
+        name: v.name,
+        biome: v.biome,
+        icon: v.icon,
+        badge: v.badge,
+        color: v.color,
+        description: v.description,
+        placedObjects: v.placedObjects,
+        expansionTier: v.expansionTier || 1,
+        cultivatedPlots: v.cultivatedPlots || [],
+        spatialRecipe: v.spatialRecipe,
+        lastVisited: new Date().toISOString()
+      };
+    });
+
+    setVillagesRegistry(updatedRegistry);
+    saveVillagesRegistry(updatedRegistry);
+
+    // 2. Automatically switch to the first generated village!
+    const firstVillage = blueprint.villages[0];
+    setCurrentVillageId(firstVillage.id);
+    currentVillageIdRef.current = firstVillage.id;
+    localStorage.setItem(STORAGE_KEY_ACTIVE_VILLAGE, firstVillage.id);
+
+    setPlacedObjects(firstVillage.placedObjects);
+    placedObjectsRef.current = firstVillage.placedObjects;
+    setExpansionTier(1);
+    expansionTierRef.current = 1;
+    setCultivatedPlots([]);
+    cultivatedPlotsRef.current = [];
+
+    tileGridCacheRef.current = computeTileGrid(1, [], firstVillage.placedObjects);
+    borderSceneryRef.current = computeBorderScenery(1, [], firstVillage.placedObjects);
+
+    handleFitToScreen();
+
+    // 3. Emote celebration (fully reset to integer grid coordinates)
+    const v = animEntitiesRef.current?.villager;
+    if (v) {
+      v.gx = 12;
+      v.gy = 12;
+      v.currGx = 12;
+      v.currGy = 12;
+      v.startGx = 12;
+      v.startGy = 12;
+      v.targetGx = 12;
+      v.targetGy = 12;
+      v.progress = 1;
+      v.activity = null;
+      v.activityTarget = null;
+      v.idleTimer = 30;
+      v.hopVy = -8;
+      v.emote = firstVillage.icon || '✨';
+      v.emoteTimer = 220;
+      v.bubble = {
+        text: `ברוך הבא אל ${firstVillage.name}! הכפר נבנה במיוחד עבורך 🗺️✨`,
+        timer: 320
+      };
+    }
+
+    setTimeout(() => {
+      setTravelingNotice(null);
+    }, 1200);
   };
 
   const handleRenameVillage = (villageId, newName) => {
@@ -7652,27 +7737,34 @@ export default function App() {
         );
 
         if (clickedAnimal) {
-          sounds.playTap();
-          setInspectedObject({
-            gx: clickedAnimal.gx,
-            gy: clickedAnimal.gy,
-            type: `animal_${clickedAnimal.type}`,
-            customName: clickedAnimal.name,
-            customEmoji: clickedAnimal.customEmoji || '',
-            memory: clickedAnimal.customNote || 'חיה כפרית שלווה',
-            date: new Date().toLocaleDateString('he-IL'),
-            isAnimal: true,
-            animalId: clickedAnimal.id,
-            lastCaredDate: clickedAnimal.lastCaredDate || null
-          });
-          setMovingObject(null);
+          const onReachAnimal = () => {
+            sounds.playTap();
+            setInspectedObject({
+              gx: clickedAnimal.gx,
+              gy: clickedAnimal.gy,
+              type: `animal_${clickedAnimal.type}`,
+              customName: clickedAnimal.name,
+              customEmoji: clickedAnimal.customEmoji || '',
+              memory: clickedAnimal.customNote || 'חיה כפרית שלווה',
+              date: new Date().toLocaleDateString('he-IL'),
+              isAnimal: true,
+              animalId: clickedAnimal.id,
+              lastCaredDate: clickedAnimal.lastCaredDate || null
+            });
+            setMovingObject(null);
+          };
+          playerControllerRef.current?.moveTo(gx, gy, { checkClearing, placedObjects, gridSize: GRID_SIZE }, onReachAnimal);
         } else if (existing) {
-          sounds.playTap();
-          setInspectedObject(existing);
-          setMovingObject(null);
+          const onReachBuilding = () => {
+            sounds.playTap();
+            setInspectedObject(existing);
+            setMovingObject(null);
+          };
+          playerControllerRef.current?.moveTo(gx, gy, { checkClearing, placedObjects, gridSize: GRID_SIZE }, onReachBuilding);
         } else {
           setMovingObject(null);
           setInspectedObject(null);
+          playerControllerRef.current?.moveTo(gx, gy, { checkClearing, placedObjects, gridSize: GRID_SIZE });
         }
       }
     }
@@ -7915,6 +8007,72 @@ export default function App() {
         <Compass size={14} className="realm-hud-compass" />
       </button>
 
+      {/* Interactive Contiguous Island Border Gateways (1-click travel on village borders) */}
+      <div className="island-border-gateways-container">
+        {currentVillageId === 'military' && (
+          <>
+            <button
+              className="border-gateway-pill border-gateway-right glass-card"
+              onClick={() => handleSwitchVillage('business')}
+              title="מעבר שער הגבול המזרחי אל כפר היזמות והעסק 🏛️"
+            >
+              <span className="gateway-name">כפר היזמות והעסק 🏛️</span>
+              <span className="gateway-arrow">➡️</span>
+            </button>
+            <button
+              className="border-gateway-pill border-gateway-bottom glass-card"
+              onClick={() => handleSwitchVillage('sanctuary')}
+              title="שביל הירידה הדרומי אל עמק כפר החיים והשגרה 🏡"
+            >
+              <span className="gateway-name">כפר חיים ושגרה 🏡</span>
+              <span className="gateway-arrow">⬇️</span>
+            </button>
+          </>
+        )}
+
+        {currentVillageId === 'business' && (
+          <>
+            <button
+              className="border-gateway-pill border-gateway-left glass-card"
+              onClick={() => handleSwitchVillage('military')}
+              title="מעבר שער הגבול המערבי אל יער כפר הצבא 🪖"
+            >
+              <span className="gateway-arrow">⬅️</span>
+              <span className="gateway-name">יער כפר הצבא והביטחון 🪖</span>
+            </button>
+            <button
+              className="border-gateway-pill border-gateway-bottom glass-card"
+              onClick={() => handleSwitchVillage('sanctuary')}
+              title="שביל הירידה הדרומי אל עמק כפר החיים והשגרה 🏡"
+            >
+              <span className="gateway-name">כפר חיים ושגרה 🏡</span>
+              <span className="gateway-arrow">⬇️</span>
+            </button>
+          </>
+        )}
+
+        {currentVillageId === 'sanctuary' && (
+          <>
+            <button
+              className="border-gateway-pill border-gateway-top-left glass-card"
+              onClick={() => handleSwitchVillage('military')}
+              title="שביל העלייה הצפון-מערבי אל יער כפר הצבא 🪖"
+            >
+              <span className="gateway-arrow">↖️</span>
+              <span className="gateway-name">אל יער כפר הצבא 🪖</span>
+            </button>
+            <button
+              className="border-gateway-pill border-gateway-top-right glass-card"
+              onClick={() => handleSwitchVillage('business')}
+              title="דרך העלייה הצפון-מזרחית אל כפר היזמות והעסק 💼"
+            >
+              <span className="gateway-name">אל כפר היזמות והעסק 💼</span>
+              <span className="gateway-arrow">↗️</span>
+            </button>
+          </>
+        )}
+      </div>
+
       {/* Cinematic Realm Travel Overlay */}
       {travelingNotice && (
         <div className="realm-travel-overlay">
@@ -7942,6 +8100,19 @@ export default function App() {
           <span className="dock-btn-label">בנייה</span>
         </button>
 
+        {/* 1.1. Village Institutions & Farmstead Depth */}
+        <button
+          className={`dock-btn institutions-dock-btn ${showInstitutionsModal ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowInstitutionsModal(true);
+          }}
+          title="מוסדות הכפר, שגשוג ועוגנים פנימיים 🌾"
+        >
+          <Wheat size={20} className="text-amber" />
+          <span className="dock-btn-label">מוסדות</span>
+        </button>
+
         {/* 1.2. World Realm Map & Biome Switcher */}
         <button
           className={`dock-btn realm-dock-btn ${showRealmMap ? 'active' : ''}`}
@@ -7966,6 +8137,19 @@ export default function App() {
         >
           <Layers size={20} className="text-amber" />
           <span className="dock-btn-label">תבניות</span>
+        </button>
+
+        {/* 1.4. Cognitive Survey Modal Trigger */}
+        <button
+          className={`dock-btn survey-dock-btn ${showSurveyModal ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowSurveyModal(true);
+          }}
+          title="שאלון מיפוי ארץ הזכרונות 🧠 — התאם את הכפרים לתת-מודע שלך"
+        >
+          <Brain size={20} className="text-amber" />
+          <span className="dock-btn-label">מיפוי 🧠</span>
         </button>
 
         {/* 1.5. Dedicated Path & Road Paving Studio */}
@@ -8579,6 +8763,39 @@ export default function App() {
           onEarnSeeds={(amount) => {
             setSeeds(s => s + amount);
           }}
+          seeds={seeds}
+          villagerLook={villagerLook}
+          currentOutfit={currentOutfit}
+        />
+      )}
+
+      {/* Village Institutions & Production Modal */}
+      {showInstitutionsModal && (
+        <VillageInstitutionsModal
+          isOpen={showInstitutionsModal}
+          onClose={() => setShowInstitutionsModal(false)}
+          placedObjects={placedObjects}
+          villageResources={villageResources}
+          seeds={seeds}
+          onBuildInstitution={handleBuildInstitution}
+          onUpgradeInstitution={handleUpgradeInstitution}
+          onCollectProduce={handleCollectProduce}
+          onSendVillagerToWork={handleSendVillagerToWork}
+          onFocusInstitution={handleFocusInstitution}
+          onEnterInterior={(placedObj, inst) => {
+            sounds.playTap();
+            setShowInstitutionsModal(false);
+            const targetType = placedObj?.type || inst?.id || 'wooden_cabin';
+            const catItem = BUILD_CATALOG.find(c => c.renderType === targetType) || {
+              id: targetType,
+              name: inst?.name || placedObj?.customName || 'מבנה כפר',
+              emoji: inst?.emoji || '🏡'
+            };
+            setInteriorBuilding({ 
+              building: placedObj || { gx: 5, gy: 5, type: targetType, customName: inst?.name }, 
+              catalogItem: catItem 
+            });
+          }}
         />
       )}
 
@@ -8706,6 +8923,7 @@ export default function App() {
         villagesRegistry={villagesRegistry}
         onSelectVillage={handleSwitchVillage}
         onRenameVillage={handleRenameVillage}
+        onOpenSurvey={() => setShowSurveyModal(true)}
       />
 
       {/* Village Frameworks & Logical Templates Modal */}
@@ -8714,6 +8932,13 @@ export default function App() {
         onClose={() => setShowTemplatesModal(false)}
         currentPlacedObjects={placedObjects}
         onApplyTemplate={handleApplyVillageTemplate}
+      />
+
+      {/* Cognitive Survey Profiling Modal */}
+      <CognitiveSurveyModal
+        isOpen={showSurveyModal}
+        onClose={() => setShowSurveyModal(false)}
+        onApplyBlueprint={handleApplyBlueprint}
       />
     </div>
   );

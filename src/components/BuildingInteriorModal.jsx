@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { RealCoopInterior } from './RealCoopInterior';
+import { StardewFarmhouseInterior } from './StardewFarmhouseInterior';
+import { StardewInstitutionComplex } from './StardewInstitutionComplex';
 
 export function BuildingInteriorModal({
   building,
@@ -26,7 +28,10 @@ export function BuildingInteriorModal({
   animals = [],
   onUpdateAnimal,
   onAddAnimalToBuilding,
-  onEarnSeeds
+  onEarnSeeds,
+  seeds = 0,
+  villagerLook = {},
+  currentOutfit = 'autumn_sweater'
 }) {
   if (!building) return null;
 
@@ -46,7 +51,7 @@ export function BuildingInteriorModal({
     if (building.type === 'animal_coop' || building.type.includes('coop')) {
       return {
         roomTitle: 'פנים לול התרנגולות ומכלאת הבוקר',
-        roomNote: 'מרחב חמים של קש ורוגע — מקום לעוגני בוקר או פריטי שגרה אישיים',
+        roomNote: 'מרחב עוגני בוקר ופריטי שגרה אישיים',
         items: [
           { id: '1', name: 'דסקית', completed: false, icon: '🐔' },
           { id: '2', name: 'חוגר', completed: false, icon: '🐔' },
@@ -56,8 +61,8 @@ export function BuildingInteriorModal({
       };
     } else if (building.type === 'greenhouse' || building.type === 'veggie_garden') {
       return {
-        roomTitle: 'חממת זכוכית ובוטניקה שקטה',
-        roomNote: 'אדניות עץ וצמחי תבלין — עוגנים של רעיונות והרגלים בצמיחה',
+        roomTitle: 'חממת זכוכית ובוטניקה',
+        roomNote: 'אדניות עץ וצמחים — עוגנים של רעיונות והרגלים',
         items: [
           { id: '1', name: 'שתיית 2 ליטר מים ביום', completed: false, icon: '🌱' },
           { id: '2', name: 'מתיחות ונשימה בבוקר', completed: false, icon: '🌿' }
@@ -66,9 +71,9 @@ export function BuildingInteriorModal({
     } else if (building.type === 'wooden_cabin' || building.type === 'art_studio') {
       return {
         roomTitle: 'בקתת היצירה והאח המבוערת',
-        roomNote: 'מרחב אישי לשקט, כתיבה, מחשבות ורעיונות מהלב',
+        roomNote: 'מרחב אישי לכתיבה, מחשבות ותוכניות',
         items: [
-          { id: '1', name: 'זמן קריאה שקט בערב', completed: false, icon: '📖' },
+          { id: '1', name: 'זמן קריאה בערב', completed: false, icon: '📖' },
           { id: '2', name: 'התקדמות בפרויקט אישי', completed: false, icon: '✨' }
         ]
       };
@@ -83,7 +88,7 @@ export function BuildingInteriorModal({
     } else if (building.type === 'farm' || building.type === 'bakery') {
       return {
         roomTitle: building.type === 'bakery' ? 'מאפיית הבוקר והמטבח הכפרי' : 'אסם התבואה והחווה',
-        roomNote: 'חום, הזנה וציוד ביתי — מקום לארגן את מה שמזין ומשמח אותך',
+        roomNote: 'ציוד ביתי, תוצרת ומלאי אישי',
         items: [
           { id: '1', name: 'ארוחת בוקר מזינה', completed: false, icon: '🥖' }
         ]
@@ -176,6 +181,38 @@ export function BuildingInteriorModal({
   const isGreenhouse = building.type === 'greenhouse' || building.type === 'veggie_garden';
   const isCabin = building.type === 'wooden_cabin' || building.type === 'art_studio';
   const isLibrary = building.type === 'library';
+
+  const [interiorStyle, setInteriorStyle] = useState('complex');
+
+  if (!isCoop) {
+    if (interiorStyle === 'complex') {
+      return (
+        <StardewInstitutionComplex
+          building={building}
+          catalogItem={catalogItem}
+          onClose={onClose}
+          seeds={seeds}
+          onEarnSeeds={onEarnSeeds}
+          villagerLook={villagerLook}
+          currentOutfit={currentOutfit}
+          onSwitchToCabin={() => setInteriorStyle('cabin')}
+        />
+      );
+    }
+
+    return (
+      <StardewFarmhouseInterior
+        building={building}
+        catalogItem={catalogItem}
+        onClose={onClose}
+        seeds={seeds}
+        onEarnSeeds={onEarnSeeds}
+        villagerLook={villagerLook}
+        currentOutfit={currentOutfit}
+        onSwitchToComplex={() => setInteriorStyle('complex')}
+      />
+    );
+  }
 
   return (
     <div className="interior-modal-overlay" onClick={onClose}>
