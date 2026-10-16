@@ -5348,72 +5348,77 @@ body, html {
 .coop-stat-pill {
   display: flex;
   align-items: center;
-  gap: 5px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  color: #f1f5f9;
+  gap: 6px;
+  background: #f4efe6;
+  border: 1px solid rgba(139, 111, 71, 0.45);
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  color: #4a3b32;
+  box-shadow: 0 3px 8px rgba(42, 22, 11, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .coop-stat-pill .stat-emoji {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .coop-stat-pill .stat-label {
-  color: #94a3b8;
-  font-size: 0.72rem;
+  color: #785a3e;
+  font-size: 0.74rem;
+  font-weight: 700;
 }
 
 .coop-pegboard-toggle-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(245, 158, 11, 0.16);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  gap: 8px;
+  background: linear-gradient(180deg, #442413 0%, #261208 100%);
+  border: 1.5px solid #d4a359;
   color: #fef3c7;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 0.82rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(18, 10, 7, 0.5), inset 0 1px 0 rgba(255, 235, 180, 0.3);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .coop-pegboard-toggle-btn:hover {
-  background: rgba(245, 158, 11, 0.28);
-  border-color: #fbbf24;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  border-color: #fde047;
+  box-shadow: 0 6px 14px rgba(245, 158, 11, 0.45);
 }
 
 .coop-pegboard-toggle-btn.active {
-  background: linear-gradient(135deg, #d97706, #b45309);
-  border-color: #f59e0b;
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+  background: #fef08a;
+  border-color: #b45309;
+  color: #451a03;
+  box-shadow: 0 0 12px rgba(254, 240, 138, 0.8);
 }
 
 .pegboard-badge {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+  background: rgba(42, 22, 11, 0.25);
+  border-radius: 8px;
   padding: 1px 6px;
-  font-size: 0.7rem;
-  color: #fef08a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: inherit;
 }
 
 /* 2. Floating Coop Toast */
 .coop-toast-banner {
-  background: linear-gradient(135deg, rgba(217, 119, 6, 0.95), rgba(180, 83, 9, 0.95));
-  border: 1px solid rgba(254, 240, 138, 0.4);
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  background: #f4efe6;
+  border: 1.5px solid #d4a359;
+  color: #4a3b32;
+  padding: 8px 18px;
+  border-radius: 14px;
+  font-size: 0.86rem;
+  font-weight: 800;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 20px rgba(42, 22, 11, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   animation: toastSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -5432,12 +5437,15 @@ body, html {
 .coop-stage-wrapper {
   position: relative;
   width: 100%;
-  height: 380px;
-  border-radius: 20px;
+  height: 400px;
+  border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(180deg, #2b170c 0%, #1e1108 38%, #150b05 100%);
-  border: 2px solid rgba(180, 83, 9, 0.45);
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 12px 32px rgba(0, 0, 0, 0.6);
+  background: #120a07;
+  border: 4px solid #3d2215;
+  box-shadow: 
+    0 0 0 3px #1c0f08,
+    0 30px 80px rgba(0, 0, 0, 0.95),
+    inset 0 0 60px rgba(0, 0, 0, 0.8);
 }
 
 /* Golden Sunbeam */
