@@ -5711,11 +5711,12 @@ export default function App() {
         skyGrad.addColorStop(0.7, '#1e1b4b');
         skyGrad.addColorStop(1, '#064e3b');
       } else if (isSunset) {
-        skyGrad.addColorStop(0, '#4a154b'); // Deep violet dusk
-        skyGrad.addColorStop(0.25, '#c026d3'); // Magenta
-        skyGrad.addColorStop(0.5, '#f97316'); // Warm glowing orange
-        skyGrad.addColorStop(0.75, '#fde047'); // Golden sunset horizon
-        skyGrad.addColorStop(1, '#2e5b15'); // Forest transition
+        // Soft glowing twilight dusk sky: dusky violet -> soft rose -> warm peach -> golden sunset glow
+        skyGrad.addColorStop(0, '#311442');
+        skyGrad.addColorStop(0.28, '#882d62');
+        skyGrad.addColorStop(0.55, '#ea580c');
+        skyGrad.addColorStop(0.82, '#fba05a');
+        skyGrad.addColorStop(1, '#fde68a'); // Soft warm sunset horizon light
       } else {
         // Bright peaceful afternoon
         skyGrad.addColorStop(0, '#38bdf8');
@@ -5794,10 +5795,11 @@ export default function App() {
         hillGrad.addColorStop(0.35, '#0f291e');
         hillGrad.addColorStop(1, '#163812');
       } else if (isSunset) {
-        hillGrad.addColorStop(0, '#831843'); // Dusky plum hill
-        hillGrad.addColorStop(0.32, '#9a3412'); // Amber slopes
-        hillGrad.addColorStop(0.68, '#65961d'); // Warm hillside green
-        hillGrad.addColorStop(1, '#598918'); // Exactly matches sunset grass2 (#598918)!
+        // Gentle soft reddish-pinkish-orange (ורוד אדמדם כתמתם עדין) sun-kissed hill slopes
+        hillGrad.addColorStop(0, '#fb7185');    // Soft gentle rose pink / blush
+        hillGrad.addColorStop(0.32, '#fb923c'); // Warm soft reddish-apricot orange
+        hillGrad.addColorStop(0.68, '#7ea622'); // Soft sunlit golden-olive hillside
+        hillGrad.addColorStop(1, '#598918');    // Seamless transition to meadow grass2
       } else {
         hillGrad.addColorStop(0, '#0284c7');
         hillGrad.addColorStop(0.35, '#0d9488');
@@ -5814,9 +5816,9 @@ export default function App() {
       ctx.closePath();
       ctx.fill();
 
-      // Gentle mountain haze / sunset mist band
+      // Gentle mountain haze / sunset mist band (soft warm peach-golden mist)
       const mistGrad = ctx.createLinearGradient(0, height * 0.07, 0, height * 0.15);
-      mistGrad.addColorStop(0, isSunset ? 'rgba(253, 230, 138, 0.35)' : 'rgba(255, 255, 255, 0.25)');
+      mistGrad.addColorStop(0, isSunset ? 'rgba(254, 215, 170, 0.32)' : 'rgba(255, 255, 255, 0.25)');
       mistGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
       ctx.fillStyle = mistGrad;
       ctx.fillRect(0, height * 0.06, width, height * 0.09);
@@ -5827,9 +5829,9 @@ export default function App() {
         lakeGrad.addColorStop(0, 'rgba(2, 132, 199, 0.45)');
         lakeGrad.addColorStop(1, 'rgba(3, 43, 67, 0.2)');
       } else if (isSunset) {
-        lakeGrad.addColorStop(0, 'rgba(249, 115, 22, 0.55)');
-        lakeGrad.addColorStop(0.5, 'rgba(217, 70, 239, 0.3)');
-        lakeGrad.addColorStop(1, 'rgba(2, 132, 199, 0.2)');
+        lakeGrad.addColorStop(0, 'rgba(251, 146, 60, 0.45)');
+        lakeGrad.addColorStop(0.5, 'rgba(244, 114, 182, 0.25)');
+        lakeGrad.addColorStop(1, 'rgba(14, 165, 233, 0.18)');
       } else {
         lakeGrad.addColorStop(0, 'rgba(56, 189, 248, 0.5)');
         lakeGrad.addColorStop(1, 'rgba(2, 132, 199, 0.25)');
@@ -5878,7 +5880,7 @@ export default function App() {
       } else {
         // Gentle Rolling Green Hills
         const ridgeGrad = ctx.createLinearGradient(0, height * 0.08, 0, height * 0.18);
-        ridgeGrad.addColorStop(0, isNight ? '#052210' : (isSunset ? '#2c4a09' : '#14532d'));
+        ridgeGrad.addColorStop(0, isNight ? '#052210' : (isSunset ? '#365314' : '#14532d'));
         ridgeGrad.addColorStop(1, isNight ? '#0b3518' : (isSunset ? '#4d7515' : '#16a34a'));
         ctx.fillStyle = ridgeGrad;
         ctx.beginPath();
@@ -6497,10 +6499,10 @@ export default function App() {
       // Atmosphere tint (clean & lightweight)
       if (isSunset) {
         ctx.save();
-        const sunsetVignette = ctx.createRadialGradient(width * 0.25, height * 0.25, 100, width * 0.5, height * 0.5, width * 0.8);
-        sunsetVignette.addColorStop(0, 'rgba(251, 146, 60, 0.12)');
-        sunsetVignette.addColorStop(0.5, 'rgba(244, 63, 94, 0.05)');
-        sunsetVignette.addColorStop(1, 'rgba(49, 14, 65, 0.22)');
+        const sunsetVignette = ctx.createRadialGradient(width * 0.25, height * 0.25, 100, width * 0.5, height * 0.5, width * 0.85);
+        sunsetVignette.addColorStop(0, 'rgba(251, 146, 60, 0.05)');
+        sunsetVignette.addColorStop(0.5, 'rgba(253, 164, 175, 0.03)');
+        sunsetVignette.addColorStop(1, 'rgba(120, 53, 15, 0.07)');
         ctx.fillStyle = sunsetVignette;
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
