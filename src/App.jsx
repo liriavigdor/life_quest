@@ -29,9 +29,20 @@ import {
   DoorOpen,
   ZoomIn,
   ZoomOut,
-  Maximize2
+  Maximize2,
+  Compass,
+  MapPin
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
+import {
+  BIOMES,
+  VILLAGE_PRESETS,
+  STORAGE_KEY_VILLAGES_REGISTRY,
+  STORAGE_KEY_ACTIVE_VILLAGE,
+  loadVillagesRegistry,
+  saveVillagesRegistry
+} from './data/villages';
+import { WorldRealmMapModal } from './components/WorldRealmMapModal';
 import './App.css';
 
 const STORAGE_KEY_PLACED = 'lifequest_cozy_objects_v3';
@@ -308,6 +319,43 @@ export default function App() {
   const [showExpansionModal, setShowExpansionModal] = useState(false);
   const [isCultivatingMode, setIsCultivatingMode] = useState(false);
   const [frontierInspectTile, setFrontierInspectTile] = useState(null);
+
+  // Multi-Village & Biomes World Realm State (Method of Loci / Memory Sanctuaries)
+  const [currentVillageId, setCurrentVillageId] = useState(() => {
+    try {
+      return localStorage.getItem(STORAGE_KEY_ACTIVE_VILLAGE) || 'hills';
+    } catch {
+      return 'hills';
+    }
+  });
+  const currentVillageIdRef = useRef(currentVillageId);
+  useEffect(() => { currentVillageIdRef.current = currentVillageId; }, [currentVillageId]);
+
+  const [villagesRegistry, setVillagesRegistry] = useState(() => {
+    return loadVillagesRegistry(null, 2, []);
+  });
+
+  const [showRealmMap, setShowRealmMap] = useState(false);
+  const [travelingNotice, setTravelingNotice] = useState(null);
+
+  // Keep active village data in sync with villagesRegistry
+  useEffect(() => {
+    setVillagesRegistry(prev => {
+      if (!prev || !prev[currentVillageId]) return prev;
+      const updated = {
+        ...prev,
+        [currentVillageId]: {
+          ...prev[currentVillageId],
+          placedObjects,
+          expansionTier,
+          cultivatedPlots,
+          lastVisited: new Date().toISOString()
+        }
+      };
+      saveVillagesRegistry(updated);
+      return updated;
+    });
+  }, [placedObjects, expansionTier, cultivatedPlots, currentVillageId]);
 
   // Responsive camera zoom & pan state
   const [cameraZoom, setCameraZoom] = useState(() => {
@@ -1792,10 +1840,10 @@ export default function App() {
             ctx.fill();
           };
 
-          if (hasEast) drawRoadConnector(cx - 6, cy + 3, cx + 6, cy - 3, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
-          if (hasWest) drawRoadConnector(cx + 6, cy - 3, cx - 6, cy + 3, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
-          if (hasSouth) drawRoadConnector(cx - 6, cy - 3, cx + 6, cy + 3, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
-          if (hasNorth) drawRoadConnector(cx + 6, cy + 3, cx - 6, cy - 3, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+          if (hasEast) drawRoadConnector(cx - 6, cy + 3, cx + 6, cy - 3, cx + 23, cy + 5.5, cx + 11, cy + 11.5);
+          if (hasWest) drawRoadConnector(cx + 6, cy - 3, cx - 6, cy + 3, cx - 11, cy - 11.5, cx - 23, cy - 5.5);
+          if (hasSouth) drawRoadConnector(cx - 6, cy - 3, cx + 6, cy + 3, cx - 11, cy + 11.5, cx - 23, cy + 5.5);
+          if (hasNorth) drawRoadConnector(cx + 6, cy + 3, cx - 6, cy - 3, cx + 23, cy - 5.5, cx + 11, cy - 11.5);
 
           // Pass 1: Foundation base mortar bed (slightly recessed diamond with feathered edges)
           ctx.fillStyle = '#26221f';
@@ -1961,67 +2009,142 @@ export default function App() {
           const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
           const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
           const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+          const isConnected = hasEast || hasWest || hasSouth || hasNorth;
 
-          // Base earth colors
-          const dirtDark = '#45260f';
-          const dirtMid = '#78471c';
-          const dirtLight = '#9a602f';
+          // Natural earthy soil palette (warm, handcrafted, authentic road texture)
+          const soilBase = '#42220c';      // Deep damp ground underlay
+          const soilMain = '#72431a';      // Warm packed loam
+          const soilTread = '#965e2c';     // Sun-warmed center tread
+          const soilHighlight = '#b07742'; // Wheel / foot rut highlight
 
-          // Helper to draw connecting dirt strip to adjacent tiles
-          const drawDirtConnector = (p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) => {
-            ctx.fillStyle = dirtDark;
+          // Vector offsets for East-West corridor (runs along (+17, +8.5), perpendicular is (-2, +1))
+          const ew_p = { x: -6.5, y: 3.25 };
+          const ew_n = { x: 6.5, y: -3.25 };
+
+          // Vector offsets for South-North corridor (runs along (-17, +8.5), perpendicular is (+2, +1))
+          const sn_p = { x: 6.5, y: 3.25 };
+          const sn_n = { x: -6.5, y: -3.25 };
+
+          // Helper to draw a rich textured earthen corridor between two points
+          const drawEarthStrip = (x1, y1, x2, y2, off_p, off_n) => {
+            // Layer 1: Dark damp earth base
+            ctx.fillStyle = soilBase;
             ctx.beginPath();
-            ctx.moveTo(p1x, p1y + 1);
-            ctx.lineTo(p2x, p2y + 1);
-            ctx.lineTo(p3x, p3y + 1);
-            ctx.lineTo(p4x, p4y + 1);
+            ctx.moveTo(x1 + off_p.x * 1.15, y1 + off_p.y * 1.15);
+            ctx.lineTo(x2 + off_p.x * 1.15, y2 + off_p.y * 1.15);
+            ctx.lineTo(x2 + off_n.x * 1.15, y2 + off_n.y * 1.15);
+            ctx.lineTo(x1 + off_n.x * 1.15, y1 + off_n.y * 1.15);
             ctx.closePath();
             ctx.fill();
 
-            ctx.fillStyle = dirtMid;
+            // Layer 2: Main packed dirt loam
+            ctx.fillStyle = soilMain;
             ctx.beginPath();
-            ctx.moveTo(p1x, p1y);
-            ctx.lineTo(p2x, p2y);
-            ctx.lineTo(p3x, p3y);
-            ctx.lineTo(p4x, p4y);
+            ctx.moveTo(x1 + off_p.x, y1 + off_p.y);
+            ctx.lineTo(x2 + off_p.x, y2 + off_p.y);
+            ctx.lineTo(x2 + off_n.x, y2 + off_n.y);
+            ctx.lineTo(x1 + off_n.x, y1 + off_n.y);
             ctx.closePath();
             ctx.fill();
+
+            // Layer 3: Sunlit center rut / foot trodden path line
+            ctx.strokeStyle = soilTread;
+            ctx.lineWidth = 3.2;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+
+            // Double cart wheel / foot tracks along corridor
+            ctx.strokeStyle = soilHighlight;
+            ctx.lineWidth = 0.9;
+            ctx.beginPath();
+            ctx.moveTo(x1 + off_p.x * 0.45, y1 + off_p.y * 0.45);
+            ctx.lineTo(x2 + off_p.x * 0.45, y2 + off_p.y * 0.45);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x1 + off_n.x * 0.45, y1 + off_n.y * 0.45);
+            ctx.lineTo(x2 + off_n.x * 0.45, y2 + off_n.y * 0.45);
+            ctx.stroke();
           };
 
-          if (hasEast) drawDirtConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
-          if (hasWest) drawDirtConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
-          if (hasSouth) drawDirtConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
-          if (hasNorth) drawDirtConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+          if (isConnected) {
+            // Draw all connecting corridors from center (cx, cy) to edge boundaries
+            if (hasEast) drawEarthStrip(cx, cy, cx + 17, cy + 8.5, ew_p, ew_n);
+            if (hasWest) drawEarthStrip(cx - 17, cy - 8.5, cx, cy, ew_p, ew_n);
+            if (hasSouth) drawEarthStrip(cx, cy, cx - 17, cy + 8.5, sn_p, sn_n);
+            if (hasNorth) drawEarthStrip(cx + 17, cy - 8.5, cx, cy, sn_p, sn_n);
 
-          // Center packed earth bed
-          ctx.fillStyle = dirtDark;
-          ctx.beginPath();
-          ctx.ellipse(cx, cy + 1.5, 23, 11.5, 0, 0, Math.PI * 2);
-          ctx.fill();
+            // Center junction blend: smooth compact diamond hub connecting the corridors seamlessly
+            ctx.fillStyle = soilBase;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 7.5);
+            ctx.lineTo(cx + 8.5, cy);
+            ctx.lineTo(cx, cy + 7.5);
+            ctx.lineTo(cx - 8.5, cy);
+            ctx.closePath();
+            ctx.fill();
 
-          ctx.fillStyle = dirtMid;
-          ctx.beginPath();
-          ctx.ellipse(cx, cy, 21, 10.5, 0, 0, Math.PI * 2);
-          ctx.fill();
+            ctx.fillStyle = soilMain;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 6.2);
+            ctx.lineTo(cx + 7.2, cy);
+            ctx.lineTo(cx, cy + 6.2);
+            ctx.lineTo(cx - 7.2, cy);
+            ctx.closePath();
+            ctx.fill();
 
-          // Soft center path wear (lighter sun-baked soil)
-          ctx.fillStyle = dirtLight;
-          ctx.beginPath();
-          ctx.ellipse(cx, cy - 0.5, 14, 6.5, 0, 0, Math.PI * 2);
-          ctx.fill();
+            // Center wear highlight
+            ctx.fillStyle = soilTread;
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, 4.5, 2.4, 0, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            // Standalone path: Natural organic diamond clearing following the isometric angle (NOT a circle/pancake!)
+            ctx.fillStyle = soilBase;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 9);
+            ctx.lineTo(cx + 16, cy);
+            ctx.lineTo(cx, cy + 9);
+            ctx.lineTo(cx - 16, cy);
+            ctx.closePath();
+            ctx.fill();
 
-          // Embedded rustic gravel pebbles
+            ctx.fillStyle = soilMain;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 7.5);
+            ctx.lineTo(cx + 13.5, cy);
+            ctx.lineTo(cx, cy + 7.5);
+            ctx.lineTo(cx - 13.5, cy);
+            ctx.closePath();
+            ctx.fill();
+
+            // Worn center tread oval
+            ctx.fillStyle = soilTread;
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, 8, 3.8, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Footpath rut track
+            ctx.strokeStyle = soilHighlight;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(cx - 6, cy - 1);
+            ctx.lineTo(cx + 6, cy + 1);
+            ctx.stroke();
+          }
+
+          // Embedded fine rustic gravel pebbles (small, non-obtrusive, natural ground grain)
           const pebbles = [
-            { x: cx - 11, y: cy - 2, rx: 2.2, ry: 1.4, col: '#a8a29e' },
-            { x: cx + 10, y: cy + 1, rx: 2.5, ry: 1.5, col: '#78716c' },
-            { x: cx - 2, y: cy + 4, rx: 1.8, ry: 1.2, col: '#94a3b8' },
-            { x: cx + 4, y: cy - 3.5, rx: 2.0, ry: 1.3, col: '#a8a29e' },
-            { x: cx - 6, y: cy - 4, rx: 1.6, ry: 1.1, col: '#78716c' }
+            { x: cx - 4, y: cy - 2, rx: 1.4, ry: 0.9, col: '#a8a29e' },
+            { x: cx + 5, y: cy + 1.5, rx: 1.6, ry: 1.0, col: '#78716c' },
+            { x: cx - 2, y: cy + 3.2, rx: 1.2, ry: 0.8, col: '#94a3b8' }
           ];
           pebbles.forEach(pb => {
-            ctx.fillStyle = 'rgba(20, 10, 5, 0.4)';
+            ctx.fillStyle = 'rgba(15, 10, 5, 0.45)';
             ctx.beginPath();
-            ctx.ellipse(pb.x, pb.y + 0.8, pb.rx, pb.ry, 0, 0, Math.PI * 2);
+            ctx.ellipse(pb.x, pb.y + 0.6, pb.rx, pb.ry, 0, 0, Math.PI * 2);
             ctx.fill();
             ctx.fillStyle = pb.col;
             ctx.beginPath();
@@ -2029,11 +2152,10 @@ export default function App() {
             ctx.fill();
           });
 
-          // Soft border wild grass blades
+          // Soft organic verge wild grass blades (softly blending into meadow)
           ctx.fillStyle = '#65a30d';
-          ctx.fillRect(cx - 15, cy + 2, 1.2, 2.8);
-          ctx.fillRect(cx + 14, cy - 3, 1.2, 2.5);
-          ctx.fillRect(cx - 5, cy - 7, 1.2, 2.4);
+          ctx.fillRect(cx - 8, cy - 4, 1.1, 2.2);
+          ctx.fillRect(cx + 7, cy + 3, 1.1, 2.0);
 
           ctx.restore();
           break;
@@ -2044,139 +2166,223 @@ export default function App() {
           const ogx = objData.gx;
           const ogy = objData.gy;
           const objs = placedObjectsRef.current || [];
-          
-          // Check adjacent stone walls for seamless modular connections
+
+          // Check adjacent stone walls for seamless modular fortress connections
           const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
           const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
           const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
           const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
+          const isConnected = hasEast || hasWest || hasSouth || hasNorth;
 
-          // Pass 1: Scaled-down ground contact ambient shadow
-          ctx.fillStyle = 'rgba(15, 23, 42, 0.38)';
+          // Wall dimensions
+          const wallH = 11; // low fortress rampart height
+          const isStraightEW = hasEast && hasWest && !hasSouth && !hasNorth;
+          const isStraightSN = hasSouth && hasNorth && !hasEast && !hasWest;
+          const isStraightContinuous = isStraightEW || isStraightSN;
+
+          // Contact ground shadow
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
           ctx.beginPath();
-          ctx.ellipse(cx, cy + 3.5, 14, 6.5, 0, 0, Math.PI * 2);
+          ctx.ellipse(cx, cy + 2.5, 13, 5.5, 0, 0, Math.PI * 2);
           ctx.fill();
 
-          // Proportionate low fortress rampart height (down from 19 to 9.5)
-          const wallH = 9.5;
+          // Offsets for East-West curtain (slope 0.5, perpendicular is (-2, +1))
+          const ew_p = { x: -3.2, y: 1.6 };  // front-left face (sunlit)
+          const ew_n = { x: 3.2, y: -1.6 }; // back-right face
 
-          // Helper to draw an isometric wall block segment
-          const drawWallBlock = (x1, y1, x2, y2, x3, y3, x4, y4, height) => {
-            // Front-Left Face (Lit side, West)
-            const leftGrad = ctx.createLinearGradient(x4, y4 - height, x1, y1);
-            leftGrad.addColorStop(0, '#94a3b8');
-            leftGrad.addColorStop(0.5, '#64748b');
-            leftGrad.addColorStop(1, '#475569');
-            ctx.fillStyle = leftGrad;
+          // Offsets for South-North curtain (slope -0.5, perpendicular is (+2, +1))
+          const sn_p = { x: 3.2, y: 1.6 };   // front-right face (shadow)
+          const sn_n = { x: -3.2, y: -1.6 }; // back-left face
+
+          // Draw an East-West rampart curtain segment between two points
+          const drawEWCurtain = (x1, y1, x2, y2) => {
+            // Front Sunlit Face
+            const fGrad = ctx.createLinearGradient(x1 + ew_p.x, y1 + ew_p.y - wallH, x2 + ew_p.x, y2 + ew_p.y);
+            fGrad.addColorStop(0, '#94a3b8');
+            fGrad.addColorStop(0.5, '#64748b');
+            fGrad.addColorStop(1, '#475569');
+            ctx.fillStyle = fGrad;
             ctx.beginPath();
-            ctx.moveTo(x4, y4);
-            ctx.lineTo(x1, y1);
-            ctx.lineTo(x1, y1 - height);
-            ctx.lineTo(x4, y4 - height);
+            ctx.moveTo(x1 + ew_p.x, y1 + ew_p.y);
+            ctx.lineTo(x2 + ew_p.x, y2 + ew_p.y);
+            ctx.lineTo(x2 + ew_p.x, y2 + ew_p.y - wallH);
+            ctx.lineTo(x1 + ew_p.x, y1 + ew_p.y - wallH);
             ctx.closePath();
             ctx.fill();
 
-            // Front-Right Face (Shadow side, East)
-            const rightGrad = ctx.createLinearGradient(x1, y1 - height, x2, y2);
-            rightGrad.addColorStop(0, '#475569');
-            rightGrad.addColorStop(1, '#334155');
-            ctx.fillStyle = rightGrad;
-            ctx.beginPath();
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.lineTo(x2, y2 - height);
-            ctx.lineTo(x1, y1 - height);
-            ctx.closePath();
-            ctx.fill();
-
-            // Horizontal Ashlar Mortar Groove
+            // Horizontal Ashlar mortar groove
             ctx.strokeStyle = '#1e293b';
             ctx.lineWidth = 0.8;
-            [-0.5].forEach(f => {
-              ctx.beginPath();
-              ctx.moveTo(x4, y4 + height * f);
-              ctx.lineTo(x1, y1 + height * f);
-              ctx.stroke();
-              ctx.beginPath();
-              ctx.moveTo(x1, y1 + height * f);
-              ctx.lineTo(x2, y2 + height * f);
-              ctx.stroke();
-            });
-
-            // Top Cap Stone (Rhombus)
-            const capGrad = ctx.createLinearGradient(x4, y4 - height, x2, y2 - height);
-            capGrad.addColorStop(0, '#f1f5f9');
-            capGrad.addColorStop(0.4, '#e2e8f0');
-            capGrad.addColorStop(1, '#cbd5e1');
-            ctx.fillStyle = capGrad;
             ctx.beginPath();
-            ctx.moveTo(x1, y1 - height);
-            ctx.lineTo(x2, y2 - height);
-            ctx.lineTo(x3, y3 - height);
-            ctx.lineTo(x4, y4 - height);
+            ctx.moveTo(x1 + ew_p.x, y1 + ew_p.y - wallH * 0.5);
+            ctx.lineTo(x2 + ew_p.x, y2 + ew_p.y - wallH * 0.5);
+            ctx.stroke();
+
+            // Top Walkway Capstone Quad
+            const topGrad = ctx.createLinearGradient(x1 + ew_p.x, y1 + ew_p.y - wallH, x2 + ew_n.x, y2 + ew_n.y - wallH);
+            topGrad.addColorStop(0, '#f8fafc');
+            topGrad.addColorStop(0.5, '#e2e8f0');
+            topGrad.addColorStop(1, '#cbd5e1');
+            ctx.fillStyle = topGrad;
+            ctx.beginPath();
+            ctx.moveTo(x1 + ew_p.x, y1 + ew_p.y - wallH);
+            ctx.lineTo(x2 + ew_p.x, y2 + ew_p.y - wallH);
+            ctx.lineTo(x2 + ew_n.x, y2 + ew_n.y - wallH);
+            ctx.lineTo(x1 + ew_n.x, y1 + ew_n.y - wallH);
             ctx.closePath();
             ctx.fill();
 
-            // Top Cap Beveled Rim & Sunlit Keylight
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+            // Sunlit rim keylight
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.75)';
             ctx.lineWidth = 0.8;
             ctx.beginPath();
-            ctx.moveTo(x4, y4 - height);
-            ctx.lineTo(x1, y1 - height);
-            ctx.lineTo(x2, y2 - height);
+            ctx.moveTo(x1 + ew_p.x, y1 + ew_p.y - wallH);
+            ctx.lineTo(x2 + ew_p.x, y2 + ew_p.y - wallH);
             ctx.stroke();
+
+            // Parapet merlon along front rim (at midpoint)
+            const mx = (x1 + x2) / 2 + ew_p.x;
+            const my = (y1 + y2) / 2 + ew_p.y - wallH - 2.2;
+            ctx.fillStyle = '#64748b';
+            ctx.fillRect(mx - 1.4, my, 2.8, 2.2);
+            ctx.fillStyle = '#f1f5f9';
+            ctx.fillRect(mx - 1.4, my, 2.8, 0.7);
+            ctx.fillStyle = '#334155';
+            ctx.fillRect(mx + 1.4 - 0.7, my, 0.7, 2.2);
           };
 
-          // Draw connectors to neighbors first (so center pillar caps sit neatly on top)
-          if (hasEast) {
-            // Connector down-right towards (cx + 17, cy + 8.5)
-            drawWallBlock(cx + 4.5, cy + 4, cx + 17, cy + 0.5, cx + 11.5, cy - 2.5, cx, cy + 1, wallH - 0.8);
-          }
-          if (hasWest) {
-            // Connector up-left towards (cx - 17, cy - 8.5)
-            drawWallBlock(cx, cy + 1, cx + 5.5, cy - 2, cx - 7, cy - 8.5, cx - 12.5, cy - 5.5, wallH - 0.8);
-          }
-          if (hasSouth) {
-            // Connector down-left towards (cx - 17, cy + 8.5)
-            drawWallBlock(cx - 4.5, cy + 4, cx, cy + 1, cx - 11.5, cy - 2.5, cx - 17, cy + 0.5, wallH - 0.8);
-          }
-          if (hasNorth) {
-            // Connector up-right towards (cx + 17, cy - 8.5)
-            drawWallBlock(cx, cy + 1, cx + 12.5, cy - 5.5, cx + 7, cy - 8.5, cx - 5.5, cy - 2, wallH - 0.8);
-          }
+          // Draw a South-North rampart curtain segment between two points
+          const drawSNCurtain = (x1, y1, x2, y2) => {
+            // Front Shadow Face
+            const fGrad = ctx.createLinearGradient(x1 + sn_p.x, y1 + sn_p.y - wallH, x2 + sn_p.x, y2 + sn_p.y);
+            fGrad.addColorStop(0, '#475569');
+            fGrad.addColorStop(0.5, '#334155');
+            fGrad.addColorStop(1, '#1e293b');
+            ctx.fillStyle = fGrad;
+            ctx.beginPath();
+            ctx.moveTo(x1 + sn_p.x, y1 + sn_p.y);
+            ctx.lineTo(x2 + sn_p.x, y2 + sn_p.y);
+            ctx.lineTo(x2 + sn_p.x, y2 + sn_p.y - wallH);
+            ctx.lineTo(x1 + sn_p.x, y1 + sn_p.y - wallH);
+            ctx.closePath();
+            ctx.fill();
 
-          // Main Center Fortress Wall Bastion Pillar (cx, cy) - scaled down to width 15, depth 8
-          drawWallBlock(cx, cy + 2.5, cx + 7.5, cy - 1.5, cx, cy - 5.5, cx - 7.5, cy - 1.5, wallH);
+            // Horizontal Ashlar mortar groove
+            ctx.strokeStyle = '#0f172a';
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.moveTo(x1 + sn_p.x, y1 + sn_p.y - wallH * 0.5);
+            ctx.lineTo(x2 + sn_p.x, y2 + sn_p.y - wallH * 0.5);
+            ctx.stroke();
 
-          // Fortress Crenellations / Battlements (scaled down merlons)
-          const merlons = [
-            { x: cx - 6.5, y: cy - 1.5 - wallH - 1.5, w: 2.6, h: 2.2 },
-            { x: cx + 4, y: cy - 1.5 - wallH - 1.5, w: 2.6, h: 2.2 },
-            { x: cx - 1.3, y: cy + 1.8 - wallH - 1.5, w: 2.6, h: 2.2 },
-            { x: cx - 1.3, y: cy - 4.8 - wallH - 1.5, w: 2.6, h: 2.2 }
-          ];
-          merlons.forEach(m => {
+            // Top Walkway Capstone Quad
+            const topGrad = ctx.createLinearGradient(x1 + sn_n.x, y1 + sn_n.y - wallH, x2 + sn_p.x, y2 + sn_p.y - wallH);
+            topGrad.addColorStop(0, '#f1f5f9');
+            topGrad.addColorStop(0.5, '#cbd5e1');
+            topGrad.addColorStop(1, '#94a3b8');
+            ctx.fillStyle = topGrad;
+            ctx.beginPath();
+            ctx.moveTo(x1 + sn_p.x, y1 + sn_p.y - wallH);
+            ctx.lineTo(x2 + sn_p.x, y2 + sn_p.y - wallH);
+            ctx.lineTo(x2 + sn_n.x, y2 + sn_n.y - wallH);
+            ctx.lineTo(x1 + sn_n.x, y1 + sn_n.y - wallH);
+            ctx.closePath();
+            ctx.fill();
+
+            // Parapet merlon along front rim (at midpoint)
+            const mx = (x1 + x2) / 2 + sn_p.x;
+            const my = (y1 + y2) / 2 + sn_p.y - wallH - 2.2;
+            ctx.fillStyle = '#475569';
+            ctx.fillRect(mx - 1.4, my, 2.8, 2.2);
+            ctx.fillStyle = '#cbd5e1';
+            ctx.fillRect(mx - 1.4, my, 2.8, 0.7);
+            ctx.fillStyle = '#1e293b';
+            ctx.fillRect(mx + 1.4 - 0.7, my, 0.7, 2.2);
+          };
+
+          // Draw the connecting curtains
+          if (hasEast) drawEWCurtain(cx, cy, cx + 17, cy + 8.5);
+          if (hasWest) drawEWCurtain(cx - 17, cy - 8.5, cx, cy);
+          if (hasSouth) drawSNCurtain(cx, cy, cx - 17, cy + 8.5);
+          if (hasNorth) drawSNCurtain(cx + 17, cy - 8.5, cx, cy);
+
+          // Draw Center Turret Bastion if NOT a continuous straight line
+          // (At corners, T-junctions, cross-junctions, end-posts, and standalone walls)
+          if (!isStraightContinuous) {
+            const bH = wallH + 1.2;
+            const bw = 5.2; // half width
+            const bd = 2.6; // half depth
+
+            // Bastion Left Face
             ctx.fillStyle = '#64748b';
-            ctx.fillRect(m.x, m.y, m.w, m.h);
-            ctx.fillStyle = '#f1f5f9';
-            ctx.fillRect(m.x, m.y, m.w, 0.8);
+            ctx.beginPath();
+            ctx.moveTo(cx - bw, cy);
+            ctx.lineTo(cx, cy + bd);
+            ctx.lineTo(cx, cy + bd - bH);
+            ctx.lineTo(cx - bw, cy - bH);
+            ctx.closePath();
+            ctx.fill();
+
+            // Bastion Right Face
             ctx.fillStyle = '#334155';
-            ctx.fillRect(m.x + m.w - 0.8, m.y, 0.8, m.h);
-          });
+            ctx.beginPath();
+            ctx.moveTo(cx, cy + bd);
+            ctx.lineTo(cx + bw, cy);
+            ctx.lineTo(cx + bw, cy - bH);
+            ctx.lineTo(cx, cy + bd - bH);
+            ctx.closePath();
+            ctx.fill();
 
-          // Bronze Reinforcement Stud
-          ctx.fillStyle = '#f59e0b';
-          ctx.beginPath();
-          ctx.arc(cx - 3, cy - 3.5, 0.9, 0, Math.PI * 2);
-          ctx.arc(cx + 3, cy - 3.5, 0.9, 0, Math.PI * 2);
-          ctx.fill();
+            // Bastion Top Capstone
+            ctx.fillStyle = '#f1f5f9';
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - bd - bH);
+            ctx.lineTo(cx + bw, cy - bH);
+            ctx.lineTo(cx, cy + bd - bH);
+            ctx.lineTo(cx - bw, cy - bH);
+            ctx.closePath();
+            ctx.fill();
 
-          // Creeping Base Ivy / Moss
-          ctx.fillStyle = '#4d7c0f';
-          ctx.beginPath();
-          ctx.arc(cx - 5, cy + 1.5, 1.5, 0, Math.PI * 2);
-          ctx.arc(cx + 4, cy + 2, 1.3, 0, Math.PI * 2);
-          ctx.fill();
+            // Sunlit rim
+            ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+
+            // Bastion Merlons (scaled corner battlements)
+            const bMerlons = [
+              { x: cx - bw, y: cy - bH - 2.2, w: 2.2, h: 2.2 },
+              { x: cx + bw - 2.2, y: cy - bH - 2.2, w: 2.2, h: 2.2 },
+              { x: cx - 1.1, y: cy + bd - bH - 2.2, w: 2.2, h: 2.2 }
+            ];
+            bMerlons.forEach(m => {
+              ctx.fillStyle = '#64748b';
+              ctx.fillRect(m.x, m.y, m.w, m.h);
+              ctx.fillStyle = '#ffffff';
+              ctx.fillRect(m.x, m.y, m.w, 0.7);
+              ctx.fillStyle = '#1e293b';
+              ctx.fillRect(m.x + m.w - 0.7, m.y, 0.7, m.h);
+            });
+
+            // Ivy / creeping moss at bastion base
+            ctx.fillStyle = '#4d7c0f';
+            ctx.beginPath();
+            ctx.arc(cx - 3, cy + 1.2, 1.3, 0, Math.PI * 2);
+            ctx.arc(cx + 2.5, cy + 1.8, 1.1, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            // For continuous straight wall, seal the top walkway across the center hub
+            const topGrad = ctx.createLinearGradient(cx - 3, cy - wallH, cx + 3, cy - wallH);
+            topGrad.addColorStop(0, '#f1f5f9');
+            topGrad.addColorStop(1, '#cbd5e1');
+            ctx.fillStyle = topGrad;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 2.5 - wallH);
+            ctx.lineTo(cx + 4.5, cy - wallH);
+            ctx.lineTo(cx, cy + 2.5 - wallH);
+            ctx.lineTo(cx - 4.5, cy - wallH);
+            ctx.closePath();
+            ctx.fill();
+          }
 
           ctx.restore();
           break;
@@ -4441,10 +4647,10 @@ export default function App() {
             ctx.stroke();
           };
 
-          if (hasEast) drawWoodConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
-          if (hasWest) drawWoodConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
-          if (hasSouth) drawWoodConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
-          if (hasNorth) drawWoodConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+          if (hasEast) drawWoodConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 24, cy + 5, cx + 10, cy + 12);
+          if (hasWest) drawWoodConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 10, cy - 12, cx - 24, cy - 5);
+          if (hasSouth) drawWoodConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 10, cy + 12, cx - 24, cy + 5);
+          if (hasNorth) drawWoodConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 24, cy - 5, cx + 10, cy - 12);
 
           // Timber boardwalk slats across isometric tile
           const wTileGrad = ctx.createLinearGradient(sx - TILE_W / 2, sy, sx + TILE_W / 2, sy + TILE_H);
@@ -4521,10 +4727,10 @@ export default function App() {
             ctx.stroke();
           };
 
-          if (hasEast) drawBrickConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 25.5, cy + 4.25, cx + 8.5, cy + 12.75);
-          if (hasWest) drawBrickConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 25.5, cy - 4.25, cx - 8.5, cy - 12.75);
-          if (hasSouth) drawBrickConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 8.5, cy + 12.75, cx - 25.5, cy + 4.25);
-          if (hasNorth) drawBrickConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 8.5, cy - 12.75, cx + 25.5, cy - 4.25);
+          if (hasEast) drawBrickConnector(cx - 7, cy + 3.5, cx + 7, cy - 3.5, cx + 24, cy + 5, cx + 10, cy + 12);
+          if (hasWest) drawBrickConnector(cx + 7, cy - 3.5, cx - 7, cy + 3.5, cx - 10, cy - 12, cx - 24, cy - 5);
+          if (hasSouth) drawBrickConnector(cx - 7, cy - 3.5, cx + 7, cy + 3.5, cx - 10, cy + 12, cx - 24, cy + 5);
+          if (hasNorth) drawBrickConnector(cx + 7, cy + 3.5, cx - 7, cy - 3.5, cx + 24, cy - 5, cx + 10, cy - 12);
 
           // Red terracotta cobblestones / herringbone bricks
           const bpGrad = ctx.createLinearGradient(sx - TILE_W / 2, sy, sx + TILE_W / 2, sy + TILE_H);
@@ -5636,18 +5842,53 @@ export default function App() {
       ctx.closePath();
       ctx.fill();
 
-      // 3. LAYERED NATURAL FOREST (Serene Woodland Horizon Silhouette)
-      const ridgeGrad = ctx.createLinearGradient(0, height * 0.08, 0, height * 0.18);
-      ridgeGrad.addColorStop(0, isNight ? '#052210' : (isSunset ? '#2c4a09' : '#14532d'));
-      ridgeGrad.addColorStop(1, isNight ? '#0b3518' : (isSunset ? '#4d7515' : '#16a34a'));
-      ctx.fillStyle = ridgeGrad;
-      ctx.beginPath();
-      ctx.moveTo(0, height * 0.115);
-      ctx.bezierCurveTo(width * 0.35, height * 0.08, width * 0.7, height * 0.13, width, height * 0.10);
-      ctx.lineTo(width, height * 0.18);
-      ctx.lineTo(0, height * 0.18);
-      ctx.closePath();
-      ctx.fill();
+      // Active village preset and biome configuration
+      const activePreset = VILLAGE_PRESETS.find(p => p.id === currentVillageIdRef.current) || VILLAGE_PRESETS[0];
+      const isDesert = activePreset.biome === 'desert';
+      const isForest = activePreset.biome === 'forest';
+
+      // 3. LAYERED NATURAL HORIZON (Biome-tailored: Sandstone Mesa / Mystic Pine Ridge / Rolling Green Hills)
+      if (isDesert) {
+        // Sandstone Desert Mesa & Golden Dunes Ridge
+        const canyonGrad = ctx.createLinearGradient(0, height * 0.07, 0, height * 0.18);
+        canyonGrad.addColorStop(0, isNight ? '#261b15' : (isSunset ? '#9a3412' : '#c2410c'));
+        canyonGrad.addColorStop(1, isNight ? '#3b281f' : (isSunset ? '#ea580c' : '#d97706'));
+        ctx.fillStyle = canyonGrad;
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.11);
+        ctx.bezierCurveTo(width * 0.25, height * 0.08, width * 0.5, height * 0.12, width * 0.75, height * 0.09);
+        ctx.lineTo(width, height * 0.11);
+        ctx.lineTo(width, height * 0.18);
+        ctx.lineTo(0, height * 0.18);
+        ctx.closePath();
+        ctx.fill();
+      } else if (isForest) {
+        // Towering Mystic Pine & Fir Ridge
+        const ridgeGrad = ctx.createLinearGradient(0, height * 0.07, 0, height * 0.18);
+        ridgeGrad.addColorStop(0, isNight ? '#03170b' : (isSunset ? '#193306' : '#064e3b'));
+        ridgeGrad.addColorStop(1, isNight ? '#062d14' : (isSunset ? '#365314' : '#047857'));
+        ctx.fillStyle = ridgeGrad;
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.10);
+        ctx.bezierCurveTo(width * 0.3, height * 0.07, width * 0.65, height * 0.12, width, height * 0.08);
+        ctx.lineTo(width, height * 0.18);
+        ctx.lineTo(0, height * 0.18);
+        ctx.closePath();
+        ctx.fill();
+      } else {
+        // Gentle Rolling Green Hills
+        const ridgeGrad = ctx.createLinearGradient(0, height * 0.08, 0, height * 0.18);
+        ridgeGrad.addColorStop(0, isNight ? '#052210' : (isSunset ? '#2c4a09' : '#14532d'));
+        ridgeGrad.addColorStop(1, isNight ? '#0b3518' : (isSunset ? '#4d7515' : '#16a34a'));
+        ctx.fillStyle = ridgeGrad;
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.115);
+        ctx.bezierCurveTo(width * 0.35, height * 0.08, width * 0.7, height * 0.13, width, height * 0.10);
+        ctx.lineTo(width, height * 0.18);
+        ctx.lineTo(0, height * 0.18);
+        ctx.closePath();
+        ctx.fill();
+      }
 
       // 4. EXPANSIVE MEADOW CLEARING & CULTIVABLE FRONTIER TILES
       ctx.save();
@@ -5658,23 +5899,13 @@ export default function App() {
       const currentTier = expansionTierRef.current;
       const isCultivating = isCultivatingModeRef.current;
 
-      // Meadow palette tailored to time of day
-      let grass1 = '#64af32';
-      let grass2 = '#5aa32a';
-      let grass3 = '#509623';
-      let grassHi = '#6ebc37';
-
-      if (isSunset) {
-        grass1 = '#65961d';
-        grass2 = '#598918';
-        grass3 = '#4d7515';
-        grassHi = '#c2850c'; // Golden hour amber kiss
-      } else if (isNight) {
-        grass1 = '#1c4217';
-        grass2 = '#163812';
-        grass3 = '#112c0e';
-        grassHi = '#24521d';
-      }
+      // Biome-specific ground palette tailored to time of day
+      const terrainSet = activePreset.terrainColors[timeOfDay] || activePreset.terrainColors.day;
+      let grass1 = terrainSet.grass1;
+      let grass2 = terrainSet.grass2;
+      let grass3 = terrainSet.grass3;
+      let grassHi = terrainSet.grassHi;
+      const flowerColor = terrainSet.flower;
 
       // Render Meadow & Frontier Tiles via High-Speed Cache (0 math per frame)
       const currentHovered = hoveredTileRef.current;
@@ -5740,7 +5971,7 @@ export default function App() {
             drawTile(sx, sy, color, isHovered, (currentBuildItem || movingObjectRef.current) && !isOccupied);
 
             if (tile.isWildflower) {
-              ctx.fillStyle = isSunset ? '#fef08a' : '#f472b6';
+              ctx.fillStyle = flowerColor || (isSunset ? '#fef08a' : '#f472b6');
               ctx.beginPath();
               ctx.arc(sx + 3, sy + TILE_H / 2 - 2, 2.2, 0, Math.PI * 2);
               ctx.fill();
@@ -6450,6 +6681,89 @@ export default function App() {
         };
       }
     }
+  };
+
+  // Switch Active Village / Biome Realm (Method of Loci travel)
+  const handleSwitchVillage = (targetVillageId) => {
+    if (targetVillageId === currentVillageId) return;
+    const targetVillage = villagesRegistry[targetVillageId] || VILLAGE_PRESETS.find(p => p.id === targetVillageId);
+    if (!targetVillage) return;
+
+    sounds.playChime();
+    const destName = targetVillage.name || targetVillage.defaultName;
+    setTravelingNotice(`יוצא למסע אל ${destName}... 🧭✨`);
+
+    // 1. Persist current village data
+    const updatedRegistry = {
+      ...villagesRegistry,
+      [currentVillageId]: {
+        ...villagesRegistry[currentVillageId],
+        placedObjects,
+        expansionTier,
+        cultivatedPlots,
+        lastVisited: new Date().toISOString()
+      }
+    };
+    setVillagesRegistry(updatedRegistry);
+    saveVillagesRegistry(updatedRegistry);
+
+    // 2. Switch active village ID
+    setCurrentVillageId(targetVillageId);
+    currentVillageIdRef.current = targetVillageId;
+    localStorage.setItem(STORAGE_KEY_ACTIVE_VILLAGE, targetVillageId);
+
+    // 3. Load target village data
+    const newObjs = targetVillage.placedObjects || targetVillage.starterObjects || [];
+    const newTier = targetVillage.expansionTier || 1;
+    const newCultivated = targetVillage.cultivatedPlots || [];
+
+    setPlacedObjects(newObjs);
+    placedObjectsRef.current = newObjs;
+    setExpansionTier(newTier);
+    expansionTierRef.current = newTier;
+    setCultivatedPlots(newCultivated);
+    cultivatedPlotsRef.current = newCultivated;
+
+    // 4. Update grid cache and border scenery
+    tileGridCacheRef.current = computeTileGrid(newTier, newCultivated, newObjs);
+    borderSceneryRef.current = computeBorderScenery(newTier, newCultivated, newObjs);
+
+    // 5. Re-fit camera
+    handleFitToScreen();
+
+    // 6. Villager celebration upon arrival
+    const v = animEntitiesRef.current.villager;
+    if (v) {
+      v.currGx = 10;
+      v.currGy = 10;
+      v.targetGx = 10;
+      v.targetGy = 10;
+      v.hopVy = -7.5;
+      v.emote = targetVillage.icon || '🏰';
+      v.emoteTimer = 180;
+      v.bubble = {
+        text: `ברוך הבא אל ${destName}! נוף חדש, צבעים חדשים וזיכרונות חדשים! ✨`,
+        timer: 360
+      };
+    }
+
+    setTimeout(() => {
+      setTravelingNotice(null);
+    }, 1100);
+  };
+
+  const handleRenameVillage = (villageId, newName) => {
+    setVillagesRegistry(prev => {
+      const updated = {
+        ...prev,
+        [villageId]: {
+          ...prev[villageId],
+          name: newName
+        }
+      };
+      saveVillagesRegistry(updated);
+      return updated;
+    });
   };
 
   // Build institution from modal
@@ -7528,6 +7842,40 @@ export default function App() {
 
   return (
     <div className="wholesome-sanctuary-root">
+      {/* Top-Left Floating Village Realm Pill Badge */}
+      <button
+        className="village-realm-pill-hud glass-card"
+        onClick={() => {
+          sounds.playTap();
+          setShowRealmMap(true);
+        }}
+        title="מפת הממלכה והעולמות 🗺️ — לחץ להחלפת כפר ונוף"
+      >
+        <span className="realm-hud-icon">
+          {VILLAGE_PRESETS.find(p => p.id === currentVillageId)?.icon || '🌾'}
+        </span>
+        <div className="realm-hud-info">
+          <span className="realm-hud-name">
+            {villagesRegistry[currentVillageId]?.name || VILLAGE_PRESETS.find(p => p.id === currentVillageId)?.defaultName || 'הכפר שלי'}
+          </span>
+          <span className="realm-hud-badge">
+            {VILLAGE_PRESETS.find(p => p.id === currentVillageId)?.badge || 'גבעות'}
+          </span>
+        </div>
+        <Compass size={14} className="realm-hud-compass" />
+      </button>
+
+      {/* Cinematic Realm Travel Overlay */}
+      {travelingNotice && (
+        <div className="realm-travel-overlay">
+          <div className="realm-travel-card glass-card">
+            <Compass size={44} className="travel-spinner-icon" />
+            <h3>{travelingNotice}</h3>
+            <p>מעביר את הנוף, הצבעים, הצלילים והזיכרונות...</p>
+          </div>
+        </div>
+      )}
+
       {/* Sleek Right-Side Floating Control Dock (Unobtrusive & Clean) */}
       <aside className="sanctuary-side-dock" aria-label="תפריט שליטה ראשי">
         {/* 1. Core Building & Creation Control */}
@@ -7542,6 +7890,19 @@ export default function App() {
         >
           <Hammer size={20} className="text-amber" />
           <span className="dock-btn-label">בנייה</span>
+        </button>
+
+        {/* 1.2. World Realm Map & Biome Switcher */}
+        <button
+          className={`dock-btn realm-dock-btn ${showRealmMap ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowRealmMap(true);
+          }}
+          title="מפת הממלכה והעולמות 🗺️"
+        >
+          <Compass size={20} className="text-amber" />
+          <span className="dock-btn-label">מפה</span>
         </button>
 
         {/* 1.5. Dedicated Path & Road Paving Studio */}
@@ -8260,6 +8621,16 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* World Realm Map Modal (Method of Loci & Multi-Village Sanctuary) */}
+      <WorldRealmMapModal
+        isOpen={showRealmMap}
+        onClose={() => setShowRealmMap(false)}
+        currentVillageId={currentVillageId}
+        villagesRegistry={villagesRegistry}
+        onSelectVillage={handleSwitchVillage}
+        onRenameVillage={handleRenameVillage}
+      />
     </div>
   );
 }
