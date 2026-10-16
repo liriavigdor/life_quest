@@ -111,6 +111,8 @@ export function StardewInstitutionComplex({
   const [locusFormIcon, setLocusFormIcon] = useState('key');
   const [locusFormTitle, setLocusFormTitle] = useState('');
   const [locusFormNote, setLocusFormNote] = useState('');
+  const [locusFormUrgency, setLocusFormUrgency] = useState('yellow');
+  const [locusFormBizarreStory, setLocusFormBizarreStory] = useState('');
 
   // Custom Bizarre Stacking Manager Modal
   const [isStackingModalOpen, setIsStackingModalOpen] = useState(false);
@@ -222,12 +224,13 @@ export function StardewInstitutionComplex({
     };
   }, [editingLocusKey, isAddingCustomAnchor, onClose]);
 
-  // Click-to-Move (camera-aware: converts the click into world coordinates and routes through doorways)
+  // Click-to-Move (camera-aware with zoom: converts the click into world coordinates and routes through doorways)
   const handleFloorClick = (e) => {
     if (editingLocusKey || isAddingCustomAnchor) return;
+    const ZOOM = 1.35;
     const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left + camRef.current.x;
-    const clickY = e.clientY - rect.top + camRef.current.y;
+    const clickX = (e.clientX - rect.left) / ZOOM + camRef.current.x;
+    const clickY = (e.clientY - rect.top) / ZOOM + camRef.current.y;
 
     const { x: targetX, y: targetY } = snapToWalkable(clickX, clickY);
     const route = buildRoute(playerPosRef.current, { x: targetX, y: targetY });
@@ -300,7 +303,7 @@ export function StardewInstitutionComplex({
         drawCompleteVillager(ctx, {
           cx: 140,
           cy: 185,
-          scale: 0.9,
+          scale: 1.55,
           look: { skinTone: 'light', hairColor: 'auburn', hairStyle: 'slicked', glasses: 'wire_round' },
           outfit: 'blacksmith_apron',
           activity: null,
@@ -312,7 +315,7 @@ export function StardewInstitutionComplex({
         drawCompleteVillager(ctx, {
           cx: 440,
           cy: 285,
-          scale: 0.88,
+          scale: 1.5,
           look: { skinTone: 'fair', hairColor: 'green', hairStyle: 'long_wavy' },
           outfit: 'gardener_dungarees',
           activity: 'drinking_tea',
@@ -324,7 +327,7 @@ export function StardewInstitutionComplex({
         drawCompleteVillager(ctx, {
           cx: 580,
           cy: 285,
-          scale: 0.88,
+          scale: 1.5,
           look: { skinTone: 'fair', hairColor: 'purple', hairStyle: 'short_bob' },
           outfit: 'autumn_sweater',
           activity: null,
@@ -332,11 +335,11 @@ export function StardewInstitutionComplex({
           timestamp: time
         });
 
-        // 4. Main Player Character
+        // 4. Main Player Character (High-detail, well-proportioned relative to house)
         drawCompleteVillager(ctx, {
           cx: playerPosRef.current.x,
           cy: playerPosRef.current.y,
-          scale: 0.95,
+          scale: 1.7,
           outfit: currentOutfit,
           facingLeft: playerFacingLeft,
           isWalking: isPlayerWalking,
@@ -346,22 +349,23 @@ export function StardewInstitutionComplex({
         });
       }
 
-      // Smooth camera: glide the world so the villager stays centred (clamped to the outer void margin)
+      // Smooth camera: glide the world so the villager stays centered with zoom
       const stageEl = stageRef.current;
       const worldEl = worldRef.current;
       if (stageEl && worldEl) {
-        const want = computeCamera(playerPosRef.current, stageEl.clientWidth, stageEl.clientHeight);
+        const ZOOM = 1.35;
+        const want = computeCamera(playerPosRef.current, stageEl.clientWidth, stageEl.clientHeight, ZOOM);
         const cam = camRef.current;
         if (!cam.ready) {
           cam.x = want.x;
           cam.y = want.y;
           cam.ready = true;
         } else {
-          const k = Math.min(1, dt * 6);
+          const k = Math.min(1, dt * 8);
           cam.x += (want.x - cam.x) * k;
           cam.y += (want.y - cam.y) * k;
         }
-        worldEl.style.transform = `translate3d(${-(cam.x + COMPLEX_PAD)}px, ${-(cam.y + COMPLEX_PAD)}px, 0)`;
+        worldEl.style.transform = `scale(${ZOOM}) translate3d(${-cam.x}px, ${-cam.y}px, 0)`;
       }
 
       animationFrameRef.current = requestAnimationFrame(loop);
@@ -417,6 +421,8 @@ export function StardewInstitutionComplex({
       setLocusFormIcon(current.icon || 'key');
       setLocusFormTitle(current.title || '');
       setLocusFormNote(current.note || '');
+      setLocusFormUrgency(current.urgency || (locusKey === 'shelf_top' || locusKey === 'shop_counter' ? 'red' : (locusKey === 'grand_hearth' || locusKey === 'community_carpet' ? 'yellow' : 'green')));
+      setLocusFormBizarreStory(current.bizarreStory || (locusKey === 'shelf_top' ? (lociData.bizarreStory || 'משקפי השמש נפלו לתוך האבק ופתאום הטלפון צעק מתוך המגף...') : ''));
       setEditingLocusKey(locusKey);
     }
   };
@@ -428,6 +434,7 @@ export function StardewInstitutionComplex({
 
     setLociData(prev => ({
       ...prev,
+      bizarreStory: (editingLocusKey === 'shelf_top' && locusFormBizarreStory.trim()) ? locusFormBizarreStory.trim() : (prev.bizarreStory || ''),
       fixedLoci: {
         ...prev.fixedLoci,
         [editingLocusKey]: {
@@ -435,13 +442,15 @@ export function StardewInstitutionComplex({
           icon: locusFormIcon,
           title: locusFormTitle.trim(),
           note: locusFormNote.trim(),
+          urgency: locusFormUrgency,
+          bizarreStory: locusFormBizarreStory.trim(),
           lastCultivated: new Date().toISOString().split('T')[0]
         }
       }
     }));
 
     setEditingLocusKey(null);
-    showToast('עוגן ויזואלי עודכן בהצלחה ✓');
+    showToast('עוגן ויזואלי וסיפור עודכנו בהצלחה ✓');
   };
 
   const handleCultivateLocus = () => {
@@ -612,13 +621,16 @@ export function StardewInstitutionComplex({
   const activeStackItems = (lociData.bizarreStackConfig?.items || []).filter(item => !item.completed);
   const activePeg = generatePegKeyword(activeStackItems);
 
+  // Proximity to Shelf (Bizarre Story Trigger)
+  const distToShelf = Math.hypot(playerPos.x - 235, playerPos.y - 240);
+  const isNearShelf = distToShelf < 140;
+
   return (
     <div className="stardew-void-viewport" onClick={() => {
       setEditingLocusKey(null);
       setIsAddingCustomAnchor(false);
     }}>
       {/* 1. Elevated Stardew Top HUD Bar */}
-      {/* 1. Clean, Minimalist Top HUD Bar */}
       <header className="stardew-top-hud" onClick={e => e.stopPropagation()}>
         <div className="stardew-hud-left" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <button 
@@ -632,9 +644,17 @@ export function StardewInstitutionComplex({
           
           <div className="stardew-room-indicator">
             <span className="room-cottage-icon">{isGym ? '🏋️' : '🏛️'}</span>
-            <span className="room-indicator-title">
-              {isGym ? 'היכל הכושר והאימון (Gym)' : (building?.customName || catalogItem?.name || 'מתחם מוסדות הכפר')}
-            </span>
+            <div className="room-title-with-cipher">
+              <span className="room-indicator-title">
+                {isGym ? 'היכל הכושר והאימון (Gym)' : (building?.customName || catalogItem?.name || 'מחלקת לוגיסטיקה — כפר הצבא')}
+              </span>
+              <span className="room-cipher-badge">🗝️ צופן מחלקה: "אבק" • צופן כפר: "יער"</span>
+            </div>
+            <div className="urgency-room-pills">
+              <span className="urg-pill red-pill">🔴 דחוף</span>
+              <span className="urg-pill yellow-pill">🟡 בטיפול</span>
+              <span className="urg-pill green-pill">🟢 שגרה</span>
+            </div>
           </div>
         </div>
 
@@ -705,8 +725,13 @@ export function StardewInstitutionComplex({
           <div className="wall-crown-molding"></div>
           <div className="wall-wainscot-panels"></div>
 
-          {/* Left Wing: Store Wall Shelves & Notice Board */}
+          {/* Left Wing: Store Wall Shelves & Notice Board (RED ROOM / ZONE) */}
           <div className="store-wall-zone">
+            <div className="zone-urgency-plaque red-zone-plaque">
+              <span>🔴 חדר דחוף (אדום)</span>
+              <small>צופן מחלקה: אבק</small>
+            </div>
+
             <div className="store-wall-shelves-backdrop" style={{ position: 'relative' }}>
               <StoreShelvesSVG />
 
@@ -742,6 +767,32 @@ export function StardewInstitutionComplex({
                   </g>
                 </svg>
               )}
+
+              {/* Proximity Bizarre Story Callout on Shelf */}
+              {isNearShelf && (
+                <div 
+                  className="shelf-bizarre-story-callout animate-pop-in"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openLocusEditor('shelf_top');
+                  }}
+                  title="לחץ לעריכת הסיפור ההזוי והרשימה"
+                >
+                  <div className="callout-sparkle-row">
+                    <Sparkles size={14} className="text-amber" />
+                    <strong>📖 הסיפור ההזוי של המדף:</strong>
+                    <span className="callout-click-hint">✏️ עריכה</span>
+                  </div>
+                  <p className="callout-story-content">
+                    "{lociData.fixedLoci.shelf_top?.bizarreStory || lociData.bizarreStory || 'משקפי השמש נפלו לתוך האבק ופתאום הטלפון צעק מתוך המגף...'}"
+                  </p>
+                  <div className="callout-items-badges">
+                    {(lociData.fixedLoci.shelf_top?.items || ['משקפי שמש', 'טלפון', 'אבק']).map((it, idx) => (
+                      <span key={idx} className="callout-item-pill">📦 {typeof it === 'object' ? it.text : it}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Arched Window with Sunbeam */}
@@ -766,8 +817,13 @@ export function StardewInstitutionComplex({
             </div>
           </div>
 
-          {/* Center Wing: Grand Hearth Chimney */}
+          {/* Center Wing: Grand Hearth Chimney (YELLOW ROOM / ZONE) */}
           <div className="hearth-wall-zone">
+            <div className="zone-urgency-plaque yellow-zone-plaque">
+              <span>🟡 חדר בטיפול (צהוב)</span>
+              <small>משימות בתהליך</small>
+            </div>
+
             <div 
               className="grand-brick-chimney-complex"
               onClick={e => {
@@ -780,8 +836,13 @@ export function StardewInstitutionComplex({
             </div>
           </div>
 
-          {/* Right Wing: Sacred Golden Altar & Crystal */}
+          {/* Right Wing: Sacred Golden Altar & Crystal (GREEN ROOM / ZONE) */}
           <div className="shrine-wall-zone">
+            <div className="zone-urgency-plaque green-zone-plaque">
+              <span>🟢 חדר שגרה (ירוק)</span>
+              <small>עוגנים רגועים</small>
+            </div>
+
             <div 
               className="golden-altar-monument"
               onClick={e => {
@@ -799,9 +860,9 @@ export function StardewInstitutionComplex({
             LAYER 2: FLOOR CARPETS & RUNWAYS
             ========================================================= */}
         <div className="complex-floorboards-canvas">
-          {/* Central Circular Carpet */}
+          {/* Central Circular Carpet (Yellow In-Progress Zone) */}
           <div 
-            className="community-central-carpet"
+            className="community-central-carpet yellow-carpet-zone"
             onClick={e => {
               e.stopPropagation();
               openLocusEditor('community_carpet');
@@ -809,15 +870,18 @@ export function StardewInstitutionComplex({
             title="השטיח העגול — לחץ לעריכת עוגן"
           >
             <CentralCarpetSVG />
+            <div className="carpet-urgency-badge yellow-badge">🟡 בטיפול</div>
           </div>
 
-          {/* Store Welcome Rug */}
-          <div className="store-welcome-mat">
-            <span>חנות האספקה</span>
+          {/* Store Welcome Rug (Red Urgent Zone) */}
+          <div className="store-welcome-mat red-welcome-mat">
+            <span>🔴 חדר דחוף (אדום)</span>
           </div>
 
-          {/* Shrine Sacred Runner */}
-          <div className="shrine-carpet-runner"></div>
+          {/* Shrine Sacred Runner (Green Routine Zone) */}
+          <div className="shrine-carpet-runner green-runner-zone">
+            <div className="carpet-urgency-badge green-badge">🟢 שגרה ורוגע</div>
+          </div>
         </div>
 
         {/* =========================================================
@@ -1241,6 +1305,39 @@ export function StardewInstitutionComplex({
                   onChange={e => setLocusFormNote(e.target.value)}
                   rows={2}
                   placeholder="פירוט חופשי..."
+                />
+
+                <label>דחיפות המשימה / העוגן (רמזור צבעים):</label>
+                <div className="urgency-selector-row">
+                  <button
+                    type="button"
+                    className={`urgency-choice-btn red-btn ${locusFormUrgency === 'red' ? 'selected' : ''}`}
+                    onClick={() => setLocusFormUrgency('red')}
+                  >
+                    🔴 דחוף / מיידי
+                  </button>
+                  <button
+                    type="button"
+                    className={`urgency-choice-btn yellow-btn ${locusFormUrgency === 'yellow' ? 'selected' : ''}`}
+                    onClick={() => setLocusFormUrgency('yellow')}
+                  >
+                    🟡 בטיפול / פעיל
+                  </button>
+                  <button
+                    type="button"
+                    className={`urgency-choice-btn green-btn ${locusFormUrgency === 'green' ? 'selected' : ''}`}
+                    onClick={() => setLocusFormUrgency('green')}
+                  >
+                    🟢 שגרה / רגוע
+                  </button>
+                </div>
+
+                <label>הסיפור ההזוי שמקשר בין הפריטים על המדף (נחשף בהתקרבות):</label>
+                <textarea 
+                  value={locusFormBizarreStory}
+                  onChange={e => setLocusFormBizarreStory(e.target.value)}
+                  rows={3}
+                  placeholder="כתוב סיפור מצחיק, מוגזם או הזוי שמקשר בין החפצים (נחשף אוטומטית כשהדמות מתקרבת למדף)..."
                 />
 
                 <div className="form-action-row">

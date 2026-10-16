@@ -116,13 +116,15 @@ export function buildRoute(from, to) {
 }
 
 /** Top-left of the camera window (origin space) that keeps the player centred without exposing the void. */
-export function computeCamera(player, viewW, viewH) {
-  const minX = -COMPLEX_PAD + CAMERA_VOID_MARGIN;
-  const maxX = COMPLEX_WORLD_W - COMPLEX_PAD - CAMERA_VOID_MARGIN - viewW;
-  const minY = -COMPLEX_PAD + CAMERA_VOID_MARGIN;
-  const maxY = COMPLEX_WORLD_H - COMPLEX_PAD - CAMERA_VOID_MARGIN - viewH;
-  const wantX = player.x - viewW / 2;
-  const wantY = player.y - viewH / 2 - 20;
+export function computeCamera(player, viewW, viewH, zoom = 1.35) {
+  const effW = viewW / zoom;
+  const effH = viewH / zoom;
+  const minX = -30;
+  const maxX = Math.max(minX, COMPLEX_WORLD_W - COMPLEX_PAD - effW + 30);
+  const minY = -30;
+  const maxY = Math.max(minY, COMPLEX_WORLD_H - COMPLEX_PAD - effH + 30);
+  const wantX = player.x - effW / 2;
+  const wantY = player.y - effH / 2;
   const clamp = (v, lo, hi) => (hi < lo ? (lo + hi) / 2 : Math.max(lo, Math.min(hi, v)));
   return { x: clamp(wantX, minX, maxX), y: clamp(wantY, minY, maxY) };
 }

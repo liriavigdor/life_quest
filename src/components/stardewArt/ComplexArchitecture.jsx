@@ -13,16 +13,23 @@ const H = 1180;
 const PAD = 120;
 
 const FLOORS = [
-  { id: 'hall', x: 0, y: 0, w: 960, h: 520, fill: 'url(#cx-planks-v)' },
-  { id: 'eastdoor', x: 960, y: 296, w: 30, h: 88, fill: 'url(#cx-planks-h)' },
+  // 🔴 RED ROOM / ZONE: Left Store & Urgent Tasks Wing
+  { id: 'hall_red', x: 0, y: 0, w: 340, h: 520, fill: 'url(#cx-planks-red)' },
+  // 🟡 YELLOW ROOM / ZONE: Center Hearth & In-Progress Tasks Lounge
+  { id: 'hall_yellow', x: 340, y: 0, w: 350, h: 520, fill: 'url(#cx-planks-yellow)' },
+  // 🟢 GREEN ROOM / ZONE: Right Shrine & Routine / Calm Wing
+  { id: 'hall_green', x: 690, y: 0, w: 270, h: 520, fill: 'url(#cx-planks-green)' },
+  { id: 'eastdoor', x: 960, y: 296, w: 30, h: 88, fill: 'url(#cx-planks-green)' },
   { id: 'corridor', x: 986, y: 300, w: 514, h: 80, fill: 'url(#cx-planks-h)' },
-  { id: 'northdoor', x: 1195, y: 262, w: 80, h: 38, fill: 'url(#cx-planks-h)' },
-  { id: 'north', x: 1050, y: 120, w: 390, h: 142, fill: 'url(#cx-planks-d)' },
-  { id: 'southdoor', x: 1325, y: 380, w: 80, h: 38, fill: 'url(#cx-planks-h)' },
-  { id: 'south', x: 1050, y: 418, w: 390, h: 142, fill: 'url(#cx-planks-h)' },
+  { id: 'northdoor', x: 1195, y: 262, w: 80, h: 38, fill: 'url(#cx-planks-red)' },
+  // 🔴 NORTH ROOM: Dedicated Red Urgent Archive
+  { id: 'north', x: 1050, y: 120, w: 390, h: 142, fill: 'url(#cx-planks-red)' },
+  { id: 'southdoor', x: 1325, y: 380, w: 80, h: 38, fill: 'url(#cx-planks-green)' },
+  // 🟢 SOUTH ROOM: Dedicated Green Routine Parlour
+  { id: 'south', x: 1050, y: 418, w: 390, h: 142, fill: 'url(#cx-planks-green)' },
   { id: 'alcovedoor', x: 1500, y: 310, w: 30, h: 60, fill: 'url(#cx-planks-h)' },
   { id: 'alcove', x: 1530, y: 270, w: 150, h: 140, fill: 'url(#cx-planks-d)' },
-  { id: 'stairs', x: 100, y: 520, w: 100, h: 212, fill: 'url(#cx-planks-v)' },
+  { id: 'stairs', x: 100, y: 520, w: 100, h: 212, fill: 'url(#cx-planks-red)' },
   { id: 'cellar', x: 40, y: 732, w: 390, h: 188, fill: 'url(#cx-stone)' }
 ];
 
@@ -48,6 +55,45 @@ const CAPS = [
 
 const Defs = () => (
   <defs>
+    {/* 🔴 RED URGENCY PLANKS: Deep Crimson Ruby Boards */}
+    <pattern id="cx-planks-red" width="64" height="140" patternUnits="userSpaceOnUse">
+      <rect width="32" height="140" fill="#7f1d1d" />
+      <rect x="32" width="32" height="140" fill="#991b1b" />
+      <rect x="0" y="0" width="32" height="70" fill="rgba(254, 202, 202, 0.08)" />
+      <rect x="32" y="70" width="32" height="70" fill="rgba(254, 202, 202, 0.08)" />
+      <path d="M0 0V140M32 0V140M64 0V140" stroke="#450a0a" strokeWidth="1.6" opacity="0.85" />
+      <path d="M0 70H32M32 35H64M32 105H64" stroke="#450a0a" strokeWidth="1.2" opacity="0.75" />
+      <path d="M9 6V60M22 14V50M43 80V132M54 88V120" stroke="#5c0d0d" strokeWidth="0.8" opacity="0.55" />
+      <circle cx="16" cy="102" r="2.2" fill="#3b0808" opacity="0.6" />
+      <circle cx="48" cy="22" r="2" fill="#3b0808" opacity="0.6" />
+    </pattern>
+
+    {/* 🟡 YELLOW / AMBER IN-PROGRESS PLANKS: Warm Honey Amber Boards */}
+    <pattern id="cx-planks-yellow" width="64" height="140" patternUnits="userSpaceOnUse">
+      <rect width="32" height="140" fill="#d97706" />
+      <rect x="32" width="32" height="140" fill="#b45309" />
+      <rect x="0" y="0" width="32" height="70" fill="rgba(254, 240, 138, 0.12)" />
+      <rect x="32" y="70" width="32" height="70" fill="rgba(254, 240, 138, 0.12)" />
+      <path d="M0 0V140M32 0V140M64 0V140" stroke="#78350f" strokeWidth="1.6" opacity="0.85" />
+      <path d="M0 70H32M32 35H64M32 105H64" stroke="#78350f" strokeWidth="1.2" opacity="0.75" />
+      <path d="M9 6V60M22 14V50M43 80V132M54 88V120" stroke="#92400e" strokeWidth="0.8" opacity="0.55" />
+      <circle cx="16" cy="102" r="2.2" fill="#451a03" opacity="0.6" />
+      <circle cx="48" cy="22" r="2" fill="#451a03" opacity="0.6" />
+    </pattern>
+
+    {/* 🟢 GREEN ROUTINE / CALM PLANKS: Lush Forest Emerald Boards */}
+    <pattern id="cx-planks-green" width="64" height="140" patternUnits="userSpaceOnUse">
+      <rect width="32" height="140" fill="#065f46" />
+      <rect x="32" width="32" height="140" fill="#047857" />
+      <rect x="0" y="0" width="32" height="70" fill="rgba(167, 243, 208, 0.08)" />
+      <rect x="32" y="70" width="32" height="70" fill="rgba(167, 243, 208, 0.08)" />
+      <path d="M0 0V140M32 0V140M64 0V140" stroke="#022c22" strokeWidth="1.6" opacity="0.85" />
+      <path d="M0 70H32M32 35H64M32 105H64" stroke="#022c22" strokeWidth="1.2" opacity="0.75" />
+      <path d="M9 6V60M22 14V50M43 80V132M54 88V120" stroke="#064e3b" strokeWidth="0.8" opacity="0.55" />
+      <circle cx="16" cy="102" r="2.2" fill="#021c16" opacity="0.6" />
+      <circle cx="48" cy="22" r="2" fill="#021c16" opacity="0.6" />
+    </pattern>
+
     {/* Vertical hall planks */}
     <pattern id="cx-planks-v" width="64" height="140" patternUnits="userSpaceOnUse">
       <rect width="32" height="140" fill="#c47c2c" />
