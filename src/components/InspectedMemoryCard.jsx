@@ -61,15 +61,16 @@ export function InspectedMemoryCard({
   const isAnimal = !!object.isAnimal || object.type?.startsWith('animal_');
   const isPlant = ['pine_tree', 'cypress_tree', 'oak_tree', 'fruit_tree', 'sakura_tree', 'willow_tree', 'flower_garden', 'veggie_garden', 'sunflower_patch', 'bush'].includes(object.type);
   const isTotem = object.type === 'custom_totem' || object.isCustomTotem;
+  const isStoryMonument = object.type === 'story_monument' || object.isStoryMonument;
 
   // Keep state synced when a different object or animal is clicked
   useEffect(() => {
-    setCustomTitle(object.customName || catalogItem?.name || 'פינת כפר אישית');
+    setCustomTitle(object.customName || object.title || catalogItem?.name || 'פינת כפר אישית');
     setCustomEmoji(object.customEmoji || catalogItem?.defaultEmoji || (object.type === 'custom_totem' ? '🍭' : ''));
-    setMemoryText(object.memory || object.dedicatedTo || 'עוגן מרחבי אישי בכפר');
+    setMemoryText(object.storyText || object.memory || object.dedicatedTo || 'עוגן מרחבי אישי בכפר');
     setDateText(parseInitialDate());
     setIsEditing(false);
-  }, [object.animalId, object.gx, object.gy, object.type]);
+  }, [object.animalId, object.gx, object.gy, object.type, object.seed]);
 
   const handleSave = (e) => {
     e?.preventDefault();
@@ -92,8 +93,8 @@ export function InspectedMemoryCard({
     }
   };
 
-  const displayName = customTitle || catalogItem?.name || 'פינת כפר מיוחדת';
-  const displayEmoji = customEmoji || catalogItem?.emoji || (isAnimal ? '🐾' : (isTotem ? '🍭' : '🌿'));
+  const displayName = customTitle || catalogItem?.name || (isStoryMonument ? 'אנדרטת סיפור חי' : 'פינת כפר מיוחדת');
+  const displayEmoji = customEmoji || catalogItem?.emoji || (isAnimal ? '🐾' : (isTotem ? '🍭' : (isStoryMonument ? '📖' : '🌿')));
   const hasInterior = catalogItem?.hasInterior || object.hasInterior || [
     'animal_coop', 'wooden_cabin', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio'
   ].includes(object.type);
@@ -104,7 +105,11 @@ export function InspectedMemoryCard({
       <div className="memory-card-header">
         <div className="memory-card-title-group">
           <div className="memory-card-emoji-badge">
-            <span>{displayEmoji}</span>
+            {object.iconUrl ? (
+              <img src={object.iconUrl} alt="icon" style={{ width: '24px', height: '24px' }} />
+            ) : (
+              <span>{displayEmoji}</span>
+            )}
           </div>
           <div className="memory-card-titles">
             {isEditing ? (
@@ -118,8 +123,14 @@ export function InspectedMemoryCard({
             ) : (
               <h3 className="memory-card-title">{displayName}</h3>
             )}
-            {catalogItem?.name && catalogItem.name !== displayName && (
-              <span className="memory-card-sub">{catalogItem.name}</span>
+            {isStoryMonument ? (
+              <span className="memory-card-sub" style={{ color: '#f59e0b', fontWeight: 'bold' }}>
+                📖 אנדרטת סיפור חי (מקוונת)
+              </span>
+            ) : (
+              catalogItem?.name && catalogItem.name !== displayName && (
+                <span className="memory-card-sub">{catalogItem.name}</span>
+              )
             )}
           </div>
         </div>
@@ -289,6 +300,26 @@ export function InspectedMemoryCard({
             </div>
           ) : (
             <div className="memory-quote-content">
+              {object.allEntities && object.allEntities.length > 0 && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                  {object.allEntities.map((ent, idx) => (
+                    <span key={idx} style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      background: 'rgba(245, 158, 11, 0.15)',
+                      border: '1px solid rgba(245, 158, 11, 0.3)',
+                      borderRadius: '6px',
+                      padding: '2px 6px',
+                      fontSize: '11px',
+                      color: '#fef08a'
+                    }}>
+                      <span>{ent.emoji}</span>
+                      <span>{ent.name}</span>
+                    </span>
+                  ))}
+                </div>
+              )}
               <p className="memory-quote-text">
                 "{memoryText}"
               </p>

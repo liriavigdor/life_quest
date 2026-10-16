@@ -25,6 +25,8 @@ import {
   VectorAnchorToken,
   VECTOR_ANCHOR_TOKENS
 } from './stardewArt/StardewVectorAssets';
+import { BizarreStackingEngine, generatePegKeyword } from './stardewArt/BizarreStackingEngine';
+import { BizarreStackingModal } from './stardewArt/BizarreStackingModal';
 import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/ComplexArchitecture';
 import {
   COMPLEX_PAD,
@@ -44,6 +46,8 @@ export function StardewInstitutionComplex({
   currentOutfit = 'autumn_sweater',
   onSwitchToCabin
 }) {
+  const isGym = building?.type === 'gym' || catalogItem?.id === 'gym' || catalogItem?.renderType === 'gym' || building?.id === 'gym';
+
   // Persistent storage key
   const storageKey = `lifequest_institution_complex_loci_${building?.gx || 0}_${building?.gy || 0}`;
 
@@ -56,18 +60,39 @@ export function StardewInstitutionComplex({
       console.error(e);
     }
 
+    const initialGymItems = [
+      { id: '1', text: 'טלפון', completed: false },
+      { id: '2', text: 'משקפי שמש', completed: false },
+      { id: '3', text: 'חולצה להחלפה', completed: false },
+      { id: '4', text: 'בקבוק מים', completed: false },
+      { id: '5', text: 'משקולת', completed: false },
+      { id: '6', text: 'תיק אימון', completed: false }
+    ];
+
     return {
       fixedLoci: {
-        shop_counter: { id: 'shop_counter', name: 'דלפק החנות והקופה', icon: 'scroll', title: '', note: '', lastCultivated: null },
-        shelf_top: { id: 'shelf_top', name: 'מדף עליון בחנות', icon: 'potion', title: '', note: '', lastCultivated: null },
-        shelf_bottom: { id: 'shelf_bottom', name: 'מדף תחתון בחנות', icon: 'bread', title: '', note: '', lastCultivated: null },
-        produce_bin: { id: 'produce_bin', name: 'ארגז תוצרת טרייה', icon: 'wheat', title: '', note: '', lastCultivated: null },
-        notice_board: { id: 'notice_board', name: 'לוח מודעות ורשימות', icon: 'book', title: 'לוח משימות', items: [] },
-        grand_hearth: { id: 'grand_hearth', name: 'אח האבן המרכזית', icon: 'star', title: '', note: '', lastCultivated: null },
-        community_carpet: { id: 'community_carpet', name: 'השטיח העגול בסלון', icon: 'compass', title: '', note: '', lastCultivated: null },
-        tea_table: { id: 'tea_table', name: 'שולחן המפגש והתה', icon: 'coffee', title: '', note: '', lastCultivated: null },
-        golden_altar: { id: 'golden_altar', name: 'מזבח הזהב והקריסטל', icon: 'gem', title: '', note: '', lastCultivated: null },
-        shrine_benches: { id: 'shrine_benches', name: 'ספסלי הקטיפה בהיכל', icon: 'shield', title: '', note: '', lastCultivated: null }
+        shop_counter: { id: 'shop_counter', name: isGym ? 'דלפק הציוד והקבלה' : 'דלפק החנות והקופה', icon: isGym ? 'dumbbell' : 'scroll', title: '', note: '', lastCultivated: null },
+        shelf_top: { id: 'shelf_top', name: isGym ? 'לוקר עליון ומדף ציוד' : 'מדף עליון בחנות', icon: isGym ? 'backpack' : 'potion', title: '', note: '', lastCultivated: null },
+        shelf_bottom: { id: 'shelf_bottom', name: isGym ? 'מדף משקולות תחתון' : 'מדף תחתון בחנות', icon: isGym ? 'dumbbell' : 'bread', title: '', note: '', lastCultivated: null },
+        produce_bin: { id: 'produce_bin', name: isGym ? 'ארגז כדורי כוח ומגבות' : 'ארגז תוצרת טרייה', icon: isGym ? 'shield' : 'wheat', title: '', note: '', lastCultivated: null },
+        notice_board: { 
+          id: 'notice_board', 
+          name: isGym ? 'לוח תוכניות ורשימת אימון' : 'לוח מודעות ומגדל זיכרון', 
+          icon: 'book', 
+          title: isGym ? 'ציוד אימון (אבא)' : 'רשימת אימון (אבא)', 
+          items: initialGymItems
+        },
+        grand_hearth: { id: 'grand_hearth', name: isGym ? 'אח החימום וההתאוששות' : 'אח האבן המרכזית', icon: 'star', title: '', note: '', lastCultivated: null },
+        community_carpet: { id: 'community_carpet', name: isGym ? 'משטח המתיחות והתרגילים' : 'השטיח העגול בסלון', icon: 'compass', title: '', note: '', lastCultivated: null },
+        tea_table: { id: 'tea_table', name: isGym ? 'שולחן תה התאוששות וחלבון' : 'שולחן המפגש והתה', icon: 'coffee', title: '', note: '', lastCultivated: null },
+        golden_altar: { id: 'golden_altar', name: isGym ? 'במת הניצחונות והמדליות' : 'מזבח הזהב והקריסטל', icon: 'gem', title: '', note: '', lastCultivated: null },
+        shrine_benches: { id: 'shrine_benches', name: isGym ? 'ספסלי מנוחה ונשימה' : 'ספסלי הקטיפה בהיכל', icon: 'shield', title: '', note: '', lastCultivated: null }
+      },
+      bizarreStackConfig: {
+        activePresetId: isGym ? 'gym_dad' : 'gym_dad',
+        activeTitle: isGym ? 'ציוד אימון כושר של אבא 🏋️' : 'רשימת מגדל זיכרון אישי',
+        items: initialGymItems,
+        targetLocus: 'shelf_top'
       },
       customAnchors: []
     };
@@ -86,6 +111,20 @@ export function StardewInstitutionComplex({
   const [locusFormIcon, setLocusFormIcon] = useState('key');
   const [locusFormTitle, setLocusFormTitle] = useState('');
   const [locusFormNote, setLocusFormNote] = useState('');
+
+  // Custom Bizarre Stacking Manager Modal
+  const [isStackingModalOpen, setIsStackingModalOpen] = useState(false);
+
+  const handleUpdateStackConfig = (newCfg) => {
+    setLociData(prev => ({
+      ...prev,
+      bizarreStackConfig: {
+        ...(prev.bizarreStackConfig || {}),
+        ...newCfg
+      }
+    }));
+    showToast('מגדל הזיכרון עודכן בהצלחה! ⚡');
+  };
 
   // Notice board new item
   const [newBoardItem, setNewBoardItem] = useState('');
@@ -482,6 +521,59 @@ export function StardewInstitutionComplex({
     setNewBoardItem('');
   };
 
+  const handleRemoveBoardItem = (idx) => {
+    sounds.playTap?.();
+    setLociData(prev => {
+      const items = (prev.fixedLoci.notice_board?.items || []).filter((_, i) => i !== idx);
+      return {
+        ...prev,
+        fixedLoci: {
+          ...prev.fixedLoci,
+          notice_board: {
+            ...prev.fixedLoci.notice_board,
+            items
+          }
+        }
+      };
+    });
+  };
+
+  const handleClearBoardItems = () => {
+    sounds.playTap?.();
+    setLociData(prev => ({
+      ...prev,
+      fixedLoci: {
+        ...prev.fixedLoci,
+        notice_board: {
+          ...prev.fixedLoci.notice_board,
+          items: []
+        }
+      }
+    }));
+    showToast('לוח הפריטים נוקה ✓');
+  };
+
+  const handleLoadGymPreset = () => {
+    sounds.playTap?.();
+    setLociData(prev => ({
+      ...prev,
+      fixedLoci: {
+        ...prev.fixedLoci,
+        notice_board: {
+          ...prev.fixedLoci.notice_board,
+          title: 'רשימת אימון (כושר)',
+          items: [
+            { id: '1', text: 'טלפון', completed: false },
+            { id: '2', text: 'משקפי שמש', completed: false },
+            { id: '3', text: 'חולצה להחלפה', completed: false },
+            { id: '4', text: 'בקבוק מים', completed: false }
+          ]
+        }
+      }
+    }));
+    showToast('רשימת האימון נטענה אל מגדל הזיכרון! 🏋️');
+  };
+
   const handleAddCustomAnchor = (e) => {
     e?.preventDefault();
     if (!customFormTitle.trim()) return;
@@ -517,78 +609,73 @@ export function StardewInstitutionComplex({
   // Active anchors count
   const activeCount = Object.values(lociData.fixedLoci).filter(l => l.title?.trim()).length + lociData.customAnchors.length;
 
+  const activeStackItems = (lociData.bizarreStackConfig?.items || []).filter(item => !item.completed);
+  const activePeg = generatePegKeyword(activeStackItems);
+
   return (
     <div className="stardew-void-viewport" onClick={() => {
       setEditingLocusKey(null);
       setIsAddingCustomAnchor(false);
     }}>
       {/* 1. Elevated Stardew Top HUD Bar */}
+      {/* 1. Clean, Minimalist Top HUD Bar */}
       <header className="stardew-top-hud" onClick={e => e.stopPropagation()}>
-        <div className="stardew-hud-left">
+        <div className="stardew-hud-left" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <button 
             className="stardew-exit-pill-btn" 
             onClick={onClose}
             title="יציאה חזרה לחצר הכפר (Esc)"
           >
             <DoorOpen size={16} />
-            <span>יציאה אל הכפר</span>
+            <span>יציאה אל הכפר 🍃</span>
           </button>
           
           <div className="stardew-room-indicator">
-            <span className="room-cottage-icon">🏛️</span>
-            <span className="room-indicator-title">מתחם מוסדות הכפר והזיכרון</span>
+            <span className="room-cottage-icon">{isGym ? '🏋️' : '🏛️'}</span>
+            <span className="room-indicator-title">
+              {isGym ? 'היכל הכושר והאימון (Gym)' : (building?.customName || catalogItem?.name || 'מתחם מוסדות הכפר')}
+            </span>
           </div>
+        </div>
 
+        {/* Center: ONE Clean Action Button */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button 
+            className="stardew-mode-switch-btn"
+            style={{
+              background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+              border: 'none',
+              color: '#000',
+              fontWeight: 'bold',
+              padding: '7px 20px',
+              borderRadius: '20px',
+              boxShadow: '0 4px 14px rgba(245, 158, 11, 0.45)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '7px',
+              cursor: 'pointer'
+            }}
+            onClick={() => setIsStackingModalOpen(true)}
+            title="פתח חלון ליצירת דמות זיכרון מרשימה"
+          >
+            <Sparkles size={16} color="#000" />
+            <span>
+              {activePeg.word ? `דמות זיכרון: "${activePeg.word}" ⚡` : 'יצירת דמות זיכרון ⚡'}
+            </span>
+          </button>
+        </div>
+
+        <div className="stardew-hud-right">
           {onSwitchToCabin && (
             <button 
               className="stardew-mode-switch-btn"
               onClick={onSwitchToCabin}
-              title="עבור אל בקתת החווה והמשכן האישי"
+              title="עבור אל בקתת החווה"
+              style={{ fontSize: '0.8rem', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
             >
-              <span>🏡 עבור לבקתת החווה</span>
+              <span>🏡 בקתת החווה</span>
             </button>
           )}
-        </div>
-
-        {/* Center: Memory Palace Loci Quick Access Belt */}
-        <div className="stardew-toolbelt-strip">
-          <div className="toolbelt-slot active" title="דלפק החנות" onClick={() => openLocusEditor('shop_counter')}>
-            <VectorAnchorToken icon="scroll" size={24} />
-          </div>
-          <div className="toolbelt-slot" title="מדף עליון" onClick={() => openLocusEditor('shelf_top')}>
-            <VectorAnchorToken icon="potion" size={24} />
-          </div>
-          <div className="toolbelt-slot" title="מדף תחתון" onClick={() => openLocusEditor('shelf_bottom')}>
-            <VectorAnchorToken icon="bread" size={24} />
-          </div>
-          <div className="toolbelt-slot" title="אח האבן" onClick={() => openLocusEditor('grand_hearth')}>
-            <VectorAnchorToken icon="star" size={24} />
-          </div>
-          <div className="toolbelt-slot" title="מזבח הזהב" onClick={() => openLocusEditor('golden_altar')}>
-            <VectorAnchorToken icon="gem" size={24} />
-          </div>
-          <div className="toolbelt-slot" title="לוח מודעות" onClick={() => openLocusEditor('notice_board')}>
-            <VectorAnchorToken icon="book" size={24} />
-          </div>
-          <div className="toolbelt-slot" title="הוסף עוגן אישי ברצפה" onClick={() => setIsAddingCustomAnchor(true)}>
-            <VectorAnchorToken icon="compass" size={24} />
-          </div>
-        </div>
-
-        {/* Right: Cognitive Cultivation & Anchors Count */}
-        <div className="stardew-hud-right">
-          <div className="stardew-currency-box memory-counter-box" title="עוגנים ויזואליים פעילים בחלל זה">
-            <Brain size={16} className="text-amber" />
-            <span className="gold-amount">{activeCount} עוגנים</span>
-          </div>
-
-          <div className="stardew-clock-frame">
-            <div className="clock-date-row">
-              <span className="clock-sun-icon">☀️</span>
-              <span className="clock-day-label">ארמון הזיכרון</span>
-            </div>
-            <div className="clock-time-val">רענון יומי</div>
-          </div>
         </div>
       </header>
 
@@ -620,8 +707,41 @@ export function StardewInstitutionComplex({
 
           {/* Left Wing: Store Wall Shelves & Notice Board */}
           <div className="store-wall-zone">
-            <div className="store-wall-shelves-backdrop">
+            <div className="store-wall-shelves-backdrop" style={{ position: 'relative' }}>
               <StoreShelvesSVG />
+
+              {/* The Bizarre Stacking Engine overlay (if placed on shelf_top) */}
+              {((lociData.bizarreStackConfig?.targetLocus || 'shelf_top') === 'shelf_top') && activeStackItems.length > 0 && (
+                <svg 
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    overflow: 'visible',
+                    pointerEvents: 'none'
+                  }}
+                  viewBox="0 0 280 140"
+                >
+                  <g style={{ pointerEvents: 'auto', cursor: 'pointer' }} onClick={() => setIsStackingModalOpen(true)}>
+                    <BizarreStackingEngine
+                      items={activeStackItems}
+                      baseX={140}
+                      baseY={58}
+                    />
+                    {/* Floating Peg Keyword Pill Badge */}
+                    {activePeg.word && (
+                      <g transform="translate(140, -14)">
+                        <rect x="-42" y="-11" width="84" height="22" rx="11" fill="#09090b" stroke="#f59e0b" strokeWidth="1.5" />
+                        <text x="0" y="3.5" fill="#fef08a" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                          {activePeg.emoji} {activePeg.word}
+                        </text>
+                      </g>
+                    )}
+                  </g>
+                </svg>
+              )}
             </div>
 
             {/* Arched Window with Sunbeam */}
@@ -712,10 +832,42 @@ export function StardewInstitutionComplex({
             e.stopPropagation();
             openLocusEditor('shop_counter');
           }}
-          title="דלפק החנות — לחץ לעריכת עוגן"
+          title={isGym ? "דלפק הקבלה והציוד — לחץ לעריכה" : "דלפק החנות — לחץ לעריכת עוגן"}
+          style={{ position: 'relative' }}
         >
-          <div className="clerk-tag-badge">פייר (החנווני)</div>
+          <div className="clerk-tag-badge">{isGym ? 'מדריך הכושר' : 'פייר (החנווני)'}</div>
           <StoreCounterSVG />
+
+          {/* Stacking Engine on Counter if selected */}
+          {((lociData.bizarreStackConfig?.targetLocus) === 'shop_counter') && (
+            <svg 
+              style={{
+                position: 'absolute',
+                top: -30,
+                left: 30,
+                width: 100,
+                height: 120,
+                overflow: 'visible',
+                pointerEvents: 'none'
+              }}
+              viewBox="0 0 100 100"
+            >
+              <g style={{ pointerEvents: 'auto', cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); setIsStackingModalOpen(true); }}>
+                <BizarreStackingEngine
+                  items={(lociData.bizarreStackConfig?.items || []).filter(item => !item.completed)}
+                  baseX={50}
+                  baseY={72}
+                  stepY={18}
+                  itemSize={26}
+                  onItemClick={(item, idx) => {
+                    sounds.playTap?.();
+                    showToast(`חפץ ${idx + 1} במגדל: ${item.text || item}`);
+                  }}
+                />
+              </g>
+            </svg>
+          )}
+
           {lociData.fixedLoci.shop_counter?.title && (
             <div className="locus-visual-tag">
               <VectorAnchorToken icon={lociData.fixedLoci.shop_counter.icon} size={20} />
@@ -781,9 +933,41 @@ export function StardewInstitutionComplex({
             e.stopPropagation();
             openLocusEditor('tea_table');
           }}
-          title="שולחן המפגש — לחץ לעריכת עוגן"
+          title={isGym ? "שולחן ההתאוששות — לחץ לעריכה" : "שולחן המפגש — לחץ לעריכת עוגן"}
+          style={{ position: 'relative' }}
         >
           <TeaTableSVG />
+
+          {/* Stacking Engine on Tea Table if selected */}
+          {((lociData.bizarreStackConfig?.targetLocus) === 'tea_table') && (
+            <svg 
+              style={{
+                position: 'absolute',
+                top: -35,
+                left: 20,
+                width: 100,
+                height: 120,
+                overflow: 'visible',
+                pointerEvents: 'none'
+              }}
+              viewBox="0 0 100 100"
+            >
+              <g style={{ pointerEvents: 'auto', cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); setIsStackingModalOpen(true); }}>
+                <BizarreStackingEngine
+                  items={(lociData.bizarreStackConfig?.items || []).filter(item => !item.completed)}
+                  baseX={50}
+                  baseY={72}
+                  stepY={18}
+                  itemSize={26}
+                  onItemClick={(item, idx) => {
+                    sounds.playTap?.();
+                    showToast(`חפץ ${idx + 1} במגדל: ${item.text || item}`);
+                  }}
+                />
+              </g>
+            </svg>
+          )}
+
           {lociData.fixedLoci.tea_table?.title && (
             <div className="locus-visual-tag">
               <VectorAnchorToken icon={lociData.fixedLoci.tea_table.icon} size={20} />
@@ -921,17 +1105,50 @@ export function StardewInstitutionComplex({
             {/* If Notice Board: Clean Pinboard with items */}
             {editingLocusKey === 'notice_board' ? (
               <div className="notice-board-clean-editor">
+                {/* Mnemonic Engine Banner */}
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(30, 27, 75, 0.7), rgba(67, 56, 202, 0.35))',
+                  border: '1px solid rgba(129, 140, 248, 0.45)',
+                  borderRadius: '8px',
+                  padding: '9px 12px',
+                  marginBottom: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '0.82rem',
+                  color: '#e0e7ff'
+                }}>
+                  <Sparkles size={16} style={{ color: '#fbbf24', flexShrink: 0 }} />
+                  <span>
+                    <strong>מנוע השרשרת האסוציאטיבית פעיל!</strong> הפריטים נערמים עקום זה על גבי זה כמגדל ביזארי מעל מדף החנות כדי לחקוק אותם בזיכרון.
+                  </span>
+                </div>
+
                 <div className="clean-items-list">
                   {(lociData.fixedLoci.notice_board?.items || []).map((item, idx) => (
                     <div 
                       key={item.id || idx}
                       className={`clean-item-row ${item.completed ? 'is-done' : ''}`}
                       onClick={() => handleToggleBoardItem(idx)}
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
                     >
-                      <div className="item-chk">
-                        {item.completed && <Check size={14} className="text-emerald" />}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', overflow: 'hidden' }}>
+                        <div className="item-chk">
+                          {item.completed && <Check size={14} className="text-emerald" />}
+                        </div>
+                        <span className="item-txt">{item.text}</span>
                       </div>
-                      <span className="item-txt">{item.text}</span>
+                      <button 
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleRemoveBoardItem(idx);
+                        }}
+                        style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '4px' }}
+                        title="מחק פריט"
+                      >
+                        <Trash2 size={13} />
+                      </button>
                     </div>
                   ))}
                   {(lociData.fixedLoci.notice_board?.items || []).length === 0 && (
@@ -952,6 +1169,43 @@ export function StardewInstitutionComplex({
                     <span>הוסף</span>
                   </button>
                 </form>
+
+                {/* Preset Actions */}
+                <div style={{ marginTop: '12px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    onClick={handleLoadGymPreset}
+                    style={{
+                      background: 'rgba(245, 158, 11, 0.18)',
+                      border: '1px solid rgba(245, 158, 11, 0.45)',
+                      color: '#fef3c7',
+                      borderRadius: '6px',
+                      padding: '6px 10px',
+                      fontSize: '0.78rem',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '5px'
+                    }}
+                  >
+                    <span>🏋️ טען אימון כושר של אבא</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleClearBoardItems}
+                    style={{
+                      background: 'rgba(239, 68, 68, 0.12)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      color: '#fca5a5',
+                      borderRadius: '6px',
+                      padding: '6px 10px',
+                      fontSize: '0.78rem',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    נקה הכל
+                  </button>
+                </div>
               </div>
             ) : (
               /* Standard Clean Vector Locus Form */
@@ -1080,6 +1334,15 @@ export function StardewInstitutionComplex({
           </div>
         </div>
       )}
+
+      {/* 6. Custom Lists & Bizarre Stacking Engine Manager Modal */}
+      <BizarreStackingModal
+        isOpen={isStackingModalOpen}
+        onClose={() => setIsStackingModalOpen(false)}
+        stackConfig={lociData.bizarreStackConfig}
+        onUpdateStackConfig={handleUpdateStackConfig}
+        isGym={isGym}
+      />
     </div>
   );
 }

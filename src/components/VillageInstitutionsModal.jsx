@@ -70,13 +70,14 @@ export const VillageInstitutionsModal = ({
           const customCount = (parsed.customAnchors || []).length;
           return fixedCount + customCount;
         }
-      } else if (inst.id === 'community_center') {
+      } else if (inst.id === 'community_center' || inst.id === 'gym') {
         const saved = localStorage.getItem(`lifequest_institution_complex_loci_0_0`);
         if (saved) {
           const parsed = JSON.parse(saved);
           const fixedCount = Object.values(parsed.fixedLoci || {}).filter(l => l.title?.trim()).length;
           const customCount = (parsed.customAnchors || []).length;
-          return fixedCount + customCount;
+          const stackCount = (parsed.bizarreStackConfig?.items || []).length > 0 ? 1 : 0;
+          return fixedCount + customCount + stackCount;
         }
       }
     } catch {

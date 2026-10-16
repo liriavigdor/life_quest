@@ -1,10 +1,11 @@
 export const BUILD_CATEGORIES = [
   'הכל',
-  'חיות ויצורים',
+  'מוסדות הכפר',
+  'שבילים וגבולות',
   'מבנים ובתים',
+  'חיות ויצורים',
   'טבע וצמחים',
   'מים וגשרים',
-  'שבילים וגבולות',
   'פינות ישיבה ואווירה'
 ];
 
@@ -35,6 +36,19 @@ export const BUILD_CATALOG = [
     hasInterior: true,
     interiorType: 'cabin',
     emoji: '🏡'
+  },
+  {
+    id: 'gym',
+    name: 'היכל הכושר והאימון',
+    category: 'מבנים ובתים',
+    tag: 'כושר ועוצמה',
+    desc: 'היכל אימונים כפרי רחב ידיים עם משקולות, מתקני כוח ומדף ציוד למגדלי זיכרון אסוציאטיביים. ניתן להיכנס פנימה!',
+    reflectionPrompt: 'איזה ציוד או הרגל אימון תרצה לנצור כאן?',
+    costSeeds: 0,
+    renderType: 'gym',
+    hasInterior: true,
+    interiorType: 'complex',
+    emoji: '🏋️'
   },
   {
     id: 'library',
@@ -519,6 +533,19 @@ export const BUILD_CATALOG = [
     isCustomTotem: true,
     defaultEmoji: '🍭',
     emoji: '🍭'
+  },
+  {
+    id: 'story_monument',
+    name: 'אנדרטת סיפור חי (מחולל מקוון)',
+    category: 'פינות ישיבה ואווירה',
+    tag: 'בריאת סיפור',
+    desc: 'אנדרטה ייחודית הנוצרת ישירות מסיפור חופשי שכתבת, עם נכסים וקטוריים חיים מהרשת (Iconify), בסיס מפוסל והילה מונפשת!',
+    reflectionPrompt: 'איזה סיפור או זיכרון תרצה להפיח בו חיים?',
+    costSeeds: 0,
+    renderType: 'story_monument',
+    isStoryMonument: true,
+    defaultEmoji: '📖',
+    emoji: '📖'
   },
   {
     id: 'reading_bench',

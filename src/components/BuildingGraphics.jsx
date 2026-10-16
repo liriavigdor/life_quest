@@ -235,6 +235,76 @@ export function BuildingGraphics({ type, level, isSelected }) {
           </g>
         );
 
+      case 'gym':
+        return (
+          <g className="building-svg-group">
+            <defs>
+              <linearGradient id="gymRoofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f59e0b" />
+                <stop offset="60%" stopColor="#d97706" />
+                <stop offset="100%" stopColor="#78350f" />
+              </linearGradient>
+              <linearGradient id="gymMatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#dc2626" />
+                <stop offset="100%" stopColor="#7f1d1d" />
+              </linearGradient>
+            </defs>
+            {/* Ground Contact Shadow */}
+            <ellipse cx="0" cy="14" rx="55" ry="24" fill="#0f172a" fillOpacity="0.45" />
+
+            {/* Base Training Platform / Flagstone Slab */}
+            <path d="M 0,-28 L 52,-4 L 0,22 L -52,-4 Z" fill="#334155" stroke="#1e293b" strokeWidth="1.5" />
+            <path d="M -52,-4 L 0,22 L 0,26 L -52,0 Z" fill="#1e293b" />
+            <path d="M 0,22 L 52,-4 L 52,0 L 0,26 Z" fill="#0f172a" />
+            
+            {/* Rubber Training Mat Floor */}
+            <path d="M 0,-23 L 44,-3 L 0,18 L -44,-3 Z" fill="url(#gymMatGrad)" />
+            <line x1="-30" y1="-8" x2="16" y2="14" stroke="#fca5a5" strokeWidth="1" strokeOpacity="0.5" />
+
+            {/* Heavy Timber Corner Pillars */}
+            <rect x="-42" y="-55" width="8" height="50" rx="1.5" fill="#78350f" stroke="#451a03" strokeWidth="1" />
+            <rect x="34" y="-55" width="8" height="50" rx="1.5" fill="#78350f" stroke="#451a03" strokeWidth="1" />
+            <rect x="-6" y="-38" width="12" height="50" rx="1.5" fill="#92400e" stroke="#451a03" strokeWidth="1" />
+
+            {/* Iron Barbell & Dumbbell Equipment on the Floor */}
+            <g transform="translate(-16, 2) scale(0.85)">
+              <line x1="-16" y1="-2" x2="16" y2="4" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round" />
+              {/* Iron Plates Left */}
+              <circle cx="-14" cy="-2" r="7" fill="#1e293b" stroke="#0f172a" strokeWidth="1" />
+              <circle cx="-14" cy="-2" r="3" fill="#475569" />
+              {/* Iron Plates Right */}
+              <circle cx="14" cy="4" r="7" fill="#1e293b" stroke="#0f172a" strokeWidth="1" />
+              <circle cx="14" cy="4" r="3" fill="#475569" />
+            </g>
+
+            {/* Heavy Punching Bag hanging */}
+            <g transform="translate(18, -20)">
+              <line x1="0" y1="-22" x2="0" y2="-6" stroke="#64748b" strokeWidth="1.5" />
+              <rect x="-5" y="-6" width="10" height="24" rx="4" fill="#991b1b" stroke="#450a0a" strokeWidth="1.2" />
+              <line x1="-5" y1="2" x2="5" y2="2" stroke="#f87171" strokeWidth="1" />
+            </g>
+
+            {/* Isometric Peaked Pavilion Roof */}
+            <path d="M 0,-92 L 48,-56 L 0,-26 L -48,-56 Z" fill="url(#gymRoofGrad)" stroke="#451a03" strokeWidth="1.5" />
+            <path d="M 0,-92 L 48,-56 L 0,-26 Z" fill="#92400e" stroke="#451a03" strokeWidth="1" />
+            {/* Eaves Trim Line */}
+            <path d="M -48,-56 L 0,-26 L 48,-56" stroke="#fef08a" strokeWidth="1.5" fill="none" />
+
+            {/* Athletic Dumbbell Banner / Crest in the center */}
+            <g transform="translate(0, -62)">
+              <rect x="-18" y="-9" width="36" height="18" rx="4" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.2" />
+              {/* Dumbbell Icon */}
+              <line x1="-10" y1="0" x2="10" y2="0" stroke="#f8fafc" strokeWidth="2.5" strokeLinecap="round" />
+              <rect x="-12" y="-4" width="3" height="8" rx="1" fill="#f59e0b" />
+              <rect x="9" y="-4" width="3" height="8" rx="1" fill="#f59e0b" />
+            </g>
+
+            {/* Summit Flag Pennant */}
+            <line x1="0" y1="-92" x2="0" y2="-108" stroke="#cbd5e1" strokeWidth="1.5" />
+            <polygon points="0,-108 14,-103 0,-98" fill="#ef4444" />
+          </g>
+        );
+
       case 'wizardTower':
         return (
           <g className="building-svg-group">

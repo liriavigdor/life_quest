@@ -3238,6 +3238,91 @@ body, html {
   color: #fecaca;
 }
 
+.tool-toggle-btn.institutions-btn {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fde68a;
+}
+
+.tool-toggle-btn.institutions-btn:hover {
+  background: rgba(245, 158, 11, 0.28);
+  border-color: #fbbf24;
+  color: #fffbeb;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
+.tool-toggle-btn.paths-btn {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #a7f3d0;
+}
+
+.tool-toggle-btn.paths-btn:hover {
+  background: rgba(16, 185, 129, 0.28);
+  border-color: #34d399;
+  color: #ecfdf5;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Build Center Spotlight Banners */
+.build-spotlight-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.build-spotlight-bar.paths-spotlight {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.spotlight-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: right;
+  direction: rtl;
+}
+
+.spotlight-text strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #f1f5f9;
+}
+
+.spotlight-text p {
+  margin: 2px 0 0 0;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+
+.spotlight-open-btn {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.spotlight-open-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
 .card-cat-badge {
   font-size: 0.68rem;
   color: #a7f3d0;
@@ -11601,6 +11686,48 @@ body, html {
 }
 .npc-salon-tag-marker.caroline-tag { left: 415px; }
 .npc-salon-tag-marker.abigail-tag { left: 555px; }
+
+/* ==========================================================================
+   STORY TO LIVING MONUMENT GENERATOR MODAL & CONTROLS
+   ========================================================================== */
+.story-monument-modal {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.94) 0%, rgba(30, 41, 59, 0.96) 100%) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 32px rgba(245, 158, 11, 0.15) !important;
+  border-radius: 20px !important;
+}
+
+.story-textarea:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.25) !important;
+}
+
+.inspiration-chip-btn:hover {
+  background: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  color: #fef08a !important;
+  transform: translateY(-1px);
+}
+
+.story-dock-btn {
+  border-color: rgba(245, 158, 11, 0.5) !important;
+}
+
+.story-dock-btn:hover {
+  background: rgba(245, 158, 11, 0.25) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4) !important;
+}
+
+.spin-slow {
+  animation: spinSlow 2s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 
 
 

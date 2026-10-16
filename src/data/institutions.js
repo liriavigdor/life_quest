@@ -94,5 +94,24 @@ export const INSTITUTIONS_CONFIG = {
       { id: 'carved_arch', name: 'קשת אבן חצובה', defaultIcon: 'star' },
       { id: 'deep_well', name: 'באר המעמקים', defaultIcon: 'compass' }
     ]
+  },
+
+  gym: {
+    id: 'gym',
+    name: 'היכל הכושר והעוצמה (Gym)',
+    englishName: 'Gym & Kinetic Fitness Sanctuary',
+    icon: 'Dumbbell',
+    category: 'כושר, אימונים ומשמעת גופנית',
+    tag: 'עוגני אימון ותנועה',
+    desc: 'מרחב אימונים כפרי רחב ידיים עם משקולות, מתקני כוח ומדפי ציוד — המקום הייעודי להרכבת מגדלי זיכרון של רשימות אימון, ציוד ספורט והרגלי תנועה.',
+    reflectionPrompt: 'איזה אימון או הרגל גופני יטעין אותך באנרגיה היום?',
+    loci: [
+      { id: 'shelf_top', name: 'מדף עליון / לוקר ציוד (מגדל זיכרון)', defaultIcon: 'backpack' },
+      { id: 'shop_counter', name: 'דלפק הציוד והקבלה', defaultIcon: 'dumbbell' },
+      { id: 'tea_table', name: 'שולחן התאוששות ותה', defaultIcon: 'coffee' },
+      { id: 'notice_board', name: 'לוח תוכניות ורשימת אימון', defaultIcon: 'book' },
+      { id: 'grand_hearth', name: 'אח החימום המרכזית', defaultIcon: 'fire' },
+      { id: 'golden_altar', name: 'במת הניצחון והמדליות', defaultIcon: 'star' }
+    ]
   }
 };

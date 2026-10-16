@@ -51,6 +51,8 @@ import { VILLAGE_TEMPLATES } from './data/villageTemplates';
 import { WorldRealmMapModal } from './components/WorldRealmMapModal';
 import { VillageTemplatesModal } from './components/VillageTemplatesModal';
 import { CognitiveSurveyModal } from './components/CognitiveSurveyModal';
+import { StoryToMonumentModal } from './components/StoryToMonumentModal';
+import { drawStoryDiorama } from './utils/storyDioramaRenderer';
 import './App.css';
 
 const STORAGE_KEY_PLACED = 'lifequest_cozy_objects_v3';
@@ -313,6 +315,7 @@ export default function App() {
   const [showRealmMap, setShowRealmMap] = useState(false);
   const [showTemplatesModal, setShowTemplatesModal] = useState(false);
   const [showSurveyModal, setShowSurveyModal] = useState(false);
+  const [showStoryModal, setShowStoryModal] = useState(false);
   const [travelingNotice, setTravelingNotice] = useState(null);
 
   // Keep active village data in sync with villagesRegistry
@@ -890,7 +893,7 @@ export default function App() {
     ]);
     const SHADOW_RADIUS = {
       oak_tree: 26, pine_tree: 22, cypress_tree: 18, fruit_tree: 24, sakura_tree: 26, willow_tree: 28,
-      bush: 15, custom_totem: 16, animal_coop: 32, library: 34, wooden_cabin: 34, greenhouse: 32, bakery: 32,
+      bush: 15, custom_totem: 16, story_monument: 22, animal_coop: 32, library: 34, wooden_cabin: 34, greenhouse: 32, bakery: 32,
       farm: 34, crystal_mine: 30, windmill: 30, art_studio: 32, cozy_tent: 26, fountain: 26, wishing_well: 20,
       reading_bench: 18, bonfire: 14, lantern_post: 9, tea_table: 16, stone_wall: 16, wooden_fence: 16,
       floral_arch: 18, hammock: 24, sunflower_patch: 16, glow_mushrooms: 10
@@ -1686,6 +1689,11 @@ export default function App() {
           ctx.fillText(chosenSymbol, cx, cy - 25 + bobY);
 
           ctx.restore();
+          break;
+        }
+
+        case 'story_monument': {
+          drawStoryDiorama(ctx, cx, cy, objData, Date.now());
           break;
         }
 
@@ -8049,6 +8057,54 @@ export default function App() {
     setShowWardrobe(false);
   };
 
+  const handlePlaceStoryMonument = (monumentData) => {
+    let targetGx = 13, targetGy = 13;
+    const occupied = new Set(placedObjects.map(o => `${o.gx},${o.gy}`));
+    
+    // Check if player's tile or neighbor is free
+    const v = animEntitiesRef.current?.villager;
+    const baseGx = v ? Math.round(v.currGx) : 13;
+    const baseGy = v ? Math.round(v.currGy) : 13;
+
+    let found = false;
+    for (let r = 0; r < 12; r++) {
+      for (let dx = -r; dx <= r; dx++) {
+        for (let dy = -r; dy <= r; dy++) {
+          if (r > 0 && Math.abs(dx) !== r && Math.abs(dy) !== r) continue;
+          const gx = baseGx + dx;
+          const gy = baseGy + dy;
+          if (gx >= 1 && gx < GRID_SIZE - 1 && gy >= 1 && gy < GRID_SIZE - 1) {
+            if (checkClearing(gx, gy) && !occupied.has(`${gx},${gy}`)) {
+              targetGx = gx;
+              targetGy = gy;
+              found = true;
+              break;
+            }
+          }
+        }
+        if (found) break;
+      }
+      if (found) break;
+    }
+
+    const newObj = {
+      ...monumentData,
+      gx: targetGx,
+      gy: targetGy,
+      createdAt: Date.now()
+    };
+
+    setPlacedObjects(prev => [...prev, newObj]);
+    sounds.playLevelUp?.();
+
+    if (v) {
+      v.emote = '📖';
+      v.emoteTimer = 140;
+      v.bubble = { text: `אנדרטת "${newObj.title}" הוצבה בהצלחה בכפר! ✨`, timer: 280 };
+    }
+
+    setInspectedObject(newObj);
+  };
 
   return (
     <div className="wholesome-sanctuary-root">
@@ -8152,7 +8208,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Sleek Right-Side Floating Control Dock (Unobtrusive & Clean) */}
+      {/* Sleek Right-Side Floating Control Dock (Clean & Minimal: Build, Day Mode, Sound) */}
       <aside className="sanctuary-side-dock" aria-label="תפריט שליטה ראשי">
         {/* 1. Core Building & Creation Control */}
         <button
@@ -8166,88 +8222,6 @@ export default function App() {
         >
           <Hammer size={20} className="text-amber" />
           <span className="dock-btn-label">בנייה</span>
-        </button>
-
-        {/* 1.1. Village Institutions & Farmstead Depth */}
-        <button
-          className={`dock-btn institutions-dock-btn ${showInstitutionsModal ? 'active' : ''}`}
-          onClick={() => {
-            sounds.playTap();
-            setShowInstitutionsModal(true);
-          }}
-          title="מוסדות הכפר, שגשוג ועוגנים פנימיים 🌾"
-        >
-          <Wheat size={20} className="text-amber" />
-          <span className="dock-btn-label">מוסדות</span>
-        </button>
-
-        {/* 1.2. World Realm Map & Biome Switcher */}
-        <button
-          className={`dock-btn realm-dock-btn ${showRealmMap ? 'active' : ''}`}
-          onClick={() => {
-            sounds.playTap();
-            setShowRealmMap(true);
-          }}
-          title="מפת הממלכה והעולמות 🗺️"
-        >
-          <Compass size={20} className="text-amber" />
-          <span className="dock-btn-label">מפה</span>
-        </button>
-
-        {/* 1.3. Village Frameworks & Starter Templates */}
-        <button
-          className={`dock-btn templates-dock-btn ${showTemplatesModal ? 'active' : ''}`}
-          onClick={() => {
-            sounds.playTap();
-            setShowTemplatesModal(true);
-          }}
-          title="תבניות כפר ומסגרות לוגיות 🏛️"
-        >
-          <Layers size={20} className="text-amber" />
-          <span className="dock-btn-label">תבניות</span>
-        </button>
-
-        {/* 1.4. Cognitive Survey Modal Trigger */}
-        <button
-          className={`dock-btn survey-dock-btn ${showSurveyModal ? 'active' : ''}`}
-          onClick={() => {
-            sounds.playTap();
-            setShowSurveyModal(true);
-          }}
-          title="שאלון מיפוי ארץ הזכרונות 🧠 — התאם את הכפרים לתת-מודע שלך"
-        >
-          <Brain size={20} className="text-amber" />
-          <span className="dock-btn-label">מיפוי 🧠</span>
-        </button>
-
-        {/* 1.5. Dedicated Path & Road Paving Studio */}
-        <button
-          className={`dock-btn paths-dock-btn ${showPathsPalette ? 'active' : ''}`}
-          onClick={() => {
-            sounds.playTap();
-            const next = !showPathsPalette;
-            setShowPathsPalette(next);
-            if (next) {
-              setShowPlantingDrawer(false);
-              setIsDemolishMode(false);
-              setMovingObject(null);
-              // If not already holding a path/fence, select default dirt trail
-              const pathTypes = ['dirt_trail', 'cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'wooden_fence', 'stone_wall'];
-              if (!selectedBuildItem || !pathTypes.includes(selectedBuildItem.renderType)) {
-                const trailItem = BUILD_CATALOG.find(c => c.renderType === 'dirt_trail') || BUILD_CATALOG.find(c => c.renderType === 'cobblestone_road');
-                if (trailItem) {
-                  setSelectedBuildItem(trailItem);
-                  setContinuousBuild(true);
-                }
-              }
-            } else {
-              setSelectedBuildItem(null);
-            }
-          }}
-          title="סלילת שבילים וגבולות 🛤️"
-        >
-          <span style={{ fontSize: '18px', lineHeight: 1 }}>🛤️</span>
-          <span className="dock-btn-label">שבילים</span>
         </button>
 
         {/* 2. Mood & Landscape Switcher (Day / Sunset / Night) */}
@@ -8283,19 +8257,6 @@ export default function App() {
         >
           {soundMuted ? <VolumeX size={19} /> : <Volume2 size={19} />}
           <span className="dock-btn-label">{soundMuted ? 'מושתק' : 'סאונד'}</span>
-        </button>
-
-        {/* 4. Sanctuary Intentions Journal */}
-        <button
-          className="dock-btn journal-dock-btn"
-          onClick={() => {
-            sounds.playTap();
-            setShowSanctuaryJournal(true);
-          }}
-          title="יומן כוונות ומחשבות 📖"
-        >
-          <BookHeart size={19} />
-          <span className="dock-btn-label">יומן</span>
         </button>
       </aside>
 
@@ -8596,6 +8557,38 @@ export default function App() {
 
             <div className="build-mode-toggles">
               <button
+                className="tool-toggle-btn institutions-btn"
+                onClick={() => {
+                  sounds.playTap();
+                  setShowInstitutionsModal(true);
+                  setShowPlantingDrawer(false);
+                }}
+                title="מוסדות הכפר ועוגני הזיכרון 🌾"
+              >
+                <Wheat size={13} className="text-amber" />
+                <span>מוסדות 🌾</span>
+              </button>
+
+              <button
+                className={`tool-toggle-btn paths-btn ${showPathsPalette ? 'active' : ''}`}
+                onClick={() => {
+                  sounds.playTap();
+                  setShowPathsPalette(true);
+                  setShowPlantingDrawer(false);
+                  setIsDemolishMode(false);
+                  setMovingObject(null);
+                  const trailItem = BUILD_CATALOG.find(c => c.renderType === 'dirt_trail') || BUILD_CATALOG.find(c => c.renderType === 'cobblestone_road');
+                  if (trailItem) {
+                    setSelectedBuildItem(trailItem);
+                    setContinuousBuild(true);
+                  }
+                }}
+                title="סרגל סלילת שבילים וגבולות 🛤️"
+              >
+                <span>שבילים 🛤️</span>
+              </button>
+
+              <button
                 className={`tool-toggle-btn expand-btn ${isCultivatingMode ? 'active' : ''}`}
                 onClick={() => {
                   sounds.playTap();
@@ -8665,9 +8658,67 @@ export default function App() {
 
           {/* Catalog Items Grid */}
           <div className="wholesome-catalog-stack">
+            {selectedBuildCategory === 'מוסדות הכפר' && (
+              <div className="build-spotlight-bar institutions-spotlight">
+                <div className="spotlight-text">
+                  <Wheat size={18} className="text-amber" />
+                  <div>
+                    <strong>מוסדות הכפר וארמונות הזיכרון 🌾</strong>
+                    <p>מבנים מרכזיים בעלי חללים פנימיים לקידוד עוגני זיכרון, שגרה ומחשבות.</p>
+                  </div>
+                </div>
+                <button
+                  className="spotlight-open-btn"
+                  onClick={() => {
+                    sounds.playTap();
+                    setShowInstitutionsModal(true);
+                    setShowPlantingDrawer(false);
+                  }}
+                >
+                  פתח לוח מוסדות מפורט 🌾
+                </button>
+              </div>
+            )}
+
+            {selectedBuildCategory === 'שבילים וגבולות' && (
+              <div className="build-spotlight-bar paths-spotlight">
+                <div className="spotlight-text">
+                  <span style={{ fontSize: '18px' }}>🛤️</span>
+                  <div>
+                    <strong>סלילת שבילים, ריצוף וגדרות</strong>
+                    <p>חיבור בין חלקי הכפר. ניתן לבחור סוג שביל ולגרור ברצף על הלוח!</p>
+                  </div>
+                </div>
+                <button
+                  className="spotlight-open-btn"
+                  onClick={() => {
+                    sounds.playTap();
+                    setShowPathsPalette(true);
+                    setShowPlantingDrawer(false);
+                    setIsDemolishMode(false);
+                    setMovingObject(null);
+                    const trailItem = BUILD_CATALOG.find(c => c.renderType === 'dirt_trail') || BUILD_CATALOG.find(c => c.renderType === 'cobblestone_road');
+                    if (trailItem) {
+                      setSelectedBuildItem(trailItem);
+                      setContinuousBuild(true);
+                    }
+                  }}
+                >
+                  סרגל סלילה מהירה 🛤️
+                </button>
+              </div>
+            )}
+
             {BUILD_CATALOG
               .filter(item => {
-                if (selectedBuildCategory !== 'הכל' && item.category !== selectedBuildCategory) return false;
+                if (selectedBuildCategory !== 'הכל') {
+                  if (selectedBuildCategory === 'מוסדות הכפר') {
+                    const institutionTypes = ['wooden_cabin', 'animal_coop', 'gym', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio', 'veggie_garden', 'windmill', 'community_center'];
+                    if (!institutionTypes.includes(item.renderType) && item.category !== 'מוסדות הכפר') return false;
+                  } else if (item.category !== selectedBuildCategory) {
+                    return false;
+                  }
+                }
                 if (buildSearchQuery.trim()) {
                   const q = buildSearchQuery.toLowerCase();
                   return item.name.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.tag.toLowerCase().includes(q);
@@ -9001,6 +9052,13 @@ export default function App() {
         isOpen={showSurveyModal}
         onClose={() => setShowSurveyModal(false)}
         onApplyBlueprint={handleApplyBlueprint}
+      />
+
+      {/* Story to Living Monument Generator Modal */}
+      <StoryToMonumentModal
+        isOpen={showStoryModal}
+        onClose={() => setShowStoryModal(false)}
+        onPlaceMonument={handlePlaceStoryMonument}
       />
     </div>
   );

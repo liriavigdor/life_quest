@@ -917,6 +917,77 @@ export function VectorAnchorToken({ icon = 'key', size = 28, className = '' }) {
         </svg>
       );
 
+    case 'phone':
+    case '📱':
+      return (
+        <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
+          <rect x="9" y="3" width="14" height="26" rx="3.5" fill="#1e1b4b" stroke="#312e81" strokeWidth="1.2" />
+          <rect x="11" y="6" width="10" height="19" rx="1" fill="#38bdf8" fillOpacity="0.9" />
+          <line x1="14" y1="4.5" x2="18" y2="4.5" stroke="#94a3b8" strokeWidth="1" strokeLinecap="round" />
+          <circle cx="16" cy="27" r="1.2" fill="#94a3b8" />
+          <line x1="12" y1="8" x2="15" y2="8" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.8" />
+        </svg>
+      );
+
+    case 'sunglasses':
+    case '🕶️':
+      return (
+        <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
+          <path d="M 4 11 Q 16 9 28 11" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+          {/* Left Lens */}
+          <path d="M 5 12 L 13 12 C 13 18.5, 7 20, 5 16 Z" fill="#09090b" stroke="#18181b" strokeWidth="1.2" />
+          <line x1="7" y1="13" x2="11" y2="17" stroke="#38bdf8" strokeWidth="1.2" strokeOpacity="0.75" />
+          {/* Right Lens */}
+          <path d="M 19 12 L 27 12 C 27 20, 21 18.5, 19 16 Z" fill="#09090b" stroke="#18181b" strokeWidth="1.2" />
+          <line x1="21" y1="13" x2="25" y2="17" stroke="#38bdf8" strokeWidth="1.2" strokeOpacity="0.75" />
+        </svg>
+      );
+
+    case 'shirt':
+    case '👕':
+      return (
+        <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
+          <path d="M 10 7 L 13 10 L 19 10 L 22 7 L 27 10 L 24 16 L 21 15 L 21 27 L 11 27 L 11 15 L 8 16 L 5 10 Z" 
+                fill="#ef4444" stroke="#991b1b" strokeWidth="1.2" />
+          <polygon points="13,10 16,13 19,10" fill="#fee2e2" stroke="#991b1b" strokeWidth="0.6" />
+          <line x1="16" y1="14" x2="16" y2="24" stroke="#b91c1c" strokeWidth="1" strokeDasharray="1,2" />
+        </svg>
+      );
+
+    case 'water_bottle':
+    case '🍶':
+      return (
+        <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
+          <rect x="11" y="9" width="10" height="19" rx="3.5" fill="#0284c7" stroke="#0369a1" strokeWidth="1.2" />
+          <rect x="13" y="4" width="6" height="5" rx="1.5" fill="#facc15" stroke="#713f12" strokeWidth="1" />
+          <rect x="12" y="14" width="8" height="6" rx="1" fill="#e0f2fe" fillOpacity="0.4" />
+          <line x1="13" y1="10" x2="13" y2="26" stroke="#ffffff" strokeWidth="1.2" strokeOpacity="0.6" strokeLinecap="round" />
+        </svg>
+      );
+
+    case 'dumbbell':
+    case '🏋️':
+      return (
+        <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
+          <line x1="8" y1="16" x2="24" y2="16" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round" />
+          <rect x="5" y="10" width="4" height="12" rx="1.5" fill="#334155" stroke="#0f172a" strokeWidth="1" />
+          <rect x="23" y="10" width="4" height="12" rx="1.5" fill="#334155" stroke="#0f172a" strokeWidth="1" />
+          <rect x="3" y="12" width="2" height="8" rx="1" fill="#475569" />
+          <rect x="27" y="12" width="2" height="8" rx="1" fill="#475569" />
+        </svg>
+      );
+
+    case 'backpack':
+    case '🎒':
+      return (
+        <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
+          <rect x="8" y="9" width="16" height="19" rx="4" fill="#d97706" stroke="#78350f" strokeWidth="1.2" />
+          <rect x="10" y="17" width="12" height="9" rx="2" fill="#b45309" stroke="#78350f" strokeWidth="0.8" />
+          <path d="M 12 9 C 12 4, 20 4, 20 9" fill="none" stroke="#78350f" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="16" cy="14" r="1.5" fill="#fde68a" />
+        </svg>
+      );
+
     default:
       return (
         <svg width={s} height={s} viewBox="0 0 32 32" className={className} aria-hidden="true">
@@ -929,6 +1000,12 @@ export function VectorAnchorToken({ icon = 'key', size = 28, className = '' }) {
 
 // Available Token Catalog
 export const VECTOR_ANCHOR_TOKENS = [
+  { id: 'phone', label: 'טלפון', icon: 'phone' },
+  { id: 'sunglasses', label: 'משקפי שמש', icon: 'sunglasses' },
+  { id: 'shirt', label: 'חולצה', icon: 'shirt' },
+  { id: 'water_bottle', label: 'בקבוק מים', icon: 'water_bottle' },
+  { id: 'dumbbell', label: 'משקולת', icon: 'dumbbell' },
+  { id: 'backpack', label: 'תיק', icon: 'backpack' },
   { id: 'key', label: 'מפתח', icon: 'key' },
   { id: 'scroll', label: 'מגילה', icon: 'scroll' },
   { id: 'compass', label: 'מצפן', icon: 'compass' },
