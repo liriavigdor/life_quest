@@ -104,7 +104,7 @@ export function VillageGrid({ buildings, selectedBuildingId, onSelectBuilding })
                 }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  sounds.playClick();
+                  sounds.playTap();
                   onSelectBuilding(bKey);
                 }}
               >

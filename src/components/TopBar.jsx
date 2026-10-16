@@ -61,7 +61,7 @@ export function TopBar({ resources, onOpenQuests, onOpenStats, soundMuted, onTog
         <button 
           className="game-btn game-btn-gold quest-hud-btn" 
           onClick={() => {
-            sounds.playClick();
+            sounds.playTap();
             onOpenQuests();
           }}
         >

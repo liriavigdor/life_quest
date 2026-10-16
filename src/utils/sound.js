@@ -229,6 +229,40 @@ class CalmingSoundEngine {
     osc.stop(now + 0.07);
   }
 
+  // Harmonious, soothing bell chime when switching village biomes, traveling or applying a template
+  playChime() {
+    if (this.muted) return;
+    this.init();
+    if (!this.ctx) return;
+
+    const notes = [587.33, 739.99, 880.00]; // D5, F#5, A5 peaceful major triad
+    notes.forEach((freq, idx) => {
+      try {
+        const now = this.ctx.currentTime + idx * 0.07;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        osc.frequency.exponentialRampToValueAtTime(freq * 1.01, now + 0.3);
+
+        gain.gain.setValueAtTime(0.14, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.65);
+      } catch {}
+    });
+  }
+
+  // Crisp UI button click
+  playClick() {
+    this.playTap();
+  }
+
   // Gentle water splash sound when entering water
   playSplash() {
     if (this.muted) return;
@@ -506,5 +540,23 @@ class CalmingSoundEngine {
   }
 }
 
-export const sounds = new CalmingSoundEngine();
+const soundEngineInstance = new CalmingSoundEngine();
+
+// Safe Proxy guarantee: any unknown sound method will safely fall back to playTap instead of crashing
+export const sounds = new Proxy(soundEngineInstance, {
+  get(target, prop, receiver) {
+    if (prop in target) {
+      const val = Reflect.get(target, prop, receiver);
+      return typeof val === 'function' ? val.bind(target) : val;
+    }
+    if (typeof prop === 'string' && prop.startsWith('play')) {
+      return (...args) => {
+        try {
+          return target.playTap(...args);
+        } catch {}
+      };
+    }
+    return Reflect.get(target, prop, receiver);
+  }
+});
 

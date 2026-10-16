@@ -183,7 +183,7 @@ export function WorldRealmMapModal({
                           className="travel-to-village-btn"
                           onClick={(e) => {
                             e.stopPropagation();
-                            sounds.playClick();
+                            sounds.playTap();
                             onSelectVillage(preset.id);
                             onClose();
                           }}
@@ -232,7 +232,7 @@ export function WorldRealmMapModal({
                 <button
                   className="big-travel-btn"
                   onClick={() => {
-                    sounds.playClick();
+                    sounds.playTap();
                     onSelectVillage(activePreset.id);
                     onClose();
                   }}

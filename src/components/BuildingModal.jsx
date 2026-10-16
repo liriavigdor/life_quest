@@ -80,7 +80,7 @@ export function BuildingModal({
                   className={`game-btn ${canAfford ? 'game-btn-gold' : 'game-btn-disabled'}`}
                   disabled={!canAfford}
                   onClick={() => {
-                    sounds.playClick();
+                    sounds.playTap();
                     onUpgrade(buildingId, upgradeCostGold);
                   }}
                 >
