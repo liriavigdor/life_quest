@@ -152,13 +152,24 @@ export function StardewInstitutionComplex({
     setTimeout(() => setToastMessage(''), 2400);
   };
 
-  // Player Positioning & Real-time Canvas Rendering (Starts in Neutral Entrance Foyer!)
+  // Player Positioning & Real-time Canvas Rendering
   const [playerPos, setPlayerPos] = useState({ x: 595, y: 510 });
-  const [isPlayerWalking, setIsPlayerWalking] = useState(false);
-  const [playerFacingLeft, setPlayerFacingLeft] = useState(false);
+  const playerPosRef = useRef({ x: 595, y: 510 });
+  const isWalkingRef = useRef(false);
+  const facingLeftRef = useRef(false);
+  const walkCycleRef = useRef(0);
+  const heldKeysRef = useRef(new Set());
+  const destinationMarkerRef = useRef(null);
   const playerTargetRef = useRef(null);
+  const routeRef = useRef([]);
   const animationFrameRef = useRef(null);
   const canvasRef = useRef(null);
+
+  const villagerLookRef = useRef(villagerLook);
+  useEffect(() => { villagerLookRef.current = villagerLook; }, [villagerLook]);
+
+  const currentOutfitRef = useRef(currentOutfit);
+  useEffect(() => { currentOutfitRef.current = currentOutfit; }, [currentOutfit]);
 
   // Key Method State (שיטת המפתחות)
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
@@ -191,12 +202,6 @@ export function StardewInstitutionComplex({
   const stageRef = useRef(null);
   const worldRef = useRef(null);
   const [fitScale, setFitScale] = useState(1);
-  const playerPosRef = useRef({ x: 595, y: 510 });
-  const routeRef = useRef([]);
-
-  useEffect(() => {
-    playerPosRef.current = playerPos;
-  }, [playerPos]);
 
   // Dynamically calculate scale to fit the entire structure inside the screen
   useEffect(() => {
@@ -220,24 +225,22 @@ export function StardewInstitutionComplex({
     };
   }, []);
 
-  // Keyboard navigation
+  // Keyboard navigation event listeners
   useEffect(() => {
+    const validKeys = new Set([
+      'KeyW', 'KeyS', 'KeyA', 'KeyD',
+      'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'
+    ]);
+
     const handleKeyDown = (e) => {
       if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
 
-      let dx = 0;
-      let dy = 0;
-      const step = 16;
+      if (e.code === 'Space' || e.code === 'Enter') {
+        checkProximityInteraction();
+        return;
+      }
 
-      if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') dy = -step;
-      else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') dy = step;
-      else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
-        dx = -step;
-        setPlayerFacingLeft(true);
-      } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
-        dx = step;
-        setPlayerFacingLeft(false);
-      } else if (e.key === 'Escape') {
+      if (e.code === 'Escape') {
         if (editingLocusKey || isAddingCustomAnchor) {
           setEditingLocusKey(null);
           setIsAddingCustomAnchor(false);
@@ -245,33 +248,24 @@ export function StardewInstitutionComplex({
           onClose();
         }
         return;
-      } else if (e.key === ' ' || e.key === 'Enter') {
-        checkProximityInteraction();
-        return;
-      } else {
-        return;
       }
 
-      // Any manual key press cancels an in-progress click-to-move route
-      playerTargetRef.current = null;
-      routeRef.current = [];
-
-      setPlayerPos(prev => {
-        const { x: nextX, y: nextY } = resolveMove(prev, dx, dy);
-
-        if (nextX >= 570 && nextX <= 690 && nextY >= 600) {
-          showToast('יציאה לכפר 🍃');
-          setTimeout(() => onClose(), 180);
+      if (validKeys.has(e.code)) {
+        e.preventDefault();
+        heldKeysRef.current.add(e.code);
+        // Manual keyboard cancels mouse click routing immediately
+        playerTargetRef.current = null;
+        routeRef.current = [];
+        if (destinationMarkerRef.current) {
+          destinationMarkerRef.current.active = false;
         }
-
-        return { x: nextX, y: nextY };
-      });
-
-      setIsPlayerWalking(true);
+      }
     };
 
-    const handleKeyUp = () => {
-      setIsPlayerWalking(false);
+    const handleKeyUp = (e) => {
+      if (validKeys.has(e.code)) {
+        heldKeysRef.current.delete(e.code);
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -282,95 +276,203 @@ export function StardewInstitutionComplex({
     };
   }, [editingLocusKey, isAddingCustomAnchor, onClose]);
 
-  // Click-to-Move (Static full-screen coordinate mapping with multi-chamber routing)
+  // Click-to-Move with precise coordinate mapping & Stardew-style glowing pulse ring
   const handleFloorClick = (e) => {
     if (editingLocusKey || isAddingCustomAnchor) return;
-    if (!stageRef.current) return;
-    const rect = stageRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const clickX = (e.clientX - centerX) / fitScale + COMPLEX_WORLD_W / 2;
-    const clickY = (e.clientY - centerY) / fitScale + COMPLEX_WORLD_H / 2;
+    if (!worldRef.current) return;
 
-    const { x: targetX, y: targetY } = snapToWalkable(clickX, clickY);
-    const route = buildRoute(playerPosRef.current, { x: targetX, y: targetY });
+    const rect = worldRef.current.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
 
-    setPlayerFacingLeft(route[0].x < playerPosRef.current.x);
-    playerTargetRef.current = route[0];
-    routeRef.current = route.slice(1);
-    setIsPlayerWalking(true);
+    const clickX = (e.clientX - rect.left) / (rect.width / COMPLEX_WORLD_W);
+    const clickY = (e.clientY - rect.top) / (rect.height / COMPLEX_WORLD_H);
+
+    const target = snapToWalkable(clickX, clickY);
+    const curPos = playerPosRef.current;
+    const route = buildRoute(curPos, target);
+
+    if (route && route.length > 0) {
+      playerTargetRef.current = route[0];
+      routeRef.current = route.slice(1);
+      destinationMarkerRef.current = {
+        x: target.x,
+        y: target.y,
+        createdAt: performance.now(),
+        active: true
+      };
+      sounds.playTap?.();
+    }
   };
 
-  // Continuous loop: Character motion and Canvas Rendering with Native Stardew NPCs!
+  // Continuous 60fps Autonomous Physics & Canvas Rendering Engine
   useEffect(() => {
+    let isCancelled = false;
     let lastTime = performance.now();
+    let throttleTimer = 0;
 
     const loop = (time) => {
-      const dt = (time - lastTime) / 1000;
-      lastTime = time;
+      if (isCancelled) return;
 
-      if (playerTargetRef.current) {
-        const curPos = playerPosRef.current;
+      const rawDt = (time - lastTime) / 1000;
+      lastTime = time;
+      const dt = Math.min(0.06, Math.max(0.001, rawDt));
+
+      const curPos = playerPosRef.current;
+      const heldKeys = heldKeysRef.current;
+      const isTyping = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+      const walkSpeed = 235; // Agile, fluid Stardew pace (px/sec)
+
+      // 1. KEYBOARD NAVIGATION
+      if (heldKeys.size > 0 && !isTyping) {
+        let kdx = 0;
+        let kdy = 0;
+
+        if (heldKeys.has('KeyW') || heldKeys.has('ArrowUp')) kdy -= 1;
+        if (heldKeys.has('KeyS') || heldKeys.has('ArrowDown')) kdy += 1;
+        if (heldKeys.has('KeyA') || heldKeys.has('ArrowLeft')) kdx -= 1;
+        if (heldKeys.has('KeyD') || heldKeys.has('ArrowRight')) kdx += 1;
+
+        if (kdx !== 0 || kdy !== 0) {
+          const len = Math.hypot(kdx, kdy);
+          const stepDist = walkSpeed * dt;
+          const vx = (kdx / len) * stepDist;
+          const vy = (kdy / len) * stepDist;
+
+          const next = resolveMove(curPos, vx, vy);
+
+          if (kdx < 0) facingLeftRef.current = true;
+          else if (kdx > 0) facingLeftRef.current = false;
+
+          playerPosRef.current = next;
+          isWalkingRef.current = (next.x !== curPos.x || next.y !== curPos.y);
+          walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
+
+          // Village exit check
+          if (next.x >= 550 && next.x <= 640 && next.y >= 570) {
+            showToast('יציאה לכפר 🍃');
+            setTimeout(() => onClose(), 160);
+          }
+        } else {
+          isWalkingRef.current = false;
+        }
+      } 
+      // 2. CLICK-TO-MOVE PATHFINDING
+      else if (playerTargetRef.current) {
         const target = playerTargetRef.current;
         const dx = target.x - curPos.x;
         const dy = target.y - curPos.y;
         const dist = Math.hypot(dx, dy);
 
-        if (dist < 4) {
+        if (dist <= 6) {
+          playerPosRef.current = { x: target.x, y: target.y };
           if (routeRef.current.length > 0) {
             playerTargetRef.current = routeRef.current.shift();
           } else {
             playerTargetRef.current = null;
-            setIsPlayerWalking(false);
-
-            if (curPos.x >= 570 && curPos.x <= 690 && curPos.y >= 600) {
+            isWalkingRef.current = false;
+            if (destinationMarkerRef.current) {
+              destinationMarkerRef.current.active = false;
+            }
+            if (target.x >= 550 && target.x <= 640 && target.y >= 570) {
               showToast('יציאה לכפר 🍃');
-              setTimeout(() => onClose(), 180);
+              setTimeout(() => onClose(), 160);
             }
           }
-          const arrived = { x: target.x, y: target.y };
-          playerPosRef.current = arrived;
-          setPlayerPos(arrived);
         } else {
-          const speed = 240;
-          const moveDist = Math.min(dist, speed * dt);
-          const next = resolveMove(curPos, (dx / dist) * moveDist, (dy / dist) * moveDist);
+          const stepDist = Math.min(dist, walkSpeed * dt);
+          const vx = (dx / dist) * stepDist;
+          const vy = (dy / dist) * stepDist;
+
+          const next = resolveMove(curPos, vx, vy);
+
+          if (dx < 0) facingLeftRef.current = true;
+          else if (dx > 0) facingLeftRef.current = false;
 
           if (next.x === curPos.x && next.y === curPos.y) {
-            playerTargetRef.current = null;
-            routeRef.current = [];
-            setIsPlayerWalking(false);
+            if (routeRef.current.length > 0) {
+              playerTargetRef.current = routeRef.current.shift();
+            } else {
+              playerTargetRef.current = null;
+              isWalkingRef.current = false;
+              if (destinationMarkerRef.current) {
+                destinationMarkerRef.current.active = false;
+              }
+            }
           } else {
-            setPlayerFacingLeft(dx < 0);
             playerPosRef.current = next;
-            setPlayerPos(next);
+            isWalkingRef.current = true;
+            walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
           }
         }
+      } else {
+        isWalkingRef.current = false;
       }
 
-      // Draw Characters on Canvas (Player + Animated NPCs!)
+      // Throttle React state updates to ~10Hz (every 100ms) for UI station proximity badges
+      throttleTimer += dt;
+      if (throttleTimer >= 0.09) {
+        throttleTimer = 0;
+        const p = playerPosRef.current;
+        setPlayerPos({ x: Math.round(p.x), y: Math.round(p.y) });
+      }
+
+      // 3. CANVAS DRAWING (Guaranteed single draw per frame, zero ghosts)
       const canvas = canvasRef.current;
       if (canvas) {
         const ctx = canvas.getContext('2d');
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        const playerX = playerPosRef.current.x;
-        const playerY = playerPosRef.current.y;
-        const playerOnRug = isOnAreaRug(playerX, playerY);
+        // A. Draw Destination Marker
+        const marker = destinationMarkerRef.current;
+        if (marker && marker.active) {
+          const elapsed = (time - marker.createdAt) / 1000;
+          if (elapsed < 2.0) {
+            const alpha = Math.max(0, 1 - elapsed / 2.0);
+            const pulse = Math.sin(elapsed * 9) * 2.5;
+            ctx.save();
+            ctx.translate(marker.x, marker.y);
 
-        // Main Player Character (+19% proportional scale, heavy bobbing & dynamic drop shadow)
+            // Pulsing golden ring
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 18 + pulse, 9 + pulse * 0.5, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(250, 204, 21, ${alpha * 0.85})`;
+            ctx.lineWidth = 2.2;
+            ctx.setLineDash([4, 3]);
+            ctx.lineDashOffset = -elapsed * 18;
+            ctx.stroke();
+
+            // Inner soft glow
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 10, 5, 0, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(253, 224, 71, ${alpha * 0.3})`;
+            ctx.fill();
+
+            // Center spark
+            ctx.beginPath();
+            ctx.arc(0, 0, 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.9})`;
+            ctx.fill();
+
+            ctx.restore();
+          } else {
+            marker.active = false;
+          }
+        }
+
+        // B. Draw Player Character
+        const p = playerPosRef.current;
         drawCompleteVillager(ctx, {
-          cx: playerX,
-          cy: playerY,
-          scale: 2.02,
-          outfit: currentOutfit,
-          facingLeft: playerFacingLeft,
-          isWalking: isPlayerWalking,
-          walkCycle: (time * 0.012) % (Math.PI * 2),
-          look: villagerLook,
+          cx: p.x,
+          cy: p.y,
+          scale: 1.72,
+          outfit: currentOutfitRef.current,
+          facingLeft: facingLeftRef.current,
+          isWalking: isWalkingRef.current,
+          walkCycle: walkCycleRef.current % (Math.PI * 2),
+          look: villagerLookRef.current,
           timestamp: time,
-          onRug: playerOnRug
+          onRug: false
         });
       }
 
@@ -378,8 +480,15 @@ export function StardewInstitutionComplex({
     };
 
     animationFrameRef.current = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(animationFrameRef.current);
-  }, [playerFacingLeft, isPlayerWalking, currentOutfit, villagerLook, onClose]);
+
+    return () => {
+      isCancelled = true;
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    };
+  }, [onClose]);
 
   // Physical stations / loci inside the 4 chambers
   const STATIONS = {
@@ -983,24 +1092,6 @@ export function StardewInstitutionComplex({
                 </div>
               </div>
 
-              {/* Clean Proximity Tooltip when near: NO intrusive full text list! */}
-              {isNear && (
-                <div 
-                  className="furniture-proximity-bubble animate-bounce-subtle"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    sounds.playTap?.();
-                    setInspectingLockerData({
-                      roomId,
-                      roomName: pos.name,
-                      deposits: roomDeposits
-                    });
-                  }}
-                >
-                  <span className="bubble-key">Space / לחץ</span>
-                  <span className="bubble-text">פתח ארונית מגירות 🗄️</span>
-                </div>
-              )}
             </div>
           );
         })}
@@ -1024,22 +1115,6 @@ export function StardewInstitutionComplex({
 
         {/* Dynamic Warm Ambient Lamplight Pools */}
         <ComplexLightingSVG />
-
-        {/* Proximity Interaction Hint Bubble */}
-        {nearestStation && (
-          <div 
-            className="complex-proximity-bubble"
-            style={{ left: `${nearestStation.x}px`, top: `${nearestStation.y - 45}px` }}
-            onClick={(e) => {
-              e.stopPropagation();
-              checkProximityInteraction();
-            }}
-          >
-            <span className="bubble-icon">📌</span>
-            <span className="bubble-text">{nearestStation.name}</span>
-            <span className="bubble-space-key">[רווח לעריכה]</span>
-          </div>
-        )}
 
         {/* Bottom Exit Doorway Notch */}
         <div 

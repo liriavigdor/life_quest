@@ -1,372 +1,624 @@
 import React from 'react';
 
 // =========================================================================
-// PURE ARCHITECTURAL SHELL — COZY ASYMMETRIC COTTAGE (STARDEW MASTER CARPENTRY)
-// Authentic Stardew Valley Pierre's Shop / Multi-Wing Manor Architecture
+// PURE ARCHITECTURAL SHELL — INTERNAL ASYMMETRY & SEALED FRAMING ENGINE
+// Executed under [MASTER INTERIOR DECORATOR] & [THE STRUCTURAL DIRECTOR] Skills
 //
-// 1. PALETTE WARMTH & COHESION:
-//    - Deep Cedar Brown (#5c3a21) & Rich Rustic Oak (#8B5A2B) timber frames.
-//    - Soft Muted Copper (#CD7F32) highlights instead of harsh yellow streaks.
-//    - Aged Straw Cream (#EEDC82 / #ebd89f) cottage wallpaper.
-//    - Single unified rustic oak hardwood flooring across the entire layout.
-// 2. MASTER FRAMING CARPENTRY (SEAMLESS SOFT SEAMS):
-//    - Zero robotic black grid lines dividing the wood.
-//    - Continuous horizontal timber beams & wall caps with natural wood grain.
-//    - Subtle 45° miter carpentry joints at corners.
-//    - Pixel-level ambient occlusion & inner bevels for hand-carved depth.
-// 3. FLUID CORNER JOINERY:
-//    - Smooth 45° sloped perimeter walls that blend naturally into horizontal sills.
-//    - Hand-carved curved wooden brackets (corbels) softening inside corners & doorways.
-// 4. ARCHITECTURAL INDIVIDUALITY:
-//    - Deep recessed bed nook in NW wing with raised cedar step nosing.
-//    - Raised fireplace alcove in Central Hall with elevated wooden platform threshold.
-//    - 100% empty canvas — no furniture, no props, pristine structural shell.
+// 1. SEALED STRUCTURAL FRAMING (No Broken Trims / Zero Void Bleeding):
+//    - Every high wall ceiling ribbon terminates securely into a solid dark oak
+//      terminal jamb post (TerminalPost) that connects ceiling to floor.
+//    - Front low-profile sills terminate flush into corner plinths.
+//    - Every edge is capped, closed, and sealed against the black void.
+// 2. BANISH ROOM-LEVEL SYMMETRY (Strict Anti-Internal Symmetry):
+//    - Foyer: Left is 45° chamfered; right features an inset cloak alcove nook.
+//    - Grand Hall: Hearth alcove shifted off-center to the right; left side
+//      features a wide gallery wall with double windows; SW is chamfered, SE is straight.
+//    - Left Wing: NW bed nook with cedar nosing step; front-jut A2 has SW chamfer and straight SE plinth.
+//    - East Wing: North room has NW chamfer and straight NE corner with an east reading bay;
+//      South room has straight SW and deep 45° chamfered SE.
+// 3. PRISTINE SANDBOX ISOLATION:
+//    - 100% empty canvas — zero furniture, zero props, zero UI alterations.
 // =========================================================================
 
-const OUT = '#241206';        // Deep dark outline against the black void
+const OUT = '#140803';        // Deep dark outline against the black void
 const VOID = '#070504';       // Deep RPG void background
 const W = 1260;
 const H = 660;
 
-const F = 56;     // Wall face height (wallpaper + wainscot)
-const CAP = 14;   // Wall-top timber cap thickness
-const SW = 14;    // Side-wall timber cap thickness
-const SLOPE = 0.6; // Uniform diagonal sunbeam slope
+const F = 56;       // Wall face height (wallpaper + wainscot)
+const BEAM_W = 12;  // Unified dark oak timber beam width
+const SILL_W = 10;  // Unified front wall sill width
+const SLOPE = 0.6;  // Uniform diagonal sunbeam slope
 
 // -------------------------------------------------------------------------
-// 1. FLOOR GEOMETRY (Unified Oak Hardwood)
+// 1. FLOOR GEOMETRY (Asymmetric & Space-Optimized Blueprint)
 // -------------------------------------------------------------------------
 const FLOORS = [
-  [60, 118, 150, 170],    // Deep bed nook (raised)
-  [60, 170, 280, 290],    // NW wing (A1)
-  [60, 290, 180, 370],    // NW front-jutting nook (A2)
-  [280, 242, 430, 278],   // Cozy W-E corridor (C1, tight 36px)
-  [430, 140, 690, 340],   // Central Grand Hall (B)
-  [520, 112, 600, 140],   // Hearth alcove (raised)
-  [690, 292, 780, 328],   // East connector corridor (C2, tight 36px)
-  [542, 340, 578, 480],   // N-S corridor (C3, tight 36px)
-  [430, 480, 690, 590],   // Entrance Foyer (F)
-  [780, 250, 1180, 400],  // East wing north room
-  [1030, 400, 1100, 468], // East partition doorway corridor
-  [900, 468, 1180, 580],  // East wing south room
-  [505, 590, 635, 612],   // Village entrance stoop
+  // Left Wing (Urgent Wing)
+  [80, 90, 190, 150],     // Deep bed nook (raised bay)
+  [80, 150, 380, 310],    // NW wing main room (A1)
+  [80, 310, 220, 410],    // NW front-jutting nook (A2)
+  // W-E Corridor C1 (Tightened to 50px)
+  [380, 230, 430, 266],   // W-E timber corridor tunnel (36px wide)
+  // Central Grand Hall (Hearth Wing - Asymmetric Layout)
+  [430, 108, 760, 340],   // Central Grand Hall (B)
+  [610, 76, 700, 108],    // Asymmetric Off-Center Hearth alcove
+  // East Connector C2 (Tightened to 50px)
+  [760, 230, 810, 266],   // East connector corridor tunnel (36px wide)
+  // N-S Corridor C3 (80px long, 40px wide - Eliminates room collision!)
+  [575, 340, 615, 420],   // N-S connector corridor tunnel
+  // Entrance Foyer (Asymmetric Layout with Inset Cloak Alcove Nook)
+  [440, 420, 750, 570],   // Main Foyer floor
+  [750, 510, 776, 570],   // Inset cloak alcove nook floor
+  [535, 570, 655, 594],   // Village entrance stoop
+  // East Wing (Sanctuary Wing - Asymmetric Layout)
+  [810, 170, 1180, 340],  // East wing north room
+  [970, 340, 1026, 420],  // Asymmetric partition doorway tunnel (80px long, 56px wide)
+  [880, 420, 1180, 570],  // East wing south room
 ];
 
-// 45° Corner Floor Cuts (Removing triangular corners to void)
+// Asymmetric Corner Floor Cuts
 const FLOOR_CUTS = [
-  [[60, 334], [60, 370], [96, 370]],
-  [[430, 554], [430, 590], [466, 590]],
-  [[690, 554], [690, 590], [654, 590]],
-  [[1180, 540], [1180, 580], [1140, 580]],
+  // Left Wing A2 front-jut: SW chamfer cut only (SE is straight plinth)
+  [[80, 374], [80, 410], [116, 410]],
+
+  // Foyer: SW chamfer cut only (SE has inset cloak nook!)
+  [[440, 534], [440, 570], [476, 570]],
+
+  // East South Room: SE chamfer cut only (SW is straight!)
+  [[1144, 570], [1180, 570], [1180, 534]],
+
+  // Inner chamfer cuts:
+  // Bed Nook back corners:
+  [[80, 90], [106, 90], [80, 116]],
+  [[190, 90], [164, 90], [190, 116]],
+  // Left Wing NE:
+  [[354, 150], [380, 150], [380, 176]],
+  // Hearth Alcove corners (Off-Center):
+  [[610, 76], [626, 76], [610, 92]],
+  [[700, 76], [684, 76], [700, 92]],
+  // Grand Hall back corners:
+  [[430, 108], [454, 108], [430, 132]],
+  [[760, 108], [736, 108], [760, 132]],
+  // Grand Hall SW front chamfer cut only (SE is straight):
+  [[430, 316], [430, 340], [454, 340]],
+  // Foyer back NW chamfer cut only (NE is straight):
+  [[440, 420], [464, 420], [440, 444]],
+  // East North Room back NW chamfer cut only (NE is straight):
+  [[810, 170], [834, 170], [810, 194]],
 ];
 
 // -------------------------------------------------------------------------
-// 2. WALL FACES (Wallpaper + Cedar Wainscot)
+// 2. ASYMMETRIC UNIFIED POLY-WALL PATHS (Completely Sealed Boundaries)
 // -------------------------------------------------------------------------
-const FACES = [
-  { id: 'nk', x1: 60, x2: 150, base: 118, skipL: true, skipR: true },
-  { id: 'a1', x1: 164, x2: 280, base: 170 },
-  { id: 'alc', x1: 520, x2: 600, base: 112, skipL: true, skipR: true },
-  { id: 'bl', x1: 430, x2: 520, base: 140, skipR: true },
-  { id: 'br', x1: 600, x2: 690, base: 140, skipL: true },
-  { id: 'dn', x1: 780, x2: 1180, base: 250 },
-  { id: 'c1', x1: 294, x2: 416, base: 242 },
-  { id: 'c2', x1: 704, x2: 766, base: 292 },
-  { id: 'fl', x1: 430, x2: 542, base: 480, skipR: true },
-  { id: 'fr', x1: 578, x2: 690, base: 480, skipL: true },
-  { id: 'pl', x1: 900, x2: 1030, base: 468, skipR: true },
-  { id: 'pr', x1: 1100, x2: 1180, base: 468, skipL: true },
+
+// Zone 1: Left Wing Asymmetric Paths (Exclusively South-Facing Back Walls & Front Sills)
+const ZONE1_BACK_WALL = [
+  [80, 116], [106, 90], [164, 90], [190, 116], [190, 150], [354, 150], [380, 176]
+];
+// Corridor C1 (Left Wing <-> Grand Hall, horizontal hallway)
+const ZONE1_CORRIDOR_BACK = [
+  [380, 230], [430, 230]
 ];
 
-// Wall Tops: Continuous Horizontal Rafter Caps
-const CAPS = [
-  { x1: 46, x2: 164, y: 50 },    // Bed nook back
-  { x1: 164, x2: 294, y: 102 },  // NW wing back
-  { x1: 506, x2: 614, y: 44 },   // Alcove back
-  { x1: 416, x2: 704, y: 72 },   // Central Hall back (unbroken header over alcove)
-  { x1: 766, x2: 1194, y: 182 }, // East wing back
-  { x1: 294, x2: 416, y: 174 },  // C1 corridor north header
-  { x1: 704, x2: 766, y: 224 },  // C2 corridor north header
-  { x1: 416, x2: 704, y: 412 },  // Foyer north header (unbroken over C3)
-  { x1: 886, x2: 1194, y: 400 }, // East wing partition header
+// Zone 2: Central Grand Hall Asymmetric Paths (Off-Center Hearth + Chamfered Corners)
+const ZONE2_BACK_WALL = [
+  [430, 132], [454, 108], [610, 108], [610, 92],
+  [626, 76], [684, 76], [700, 92], [700, 108], [736, 108], [760, 132]
+];
+// Corridor C2 (Grand Hall <-> East Wing North, horizontal hallway)
+const ZONE2_CORRIDOR_BACK = [
+  [760, 230], [810, 230]
 ];
 
-// Wall Tops: Continuous Vertical Side Strips
-const STRIPS = [
-  { x: 46, y1: 50, y2: 334, w: SW },     // NW west exterior
-  { x: 150, y1: 50, y2: 236, w: SW },    // Bed nook east partition
-  { x: 280, y1: 102, y2: 242, w: SW },   // NW east upper
-  { x: 280, y1: 278, y2: 302, w: SW },   // NW east lower
-  { x: 180, y1: 290, y2: 382, w: SW },   // NW front-jut east
-  { x: 416, y1: 72, y2: 242, w: SW },    // Central Hall west upper
-  { x: 416, y1: 278, y2: 352, w: SW },   // Central Hall west lower
-  { x: 690, y1: 72, y2: 292, w: SW },    // Central Hall east upper
-  { x: 690, y1: 328, y2: 352, w: SW },   // Central Hall east lower
-  { x: 506, y1: 44, y2: 140, w: SW },    // Alcove west
-  { x: 600, y1: 44, y2: 140, w: SW },    // Alcove east
-  { x: 528, y1: 352, y2: 424, w: SW },   // C3 west
-  { x: 578, y1: 352, y2: 424, w: SW },   // C3 east
-  { x: 416, y1: 412, y2: 554, w: SW },   // Foyer west
-  { x: 690, y1: 412, y2: 554, w: SW },   // Foyer east
-  { x: 766, y1: 182, y2: 292, w: SW },   // East wing west upper
-  { x: 766, y1: 328, y2: 412, w: SW },   // East wing west lower
-  { x: 1180, y1: 182, y2: 540, w: SW },  // East wing east
-  { x: 886, y1: 400, y2: 592, w: SW },   // East south room west
-  { x: 1040, y1: 250, y2: 320, w: 12 },  // East reading nook stub
+// Zone 3: Entrance Foyer Asymmetric Paths (NW Chamfer, Straight NE, SW Chamfer, SE Inset Nook)
+const ZONE3_BACK_WALL_LEFT = [
+  [440, 444], [464, 420], [575, 420]
+];
+const ZONE3_BACK_WALL_RIGHT = [
+  [615, 420], [750, 420]
 ];
 
-// Front-Facing Low-Profile Wall Sills (Baseboards with wainscot facet)
-const LOW_WALLS = [
-  { x1: 180, x2: 280, y: 290 },
-  { x1: 280, x2: 430, y: 278 },
-  { x1: 96, x2: 194, y: 370 },
-  { x1: 416, x2: 542, y: 340 },
-  { x1: 578, x2: 704, y: 340 },
-  { x1: 690, x2: 780, y: 328 },
-  { x1: 766, x2: 886, y: 400 },
-  { x1: 886, x2: 1140, y: 580 },
-  { x1: 466, x2: 505, y: 590 },
-  { x1: 635, x2: 654, y: 590 },
+// Zone 4: East Wing Asymmetric Paths (North Room, Partition Doorway, South Room)
+const ZONE4_NORTH_BACK_WALL = [
+  [810, 194], [834, 170], [1180, 170]
+];
+const ZONE4_SOUTH_NORTH_WALL_LEFT = [
+  [880, 420], [970, 420]
+];
+const ZONE4_SOUTH_NORTH_WALL_RIGHT = [
+  [1026, 420], [1180, 420]
 ];
 
-// 45° Sloped Exterior Corner Timber Polygons (Seamless miters into horizontal/vertical runs)
-const SLOPED_CORNERS = [
-  // 1. NW Front-Jut SW Chamfer
+// =========================================================================
+// =========================================================================
+// =========================================================================
+// GRAND UNIFIED ARCHITECTURAL TIMBER FRAME (Under [MASTER ROOM FRAMER] Skill)
+// One continuous, monolithic, unbroken ribbon wrapping the entire cottage perimeter.
+// Seamlessly merges room-to-room transitions with 100% open passages (ZERO overlapping beams).
+// =========================================================================
+const GRAND_UNIFIED_PERIMETER_FRAME = [
+  // 1. Entrance Stoop West start (flat butt cut flush with doorway)
+  [535, 570],
+  // 2. Foyer South Sill & SW 45° Chamfer
+  [476, 570], [440, 534],
+  // 3. Foyer West Wall & NW 45° Chamfer (at ceiling height)
+  [440, 388], [464, 364],
+  // 4. Foyer North Wall to Corridor C3 West Jamb
+  [575, 364],
+  // 5. Corridor C3 West Jamb into Central Grand Hall (open passage - NO cross beam!)
+  [575, 340],
+  // 6. Grand Hall South Sill & SW 45° Chamfer
+  [454, 340], [430, 316],
+  // 7. Grand Hall West Sill & Corridor C1 South Sill into Left Wing
+  [430, 266], [380, 266],
+  // 8. Left Wing A1/A2 Transition & Front Nook
+  [380, 310], [220, 310], [220, 410],
+  // 9. Left Wing SW 45° Chamfer & West Wall up to Bed Nook Roof
+  [116, 410], [80, 374], [80, 60],
+  // 10. Bed Nook 45° Roof Chamfer & Horizontal Ridge
+  [106, 34], [164, 34], [190, 60], [190, 94],
+  // 11. Left Wing Gallery Ceiling Rafter & NE 45° Chamfer
+  [354, 94], [380, 120],
+  // 12. Left Wing East Upper Wall & Corridor C1 North Ceiling into Grand Hall
+  [380, 230], [430, 230],
+  // 13. Grand Hall West Upper Wall & NW 45° Chamfer
+  [430, 76], [454, 52],
+  // 14. Grand Hall Hearth Alcove (Asymmetric Multi-Facet Roof Peak)
+  [610, 52], [610, 36], [626, 20], [684, 20], [700, 36], [700, 52],
+  // 15. Grand Hall East Gallery Ceiling & NE 45° Chamfer
+  [736, 52], [760, 76],
+  // 16. Grand Hall East Upper Wall & Corridor C2 North Ceiling into East Wing North
+  [760, 230], [810, 230],
+  // 17. East Wing North West Upper Wall & NW 45° Chamfer
+  [810, 138], [834, 114],
+  // 18. East Wing North Ceiling Rafter to Far East Corner (Seamless 90° Miter)
+  [1180, 114],
+  // 19. East Wing North East Wall & South Sill to East Doorway East Jamb
+  [1180, 340], [1026, 340],
+  // 20. East Doorway East Jamb into East Wing South Room (open passage - NO cross beam!)
+  [1026, 364],
+  // 21. East South North Wall Ceiling to Far East Corner
+  [1180, 364],
+  // 22. East South East Wall & SE 45° Chamfer (The Benchmark Image 5 Standard!)
+  [1180, 534], [1144, 570],
+  // 23. East South Front Sill & West Wall up to Ceiling
+  [880, 570], [880, 364],
+  // 24. East South North Wall to East Doorway West Jamb
+  [970, 364],
+  // 25. East Doorway West Jamb into East Wing North Room (open passage - NO cross beam!)
+  [970, 340],
+  // 26. East Wing North South Sill to Corridor C2 South Sill
+  [810, 340], [810, 266],
+  // 27. Across Corridor C2 South Sill into Grand Hall South Sill
+  [760, 266], [760, 340],
+  // 28. Grand Hall South Sill to Corridor C3 East Jamb
+  [615, 340],
+  // 29. Corridor C3 East Jamb into Foyer (open passage - NO cross beam!)
+  [615, 364],
+  // 30. Foyer North Wall Ceiling to East Wall
+  [750, 364],
+  // 31. Foyer East Wall & Inset Cloak Alcove Nook
+  [750, 510], [776, 510], [776, 570],
+  // 32. Foyer Front Sill to Entrance Stoop East end (flat butt cut flush with doorway)
+  [655, 570]
+];
+
+// Wooden Doorway Threshold Strips across exterior openings (Only at stoop)
+const THRESHOLDS = [
+  { x1: 535, x2: 655, y: 570 },  // Village Stoop
+];
+
+// Elevated Bullnose Wooden Steps
+const STEPS = [
+  { x1: 608, x2: 702, y: 106, label: 'hearth' },  // Asymmetric Hearth Step
+  { x1: 78, x2: 192, y: 148, label: 'bed_nook' },  // Deep Bed Nook Step
+  { x1: 534, x2: 656, y: 570, label: 'stoop' },    // Village Entrance Stoop
+];
+
+// Windows on Back Walls (Exclusively on South-Facing Back Walls - Zero Side Bleeding)
+const WINDOWS = [
+  [130, 90],              // Bed nook
+  [270, 150],             // NW wing main room
+  [480, 108], [550, 108], // Grand Hall gallery double windows
+  [910, 170], [1070, 170], // East North Room double windows
+];
+
+// =========================================================================
+// 3. MASTER PIXEL ART PARQUET GENERATOR & DEFS
+// =========================================================================
+const PARQUET_COLUMNS = [
   {
-    outerPts: [[46, 320], [46, 334], [86, 374], [96, 382], [106, 382]],
-    innerPts: [[60, 320], [60, 334], [96, 370], [106, 370]],
-    poly: "46,324 46,334 86,374 96,384 106,384 106,370 96,370 60,334 60,324"
+    x: 0,
+    rects: [
+      { y0: 0, y1: 115, fill: '#5c3a21' },
+      { y0: 115, y1: 235, fill: '#4e2e18' },
+      { y0: 235, y1: 360, fill: '#3d2516' },
+      { y0: 360, y1: 495, fill: '#663e22' },
+      { y0: 495, y1: 620, fill: '#4a2d1a' },
+      { y0: 620, y1: 720, fill: '#5c3a21' }
+    ],
+    joints: [115, 235, 360, 495, 620],
+    knots: [{ cx: 9, cy: 180 }, { cx: 9, cy: 560 }],
+    scuffs: [80, 420]
   },
-  // 2. Foyer SW Chamfer
   {
-    outerPts: [[416, 540], [416, 554], [456, 594], [466, 602], [476, 602]],
-    innerPts: [[430, 540], [430, 554], [466, 590], [476, 590]],
-    poly: "416,544 416,554 456,594 466,604 476,604 476,590 466,590 430,554 430,544"
+    x: 18,
+    rects: [
+      { y0: 0, y1: 75, fill: '#4a2d1a' },
+      { y0: 75, y1: 195, fill: '#663e22' },
+      { y0: 195, y1: 315, fill: '#54331a' },
+      { y0: 315, y1: 445, fill: '#4e2e18' },
+      { y0: 445, y1: 580, fill: '#3d2516' },
+      { y0: 580, y1: 720, fill: '#4a2d1a' }
+    ],
+    joints: [75, 195, 315, 445, 580],
+    knots: [{ cx: 27, cy: 130 }, { cx: 27, cy: 380 }],
+    scuffs: [260, 640]
   },
-  // 3. Foyer SE Chamfer
   {
-    outerPts: [[644, 602], [654, 602], [694, 562], [704, 554], [704, 540]],
-    innerPts: [[644, 590], [654, 590], [690, 554], [690, 540]],
-    poly: "644,604 654,604 694,564 704,554 704,544 690,544 690,554 654,590 644,590"
+    x: 36,
+    rects: [
+      { y0: 0, y1: 140, fill: '#3d2516' },
+      { y0: 140, y1: 265, fill: '#5c3a21' },
+      { y0: 265, y1: 395, fill: '#4e2e18' },
+      { y0: 395, y1: 525, fill: '#422715' },
+      { y0: 525, y1: 650, fill: '#663e22' },
+      { y0: 650, y1: 720, fill: '#3d2516' }
+    ],
+    joints: [140, 265, 395, 525, 650],
+    knots: [{ cx: 45, cy: 70 }, { cx: 45, cy: 470 }],
+    scuffs: [210, 590]
   },
-  // 4. East South Room SE Chamfer
   {
-    outerPts: [[1130, 592], [1140, 592], [1184, 548], [1194, 540], [1194, 526]],
-    innerPts: [[1130, 580], [1140, 580], [1180, 540], [1180, 526]],
-    poly: "1130,594 1140,594 1184,550 1194,540 1194,530 1180,530 1180,540 1140,580 1130,580"
+    x: 54,
+    rects: [
+      { y0: 0, y1: 90, fill: '#663e22' },
+      { y0: 90, y1: 210, fill: '#4a2d1a' },
+      { y0: 210, y1: 340, fill: '#382012' },
+      { y0: 340, y1: 465, fill: '#5c3a21' },
+      { y0: 465, y1: 600, fill: '#4e2e18' },
+      { y0: 600, y1: 720, fill: '#663e22' }
+    ],
+    joints: [90, 210, 340, 465, 600],
+    knots: [{ cx: 63, cy: 165 }, { cx: 63, cy: 535 }],
+    scuffs: [280, 670]
+  },
+  {
+    x: 72,
+    rects: [
+      { y0: 0, y1: 160, fill: '#422715' },
+      { y0: 160, y1: 285, fill: '#4e2e18' },
+      { y0: 285, y1: 415, fill: '#5c3a21' },
+      { y0: 415, y1: 550, fill: '#3d2516' },
+      { y0: 550, y1: 675, fill: '#54331a' },
+      { y0: 675, y1: 720, fill: '#422715' }
+    ],
+    joints: [160, 285, 415, 550, 675],
+    knots: [{ cx: 81, cy: 220 }, { cx: 81, cy: 610 }],
+    scuffs: [95, 350]
+  },
+  {
+    x: 90,
+    rects: [
+      { y0: 0, y1: 60, fill: '#382012' },
+      { y0: 60, y1: 180, fill: '#663e22' },
+      { y0: 180, y1: 305, fill: '#5c3a21' },
+      { y0: 305, y1: 435, fill: '#4a2d1a' },
+      { y0: 435, y1: 565, fill: '#4e2e18' },
+      { y0: 565, y1: 720, fill: '#382012' }
+    ],
+    joints: [60, 180, 305, 435, 565],
+    knots: [{ cx: 99, cy: 115 }, { cx: 99, cy: 490 }],
+    scuffs: [240, 630]
+  },
+  {
+    x: 108,
+    rects: [
+      { y0: 0, y1: 125, fill: '#54331a' },
+      { y0: 125, y1: 250, fill: '#4e2e18' },
+      { y0: 250, y1: 380, fill: '#3d2516' },
+      { y0: 380, y1: 505, fill: '#663e22' },
+      { y0: 505, y1: 630, fill: '#5c3a21' },
+      { y0: 630, y1: 720, fill: '#54331a' }
+    ],
+    joints: [125, 250, 380, 505, 630],
+    knots: [{ cx: 117, cy: 310 }, { cx: 117, cy: 575 }],
+    scuffs: [55, 440]
+  },
+  {
+    x: 126,
+    rects: [
+      { y0: 0, y1: 80, fill: '#4a2d1a' },
+      { y0: 80, y1: 205, fill: '#5c3a21' },
+      { y0: 205, y1: 330, fill: '#663e22' },
+      { y0: 330, y1: 460, fill: '#382012' },
+      { y0: 460, y1: 590, fill: '#422715' },
+      { y0: 590, y1: 720, fill: '#4a2d1a' }
+    ],
+    joints: [80, 205, 330, 460, 590],
+    knots: [{ cx: 135, cy: 150 }, { cx: 135, cy: 400 }],
+    scuffs: [270, 660]
+  },
+  {
+    x: 144,
+    rects: [
+      { y0: 0, y1: 150, fill: '#3d2516' },
+      { y0: 150, y1: 275, fill: '#4e2e18' },
+      { y0: 275, y1: 400, fill: '#54331a' },
+      { y0: 400, y1: 535, fill: '#5c3a21' },
+      { y0: 535, y1: 660, fill: '#663e22' },
+      { y0: 660, y1: 720, fill: '#3d2516' }
+    ],
+    joints: [150, 275, 400, 535, 660],
+    knots: [{ cx: 153, cy: 220 }, { cx: 153, cy: 480 }],
+    scuffs: [85, 340]
+  },
+  {
+    x: 162,
+    rects: [
+      { y0: 0, y1: 100, fill: '#5c3a21' },
+      { y0: 100, y1: 225, fill: '#4a2d1a' },
+      { y0: 225, y1: 350, fill: '#382012' },
+      { y0: 350, y1: 480, fill: '#4e2e18' },
+      { y0: 480, y1: 610, fill: '#422715' },
+      { y0: 610, y1: 720, fill: '#5c3a21' }
+    ],
+    joints: [100, 225, 350, 480, 610],
+    knots: [{ cx: 171, cy: 160 }, { cx: 171, cy: 550 }],
+    scuffs: [40, 290]
   }
 ];
 
-// Soft 45° Miter Carpentry Seams between intersecting timber frames
-const MITER_JOINTS = [
-  // Bed Nook top corners
-  { x1: 46, y1: 50, x2: 60, y2: 64 },
-  { x1: 164, y1: 50, x2: 150, y2: 64 },
-  // NW Wing top corners
-  { x1: 280, y1: 116, x2: 294, y2: 102 },
-  // Central Hall top corners
-  { x1: 416, y1: 72, x2: 430, y2: 86 },
-  { x1: 704, y1: 72, x2: 690, y2: 86 },
-  // Alcove corners
-  { x1: 506, y1: 44, x2: 520, y2: 58 },
-  { x1: 614, y1: 44, x2: 600, y2: 58 },
-  // East Wing top corners
-  { x1: 766, y1: 182, x2: 780, y2: 196 },
-  { x1: 1194, y1: 182, x2: 1180, y2: 196 },
-  // Foyer North corners
-  { x1: 416, y1: 412, x2: 430, y2: 426 },
-  { x1: 704, y1: 412, x2: 690, y2: 426 },
-  // East partition corners
-  { x1: 886, y1: 400, x2: 900, y2: 414 },
-  { x1: 1194, y1: 400, x2: 1180, y2: 414 },
-];
+const MasterParquetPattern = () => (
+  <pattern
+    id="cxs-floor-oak"
+    width="180"
+    height="720"
+    patternUnits="userSpaceOnUse"
+  >
+    {PARQUET_COLUMNS.map((col, cIdx) => (
+      <g key={`pcol-${cIdx}`}>
+        {/* 1. Wooden plank rectangles */}
+        {col.rects.map((r, rIdx) => {
+          const ph = r.y1 - r.y0;
+          return (
+            <React.Fragment key={`rect-${cIdx}-${rIdx}`}>
+              <rect x={col.x} y={r.y0} width={18} height={ph} fill={r.fill} />
+              {/* Vertical woodgrain flowing through plank */}
+              <path
+                d={`M ${col.x + 5} ${r.y0 + 4} Q ${col.x + 3.5} ${r.y0 + ph * 0.45} ${col.x + 6} ${r.y1 - 4}`}
+                stroke="rgba(24,10,3,0.28)"
+                strokeWidth="0.7"
+                fill="none"
+              />
+              <path
+                d={`M ${col.x + 12} ${r.y0 + 8} Q ${col.x + 13.5} ${r.y0 + ph * 0.55} ${col.x + 11} ${r.y1 - 6}`}
+                stroke="rgba(24,10,3,0.2)"
+                strokeWidth="0.6"
+                fill="none"
+              />
+              <line
+                x1={col.x + 0.8}
+                y1={r.y0}
+                x2={col.x + 0.8}
+                y2={r.y1}
+                stroke="rgba(107,66,38,0.32)"
+                strokeWidth="0.8"
+              />
+            </React.Fragment>
+          );
+        })}
 
-// Structural Support Pillars (Carved Cedar Timber)
-const PILLARS = [
-  { cx: 513, base: 140 }, { cx: 607, base: 140 },   // Alcove mouth
-  { cx: 535, base: 480 }, { cx: 585, base: 480 },   // C3 / Foyer mouth
-  { cx: 1037, base: 468 }, { cx: 1093, base: 468 }, // East partition doorway
-  { cx: 157, base: 240, w: 16 },                    // Bed nook divider post
-  { cx: 1046, base: 324, w: 16 },                   // East reading nook post
-];
+        {/* 2. Staggered end-joints with authentic Stardew brass nails */}
+        {col.joints.map((jy, jIdx) => (
+          <React.Fragment key={`joint-${cIdx}-${jIdx}`}>
+            <line
+              x1={col.x}
+              y1={jy}
+              x2={col.x + 18}
+              y2={jy}
+              stroke="rgba(20,8,2,0.85)"
+              strokeWidth="1.2"
+            />
+            <line
+              x1={col.x}
+              y1={jy + 0.8}
+              x2={col.x + 18}
+              y2={jy + 0.8}
+              stroke="rgba(107,66,38,0.25)"
+              strokeWidth="0.8"
+            />
+            <circle cx={col.x + 4.5} cy={jy + 3} r="0.8" fill="rgba(18,7,2,0.8)" />
+            <circle cx={col.x + 13.5} cy={jy + 3} r="0.8" fill="rgba(18,7,2,0.8)" />
+          </React.Fragment>
+        ))}
 
-// Split-Level Raised Wooden Steps with Cedar Nosing
-const STEPS = [
-  { x1: 520, x2: 600, y: 140, label: 'hearth' },  // Central Hall hearth alcove step
-  { x1: 60, x2: 150, y: 170, label: 'bed_nook' }, // NW wing deep bed nook step
-];
+        {/* 3. Knots & Scuffs */}
+        {col.knots?.map((k, kIdx) => (
+          <g key={`knot-${cIdx}-${kIdx}`}>
+            <ellipse cx={k.cx} cy={k.cy} rx="1.6" ry="2.8" fill="#241005" />
+            <ellipse cx={k.cx} cy={k.cy} rx="2.5" ry="4.5" stroke="rgba(107,66,38,0.25)" strokeWidth="0.6" fill="none" />
+          </g>
+        ))}
+        {col.scuffs?.map((sy, sIdx) => (
+          <line
+            key={`scuff-${cIdx}-${sIdx}`}
+            x1={col.x + 4}
+            y1={sy}
+            x2={col.x + 13}
+            y2={sy + 10}
+            stroke="rgba(24,9,2,0.4)"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+          />
+        ))}
 
-// Cottage Windows on Back-Most Walls
-const WINDOWS = [
-  [87, 118],   // Bed nook window
-  [212, 170],  // NW wing window
-  [448, 140], [624, 140], // Central Hall twin windows
-  [820, 250], [944, 250], [1100, 250], // East wing triple windows
-];
-
-// Continuous Horizontal Ceiling Timbers (Crown Rafters)
-const CROWNS = [
-  { x1: 60, x2: 150, y: 62 }, { x1: 164, x2: 280, y: 114 },
-  { x1: 520, x2: 600, y: 56 },
-  { x1: 430, x2: 690, y: 84 }, { x1: 780, x2: 1180, y: 194 },
-  { x1: 294, x2: 416, y: 186 }, { x1: 704, x2: 766, y: 236 },
-  { x1: 430, x2: 690, y: 424 }, { x1: 900, x2: 1180, y: 412 },
-];
-
-// =========================================================================
-// 3. SVG DEFINITIONS & PALETTE SYSTEM
-// =========================================================================
-const OAK_ROWS = [[52, 118], [22, 92], [70, 134]];
-// Stardew Muted Cozy Earth Tones for Floor Planks
-const OAK_PALETTE = ['#8B5A2B', '#7d4c20', '#945e2e', '#724119'];
-const OAK_W = 160;
-const OAK_RH = 18;
-
-const OakFloorPattern = () => (
-  <pattern id="cxs-floor-oak" width={OAK_W} height={OAK_RH * OAK_ROWS.length} patternUnits="userSpaceOnUse" patternTransform="skewX(-6)">
-    {OAK_ROWS.map((joints, r) => {
-      const xs = [0, ...joints, OAK_W];
-      const y = r * OAK_RH;
-      return (
-        <React.Fragment key={r}>
-          {xs.slice(0, -1).map((x0, b) => {
-            const x1 = xs[b + 1];
-            const bw = x1 - x0;
-            return (
-              <React.Fragment key={b}>
-                <rect x={x0} y={y} width={bw} height={OAK_RH} fill={OAK_PALETTE[(r * 2 + b) % OAK_PALETTE.length]} />
-                {/* Subtle Hand-Carved Wood Grain Waves */}
-                <path d={`M ${x0 + 5} ${y + OAK_RH * 0.4} Q ${x0 + bw * 0.5} ${y + OAK_RH * 0.28} ${x1 - 6} ${y + OAK_RH * 0.5}`} stroke="rgba(50,22,5,0.28)" strokeWidth="0.7" fill="none" />
-                <path d={`M ${x0 + 9} ${y + OAK_RH * 0.74} Q ${x0 + bw * 0.55} ${y + OAK_RH * 0.66} ${x1 - 10} ${y + OAK_RH * 0.78}`} stroke="rgba(50,22,5,0.2)" strokeWidth="0.6" fill="none" />
-                {/* Warm Muted Copper (#CD7F32) Plank Highlight */}
-                <line x1={x0} y1={y + 0.8} x2={x1} y2={y + 0.8} stroke="rgba(205,127,50,0.28)" strokeWidth="0.9" />
-                {/* Organic Plank Joints & Nails */}
-                {x0 !== 0 && (
-                  <>
-                    <line x1={x0} y1={y} x2={x0} y2={y + OAK_RH} stroke="rgba(40,16,4,0.65)" strokeWidth="1.1" />
-                    <circle cx={x0 + 3} cy={y + OAK_RH * 0.5} r="0.9" fill="rgba(30,12,3,0.6)" />
-                  </>
-                )}
-              </React.Fragment>
-            );
-          })}
-          <line x1="0" y1={y + OAK_RH} x2={OAK_W} y2={y + OAK_RH} stroke="rgba(40,16,4,0.7)" strokeWidth="1.2" />
-        </React.Fragment>
-      );
-    })}
+        {/* 4. Continuous vertical groove separating columns */}
+        <line
+          x1={col.x + 18}
+          y1="0"
+          x2={col.x + 18}
+          y2="720"
+          stroke="rgba(22,8,2,0.88)"
+          strokeWidth="1.2"
+        />
+        <line
+          x1={col.x + 18.8}
+          y1="0"
+          x2={col.x + 18.8}
+          y2="720"
+          stroke="rgba(107,66,38,0.18)"
+          strokeWidth="0.7"
+        />
+      </g>
+    ))}
   </pattern>
 );
 
 const Defs = () => (
   <defs>
-    <OakFloorPattern />
+    <MasterParquetPattern />
 
-    {/* Continuous Wood Grain Texture for Rafters & Frames */}
     <pattern id="cxs-grain" width="96" height="8" patternUnits="userSpaceOnUse">
-      <path d="M 0 2 Q 24 0.8 48 2.4 T 96 2" stroke="rgba(50,22,5,0.32)" strokeWidth="0.8" fill="none" />
-      <path d="M 0 5.6 Q 32 4.2 64 6 T 96 5.4" stroke="rgba(205,127,50,0.2)" strokeWidth="0.7" fill="none" />
+      <path d="M 0 2 Q 24 0.8 48 2.4 T 96 2" stroke="rgba(28,12,3,0.35)" strokeWidth="0.8" fill="none" />
+      <path d="M 0 5.6 Q 32 4.2 64 6 T 96 5.4" stroke="rgba(107,66,38,0.22)" strokeWidth="0.7" fill="none" />
     </pattern>
 
-    {/* Soft Straw Cream (#EEDC82) Vintage Cottage Wallpaper */}
+    {/* 1. Stardew Saloon Arcade Bricks (Image 1): Warm Earthy Tavern Cobblestones */}
+    <pattern id="cxs-bricks-amber" width="32" height="16" patternUnits="userSpaceOnUse">
+      <rect width="32" height="16" fill="#241407" />
+      {/* Row 1 Bricks */}
+      <rect x="1" y="1" width="14" height="6.5" rx="0.8" fill="#8c5828" stroke="#1f0f04" strokeWidth="0.6" />
+      <line x1="1.5" y1="1.8" x2="14.5" y2="1.8" stroke="#b67a3d" strokeWidth="0.8" opacity="0.85" />
+      <line x1="1.5" y1="7" x2="14.5" y2="7" stroke="#48250c" strokeWidth="0.7" />
+      <circle cx="4" cy="4" r="0.5" fill="#3a1c07" opacity="0.6" />
+      <circle cx="11" cy="5" r="0.6" fill="#3a1c07" opacity="0.6" />
+
+      <rect x="17" y="1" width="14" height="6.5" rx="0.8" fill="#7a4b20" stroke="#1f0f04" strokeWidth="0.6" />
+      <line x1="17.5" y1="1.8" x2="30.5" y2="1.8" stroke="#a46b33" strokeWidth="0.8" opacity="0.85" />
+      <line x1="17.5" y1="7" x2="30.5" y2="7" stroke="#48250c" strokeWidth="0.7" />
+      <circle cx="21" cy="3.5" r="0.5" fill="#3a1c07" opacity="0.6" />
+
+      {/* Row 2 Bricks (Staggered by 8px) */}
+      <rect x="9" y="9" width="14" height="6.5" rx="0.8" fill="#825224" stroke="#1f0f04" strokeWidth="0.6" />
+      <line x1="9.5" y1="9.8" x2="22.5" y2="9.8" stroke="#ad7238" strokeWidth="0.8" opacity="0.85" />
+      <line x1="9.5" y1="15" x2="22.5" y2="15" stroke="#48250c" strokeWidth="0.7" />
+      <circle cx="16" cy="12" r="0.6" fill="#3a1c07" opacity="0.6" />
+
+      <rect x="-7" y="9" width="14" height="6.5" rx="0.8" fill="#7a4b20" stroke="#1f0f04" strokeWidth="0.6" />
+      <line x1="-6.5" y1="9.8" x2="6.5" y2="9.8" stroke="#a46b33" strokeWidth="0.8" opacity="0.85" />
+
+      <rect x="25" y="9" width="14" height="6.5" rx="0.8" fill="#8c5828" stroke="#1f0f04" strokeWidth="0.6" />
+      <line x1="25.5" y1="9.8" x2="38.5" y2="9.8" stroke="#b67a3d" strokeWidth="0.8" opacity="0.85" />
+    </pattern>
+
+    {/* 2. Stardew Saloon Fireplace Wallpaper (Image 2): Rich Burgundy/Mahogany Victorian Stripes */}
+    <pattern id="cxs-stripes-burgundy" width="16" height="32" patternUnits="userSpaceOnUse">
+      <rect width="16" height="32" fill="#35141c" />
+      <rect x="0" y="0" width="8" height="32" fill="#4d1b27" />
+      <line x1="0" y1="0" x2="0" y2="32" stroke="#220b12" strokeWidth="0.8" />
+      <line x1="1" y1="0" x2="1" y2="32" stroke="#682535" strokeWidth="0.7" opacity="0.8" />
+      <line x1="4" y1="0" x2="4" y2="32" stroke="rgba(245, 158, 11, 0.28)" strokeWidth="0.8" />
+
+      <rect x="8" y="0" width="8" height="32" fill="#35141c" />
+      <line x1="8" y1="0" x2="8" y2="32" stroke="#220b12" strokeWidth="0.8" />
+      <line x1="12" y1="0" x2="12" y2="32" stroke="rgba(180, 83, 9, 0.25)" strokeWidth="0.7" />
+    </pattern>
+
+    {/* 3. Stardew Cellar Blue Bricks (Image 3): Slate Blue-Gray Stone Masonry */}
+    <pattern id="cxs-bricks-slate" width="32" height="16" patternUnits="userSpaceOnUse">
+      <rect width="32" height="16" fill="#131b24" />
+      <rect x="1" y="1" width="14" height="6.5" rx="0.8" fill="#3b4b5e" stroke="#0e151c" strokeWidth="0.6" />
+      <line x1="1.5" y1="1.8" x2="14.5" y2="1.8" stroke="#5a6e87" strokeWidth="0.8" opacity="0.85" />
+      <line x1="1.5" y1="7" x2="14.5" y2="7" stroke="#243140" strokeWidth="0.7" />
+
+      <rect x="17" y="1" width="14" height="6.5" rx="0.8" fill="#313f50" stroke="#0e151c" strokeWidth="0.6" />
+      <line x1="17.5" y1="1.8" x2="30.5" y2="1.8" stroke="#4f627a" strokeWidth="0.8" opacity="0.85" />
+      <line x1="17.5" y1="7" x2="30.5" y2="7" stroke="#243140" strokeWidth="0.7" />
+
+      <rect x="9" y="9" width="14" height="6.5" rx="0.8" fill="#364557" stroke="#0e151c" strokeWidth="0.6" />
+      <line x1="9.5" y1="9.8" x2="22.5" y2="9.8" stroke="#546780" strokeWidth="0.8" opacity="0.85" />
+      <line x1="9.5" y1="15" x2="22.5" y2="15" stroke="#243140" strokeWidth="0.7" />
+
+      <rect x="-7" y="9" width="14" height="6.5" rx="0.8" fill="#313f50" stroke="#0e151c" strokeWidth="0.6" />
+      <line x1="-6.5" y1="9.8" x2="6.5" y2="9.8" stroke="#4f627a" strokeWidth="0.8" opacity="0.85" />
+
+      <rect x="25" y="9" width="14" height="6.5" rx="0.8" fill="#3b4b5e" stroke="#0e151c" strokeWidth="0.6" />
+      <line x1="25.5" y1="9.8" x2="38.5" y2="9.8" stroke="#5a6e87" strokeWidth="0.8" opacity="0.85" />
+    </pattern>
+
+    {/* 4. Warm Country Cottage Damask (Foyer) */}
+    <pattern id="cxs-damask-warm" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#dfcca0" />
+      <path d="M 0 12 Q 6 6 12 12 T 24 12" stroke="rgba(146, 64, 14, 0.16)" strokeWidth="0.8" fill="none" />
+      <path d="M 12 0 Q 6 6 12 12 T 12 24" stroke="rgba(146, 64, 14, 0.16)" strokeWidth="0.8" fill="none" />
+      <polygon points="12,5 17,12 12,19 7,12" fill="rgba(180, 110, 40, 0.14)" />
+      <circle cx="12" cy="12" r="1.5" fill="#b45309" opacity="0.5" />
+      <circle cx="0" cy="0" r="1.2" fill="#92400e" opacity="0.4" />
+      <circle cx="24" cy="0" r="1.2" fill="#92400e" opacity="0.4" />
+      <circle cx="0" cy="24" r="1.2" fill="#92400e" opacity="0.4" />
+      <circle cx="24" cy="24" r="1.2" fill="#92400e" opacity="0.4" />
+    </pattern>
+
     <pattern id="cxs-wallpaper" width="20" height="20" patternUnits="userSpaceOnUse">
-      <rect width="20" height="20" fill="#ebd89f" />
-      <path d="M 0 10 Q 5 5 10 10 T 20 10" stroke="rgba(165,125,65,0.22)" strokeWidth="0.8" fill="none" />
-      <path d="M 10 0 Q 15 5 10 10 T 10 20" stroke="rgba(165,125,65,0.22)" strokeWidth="0.8" fill="none" />
-      <polygon points="10,4 16,10 10,16 4,10" fill="rgba(195,155,90,0.18)" />
-      <circle cx="10" cy="10" r="1.3" fill="#c4aa68" />
-      <circle cx="0" cy="0" r="1" fill="#cbb375" opacity="0.8" />
-      <circle cx="20" cy="0" r="1" fill="#cbb375" opacity="0.8" />
-      <circle cx="0" cy="20" r="1" fill="#cbb375" opacity="0.8" />
-      <circle cx="20" cy="20" r="1" fill="#cbb375" opacity="0.8" />
+      <rect width="20" height="20" fill="#dfcca0" />
+      <circle cx="10" cy="10" r="1.2" fill="#b45309" opacity="0.3" />
     </pattern>
 
-    {/* Wall Face Ambient Occlusion Shading Under Rafters */}
     <linearGradient id="cxs-wall-shade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(45,20,6,0.38)" />
-      <stop offset="30%" stopColor="rgba(45,20,6,0.08)" />
-      <stop offset="100%" stopColor="rgba(45,20,6,0.18)" />
+      <stop offset="0%" stopColor="rgba(30,12,3,0.45)" />
+      <stop offset="35%" stopColor="rgba(30,12,3,0.12)" />
+      <stop offset="100%" stopColor="rgba(30,12,3,0.22)" />
     </linearGradient>
 
-    {/* Rich Cedar & Rustic Oak Wainscot Gradient */}
+    <linearGradient id="cxs-dark-oak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#5c3a21" />
+      <stop offset="25%" stopColor="#4a2e1b" />
+      <stop offset="65%" stopColor="#3d2516" />
+      <stop offset="100%" stopColor="#241206" />
+    </linearGradient>
+
     <linearGradient id="cxs-wainscot" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#7a461e" />
-      <stop offset="35%" stopColor="#633615" />
-      <stop offset="75%" stopColor="#4a250e" />
-      <stop offset="100%" stopColor="#321606" />
+      <stop offset="0%" stopColor="#5c3a21" />
+      <stop offset="35%" stopColor="#4a2e1b" />
+      <stop offset="75%" stopColor="#382012" />
+      <stop offset="100%" stopColor="#241206" />
     </linearGradient>
 
-    {/* Master Ceiling Timber Cap Gradient (Cedar #5c3a21 to Rustic Oak #8B5A2B) */}
-    <linearGradient id="cxs-timber-cap" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#9c6430" />
-      <stop offset="25%" stopColor="#8B5A2B" />
-      <stop offset="65%" stopColor="#5c3a21" />
-      <stop offset="100%" stopColor="#3a1e0d" />
+    {/* Honey Wainscot (Arcade & Cellar) */}
+    <linearGradient id="cxs-wainscot-honey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#7c4a22" />
+      <stop offset="35%" stopColor="#673d1a" />
+      <stop offset="75%" stopColor="#4e2c10" />
+      <stop offset="100%" stopColor="#351d09" />
     </linearGradient>
 
-    {/* Continuous Horizontal Crown Rafter Molding */}
-    <linearGradient id="cxs-crown" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#CD7F32" />
-      <stop offset="35%" stopColor="#8B5A2B" />
-      <stop offset="85%" stopColor="#5c3a21" />
-      <stop offset="100%" stopColor="#361a09" />
+    {/* Mahogany Wainscot (Grand Hall Fireplace) */}
+    <linearGradient id="cxs-wainscot-mahogany" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#542421" />
+      <stop offset="35%" stopColor="#421a18" />
+      <stop offset="75%" stopColor="#301210" />
+      <stop offset="100%" stopColor="#1e0a09" />
     </linearGradient>
 
-    {/* Low-Profile Front Wall Sill Gradient */}
-    <linearGradient id="cxs-low-wall" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#a46c36" />
-      <stop offset="30%" stopColor="#8B5A2B" />
-      <stop offset="70%" stopColor="#5c3a21" />
-      <stop offset="100%" stopColor="#2c1406" />
+    <linearGradient id="cxs-tunnel-shadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="rgba(14,6,1,0.72)" />
+      <stop offset="50%" stopColor="rgba(14,6,1,0.3)" />
+      <stop offset="100%" stopColor="rgba(14,6,1,0)" />
     </linearGradient>
 
-    {/* Hand-Carved Timber Pillar Gradient */}
-    <linearGradient id="cxs-pillar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stopColor="#a06633" />
-      <stop offset="25%" stopColor="#8B5A2B" />
-      <stop offset="70%" stopColor="#5c3a21" />
-      <stop offset="100%" stopColor="#3a1e0b" />
-    </linearGradient>
-
-    {/* Curved Wooden Bracket (Corbel) Gradient */}
-    <linearGradient id="cxs-bracket" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stopColor="#945d2b" />
-      <stop offset="100%" stopColor="#5c3a21" />
-    </linearGradient>
-
-    {/* Warm Glowing Cottage Glass Gradient */}
     <linearGradient id="cxs-glass" x1="0" y1="0" x2="0.5" y2="1">
       <stop offset="0%" stopColor="#fff8db" />
       <stop offset="55%" stopColor="#fde08a" />
       <stop offset="100%" stopColor="#d99b38" />
     </linearGradient>
 
-    {/* Floor Grounding Ambient Occlusion Shadows */}
-    <linearGradient id="cxs-ao-down" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(24,10,2,0.62)" />
-      <stop offset="45%" stopColor="rgba(24,10,2,0.26)" />
-      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
-    </linearGradient>
-    <linearGradient id="cxs-ao-up" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stopColor="rgba(24,10,2,0.52)" />
-      <stop offset="45%" stopColor="rgba(24,10,2,0.22)" />
-      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
-    </linearGradient>
-    <linearGradient id="cxs-ao-right" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stopColor="rgba(24,10,2,0.52)" />
-      <stop offset="45%" stopColor="rgba(24,10,2,0.22)" />
-      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
-    </linearGradient>
-    <linearGradient id="cxs-ao-left" x1="1" y1="0" x2="0" y2="0">
-      <stop offset="0%" stopColor="rgba(24,10,2,0.52)" />
-      <stop offset="45%" stopColor="rgba(24,10,2,0.22)" />
-      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
-    </linearGradient>
     <linearGradient id="cxs-cast" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(20,8,1,0.45)" />
-      <stop offset="100%" stopColor="rgba(20,8,1,0)" />
+      <stop offset="0%" stopColor="rgba(14,5,1,0.5)" />
+      <stop offset="100%" stopColor="rgba(14,5,1,0)" />
     </linearGradient>
 
-    {/* Floor Union Clip for Directional Sunbeams */}
     <clipPath id="cxs-clip-floor">
       {FLOORS.map(([x1, y1, x2, y2], i) => (
         <rect key={i} x={x1} y={y1} width={x2 - x1} height={y2 - y1} />
@@ -376,105 +628,267 @@ const Defs = () => (
 );
 
 // =========================================================================
-// 4. ARCHITECTURAL ELEMENTS & WOOD CARPENTRY
+// 4. THE UNIFIED POLY-WALL RENDERERS & SEALED STRUCTURAL POSTS
 // =========================================================================
 
-// Hand-Carved Wooden Corner Bracket (Corbel)
-const Corbel = ({ x, y, dir = 1, s = 18 }) => (
-  <g>
-    <path
-      d={`M ${x},${y} L ${x + dir * s},${y} Q ${x + dir * s * 0.25},${y + s * 0.25} ${x},${y + s} Z`}
-      fill="url(#cxs-bracket)"
-      stroke={OUT}
-      strokeWidth="1.1"
-      strokeLinejoin="round"
-    />
-    <path
-      d={`M ${x + dir * 2},${y + 1.8} L ${x + dir * (s - 4)},${y + 1.8} Q ${x + dir * s * 0.28},${y + s * 0.28 - 1} ${x + dir * 1.8},${y + s - 4}`}
-      fill="none"
-      stroke="#CD7F32"
-      strokeWidth="0.9"
-      opacity="0.7"
-    />
-    <circle cx={x + dir * 4.2} cy={y + 4.4} r="1.4" fill="#321606" />
-  </g>
-);
+const toPathD = (pts) => pts.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p[0]} ${p[1]}`).join(' ');
 
-// Hand-Carved Cedar Support Column with Plinth & Capital
-const Pillar = ({ cx, base, h = F, w = 14 }) => {
-  const x = cx - w / 2;
-  const top = base - h;
+// =========================================================================
+// MASTER TIMBER FRAMING RIBBON (Under [MASTER ROOM FRAMER] Benchmark Image 5)
+// Exact single profile across all room boundaries, ceiling rafters, and sills.
+// 100% airtight joinery, continuous 45° chamfers, concentric gold pinstripe,
+// and clean flush butt terminations (ZERO Frankenstein sausage pills!).
+// =========================================================================
+const MasterFramingRibbon = ({ pts, width = 14, cap = 'butt' }) => {
+  const d = toPathD(pts);
   return (
-    <g>
-      <ellipse cx={cx} cy={base + 1} rx={w * 0.95} ry="3.5" fill="rgba(0,0,0,0.48)" />
-      {/* Plinth Base */}
-      <rect x={x - 3} y={base - 7} width={w + 6} height="7" rx="1" fill="#3e210d" stroke={OUT} strokeWidth="1.2" />
-      {/* Pillar Shaft */}
-      <rect x={x} y={top + 9} width={w} height={h - 16} fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
-      <line x1={x + 2} y1={top + 10} x2={x + 2} y2={base - 8} stroke="#CD7F32" strokeWidth="1.1" opacity="0.85" />
-      {/* Capital Crown */}
-      <rect x={x - 4} y={top} width={w + 8} height="9" rx="1.5" fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
-      <line x1={x - 2} y1={top + 1.6} x2={x + w + 2} y2={top + 1.6} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
+    <g className="master-frame-ribbon">
+      {/* 1. Ground contact drop-shadow under the entire ribbon */}
+      <path
+        d={d}
+        fill="none"
+        stroke="rgba(14,5,1,0.42)"
+        strokeWidth={width + 5}
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+      />
+      {/* 2. Deep dark outer boundary outline against the void */}
+      <path
+        d={d}
+        fill="none"
+        stroke={OUT}
+        strokeWidth={width + 3}
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+      />
+      {/* 3. Solid Dark Walnut Timber Core Body */}
+      <path
+        d={d}
+        fill="none"
+        stroke="url(#cxs-dark-oak)"
+        strokeWidth={width}
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+      />
+      {/* 4. Directional Hand-Carved Woodgrain Texture */}
+      <path
+        d={d}
+        fill="none"
+        stroke="url(#cxs-grain)"
+        strokeWidth={width - 2}
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+        opacity="0.65"
+      />
+      {/* 5. Warm Amber/Caramel Bevel Contour */}
+      <path
+        d={d}
+        fill="none"
+        stroke="#854d0e"
+        strokeWidth="2.4"
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+        opacity="0.9"
+      />
+      {/* 6. Pure Golden Brass Pinstripe Inlay (Benchmark Image 5) */}
+      <path
+        d={d}
+        fill="none"
+        stroke="#d49b38"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+      />
+      {/* 7. Specular Glint Highlight on Inlay */}
+      <path
+        d={d}
+        fill="none"
+        stroke="#fef08a"
+        strokeWidth="0.6"
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+        opacity="0.75"
+      />
+      {/* 8. Crisp Carved Inner Shadow Groove */}
+      <path
+        d={d}
+        fill="none"
+        stroke="rgba(16,6,1,0.85)"
+        strokeWidth="0.8"
+        strokeLinejoin="round"
+        strokeLinecap={cap}
+      />
     </g>
   );
 };
 
-// Seamless Archway Header with Twin Corbels
-const Archway = ({ x1, x2, y, ix1, ix2, s = 16 }) => (
-  <g>
-    <rect x={x1} y={y} width={x2 - x1} height="8" rx="1.5" fill="url(#cxs-crown)" stroke={OUT} strokeWidth="1.2" />
-    <line x1={x1 + 2} y1={y + 1.5} x2={x2 - 2} y2={y + 1.5} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
-    <Corbel x={ix1} y={y + 8} dir={1} s={s} />
-    <Corbel x={ix2} y={y + 8} dir={-1} s={s} />
-  </g>
-);
+// Continuous Wall Face Ribbon with Custom Theme (Wallpaper, Chair Rail, Wainscot, Baseboard & Blending Line)
+const UnifiedWallFace = ({ 
+  pts, 
+  wallpaper = 'cxs-wallpaper', 
+  wainscot = 'cxs-wainscot',
+  chairRailColor = '#3d2516'
+}) => {
+  const topPts = pts.map(p => `${p[0]},${p[1] - F}`);
+  const basePts = [...pts].reverse().map(p => `${p[0]},${p[1]}`);
+  const polyStr = `${topPts.join(' ')} ${basePts.join(' ')}`;
 
-// Rustic Cottage Window with Warm Cedar Frame & Glowing Glass
-const CottageWindow = ({ x, y, w = 36, h = 38 }) => (
+  const chairRailD = toPathD(pts.map(p => [p[0], p[1] - 29]));
+  const skirtD = toPathD(pts.map(p => [p[0], p[1] - 6]));
+  const contactD = toPathD(pts);
+
+  return (
+    <g>
+      {/* 1. Full Wall Face Polygon with Distinct Pattern */}
+      <polygon points={polyStr} fill={`url(#${wallpaper})`} stroke={OUT} strokeWidth="1" strokeLinejoin="round" />
+      <polygon points={polyStr} fill="url(#cxs-wall-shade)" />
+
+      {/* 2. Continuous Chair Rail Ribbon */}
+      <path d={chairRailD} fill="none" stroke={chairRailColor} strokeWidth="4.5" strokeLinejoin="round" />
+      <path d={chairRailD} fill="none" stroke="#854d0e" strokeWidth="1.2" strokeLinejoin="round" opacity="0.9" />
+
+      {/* 3. Lower Wainscot Cedar Slats Fill */}
+      {pts.slice(0, -1).map((p1, idx) => {
+        const p2 = pts[idx + 1];
+        const segPoly = `${p1[0]},${p1[1] - 27} ${p2[0]},${p2[1] - 27} ${p2[0]},${p2[1] - 6} ${p1[0]},${p1[1] - 6}`;
+        const dx = p2[0] - p1[0];
+        const dy = p2[1] - p1[1];
+        const segLen = Math.hypot(dx, dy);
+        const steps = Math.max(1, Math.floor(segLen / 10));
+
+        return (
+          <g key={`wseg-${idx}`}>
+            <polygon points={segPoly} fill={`url(#${wainscot})`} />
+            {Array.from({ length: steps - 1 }).map((_, sIdx) => {
+              const t = (sIdx + 1) / steps;
+              const sx = p1[0] + dx * t;
+              const sy = p1[1] + dy * t;
+              return (
+                <line
+                  key={`groove-${idx}-${sIdx}`}
+                  x1={sx}
+                  y1={sy - 26}
+                  x2={sx}
+                  y2={sy - 6}
+                  stroke="rgba(22,8,2,0.7)"
+                  strokeWidth="1.1"
+                />
+              );
+            })}
+          </g>
+        );
+      })}
+
+      {/* 4. Skirting Baseboard Ribbon */}
+      <path d={skirtD} fill="none" stroke="#1f1007" strokeWidth="6" strokeLinejoin="round" />
+      <path d={skirtD} fill="none" stroke="#6b4226" strokeWidth="0.8" strokeLinejoin="round" opacity="0.8" />
+
+      {/* 5. Seamless Floor Blending Contact Line */}
+      <path d={contactD} fill="none" stroke="rgba(14,5,1,0.95)" strokeWidth="1.4" strokeLinejoin="round" />
+
+      {/* 6. Fluid Ambient Occlusion Ribbon Hugging Baseboard */}
+      <path d={contactD} fill="none" stroke="rgba(14,5,1,0.42)" strokeWidth="7" strokeLinejoin="round" opacity="0.85" />
+    </g>
+  );
+};
+
+// Authentic Stardew Valley Brass Wall Sconce Lamp (Warm Glowing Amber Bulb)
+const WallSconce = ({ x, y }) => (
   <g transform={`translate(${x}, ${y})`}>
-    <path d={`M -3,${h + 2} L -3,12 Q ${w / 2},-5 ${w + 3},12 L ${w + 3},${h + 2} Z`} fill="rgba(0,0,0,0.58)" />
-    <path d={`M -2,${h} L -2,13 Q ${w / 2},-3 ${w + 2},13 L ${w + 2},${h} Z`} fill="url(#cxs-wainscot)" stroke={OUT} strokeWidth="1.6" />
-    <path d={`M 3,${h - 3} L 3,13 Q ${w / 2},1 ${w - 3},13 L ${w - 3},${h - 3} Z`} fill="url(#cxs-glass)" stroke={OUT} strokeWidth="1" />
-    {/* Brass Muntins */}
-    <line x1={w / 2} y1="3" x2={w / 2} y2={h - 3} stroke="#fffae0" strokeWidth="1.8" />
-    <line x1="3" y1={h / 2 + 2} x2={w - 3} y2={h / 2 + 2} stroke="#fffae0" strokeWidth="1.8" />
-    <polygon points="6,16 12,9 15,9 8,20" fill="rgba(255,255,255,0.65)" />
-    {/* Cedar Window Sill with Muted Copper Trim */}
-    <rect x="-5" y={h - 2} width={w + 10} height="6" rx="1.5" fill="#5c3a21" stroke={OUT} strokeWidth="1.3" />
-    <line x1="-4" y1={h} x2={w + 4} y2={h} stroke="#CD7F32" strokeWidth="1.1" opacity="0.9" />
+    <ellipse cx="0" cy="-6" rx="14" ry="10" fill="rgba(245, 158, 11, 0.28)" style={{ mixBlendMode: 'screen' }} />
+    <ellipse cx="0" cy="-6" rx="7" ry="5" fill="rgba(254, 240, 138, 0.45)" style={{ mixBlendMode: 'screen' }} />
+    <ellipse cx="0" cy="4" rx="3" ry="1.2" fill="rgba(14,5,1,0.5)" />
+    <rect x="-2.5" y="-3" width="5" height="7" rx="1" fill="#b45309" stroke="#1f1007" strokeWidth="0.8" />
+    <circle cx="0" cy="0.5" r="0.7" fill="#fef08a" />
+    <path d="M 0 1 Q -3 -2 0 -5" fill="none" stroke="#78350f" strokeWidth="1.2" strokeLinecap="round" />
+    <polygon points="-2.5,-5 2.5,-5 1.8,-3 -1.8,-3" fill="#f59e0b" stroke="#78350f" strokeWidth="0.6" />
+    <circle cx="0" cy="-7" r="2" fill="#fef08a" stroke="#ca8a04" strokeWidth="0.5" />
+    <circle cx="0" cy="-7" r="0.9" fill="#ffffff" />
   </g>
 );
 
-// Wall Face: Soft Straw Cream Wallpaper + Rich Cedar Wainscoting + Skirting
-const Face = ({ x1, x2, base, skipL, skipR }) => {
-  const top = base - F;
+
+
+
+// Seamless Wooden Threshold Plank across door openings
+const DoorThreshold = ({ x1, x2, y }) => {
+  const w = x2 - x1;
+  return (
+    <g id={`thresh-${x1}-${y}`}>
+      <rect
+        x={x1}
+        y={y - 2}
+        width={w}
+        height="6"
+        rx="1"
+        fill="#321b0e"
+        stroke={OUT}
+        strokeWidth="0.9"
+      />
+      <line
+        x1={x1 + 1}
+        y1={y - 1}
+        x2={x2 - 1}
+        y2={y - 1}
+        stroke="#854d0e"
+        strokeWidth="0.8"
+        opacity="0.9"
+      />
+    </g>
+  );
+};
+
+// Elevated Bullnose Step
+const BullnoseStep = ({ x1, x2, y }) => {
   const w = x2 - x1;
   return (
     <g>
-      {/* 1. Upper Half: Vintage Straw Cream Cottage Wallpaper */}
-      <rect x={x1} y={top} width={w} height={F} fill="url(#cxs-wallpaper)" />
-      <rect x={x1} y={top} width={w} height={F} fill="url(#cxs-wall-shade)" />
-
-      {/* 2. Chair Rail (Muted Copper Highlight + Cedar Base) */}
-      <rect x={x1} y={base - 29} width={w} height="4" fill="#7a461e" />
-      <line x1={x1} y1={base - 28.2} x2={x2} y2={base - 28.2} stroke="#CD7F32" strokeWidth="0.9" opacity="0.85" />
-
-      {/* 3. Lower Half: Rich Cedar Tongue-and-Groove Wainscoting */}
-      <rect x={x1} y={base - 25} width={w} height="19" fill="url(#cxs-wainscot)" />
-      <line x1={x1} y1={base - 20} x2={x2} y2={base - 20} stroke="rgba(20,8,1,0.5)" strokeWidth="1" />
-      <line x1={x1} y1={base - 12} x2={x2} y2={base - 12} stroke="rgba(20,8,1,0.42)" strokeWidth="1" />
-      <line x1={x1} y1={base - 19.2} x2={x2} y2={base - 19.2} stroke="rgba(205,127,50,0.2)" strokeWidth="0.8" />
-
-      {/* 4. Skirting Baseboard */}
-      <rect x={x1} y={base - 6} width={w} height="6" fill="#2c1406" />
-      <line x1={x1} y1={base - 5.2} x2={x2} y2={base - 5.2} stroke="#CD7F32" strokeWidth="0.9" opacity="0.8" />
-
-      {/* 5. Corner Softening Corbels */}
-      {!skipL && w >= 60 && <Corbel x={x1} y={top + 7} dir={1} />}
-      {!skipR && w >= 60 && <Corbel x={x2} y={top + 7} dir={-1} />}
+      <ellipse cx={(x1 + x2) / 2} cy={y + 7} rx={w / 2 + 2} ry="4" fill="rgba(14,5,1,0.65)" />
+      <rect
+        x={x1}
+        y={y}
+        width={w}
+        height="7.5"
+        rx="3.75"
+        ry="3.75"
+        fill="url(#cxs-dark-oak)"
+        stroke={OUT}
+        strokeWidth="1.2"
+      />
+      <line
+        x1={x1 + 3}
+        y1={y + 1.2}
+        x2={x2 - 3}
+        y2={y + 1.2}
+        stroke="#6b4226"
+        strokeWidth="1.1"
+        opacity="0.9"
+      />
+      <line
+        x1={x1 + 3}
+        y1={y + 6.2}
+        x2={x2 - 3}
+        y2={y + 6.2}
+        stroke="rgba(20,8,2,0.75)"
+        strokeWidth="1"
+      />
     </g>
   );
 };
+
+// Rustic Cottage Window
+const CottageWindow = ({ x, y, w = 36, h = 38 }) => (
+  <g transform={`translate(${x}, ${y})`}>
+    <path d={`M -3,${h + 2} L -3,12 Q ${w / 2},-5 ${w + 3},12 L ${w + 3},${h + 2} Z`} fill="rgba(0,0,0,0.65)" />
+    <path d={`M -2,${h} L -2,13 Q ${w / 2},-3 ${w + 2},13 L ${w + 2},${h} Z`} fill="url(#cxs-wainscot)" stroke={OUT} strokeWidth="1.6" />
+    <path d={`M 3,${h - 3} L 3,13 Q ${w / 2},1 ${w - 3},13 L ${w - 3},${h - 3} Z`} fill="url(#cxs-glass)" stroke={OUT} strokeWidth="1" />
+    <line x1={w / 2} y1="3" x2={w / 2} y2={h - 3} stroke="#fffae0" strokeWidth="1.8" />
+    <line x1="3" y1={h / 2 + 2} x2={w - 3} y2={h / 2 + 2} stroke="#fffae0" strokeWidth="1.8" />
+    <polygon points="6,16 12,9 15,9 8,20" fill="rgba(255,255,255,0.65)" />
+    <rect x="-5" y={h - 2} width={w + 10} height="6" rx="1.5" fill="#3d2516" stroke={OUT} strokeWidth="1.3" />
+    <line x1="-4" y1={h} x2={w + 4} y2={h} stroke="#6b4226" strokeWidth="1.1" opacity="0.9" />
+  </g>
+);
 
 // Soft Volumetric Sunbeam Streaming at 45° Uniform Diagonal
 const Sunbeam = ({ wx, ys, w = 36, L = 200 }) => {
@@ -484,11 +898,11 @@ const Sunbeam = ({ wx, ys, w = 36, L = 200 }) => {
     <g>
       <polygon
         points={`${wx},${ys} ${wx + half},${ys} ${wx + half + sx},${ys + L} ${wx + sx},${ys + L}`}
-        fill="rgba(255, 240, 200, 0.11)"
+        fill="rgba(255, 235, 190, 0.1)"
       />
       <polygon
         points={`${wx + half + 3},${ys} ${wx + w},${ys} ${wx + w + sx},${ys + L} ${wx + half + 3 + sx},${ys + L}`}
-        fill="rgba(255, 240, 200, 0.11)"
+        fill="rgba(255, 235, 190, 0.1)"
       />
     </g>
   );
@@ -509,14 +923,10 @@ export function ComplexArchitectureSVG() {
     >
       <Defs />
 
-      {/* =========================================================================
-          LAYER 1: DEEP RPG VOID BACKGROUND (Bites aggressively into the structure)
-          ========================================================================= */}
+      {/* LAYER 1: DEEP RPG VOID BACKGROUND */}
       <rect x="0" y="0" width={W} height={H} fill={VOID} />
 
-      {/* =========================================================================
-          LAYER 2: SINGLE CONTINUOUS OAK HARDWOOD FLOOR (Absolute Material Unification)
-          ========================================================================= */}
+      {/* LAYER 2: MASTER PARQUET FLOOR */}
       <g id="cx-floor-unified">
         {FLOORS.map(([x1, y1, x2, y2], i) => (
           <rect
@@ -529,7 +939,7 @@ export function ComplexArchitectureSVG() {
           />
         ))}
 
-        {/* 45° Corner Floor Void Cuts */}
+        {/* Asymmetric 45° Corner Floor Cuts */}
         {FLOOR_CUTS.map((pts, i) => (
           <polygon
             key={`cut-${i}`}
@@ -539,194 +949,68 @@ export function ComplexArchitectureSVG() {
             strokeWidth="1.2"
           />
         ))}
-
-        {/* Village Doorway Step Riser */}
-        <line x1="506" y1="592" x2="634" y2="592" stroke="#CD7F32" strokeWidth="1" opacity="0.65" />
-        <rect x="505" y="604" width="130" height="8" fill="#3e210d" stroke={OUT} strokeWidth="1.2" />
       </g>
 
-      {/* =========================================================================
-          LAYER 3: GROUNDING AMBIENT OCCLUSION SHADOWS (Wall Bases & Raised Steps)
-          ========================================================================= */}
-      <g id="cx-ambient-occlusion">
-        {/* Wall Face Drop Shadows */}
-        {FACES.map(f => (
-          <rect key={`aof-${f.id}`} x={f.x1} y={f.base} width={f.x2 - f.x1} height="28" fill="url(#cxs-ao-down)" />
-        ))}
-
-        {/* Side Wall Strip Shadows */}
-        {STRIPS.map((s, i) => (
-          <React.Fragment key={`aos-${i}`}>
-            <rect x={s.x + s.w} y={s.y1} width="16" height={s.y2 - s.y1} fill="url(#cxs-ao-right)" />
-            <rect x={s.x - 16} y={s.y1} width="16" height={s.y2 - s.y1} fill="url(#cxs-ao-left)" />
-          </React.Fragment>
-        ))}
-
-        {/* Low-Profile Front Sill Drop Shadows */}
-        {LOW_WALLS.map((l, i) => (
-          <rect key={`aol-${i}`} x={l.x1} y={l.y - 16} width={l.x2 - l.x1} height="16" fill="url(#cxs-ao-up)" />
-        ))}
-
-        {/* East Partition Shadow */}
-        <rect x="900" y="384" width="130" height="16" fill="url(#cxs-ao-up)" />
-        <rect x="1100" y="384" width="80" height="16" fill="url(#cxs-ao-up)" />
-
-        {/* Raised Step Grounding Drop Shadows */}
-        {STEPS.map((s, i) => (
-          <rect key={`aost-${i}`} x={s.x1} y={s.y + 6} width={s.x2 - s.x1} height="12" fill="url(#cxs-ao-down)" />
-        ))}
-      </g>
-
-      {/* =========================================================================
-          LAYER 4: VOLUMETRIC SUNBEAMS & PILLAR CAST SHADOWS (Clipped to Floor)
-          ========================================================================= */}
+      {/* LAYER 3: VOLUMETRIC SUNBEAMS & CAST SHADOWS */}
       <g id="cx-sunbeams-and-shadows" clipPath="url(#cxs-clip-floor)" style={{ pointerEvents: 'none' }}>
-        {/* Volumetric Morning Light Beams */}
         {WINDOWS.map(([wx, base], i) => (
           <Sunbeam key={`beam-${i}`} wx={wx} ys={base - 8} />
         ))}
-
-        {/* Pillars Blocking Light: Realistic Diagonal Cast Shadows */}
-        {PILLARS.map((p, i) => {
-          const hw = (p.w || 14) / 2 + 1;
-          const len = 50;
-          const sx = SLOPE * len;
-          return (
-            <polygon
-              key={`cast-${i}`}
-              points={`${p.cx - hw},${p.base} ${p.cx + hw},${p.base} ${p.cx + hw + sx},${p.base + len} ${p.cx - hw + sx},${p.base + len}`}
-              fill="url(#cxs-cast)"
-            />
-          );
-        })}
       </g>
 
-      {/* =========================================================================
-          LAYER 5: WALL FACES, WINDOWS & CONTINUOUS CEILING CROWN TIMBERS
-          ========================================================================= */}
+      {/* LAYER 4: ASYMMETRIC WALL FACES WITH DISTINCTIVE STARDEW THEMES */}
       <g id="cx-wall-faces">
-        {FACES.map(f => <Face key={`face-${f.id}`} {...f} />)}
+        {/* Zone 1: Left Wing - Warm Tavern Cobblestone Bricks & Honey Wainscot */}
+        <UnifiedWallFace pts={ZONE1_BACK_WALL} wallpaper="cxs-bricks-amber" wainscot="cxs-wainscot-honey" />
+        <UnifiedWallFace pts={ZONE1_CORRIDOR_BACK} wallpaper="cxs-bricks-amber" wainscot="cxs-wainscot-honey" />
 
-        {/* Back-Wall Cottage Windows */}
+        {/* Zone 2: Grand Hall - Victorian Burgundy Saloon Stripes & Mahogany Wainscot */}
+        <UnifiedWallFace pts={ZONE2_BACK_WALL} wallpaper="cxs-stripes-burgundy" wainscot="cxs-wainscot-mahogany" chairRailColor="#4a1518" />
+        <UnifiedWallFace pts={ZONE2_CORRIDOR_BACK} wallpaper="cxs-stripes-burgundy" wainscot="cxs-wainscot-mahogany" chairRailColor="#4a1518" />
+
+        {/* Zone 3: Entrance Foyer - Warm Country Cottage Damask Wallpaper */}
+        <UnifiedWallFace pts={ZONE3_BACK_WALL_LEFT} wallpaper="cxs-damask-warm" wainscot="cxs-wainscot" />
+        <UnifiedWallFace pts={ZONE3_BACK_WALL_RIGHT} wallpaper="cxs-damask-warm" wainscot="cxs-wainscot" />
+
+        {/* Zone 4: East Wing North - Cool Slate Blue-Gray Stone Masonry */}
+        <UnifiedWallFace pts={ZONE4_NORTH_BACK_WALL} wallpaper="cxs-bricks-slate" wainscot="cxs-wainscot-honey" />
+
+        {/* Zone 4: East Wing South - Burgundy Saloon Stripes */}
+        <UnifiedWallFace pts={ZONE4_SOUTH_NORTH_WALL_LEFT} wallpaper="cxs-stripes-burgundy" wainscot="cxs-wainscot" />
+        <UnifiedWallFace pts={ZONE4_SOUTH_NORTH_WALL_RIGHT} wallpaper="cxs-stripes-burgundy" wainscot="cxs-wainscot" />
+
+        {/* Cottage Windows */}
         {WINDOWS.map(([wx, base], i) => (
           <CottageWindow key={`win-${i}`} x={wx} y={base - F + 10} />
         ))}
 
-        {/* Continuous Horizontal Ceiling Timbers (Crown Rafters) */}
-        {CROWNS.map((c, i) => (
-          <g key={`crown-${i}`}>
-            <rect x={c.x1} y={c.y} width={c.x2 - c.x1} height="7" fill="url(#cxs-crown)" />
-            <line x1={c.x1} y1={c.y + 1.2} x2={c.x2} y2={c.y + 1.2} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
-            <line x1={c.x1} y1={c.y + 7.6} x2={c.x2} y2={c.y + 7.6} stroke="rgba(24,10,2,0.5)" strokeWidth="1.2" />
-          </g>
-        ))}
+        {/* Authentic Stardew Brass Wall Sconces with Cozy Glowing Amber Flame */}
+        <WallSconce x={220} y={150 - 36} />
+        <WallSconce x={340} y={150 - 36} />
+        <WallSconce x={475} y={108 - 36} />
+        <WallSconce x={735} y={108 - 36} />
+        <WallSconce x={875} y={170 - 36} />
+        <WallSconce x={1135} y={170 - 36} />
+        <WallSconce x={495} y={420 - 36} />
+        <WallSconce x={700} y={420 - 36} />
       </g>
 
-      {/* =========================================================================
-          LAYER 6: MASTER CARPENTRY FRAMES — ZERO MODULAR SEAMS & COHESIVE TIMBER
-          (Single Unified Outer Silhouette, Continuous Grain, Soft Miter Joints)
-          ========================================================================= */}
+      {/* LAYER 5: MASTER ARCHITECTURAL FRAMING (Under [MASTER ROOM FRAMER] Skill) */}
       <g id="cx-master-framing">
-        {/* 6.1 Outer Silhouette Pass: Dark Outline against the Void (#241206) */}
-        <g id="framing-outer-silhouette">
-          {CAPS.map((c, i) => (
-            <rect key={`co-${i}`} x={c.x1} y={c.y} width={c.x2 - c.x1} height={CAP} fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
-          ))}
-          {STRIPS.map((s, i) => (
-            <rect key={`so-${i}`} x={s.x} y={s.y1} width={s.w} height={s.y2 - s.y1} fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
-          ))}
-          {LOW_WALLS.map((l, i) => (
-            <rect key={`lo-${i}`} x={l.x1} y={l.y} width={l.x2 - l.x1} height="12" fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
-          ))}
-          {SLOPED_CORNERS.map((sc, i) => (
-            <polygon key={`sco-${i}`} points={sc.poly} fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
-          ))}
-        </g>
+        {/* Single continuous monolithic ribbon wrapping the entire house perimeter */}
+        <MasterFramingRibbon pts={GRAND_UNIFIED_PERIMETER_FRAME} cap="butt" />
 
-        {/* 6.2 Continuous Wood Fill: Cedar (#5c3a21) & Rustic Oak (#8B5A2B) */}
-        <g id="framing-wood-fill">
-          {/* Horizontal Rafter Caps */}
-          {CAPS.map((c, i) => (
-            <g key={`cf-${i}`}>
-              <rect x={c.x1} y={c.y} width={c.x2 - c.x1} height={CAP} fill="url(#cxs-timber-cap)" />
-              <rect x={c.x1} y={c.y} width={c.x2 - c.x1} height={CAP} fill="url(#cxs-grain)" />
-              {/* Soft Muted Copper Top Highlight */}
-              <line x1={c.x1} y1={c.y + 1} x2={c.x2} y2={c.y + 1} stroke="#CD7F32" strokeWidth="1.1" opacity="0.85" />
-              {/* Pixel-Level Inner Shading for Hand-Carved Volumetric Depth */}
-              <line x1={c.x1} y1={c.y + CAP - 1} x2={c.x2} y2={c.y + CAP - 1} stroke="rgba(35,14,3,0.6)" strokeWidth="1.2" />
-            </g>
-          ))}
-
-          {/* Vertical Side Wall Strips */}
-          {STRIPS.map((s, i) => (
-            <g key={`sf-${i}`}>
-              <rect x={s.x} y={s.y1} width={s.w} height={s.y2 - s.y1} fill="url(#cxs-timber-cap)" />
-              <rect x={s.x} y={s.y1} width={s.w} height={s.y2 - s.y1} fill="url(#cxs-grain)" />
-              {/* Soft Muted Copper Left Highlight */}
-              <line x1={s.x + 1.2} y1={s.y1 + 1} x2={s.x + 1.2} y2={s.y2 - 1} stroke="#CD7F32" strokeWidth="1.1" opacity="0.85" />
-              {/* Inner Edge Hand-Carved Shading */}
-              <line x1={s.x + s.w - 1.2} y1={s.y1 + 1} x2={s.x + s.w - 1.2} y2={s.y2 - 1} stroke="rgba(35,14,3,0.6)" strokeWidth="1.2" />
-            </g>
-          ))}
-
-          {/* Low-Profile Front Sills */}
-          {LOW_WALLS.map((l, i) => (
-            <g key={`lf-${i}`}>
-              <rect x={l.x1} y={l.y} width={l.x2 - l.x1} height="12" fill="url(#cxs-low-wall)" />
-              <line x1={l.x1} y1={l.y + 1} x2={l.x2} y2={l.y + 1} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
-              <line x1={l.x1} y1={l.y + 6.5} x2={l.x2} y2={l.y + 6.5} stroke="rgba(24,10,2,0.4)" strokeWidth="0.8" />
-            </g>
-          ))}
-
-          {/* 45° Sloped Corner Timber Polygons (Smoothly Blended) */}
-          {SLOPED_CORNERS.map((sc, i) => (
-            <g key={`scf-${i}`}>
-              <polygon points={sc.poly} fill="url(#cxs-low-wall)" />
-              <polygon points={sc.poly} fill="url(#cxs-grain)" opacity="0.85" />
-            </g>
-          ))}
-        </g>
-
-        {/* 6.3 Soft Carpentry Seams: 45° Miter Joints at Timber Intersections */}
-        <g id="framing-soft-miter-joints">
-          {MITER_JOINTS.map((m, i) => (
-            <line
-              key={`mj-${i}`}
-              x1={m.x1}
-              y1={m.y1}
-              x2={m.x2}
-              y2={m.y2}
-              stroke="rgba(45,20,5,0.45)"
-              strokeWidth="1.1"
-              strokeLinecap="round"
-            />
-          ))}
-        </g>
+        {/* Wooden Doorway Threshold Strips across exterior village entrance */}
+        {THRESHOLDS.map((t, i) => (
+          <DoorThreshold key={`thresh-${i}`} {...t} />
+        ))}
       </g>
 
-      {/* =========================================================================
-          LAYER 7: SPLIT-LEVEL STEPS, ARCHWAYS & STRUCTURAL TIMBER COLUMNS
-          ========================================================================= */}
+      {/* LAYER 6: ELEVATED BULLNOSE STEPS */}
       <g id="cx-steps-and-archways">
-        {/* Split-Level Raised Steps with Cedar Nosing */}
         {STEPS.map((s, i) => (
-          <g key={`step-${i}`}>
-            <rect x={s.x1} y={s.y} width={s.x2 - s.x1} height="6" fill="#4a250e" stroke={OUT} strokeWidth="1.2" />
-            <line x1={s.x1 + 1} y1={s.y + 0.8} x2={s.x2 - 1} y2={s.y + 0.8} stroke="#CD7F32" strokeWidth="1.1" opacity="0.9" />
-          </g>
+          <BullnoseStep key={`step-${i}`} {...s} />
         ))}
-
-        {/* Seamless Wooden Archways */}
-        <Archway x1={506} x2={614} y={84} ix1={520} ix2={600} s={16} />
-        <Archway x1={528} x2={592} y={424} ix1={542} ix2={578} s={12} />
-        <Archway x1={1030} x2={1100} y={412} ix1={1044} ix2={1086} s={14} />
-
-        {/* Carved Cedar Support Pillars */}
-        {PILLARS.map((p, i) => <Pillar key={`pil-${i}`} {...p} />)}
-
-        {/* Village Exit Doorway Jambs */}
-        <rect x="498" y="588" width="8" height="16" fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
-        <rect x="634" y="588" width="8" height="16" fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
       </g>
     </svg>
   );
@@ -736,16 +1020,17 @@ export function ComplexArchitectureSVG() {
 // 6. SOFT AMBIENT LAMPLIGHT POOLS (Cozy Warm Glow)
 // =========================================================================
 const POOLS = [
-  { x: 105, y: 150, rx: 60, ry: 40, o: 0.55 },   // Bed nook
-  { x: 225, y: 235, rx: 100, ry: 70, o: 0.6 },   // NW wing
-  { x: 355, y: 260, rx: 80, ry: 24, o: 0.4 },    // W-E corridor
-  { x: 560, y: 240, rx: 170, ry: 110, o: 0.85 }, // Central Hall
-  { x: 560, y: 128, rx: 60, ry: 30, o: 0.55 },   // Hearth alcove
-  { x: 735, y: 310, rx: 55, ry: 22, o: 0.4 },    // East connector
-  { x: 560, y: 410, rx: 40, ry: 70, o: 0.4 },    // N-S corridor
-  { x: 560, y: 535, rx: 130, ry: 60, o: 0.6 },   // Foyer
-  { x: 980, y: 330, rx: 210, ry: 110, o: 0.75 }, // East wing
-  { x: 1040, y: 525, rx: 120, ry: 50, o: 0.55 }, // East south room
+  { x: 135, y: 120, rx: 65, ry: 40, o: 0.55 },   // Bed nook
+  { x: 280, y: 230, rx: 110, ry: 75, o: 0.65 },  // NW wing
+  { x: 405, y: 248, rx: 50, ry: 20, o: 0.4 },    // W-E corridor C1
+  { x: 540, y: 220, rx: 150, ry: 100, o: 0.85 }, // Central Hall gallery
+  { x: 655, y: 92, rx: 60, ry: 30, o: 0.6 },     // Hearth alcove (off-center)
+  { x: 785, y: 248, rx: 50, ry: 20, o: 0.4 },    // East connector C2
+  { x: 595, y: 380, rx: 36, ry: 40, o: 0.4 },    // N-S corridor C3
+  { x: 595, y: 490, rx: 140, ry: 70, o: 0.65 },  // Foyer
+  { x: 762, y: 540, rx: 40, ry: 25, o: 0.45 },   // Foyer inset cloak alcove
+  { x: 995, y: 260, rx: 200, ry: 100, o: 0.75 }, // East wing north
+  { x: 1030, y: 495, rx: 130, ry: 60, o: 0.55 }, // East south room
 ];
 
 export function ComplexLightingSVG() {

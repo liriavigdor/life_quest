@@ -84,32 +84,39 @@ export function StardewFarmhouseInterior({
     setTimeout(() => setToastMessage(''), 2200);
   };
 
-  // Player Character Movement & Canvas
+  // Player Character Movement & Canvas (Autonomous 60fps Engine)
   const [playerPos, setPlayerPos] = useState({ x: 300, y: 380 });
-  const [isPlayerWalking, setIsPlayerWalking] = useState(false);
-  const [playerFacingLeft, setPlayerFacingLeft] = useState(false);
+  const playerPosRef = useRef({ x: 300, y: 380 });
+  const isWalkingRef = useRef(false);
+  const facingLeftRef = useRef(false);
+  const walkCycleRef = useRef(0);
+  const heldKeysRef = useRef(new Set());
   const playerTargetRef = useRef(null);
   const animationFrameRef = useRef(null);
   const canvasRef = useRef(null);
 
+  const villagerLookRef = useRef(villagerLook);
+  useEffect(() => { villagerLookRef.current = villagerLook; }, [villagerLook]);
+
+  const currentOutfitRef = useRef(currentOutfit);
+  useEffect(() => { currentOutfitRef.current = currentOutfit; }, [currentOutfit]);
+
   // Keyboard navigation
   useEffect(() => {
+    const validKeys = new Set([
+      'KeyW', 'KeyS', 'KeyA', 'KeyD',
+      'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'
+    ]);
+
     const handleKeyDown = (e) => {
       if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
 
-      let dx = 0;
-      let dy = 0;
-      const step = 15;
+      if (e.code === 'Space' || e.code === 'Enter') {
+        checkProximityInteraction();
+        return;
+      }
 
-      if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') dy = -step;
-      else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') dy = step;
-      else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
-        dx = -step;
-        setPlayerFacingLeft(true);
-      } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
-        dx = step;
-        setPlayerFacingLeft(false);
-      } else if (e.key === 'Escape') {
+      if (e.code === 'Escape') {
         if (editingLocusKey || isAddingCustomAnchor) {
           setEditingLocusKey(null);
           setIsAddingCustomAnchor(false);
@@ -117,30 +124,19 @@ export function StardewFarmhouseInterior({
           onClose();
         }
         return;
-      } else if (e.key === ' ' || e.key === 'Enter') {
-        checkProximityInteraction();
-        return;
-      } else {
-        return;
       }
 
-      setPlayerPos(prev => {
-        const nextX = Math.max(70, Math.min(570, prev.x + dx));
-        const nextY = Math.max(120, Math.min(430, prev.y + dy));
-
-        if (nextX >= 270 && nextX <= 330 && nextY >= 420) {
-          showToast('יציאה לכפר 🍃');
-          setTimeout(() => onClose(), 200);
-        }
-
-        return { x: nextX, y: nextY };
-      });
-
-      setIsPlayerWalking(true);
+      if (validKeys.has(e.code)) {
+        e.preventDefault();
+        heldKeysRef.current.add(e.code);
+        playerTargetRef.current = null;
+      }
     };
 
-    const handleKeyUp = () => {
-      setIsPlayerWalking(false);
+    const handleKeyUp = (e) => {
+      if (validKeys.has(e.code)) {
+        heldKeysRef.current.delete(e.code);
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -161,65 +157,116 @@ export function StardewFarmhouseInterior({
     const targetX = Math.max(70, Math.min(570, clickX));
     const targetY = Math.max(120, Math.min(420, clickY));
 
-    setPlayerFacingLeft(targetX < playerPos.x);
     playerTargetRef.current = { x: targetX, y: targetY };
-    setIsPlayerWalking(true);
+    sounds.playTap?.();
   };
 
-  // Continuous animation loop
+  // Continuous animation loop (Guaranteed single loop, zero ghosts)
   useEffect(() => {
+    let isCancelled = false;
     let lastTime = performance.now();
+    let throttleTimer = 0;
 
     const loop = (time) => {
-      const dt = (time - lastTime) / 1000;
+      if (isCancelled) return;
+
+      const rawDt = (time - lastTime) / 1000;
       lastTime = time;
+      const dt = Math.min(0.06, Math.max(0.001, rawDt));
 
-      if (playerTargetRef.current) {
-        setPlayerPos(curr => {
-          const target = playerTargetRef.current;
-          if (!target) return curr;
+      const curPos = playerPosRef.current;
+      const heldKeys = heldKeysRef.current;
+      const isTyping = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+      const walkSpeed = 220;
 
-          const dx = target.x - curr.x;
-          const dy = target.y - curr.y;
-          const dist = Math.hypot(dx, dy);
+      // 1. Keyboard
+      if (heldKeys.size > 0 && !isTyping) {
+        let kdx = 0;
+        let kdy = 0;
 
-          if (dist < 4) {
-            playerTargetRef.current = null;
-            setIsPlayerWalking(false);
+        if (heldKeys.has('KeyW') || heldKeys.has('ArrowUp')) kdy -= 1;
+        if (heldKeys.has('KeyS') || heldKeys.has('ArrowDown')) kdy += 1;
+        if (heldKeys.has('KeyA') || heldKeys.has('ArrowLeft')) kdx -= 1;
+        if (heldKeys.has('KeyD') || heldKeys.has('ArrowRight')) kdx += 1;
 
-            if (curr.x >= 270 && curr.x <= 330 && curr.y >= 415) {
-              showToast('יציאה לכפר 🍃');
-              setTimeout(() => onClose(), 200);
-            }
+        if (kdx !== 0 || kdy !== 0) {
+          const len = Math.hypot(kdx, kdy);
+          const stepDist = walkSpeed * dt;
+          const nextX = Math.max(70, Math.min(570, curPos.x + (kdx / len) * stepDist));
+          const nextY = Math.max(120, Math.min(430, curPos.y + (kdy / len) * stepDist));
 
-            return { x: target.x, y: target.y };
+          if (kdx < 0) facingLeftRef.current = true;
+          else if (kdx > 0) facingLeftRef.current = false;
+
+          playerPosRef.current = { x: nextX, y: nextY };
+          isWalkingRef.current = true;
+          walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
+
+          if (nextX >= 270 && nextX <= 330 && nextY >= 420) {
+            showToast('יציאה לכפר 🍃');
+            setTimeout(() => onClose(), 180);
           }
+        } else {
+          isWalkingRef.current = false;
+        }
+      } 
+      // 2. Click to move
+      else if (playerTargetRef.current) {
+        const target = playerTargetRef.current;
+        const dx = target.x - curPos.x;
+        const dy = target.y - curPos.y;
+        const dist = Math.hypot(dx, dy);
 
-          const speed = 195;
-          const moveDist = Math.min(dist, speed * dt);
-          const nextX = curr.x + (dx / dist) * moveDist;
-          const nextY = curr.y + (dy / dist) * moveDist;
+        if (dist < 4) {
+          playerTargetRef.current = null;
+          isWalkingRef.current = false;
+          playerPosRef.current = { x: target.x, y: target.y };
 
-          setPlayerFacingLeft(dx < 0);
-          return { x: nextX, y: nextY };
-        });
+          if (target.x >= 270 && target.x <= 330 && target.y >= 415) {
+            showToast('יציאה לכפר 🍃');
+            setTimeout(() => onClose(), 180);
+          }
+        } else {
+          const stepDist = Math.min(dist, walkSpeed * dt);
+          const nextX = curPos.x + (dx / dist) * stepDist;
+          const nextY = curPos.y + (dy / dist) * stepDist;
+
+          if (dx < 0) facingLeftRef.current = true;
+          else if (dx > 0) facingLeftRef.current = false;
+
+          playerPosRef.current = { x: nextX, y: nextY };
+          isWalkingRef.current = true;
+          walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
+        }
+      } else {
+        isWalkingRef.current = false;
+      }
+
+      // Throttle React state
+      throttleTimer += dt;
+      if (throttleTimer >= 0.09) {
+        throttleTimer = 0;
+        const p = playerPosRef.current;
+        setPlayerPos({ x: Math.round(p.x), y: Math.round(p.y) });
       }
 
       // Draw Villager
       const canvas = canvasRef.current;
       if (canvas) {
         const ctx = canvas.getContext('2d');
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        const p = playerPosRef.current;
         drawCompleteVillager(ctx, {
-          cx: playerPos.x,
-          cy: playerPos.y,
-          scale: 0.92,
-          outfit: currentOutfit,
-          facingLeft: playerFacingLeft,
-          isWalking: isPlayerWalking,
-          walkCycle: (time * 0.01) % (Math.PI * 2),
-          look: villagerLook,
+          cx: p.x,
+          cy: p.y,
+          scale: 0.78,
+          outfit: currentOutfitRef.current,
+          facingLeft: facingLeftRef.current,
+          isWalking: isWalkingRef.current,
+          walkCycle: walkCycleRef.current % (Math.PI * 2),
+          look: villagerLookRef.current,
           timestamp: time
         });
       }
@@ -228,8 +275,15 @@ export function StardewFarmhouseInterior({
     };
 
     animationFrameRef.current = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(animationFrameRef.current);
-  }, [playerPos, playerFacingLeft, isPlayerWalking, currentOutfit, villagerLook, onClose]);
+
+    return () => {
+      isCancelled = true;
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    };
+  }, [onClose]);
 
   // Object Proximity Coordinates
   const OBJECT_LOCATIONS = {
@@ -652,21 +706,6 @@ export function StardewFarmhouseInterior({
           className="farmhouse-player-canvas"
         />
 
-        {/* Proximity Interaction Bubble */}
-        {nearestObject && (
-          <div 
-            className="stardew-proximity-bubble"
-            style={{ left: `${nearestObject.x}px`, top: `${nearestObject.y - 50}px` }}
-            onClick={(e) => {
-              e.stopPropagation();
-              checkProximityInteraction();
-            }}
-          >
-            <span className="bubble-icon">📌</span>
-            <span className="bubble-text">{nearestObject.name}</span>
-            <span className="bubble-key-hint">[רווח לעריכה]</span>
-          </div>
-        )}
 
         {/* Doorway Notch */}
         <div 
