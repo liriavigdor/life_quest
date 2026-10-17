@@ -181,112 +181,155 @@ export function StoreShelvesSVG({ className = '', style = {} }) {
   );
 }
 
-// 2. Pierre's Store Counter with Brass Register, Scales & Ledger Book
+// 2. Pierre's Store Counter with Pronounced 3/4 Perspective Top Slab, 3D Side Facet & Grounded Props
 export function StoreCounterSVG({ className = '', style = {} }) {
   return (
     <svg 
-      viewBox="0 0 160 80" 
+      viewBox="0 0 170 95" 
       className={`stardew-vector-asset ${className}`} 
       style={{ width: '100%', height: '100%', ...style }}
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="counterWood" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#b45309" />
-          <stop offset="25%" stopColor="#92400e" />
-          <stop offset="70%" stopColor="#78350f" />
-          <stop offset="100%" stopColor="#451a03" />
+        <linearGradient id="counterTopWood" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#fbbf24" />
+          <stop offset="35%" stopColor="#d97706" />
+          <stop offset="70%" stopColor="#b45309" />
+          <stop offset="100%" stopColor="#854d0e" />
+        </linearGradient>
+        <linearGradient id="counterSideWood" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#542b08" />
+          <stop offset="50%" stopColor="#3d1d05" />
+          <stop offset="100%" stopColor="#241206" />
+        </linearGradient>
+        <linearGradient id="counterFrontWood" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#92400e" />
+          <stop offset="30%" stopColor="#78350f" />
+          <stop offset="85%" stopColor="#5c2c0a" />
+          <stop offset="100%" stopColor="#3d1d05" />
         </linearGradient>
         <linearGradient id="brassGrad" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#fef08a" />
-          <stop offset="40%" stopColor="#eab308" />
-          <stop offset="85%" stopColor="#a16207" />
+          <stop offset="40%" stopColor="#f59e0b" />
+          <stop offset="85%" stopColor="#b45309" />
           <stop offset="100%" stopColor="#713f12" />
         </linearGradient>
+        <filter id="counterDropShadow" x="-20%" y="-20%" width="140%" height="150%">
+          <feGaussianBlur stdDeviation="4.5" />
+        </filter>
       </defs>
 
-      {/* Counter Base Wooden Structure */}
-      <rect x="6" y="24" width="148" height="52" rx="4" fill="url(#counterWood)" stroke="#291203" strokeWidth="2.5" />
-      {/* Relief panels on front */}
-      <rect x="14" y="32" width="38" height="36" rx="2" fill="#522504" stroke="#78350f" strokeWidth="1" />
-      <rect x="60" y="32" width="40" height="36" rx="2" fill="#522504" stroke="#78350f" strokeWidth="1" />
-      <rect x="108" y="32" width="38" height="36" rx="2" fill="#522504" stroke="#78350f" strokeWidth="1" />
-      {/* Top Countertop Slab */}
-      <rect x="2" y="18" width="156" height="9" rx="3" fill="#d97706" stroke="#451a03" strokeWidth="1.5" />
-      <line x1="4" y1="20" x2="156" y2="20" stroke="#fde68a" strokeWidth="1" strokeOpacity="0.6" />
+      {/* 1. Deep Ground Contact Shadow directly under base onto floor/rug */}
+      <ellipse cx="85" cy="88" rx="82" ry="9" fill="rgba(0, 0, 0, 0.45)" filter="url(#counterDropShadow)" />
 
-      {/* --- PROPS ON TOP OF COUNTER --- */}
+      {/* 2. Plinth Baseboard at Bottom */}
+      <polygon points="14,78 160,78 156,86 18,86" fill="#241206" stroke="#120803" strokeWidth="1.2" />
+
+      {/* 3. 3D Left-Side Facet (showing true 3/4 cabinet depth) */}
+      <polygon points="2,4 16,28 16,80 2,74" fill="url(#counterSideWood)" stroke="#1a0b03" strokeWidth="1.5" />
+      <line x1="2" y1="4" x2="16" y2="28" stroke="rgba(254, 240, 138, 0.25)" strokeWidth="1" />
+
+      {/* 4. Front Vertical Cabinet Body (Facets) */}
+      <rect x="16" y="28" width="144" height="52" rx="1.5" fill="url(#counterFrontWood)" stroke="#241206" strokeWidth="1.8" />
+      {/* Recessed Wainscot Relief Panels on Front */}
+      <rect x="24" y="35" width="34" height="40" rx="2" fill="#2e1406" stroke="#542b08" strokeWidth="1.2" />
+      <rect x="71" y="35" width="34" height="40" rx="2" fill="#2e1406" stroke="#542b08" strokeWidth="1.2" />
+      <rect x="118" y="35" width="34" height="40" rx="2" fill="#2e1406" stroke="#542b08" strokeWidth="1.2" />
+      {/* Front Panel Inset Bevels */}
+      <line x1="26" y1="37" x2="56" y2="37" stroke="rgba(254, 240, 138, 0.15)" strokeWidth="0.8" />
+      <line x1="73" y1="37" x2="103" y2="37" stroke="rgba(254, 240, 138, 0.15)" strokeWidth="0.8" />
+      <line x1="120" y1="37" x2="150" y2="37" stroke="rgba(254, 240, 138, 0.15)" strokeWidth="0.8" />
+
+      {/* 5. PRONOUNCED 3/4 PERSPECTIVE COUNTERTOP SLAB (Wide 26px Horizontal Top Surface) */}
+      {/* Countertop Top Plane seen from 3/4 angle */}
+      <polygon points="2,2 168,2 158,28 14,28" fill="url(#counterTopWood)" stroke="#241206" strokeWidth="1.6" />
+      {/* Wood grain plank grooves on top slab */}
+      <line x1="60" y1="3" x2="54" y2="27" stroke="#92400e" strokeWidth="0.8" opacity="0.4" />
+      <line x1="115" y1="3" x2="108" y2="27" stroke="#92400e" strokeWidth="0.8" opacity="0.4" />
+      {/* Sunlight Highlight Line on back & left rims */}
+      <line x1="4" y1="3" x2="166" y2="3" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
+      <line x1="3" y1="3" x2="14" y2="27" stroke="#fef08a" strokeWidth="1.2" opacity="0.75" />
+      {/* Countertop Front Vertical Edge (thickness: 4.5px) */}
+      <rect x="14" y="26" width="146" height="4.5" fill="#a15814" stroke="#241206" strokeWidth="0.8" />
+      {/* Cast shadow under countertop lip onto front cabinet */}
+      <rect x="16" y="30.5" width="144" height="4" fill="rgba(0,0,0,0.4)" />
+
+      {/* --- PROPS MOUNTED FIRMLY ON 3/4 COUNTERTOP SURFACE --- */}
 
       {/* 1. Vintage Brass Cash Register (Left Side) */}
-      <g transform="translate(18, 0)">
-        {/* Base */}
-        <polygon points="2,20 32,20 28,8 6,8" fill="url(#brassGrad)" stroke="#451a03" strokeWidth="1" />
-        {/* Upper Housing */}
-        <rect x="8" y="2" width="18" height="9" rx="1.5" fill="url(#brassGrad)" stroke="#713f12" strokeWidth="0.8" />
+      <g transform="translate(24, 2)">
+        {/* Contact shadow on countertop plane */}
+        <ellipse cx="17" cy="20" rx="14" ry="4" fill="rgba(0,0,0,0.35)" />
+        {/* Register 3/4 Base */}
+        <polygon points="4,18 30,18 27,8 7,8" fill="url(#brassGrad)" stroke="#451a03" strokeWidth="1" />
+        {/* Upper Housing with 3D slant */}
+        <polygon points="9,8 25,8 23,1 11,1" fill="#eab308" stroke="#713f12" strokeWidth="0.8" />
+        <rect x="10" y="4" width="14" height="6" fill="url(#brassGrad)" stroke="#451a03" strokeWidth="0.8" />
         {/* Amount Display Flag */}
-        <rect x="11" y="-3" width="12" height="6" rx="1" fill="#fef08a" stroke="#78350f" strokeWidth="0.8" />
-        <text x="17" y="1.5" fontSize="4.5" fontWeight="900" textAnchor="middle" fill="#451a03">0.00</text>
-        {/* Tiered Keys */}
-        <circle cx="10" cy="12" r="1.2" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="14" cy="12" r="1.2" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="18" cy="12" r="1.2" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="22" cy="12" r="1.2" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="10" cy="16" r="1.2" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="14" cy="16" r="1.2" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="18" cy="16" r="1.2" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
-        <circle cx="22" cy="16" r="1.2" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
+        <rect x="12" y="-3" width="10" height="5" rx="1" fill="#fef08a" stroke="#78350f" strokeWidth="0.8" />
+        <text x="17" y="0.5" fontSize="3.8" fontWeight="900" textAnchor="middle" fill="#451a03">0.00</text>
+        {/* Keys */}
+        <circle cx="12" cy="12" r="1.1" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
+        <circle cx="16" cy="12" r="1.1" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
+        <circle cx="20" cy="12" r="1.1" fill="#fff" stroke="#713f12" strokeWidth="0.5" />
+        <circle cx="12" cy="15" r="1.1" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
+        <circle cx="16" cy="15" r="1.1" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
+        <circle cx="20" cy="15" r="1.1" fill="#fde047" stroke="#713f12" strokeWidth="0.5" />
       </g>
 
       {/* 2. Brass Balance Scales (Center) */}
-      <g transform="translate(68, 2)">
-        {/* Central Stand */}
-        <rect x="11" y="4" width="2" height="15" fill="url(#brassGrad)" />
-        <ellipse cx="12" cy="18" rx="6" ry="2" fill="#a16207" />
-        {/* Crossbeam */}
-        <line x1="2" y1="5" x2="22" y2="5" stroke="#fde047" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="12" cy="5" r="1.8" fill="#451a03" />
-        {/* Left Pan */}
-        <line x1="3" y1="6" x2="1" y2="12" stroke="#a16207" strokeWidth="0.7" />
-        <line x1="3" y1="6" x2="5" y2="12" stroke="#a16207" strokeWidth="0.7" />
-        <path d="M -1 12 Q 3 15 7 12 Z" fill="url(#brassGrad)" stroke="#713f12" strokeWidth="0.6" />
-        {/* Right Pan */}
-        <line x1="21" y1="6" x2="19" y2="12" stroke="#a16207" strokeWidth="0.7" />
-        <line x1="21" y1="6" x2="23" y2="12" stroke="#a16207" strokeWidth="0.7" />
-        <path d="M 17 12 Q 21 15 25 12 Z" fill="url(#brassGrad)" stroke="#713f12" strokeWidth="0.6" />
+      <g transform="translate(73, 4)">
+        {/* Contact shadow on countertop */}
+        <ellipse cx="12" cy="20" rx="9" ry="3" fill="rgba(0,0,0,0.3)" />
+        <rect x="11" y="6" width="2" height="15" fill="url(#brassGrad)" />
+        <ellipse cx="12" cy="20" rx="6" ry="2" fill="#a16207" />
+        <line x1="2" y1="7" x2="22" y2="7" stroke="#fde047" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="12" cy="7" r="1.8" fill="#451a03" />
+        <line x1="3" y1="8" x2="1" y2="14" stroke="#a16207" strokeWidth="0.7" />
+        <line x1="3" y1="8" x2="5" y2="14" stroke="#a16207" strokeWidth="0.7" />
+        <path d="M -1 14 Q 3 17 7 14 Z" fill="url(#brassGrad)" stroke="#713f12" strokeWidth="0.6" />
+        <line x1="21" y1="8" x2="19" y2="14" stroke="#a16207" strokeWidth="0.7" />
+        <line x1="21" y1="8" x2="23" y2="14" stroke="#a16207" strokeWidth="0.7" />
+        <path d="M 17 14 Q 21 17 25 14 Z" fill="url(#brassGrad)" stroke="#713f12" strokeWidth="0.6" />
       </g>
 
-      {/* 3. Open Leather Ledger Book & Quill (Right Side) */}
-      <g transform="translate(108, 7)">
-        {/* Left Page */}
-        <polygon points="2,13 16,11 15,2 1,4" fill="#fef3c7" stroke="#78350f" strokeWidth="0.8" />
-        <line x1="4" y1="7" x2="13" y2="6" stroke="#a1a1aa" strokeWidth="0.6" />
+      {/* 3. Open Leather Ledger Book & Feather (Right Side) */}
+      <g transform="translate(118, 7)">
+        <ellipse cx="16" cy="18" rx="14" ry="4" fill="rgba(0,0,0,0.3)" />
+        {/* Left Page (3/4 perspective tilt) */}
+        <polygon points="2,16 16,14 15,5 1,7" fill="#fef3c7" stroke="#78350f" strokeWidth="0.8" />
         <line x1="4" y1="10" x2="13" y2="9" stroke="#a1a1aa" strokeWidth="0.6" />
+        <line x1="4" y1="13" x2="13" y2="12" stroke="#a1a1aa" strokeWidth="0.6" />
         {/* Right Page */}
-        <polygon points="16,11 30,13 31,4 17,2" fill="#fffbeb" stroke="#78350f" strokeWidth="0.8" />
-        <line x1="19" y1="6" x2="28" y2="7" stroke="#a1a1aa" strokeWidth="0.6" />
+        <polygon points="16,14 30,16 31,7 17,5" fill="#fffbeb" stroke="#78350f" strokeWidth="0.8" />
         <line x1="19" y1="9" x2="28" y2="10" stroke="#a1a1aa" strokeWidth="0.6" />
-        {/* Spine */}
-        <line x1="16" y1="2" x2="16" y2="12" stroke="#7f1d1d" strokeWidth="1.8" />
-        {/* Feather Quill */}
-        <path d="M 30 1 L 35 -5 Q 33 0 26 8" stroke="#ffffff" strokeWidth="1.2" fill="none" />
+        <line x1="19" y1="12" x2="28" y2="13" stroke="#a1a1aa" strokeWidth="0.6" />
+        <line x1="16" y1="5" x2="16" y2="15" stroke="#7f1d1d" strokeWidth="1.8" />
+        <path d="M 30 4 L 35 -2 Q 33 3 26 11" stroke="#ffffff" strokeWidth="1.2" fill="none" />
       </g>
     </svg>
   );
 }
 
-// 3. Wooden Produce Bins with Carrots, Apples & Potatoes
+// 3. Wooden Produce Bins with 3/4 Perspective Crates & Drop Shadows
 export function ProduceBinsSVG({ className = '', style = {} }) {
   return (
     <svg 
-      viewBox="0 0 140 50" 
+      viewBox="0 0 144 56" 
       className={`stardew-vector-asset ${className}`} 
       style={{ width: '100%', height: '100%', ...style }}
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="crateWood" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#92400e" />
-          <stop offset="100%" stopColor="#522504" />
+        <linearGradient id="crateWoodTop" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#b45309" />
+          <stop offset="50%" stopColor="#d97706" />
+          <stop offset="100%" stopColor="#92400e" />
+        </linearGradient>
+        <linearGradient id="crateWoodFront" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#854d0e" />
+          <stop offset="60%" stopColor="#542b08" />
+          <stop offset="100%" stopColor="#3b1d05" />
         </linearGradient>
         <linearGradient id="appleRed" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#f87171" />
@@ -298,62 +341,92 @@ export function ProduceBinsSVG({ className = '', style = {} }) {
           <stop offset="40%" stopColor="#ea580c" />
           <stop offset="100%" stopColor="#9a3412" />
         </linearGradient>
+        <filter id="crateShadow" x="-20%" y="-20%" width="140%" height="150%">
+          <feGaussianBlur stdDeviation="3.5" />
+        </filter>
       </defs>
 
-      {/* Crate 1: Carrots (Left) */}
-      <g transform="translate(6, 6)">
-        <polygon points="0,12 40,12 36,38 4,38" fill="url(#crateWood)" stroke="#291203" strokeWidth="1.5" />
-        <line x1="2" y1="24" x2="38" y2="24" stroke="#451a03" strokeWidth="1.2" />
-        {/* Carrot tops & bodies */}
-        <ellipse cx="12" cy="11" rx="5" ry="9" transform="rotate(-15 12 11)" fill="url(#carrotOrange)" stroke="#7c2d12" strokeWidth="0.8" />
-        <ellipse cx="22" cy="10" rx="5" ry="10" fill="url(#carrotOrange)" stroke="#7c2d12" strokeWidth="0.8" />
-        <ellipse cx="30" cy="12" rx="4.5" ry="8" transform="rotate(20 30 12)" fill="url(#carrotOrange)" stroke="#7c2d12" strokeWidth="0.8" />
-        {/* Green fronds */}
-        <path d="M 12 4 Q 8 0 10 -2 Q 13 1 12 4" fill="#4d7c0f" />
-        <path d="M 22 2 Q 22 -3 24 -4 Q 25 0 22 2" fill="#4d7c0f" />
-        <path d="M 30 4 Q 34 0 33 -3 Q 29 0 30 4" fill="#4d7c0f" />
+      {/* Crate 1: Carrots (Left) in 3/4 Perspective */}
+      <g transform="translate(4, 4)">
+        {/* Drop shadow on floor */}
+        <ellipse cx="21" cy="48" rx="20" ry="5" fill="rgba(0,0,0,0.3)" filter="url(#crateShadow)" />
+        {/* 3/4 Crate Body */}
+        <polygon points="2,12 40,12 37,44 5,44" fill="url(#crateWoodFront)" stroke="#241206" strokeWidth="1.5" />
+        {/* Crate Front Slats */}
+        <line x1="3" y1="23" x2="39" y2="23" stroke="#241206" strokeWidth="1.2" />
+        <line x1="4" y1="34" x2="38" y2="34" stroke="#241206" strokeWidth="1.2" />
+        {/* Top Opening Rim (3/4 perspective) */}
+        <polygon points="6,4 44,4 40,12 2,12" fill="url(#crateWoodTop)" stroke="#241206" strokeWidth="1.2" />
+        {/* Produce spilling out */}
+        <ellipse cx="14" cy="10" rx="5" ry="9" transform="rotate(-15 14 10)" fill="url(#carrotOrange)" stroke="#7c2d12" strokeWidth="0.8" />
+        <ellipse cx="23" cy="9" rx="5" ry="10" fill="url(#carrotOrange)" stroke="#7c2d12" strokeWidth="0.8" />
+        <ellipse cx="31" cy="11" rx="4.5" ry="8" transform="rotate(20 31 11)" fill="url(#carrotOrange)" stroke="#7c2d12" strokeWidth="0.8" />
+        <path d="M 14 3 Q 10 0 12 -2 Q 15 1 14 3" fill="#4d7c0f" />
+        <path d="M 23 1 Q 23 -3 25 -4 Q 26 0 23 1" fill="#4d7c0f" />
+        <path d="M 31 3 Q 35 0 34 -3 Q 30 0 31 3" fill="#4d7c0f" />
       </g>
 
       {/* Crate 2: Red Apples (Center) */}
-      <g transform="translate(50, 6)">
-        <polygon points="0,12 40,12 36,38 4,38" fill="url(#crateWood)" stroke="#291203" strokeWidth="1.5" />
-        <line x1="2" y1="24" x2="38" y2="24" stroke="#451a03" strokeWidth="1.2" />
+      <g transform="translate(50, 4)">
+        <ellipse cx="21" cy="48" rx="20" ry="5" fill="rgba(0,0,0,0.3)" filter="url(#crateShadow)" />
+        <polygon points="2,12 40,12 37,44 5,44" fill="url(#crateWoodFront)" stroke="#241206" strokeWidth="1.5" />
+        <line x1="3" y1="23" x2="39" y2="23" stroke="#241206" strokeWidth="1.2" />
+        <line x1="4" y1="34" x2="38" y2="34" stroke="#241206" strokeWidth="1.2" />
+        <polygon points="6,4 44,4 40,12 2,12" fill="url(#crateWoodTop)" stroke="#241206" strokeWidth="1.2" />
         {/* Apples */}
-        <circle cx="12" cy="12" r="6.5" fill="url(#appleRed)" stroke="#450a0a" strokeWidth="0.8" />
-        <circle cx="10" cy="10" r="1.5" fill="#fff" fillOpacity="0.5" />
-        <circle cx="22" cy="10" r="6.5" fill="url(#appleRed)" stroke="#450a0a" strokeWidth="0.8" />
-        <circle cx="20" cy="8" r="1.5" fill="#fff" fillOpacity="0.5" />
-        <circle cx="31" cy="12" r="6" fill="url(#appleRed)" stroke="#450a0a" strokeWidth="0.8" />
-        <circle cx="29" cy="10" r="1.5" fill="#fff" fillOpacity="0.5" />
+        <circle cx="14" cy="10" r="6.5" fill="url(#appleRed)" stroke="#450a0a" strokeWidth="0.8" />
+        <circle cx="12" cy="8" r="1.5" fill="#fff" fillOpacity="0.5" />
+        <circle cx="24" cy="8" r="6.5" fill="url(#appleRed)" stroke="#450a0a" strokeWidth="0.8" />
+        <circle cx="22" cy="6" r="1.5" fill="#fff" fillOpacity="0.5" />
+        <circle cx="33" cy="10" r="6" fill="url(#appleRed)" stroke="#450a0a" strokeWidth="0.8" />
       </g>
 
       {/* Crate 3: Earthy Potatoes (Right) */}
-      <g transform="translate(94, 6)">
-        <polygon points="0,12 40,12 36,38 4,38" fill="url(#crateWood)" stroke="#291203" strokeWidth="1.5" />
-        <line x1="2" y1="24" x2="38" y2="24" stroke="#451a03" strokeWidth="1.2" />
+      <g transform="translate(96, 4)">
+        <ellipse cx="21" cy="48" rx="20" ry="5" fill="rgba(0,0,0,0.3)" filter="url(#crateShadow)" />
+        <polygon points="2,12 40,12 37,44 5,44" fill="url(#crateWoodFront)" stroke="#241206" strokeWidth="1.5" />
+        <line x1="3" y1="23" x2="39" y2="23" stroke="#241206" strokeWidth="1.2" />
+        <line x1="4" y1="34" x2="38" y2="34" stroke="#241206" strokeWidth="1.2" />
+        <polygon points="6,4 44,4 40,12 2,12" fill="url(#crateWoodTop)" stroke="#241206" strokeWidth="1.2" />
         {/* Potatoes */}
-        <ellipse cx="12" cy="12" rx="7" ry="5.5" transform="rotate(10 12 12)" fill="#a8a29e" stroke="#44403c" strokeWidth="0.8" />
-        <ellipse cx="22" cy="11" rx="8" ry="6" transform="rotate(-12 22 11)" fill="#78716c" stroke="#292524" strokeWidth="0.8" />
-        <ellipse cx="30" cy="13" rx="6.5" ry="5" transform="rotate(25 30 13)" fill="#a8a29e" stroke="#44403c" strokeWidth="0.8" />
+        <ellipse cx="14" cy="10" rx="7" ry="5.5" transform="rotate(10 14 10)" fill="#a8a29e" stroke="#44403c" strokeWidth="0.8" />
+        <ellipse cx="24" cy="9" rx="8" ry="6" transform="rotate(-12 24 9)" fill="#78716c" stroke="#292524" strokeWidth="0.8" />
+        <ellipse cx="32" cy="11" rx="6.5" ry="5" transform="rotate(25 32 11)" fill="#a8a29e" stroke="#44403c" strokeWidth="0.8" />
       </g>
     </svg>
   );
 }
 
-// 4. Grand Stone & Brick Hearth with Animated Vector Flames
+// 4. Grand Stone & Brick Hearth with Pronounced 3/4 Mantle Depth, 3D Side Pillars & Stepped Base
 export function GrandHearthSVG({ className = '', style = {} }) {
   return (
     <svg 
-      viewBox="0 0 160 140" 
+      viewBox="0 0 170 156" 
       className={`stardew-vector-asset ${className}`} 
       style={{ width: '100%', height: '100%', ...style }}
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="brickGrad" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="hearthChimneyBrick" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#991b1b" />
-          <stop offset="50%" stopColor="#7f1d1d" />
+          <stop offset="45%" stopColor="#7f1d1d" />
           <stop offset="100%" stopColor="#450a0a" />
+        </linearGradient>
+        <linearGradient id="hearthSideBrick" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#3b0808" />
+          <stop offset="100%" stopColor="#240505" />
+        </linearGradient>
+        <linearGradient id="mantelTopWood" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#fbbf24" />
+          <stop offset="30%" stopColor="#f59e0b" />
+          <stop offset="65%" stopColor="#d97706" />
+          <stop offset="100%" stopColor="#92400e" />
+        </linearGradient>
+        <linearGradient id="hearthstonePlinth" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#a8a29e" />
+          <stop offset="35%" stopColor="#78716c" />
+          <stop offset="75%" stopColor="#57534e" />
+          <stop offset="100%" stopColor="#292524" />
         </linearGradient>
         <radialGradient id="flameCenter" cx="50%" cy="80%" r="60%">
           <stop offset="0%" stopColor="#fef08a" />
@@ -361,63 +434,104 @@ export function GrandHearthSVG({ className = '', style = {} }) {
           <stop offset="75%" stopColor="#ea580c" />
           <stop offset="100%" stopColor="#b91c1c" stopOpacity="0" />
         </radialGradient>
-        <radialGradient id="hearthGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.45" />
-          <stop offset="70%" stopColor="#b45309" stopOpacity="0.15" />
+        <radialGradient id="hearthGlow" cx="50%" cy="60%" r="55%">
+          <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.55" />
+          <stop offset="65%" stopColor="#b45309" stopOpacity="0.2" />
           <stop offset="100%" stopColor="#000000" stopOpacity="0" />
         </radialGradient>
+        <filter id="hearthShadow" x="-20%" y="-20%" width="140%" height="150%">
+          <feGaussianBlur stdDeviation="5.5" />
+        </filter>
       </defs>
 
-      {/* Hearth Ambient Glow */}
-      <circle cx="80" cy="110" r="50" fill="url(#hearthGlow)" />
+      {/* 1. Fireplace Ground Contact Drop Shadow extending forward onto floor and rug */}
+      <ellipse cx="85" cy="148" rx="84" ry="10" fill="rgba(0, 0, 0, 0.48)" filter="url(#hearthShadow)" />
 
-      {/* Chimney Flue Column */}
-      <rect x="42" y="0" width="76" height="48" fill="url(#brickGrad)" stroke="#290505" strokeWidth="2" />
+      {/* 2. Hearth Ambient Glow onto floor and surrounding stones */}
+      <circle cx="85" cy="115" r="58" fill="url(#hearthGlow)" />
+
+      {/* 3. Stepped 3/4 Hearthstone Base (Extending forward onto floor) */}
+      <polygon points="10,126 160,126 150,148 20,148" fill="url(#hearthstonePlinth)" stroke="#1c1917" strokeWidth="1.8" />
+      <line x1="12" y1="127" x2="158" y2="127" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+      <line x1="20" y1="148" x2="150" y2="148" stroke="#0c0a09" strokeWidth="2" />
+      {/* Flagstone cracks and joints */}
+      <line x1="58" y1="127" x2="54" y2="147" stroke="#292524" strokeWidth="1" />
+      <line x1="112" y1="127" x2="116" y2="147" stroke="#292524" strokeWidth="1" />
+
+      {/* 4. 3D Brick Pillars (Showing 3/4 Side Facets) */}
+      {/* Left Pillar Side Facet (facing camera left) */}
+      <polygon points="20,54 30,48 30,132 20,132" fill="url(#hearthSideBrick)" stroke="#1a0404" strokeWidth="1.2" />
+      {/* Right Pillar Side Facet */}
+      <polygon points="144,48 152,54 152,132 144,132" fill="url(#hearthSideBrick)" stroke="#1a0404" strokeWidth="1.2" />
+
+      {/* Front Chimney Flue Column */}
+      <rect x="30" y="0" width="114" height="48" fill="url(#hearthChimneyBrick)" stroke="#240505" strokeWidth="2" />
       {/* Brick relief lines */}
-      <line x1="42" y1="12" x2="118" y2="12" stroke="#450a0a" strokeWidth="1" />
-      <line x1="42" y1="24" x2="118" y2="24" stroke="#450a0a" strokeWidth="1" />
-      <line x1="42" y1="36" x2="118" y2="36" stroke="#450a0a" strokeWidth="1" />
-      <line x1="60" y1="0" x2="60" y2="12" stroke="#450a0a" strokeWidth="1" />
-      <line x1="88" y1="0" x2="88" y2="12" stroke="#450a0a" strokeWidth="1" />
-      <line x1="74" y1="12" x2="74" y2="24" stroke="#450a0a" strokeWidth="1" />
-      <line x1="102" y1="12" x2="102" y2="24" stroke="#450a0a" strokeWidth="1" />
+      <line x1="30" y1="12" x2="144" y2="12" stroke="#450a0a" strokeWidth="1.2" />
+      <line x1="30" y1="24" x2="144" y2="24" stroke="#450a0a" strokeWidth="1.2" />
+      <line x1="30" y1="36" x2="144" y2="36" stroke="#450a0a" strokeWidth="1.2" />
+      <line x1="56" y1="0" x2="56" y2="12" stroke="#450a0a" strokeWidth="1" />
+      <line x1="90" y1="0" x2="90" y2="12" stroke="#450a0a" strokeWidth="1" />
+      <line x1="120" y1="0" x2="120" y2="12" stroke="#450a0a" strokeWidth="1" />
+      <line x1="72" y1="12" x2="72" y2="24" stroke="#450a0a" strokeWidth="1" />
+      <line x1="106" y1="12" x2="106" y2="24" stroke="#450a0a" strokeWidth="1" />
 
-      {/* Carved Oak Mantelpiece Shelf */}
-      <rect x="24" y="44" width="112" height="13" rx="2" fill="#78350f" stroke="#451a03" strokeWidth="2" />
-      <line x1="26" y1="46" x2="134" y2="46" stroke="#fde68a" strokeWidth="1" strokeOpacity="0.5" />
+      {/* 5. PRONOUNCED 3/4 PERSPECTIVE MANTLEPIECE (Deep 30px Horizontal Top Plane) */}
+      {/* Top Mantle Depth Surface */}
+      <polygon points="12,22 158,22 146,52 24,52" fill="url(#mantelTopWood)" stroke="#241206" strokeWidth="1.6" />
+      {/* Sunlight highlight along top back rim */}
+      <line x1="14" y1="23" x2="156" y2="23" stroke="#fef08a" strokeWidth="1.5" opacity="0.9" />
+      <line x1="13" y1="23" x2="24" y2="51" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
+      {/* Front Mantle Frieze Facade (thickness: 10px) */}
+      <rect x="24" y="50" width="122" height="10" fill="#78350f" stroke="#241206" strokeWidth="1.2" />
+      <line x1="24" y1="51" x2="146" y2="51" stroke="#fef08a" strokeWidth="1" opacity="0.6" />
+      {/* Cast shadow under mantle lip onto brick facade */}
+      <rect x="26" y="59" width="118" height="5" fill="rgba(0,0,0,0.45)" />
 
-      {/* Props on Mantel */}
-      {/* Carriage Clock */}
-      <rect x="73" y="30" width="14" height="14" rx="2" fill="#d97706" stroke="#78350f" strokeWidth="1" />
-      <circle cx="80" cy="37" r="5" fill="#fef3c7" stroke="#451a03" strokeWidth="0.6" />
-      <line x1="80" y1="37" x2="80" y2="34" stroke="#000" strokeWidth="0.8" />
-      <line x1="80" y1="37" x2="83" y2="37" stroke="#000" strokeWidth="0.8" />
-
-      {/* Candle in Brass Holder */}
-      <g transform="translate(36, 28)">
-        <ellipse cx="6" cy="16" rx="5" ry="1.5" fill="#d97706" stroke="#78350f" strokeWidth="0.6" />
-        <rect x="5" y="4" width="2.5" height="12" fill="#fef3c7" stroke="#d4d4d8" strokeWidth="0.5" />
-        {/* Flame */}
-        <ellipse cx="6" cy="1" rx="1.8" ry="3" fill="#f59e0b" />
-        <circle cx="6" cy="2" r="1" fill="#fff" />
+      {/* 6. PROPS RESTING ON 3/4 MANTLE SHELF */}
+      {/* Vintage Carriage Clock */}
+      <g transform="translate(80, 26)">
+        <ellipse cx="8" cy="18" rx="8" ry="3" fill="rgba(0,0,0,0.35)" />
+        <rect x="0" y="4" width="16" height="15" rx="2" fill="#d97706" stroke="#451a03" strokeWidth="1.2" />
+        <circle cx="8" cy="11.5" r="5.5" fill="#fef3c7" stroke="#451a03" strokeWidth="0.8" />
+        <line x1="8" y1="11.5" x2="8" y2="8" stroke="#000" strokeWidth="0.8" />
+        <line x1="8" y1="11.5" x2="11" y2="11.5" stroke="#000" strokeWidth="0.8" />
       </g>
 
-      {/* Arched Fireplace Hearth Opening */}
-      <path d="M 36 130 L 36 78 Q 80 52 124 78 L 124 130 Z" fill="#18181b" stroke="#450a0a" strokeWidth="3" />
+      {/* Brass Candle Holder with Flickering Flame */}
+      <g transform="translate(36, 24)">
+        <ellipse cx="6" cy="20" rx="6" ry="2.2" fill="rgba(0,0,0,0.35)" />
+        <ellipse cx="6" cy="18" rx="6" ry="1.8" fill="#d97706" stroke="#78350f" strokeWidth="0.8" />
+        <rect x="5" y="6" width="2.5" height="13" fill="#fef3c7" stroke="#d4d4d8" strokeWidth="0.5" />
+        <ellipse cx="6" cy="3" rx="2" ry="4" fill="#f59e0b" />
+        <circle cx="6" cy="4" r="1.2" fill="#fff" />
+      </g>
 
-      {/* Firewood Logs */}
-      <ellipse cx="68" cy="116" rx="22" ry="6" transform="rotate(-12 68 116)" fill="#78350f" stroke="#291203" strokeWidth="1.2" />
-      <ellipse cx="92" cy="116" rx="22" ry="6" transform="rotate(12 92 116)" fill="#92400e" stroke="#291203" strokeWidth="1.2" />
+      {/* Blue Ceramic Vase with Flowers (Right on Mantle) */}
+      <g transform="translate(126, 24)">
+        <ellipse cx="6" cy="20" rx="5" ry="2" fill="rgba(0,0,0,0.35)" />
+        <path d="M 3 10 Q 1 15 2 19 Q 6 21 10 19 Q 11 15 9 10 Z" fill="#0284c7" stroke="#0c4a6e" strokeWidth="0.8" />
+        <ellipse cx="6" cy="10" rx="3" ry="1" fill="#38bdf8" />
+        <circle cx="4" cy="6" r="2.5" fill="#ec4899" />
+        <circle cx="8" cy="5" r="2.5" fill="#facc15" />
+        <circle cx="6" cy="3" r="1" fill="#fff" />
+      </g>
 
-      {/* Vector Flame Shapes with Layered Glowing Pulsing Paths */}
+      {/* 7. Arched Hearth Firebox Opening */}
+      <path d="M 38 132 L 38 84 Q 85 60 132 84 L 132 132 Z" fill="#120c08" stroke="#3b0808" strokeWidth="2.5" />
+
+      {/* 8. Firewood Logs inside Hearth */}
+      <ellipse cx="73" cy="122" rx="22" ry="6" transform="rotate(-12 73 122)" fill="#78350f" stroke="#241206" strokeWidth="1.2" />
+      <ellipse cx="97" cy="122" rx="22" ry="6" transform="rotate(12 97 122)" fill="#92400e" stroke="#241206" strokeWidth="1.2" />
+
+      {/* 9. Layered Hearth Flames */}
       <g className="vector-hearth-flames">
-        <path d="M 64 120 Q 56 94 72 74 Q 82 92 80 120 Z" fill="url(#flameCenter)" opacity="0.9" />
-        <path d="M 78 120 Q 94 88 88 68 Q 106 88 96 120 Z" fill="url(#flameCenter)" opacity="0.9" />
-        <path d="M 72 120 Q 80 84 80 72 Q 88 84 88 120 Z" fill="#fef08a" opacity="0.95" />
-        {/* Sparks */}
-        <circle cx="74" cy="62" r="1.5" fill="#fef08a" />
-        <circle cx="86" cy="58" r="1.2" fill="#fde047" />
-        <circle cx="82" cy="50" r="1" fill="#f59e0b" />
+        <path d="M 69 126 Q 61 98 77 78 Q 87 96 85 126 Z" fill="url(#flameCenter)" opacity="0.92" />
+        <path d="M 83 126 Q 99 92 93 72 Q 111 92 101 126 Z" fill="url(#flameCenter)" opacity="0.92" />
+        <path d="M 77 126 Q 85 88 85 76 Q 93 88 93 126 Z" fill="#fef08a" opacity="0.96" />
+        <circle cx="79" cy="66" r="1.5" fill="#fef08a" />
+        <circle cx="91" cy="62" r="1.2" fill="#fde047" />
+        <circle cx="87" cy="54" r="1" fill="#f59e0b" />
       </g>
     </svg>
   );

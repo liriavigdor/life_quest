@@ -20,7 +20,8 @@ export function drawCompleteVillager(ctx, {
   isNight = false,
   isSunset = false,
   look = {},
-  timestamp = Date.now()
+  timestamp = Date.now(),
+  onRug = false
 }) {
   const effectiveOutfit = inWater ? 'swimwear' : (outfit || 'autumn_sweater');
   const isSitting = activity === 'drinking_tea' || activity === 'bonfire_warming' || activity === 'reading_book';
@@ -41,7 +42,7 @@ export function drawCompleteVillager(ctx, {
   ctx.translate(cx, cy);
   ctx.scale(scale, scale);
 
-  // 1. Water ripples or Ground contact shadow
+  // 1. Water ripples or Ground contact shadow (2.5D Ambient Shadows & Lighting)
   if (inWater) {
     const ripPhase = timestamp * 0.005;
     const ripR = 13 + Math.sin(ripPhase) * 2.5;
@@ -58,15 +59,20 @@ export function drawCompleteVillager(ctx, {
     ctx.ellipse(0, 3, ripInner, ripInner * 0.45, 0, 0, Math.PI * 2);
     ctx.stroke();
   } else {
+    // Dynamic Directional Drop Shadow following character feet in 3/4 perspective
     const shadowScale = Math.max(0.6, 1 + hopY * 0.03);
+    const rugSpread = onRug ? 1.15 : 1.0;
     ctx.save();
-    ctx.translate(0, 1);
-    ctx.scale(1, 0.5);
-    const aoR = 12 * shadowScale;
-    const aoGrad = ctx.createRadialGradient(0, 0, aoR * 0.1, 0, 0, aoR);
-    aoGrad.addColorStop(0, isNight ? 'rgba(45, 31, 24, 0.45)' : 'rgba(45, 31, 24, 0.3)');
-    aoGrad.addColorStop(0.65, isNight ? 'rgba(45, 31, 24, 0.28)' : 'rgba(45, 31, 24, 0.18)');
-    aoGrad.addColorStop(1, 'rgba(45, 31, 24, 0)');
+    // 3/4 perspective offset: elongated slightly downwards and opposite to facing direction
+    const shadowOffsetX = facingLeft ? 1.2 : -1.2;
+    ctx.translate(shadowOffsetX, 1.8);
+    ctx.scale(1.15 * rugSpread, 0.48 * rugSpread);
+    const aoR = 13 * shadowScale;
+    const aoGrad = ctx.createRadialGradient(0, 0, aoR * 0.08, 0, 0, aoR);
+    // Soft, semi-transparent black drop shadow (rgba(0,0,0,0.30) core)
+    aoGrad.addColorStop(0, onRug ? 'rgba(0, 0, 0, 0.32)' : 'rgba(0, 0, 0, 0.30)');
+    aoGrad.addColorStop(0.55, onRug ? 'rgba(0, 0, 0, 0.18)' : 'rgba(0, 0, 0, 0.16)');
+    aoGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
     ctx.fillStyle = aoGrad;
     ctx.beginPath();
     ctx.arc(0, 0, aoR, 0, Math.PI * 2);
@@ -74,15 +80,19 @@ export function drawCompleteVillager(ctx, {
     ctx.restore();
   }
 
-  // 2. Vertical bobbing
+  // 2. Vertical bobbing & realistic walking weight
   let charY = 0;
   if (inWater) {
     charY = 2 + Math.sin(timestamp * 0.006) * 1.6;
   } else if (isSitting) {
     charY = 3 + Math.sin(timestamp * 0.003) * 0.5;
   } else {
-    const walkBob = isWalking ? Math.abs(Math.sin(walkCycle * 2)) * 2.2 : Math.sin(timestamp * 0.004) * 0.6;
-    charY = hopY - walkBob - 1;
+    // Subtle rhythmic vertical bobbing simulating realistic walking weight & momentum
+    // On rugs: cushioned dampening and slight micro-submersion (0.8px) into woven pile
+    const rugDamping = onRug ? 0.82 : 1.0;
+    const rugSubmersion = onRug ? 0.8 : 0;
+    const walkBob = isWalking ? Math.abs(Math.sin(walkCycle * 2)) * (2.4 * rugDamping) : Math.sin(timestamp * 0.004) * 0.5;
+    charY = hopY - walkBob - 1 + rugSubmersion;
   }
 
   ctx.translate(0, charY);
@@ -90,7 +100,13 @@ export function drawCompleteVillager(ctx, {
     ctx.scale(-1, 1);
   }
 
-  const legCycle = isWalking ? Math.sin(walkCycle) * 3.5 : 0;
+  // Subtle momentum squash/stretch during walk steps (micro weight shift)
+  if (isWalking && !inWater && !isSitting) {
+    const squash = Math.sin(walkCycle * 2) * 0.025;
+    ctx.scale(1 + squash, 1 - squash);
+  }
+
+  const legCycle = isWalking ? Math.sin(walkCycle) * (onRug ? 3.0 : 3.6) : 0;
 
   // 3. Legs & Footwear
   if (effectiveOutfit === 'swimwear') {

@@ -9368,24 +9368,26 @@ body, html {
    STARDEW VALLEY FARMHOUSE STARTER INTERIOR & VILLAGE INSTITUTIONS DEPTH
    ========================================================================== */
 
-/* 1. Stardew Void Viewport (Classic Pure Black RPG Sanctuary) */
+/* 1. Stardew Void Viewport (Classic RPG Sanctuary - Full Screen) */
 .stardew-void-viewport {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: #07090d;
-  background-image: radial-gradient(circle at center 45%, #181410 0%, #080605 85%, #000000 100%);
+  background-image: radial-gradient(circle at center 50%, #181410 0%, #080605 85%, #000000 100%);
   z-index: 99999;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
-  padding-top: 8px;
+  padding: 0;
+  margin: 0;
   user-select: none;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: #fff;
   direction: rtl;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   animation: stardewFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -9402,14 +9404,18 @@ body, html {
 
 /* 2. Top Stardew Valley Retro HUD Strip */
 .stardew-top-hud {
-  position: sticky;
-  top: 0;
+  position: relative;
+  flex: 0 0 auto;
   width: 100%;
-  max-width: 1100px;
+  max-width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 16px;
+  padding: 8px 24px;
+  background: rgba(18, 10, 7, 0.92);
+  border-bottom: 2px solid #3d2215;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
   z-index: 100;
   pointer-events: auto;
   gap: 12px;
@@ -10553,33 +10559,39 @@ body, html {
 
 .stardew-complex-stage {
   position: relative;
-  width: 980px;
-  height: 530px;
-  max-width: 96vw;
-  max-height: 82vh;
-  margin-top: 24px;
-  background: #120a07;
-  border: 4px solid #3d2215;
-  border-radius: 12px;
-  box-shadow: 
-    0 0 0 3px #1c0f08,
-    0 35px 90px rgba(0, 0, 0, 0.98),
-    inset 0 0 80px rgba(0, 0, 0, 0.85);
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100%;
+  margin: 0;
+  background: #0d0805;
+  background-image: radial-gradient(circle at center 50%, #1c120c 0%, #0c0805 100%);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   cursor: crosshair;
   overflow: hidden;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Ant-Farm Multi-Zone Camera Rig Wrapper */
+/* Ant-Farm Full Structure Frame Wrapper */
+.complex-structure-frame,
 .complex-world-camera-rig {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 1900px;
-  height: 1180px;
-  transform-origin: 0 0;
+  width: 1260px;
+  height: 660px;
+  transform-origin: center center;
   pointer-events: auto;
-  will-change: transform;
+  box-shadow: 
+    0 0 0 3px #3d2215,
+    0 25px 80px rgba(0, 0, 0, 0.95);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #070504;
 }
 
 @keyframes lamplightPulse {
@@ -10592,72 +10604,44 @@ body, html {
   animation: lamplightPulse 3.5s infinite ease-in-out;
 }
 
-/* Back Wall Multi-Zone Structure */
-.complex-back-wall-structure {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 145px;
-  background: #fde68a;
-  background-image: repeating-linear-gradient(
-    180deg,
-    #fef3c7 0px,
-    #fed7aa 22px,
-    #fba34b 23px,
-    #b45309 24px
-  );
-  border-bottom: 8px solid #78350f;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.5);
-  z-index: 10;
-  pointer-events: auto;
-  display: flex;
-}
-
-.wall-crown-molding {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background: #451a03;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-/* Wing A: Store Wall Zone */
+/* Wing A: Store Wall Zone (Left Chamber) */
 .store-wall-zone {
-  flex: 0 0 340px;
-  border-right: 4px solid #78350f;
-  position: relative;
+  position: absolute;
+  left: 45px;
+  top: 245px;
+  width: 260px;
+  height: 110px;
   display: flex;
   align-items: flex-end;
   padding-bottom: 8px;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .store-wall-shelves-backdrop {
-  width: 250px;
-  height: 125px;
+  width: 180px;
+  height: 95px;
   margin-right: 14px;
 }
 
 .store-window-arched {
   position: absolute;
-  top: 18px;
-  left: 35px;
-  width: 44px;
-  height: 64px;
+  top: 8px;
+  left: 20px;
+  width: 36px;
+  height: 52px;
   background: #bae6fd;
-  border: 4px solid #ffffff;
-  border-radius: 22px 22px 0 0;
+  border: 3px solid #ffffff;
+  border-radius: 18px 18px 0 0;
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.9);
 }
 
 .store-sunbeam-cast {
   position: absolute;
-  top: 80px;
-  left: 20px;
-  width: 130px;
-  height: 320px;
+  top: 60px;
+  left: 10px;
+  width: 110px;
+  height: 260px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(254, 240, 138, 0.18) 40%, transparent 100%);
   transform: skewX(-20deg);
   pointer-events: none;
@@ -10667,19 +10651,19 @@ body, html {
 
 .store-corkboard-frame {
   position: absolute;
-  top: 24px;
-  right: 18px;
-  width: 90px;
-  height: 60px;
+  top: 14px;
+  right: 12px;
+  width: 80px;
+  height: 52px;
   background: #b45309;
-  border: 4px solid #78350f;
+  border: 3px solid #78350f;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.5);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 4px;
+  gap: 3px;
+  padding: 3px;
   transition: transform 0.15s ease;
 }
 
@@ -10688,7 +10672,7 @@ body, html {
 }
 
 .board-sticky-note {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 800;
   padding: 2px 4px;
   border-radius: 2px;
@@ -10696,21 +10680,25 @@ body, html {
 .board-sticky-note.n1 { background: #fef08a; color: #451a03; }
 .board-sticky-note.n2 { background: #bbf7d0; color: #14532d; }
 
-/* Wing B: Hearth Wall Zone */
+/* Wing B: Hearth Wall Zone (Main Hall Center) */
 .hearth-wall-zone {
-  flex: 0 0 380px;
-  position: relative;
+  position: absolute;
+  left: 305px;
+  top: 245px;
+  width: 510px;
+  height: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 4px solid #78350f;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .grand-brick-chimney-complex {
   position: absolute;
-  top: 2px;
-  width: 145px;
-  height: 125px;
+  top: -45px;
+  width: 170px;
+  height: 150px;
   cursor: pointer;
   z-index: 14;
   transition: filter 0.2s ease;
@@ -10720,21 +10708,27 @@ body, html {
   filter: brightness(1.15);
 }
 
-/* Wing C: Shrine Wall Zone */
+/* Wing C: Shrine Wall Zone (Right Chamber) */
 .shrine-wall-zone {
-  flex: 1;
-  position: relative;
+  position: absolute;
+  left: 815px;
+  top: 245px;
+  width: 405px;
+  height: 110px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 8px;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .golden-altar-monument {
+  position: absolute;
+  top: -35px;
   width: 135px;
   height: 115px;
   cursor: pointer;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10745,80 +10739,121 @@ body, html {
   transform: scale(1.05);
 }
 
-/* Floor Carpets & Runways */
+/* Floor Carpets & Runways (Aligned with 2.5D Complex Architecture) */
 .community-central-carpet {
   position: absolute;
-  top: 220px;
-  left: 410px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  top: 255px;
+  left: 630px;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 170px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 12;
   cursor: pointer;
+  background: transparent;
   transition: transform 0.15s ease;
 }
 .community-central-carpet:hover {
-  transform: scale(1.03);
+  transform: translate(-50%, -50%) scale(1.02);
+}
+.community-central-carpet svg {
+  display: none; /* Authentic 2.5D woven rug rendered by ComplexArchitectureSVG */
 }
 
 .store-welcome-mat {
   position: absolute;
-  top: 260px;
-  left: 55px;
-  width: 140px;
-  height: 36px;
-  background: #991b1b;
-  border: 3px solid #78350f;
-  border-radius: 4px;
+  top: 360px;
+  left: 225px;
+  transform: translate(-50%, -50%);
+  padding: 4px 14px;
+  background: rgba(30, 8, 14, 0.72);
+  border: 1.5px solid rgba(244, 63, 94, 0.5);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.72rem;
   font-weight: 800;
-  color: #fef3c7;
+  color: #fecdd3;
   z-index: 12;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
 }
 
-/* Furniture: Store Counter & Aisles */
+.shrine-carpet-runner {
+  position: absolute;
+  top: 360px;
+  left: 1025px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.carpet-urgency-badge {
+  padding: 4px 14px;
+  background: rgba(4, 30, 20, 0.75);
+  border: 1.5px solid rgba(52, 211, 153, 0.5);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #a7f3d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+.carpet-urgency-badge.yellow-badge {
+  background: rgba(35, 18, 5, 0.75);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fef08a;
+}
+.carpet-urgency-badge.green-badge {
+  background: rgba(4, 30, 20, 0.75);
+  border-color: rgba(52, 211, 153, 0.5);
+  color: #a7f3d0;
+}
+
+/* Furniture: Store Counter & Aisles (Naturally placed away from extreme corners) */
 .furniture-store-counter {
   position: absolute;
-  top: 175px;
-  left: 55px;
-  width: 155px;
-  height: 75px;
+  top: 310px;
+  left: 85px;
+  width: 170px;
+  height: 90px;
   cursor: pointer;
   z-index: 20;
 }
 
 .store-produce-bins {
   position: absolute;
-  top: 395px;
-  left: 55px;
-  width: 140px;
-  height: 50px;
+  top: 495px;
+  left: 80px;
+  width: 144px;
+  height: 56px;
   cursor: pointer;
   z-index: 20;
 }
 
 .salon-potted-ficus {
   position: absolute;
-  top: 160px;
+  top: 265px;
   width: 55px;
   height: 65px;
   z-index: 18;
 }
-.salon-potted-ficus.left { left: 360px; }
-.salon-potted-ficus.right { left: 650px; }
+.salon-potted-ficus.left { left: 320px; }
+.salon-potted-ficus.right { left: 775px; }
 
 .salon-tea-station {
   position: absolute;
-  top: 345px;
-  left: 495px;
-  width: 95px;
-  height: 65px;
+  top: 500px;
+  left: 560px;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 70px;
   cursor: pointer;
   z-index: 18;
 }
@@ -10826,8 +10861,9 @@ body, html {
 /* Shrine Blue Benches */
 .shrine-blue-benches-complex {
   position: absolute;
-  top: 245px;
-  right: 55px;
+  top: 425px;
+  left: 1010px;
+  transform: translate(-50%, -50%);
   width: 150px;
   height: 75px;
   cursor: pointer;
@@ -10931,25 +10967,30 @@ body, html {
 /* Doorway Notch */
 .complex-doorway-notch {
   position: absolute;
-  bottom: -22px;
-  left: 450px;
-  width: 95px;
-  height: 24px;
+  bottom: 0;
+  left: 560px;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 36px;
   background: #78350f;
   border: 3px solid #451a03;
   border-top: none;
+  border-radius: 0 0 8px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 25;
   box-shadow: 0 6px 14px rgba(0,0,0,0.7);
 }
 
 .doorway-welcome-mat {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  color: #fde68a;
+  color: #fef08a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* --- Modals for Complex Stations --- */
@@ -11717,6 +11758,8 @@ body, html {
   background: rgba(245, 158, 11, 0.25) !important;
   border-color: #f59e0b !important;
   box-shadow: 0 0 16px rgba(245, 158, 11, 0.4) !important;
+}
+
 /* ==========================================================================
    8. RED, YELLOW, GREEN ROOM URGENCY & BIZARRE STORY PROXIMITY CALLOUTS
    ========================================================================== */
@@ -11808,6 +11851,13 @@ body, html {
   border: 1.5px solid #34d399;
   color: #ecfdf5;
   box-shadow: 0 0 14px rgba(16, 185, 129, 0.45);
+}
+
+.foyer-plaque {
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.9), rgba(51, 65, 85, 0.95));
+  border: 1.5px solid #94a3b8;
+  color: #f8fafc;
+  box-shadow: 0 0 14px rgba(148, 163, 184, 0.4);
 }
 
 /* Floor Urgency Rugs & Badges */
@@ -11961,23 +12011,2053 @@ body, html {
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
 }
 
+/* ==========================================================================
+   THE KEY METHOD (שיטת המפתחות) & HIERARCHICAL MEMORY TREE STYLING
+   ========================================================================== */
 
+/* 1. Prompt Bar: "מה אתה מפקיד היום?" */
+.room-deposit-prompt-bar {
+  position: absolute;
+  top: 68px;
+  right: 24px;
+  z-index: 45;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.25);
+  border-radius: 16px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  direction: rtl;
+  max-width: 620px;
+}
 
+.prompt-room-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+.prompt-room-icon {
+  font-size: 1.6rem;
+}
 
+.prompt-room-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 
+.prompt-question {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fef08a;
+}
 
+.prompt-ciphers {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
 
+.prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.prompt-deposit-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
 
+.prompt-deposit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+}
 
+.prompt-dismiss-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
 
+.prompt-dismiss-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
 
+/* 2. Key Method Deposit Modal */
+.key-method-modal {
+  width: 94%;
+  max-width: 680px;
+  max-height: 88vh;
+  background: linear-gradient(180deg, #1e1b18 0%, #110d0b 100%);
+  border: 2px solid #b45309;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(245, 158, 11, 0.2);
+  display: flex;
+  flex-direction: column;
+  color: #f8fafc;
+  direction: rtl;
+  overflow: hidden;
+  position: relative;
+}
 
+.key-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(24, 17, 13, 0.95);
+  border-bottom: 1px solid rgba(180, 83, 9, 0.35);
+}
 
+.key-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+.key-icon-badge {
+  font-size: 1.8rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 14px;
+  padding: 6px 10px;
+}
 
+.key-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #fef08a;
+  font-weight: 800;
+}
 
+.key-chain-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
 
+.chain-step {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
 
+.chain-arrow {
+  color: #f59e0b;
+  font-size: 0.75rem;
+}
 
+/* Mode Selection Tabs */
+.key-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 14px 20px 6px;
+}
+
+.key-mode-tab {
+  background: rgba(30, 24, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-align: right;
+}
+
+.key-mode-tab:hover {
+  background: rgba(45, 34, 27, 0.9);
+  color: #cbd5e1;
+}
+
+.key-mode-tab.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(180, 83, 9, 0.3));
+  border-color: #f59e0b;
+  color: #fef08a;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+}
+
+.key-mode-tab .tab-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.key-mode-tab .tab-text strong {
+  font-size: 0.95rem;
+}
+
+.key-mode-tab .tab-text span {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Key Deposit Form */
+.key-deposit-form {
+  padding: 14px 20px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.key-single-body, .key-list-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.label-hint {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.key-input, .key-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.key-input:focus, .key-textarea:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+/* Physical Chain Golden Seal */
+.physical-chain-seal {
+  background: linear-gradient(135deg, rgba(30, 24, 18, 0.85), rgba(45, 30, 20, 0.7));
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seal-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: #fde047;
+}
+
+.seal-chain-display {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chain-node {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.village-node {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.house-node {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde047;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.assoc-node {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+}
+
+.locker-node {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.chain-sep {
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+.seal-tip {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+/* Bizarre Sorting Question Challenge Card */
+.bizarre-challenge-card {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.16) 0%, rgba(245, 158, 11, 0.12) 50%, rgba(13, 10, 8, 0.7) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bizarre-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bizarre-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fef08a;
+  background: rgba(245, 158, 11, 0.25);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.bizarre-tag-sub {
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+
+.bizarre-highlight-question {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bizarre-big-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.4));
+  animation: bounceSubtle 2.5s infinite ease-in-out;
+}
+
+@keyframes bounceSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px) scale(1.04); }
+}
+
+.bizarre-q-content {
+  flex: 1;
+}
+
+.bizarre-q-title {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.bizarre-q-hint {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: #fcd34d;
+  line-height: 1.35;
+}
+
+.bizarre-assoc-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px dashed rgba(245, 158, 11, 0.35);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.bizarre-assoc-target {
+  color: #38bdf8;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.switch-benchmark-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.switch-benchmark-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Sorting Benchmarks Grid */
+.benchmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.benchmark-pill {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-align: right;
+  color: #cbd5e1;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.benchmark-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.benchmark-pill.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(180, 83, 9, 0.35));
+  border-color: #f59e0b;
+  color: #fef08a;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+
+.bench-icon {
+  font-size: 1.25rem;
+}
+
+.bench-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bench-info strong {
+  font-size: 0.82rem;
+}
+
+.bench-assoc {
+  font-size: 0.72rem;
+  color: #f59e0b;
+}
+
+.custom-benchmark-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Numbered Locker Station */
+.numbered-locker-station {
+  background: rgba(18, 13, 10, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.locker-station-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.locker-title-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.locker-brass-tag {
+  font-weight: 800;
+  color: #fef08a;
+  font-size: 0.95rem;
+}
+
+.locker-bench-badge, .locker-assoc-badge {
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.locker-assoc-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.reorder-prompt-hint {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.locker-slots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.locker-slot-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 22, 16, 0.9);
+  border: 1px solid rgba(180, 83, 9, 0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.slot-number-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #b45309;
+  color: #fef08a;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.slot-item-text {
+  flex: 1;
+  font-size: 0.88rem;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.slot-order-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.order-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.order-btn:not(:disabled):hover {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: #f59e0b;
+  color: #fff;
+}
+
+/* Key Modal Footer */
+.key-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.key-cancel-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  padding: 8px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.key-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.key-submit-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border: none;
+  color: #110d0b;
+  font-weight: 800;
+  padding: 9px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.key-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+/* ==========================================================================
+   3. MEMORY HIERARCHY TREE MODAL — ULTRA-MINIMALIST VISUAL TREE
+      Top row: 🌲 ברוש | 🐑 כבשה | 🏠 בית (Single words & emojis)
+   ========================================================================== */
+
+.minimal-tree-modal {
+  width: 94%;
+  max-width: 820px;
+  max-height: 86vh;
+  background: linear-gradient(180deg, #131720 0%, #0b0e14 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(16, 185, 129, 0.12);
+  display: flex;
+  flex-direction: column;
+  color: #f8fafc;
+  direction: rtl;
+  overflow: hidden;
+  position: relative;
+}
+
+.minimal-tree-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(15, 19, 28, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.minimal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.minimal-logo-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.minimal-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.2px;
+}
+
+.minimal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimal-close-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.minimal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+/* Minimal Tree Canvas */
+.minimal-tree-canvas {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at 50% 15%, rgba(56, 189, 248, 0.06) 0%, rgba(11, 14, 20, 0.98) 75%);
+}
+
+/* Base Node Pill Styling */
+.minimal-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.minimal-node:hover {
+  transform: translateY(-2px);
+}
+
+.pill-emoji {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.pill-word {
+  letter-spacing: -0.2px;
+}
+
+.pill-badge {
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 10px;
+  line-height: 1.2;
+}
+
+/* Tier 1: Top Row (🌲 ברוש | 🐑 כבשה | 🏠 בית) */
+.minimal-tree-top-tier {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 740px;
+}
+
+.minimal-village-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.65;
+  transition: all 0.2s ease;
+}
+
+.minimal-village-branch.active {
+  opacity: 1;
+}
+
+.root-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid var(--node-color, #10b981);
+  color: #ffffff;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+}
+
+.root-pill.selected {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 16px var(--node-color, #10b981);
+  transform: scale(1.04);
+}
+
+.minimal-fork-svg-wrap {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tier 2: Houses under Root */
+.minimal-houses-subrow {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  gap: 8px;
+}
+
+.house-pill {
+  background: rgba(22, 27, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+}
+
+.house-pill:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(30, 38, 54, 0.95);
+}
+
+.house-pill.selected {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.18);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+  transform: scale(1.05);
+}
+
+/* Connector to 4 rooms */
+.minimal-stem-to-rooms {
+  width: 100%;
+  max-width: 680px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tier 3: The 4 Rooms & Leaves */
+.minimal-rooms-tier {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 740px;
+}
+
+.minimal-room-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-pill {
+  background: rgba(14, 18, 26, 0.85);
+  border: 1.5px solid var(--room-color, #94a3b8);
+  color: var(--room-color, #94a3b8);
+  padding: 6px 14px;
+  font-size: 0.84rem;
+  cursor: default;
+}
+
+.minimal-leaf-stem {
+  width: 2px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.minimal-leaves-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.minimal-empty-leaf {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.minimal-empty-leaf:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  transform: scale(1.1);
+}
+
+/* Tier 4: Leaves (Deposits) */
+.leaf-pill {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  max-width: 100%;
+  position: relative;
+}
+
+.leaf-pill.single-leaf {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #a7f3d0;
+}
+
+.leaf-pill.single-leaf:hover {
+  background: rgba(16, 185, 129, 0.28);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+.leaf-pill.locker-leaf {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1.5px solid rgba(245, 158, 11, 0.55);
+  color: #fde68a;
+}
+
+.leaf-pill.locker-leaf:hover {
+  background: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+}
+
+.leaf-quick-del {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-right: -4px;
+  margin-left: 2px;
+  transition: color 0.15s ease;
+}
+
+.leaf-quick-del:hover {
+  color: #ef4444;
+}
+
+/* Minimal Inspection Overlay (When clicking a leaf) */
+.minimal-inspect-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.minimal-inspect-card {
+  width: 92%;
+  max-width: 580px;
+  background: rgba(18, 15, 24, 0.98);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.minimal-inspect-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+}
+
+.inspect-header-info {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.inspect-tag {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.inspect-path {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.inspect-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   ACTIVE RECALL (שליפה אקטיבית) — CELL-BY-CELL HOVER REVEAL & LOCKER DOORS
+   ========================================================================== */
+
+.active-recall-locker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(14, 11, 10, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 12px;
+  padding: 10px 14px;
+  direction: rtl;
+}
+
+.active-recall-locker-container.compact {
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.active-recall-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recall-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.recall-criterion-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #cbd5e1;
+}
+
+.recall-criterion-badge strong {
+  color: #fef08a;
+}
+
+.recall-assoc-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #fde047;
+}
+
+.recall-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.recall-counter {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.recall-tool-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.recall-tool-btn:hover {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: #f59e0b;
+  color: #fff;
+}
+
+.active-recall-tip {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.08);
+  border-right: 3px solid #f59e0b;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+
+/* Locker Door Cells Grid */
+.recall-locker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.recall-locker-cell {
+  position: relative;
+  background: linear-gradient(135deg, #2b1f16 0%, #1a120c 100%);
+  border: 1px solid rgba(180, 83, 9, 0.4);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  overflow: hidden;
+  min-height: 58px;
+}
+
+.recall-locker-cell:hover, .recall-locker-cell.hovered {
+  border-color: #f59e0b;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
+}
+
+.cell-number-plate {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #b45309;
+  color: #fef08a;
+  font-weight: 800;
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  align-self: flex-start;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.cell-door-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Locked Door State */
+.cell-locked-door {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #78716c;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.cell-lock-icon {
+  color: #f59e0b;
+}
+
+.cell-hidden-teaser {
+  color: #a8a29e;
+  font-size: 0.73rem;
+}
+
+.recall-locker-cell:hover .cell-hidden-teaser {
+  color: #fef08a;
+}
+
+/* Revealed Content State */
+.cell-revealed-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: #f8fafc;
+}
+
+.cell-item-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+.cell-status-icon.unlock {
+  color: #10b981;
+}
+
+/* Active Recall for Single Items */
+.active-recall-single-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.active-recall-single-box:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.single-recall-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.locked-teaser {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fbbf24;
+  font-size: 0.78rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px dashed rgba(245, 158, 11, 0.35);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.revealed-text {
+  color: #fef08a;
+  font-size: 0.95rem;
+}
+
+.single-reset-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #94a3b8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.single-reset-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.masked-assoc {
+  color: #fbbf24;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.revealed-assoc {
+  color: #f472b6;
+}
+
+/* ==========================================================================
+   AUTHENTIC PHYSICAL WOODEN LOCKER CABINET & SLIDING DRAWERS SYSTEM
+   ========================================================================== */
+
+/* 1. In-Room Physical Locker Furniture Piece on Canvas/Floor */
+.in-room-physical-locker-anchor {
+  pointer-events: auto;
+  user-select: none;
+}
+
+.physical-locker-furniture-piece {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transform: translate(-50%, -60%);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.22s ease;
+}
+
+.physical-locker-furniture-piece:hover {
+  transform: translate(-50%, -66%) scale(1.08);
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.65));
+}
+
+.locker-furniture-svg {
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
+}
+
+.furniture-brass-tag {
+  margin-top: -6px;
+  background: linear-gradient(135deg, #78350f, #451a03);
+  border: 1.5px solid #f59e0b;
+  border-radius: 12px;
+  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.furniture-brass-tag .tag-lock-icon {
+  font-size: 0.85rem;
+}
+
+.furniture-brass-tag .tag-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fef08a;
+}
+
+/* In-Room Proximity Tooltip Bubble */
+.furniture-proximity-bubble {
+  position: absolute;
+  top: -82px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(30, 20, 14, 0.96), rgba(15, 10, 7, 0.98));
+  border: 1.5px solid #f59e0b;
+  border-radius: 12px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 15px rgba(245, 158, 11, 0.35);
+  cursor: pointer;
+  z-index: 30;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.furniture-proximity-bubble:hover {
+  transform: translateX(-50%) scale(1.05);
+  background: linear-gradient(135deg, rgba(69, 26, 3, 0.98), rgba(30, 15, 8, 0.98));
+}
+
+.bubble-key {
+  font-size: 0.7rem;
+  font-weight: 800;
+  background: #f59e0b;
+  color: #1c0a00;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.bubble-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+/* ==========================================================================
+   2. PHYSICAL LOCKER INSPECTION MODAL & WOODEN CABINET
+   ========================================================================== */
+
+.physical-locker-backdrop {
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.physical-locker-inspection-modal {
+  width: 95%;
+  max-width: 760px;
+  max-height: 90vh;
+  background: linear-gradient(180deg, #1f1612 0%, #120c08 100%);
+  border: 2px solid #b45309;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(245, 158, 11, 0.25);
+  display: flex;
+  flex-direction: column;
+  color: #f8fafc;
+  direction: rtl;
+  overflow: hidden;
+}
+
+.inspection-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(24, 16, 11, 0.96);
+  border-bottom: 2px solid rgba(180, 83, 9, 0.4);
+}
+
+.inspection-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inspection-badge-icon {
+  font-size: 2rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.inspection-header-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fef08a;
+}
+
+.inspection-sub {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
+.inspection-modal-body {
+  padding: 16px 20px 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   3. PHYSICAL WOODEN CABINET SHELL & DRAWERS SYSTEM
+   ========================================================================== */
+
+.physical-locker-furniture-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.physical-locker-furniture-container.compact {
+  gap: 8px;
+}
+
+/* In-Scene Companion Character Stage */
+.locker-companion-stage {
+  display: flex;
+  align-items: center;
+  background: rgba(24, 18, 13, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 14px;
+  padding: 10px 14px;
+  gap: 14px;
+}
+
+.companion-character-avatar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.char-sprite-mini {
+  width: 36px;
+  height: 44px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.char-hat {
+  width: 30px;
+  height: 12px;
+  background: #15803d;
+  border-radius: 6px 6px 2px 2px;
+  border: 1.5px solid #14532d;
+  position: absolute;
+  top: 0;
+  left: 3px;
+}
+
+.char-head {
+  width: 24px;
+  height: 20px;
+  background: #fbcfe8;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  left: 6px;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+.char-eyes {
+  width: 14px;
+  height: 4px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+}
+
+.char-eyes::before, .char-eyes::after {
+  content: '';
+  width: 3px;
+  height: 4px;
+  background: #1e293b;
+  border-radius: 50%;
+}
+
+.char-smile {
+  width: 8px;
+  height: 4px;
+  border-bottom: 2px solid #831843;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 3px;
+  left: 8px;
+}
+
+.char-torso {
+  width: 26px;
+  height: 16px;
+  background: #d97706;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+
+.char-backpack {
+  width: 8px;
+  height: 12px;
+  background: #78350f;
+  border-radius: 2px;
+  position: absolute;
+  top: 2px;
+  right: -4px;
+}
+
+.companion-speech-bubble {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 0.84rem;
+  color: #fef08a;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* Wooden Cabinet Body */
+.wooden-cabinet-shell {
+  background: linear-gradient(180deg, #451a03 0%, #291204 35%, #1a0a02 100%);
+  border: 3px solid #78350f;
+  border-radius: 16px;
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.8), 
+    inset 0 2px 4px rgba(254, 240, 138, 0.2),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+/* Brass Header Engraved Plate */
+.cabinet-brass-header {
+  background: linear-gradient(180deg, #fef08a 0%, #f59e0b 50%, #b45309 100%);
+  border: 2px solid #78350f;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: #291204;
+  position: relative;
+}
+
+.brass-screws-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #78350f;
+  margin-bottom: -4px;
+}
+
+.cabinet-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cabinet-header-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cabinet-title {
+  font-size: 0.98rem;
+  font-weight: 900;
+  color: #3e1700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.bizarre-q-highlight-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(120, 53, 15, 0.35);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.bizarre-q-highlight-strip .q-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #5c2200;
+}
+
+.bizarre-q-highlight-strip .bizarre-q-text {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #1a0800;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.cabinet-anchors-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.74rem;
+}
+
+.anchor-pill {
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.anchor-pill.village-pill {
+  background: rgba(22, 101, 52, 0.25);
+  color: #14532d;
+  border: 1px solid rgba(22, 101, 52, 0.4);
+}
+
+.anchor-pill.house-pill {
+  background: rgba(180, 83, 9, 0.25);
+  color: #78350f;
+  border: 1px solid rgba(180, 83, 9, 0.4);
+}
+
+.anchor-pill.assoc-pill {
+  background: rgba(67, 20, 7, 0.85);
+  color: #fef08a;
+  border: 1px solid #78350f;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.anchor-sep {
+  color: #78350f;
+  font-weight: bold;
+}
+
+/* Cabinet Tactile Toolbar */
+.cabinet-tactile-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: rgba(15, 10, 7, 0.6);
+  border: 1px solid rgba(180, 83, 9, 0.3);
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+.drawers-status-counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+.cabinet-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cabinet-tool-btn {
+  background: rgba(45, 25, 15, 0.8);
+  border: 1px solid #b45309;
+  border-radius: 8px;
+  color: #fef08a;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cabinet-tool-btn:hover {
+  background: rgba(120, 53, 15, 0.9);
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+/* Tier Guide */
+.drawer-tier-guide {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #fde047;
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+/* Drawers Stack */
+.drawers-stack-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  perspective: 1000px;
+}
+
+/* Physical Drawer Bay */
+.physical-drawer-bay {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.drawer-cavity-shadow {
+  background: #0d0703;
+  border: 2px solid #381504;
+  border-radius: 12px;
+  box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.95);
+  padding: 4px;
+  position: relative;
+}
+
+/* Sliding Drawer 3D Body */
+.sliding-drawer-body {
+  background: linear-gradient(180deg, #5c2409 0%, #3e1704 60%, #260c02 100%);
+  border: 2px solid #854d0e;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+
+.sliding-drawer-body:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.25);
+}
+
+/* WHEN PULLED OUT: Drawer physically moves forward into 3D view */
+.sliding-drawer-body.is-slid-out {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #f59e0b;
+  box-shadow: 
+    0 16px 30px rgba(0, 0, 0, 0.8), 
+    0 0 20px rgba(245, 158, 11, 0.35),
+    inset 0 1px 0 rgba(254, 240, 138, 0.4);
+}
+
+/* Drawer Front Wooden Face */
+.drawer-front-face {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Brass Number Plate */
+.brass-number-plate {
+  background: linear-gradient(135deg, #fef08a, #d97706);
+  border: 1px solid #78350f;
+  border-radius: 6px;
+  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.brass-number-plate .plate-text {
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #3e1700;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.plate-rivet {
+  font-size: 0.5rem;
+  color: #78350f;
+}
+
+/* Brass Pull Handle */
+.brass-pull-handle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.brass-pull-handle:hover {
+  transform: scale(1.15);
+}
+
+.handle-ring {
+  width: 44px;
+  height: 14px;
+  background: linear-gradient(180deg, #fef08a 0%, #f59e0b 50%, #92400e 100%);
+  border: 1.5px solid #78350f;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Keyhole Socket */
+.brass-keyhole-socket {
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #f59e0b 0%, #78350f 100%);
+  border: 1px solid #451a03;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.keyhole-slot {
+  width: 4px;
+  height: 8px;
+  background: #1c0a00;
+  border-radius: 2px 2px 0 0;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 65% 100%, 35% 100%, 0% 60%);
+}
+
+/* Reorder Controls ("מזיזים מגירות") */
+.drawer-reorder-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  padding: 2px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.drawer-reorder-btn {
+  background: rgba(69, 26, 3, 0.8);
+  border: 1px solid #b45309;
+  border-radius: 6px;
+  color: #fef08a;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.drawer-reorder-btn:hover:not(:disabled) {
+  background: #f59e0b;
+  color: #1a0800;
+  transform: scale(1.1);
+}
+
+.drawer-reorder-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Drawer Inner Secret Velvet Compartment */
+.drawer-inner-compartment {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  background: #120904;
+}
+
+.sliding-drawer-body.is-slid-out .drawer-inner-compartment {
+  max-height: 120px;
+  padding: 8px 12px 12px;
+}
+
+.velvet-tray {
+  background: linear-gradient(135deg, #581c87 0%, #3b0764 100%);
+  border: 1.5px solid #a855f7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  position: relative;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.secret-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.secret-item-badge {
+  font-size: 0.72rem;
+  color: #e9d5ff;
+}
+
+.secret-item-word {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fef08a;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(254, 240, 138, 0.5);
+}
+
+.secret-item-rank {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  color: #d8b4fe;
+}
+
+/* Drawer Status Cue */
+.drawer-status-cue {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.cue-badge {
+  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.cue-badge.open {
+  color: #86efac;
+  background: rgba(22, 101, 52, 0.25);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.cue-badge.closed {
+  color: #fef08a;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+/* Plinth Seal */
+.cabinet-bottom-plinth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.plinth-brass-trim {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+}
+
+.plinth-maker-seal {
+  font-size: 0.72rem;
+  color: #a8a29e;
+  font-style: italic;
+}

@@ -8,26 +8,29 @@ import {
   Trash2, 
   Brain, 
   Compass,
-  RotateCcw
+  RotateCcw,
+  Key,
+  GitBranch,
+  Layers
 } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { drawCompleteVillager } from '../utils/villagerRenderer';
 import { 
-  StoreShelvesSVG, 
-  StoreCounterSVG, 
-  ProduceBinsSVG, 
-  GrandHearthSVG, 
-  CentralCarpetSVG, 
-  ShrineAltarSVG, 
-  ShrineBenchesSVG, 
-  TeaTableSVG, 
-  PottedPlantSVG,
   VectorAnchorToken,
   VECTOR_ANCHOR_TOKENS
 } from './stardewArt/StardewVectorAssets';
 import { BizarreStackingEngine, generatePegKeyword } from './stardewArt/BizarreStackingEngine';
 import { BizarreStackingModal } from './stardewArt/BizarreStackingModal';
 import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/ComplexArchitecture';
+import { DepositModal } from './DepositModal';
+import { MemoryHierarchyTreeModal } from './MemoryHierarchyTreeModal';
+import { ActiveRecallLocker } from './ActiveRecallLocker';
+import { ActiveRecallSingle } from './ActiveRecallSingle';
+import { 
+  getChamberForPosition, 
+  HOUSE_CHAMBERS, 
+  getStoredDeposits 
+} from '../utils/keyMethodStorage';
 import {
   COMPLEX_PAD,
   COMPLEX_WORLD_W,
@@ -37,6 +40,15 @@ import {
   buildRoute,
   computeCamera
 } from '../utils/complexNavigation';
+
+// Helper to detect if coordinates are resting on a thick woven Area Rug
+const isOnAreaRug = (x, y) => {
+  if (x >= 95 && x <= 365 && y >= 215 && y <= 535) return true; // Red Zone Rug
+  if (x >= 475 && x <= 785 && y >= 150 && y <= 360) return true; // Central Hall Rug
+  if (x >= 895 && x <= 1165 && y >= 215 && y <= 535) return true; // Green Zone Rug
+  if (Math.hypot((x - 630) / 60, (y - 560) / 25) <= 1) return true; // Foyer Mat
+  return false;
+};
 
 export function StardewInstitutionComplex({
   building,
@@ -143,23 +155,73 @@ export function StardewInstitutionComplex({
     setTimeout(() => setToastMessage(''), 2400);
   };
 
-  // Player Positioning & Real-time Canvas Rendering
-  const [playerPos, setPlayerPos] = useState({ x: 500, y: 460 });
+  // Player Positioning & Real-time Canvas Rendering (Starts in Neutral Entrance Foyer!)
+  const [playerPos, setPlayerPos] = useState({ x: 630, y: 530 });
   const [isPlayerWalking, setIsPlayerWalking] = useState(false);
   const [playerFacingLeft, setPlayerFacingLeft] = useState(false);
   const playerTargetRef = useRef(null);
   const animationFrameRef = useRef(null);
   const canvasRef = useRef(null);
 
-  // Camera / multi-zone navigation (visual layout layer): the stage is a camera window onto a larger world
+  // Key Method State (שיטת המפתחות)
+  const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
+  const [isHierarchyTreeOpen, setIsHierarchyTreeOpen] = useState(false);
+  const [modalTargetRoom, setModalTargetRoom] = useState(null);
+  const [promptChamber, setPromptChamber] = useState(null);
+  const [storedDeposits, setStoredDeposits] = useState(() => getStoredDeposits());
+  const [inspectingLockerData, setInspectingLockerData] = useState(null);
+
+  useEffect(() => {
+    const handleUpdate = () => setStoredDeposits(getStoredDeposits());
+    window.addEventListener('lifequest_deposits_updated', handleUpdate);
+    return () => window.removeEventListener('lifequest_deposits_updated', handleUpdate);
+  }, []);
+
+  // Track current chamber based on player position in the multi-chamber burrow
+  const currentChamber = useMemo(() => {
+    return getChamberForPosition(playerPos.x, playerPos.y);
+  }, [playerPos.x, playerPos.y]);
+
+  const lastChamberRef = useRef(null);
+  useEffect(() => {
+    if (currentChamber && currentChamber.id !== lastChamberRef.current) {
+      lastChamberRef.current = currentChamber.id;
+      setPromptChamber(currentChamber);
+    }
+  }, [currentChamber]);
+
+  // Full-screen responsive fit scale
   const stageRef = useRef(null);
   const worldRef = useRef(null);
-  const camRef = useRef({ x: 0, y: 0, ready: false });
-  const playerPosRef = useRef({ x: 500, y: 460 });
+  const [fitScale, setFitScale] = useState(1);
+  const playerPosRef = useRef({ x: 630, y: 530 });
   const routeRef = useRef([]);
+
   useEffect(() => {
     playerPosRef.current = playerPos;
   }, [playerPos]);
+
+  // Dynamically calculate scale to fit the entire structure inside the screen
+  useEffect(() => {
+    const updateScale = () => {
+      if (stageRef.current) {
+        const sw = stageRef.current.clientWidth;
+        const sh = stageRef.current.clientHeight;
+        if (sw > 0 && sh > 0) {
+          const scale = Math.min((sw - 16) / COMPLEX_WORLD_W, (sh - 16) / COMPLEX_WORLD_H);
+          setFitScale(Math.max(0.35, scale));
+        }
+      }
+    };
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    const ro = new ResizeObserver(updateScale);
+    if (stageRef.current) ro.observe(stageRef.current);
+    return () => {
+      window.removeEventListener('resize', updateScale);
+      ro.disconnect();
+    };
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -198,10 +260,9 @@ export function StardewInstitutionComplex({
       routeRef.current = [];
 
       setPlayerPos(prev => {
-        // Walls are enforced by the zone map: sliding along walls, passing through door openings
         const { x: nextX, y: nextY } = resolveMove(prev, dx, dy);
 
-        if (nextX >= 470 && nextX <= 530 && nextY >= 475) {
+        if (nextX >= 570 && nextX <= 690 && nextY >= 600) {
           showToast('יציאה לכפר 🍃');
           setTimeout(() => onClose(), 180);
         }
@@ -224,13 +285,15 @@ export function StardewInstitutionComplex({
     };
   }, [editingLocusKey, isAddingCustomAnchor, onClose]);
 
-  // Click-to-Move (camera-aware with zoom: converts the click into world coordinates and routes through doorways)
+  // Click-to-Move (Static full-screen coordinate mapping with multi-chamber routing)
   const handleFloorClick = (e) => {
     if (editingLocusKey || isAddingCustomAnchor) return;
-    const ZOOM = 1.35;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = (e.clientX - rect.left) / ZOOM + camRef.current.x;
-    const clickY = (e.clientY - rect.top) / ZOOM + camRef.current.y;
+    if (!stageRef.current) return;
+    const rect = stageRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const clickX = (e.clientX - centerX) / fitScale + COMPLEX_WORLD_W / 2;
+    const clickY = (e.clientY - centerY) / fitScale + COMPLEX_WORLD_H / 2;
 
     const { x: targetX, y: targetY } = snapToWalkable(clickX, clickY);
     const route = buildRoute(playerPosRef.current, { x: targetX, y: targetY });
@@ -258,13 +321,12 @@ export function StardewInstitutionComplex({
 
         if (dist < 4) {
           if (routeRef.current.length > 0) {
-            // Reached a doorway waypoint: continue to the next one
             playerTargetRef.current = routeRef.current.shift();
           } else {
             playerTargetRef.current = null;
             setIsPlayerWalking(false);
 
-            if (curPos.x >= 470 && curPos.x <= 530 && curPos.y >= 475) {
+            if (curPos.x >= 570 && curPos.x <= 690 && curPos.y >= 600) {
               showToast('יציאה לכפר 🍃');
               setTimeout(() => onClose(), 180);
             }
@@ -273,12 +335,11 @@ export function StardewInstitutionComplex({
           playerPosRef.current = arrived;
           setPlayerPos(arrived);
         } else {
-          const speed = 210;
+          const speed = 240;
           const moveDist = Math.min(dist, speed * dt);
           const next = resolveMove(curPos, (dx / dist) * moveDist, (dy / dist) * moveDist);
 
           if (next.x === curPos.x && next.y === curPos.y) {
-            // Blocked by a wall: stop instead of pushing forever
             playerTargetRef.current = null;
             routeRef.current = [];
             setIsPlayerWalking(false);
@@ -296,76 +357,24 @@ export function StardewInstitutionComplex({
         const ctx = canvas.getContext('2d');
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // Canvas covers the whole world; shift so drawing stays in the hall's origin space
-        ctx.setTransform(1, 0, 0, 1, COMPLEX_PAD, COMPLEX_PAD);
 
-        // 1. NPC Pierre behind store counter
-        drawCompleteVillager(ctx, {
-          cx: 140,
-          cy: 185,
-          scale: 1.55,
-          look: { skinTone: 'light', hairColor: 'auburn', hairStyle: 'slicked', glasses: 'wire_round' },
-          outfit: 'blacksmith_apron',
-          activity: null,
-          facingLeft: false,
-          timestamp: time
-        });
+        const playerX = playerPosRef.current.x;
+        const playerY = playerPosRef.current.y;
+        const playerOnRug = isOnAreaRug(playerX, playerY);
 
-        // 2. NPC Caroline in the Salon Lounge
+        // Main Player Character (+19% proportional scale, heavy bobbing & dynamic drop shadow)
         drawCompleteVillager(ctx, {
-          cx: 440,
-          cy: 285,
-          scale: 1.5,
-          look: { skinTone: 'fair', hairColor: 'green', hairStyle: 'long_wavy' },
-          outfit: 'gardener_dungarees',
-          activity: 'drinking_tea',
-          facingLeft: false,
-          timestamp: time
-        });
-
-        // 3. NPC Abigail in the Salon Lounge
-        drawCompleteVillager(ctx, {
-          cx: 580,
-          cy: 285,
-          scale: 1.5,
-          look: { skinTone: 'fair', hairColor: 'purple', hairStyle: 'short_bob' },
-          outfit: 'autumn_sweater',
-          activity: null,
-          facingLeft: true,
-          timestamp: time
-        });
-
-        // 4. Main Player Character (High-detail, well-proportioned relative to house)
-        drawCompleteVillager(ctx, {
-          cx: playerPosRef.current.x,
-          cy: playerPosRef.current.y,
-          scale: 1.7,
+          cx: playerX,
+          cy: playerY,
+          scale: 2.02,
           outfit: currentOutfit,
           facingLeft: playerFacingLeft,
           isWalking: isPlayerWalking,
-          walkCycle: (time * 0.01) % (Math.PI * 2),
+          walkCycle: (time * 0.012) % (Math.PI * 2),
           look: villagerLook,
-          timestamp: time
+          timestamp: time,
+          onRug: playerOnRug
         });
-      }
-
-      // Smooth camera: glide the world so the villager stays centered with zoom
-      const stageEl = stageRef.current;
-      const worldEl = worldRef.current;
-      if (stageEl && worldEl) {
-        const ZOOM = 1.35;
-        const want = computeCamera(playerPosRef.current, stageEl.clientWidth, stageEl.clientHeight, ZOOM);
-        const cam = camRef.current;
-        if (!cam.ready) {
-          cam.x = want.x;
-          cam.y = want.y;
-          cam.ready = true;
-        } else {
-          const k = Math.min(1, dt * 8);
-          cam.x += (want.x - cam.x) * k;
-          cam.y += (want.y - cam.y) * k;
-        }
-        worldEl.style.transform = `scale(${ZOOM}) translate3d(${-cam.x}px, ${-cam.y}px, 0)`;
       }
 
       animationFrameRef.current = requestAnimationFrame(loop);
@@ -375,19 +384,19 @@ export function StardewInstitutionComplex({
     return () => cancelAnimationFrame(animationFrameRef.current);
   }, [playerFacingLeft, isPlayerWalking, currentOutfit, villagerLook, onClose]);
 
-  // Physical stations / loci
+  // Physical stations / loci inside the 4 chambers
   const STATIONS = {
-    shop_counter: { x: 130, y: 220, name: 'דלפק החנות', locusKey: 'shop_counter' },
-    shelf_top: { x: 235, y: 240, name: 'מדף עליון בחנות', locusKey: 'shelf_top' },
-    shelf_bottom: { x: 235, y: 340, name: 'מדף תחתון בחנות', locusKey: 'shelf_bottom' },
-    produce_bin: { x: 100, y: 410, name: 'ארגז תוצרת', locusKey: 'produce_bin' },
-    notice_board: { x: 275, y: 150, name: 'לוח מודעות ורשימות', locusKey: 'notice_board' },
-    grand_hearth: { x: 505, y: 155, name: 'אח האבן המרכזית', locusKey: 'grand_hearth' },
-    community_carpet: { x: 510, y: 330, name: 'השטיח העגול בסלון', locusKey: 'community_carpet' },
-    tea_table: { x: 495, y: 375, name: 'שולחן המפגש', locusKey: 'tea_table' },
-    golden_altar: { x: 840, y: 160, name: 'מזבח הזהב והקריסטל', locusKey: 'golden_altar' },
-    shrine_benches: { x: 840, y: 280, name: 'ספסלי הקטיפה בהיכל', locusKey: 'shrine_benches' },
-    exit_door: { x: 500, y: 495, name: 'יציאה לכפר', locusKey: null }
+    shop_counter: { x: 140, y: 340, name: 'דלפק החנות', locusKey: 'shop_counter' },
+    shelf_top: { x: 250, y: 220, name: 'מדף עליון בחנות', locusKey: 'shelf_top' },
+    shelf_bottom: { x: 250, y: 320, name: 'מדף תחתון בחנות', locusKey: 'shelf_bottom' },
+    produce_bin: { x: 100, y: 520, name: 'ארגז תוצרת', locusKey: 'produce_bin' },
+    notice_board: { x: 340, y: 200, name: 'לוח מודעות ורשימות', locusKey: 'notice_board' },
+    grand_hearth: { x: 630, y: 110, name: 'אח האבן המרכזית', locusKey: 'grand_hearth' },
+    community_carpet: { x: 630, y: 240, name: 'השטיח העגול בסלון', locusKey: 'community_carpet' },
+    tea_table: { x: 630, y: 310, name: 'שולחן המפגש', locusKey: 'tea_table' },
+    golden_altar: { x: 1000, y: 200, name: 'מזבח הזהב והקריסטל', locusKey: 'golden_altar' },
+    shrine_benches: { x: 1000, y: 420, name: 'ספסלי הקטיפה בהיכל', locusKey: 'shrine_benches' },
+    exit_door: { x: 630, y: 615, name: 'יציאה לכפר', locusKey: null }
   };
 
   const nearestStation = useMemo(() => {
@@ -406,6 +415,30 @@ export function StardewInstitutionComplex({
   }, [playerPos]);
 
   const checkProximityInteraction = () => {
+    // 1. Check if near any physical locker furniture with deposits
+    const lockerPositions = {
+      entry_foyer: { x: 520, y: 480, name: 'חדר כניסה (מבואה נייטרלית)' },
+      left_store: { x: 200, y: 460, name: 'חדר דחוף (אגף שמאל)' },
+      main_hall: { x: 630, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
+      right_sanctuary: { x: 1040, y: 460, name: 'חדר שגרה (היכל השלווה)' }
+    };
+
+    for (const [roomId, pos] of Object.entries(lockerPositions)) {
+      const roomDeposits = storedDeposits.filter(d => d.roomId === roomId);
+      if (roomDeposits.length > 0) {
+        const dist = Math.hypot(playerPos.x - pos.x, playerPos.y - pos.y);
+        if (dist < 140) {
+          sounds.playTap?.();
+          setInspectingLockerData({
+            roomId,
+            roomName: pos.name,
+            deposits: roomDeposits
+          });
+          return;
+        }
+      }
+    }
+
     if (!nearestStation) return;
     if (nearestStation.key === 'exit_door') {
       onClose();
@@ -621,9 +654,7 @@ export function StardewInstitutionComplex({
   const activeStackItems = (lociData.bizarreStackConfig?.items || []).filter(item => !item.completed);
   const activePeg = generatePegKeyword(activeStackItems);
 
-  // Proximity to Shelf (Bizarre Story Trigger)
-  const distToShelf = Math.hypot(playerPos.x - 235, playerPos.y - 240);
-  const isNearShelf = distToShelf < 140;
+
 
   return (
     <div className="stardew-void-viewport" onClick={() => {
@@ -658,29 +689,82 @@ export function StardewInstitutionComplex({
           </div>
         </div>
 
-        {/* Center: ONE Clean Action Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        {/* Center: Key Method & Memory Tree Actions */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
           <button 
-            className="stardew-mode-switch-btn"
+            className="stardew-mode-switch-btn deposit-key-action-btn"
             style={{
-              background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+              background: 'linear-gradient(135deg, #10b981, #059669)',
               border: 'none',
-              color: '#000',
+              color: '#ffffff',
               fontWeight: 'bold',
-              padding: '7px 20px',
+              padding: '7px 16px',
               borderRadius: '20px',
-              boxShadow: '0 4px 14px rgba(245, 158, 11, 0.45)',
+              boxShadow: '0 4px 14px rgba(16, 185, 129, 0.45)',
               display: 'flex',
               alignItems: 'center',
-              gap: '7px',
-              cursor: 'pointer'
+              gap: '6px',
+              cursor: 'pointer',
+              fontSize: '0.86rem'
+            }}
+            onClick={() => {
+              sounds.playTap?.();
+              setModalTargetRoom(currentChamber || HOUSE_CHAMBERS[0]);
+              setIsDepositModalOpen(true);
+            }}
+            title="מה אתה מפקיד היום? — שיטת המפתחות"
+          >
+            <Key size={15} />
+            <span>מה אתה מפקיד היום? 🗝️</span>
+          </button>
+
+          <button 
+            className="stardew-mode-switch-btn tree-view-btn"
+            style={{
+              background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+              border: 'none',
+              color: '#ffffff',
+              fontWeight: 'bold',
+              padding: '7px 16px',
+              borderRadius: '20px',
+              boxShadow: '0 4px 14px rgba(99, 102, 241, 0.45)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              cursor: 'pointer',
+              fontSize: '0.86rem'
+            }}
+            onClick={() => {
+              sounds.playTap?.();
+              setIsHierarchyTreeOpen(true);
+            }}
+            title="עץ בינארי רב אפשרויות — כל ההיררכיה של ארמון הזיכרון"
+          >
+            <GitBranch size={15} />
+            <span>עץ הזיכרון 🌳</span>
+          </button>
+
+          <button 
+            className="stardew-mode-switch-btn peg-bonus-btn"
+            style={{
+              background: 'rgba(245, 158, 11, 0.2)',
+              border: '1px solid rgba(245, 158, 11, 0.5)',
+              color: '#fef08a',
+              fontWeight: 'bold',
+              padding: '6px 14px',
+              borderRadius: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              cursor: 'pointer',
+              fontSize: '0.8rem'
             }}
             onClick={() => setIsStackingModalOpen(true)}
             title="פתח חלון ליצירת דמות זיכרון מרשימה"
           >
-            <Sparkles size={16} color="#000" />
+            <Sparkles size={14} color="#f59e0b" />
             <span>
-              {activePeg.word ? `דמות זיכרון: "${activePeg.word}" ⚡` : 'יצירת דמות זיכרון ⚡'}
+              {activePeg.word ? `דמות: "${activePeg.word}" ⚡` : 'דמות זיכרון ⚡'}
             </span>
           </button>
         </div>
@@ -699,7 +783,41 @@ export function StardewInstitutionComplex({
         </div>
       </header>
 
-      {/* 2. Floating Notification Toast */}
+      {/* 2. Room Entrance Deposit Question Prompt */}
+      {promptChamber && (
+        <div className="room-deposit-prompt-bar glass-card animate-slide-down" onClick={e => e.stopPropagation()}>
+          <div className="prompt-room-meta">
+            <span className="prompt-room-icon">{promptChamber.emoji}</span>
+            <div className="prompt-room-text">
+              <span className="prompt-question">🚪 נכנסת אל <strong>{promptChamber.name}</strong> • מה אתה מפקיד היום?</span>
+              <span className="prompt-ciphers">צופן בית: <strong>"אבק"</strong> • צופן כפר: <strong>"יער"</strong></span>
+            </div>
+          </div>
+          <div className="prompt-actions">
+            <button 
+              className="prompt-deposit-btn"
+              onClick={() => {
+                sounds.playTap?.();
+                setModalTargetRoom(promptChamber);
+                setIsDepositModalOpen(true);
+                setPromptChamber(null);
+              }}
+            >
+              <Key size={15} />
+              <span>🗝️ הפקדת מידע בחדר</span>
+            </button>
+            <button 
+              className="prompt-dismiss-btn"
+              onClick={() => setPromptChamber(null)}
+              title="סגור הודעה"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 3. Floating Notification Toast */}
       {toastMessage && (
         <div className="stardew-toast-banner animate-bounce-gentle" onClick={e => e.stopPropagation()}>
           <Sparkles size={16} className="text-amber" />
@@ -707,7 +825,7 @@ export function StardewInstitutionComplex({
         </div>
       )}
 
-      {/* 3. The Grand Multi-Wing Stardew Complex Stage (Vector-Crafted!) */}
+      {/* 3. The Grand Multi-Chamber Burrow Complex Stage (Vector-Crafted!) */}
       <div 
         ref={stageRef}
         className="stardew-complex-stage"
@@ -716,356 +834,13 @@ export function StardewInstitutionComplex({
           handleFloorClick(e);
         }}
       >
-        <div ref={worldRef} className="complex-world-camera-rig">
+        <div 
+          ref={worldRef} 
+          className="complex-structure-frame"
+          style={{ transform: `scale(${fitScale})` }}
+        >
           <ComplexArchitectureSVG />
-        {/* =========================================================
-            LAYER 1: ARCHITECTURAL BACK WALL & ART ASSETS
-            ========================================================= */}
-        <div className="complex-back-wall-structure">
-          <div className="wall-crown-molding"></div>
-          <div className="wall-wainscot-panels"></div>
 
-          {/* Left Wing: Store Wall Shelves & Notice Board (RED ROOM / ZONE) */}
-          <div className="store-wall-zone">
-            <div className="zone-urgency-plaque red-zone-plaque">
-              <span>🔴 חדר דחוף (אדום)</span>
-              <small>צופן מחלקה: אבק</small>
-            </div>
-
-            <div className="store-wall-shelves-backdrop" style={{ position: 'relative' }}>
-              <StoreShelvesSVG />
-
-              {/* The Bizarre Stacking Engine overlay (if placed on shelf_top) */}
-              {((lociData.bizarreStackConfig?.targetLocus || 'shelf_top') === 'shelf_top') && activeStackItems.length > 0 && (
-                <svg 
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    overflow: 'visible',
-                    pointerEvents: 'none'
-                  }}
-                  viewBox="0 0 280 140"
-                >
-                  <g style={{ pointerEvents: 'auto', cursor: 'pointer' }} onClick={() => setIsStackingModalOpen(true)}>
-                    <BizarreStackingEngine
-                      items={activeStackItems}
-                      baseX={140}
-                      baseY={58}
-                    />
-                    {/* Floating Peg Keyword Pill Badge */}
-                    {activePeg.word && (
-                      <g transform="translate(140, -14)">
-                        <rect x="-42" y="-11" width="84" height="22" rx="11" fill="#09090b" stroke="#f59e0b" strokeWidth="1.5" />
-                        <text x="0" y="3.5" fill="#fef08a" fontSize="10.5" fontWeight="bold" textAnchor="middle">
-                          {activePeg.emoji} {activePeg.word}
-                        </text>
-                      </g>
-                    )}
-                  </g>
-                </svg>
-              )}
-
-              {/* Proximity Bizarre Story Callout on Shelf */}
-              {isNearShelf && (
-                <div 
-                  className="shelf-bizarre-story-callout animate-pop-in"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openLocusEditor('shelf_top');
-                  }}
-                  title="לחץ לעריכת הסיפור ההזוי והרשימה"
-                >
-                  <div className="callout-sparkle-row">
-                    <Sparkles size={14} className="text-amber" />
-                    <strong>📖 הסיפור ההזוי של המדף:</strong>
-                    <span className="callout-click-hint">✏️ עריכה</span>
-                  </div>
-                  <p className="callout-story-content">
-                    "{lociData.fixedLoci.shelf_top?.bizarreStory || lociData.bizarreStory || 'משקפי השמש נפלו לתוך האבק ופתאום הטלפון צעק מתוך המגף...'}"
-                  </p>
-                  <div className="callout-items-badges">
-                    {(lociData.fixedLoci.shelf_top?.items || ['משקפי שמש', 'טלפון', 'אבק']).map((it, idx) => (
-                      <span key={idx} className="callout-item-pill">📦 {typeof it === 'object' ? it.text : it}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Arched Window with Sunbeam */}
-            <div className="store-window-arched" title="חלון החנות">
-              <div className="window-glass-shine"></div>
-            </div>
-            <div className="store-sunbeam-cast"></div>
-
-            {/* Corkboard / Notice Board */}
-            <div 
-              className="store-corkboard-frame"
-              onClick={e => {
-                e.stopPropagation();
-                openLocusEditor('notice_board');
-              }}
-              title="לוח מודעות ורשימות — לחץ לעריכה"
-            >
-              <div className="board-pin">📍</div>
-              <div className="board-sticky-note n1">
-                {lociData.fixedLoci.notice_board?.title || 'לוח רשימות'}
-              </div>
-            </div>
-          </div>
-
-          {/* Center Wing: Grand Hearth Chimney (YELLOW ROOM / ZONE) */}
-          <div className="hearth-wall-zone">
-            <div className="zone-urgency-plaque yellow-zone-plaque">
-              <span>🟡 חדר בטיפול (צהוב)</span>
-              <small>משימות בתהליך</small>
-            </div>
-
-            <div 
-              className="grand-brick-chimney-complex"
-              onClick={e => {
-                e.stopPropagation();
-                openLocusEditor('grand_hearth');
-              }}
-              title="אח האבן המרכזית — לחץ לעריכת עוגן"
-            >
-              <GrandHearthSVG />
-            </div>
-          </div>
-
-          {/* Right Wing: Sacred Golden Altar & Crystal (GREEN ROOM / ZONE) */}
-          <div className="shrine-wall-zone">
-            <div className="zone-urgency-plaque green-zone-plaque">
-              <span>🟢 חדר שגרה (ירוק)</span>
-              <small>עוגנים רגועים</small>
-            </div>
-
-            <div 
-              className="golden-altar-monument"
-              onClick={e => {
-                e.stopPropagation();
-                openLocusEditor('golden_altar');
-              }}
-              title="מזבח הזהב והקריסטל — לחץ לעריכת עוגן"
-            >
-              <ShrineAltarSVG />
-            </div>
-          </div>
-        </div>
-
-        {/* =========================================================
-            LAYER 2: FLOOR CARPETS & RUNWAYS
-            ========================================================= */}
-        <div className="complex-floorboards-canvas">
-          {/* Central Circular Carpet (Yellow In-Progress Zone) */}
-          <div 
-            className="community-central-carpet yellow-carpet-zone"
-            onClick={e => {
-              e.stopPropagation();
-              openLocusEditor('community_carpet');
-            }}
-            title="השטיח העגול — לחץ לעריכת עוגן"
-          >
-            <CentralCarpetSVG />
-            <div className="carpet-urgency-badge yellow-badge">🟡 בטיפול</div>
-          </div>
-
-          {/* Store Welcome Rug (Red Urgent Zone) */}
-          <div className="store-welcome-mat red-welcome-mat">
-            <span>🔴 חדר דחוף (אדום)</span>
-          </div>
-
-          {/* Shrine Sacred Runner (Green Routine Zone) */}
-          <div className="shrine-carpet-runner green-runner-zone">
-            <div className="carpet-urgency-badge green-badge">🟢 שגרה ורוגע</div>
-          </div>
-        </div>
-
-        {/* =========================================================
-            LAYER 3: 2.5D VECTOR FURNITURE & VISUAL LOCI
-            ========================================================= */}
-
-        {/* --- ZONE A: STORE WING --- */}
-        {/* Store Counter with Vector Register, Scale, Ledger */}
-        <div 
-          className="furniture-store-counter"
-          onClick={e => {
-            e.stopPropagation();
-            openLocusEditor('shop_counter');
-          }}
-          title={isGym ? "דלפק הקבלה והציוד — לחץ לעריכה" : "דלפק החנות — לחץ לעריכת עוגן"}
-          style={{ position: 'relative' }}
-        >
-          <div className="clerk-tag-badge">{isGym ? 'מדריך הכושר' : 'פייר (החנווני)'}</div>
-          <StoreCounterSVG />
-
-          {/* Stacking Engine on Counter if selected */}
-          {((lociData.bizarreStackConfig?.targetLocus) === 'shop_counter') && (
-            <svg 
-              style={{
-                position: 'absolute',
-                top: -30,
-                left: 30,
-                width: 100,
-                height: 120,
-                overflow: 'visible',
-                pointerEvents: 'none'
-              }}
-              viewBox="0 0 100 100"
-            >
-              <g style={{ pointerEvents: 'auto', cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); setIsStackingModalOpen(true); }}>
-                <BizarreStackingEngine
-                  items={(lociData.bizarreStackConfig?.items || []).filter(item => !item.completed)}
-                  baseX={50}
-                  baseY={72}
-                  stepY={18}
-                  itemSize={26}
-                  onItemClick={(item, idx) => {
-                    sounds.playTap?.();
-                    showToast(`חפץ ${idx + 1} במגדל: ${item.text || item}`);
-                  }}
-                />
-              </g>
-            </svg>
-          )}
-
-          {lociData.fixedLoci.shop_counter?.title && (
-            <div className="locus-visual-tag">
-              <VectorAnchorToken icon={lociData.fixedLoci.shop_counter.icon} size={20} />
-              <small>{lociData.fixedLoci.shop_counter.title}</small>
-            </div>
-          )}
-        </div>
-
-        {/* Produce Crates on Floor */}
-        <div 
-          className="store-produce-bins"
-          onClick={e => {
-            e.stopPropagation();
-            openLocusEditor('produce_bin');
-          }}
-          title="ארגז תוצרת — לחץ לעריכת עוגן"
-        >
-          <ProduceBinsSVG />
-          {lociData.fixedLoci.produce_bin?.title && (
-            <div className="locus-visual-tag">
-              <VectorAnchorToken icon={lociData.fixedLoci.produce_bin.icon} size={20} />
-              <small>{lociData.fixedLoci.produce_bin.title}</small>
-            </div>
-          )}
-        </div>
-
-        {/* --- ZONE B: HEARTH SALON --- */}
-        <div className="salon-potted-ficus left">
-          <PottedPlantSVG />
-        </div>
-        <div className="salon-potted-ficus right">
-          <PottedPlantSVG />
-        </div>
-
-        {/* Hearth Visual Locus Tag */}
-        {lociData.fixedLoci.grand_hearth?.title && (
-          <div className="locus-visual-tag hearth-tag">
-            <VectorAnchorToken icon={lociData.fixedLoci.grand_hearth.icon} size={20} />
-            <small>{lociData.fixedLoci.grand_hearth.title}</small>
-          </div>
-        )}
-
-        {/* Central Carpet Visual Locus Tag */}
-        {lociData.fixedLoci.community_carpet?.title && (
-          <div className="locus-visual-tag carpet-tag">
-            <VectorAnchorToken icon={lociData.fixedLoci.community_carpet.icon} size={20} />
-            <small>{lociData.fixedLoci.community_carpet.title}</small>
-          </div>
-        )}
-
-        {/* NPC Labels in Salon (Villagers rendered on Canvas!) */}
-        <div className="npc-salon-tag-marker caroline-tag" title="קרוליין יושבת בסלון">
-          <span>קרוליין</span>
-        </div>
-        <div className="npc-salon-tag-marker abigail-tag" title="אביגיל">
-          <span>אביגיל</span>
-        </div>
-
-        {/* Tea Table */}
-        <div 
-          className="salon-tea-station"
-          onClick={e => {
-            e.stopPropagation();
-            openLocusEditor('tea_table');
-          }}
-          title={isGym ? "שולחן ההתאוששות — לחץ לעריכה" : "שולחן המפגש — לחץ לעריכת עוגן"}
-          style={{ position: 'relative' }}
-        >
-          <TeaTableSVG />
-
-          {/* Stacking Engine on Tea Table if selected */}
-          {((lociData.bizarreStackConfig?.targetLocus) === 'tea_table') && (
-            <svg 
-              style={{
-                position: 'absolute',
-                top: -35,
-                left: 20,
-                width: 100,
-                height: 120,
-                overflow: 'visible',
-                pointerEvents: 'none'
-              }}
-              viewBox="0 0 100 100"
-            >
-              <g style={{ pointerEvents: 'auto', cursor: 'pointer' }} onClick={(e) => { e.stopPropagation(); setIsStackingModalOpen(true); }}>
-                <BizarreStackingEngine
-                  items={(lociData.bizarreStackConfig?.items || []).filter(item => !item.completed)}
-                  baseX={50}
-                  baseY={72}
-                  stepY={18}
-                  itemSize={26}
-                  onItemClick={(item, idx) => {
-                    sounds.playTap?.();
-                    showToast(`חפץ ${idx + 1} במגדל: ${item.text || item}`);
-                  }}
-                />
-              </g>
-            </svg>
-          )}
-
-          {lociData.fixedLoci.tea_table?.title && (
-            <div className="locus-visual-tag">
-              <VectorAnchorToken icon={lociData.fixedLoci.tea_table.icon} size={20} />
-              <small>{lociData.fixedLoci.tea_table.title}</small>
-            </div>
-          )}
-        </div>
-
-        {/* --- ZONE C: SHRINE SANCTUARY --- */}
-        {/* Shrine Altar Tag */}
-        {lociData.fixedLoci.golden_altar?.title && (
-          <div className="locus-visual-tag altar-tag">
-            <VectorAnchorToken icon={lociData.fixedLoci.golden_altar.icon} size={20} />
-            <small>{lociData.fixedLoci.golden_altar.title}</small>
-          </div>
-        )}
-
-        {/* Velvet Benches */}
-        <div 
-          className="shrine-blue-benches-complex"
-          onClick={e => {
-            e.stopPropagation();
-            openLocusEditor('shrine_benches');
-          }}
-          title="ספסלי ההיכל — לחץ לעריכת עוגן"
-        >
-          <ShrineBenchesSVG />
-          {lociData.fixedLoci.shrine_benches?.title && (
-            <div className="locus-visual-tag">
-              <VectorAnchorToken icon={lociData.fixedLoci.shrine_benches.icon} size={20} />
-              <small>{lociData.fixedLoci.shrine_benches.title}</small>
-            </div>
-          )}
-        </div>
 
         {/* --- PLACED CUSTOM USER ANCHORS --- */}
         {lociData.customAnchors.map((anchor) => (
@@ -1086,6 +861,153 @@ export function StardewInstitutionComplex({
           </div>
         ))}
 
+        {/* --- IN-ROOM AUTHENTIC PHYSICAL WOODEN LOCKER FURNITURE --- */}
+        {Object.entries({
+          entry_foyer: { x: 535, y: 475, name: 'חדר כניסה (מבואה נייטרלית)' },
+          left_store: { x: 215, y: 460, name: 'חדר דחוף (אגף שמאל)' },
+          main_hall: { x: 630, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
+          right_sanctuary: { x: 1025, y: 460, name: 'חדר שגרה (היכל השלווה)' }
+        }).map(([roomId, pos]) => {
+          const roomDeposits = storedDeposits.filter(d => d.roomId === roomId);
+          if (roomDeposits.length === 0) return null;
+
+          const distToPlayer = Math.hypot(playerPos.x - pos.x, playerPos.y - pos.y);
+          const isNear = distToPlayer < 140;
+
+          return (
+            <div 
+              key={roomId} 
+              className="in-room-physical-locker-anchor"
+              style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 26 }}
+            >
+              {/* Isometric Physical Wooden Locker Furniture Piece */}
+              <div 
+                className="physical-locker-furniture-piece"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  sounds.playTap?.();
+                  setInspectingLockerData({
+                    roomId,
+                    roomName: pos.name,
+                    deposits: roomDeposits
+                  });
+                }}
+                title={`לחץ לבדיקת ארונית המגירות (${roomDeposits.length} הפקדות)`}
+              >
+                <svg width="76" height="90" viewBox="0 0 76 90" className="locker-furniture-svg">
+                  <defs>
+                    <radialGradient id={`shadow-${roomId}`} cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#000" stopOpacity="0.55" />
+                      <stop offset="100%" stopColor="#000" stopOpacity="0" />
+                    </radialGradient>
+                    <linearGradient id={`oakTop-${roomId}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#fbbf24" />
+                      <stop offset="40%" stopColor="#d97706" />
+                      <stop offset="80%" stopColor="#b45309" />
+                      <stop offset="100%" stopColor="#78350f" />
+                    </linearGradient>
+                    <linearGradient id={`oakSide-${roomId}`} x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#3d1d05" />
+                      <stop offset="100%" stopColor="#241206" />
+                    </linearGradient>
+                    <linearGradient id={`oakFace-${roomId}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#854d0e" />
+                      <stop offset="40%" stopColor="#713f12" />
+                      <stop offset="100%" stopColor="#3d1d05" />
+                    </linearGradient>
+                    <linearGradient id={`brassGold-${roomId}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#fef08a" />
+                      <stop offset="50%" stopColor="#f59e0b" />
+                      <stop offset="100%" stopColor="#b45309" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* 1. Deep Ground Contact Shadow directly under base on floor/rug */}
+                  <ellipse cx="38" cy="85" rx="36" ry="7.5" fill={`url(#shadow-${roomId})`} />
+
+                  {/* 2. Plinth Baseboard at Bottom */}
+                  <polygon points="8,75 68,75 65,84 11,84" fill="#241206" stroke="#120803" strokeWidth="1.2" />
+
+                  {/* 3. 3D Left-Side Facet (showing physical cabinet depth) */}
+                  <polygon points="2,6 10,24 10,78 2,72" fill={`url(#oakSide-${roomId})`} stroke="#1a0b03" strokeWidth="1.2" />
+                  <line x1="2" y1="6" x2="10" y2="24" stroke="rgba(254, 240, 138, 0.25)" strokeWidth="0.8" />
+
+                  {/* 4. Main Cabinet Box Front Face */}
+                  <rect x="10" y="24" width="58" height="52" rx="2" fill={`url(#oakFace-${roomId})`} stroke="#241206" strokeWidth="1.6" />
+
+                  {/* 5. PRONOUNCED 3/4 PERSPECTIVE TOP LID (18px deep horizontal surface) */}
+                  <polygon points="2,6 74,6 68,24 10,24" fill={`url(#oakTop-${roomId})`} stroke="#241206" strokeWidth="1.5" />
+                  {/* Sunlight rim */}
+                  <line x1="4" y1="7" x2="72" y2="7" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
+                  <line x1="3" y1="7" x2="10" y2="23" stroke="#fef08a" strokeWidth="1" opacity="0.75" />
+                  {/* Front vertical lip of top cornice */}
+                  <rect x="10" y="22" width="58" height="3" fill="#92400e" stroke="#241206" strokeWidth="0.8" />
+                  <rect x="10" y="25" width="58" height="3" fill="rgba(0,0,0,0.38)" />
+
+                  {/* 6. 4 Tiered Physical Drawers in 3/4 Perspective */}
+                  <rect x="15" y="28" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
+                  <line x1="16" y1="29" x2="62" y2="29" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
+                  <circle cx="39" cy="32.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
+                  <line x1="33" y1="32.5" x2="45" y2="32.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
+
+                  <rect x="15" y="40" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
+                  <line x1="16" y1="41" x2="62" y2="41" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
+                  <circle cx="39" cy="44.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
+                  <line x1="33" y1="44.5" x2="45" y2="44.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
+
+                  <rect x="15" y="52" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
+                  <line x1="16" y1="53" x2="62" y2="53" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
+                  <circle cx="39" cy="56.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
+                  <line x1="33" y1="56.5" x2="45" y2="56.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
+
+                  <rect x="15" y="64" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
+                  <line x1="16" y1="65" x2="62" y2="65" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
+                  <circle cx="39" cy="68.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
+                  <line x1="33" y1="68.5" x2="45" y2="68.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
+
+                  {/* 7. Corner Brass Brackets */}
+                  <polygon points="10,24 16,24 10,30" fill={`url(#brassGold-${roomId})`} />
+                  <polygon points="68,24 62,24 68,30" fill={`url(#brassGold-${roomId})`} />
+                  <polygon points="10,76 16,76 10,70" fill={`url(#brassGold-${roomId})`} />
+                  <polygon points="68,76 62,76 68,70" fill={`url(#brassGold-${roomId})`} />
+
+                  {/* 8. Glowing Oil Lantern firmly seated on 3/4 top surface */}
+                  <ellipse cx="39" cy="18" rx="8" ry="3" fill="rgba(0,0,0,0.3)" />
+                  <circle cx="39" cy="7" r="8" fill="rgba(245, 158, 11, 0.3)" />
+                  <rect x="36" y="6" width="6" height="8" rx="1" fill="#fef08a" stroke="#78350f" strokeWidth="0.8" />
+                  <path d="M 36 6 Q 39 2 42 6" fill="none" stroke="#78350f" strokeWidth="1.2" />
+                  <circle cx="39" cy="10" r="1.6" fill="#f59e0b" />
+                </svg>
+
+                {/* Elegant Brass Nameplate & Count Tag */}
+                <div className="furniture-brass-tag">
+                  <span className="tag-lock-icon">🗄️</span>
+                  <span className="tag-title">{roomDeposits.length} הפקדות</span>
+                </div>
+              </div>
+
+              {/* Clean Proximity Tooltip when near: NO intrusive full text list! */}
+              {isNear && (
+                <div 
+                  className="furniture-proximity-bubble animate-bounce-subtle"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    sounds.playTap?.();
+                    setInspectingLockerData({
+                      roomId,
+                      roomName: pos.name,
+                      deposits: roomDeposits
+                    });
+                  }}
+                >
+                  <span className="bubble-key">Space / לחץ</span>
+                  <span className="bubble-text">פתח ארונית מגירות 🗄️</span>
+                </div>
+              )}
+            </div>
+          );
+        })}
+
         {/* Canvas for Character Motion (Player + Villager NPCs!) */}
         <canvas 
           ref={canvasRef} 
@@ -1094,10 +1016,10 @@ export function StardewInstitutionComplex({
           className="complex-player-canvas"
           style={{
             position: 'absolute',
-            left: `${-COMPLEX_PAD}px`,
-            top: `${-COMPLEX_PAD}px`,
-            width: `${COMPLEX_WORLD_W}px`,
-            height: `${COMPLEX_WORLD_H}px`,
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
             pointerEvents: 'none',
             zIndex: 30
           }}
@@ -1432,6 +1354,61 @@ export function StardewInstitutionComplex({
         </div>
       )}
 
+      {/* 5.5 PHYSICAL LOCKER & DRAWERS INSPECTION MODAL */}
+      {inspectingLockerData && (
+        <div 
+          className="journal-backdrop physical-locker-backdrop animate-fade-in" 
+          onClick={() => setInspectingLockerData(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="physical-locker-inspection-modal glass-card" onClick={e => e.stopPropagation()}>
+            <div className="inspection-modal-header">
+              <div className="inspection-header-title">
+                <span className="inspection-badge-icon">🗄️</span>
+                <div>
+                  <h3>ארונית המגירות הפיזית • {inspectingLockerData.roomName || 'חדר'}</h3>
+                  <span className="inspection-sub">הדמות שלך מתאמנת ב-Active Recall על הלוקר הפיזי! משוך והזז מגירות 🧠</span>
+                </div>
+              </div>
+              <button 
+                type="button"
+                className="key-modal-close" 
+                onClick={() => setInspectingLockerData(null)}
+                title="סגור (Esc)"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="inspection-modal-body">
+              {inspectingLockerData.deposits.map(dep => (
+                dep.type === 'list' ? (
+                  <ActiveRecallLocker
+                    key={dep.id}
+                    depositId={dep.id}
+                    items={dep.items || []}
+                    criterion={dep.criterion}
+                    associationWord={dep.associationWord}
+                    villageCipher={dep.villageCipher}
+                    houseCipher={dep.houseCipher}
+                    showCharacterAvatar={true}
+                  />
+                ) : (
+                  <ActiveRecallSingle
+                    key={dep.id}
+                    itemName={dep.itemName}
+                    associationWord={dep.associationWord}
+                    villageCipher={dep.villageCipher}
+                    houseCipher={dep.houseCipher}
+                  />
+                )
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* 6. Custom Lists & Bizarre Stacking Engine Manager Modal */}
       <BizarreStackingModal
         isOpen={isStackingModalOpen}
@@ -1439,6 +1416,31 @@ export function StardewInstitutionComplex({
         stackConfig={lociData.bizarreStackConfig}
         onUpdateStackConfig={handleUpdateStackConfig}
         isGym={isGym}
+      />
+
+      {/* 7. The Key Method: Deposit Modal ("מה אתה מפקיד היום?") */}
+      <DepositModal
+        isOpen={isDepositModalOpen}
+        onClose={() => setIsDepositModalOpen(false)}
+        villageCipher="יער"
+        villageName="כפר יער הצבא והביטחון"
+        houseCipher="אבק"
+        houseName={isGym ? "היכל הכושר והאימון" : (building?.customName || "מחלקת לוגיסטיקה וציוד")}
+        room={modalTargetRoom || currentChamber || HOUSE_CHAMBERS[0]}
+        onDepositSaved={(newDeposit) => {
+          showToast(newDeposit.type === 'single' ? 'פריט הופקד בהצלחה! 🗝️' : 'ארונית לוקר ממוספרת נוצרה! 🗄️');
+        }}
+      />
+
+      {/* 8. Binary / Multi-Branch Memory Hierarchy Tree Explorer */}
+      <MemoryHierarchyTreeModal
+        isOpen={isHierarchyTreeOpen}
+        onClose={() => setIsHierarchyTreeOpen(false)}
+        onOpenDepositForRoom={(roomMeta) => {
+          setIsHierarchyTreeOpen(false);
+          setModalTargetRoom(roomMeta.room);
+          setIsDepositModalOpen(true);
+        }}
       />
     </div>
   );

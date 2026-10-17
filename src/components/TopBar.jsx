@@ -2,7 +2,7 @@ import React from 'react';
 import { Sparkles, Coins, Gem } from 'lucide-react';
 import { sounds } from '../utils/sound';
 
-export function TopBar({ resources, onOpenQuests, onOpenStats, soundMuted, onToggleSound }) {
+export function TopBar({ resources, onOpenQuests, onOpenStats, soundMuted, onToggleSound, onOpenHierarchyTree }) {
   // XP progress calculation towards next level
   const xpNeeded = resources.level * 100;
   const currentLevelXp = resources.xp % 100;
@@ -50,6 +50,30 @@ export function TopBar({ resources, onOpenQuests, onOpenStats, soundMuted, onTog
 
       {/* Quick Actions Right */}
       <div className="top-bar-right">
+        <button 
+          className="game-btn game-btn-tree" 
+          onClick={() => {
+            sounds.playTap();
+            onOpenHierarchyTree?.();
+          }}
+          title="עץ בינארי רב אפשרויות — ארמון הזיכרון"
+          style={{
+            background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+            border: 'none',
+            color: '#fff',
+            fontWeight: 'bold',
+            padding: '6px 14px',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px'
+          }}
+        >
+          <Sparkles size={16} />
+          <span>עץ הזיכרון 🌳</span>
+        </button>
+
         <button 
           className="sound-toggle-btn" 
           onClick={onToggleSound} 

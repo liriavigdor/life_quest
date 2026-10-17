@@ -36,7 +36,8 @@ import {
   Maximize2,
   Compass,
   MapPin,
-  Layers
+  Layers,
+  GitBranch
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
 import {
@@ -52,6 +53,7 @@ import { WorldRealmMapModal } from './components/WorldRealmMapModal';
 import { VillageTemplatesModal } from './components/VillageTemplatesModal';
 import { CognitiveSurveyModal } from './components/CognitiveSurveyModal';
 import { StoryToMonumentModal } from './components/StoryToMonumentModal';
+import { MemoryHierarchyTreeModal } from './components/MemoryHierarchyTreeModal';
 import { drawStoryDiorama } from './utils/storyDioramaRenderer';
 import './App.css';
 
@@ -316,6 +318,7 @@ export default function App() {
   const [showTemplatesModal, setShowTemplatesModal] = useState(false);
   const [showSurveyModal, setShowSurveyModal] = useState(false);
   const [showStoryModal, setShowStoryModal] = useState(false);
+  const [showHierarchyTree, setShowHierarchyTree] = useState(false);
   const [travelingNotice, setTravelingNotice] = useState(null);
 
   // Keep active village data in sync with villagesRegistry
@@ -8249,7 +8252,20 @@ export default function App() {
           </button>
         </div>
 
-        {/* 3. Sound Ambience Toggle */}
+        {/* 3. Multi-Branch Memory Hierarchy Tree Explorer */}
+        <button
+          className={`dock-btn tree-dock-btn ${showHierarchyTree ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowHierarchyTree(true);
+          }}
+          title="עץ בינארי רב אפשרויות — ארמון הזיכרון (שיטת המפתחות) 🌳"
+        >
+          <GitBranch size={20} className="text-emerald" />
+          <span className="dock-btn-label">עץ מידע</span>
+        </button>
+
+        {/* 4. Sound Ambience Toggle */}
         <button
           className={`dock-btn sound-dock-btn ${soundMuted ? 'muted' : ''}`}
           onClick={toggleSound}
@@ -9059,6 +9075,12 @@ export default function App() {
         isOpen={showStoryModal}
         onClose={() => setShowStoryModal(false)}
         onPlaceMonument={handlePlaceStoryMonument}
+      />
+
+      {/* Binary Multi-Branch Memory Hierarchy Tree Explorer (שיטת המפתחות) */}
+      <MemoryHierarchyTreeModal
+        isOpen={showHierarchyTree}
+        onClose={() => setShowHierarchyTree(false)}
       />
     </div>
   );
