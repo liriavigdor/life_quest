@@ -38,7 +38,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🚪',
     color: '#94a3b8',
     bgBadge: 'rgba(148, 163, 184, 0.15)',
-    bounds: { x1: 460, y1: 390, x2: 800, y2: 610 }
+    bounds: { x1: 420, y1: 440, x2: 700, y2: 620 }
   },
   {
     id: 'left_store',
@@ -49,7 +49,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🔴',
     color: '#ef4444',
     bgBadge: 'rgba(239, 68, 68, 0.15)',
-    bounds: { x1: 50, y1: 110, x2: 460, y2: 600 }
+    bounds: { x1: 40, y1: 90, x2: 420, y2: 390 }
   },
   {
     id: 'main_hall',
@@ -60,7 +60,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🟡',
     color: '#f59e0b',
     bgBadge: 'rgba(245, 158, 11, 0.15)',
-    bounds: { x1: 360, y1: 50, x2: 900, y2: 400 }
+    bounds: { x1: 420, y1: 40, x2: 780, y2: 440 }
   },
   {
     id: 'right_sanctuary',
@@ -71,7 +71,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🟢',
     color: '#10b981',
     bgBadge: 'rgba(16, 185, 129, 0.15)',
-    bounds: { x1: 800, y1: 110, x2: 1200, y2: 600 }
+    bounds: { x1: 780, y1: 170, x2: 1210, y2: 600 }
   }
 ];
 

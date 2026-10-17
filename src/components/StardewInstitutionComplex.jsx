@@ -43,10 +43,7 @@ import {
 
 // Helper to detect if coordinates are resting on a thick woven Area Rug
 const isOnAreaRug = (x, y) => {
-  if (x >= 95 && x <= 365 && y >= 215 && y <= 535) return true; // Red Zone Rug
-  if (x >= 475 && x <= 785 && y >= 150 && y <= 360) return true; // Central Hall Rug
-  if (x >= 895 && x <= 1165 && y >= 215 && y <= 535) return true; // Green Zone Rug
-  if (Math.hypot((x - 630) / 60, (y - 560) / 25) <= 1) return true; // Foyer Mat
+  // The architectural shell is intentionally empty: no rugs exist.
   return false;
 };
 
@@ -156,7 +153,7 @@ export function StardewInstitutionComplex({
   };
 
   // Player Positioning & Real-time Canvas Rendering (Starts in Neutral Entrance Foyer!)
-  const [playerPos, setPlayerPos] = useState({ x: 630, y: 530 });
+  const [playerPos, setPlayerPos] = useState({ x: 595, y: 510 });
   const [isPlayerWalking, setIsPlayerWalking] = useState(false);
   const [playerFacingLeft, setPlayerFacingLeft] = useState(false);
   const playerTargetRef = useRef(null);
@@ -194,7 +191,7 @@ export function StardewInstitutionComplex({
   const stageRef = useRef(null);
   const worldRef = useRef(null);
   const [fitScale, setFitScale] = useState(1);
-  const playerPosRef = useRef({ x: 630, y: 530 });
+  const playerPosRef = useRef({ x: 595, y: 510 });
   const routeRef = useRef([]);
 
   useEffect(() => {
@@ -418,9 +415,9 @@ export function StardewInstitutionComplex({
     // 1. Check if near any physical locker furniture with deposits
     const lockerPositions = {
       entry_foyer: { x: 520, y: 480, name: 'חדר כניסה (מבואה נייטרלית)' },
-      left_store: { x: 200, y: 460, name: 'חדר דחוף (אגף שמאל)' },
+      left_store: { x: 233, y: 235, name: 'חדר דחוף (אגף שמאל)' },
       main_hall: { x: 630, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-      right_sanctuary: { x: 1040, y: 460, name: 'חדר שגרה (היכל השלווה)' }
+      right_sanctuary: { x: 998, y: 305, name: 'חדר שגרה (היכל השלווה)' }
     };
 
     for (const [roomId, pos] of Object.entries(lockerPositions)) {
@@ -863,10 +860,10 @@ export function StardewInstitutionComplex({
 
         {/* --- IN-ROOM AUTHENTIC PHYSICAL WOODEN LOCKER FURNITURE --- */}
         {Object.entries({
-          entry_foyer: { x: 535, y: 475, name: 'חדר כניסה (מבואה נייטרלית)' },
-          left_store: { x: 215, y: 460, name: 'חדר דחוף (אגף שמאל)' },
-          main_hall: { x: 630, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-          right_sanctuary: { x: 1025, y: 460, name: 'חדר שגרה (היכל השלווה)' }
+          entry_foyer: { x: 505, y: 490, name: 'חדר כניסה (מבואה נייטרלית)' },
+          left_store: { x: 195, y: 190, name: 'חדר דחוף (אגף שמאל)' },
+          main_hall: { x: 595, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
+          right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' }
         }).map(([roomId, pos]) => {
           const roomDeposits = storedDeposits.filter(d => d.roomId === roomId);
           if (roomDeposits.length === 0) return null;

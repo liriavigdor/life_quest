@@ -1,399 +1,501 @@
 import React from 'react';
 
 // =========================================================================
-// RE-ARCHITECTED 2.5D COMPLEX ARCHITECTURE (Stardew Valley Style)
-// SKILL: Master_Carpentry_&_Seamless_Architecture
-// 1. SEAMLESS WOOD JOINERY: All roof wall caps, horizontal beams, and timber
-//    cove moldings flow as continuous, unbroken architectural contours with
-//    ZERO artificial black divider lines or modular rectangular breaks.
-// 2. UNIFIED ARCHWAYS: Doorways organically carve out of the partition walls
-//    using sweeping hand-carved curved timber corbels and curved soffits.
-// 3. INTEGRATED BASEBOARDS & CROWNS: Skirting boards and ceiling moldings wrap
-//    seamlessly around the entire 45° layout as single continuous trims.
-// 4. HAND-CRAFTED RUSTIC VIBE: Soft organic curves, continuous grain lines,
-//    and authentic master-carpentry joinery throughout.
+// PURE ARCHITECTURAL SHELL — COZY ASYMMETRIC COTTAGE (STARDEW MASTER CARPENTRY)
+// Authentic Stardew Valley Pierre's Shop / Multi-Wing Manor Architecture
+//
+// 1. PALETTE WARMTH & COHESION:
+//    - Deep Cedar Brown (#5c3a21) & Rich Rustic Oak (#8B5A2B) timber frames.
+//    - Soft Muted Copper (#CD7F32) highlights instead of harsh yellow streaks.
+//    - Aged Straw Cream (#EEDC82 / #ebd89f) cottage wallpaper.
+//    - Single unified rustic oak hardwood flooring across the entire layout.
+// 2. MASTER FRAMING CARPENTRY (SEAMLESS SOFT SEAMS):
+//    - Zero robotic black grid lines dividing the wood.
+//    - Continuous horizontal timber beams & wall caps with natural wood grain.
+//    - Subtle 45° miter carpentry joints at corners.
+//    - Pixel-level ambient occlusion & inner bevels for hand-carved depth.
+// 3. FLUID CORNER JOINERY:
+//    - Smooth 45° sloped perimeter walls that blend naturally into horizontal sills.
+//    - Hand-carved curved wooden brackets (corbels) softening inside corners & doorways.
+// 4. ARCHITECTURAL INDIVIDUALITY:
+//    - Deep recessed bed nook in NW wing with raised cedar step nosing.
+//    - Raised fireplace alcove in Central Hall with elevated wooden platform threshold.
+//    - 100% empty canvas — no furniture, no props, pristine structural shell.
 // =========================================================================
 
-const OUT = '#241206';
-const VOID = '#070504';
+const OUT = '#241206';        // Deep dark outline against the black void
+const VOID = '#070504';       // Deep RPG void background
 const W = 1260;
 const H = 660;
 
+const F = 56;     // Wall face height (wallpaper + wainscot)
+const CAP = 14;   // Wall-top timber cap thickness
+const SW = 14;    // Side-wall timber cap thickness
+const SLOPE = 0.6; // Uniform diagonal sunbeam slope
+
+// -------------------------------------------------------------------------
+// 1. FLOOR GEOMETRY (Unified Oak Hardwood)
+// -------------------------------------------------------------------------
+const FLOORS = [
+  [60, 118, 150, 170],    // Deep bed nook (raised)
+  [60, 170, 280, 290],    // NW wing (A1)
+  [60, 290, 180, 370],    // NW front-jutting nook (A2)
+  [280, 242, 430, 278],   // Cozy W-E corridor (C1, tight 36px)
+  [430, 140, 690, 340],   // Central Grand Hall (B)
+  [520, 112, 600, 140],   // Hearth alcove (raised)
+  [690, 292, 780, 328],   // East connector corridor (C2, tight 36px)
+  [542, 340, 578, 480],   // N-S corridor (C3, tight 36px)
+  [430, 480, 690, 590],   // Entrance Foyer (F)
+  [780, 250, 1180, 400],  // East wing north room
+  [1030, 400, 1100, 468], // East partition doorway corridor
+  [900, 468, 1180, 580],  // East wing south room
+  [505, 590, 635, 612],   // Village entrance stoop
+];
+
+// 45° Corner Floor Cuts (Removing triangular corners to void)
+const FLOOR_CUTS = [
+  [[60, 334], [60, 370], [96, 370]],
+  [[430, 554], [430, 590], [466, 590]],
+  [[690, 554], [690, 590], [654, 590]],
+  [[1180, 540], [1180, 580], [1140, 580]],
+];
+
+// -------------------------------------------------------------------------
+// 2. WALL FACES (Wallpaper + Cedar Wainscot)
+// -------------------------------------------------------------------------
+const FACES = [
+  { id: 'nk', x1: 60, x2: 150, base: 118, skipL: true, skipR: true },
+  { id: 'a1', x1: 164, x2: 280, base: 170 },
+  { id: 'alc', x1: 520, x2: 600, base: 112, skipL: true, skipR: true },
+  { id: 'bl', x1: 430, x2: 520, base: 140, skipR: true },
+  { id: 'br', x1: 600, x2: 690, base: 140, skipL: true },
+  { id: 'dn', x1: 780, x2: 1180, base: 250 },
+  { id: 'c1', x1: 294, x2: 416, base: 242 },
+  { id: 'c2', x1: 704, x2: 766, base: 292 },
+  { id: 'fl', x1: 430, x2: 542, base: 480, skipR: true },
+  { id: 'fr', x1: 578, x2: 690, base: 480, skipL: true },
+  { id: 'pl', x1: 900, x2: 1030, base: 468, skipR: true },
+  { id: 'pr', x1: 1100, x2: 1180, base: 468, skipL: true },
+];
+
+// Wall Tops: Continuous Horizontal Rafter Caps
+const CAPS = [
+  { x1: 46, x2: 164, y: 50 },    // Bed nook back
+  { x1: 164, x2: 294, y: 102 },  // NW wing back
+  { x1: 506, x2: 614, y: 44 },   // Alcove back
+  { x1: 416, x2: 704, y: 72 },   // Central Hall back (unbroken header over alcove)
+  { x1: 766, x2: 1194, y: 182 }, // East wing back
+  { x1: 294, x2: 416, y: 174 },  // C1 corridor north header
+  { x1: 704, x2: 766, y: 224 },  // C2 corridor north header
+  { x1: 416, x2: 704, y: 412 },  // Foyer north header (unbroken over C3)
+  { x1: 886, x2: 1194, y: 400 }, // East wing partition header
+];
+
+// Wall Tops: Continuous Vertical Side Strips
+const STRIPS = [
+  { x: 46, y1: 50, y2: 334, w: SW },     // NW west exterior
+  { x: 150, y1: 50, y2: 236, w: SW },    // Bed nook east partition
+  { x: 280, y1: 102, y2: 242, w: SW },   // NW east upper
+  { x: 280, y1: 278, y2: 302, w: SW },   // NW east lower
+  { x: 180, y1: 290, y2: 382, w: SW },   // NW front-jut east
+  { x: 416, y1: 72, y2: 242, w: SW },    // Central Hall west upper
+  { x: 416, y1: 278, y2: 352, w: SW },   // Central Hall west lower
+  { x: 690, y1: 72, y2: 292, w: SW },    // Central Hall east upper
+  { x: 690, y1: 328, y2: 352, w: SW },   // Central Hall east lower
+  { x: 506, y1: 44, y2: 140, w: SW },    // Alcove west
+  { x: 600, y1: 44, y2: 140, w: SW },    // Alcove east
+  { x: 528, y1: 352, y2: 424, w: SW },   // C3 west
+  { x: 578, y1: 352, y2: 424, w: SW },   // C3 east
+  { x: 416, y1: 412, y2: 554, w: SW },   // Foyer west
+  { x: 690, y1: 412, y2: 554, w: SW },   // Foyer east
+  { x: 766, y1: 182, y2: 292, w: SW },   // East wing west upper
+  { x: 766, y1: 328, y2: 412, w: SW },   // East wing west lower
+  { x: 1180, y1: 182, y2: 540, w: SW },  // East wing east
+  { x: 886, y1: 400, y2: 592, w: SW },   // East south room west
+  { x: 1040, y1: 250, y2: 320, w: 12 },  // East reading nook stub
+];
+
+// Front-Facing Low-Profile Wall Sills (Baseboards with wainscot facet)
+const LOW_WALLS = [
+  { x1: 180, x2: 280, y: 290 },
+  { x1: 280, x2: 430, y: 278 },
+  { x1: 96, x2: 194, y: 370 },
+  { x1: 416, x2: 542, y: 340 },
+  { x1: 578, x2: 704, y: 340 },
+  { x1: 690, x2: 780, y: 328 },
+  { x1: 766, x2: 886, y: 400 },
+  { x1: 886, x2: 1140, y: 580 },
+  { x1: 466, x2: 505, y: 590 },
+  { x1: 635, x2: 654, y: 590 },
+];
+
+// 45° Sloped Exterior Corner Timber Polygons (Seamless miters into horizontal/vertical runs)
+const SLOPED_CORNERS = [
+  // 1. NW Front-Jut SW Chamfer
+  {
+    outerPts: [[46, 320], [46, 334], [86, 374], [96, 382], [106, 382]],
+    innerPts: [[60, 320], [60, 334], [96, 370], [106, 370]],
+    poly: "46,324 46,334 86,374 96,384 106,384 106,370 96,370 60,334 60,324"
+  },
+  // 2. Foyer SW Chamfer
+  {
+    outerPts: [[416, 540], [416, 554], [456, 594], [466, 602], [476, 602]],
+    innerPts: [[430, 540], [430, 554], [466, 590], [476, 590]],
+    poly: "416,544 416,554 456,594 466,604 476,604 476,590 466,590 430,554 430,544"
+  },
+  // 3. Foyer SE Chamfer
+  {
+    outerPts: [[644, 602], [654, 602], [694, 562], [704, 554], [704, 540]],
+    innerPts: [[644, 590], [654, 590], [690, 554], [690, 540]],
+    poly: "644,604 654,604 694,564 704,554 704,544 690,544 690,554 654,590 644,590"
+  },
+  // 4. East South Room SE Chamfer
+  {
+    outerPts: [[1130, 592], [1140, 592], [1184, 548], [1194, 540], [1194, 526]],
+    innerPts: [[1130, 580], [1140, 580], [1180, 540], [1180, 526]],
+    poly: "1130,594 1140,594 1184,550 1194,540 1194,530 1180,530 1180,540 1140,580 1130,580"
+  }
+];
+
+// Soft 45° Miter Carpentry Seams between intersecting timber frames
+const MITER_JOINTS = [
+  // Bed Nook top corners
+  { x1: 46, y1: 50, x2: 60, y2: 64 },
+  { x1: 164, y1: 50, x2: 150, y2: 64 },
+  // NW Wing top corners
+  { x1: 280, y1: 116, x2: 294, y2: 102 },
+  // Central Hall top corners
+  { x1: 416, y1: 72, x2: 430, y2: 86 },
+  { x1: 704, y1: 72, x2: 690, y2: 86 },
+  // Alcove corners
+  { x1: 506, y1: 44, x2: 520, y2: 58 },
+  { x1: 614, y1: 44, x2: 600, y2: 58 },
+  // East Wing top corners
+  { x1: 766, y1: 182, x2: 780, y2: 196 },
+  { x1: 1194, y1: 182, x2: 1180, y2: 196 },
+  // Foyer North corners
+  { x1: 416, y1: 412, x2: 430, y2: 426 },
+  { x1: 704, y1: 412, x2: 690, y2: 426 },
+  // East partition corners
+  { x1: 886, y1: 400, x2: 900, y2: 414 },
+  { x1: 1194, y1: 400, x2: 1180, y2: 414 },
+];
+
+// Structural Support Pillars (Carved Cedar Timber)
+const PILLARS = [
+  { cx: 513, base: 140 }, { cx: 607, base: 140 },   // Alcove mouth
+  { cx: 535, base: 480 }, { cx: 585, base: 480 },   // C3 / Foyer mouth
+  { cx: 1037, base: 468 }, { cx: 1093, base: 468 }, // East partition doorway
+  { cx: 157, base: 240, w: 16 },                    // Bed nook divider post
+  { cx: 1046, base: 324, w: 16 },                   // East reading nook post
+];
+
+// Split-Level Raised Wooden Steps with Cedar Nosing
+const STEPS = [
+  { x1: 520, x2: 600, y: 140, label: 'hearth' },  // Central Hall hearth alcove step
+  { x1: 60, x2: 150, y: 170, label: 'bed_nook' }, // NW wing deep bed nook step
+];
+
+// Cottage Windows on Back-Most Walls
+const WINDOWS = [
+  [87, 118],   // Bed nook window
+  [212, 170],  // NW wing window
+  [448, 140], [624, 140], // Central Hall twin windows
+  [820, 250], [944, 250], [1100, 250], // East wing triple windows
+];
+
+// Continuous Horizontal Ceiling Timbers (Crown Rafters)
+const CROWNS = [
+  { x1: 60, x2: 150, y: 62 }, { x1: 164, x2: 280, y: 114 },
+  { x1: 520, x2: 600, y: 56 },
+  { x1: 430, x2: 690, y: 84 }, { x1: 780, x2: 1180, y: 194 },
+  { x1: 294, x2: 416, y: 186 }, { x1: 704, x2: 766, y: 236 },
+  { x1: 430, x2: 690, y: 424 }, { x1: 900, x2: 1180, y: 412 },
+];
+
 // =========================================================================
-// 1. SVG DEFS: TEXTURES, PATTERNS, GRADIENTS, FILTERS
+// 3. SVG DEFINITIONS & PALETTE SYSTEM
 // =========================================================================
+const OAK_ROWS = [[52, 118], [22, 92], [70, 134]];
+// Stardew Muted Cozy Earth Tones for Floor Planks
+const OAK_PALETTE = ['#8B5A2B', '#7d4c20', '#945e2e', '#724119'];
+const OAK_W = 160;
+const OAK_RH = 18;
+
+const OakFloorPattern = () => (
+  <pattern id="cxs-floor-oak" width={OAK_W} height={OAK_RH * OAK_ROWS.length} patternUnits="userSpaceOnUse" patternTransform="skewX(-6)">
+    {OAK_ROWS.map((joints, r) => {
+      const xs = [0, ...joints, OAK_W];
+      const y = r * OAK_RH;
+      return (
+        <React.Fragment key={r}>
+          {xs.slice(0, -1).map((x0, b) => {
+            const x1 = xs[b + 1];
+            const bw = x1 - x0;
+            return (
+              <React.Fragment key={b}>
+                <rect x={x0} y={y} width={bw} height={OAK_RH} fill={OAK_PALETTE[(r * 2 + b) % OAK_PALETTE.length]} />
+                {/* Subtle Hand-Carved Wood Grain Waves */}
+                <path d={`M ${x0 + 5} ${y + OAK_RH * 0.4} Q ${x0 + bw * 0.5} ${y + OAK_RH * 0.28} ${x1 - 6} ${y + OAK_RH * 0.5}`} stroke="rgba(50,22,5,0.28)" strokeWidth="0.7" fill="none" />
+                <path d={`M ${x0 + 9} ${y + OAK_RH * 0.74} Q ${x0 + bw * 0.55} ${y + OAK_RH * 0.66} ${x1 - 10} ${y + OAK_RH * 0.78}`} stroke="rgba(50,22,5,0.2)" strokeWidth="0.6" fill="none" />
+                {/* Warm Muted Copper (#CD7F32) Plank Highlight */}
+                <line x1={x0} y1={y + 0.8} x2={x1} y2={y + 0.8} stroke="rgba(205,127,50,0.28)" strokeWidth="0.9" />
+                {/* Organic Plank Joints & Nails */}
+                {x0 !== 0 && (
+                  <>
+                    <line x1={x0} y1={y} x2={x0} y2={y + OAK_RH} stroke="rgba(40,16,4,0.65)" strokeWidth="1.1" />
+                    <circle cx={x0 + 3} cy={y + OAK_RH * 0.5} r="0.9" fill="rgba(30,12,3,0.6)" />
+                  </>
+                )}
+              </React.Fragment>
+            );
+          })}
+          <line x1="0" y1={y + OAK_RH} x2={OAK_W} y2={y + OAK_RH} stroke="rgba(40,16,4,0.7)" strokeWidth="1.2" />
+        </React.Fragment>
+      );
+    })}
+  </pattern>
+);
+
 const Defs = () => (
   <defs>
-    {/* -----------------------------------------------------------------
-        1.1 RUSTIC OAK HARDWOOD FLOOR (Continuous staggered planks)
-        ----------------------------------------------------------------- */}
-    <pattern id="cx-unified-hardwood" width="96" height="32" patternUnits="userSpaceOnUse">
-      <rect x="0" y="0" width="96" height="8" fill="#c97f33" />
-      <rect x="0" y="0" width="56" height="8" fill="#ba7128" />
-      <line x1="0" y1="0.7" x2="96" y2="0.7" stroke="rgba(254, 240, 138, 0.3)" strokeWidth="0.8" />
-      <line x1="0" y1="8" x2="96" y2="8" stroke="#381703" strokeWidth="1.2" />
-      <line x1="56" y1="0" x2="56" y2="8" stroke="#381703" strokeWidth="1.2" />
-      <path d="M 8 2.5 Q 24 4.5 44 2 Q 52 1.5 54 2.5" stroke="#78350f" strokeWidth="0.6" fill="none" opacity="0.32" />
-      <path d="M 62 3 Q 76 5 90 3" stroke="#78350f" strokeWidth="0.6" fill="none" opacity="0.28" />
-      <rect x="2.5" y="2.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="52" y="2.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="58.5" y="2.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
+    <OakFloorPattern />
 
-      <rect x="0" y="8" width="96" height="8" fill="#dc9242" />
-      <rect x="24" y="8" width="72" height="8" fill="#cf8538" />
-      <line x1="0" y1="8.7" x2="96" y2="8.7" stroke="rgba(254, 240, 138, 0.25)" strokeWidth="0.8" />
-      <line x1="0" y1="16" x2="96" y2="16" stroke="#381703" strokeWidth="1.2" />
-      <line x1="24" y1="8" x2="24" y2="16" stroke="#381703" strokeWidth="1.2" />
-      <path d="M 2 11 Q 12 13 20 11" stroke="#854d0e" strokeWidth="0.6" fill="none" opacity="0.3" />
-      <path d="M 32 10.5 Q 54 13.5 86 11" stroke="#854d0e" strokeWidth="0.6" fill="none" opacity="0.32" />
-      <rect x="20" y="10.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="26.5" y="10.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="92" y="10.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-
-      <rect x="0" y="16" width="96" height="8" fill="#ba7128" />
-      <rect x="0" y="16" width="70" height="8" fill="#a8601c" />
-      <line x1="0" y1="16.7" x2="96" y2="16.7" stroke="rgba(254, 240, 138, 0.28)" strokeWidth="0.8" />
-      <line x1="0" y1="24" x2="96" y2="24" stroke="#381703" strokeWidth="1.2" />
-      <line x1="70" y1="16" x2="70" y2="24" stroke="#381703" strokeWidth="1.2" />
-      <path d="M 12 19 Q 34 22 60 19" stroke="#632e09" strokeWidth="0.6" fill="none" opacity="0.35" />
-      <rect x="2.5" y="18.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="66" y="18.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="72.5" y="18.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-
-      <rect x="0" y="24" width="96" height="8" fill="#a05918" />
-      <rect x="40" y="24" width="56" height="8" fill="#ba7128" />
-      <line x1="0" y1="24.7" x2="96" y2="24.7" stroke="rgba(254, 240, 138, 0.25)" strokeWidth="0.8" />
-      <line x1="0" y1="32" x2="96" y2="32" stroke="#381703" strokeWidth="1.2" />
-      <line x1="40" y1="24" x2="40" y2="32" stroke="#381703" strokeWidth="1.2" />
-      <path d="M 6 27 Q 20 29 36 27" stroke="#54280b" strokeWidth="0.6" fill="none" opacity="0.35" />
-      <path d="M 48 26.5 Q 68 29.5 90 27" stroke="#54280b" strokeWidth="0.6" fill="none" opacity="0.3" />
-      <rect x="36" y="26.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="42.5" y="26.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
-      <rect x="92" y="26.5" width="1.8" height="1.8" fill="#1f0902" rx="0.3" />
+    {/* Continuous Wood Grain Texture for Rafters & Frames */}
+    <pattern id="cxs-grain" width="96" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 0 2 Q 24 0.8 48 2.4 T 96 2" stroke="rgba(50,22,5,0.32)" strokeWidth="0.8" fill="none" />
+      <path d="M 0 5.6 Q 32 4.2 64 6 T 96 5.4" stroke="rgba(205,127,50,0.2)" strokeWidth="0.7" fill="none" />
     </pattern>
 
-    {/* -----------------------------------------------------------------
-        1.2 WALLPAPERS (Upper portion of Double-Wall System)
-        ----------------------------------------------------------------- */}
-    <pattern id="cx-wallpaper-salon" width="24" height="24" patternUnits="userSpaceOnUse">
-      <rect width="24" height="24" fill="#78350f" />
-      <rect x="0" y="0" width="12" height="24" fill="#6d300d" />
-      <line x1="12" y1="0" x2="12" y2="24" stroke="#92400e" strokeWidth="0.8" opacity="0.4" />
-      <polygon points="6,4 8,8 6,12 4,8" fill="#f59e0b" opacity="0.4" />
-      <polygon points="18,16 20,20 18,24 16,20" fill="#f59e0b" opacity="0.4" />
-      <circle cx="6" cy="8" r="1.2" fill="#fef08a" opacity="0.55" />
-      <circle cx="18" cy="20" r="1.2" fill="#fef08a" opacity="0.55" />
+    {/* Soft Straw Cream (#EEDC82) Vintage Cottage Wallpaper */}
+    <pattern id="cxs-wallpaper" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#ebd89f" />
+      <path d="M 0 10 Q 5 5 10 10 T 20 10" stroke="rgba(165,125,65,0.22)" strokeWidth="0.8" fill="none" />
+      <path d="M 10 0 Q 15 5 10 10 T 10 20" stroke="rgba(165,125,65,0.22)" strokeWidth="0.8" fill="none" />
+      <polygon points="10,4 16,10 10,16 4,10" fill="rgba(195,155,90,0.18)" />
+      <circle cx="10" cy="10" r="1.3" fill="#c4aa68" />
+      <circle cx="0" cy="0" r="1" fill="#cbb375" opacity="0.8" />
+      <circle cx="20" cy="0" r="1" fill="#cbb375" opacity="0.8" />
+      <circle cx="0" cy="20" r="1" fill="#cbb375" opacity="0.8" />
+      <circle cx="20" cy="20" r="1" fill="#cbb375" opacity="0.8" />
     </pattern>
 
-    <pattern id="cx-wallpaper-store" width="24" height="24" patternUnits="userSpaceOnUse">
-      <rect width="24" height="24" fill="#4c0519" />
-      <rect x="0" y="0" width="12" height="24" fill="#430415" />
-      <polygon points="6,5 9,8 6,11 3,8" fill="#881337" opacity="0.6" />
-      <polygon points="18,17 21,20 18,23 15,20" fill="#881337" opacity="0.6" />
-      <circle cx="6" cy="8" r="1.2" fill="#f43f5e" opacity="0.4" />
-      <circle cx="18" cy="20" r="1.2" fill="#f43f5e" opacity="0.4" />
-    </pattern>
-
-    <pattern id="cx-wallpaper-sanctuary" width="24" height="24" patternUnits="userSpaceOnUse">
-      <rect width="24" height="24" fill="#022c22" />
-      <rect x="0" y="0" width="12" height="24" fill="#01221a" />
-      <path d="M 6 4 Q 8 7 6 10 Q 4 7 6 4 Z" fill="#059669" opacity="0.5" />
-      <path d="M 18 16 Q 20 19 18 22 Q 16 19 18 16 Z" fill="#059669" opacity="0.5" />
-      <circle cx="6" cy="7" r="1" fill="#34d399" opacity="0.45" />
-      <circle cx="18" cy="19" r="1" fill="#34d399" opacity="0.45" />
-    </pattern>
-
-    <pattern id="cx-wallpaper-foyer" width="14" height="24" patternUnits="userSpaceOnUse">
-      <rect width="14" height="24" fill="#854d0e" />
-      <rect x="0" y="0" width="7" height="24" fill="#713f12" />
-      <line x1="7" y1="0" x2="7" y2="24" stroke="#451a03" strokeWidth="0.8" />
-      <line x1="1" y1="0" x2="1" y2="24" stroke="rgba(254, 240, 138, 0.15)" strokeWidth="0.8" />
-      <line x1="8" y1="0" x2="8" y2="24" stroke="rgba(254, 240, 138, 0.15)" strokeWidth="0.8" />
-    </pattern>
-
-    {/* -----------------------------------------------------------------
-        1.3 CONTINUOUS CARPENTRY JOINERY GRADIENTS
-        ----------------------------------------------------------------- */}
-    <linearGradient id="cx-wainscot-oak" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#54280b" />
-      <stop offset="20%" stopColor="#804112" />
-      <stop offset="80%" stopColor="#5c2c0a" />
-      <stop offset="100%" stopColor="#2e1406" />
+    {/* Wall Face Ambient Occlusion Shading Under Rafters */}
+    <linearGradient id="cxs-wall-shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="rgba(45,20,6,0.38)" />
+      <stop offset="30%" stopColor="rgba(45,20,6,0.08)" />
+      <stop offset="100%" stopColor="rgba(45,20,6,0.18)" />
     </linearGradient>
 
-    <linearGradient id="cx-wall-cap" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#f7d094" />
-      <stop offset="20%" stopColor="#df944a" />
-      <stop offset="65%" stopColor="#9a521e" />
-      <stop offset="100%" stopColor="#5a2707" />
+    {/* Rich Cedar & Rustic Oak Wainscot Gradient */}
+    <linearGradient id="cxs-wainscot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#7a461e" />
+      <stop offset="35%" stopColor="#633615" />
+      <stop offset="75%" stopColor="#4a250e" />
+      <stop offset="100%" stopColor="#321606" />
     </linearGradient>
 
-    <linearGradient id="cx-bottom-facing-wall" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#eab308" stopOpacity="0.85" />
-      <stop offset="35%" stopColor="#92400e" />
-      <stop offset="100%" stopColor="#451a03" />
+    {/* Master Ceiling Timber Cap Gradient (Cedar #5c3a21 to Rustic Oak #8B5A2B) */}
+    <linearGradient id="cxs-timber-cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#9c6430" />
+      <stop offset="25%" stopColor="#8B5A2B" />
+      <stop offset="65%" stopColor="#5c3a21" />
+      <stop offset="100%" stopColor="#3a1e0d" />
     </linearGradient>
 
-    {/* Seamless Continuous Skirting Board Profile */}
-    <linearGradient id="cx-skirting-face" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#9a521e" />
-      <stop offset="25%" stopColor="#6d300d" />
-      <stop offset="70%" stopColor="#421a05" />
-      <stop offset="100%" stopColor="#1a0802" />
+    {/* Continuous Horizontal Crown Rafter Molding */}
+    <linearGradient id="cxs-crown" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#CD7F32" />
+      <stop offset="35%" stopColor="#8B5A2B" />
+      <stop offset="85%" stopColor="#5c3a21" />
+      <stop offset="100%" stopColor="#361a09" />
     </linearGradient>
 
-    {/* Seamless Continuous Crown Molding Profile */}
-    <linearGradient id="cx-crown-profile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#fef08a" stopOpacity="0.95" />
-      <stop offset="25%" stopColor="#d48a42" />
-      <stop offset="65%" stopColor="#78350f" />
-      <stop offset="100%" stopColor="#2e1406" />
+    {/* Low-Profile Front Wall Sill Gradient */}
+    <linearGradient id="cxs-low-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#a46c36" />
+      <stop offset="30%" stopColor="#8B5A2B" />
+      <stop offset="70%" stopColor="#5c3a21" />
+      <stop offset="100%" stopColor="#2c1406" />
     </linearGradient>
 
-    {/* -----------------------------------------------------------------
-        1.4 VOLUMETRIC SUNLIGHT SHAFTS & FLOOR HIGHLIGHTS
-        ----------------------------------------------------------------- */}
-    <linearGradient id="sunbeam-left-grad" x1="0.3" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(255, 252, 230, 0.35)" />
-      <stop offset="35%" stopColor="rgba(255, 240, 185, 0.20)" />
-      <stop offset="75%" stopColor="rgba(255, 225, 140, 0.09)" />
-      <stop offset="100%" stopColor="rgba(255, 215, 100, 0)" />
+    {/* Hand-Carved Timber Pillar Gradient */}
+    <linearGradient id="cxs-pillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#a06633" />
+      <stop offset="25%" stopColor="#8B5A2B" />
+      <stop offset="70%" stopColor="#5c3a21" />
+      <stop offset="100%" stopColor="#3a1e0b" />
     </linearGradient>
 
-    <linearGradient id="sunbeam-center-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(255, 252, 235, 0.38)" />
-      <stop offset="30%" stopColor="rgba(255, 242, 190, 0.22)" />
-      <stop offset="75%" stopColor="rgba(255, 225, 140, 0.10)" />
-      <stop offset="100%" stopColor="rgba(255, 215, 100, 0)" />
+    {/* Curved Wooden Bracket (Corbel) Gradient */}
+    <linearGradient id="cxs-bracket" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#945d2b" />
+      <stop offset="100%" stopColor="#5c3a21" />
     </linearGradient>
 
-    <linearGradient id="sunbeam-right-grad" x1="0" y1="0" x2="0.35" y2="1">
-      <stop offset="0%" stopColor="rgba(255, 252, 230, 0.35)" />
-      <stop offset="35%" stopColor="rgba(255, 240, 185, 0.20)" />
-      <stop offset="75%" stopColor="rgba(255, 225, 140, 0.09)" />
-      <stop offset="100%" stopColor="rgba(255, 215, 100, 0)" />
+    {/* Warm Glowing Cottage Glass Gradient */}
+    <linearGradient id="cxs-glass" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stopColor="#fff8db" />
+      <stop offset="55%" stopColor="#fde08a" />
+      <stop offset="100%" stopColor="#d99b38" />
     </linearGradient>
 
-    <radialGradient id="sun-floor-patch-radial" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stopColor="rgba(255, 245, 195, 0.35)" />
-      <stop offset="50%" stopColor="rgba(255, 235, 160, 0.18)" />
-      <stop offset="100%" stopColor="rgba(255, 220, 120, 0)" />
-    </radialGradient>
-
-    <linearGradient id="cx-window-glass" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#ffffff" />
-      <stop offset="30%" stopColor="#fef08a" />
-      <stop offset="75%" stopColor="#fde047" />
-      <stop offset="100%" stopColor="#f59e0b" />
+    {/* Floor Grounding Ambient Occlusion Shadows */}
+    <linearGradient id="cxs-ao-down" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="rgba(24,10,2,0.62)" />
+      <stop offset="45%" stopColor="rgba(24,10,2,0.26)" />
+      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
+    </linearGradient>
+    <linearGradient id="cxs-ao-up" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stopColor="rgba(24,10,2,0.52)" />
+      <stop offset="45%" stopColor="rgba(24,10,2,0.22)" />
+      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
+    </linearGradient>
+    <linearGradient id="cxs-ao-right" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="rgba(24,10,2,0.52)" />
+      <stop offset="45%" stopColor="rgba(24,10,2,0.22)" />
+      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
+    </linearGradient>
+    <linearGradient id="cxs-ao-left" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stopColor="rgba(24,10,2,0.52)" />
+      <stop offset="45%" stopColor="rgba(24,10,2,0.22)" />
+      <stop offset="100%" stopColor="rgba(24,10,2,0)" />
+    </linearGradient>
+    <linearGradient id="cxs-cast" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="rgba(20,8,1,0.45)" />
+      <stop offset="100%" stopColor="rgba(20,8,1,0)" />
     </linearGradient>
 
-    {/* -----------------------------------------------------------------
-        1.5 AMBIENT OCCLUSION & DIRECTIONAL CAST SHADOWS
-        ----------------------------------------------------------------- */}
-    <linearGradient id="ao-wall-drop" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.58)" />
-      <stop offset="60%" stopColor="rgba(0, 0, 0, 0.24)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </linearGradient>
-
-    <linearGradient id="partition-cast-shadow-right" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.38)" />
-      <stop offset="40%" stopColor="rgba(0, 0, 0, 0.22)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </linearGradient>
-
-    <linearGradient id="partition-cast-shadow-down" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.32)" />
-      <stop offset="70%" stopColor="rgba(0, 0, 0, 0.14)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </linearGradient>
-
-    <linearGradient id="ao-side-drop-right" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.45)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </linearGradient>
-
-    <linearGradient id="ao-side-drop-left" x1="1" y1="0" x2="0" y2="0">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.45)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </linearGradient>
-
-    <radialGradient id="ao-corner-tl" cx="0%" cy="0%" r="100%">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.45)" />
-      <stop offset="70%" stopColor="rgba(0, 0, 0, 0.16)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </radialGradient>
-    <radialGradient id="ao-corner-tr" cx="100%" cy="0%" r="100%">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.45)" />
-      <stop offset="70%" stopColor="rgba(0, 0, 0, 0.16)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </radialGradient>
-    <radialGradient id="ao-corner-bl" cx="0%" cy="100%" r="100%">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.42)" />
-      <stop offset="70%" stopColor="rgba(0, 0, 0, 0.14)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </radialGradient>
-    <radialGradient id="ao-corner-br" cx="100%" cy="100%" r="100%">
-      <stop offset="0%" stopColor="rgba(0, 0, 0, 0.42)" />
-      <stop offset="70%" stopColor="rgba(0, 0, 0, 0.14)" />
-      <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-    </radialGradient>
-
-    <filter id="cx-soft-shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="5" />
-    </filter>
+    {/* Floor Union Clip for Directional Sunbeams */}
+    <clipPath id="cxs-clip-floor">
+      {FLOORS.map(([x1, y1, x2, y2], i) => (
+        <rect key={i} x={x1} y={y1} width={x2 - x1} height={y2 - y1} />
+      ))}
+    </clipPath>
   </defs>
 );
 
 // =========================================================================
-// 2. RUSTIC COTTAGE WINDOW COMPONENT
+// 4. ARCHITECTURAL ELEMENTS & WOOD CARPENTRY
 // =========================================================================
-const CottageWindow = ({ x, y, width = 46, height = 54 }) => (
-  <g transform={`translate(${x}, ${y})`}>
-    <rect x="-4" y="-3" width={width + 8} height={height + 10} rx="16" fill="rgba(0,0,0,0.38)" filter="url(#cx-soft-shadow)" />
 
+// Hand-Carved Wooden Corner Bracket (Corbel)
+const Corbel = ({ x, y, dir = 1, s = 18 }) => (
+  <g>
     <path
-      d={`M -3,${height} L -3,18 Q ${width / 2},-4 ${width + 3},18 L ${width + 3},${height} Z`}
-      fill="url(#cx-wainscot-oak)"
+      d={`M ${x},${y} L ${x + dir * s},${y} Q ${x + dir * s * 0.25},${y + s * 0.25} ${x},${y + s} Z`}
+      fill="url(#cxs-bracket)"
       stroke={OUT}
-      strokeWidth="2"
+      strokeWidth="1.1"
+      strokeLinejoin="round"
     />
     <path
-      d={`M -1,${height} L -1,19 Q ${width / 2},-1 ${width + 1},19 L ${width + 1},${height}`}
+      d={`M ${x + dir * 2},${y + 1.8} L ${x + dir * (s - 4)},${y + 1.8} Q ${x + dir * s * 0.28},${y + s * 0.28 - 1} ${x + dir * 1.8},${y + s - 4}`}
       fill="none"
-      stroke="#fef08a"
-      strokeWidth="1.2"
-      opacity="0.85"
+      stroke="#CD7F32"
+      strokeWidth="0.9"
+      opacity="0.7"
     />
-
-    <path
-      d={`M 4,${height - 4} L 4,18 Q ${width / 2},3 ${width - 4},18 L ${width - 4},${height - 4} Z`}
-      fill="#241206"
-      stroke={OUT}
-      strokeWidth="1.5"
-    />
-
-    <path
-      d={`M 6,${height - 6} L 6,19 Q ${width / 2},6 ${width - 6},19 L ${width - 6},${height - 6} Z`}
-      fill="url(#cx-window-glass)"
-    />
-
-    <polygon points="8,24 18,12 23,12 11,28" fill="rgba(255, 255, 255, 0.55)" />
-
-    <line x1={width / 2} y1="7" x2={width / 2} y2={height - 6} stroke="#ffffff" strokeWidth="2.4" />
-    <line x1={width / 2} y1="7" x2={width / 2} y2={height - 6} stroke="#b45309" strokeWidth="0.8" opacity="0.6" />
-    <line x1="6" y1={height / 2 + 4} x2={width - 6} y2={height / 2 + 4} stroke="#ffffff" strokeWidth="2.4" />
-    <line x1="6" y1={height / 2 + 4} x2={width - 6} y2={height / 2 + 4} stroke="#b45309" strokeWidth="0.8" opacity="0.6" />
-
-    <rect x="-6" y={height - 2} width={width + 12} height="8" rx="1.5" fill="#a16207" stroke={OUT} strokeWidth="1.6" />
-    <line x1="-5" y1={height} x2={width + 5} y2={height} stroke="#fef08a" strokeWidth="1.2" opacity="0.85" />
-    <polygon points={`-2,${height + 6} 4,${height + 6} 2,${height + 12} -2,${height + 12}`} fill="#54280b" stroke={OUT} strokeWidth="1" />
-    <polygon points={`${width - 4},${height + 6} ${width + 2},${height + 6} ${width + 2},${height + 12} ${width - 2},${height + 12}`} fill="#54280b" stroke={OUT} strokeWidth="1" />
+    <circle cx={x + dir * 4.2} cy={y + 4.4} r="1.4" fill="#321606" />
   </g>
 );
 
-// =========================================================================
-// 3. UNIFIED HAND-CARVED TIMBER ARCHWAYS (Flowing smoothly into walls)
-// =========================================================================
-const WoodenArchway = ({ x, y, width = 36, height = 135, hasStep = false }) => (
-  <g transform={`translate(${x}, ${y})`}>
-    {/* 1. Floor Threshold Transition */}
-    {hasStep ? (
-      /* Split-Level 1-Step Inset */
-      <g id="split-level-step">
-        <rect x="-8" y="10" width={8} height={height - 20} fill="rgba(0,0,0,0.52)" filter="url(#cx-soft-shadow)" />
-        <rect x="-4" y="12" width="6" height={height - 24} fill="#241206" stroke={OUT} strokeWidth="1" />
-        <line x1="-1" y1="14" x2="-1" y2={height - 14} stroke="#451a03" strokeWidth="1" />
-        <rect x="2" y="10" width={width} height={height - 20} rx="2" fill="#d97706" stroke={OUT} strokeWidth="1.4" />
-        <line x1="2" y1="11" x2="2" y2={height - 11} stroke="#fef08a" strokeWidth="2.4" />
-        <line x1="3" y1="11" x2="3" y2={height - 11} stroke="#f59e0b" strokeWidth="1" />
-        <line x1={width / 2 + 2} y1="12" x2={width / 2 + 2} y2={height - 12} stroke="#78350f" strokeWidth="1.2" />
-        <circle cx={width / 2 + 2} cy={height / 3} r="1.4" fill="#fef08a" stroke="#451a03" strokeWidth="0.8" />
-        <circle cx={width / 2 + 2} cy={(height * 2) / 3} r="1.4" fill="#fef08a" stroke="#451a03" strokeWidth="0.8" />
-      </g>
-    ) : (
-      /* Flush Hardwood & Brass Saddle */
-      <g id="flush-threshold">
-        <rect x="-2" y="10" width={width + 4} height={height - 20} rx="2" fill="#854d0e" stroke="#241206" strokeWidth="1.2" />
-        <line x1="-1" y1="12" x2="-1" y2={height - 12} stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-        <line x1={width + 1} y1="12" x2={width + 1} y2={height - 12} stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-        <line x1={width / 2} y1="11" x2={width / 2} y2={height - 11} stroke="#54280b" strokeWidth="1.6" />
-      </g>
-    )}
-
-    {/* Archway Interior Ambient Shadow */}
-    <rect x="0" y="10" width={width} height="16" fill="rgba(0,0,0,0.42)" />
-
-    {/* 2. Seamlessly Blended Curved Arch Spandrel & Header */}
-    {/* Sweeping outer timber header connecting to partition wall */}
-    <path
-      d={`
-        M -6,-6
-        L ${width + 6},-6
-        L ${width + 6},14
-        Q ${width + 6},24 ${width},28
-        L ${width},18
-        Q ${width / 2},6 0,18
-        L 0,28
-        Q -6,24 -6,14
-        Z
-      `}
-      fill="url(#cx-wall-cap)"
-      stroke={OUT}
-      strokeWidth="1.8"
-    />
-    {/* Continuous curved gold highlight contour */}
-    <path
-      d={`M -5,-4 L ${width + 5},-4 L ${width + 5},12 Q ${width + 4},20 ${width},22`}
-      fill="none"
-      stroke="#fef08a"
-      strokeWidth="1.4"
-      opacity="0.9"
-    />
-
-    {/* Inner Curved Hand-Carved Arch Soffit */}
-    <path
-      d={`M -2,22 Q ${width / 2},8 ${width + 2},22 L ${width + 2},27 Q ${width / 2},13 -2,27 Z`}
-      fill="#451a03"
-      stroke={OUT}
-      strokeWidth="1.2"
-    />
-
-    {/* Elegant Center Carved Keystone */}
-    <polygon points={`${width / 2 - 5},-8 ${width / 2 + 5},-8 ${width / 2 + 3.5},10 ${width / 2 - 3.5},10`} fill="#b45309" stroke={OUT} strokeWidth="1.2" />
-    <circle cx={width / 2} cy="1" r="2" fill="#fef08a" stroke="#451a03" strokeWidth="0.8" />
-
-    {/* 3. Door Jambs with Curved Capital Brackets */}
-    {/* North side corbel curve */}
-    <path d="M -3,14 Q 0,26 -3,38 L 3,38 Q 4,26 3,14 Z" fill="#632e09" stroke={OUT} strokeWidth="1" />
-    <path d={`M ${width + 3},14 Q ${width},26 ${width + 3},38 L ${width - 3},38 Q ${width - 4},26 ${width - 3},14 Z`} fill="#632e09" stroke={OUT} strokeWidth="1" />
-
-    {/* 4. South Doorpost Facing Player (Smoothly blending with baseboard) */}
-    <g transform={`translate(0, ${height - 26})`}>
-      <path
-        d={`
-          M -4,0
-          L ${width + 4},0
-          L ${width + 4},16
-          Q ${width + 4},24 ${width},24
-          L 0,24
-          Q -4,24 -4,16
-          Z
-        `}
-        fill="url(#cx-wainscot-oak)"
-        stroke={OUT}
-        strokeWidth="1.6"
-      />
-      <line x1="-3" y1="2" x2={width + 3} y2="2" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-      <rect x="-4" y="14" width={width + 8} height="10" rx="1.5" fill="url(#cx-skirting-face)" stroke={OUT} strokeWidth="1.2" />
-      <line x1="-3" y1="15" x2={width + 3} y2="15" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
-      <ellipse cx={width / 2} cy="26" rx={width / 2 + 8} ry="5" fill="rgba(0,0,0,0.4)" filter="url(#cx-soft-shadow)" />
+// Hand-Carved Cedar Support Column with Plinth & Capital
+const Pillar = ({ cx, base, h = F, w = 14 }) => {
+  const x = cx - w / 2;
+  const top = base - h;
+  return (
+    <g>
+      <ellipse cx={cx} cy={base + 1} rx={w * 0.95} ry="3.5" fill="rgba(0,0,0,0.48)" />
+      {/* Plinth Base */}
+      <rect x={x - 3} y={base - 7} width={w + 6} height="7" rx="1" fill="#3e210d" stroke={OUT} strokeWidth="1.2" />
+      {/* Pillar Shaft */}
+      <rect x={x} y={top + 9} width={w} height={h - 16} fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
+      <line x1={x + 2} y1={top + 10} x2={x + 2} y2={base - 8} stroke="#CD7F32" strokeWidth="1.1" opacity="0.85" />
+      {/* Capital Crown */}
+      <rect x={x - 4} y={top} width={w + 8} height="9" rx="1.5" fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
+      <line x1={x - 2} y1={top + 1.6} x2={x + w + 2} y2={top + 1.6} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
     </g>
+  );
+};
+
+// Seamless Archway Header with Twin Corbels
+const Archway = ({ x1, x2, y, ix1, ix2, s = 16 }) => (
+  <g>
+    <rect x={x1} y={y} width={x2 - x1} height="8" rx="1.5" fill="url(#cxs-crown)" stroke={OUT} strokeWidth="1.2" />
+    <line x1={x1 + 2} y1={y + 1.5} x2={x2 - 2} y2={y + 1.5} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
+    <Corbel x={ix1} y={y + 8} dir={1} s={s} />
+    <Corbel x={ix2} y={y + 8} dir={-1} s={s} />
   </g>
 );
 
+// Rustic Cottage Window with Warm Cedar Frame & Glowing Glass
+const CottageWindow = ({ x, y, w = 36, h = 38 }) => (
+  <g transform={`translate(${x}, ${y})`}>
+    <path d={`M -3,${h + 2} L -3,12 Q ${w / 2},-5 ${w + 3},12 L ${w + 3},${h + 2} Z`} fill="rgba(0,0,0,0.58)" />
+    <path d={`M -2,${h} L -2,13 Q ${w / 2},-3 ${w + 2},13 L ${w + 2},${h} Z`} fill="url(#cxs-wainscot)" stroke={OUT} strokeWidth="1.6" />
+    <path d={`M 3,${h - 3} L 3,13 Q ${w / 2},1 ${w - 3},13 L ${w - 3},${h - 3} Z`} fill="url(#cxs-glass)" stroke={OUT} strokeWidth="1" />
+    {/* Brass Muntins */}
+    <line x1={w / 2} y1="3" x2={w / 2} y2={h - 3} stroke="#fffae0" strokeWidth="1.8" />
+    <line x1="3" y1={h / 2 + 2} x2={w - 3} y2={h / 2 + 2} stroke="#fffae0" strokeWidth="1.8" />
+    <polygon points="6,16 12,9 15,9 8,20" fill="rgba(255,255,255,0.65)" />
+    {/* Cedar Window Sill with Muted Copper Trim */}
+    <rect x="-5" y={h - 2} width={w + 10} height="6" rx="1.5" fill="#5c3a21" stroke={OUT} strokeWidth="1.3" />
+    <line x1="-4" y1={h} x2={w + 4} y2={h} stroke="#CD7F32" strokeWidth="1.1" opacity="0.9" />
+  </g>
+);
+
+// Wall Face: Soft Straw Cream Wallpaper + Rich Cedar Wainscoting + Skirting
+const Face = ({ x1, x2, base, skipL, skipR }) => {
+  const top = base - F;
+  const w = x2 - x1;
+  return (
+    <g>
+      {/* 1. Upper Half: Vintage Straw Cream Cottage Wallpaper */}
+      <rect x={x1} y={top} width={w} height={F} fill="url(#cxs-wallpaper)" />
+      <rect x={x1} y={top} width={w} height={F} fill="url(#cxs-wall-shade)" />
+
+      {/* 2. Chair Rail (Muted Copper Highlight + Cedar Base) */}
+      <rect x={x1} y={base - 29} width={w} height="4" fill="#7a461e" />
+      <line x1={x1} y1={base - 28.2} x2={x2} y2={base - 28.2} stroke="#CD7F32" strokeWidth="0.9" opacity="0.85" />
+
+      {/* 3. Lower Half: Rich Cedar Tongue-and-Groove Wainscoting */}
+      <rect x={x1} y={base - 25} width={w} height="19" fill="url(#cxs-wainscot)" />
+      <line x1={x1} y1={base - 20} x2={x2} y2={base - 20} stroke="rgba(20,8,1,0.5)" strokeWidth="1" />
+      <line x1={x1} y1={base - 12} x2={x2} y2={base - 12} stroke="rgba(20,8,1,0.42)" strokeWidth="1" />
+      <line x1={x1} y1={base - 19.2} x2={x2} y2={base - 19.2} stroke="rgba(205,127,50,0.2)" strokeWidth="0.8" />
+
+      {/* 4. Skirting Baseboard */}
+      <rect x={x1} y={base - 6} width={w} height="6" fill="#2c1406" />
+      <line x1={x1} y1={base - 5.2} x2={x2} y2={base - 5.2} stroke="#CD7F32" strokeWidth="0.9" opacity="0.8" />
+
+      {/* 5. Corner Softening Corbels */}
+      {!skipL && w >= 60 && <Corbel x={x1} y={top + 7} dir={1} />}
+      {!skipR && w >= 60 && <Corbel x={x2} y={top + 7} dir={-1} />}
+    </g>
+  );
+};
+
+// Soft Volumetric Sunbeam Streaming at 45° Uniform Diagonal
+const Sunbeam = ({ wx, ys, w = 36, L = 200 }) => {
+  const sx = SLOPE * L;
+  const half = w / 2 - 1.5;
+  return (
+    <g>
+      <polygon
+        points={`${wx},${ys} ${wx + half},${ys} ${wx + half + sx},${ys + L} ${wx + sx},${ys + L}`}
+        fill="rgba(255, 240, 200, 0.11)"
+      />
+      <polygon
+        points={`${wx + half + 3},${ys} ${wx + w},${ys} ${wx + w + sx},${ys + L} ${wx + half + 3 + sx},${ys + L}`}
+        fill="rgba(255, 240, 200, 0.11)"
+      />
+    </g>
+  );
+};
+
 // =========================================================================
-// 4. MAIN ARCHITECTURAL COMPONENT
+// 5. MAIN ARCHITECTURAL COMPONENT
 // =========================================================================
 export function ComplexArchitectureSVG() {
   return (
@@ -408,804 +510,242 @@ export function ComplexArchitectureSVG() {
       <Defs />
 
       {/* =========================================================================
-          LAYER 1: DEEP RPG VOID BACKGROUND
+          LAYER 1: DEEP RPG VOID BACKGROUND (Bites aggressively into the structure)
           ========================================================================= */}
       <rect x="0" y="0" width={W} height={H} fill={VOID} />
 
       {/* =========================================================================
-          LAYER 2: UNIFIED HOUSE HARDWOOD FOUNDATION (45° CHAMFERED SILHOUETTE)
+          LAYER 2: SINGLE CONTINUOUS OAK HARDWOOD FLOOR (Absolute Material Unification)
           ========================================================================= */}
-      <path
-        d={`
-          M 46,200
-          L 150,96
-          L 410,96
-          L 470,36
-          L 790,36
-          L 850,96
-          L 1110,96
-          L 1214,200
-          L 1214,470
-          L 1100,584
-          L 1100,605
-          L 850,605
-          L 850,555
-          L 814,555
-          L 814,605
-          L 690,605
-          L 690,624
-          L 570,624
-          L 570,605
-          L 446,605
-          L 446,555
-          L 410,555
-          L 410,605
-          L 160,605
-          L 160,584
-          L 46,470
-          Z
-        `}
-        fill="url(#cx-unified-hardwood)"
-        stroke={OUT}
-        strokeWidth="2.5"
-      />
-
-      {/* =========================================================================
-          LAYER 3: AREA RUGS WITH COMPLETE 4-SIDED FRINGE THREADS & MICRO SHADOWS
-          ========================================================================= */}
-
-      {/* --- 3.1 URGENT ZONE (RED ROOM): Deep Burgundy Persian Accent Rug --- */}
-      <g id="area-rug-urgent">
-        <ellipse cx="230" cy="375" rx="146" ry="164" fill="rgba(0,0,0,0.32)" filter="url(#cx-soft-shadow)" />
-        {/* Micro Drop-Shadow elevating rug on top of hardwood */}
-        <rect x="101" y="221" width="260" height="310" rx="7" fill="rgba(0,0,0,0.32)" />
-
-        {/* Top Fringes */}
-        <g id="rug-urgent-top-fringes">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <line
-              key={`u-tf-${i}`}
-              x1={102 + i * 5.1}
-              y1="214"
-              x2={102 + i * 5.1 + (i % 2 === 0 ? 0.8 : -0.8)}
-              y2="221"
-              stroke="#fef3c7"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          ))}
-          <line x1="102" y1="213" x2="358" y2="213" stroke="rgba(0,0,0,0.35)" strokeWidth="1.2" />
-        </g>
-
-        {/* Bottom Fringes */}
-        <g id="rug-urgent-bottom-fringes">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <line
-              key={`u-bf-${i}`}
-              x1={102 + i * 5.1}
-              y1="529"
-              x2={102 + i * 5.1 + (i % 2 === 0 ? 0.8 : -0.8)}
-              y2="537"
-              stroke="#fef3c7"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          ))}
-          <line x1="102" y1="538" x2="358" y2="538" stroke="rgba(0,0,0,0.35)" strokeWidth="1.2" />
-        </g>
-
-        {/* Left Edge Fringes */}
-        <g id="rug-urgent-left-fringes">
-          {Array.from({ length: 38 }).map((_, i) => (
-            <line
-              key={`u-lf-${i}`}
-              x1="96"
-              y1={230 + i * 7.5}
-              x2="101"
-              y2={230 + i * 7.5}
-              stroke="#fef3c7"
-              strokeWidth="1.2"
-              opacity="0.8"
-            />
-          ))}
-        </g>
-        {/* Right Edge Fringes */}
-        <g id="rug-urgent-right-fringes">
-          {Array.from({ length: 38 }).map((_, i) => (
-            <line
-              key={`u-rf-${i}`}
-              x1="359"
-              y1={230 + i * 7.5}
-              x2="364"
-              y2={230 + i * 7.5}
-              stroke="#fef3c7"
-              strokeWidth="1.2"
-              opacity="0.8"
-            />
-          ))}
-        </g>
-
-        {/* Main Rug Body */}
-        <rect x="100" y="220" width="260" height="310" rx="6" fill="#58111e" stroke={OUT} strokeWidth="2.4" />
-        <rect x="110" y="230" width="240" height="290" rx="4" fill="none" stroke="#d97706" strokeWidth="4" strokeDasharray="8 4" />
-        <rect x="118" y="238" width="224" height="274" rx="3" fill="#6d1226" stroke="#f59e0b" strokeWidth="1.6" />
-        <polygon points="230,270 305,375 230,480 155,375" fill="#440915" stroke="#f59e0b" strokeWidth="2.2" />
-        <polygon points="230,290 290,375 230,460 170,375" fill="#78162b" stroke="#fef08a" strokeWidth="1.4" strokeDasharray="5 3" />
-        <circle cx="230" cy="375" r="9" fill="#fef08a" stroke="#440915" strokeWidth="1.8" />
-        <circle cx="122" cy="242" r="3.5" fill="#f59e0b" stroke="#440915" strokeWidth="1" />
-        <circle cx="338" cy="242" r="3.5" fill="#f59e0b" stroke="#440915" strokeWidth="1" />
-        <circle cx="122" cy="508" r="3.5" fill="#f59e0b" stroke="#440915" strokeWidth="1" />
-        <circle cx="338" cy="508" r="3.5" fill="#f59e0b" stroke="#440915" strokeWidth="1" />
-      </g>
-
-      {/* --- 3.2 CENTRAL HALL (YELLOW ZONE): Festive Terracotta & Gold Medallion Rug --- */}
-      <g id="area-rug-central-hall">
-        <ellipse cx="630" cy="255" rx="164" ry="114" fill="rgba(0,0,0,0.32)" filter="url(#cx-soft-shadow)" />
-        <rect x="481" y="156" width="300" height="200" rx="13" fill="rgba(0,0,0,0.32)" />
-
-        {/* Left Side Fringes */}
-        <g id="rug-central-left-fringes">
-          {Array.from({ length: 32 }).map((_, i) => (
-            <line
-              key={`c-lf-${i}`}
-              x1="474"
-              y1={160 + i * 5.8}
-              x2="481"
-              y2={160 + i * 5.8}
-              stroke="#fef3c7"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          ))}
-        </g>
-        {/* Right Side Fringes */}
-        <g id="rug-central-right-fringes">
-          {Array.from({ length: 32 }).map((_, i) => (
-            <line
-              key={`c-rf-${i}`}
-              x1={779}
-              y1={160 + i * 5.8}
-              x2={786}
-              y2={160 + i * 5.8}
-              stroke="#fef3c7"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          ))}
-        </g>
-        {/* Top Edge Fringes */}
-        <g id="rug-central-top-fringes">
-          {Array.from({ length: 44 }).map((_, i) => (
-            <line
-              key={`c-tf-${i}`}
-              x1={490 + i * 6.5}
-              y1="150"
-              x2={490 + i * 6.5}
-              y2="155"
-              stroke="#fef3c7"
-              strokeWidth="1.2"
-              opacity="0.85"
-            />
-          ))}
-        </g>
-        {/* Bottom Edge Fringes */}
-        <g id="rug-central-bottom-fringes">
-          {Array.from({ length: 44 }).map((_, i) => (
-            <line
-              key={`c-bf-${i}`}
-              x1={490 + i * 6.5}
-              y1="355"
-              x2={490 + i * 6.5}
-              y2="360"
-              stroke="#fef3c7"
-              strokeWidth="1.2"
-              opacity="0.85"
-            />
-          ))}
-        </g>
-
-        <rect x="480" y="155" width="300" height="200" rx="12" fill="#92400e" stroke={OUT} strokeWidth="2.4" />
-        <rect x="492" y="167" width="276" height="176" rx="8" fill="#b45309" stroke="#f59e0b" strokeWidth="3" strokeDasharray="6 4" />
-        <rect x="504" y="179" width="252" height="152" rx="6" fill="#d97706" stroke="#fef08a" strokeWidth="1.6" />
-        <ellipse cx="630" cy="255" rx="72" ry="48" fill="#fef3c7" stroke="#78350f" strokeWidth="2.5" />
-        <path d="M 630 220 Q 644 238 630 255 Q 616 238 630 220 Z" fill="#b45309" />
-        <path d="M 630 255 Q 644 272 630 290 Q 616 272 630 255 Z" fill="#b45309" />
-        <path d="M 590 255 Q 610 268 630 255 Q 610 242 590 255 Z" fill="#b45309" />
-        <path d="M 630 255 Q 650 268 670 255 Q 650 242 630 255 Z" fill="#b45309" />
-        <circle cx="630" cy="255" r="7.5" fill="#f59e0b" stroke="#78350f" strokeWidth="1.6" />
-      </g>
-
-      {/* --- 3.3 ROUTINE ZONE (GREEN ROOM): Sage Green Earth-Toned Rug --- */}
-      <g id="area-rug-routine">
-        <ellipse cx="1030" cy="375" rx="146" ry="164" fill="rgba(0,0,0,0.32)" filter="url(#cx-soft-shadow)" />
-        <rect x="901" y="221" width="260" height="310" rx="7" fill="rgba(0,0,0,0.32)" />
-
-        {/* Top Fringes */}
-        <g id="rug-routine-top-fringes">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <line
-              key={`r-tf-${i}`}
-              x1={902 + i * 5.1}
-              y1="214"
-              x2={902 + i * 5.1 + (i % 2 === 0 ? 0.8 : -0.8)}
-              y2="221"
-              stroke="#d1fae5"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          ))}
-          <line x1="902" y1="213" x2="1158" y2="213" stroke="rgba(0,0,0,0.32)" strokeWidth="1.2" />
-        </g>
-
-        {/* Bottom Fringes */}
-        <g id="rug-routine-bottom-fringes">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <line
-              key={`r-bf-${i}`}
-              x1={902 + i * 5.1}
-              y1="529"
-              x2={902 + i * 5.1 + (i % 2 === 0 ? 0.8 : -0.8)}
-              y2="537"
-              stroke="#d1fae5"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          ))}
-          <line x1="902" y1="538" x2="1158" y2="538" stroke="rgba(0,0,0,0.32)" strokeWidth="1.2" />
-        </g>
-
-        {/* Left Edge Fringes */}
-        <g id="rug-routine-left-fringes">
-          {Array.from({ length: 38 }).map((_, i) => (
-            <line
-              key={`r-lf-${i}`}
-              x1="896"
-              y1={230 + i * 7.5}
-              x2="901"
-              y2={230 + i * 7.5}
-              stroke="#d1fae5"
-              strokeWidth="1.2"
-              opacity="0.8"
-            />
-          ))}
-        </g>
-        {/* Right Edge Fringes */}
-        <g id="rug-routine-right-fringes">
-          {Array.from({ length: 38 }).map((_, i) => (
-            <line
-              key={`r-rf-${i}`}
-              x1="1159"
-              y1={230 + i * 7.5}
-              x2="1164"
-              y2={230 + i * 7.5}
-              stroke="#d1fae5"
-              strokeWidth="1.2"
-              opacity="0.8"
-            />
-          ))}
-        </g>
-
-        <rect x="900" y="220" width="260" height="310" rx="6" fill="#064e3b" stroke={OUT} strokeWidth="2.4" />
-        <rect x="910" y="230" width="240" height="290" rx="4" fill="none" stroke="#34d399" strokeWidth="3.5" strokeDasharray="8 4" />
-        <rect x="918" y="238" width="224" height="274" rx="3" fill="#047857" stroke="#a7f3d0" strokeWidth="1.6" />
-        <ellipse cx="1030" cy="375" rx="65" ry="85" fill="#022c22" stroke="#34d399" strokeWidth="2.2" />
-        <ellipse cx="1030" cy="375" rx="50" ry="68" fill="#065f46" stroke="#a7f3d0" strokeWidth="1.4" strokeDasharray="5 3" />
-        <circle cx="1030" cy="375" r="14" fill="#a7f3d0" stroke="#047857" strokeWidth="2.2" />
-      </g>
-
-      {/* --- 3.4 NEUTRAL FOYER: Braided Oval Welcome Mat --- */}
-      <g id="area-rug-foyer">
-        <ellipse cx="630" cy="560" rx="60" ry="25" fill="rgba(0,0,0,0.28)" filter="url(#cx-soft-shadow)" />
-        <ellipse cx="631" cy="561" rx="58" ry="23" fill="rgba(0,0,0,0.3)" />
-        <ellipse cx="630" cy="558" rx="58" ry="23" fill="#451a03" stroke={OUT} strokeWidth="2.2" />
-        <ellipse cx="630" cy="558" rx="50" ry="18" fill="#78350f" stroke="#f59e0b" strokeWidth="1.6" strokeDasharray="5 3" />
-        <ellipse cx="630" cy="558" rx="40" ry="13" fill="#a16207" stroke="#fef08a" strokeWidth="1" opacity="0.8" />
-      </g>
-
-      {/* =========================================================================
-          LAYER 4: DIRECTIONAL LIGHT OCCLUSION & CAST SHADOWS
-          ========================================================================= */}
-      {/* Wall-Base Drop Shadows under North Facades */}
-      <rect x="470" y="114" width="320" height="26" fill="url(#ao-wall-drop)" />
-      <rect x="150" y="164" width="260" height="26" fill="url(#ao-wall-drop)" />
-      <rect x="850" y="164" width="260" height="26" fill="url(#ao-wall-drop)" />
-      <rect x="446" y="440" width="109" height="20" fill="url(#ao-wall-drop)" />
-      <rect x="705" y="440" width="109" height="20" fill="url(#ao-wall-drop)" />
-
-      {/* Partition Directional Cast Shadows */}
-      <polygon points="446,96 476,120 476,430 446,420" fill="url(#partition-cast-shadow-right)" />
-      <polygon points="446,555 474,575 474,605 446,605" fill="url(#partition-cast-shadow-right)" />
-      <polygon points="850,96 882,120 882,430 850,420" fill="url(#partition-cast-shadow-right)" />
-      <polygon points="850,555 878,575 878,605 850,605" fill="url(#partition-cast-shadow-right)" />
-      <rect x="410" y="406" width="145" height="18" fill="url(#partition-cast-shadow-down)" />
-      <rect x="705" y="406" width="145" height="18" fill="url(#partition-cast-shadow-down)" />
-
-      {/* Partition Ambient Side Shadows */}
-      <rect x="394" y="96" width="16" height="330" fill="url(#ao-side-drop-left)" />
-      <rect x="850" y="96" width="16" height="330" fill="url(#ao-side-drop-right)" />
-
-      {/* Corner Vignettes */}
-      <rect x="46" y="200" width="90" height="90" fill="url(#ao-corner-tl)" />
-      <rect x="320" y="96" width="90" height="90" fill="url(#ao-corner-tr)" />
-      <rect x="46" y="440" width="90" height="90" fill="url(#ao-corner-bl)" />
-      <rect x="320" y="515" width="90" height="90" fill="url(#ao-corner-br)" />
-
-      <rect x="470" y="36" width="90" height="90" fill="url(#ao-corner-tl)" />
-      <rect x="700" y="36" width="90" height="90" fill="url(#ao-corner-tr)" />
-
-      <rect x="850" y="96" width="90" height="90" fill="url(#ao-corner-tl)" />
-      <rect x="1124" y="200" width="90" height="90" fill="url(#ao-corner-tr)" />
-      <rect x="850" y="515" width="90" height="90" fill="url(#ao-corner-bl)" />
-      <rect x="1124" y="440" width="90" height="90" fill="url(#ao-corner-br)" />
-
-      {/* =========================================================================
-          LAYER 5: DOUBLE-WALL SYSTEM WITH CONTINUOUS, SEAMLESS CARPENTRY TRIMS
-          Baseboards and crown moldings wrap as unbroken ribbons around the corners
-          ========================================================================= */}
-
-      {/* --- 5.1 MAIN HALL NORTH WALL & WALLPAPERS --- */}
-      <g id="wall-face-main-hall">
-        <rect x="470" y="36" width="320" height="44" fill="url(#cx-wallpaper-salon)" stroke={OUT} strokeWidth="1.2" />
-        <polygon points="410,96 470,36 470,80 410,140" fill="url(#cx-wallpaper-salon)" />
-        <polygon points="790,36 850,96 850,140 790,80" fill="url(#cx-wallpaper-salon)" />
-
-        {/* Lower Wainscot Oak Paneling with grooves */}
-        <polygon points="410,145 470,85 790,85 850,145 850,168 790,108 470,108 410,168" fill="url(#cx-wainscot-oak)" />
-        <rect x="470" y="85" width="320" height="23" fill="url(#cx-wainscot-oak)" />
-        {Array.from({ length: 19 }).map((_, i) => (
-          <line key={`groove-mh-${i}`} x1={470 + (i + 1) * 16} y1="86" x2={470 + (i + 1) * 16} y2="108" stroke="rgba(0,0,0,0.35)" strokeWidth="1" />
+      <g id="cx-floor-unified">
+        {FLOORS.map(([x1, y1, x2, y2], i) => (
+          <rect
+            key={`fl-${i}`}
+            x={x1 - 0.5}
+            y={y1 - 0.5}
+            width={x2 - x1 + 1}
+            height={y2 - y1 + 1}
+            fill="url(#cxs-floor-oak)"
+          />
         ))}
 
-        {/* UNIFIED CONTINUOUS CROWN MOLDING (Wrapping from West to East without seams!) */}
-        <path
-          d="M 408,94 L 468,34 L 792,34 L 852,94"
-          fill="none"
-          stroke="url(#cx-crown-profile)"
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 408,92 L 468,32 L 792,32 L 852,92"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.4"
-          opacity="0.9"
-          strokeLinejoin="round"
-        />
+        {/* 45° Corner Floor Void Cuts */}
+        {FLOOR_CUTS.map((pts, i) => (
+          <polygon
+            key={`cut-${i}`}
+            points={pts.map(p => p.join(',')).join(' ')}
+            fill={VOID}
+            stroke={VOID}
+            strokeWidth="1.2"
+          />
+        ))}
 
-        {/* UNIFIED CONTINUOUS CHAIR RAIL (Mid-wall divider ribbon) */}
-        <path
-          d="M 410,140 L 470,80 L 790,80 L 850,140"
-          fill="none"
-          stroke="#b45309"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 410,140 L 470,80 L 790,80 L 850,140"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.2"
-          opacity="0.85"
-          strokeLinejoin="round"
-        />
-
-        {/* UNIFIED CONTINUOUS BASEBOARD SKIRTING (Wrapping smoothly across corners!) */}
-        <path
-          d="M 410,168 L 470,108 L 790,108 L 850,168"
-          fill="none"
-          stroke="url(#cx-skirting-face)"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 410,165 L 470,105 L 790,105 L 850,165"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.4"
-          opacity="0.85"
-          strokeLinejoin="round"
-        />
-        {/* Baseboard bottom contact line */}
-        <path
-          d="M 410,172 L 470,112 L 790,112 L 850,172"
-          fill="none"
-          stroke="#120803"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-      </g>
-
-      {/* --- 5.2 LEFT WING (RED ROOM / ZONE) --- */}
-      <g id="wall-face-left-store">
-        <polygon points="46,200 150,96 410,96 410,138 150,138 46,242" fill="url(#cx-wallpaper-store)" />
-        <polygon points="46,242 150,138 410,138 410,164 150,164 46,268" fill="url(#cx-wainscot-oak)" />
-
-        {/* Continuous Crown Molding wrapping around NW 45° angle */}
-        <path
-          d="M 44,198 L 148,94 L 410,94"
-          fill="none"
-          stroke="url(#cx-crown-profile)"
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 44,196 L 148,92 L 410,92"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.4"
-          opacity="0.9"
-          strokeLinejoin="round"
-        />
-
-        {/* Continuous Chair Rail */}
-        <path
-          d="M 46,242 L 150,138 L 410,138"
-          fill="none"
-          stroke="#881337"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 46,242 L 150,138 L 410,138"
-          fill="none"
-          stroke="#f43f5e"
-          strokeWidth="1.2"
-          opacity="0.8"
-          strokeLinejoin="round"
-        />
-
-        {/* Continuous Baseboard Skirting Board */}
-        <path
-          d="M 46,268 L 150,164 L 410,164"
-          fill="none"
-          stroke="url(#cx-skirting-face)"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 46,265 L 150,161 L 410,161"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.4"
-          opacity="0.85"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 46,272 L 150,168 L 410,168"
-          fill="none"
-          stroke="#120803"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-      </g>
-
-      {/* --- 5.3 RIGHT WING (GREEN ROOM / ZONE) --- */}
-      <g id="wall-face-right-sanctuary">
-        <polygon points="850,96 1110,96 1214,200 1214,242 1110,138 850,138" fill="url(#cx-wallpaper-sanctuary)" />
-        <polygon points="850,138 1110,138 1214,242 1214,268 1110,164 850,164" fill="url(#cx-wainscot-oak)" />
-
-        {/* Continuous Crown Molding wrapping around NE 45° angle */}
-        <path
-          d="M 850,94 L 1112,94 L 1216,198"
-          fill="none"
-          stroke="url(#cx-crown-profile)"
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 850,92 L 1112,92 L 1216,196"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.4"
-          opacity="0.9"
-          strokeLinejoin="round"
-        />
-
-        {/* Continuous Chair Rail */}
-        <path
-          d="M 850,138 L 1110,138 L 1214,242"
-          fill="none"
-          stroke="#047857"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 850,138 L 1110,138 L 1214,242"
-          fill="none"
-          stroke="#34d399"
-          strokeWidth="1.2"
-          opacity="0.8"
-          strokeLinejoin="round"
-        />
-
-        {/* Continuous Baseboard Skirting Board */}
-        <path
-          d="M 850,164 L 1110,164 L 1214,268"
-          fill="none"
-          stroke="url(#cx-skirting-face)"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 850,161 L 1110,161 L 1214,265"
-          fill="none"
-          stroke="#fef08a"
-          strokeWidth="1.4"
-          opacity="0.85"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 850,168 L 1110,168 L 1214,272"
-          fill="none"
-          stroke="#120803"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-      </g>
-
-      {/* --- 5.4 FOYER DIVIDERS WITH INTEGRATED BASEBOARDS --- */}
-      <rect x="446" y="406" width="109" height="28" fill="url(#cx-wallpaper-foyer)" stroke={OUT} strokeWidth="1.2" />
-      <rect x="446" y="434" width="109" height="8" fill="url(#cx-skirting-face)" stroke={OUT} strokeWidth="1.2" />
-      <line x1="446" y1="435" x2="555" y2="435" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
-
-      <rect x="705" y="406" width="109" height="28" fill="url(#cx-wallpaper-foyer)" stroke={OUT} strokeWidth="1.2" />
-      <rect x="705" y="434" width="109" height="8" fill="url(#cx-skirting-face)" stroke={OUT} strokeWidth="1.2" />
-      <line x1="705" y1="435" x2="814" y2="435" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
-
-      {/* =========================================================================
-          LAYER 6: UNIFIED CONTINUOUS TIMBER WALL CAPS & RAFTERS
-          Zero modular tile seams: full continuous flowing contours around the entire house
-          ========================================================================= */}
-
-      {/* 6.1 MAIN HALL CONTINUOUS ROOF BEAM CONTOUR (NW Chamfer -> North -> NE Chamfer) */}
-      <path
-        d={`
-          M 400,72
-          L 460,12
-          L 800,12
-          L 860,72
-          L 838,94
-          L 778,34
-          L 482,34
-          L 422,94
-          Z
-        `}
-        fill="url(#cx-wall-cap)"
-        stroke={OUT}
-        strokeWidth="2"
-      />
-      {/* Unbroken top highlight contour */}
-      <path
-        d="M 402,74 L 462,14 L 798,14 L 858,74"
-        fill="none"
-        stroke="#fef08a"
-        strokeWidth="1.6"
-        opacity="0.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      {/* 6.2 LEFT WING CONTINUOUS TIMBER WALL CAP (South West -> Side Wall -> NW Chamfer -> North Run) */}
-      <path
-        d={`
-          M 18,490
-          L 18,180
-          L 26,176
-          L 136,66
-          L 410,66
-          L 410,98
-          L 142,98
-          L 48,198
-          L 52,470
-          Z
-        `}
-        fill="url(#cx-wall-cap)"
-        stroke={OUT}
-        strokeWidth="2"
-      />
-      {/* Unbroken left wing highlight ribbon */}
-      <path
-        d="M 20,488 L 20,181 L 28,178 L 138,68 L 408,68"
-        fill="none"
-        stroke="#fef08a"
-        strokeWidth="1.6"
-        opacity="0.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      {/* Left Wing SW 45° Chamfer Cap (Cleanly mitered into side wall) */}
-      <polygon points="26,494 150,618 172,596 48,472" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-      <line x1="28" y1="492" x2="148" y2="612" stroke="#fef08a" strokeWidth="1.8" opacity="0.85" />
-
-      {/* 6.3 RIGHT WING CONTINUOUS TIMBER WALL CAP (North Run -> NE Chamfer -> Side Wall -> SE) */}
-      <path
-        d={`
-          M 850,66
-          L 1120,66
-          L 1230,176
-          L 1238,180
-          L 1238,490
-          L 1204,470
-          L 1208,198
-          L 1098,88
-          L 850,88
-          Z
-        `}
-        fill="url(#cx-wall-cap)"
-        stroke={OUT}
-        strokeWidth="2"
-      />
-      {/* Unbroken right wing highlight ribbon */}
-      <path
-        d="M 852,68 L 1118,68 L 1228,178 L 1236,181 L 1236,488"
-        fill="none"
-        stroke="#fef08a"
-        strokeWidth="1.6"
-        opacity="0.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      {/* Right Wing SE 45° Chamfer Cap */}
-      <polygon points="1230,494 1106,618 1084,596 1208,472" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-      <line x1="1228" y1="492" x2="1108" y2="612" stroke="#fef08a" strokeWidth="1.8" opacity="0.85" />
-
-      {/* 6.4 CONTINUOUS VERTICAL PARTITION BEAMS (Flowing down into the archways) */}
-      <rect x="410" y="88" width="36" height="332" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-      <line x1="411" y1="90" x2="411" y2="418" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-
-      <rect x="814" y="88" width="36" height="332" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-      <line x1="815" y1="90" x2="815" y2="418" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-
-      {/* Lower Partition Runs */}
-      <rect x="410" y="555" width="36" height="50" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-      <rect x="814" y="555" width="36" height="50" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-
-      {/* 6.5 UNIFIED FOYER TIE-BEAM & PORTAL (Spanning x: 410 to x: 850 seamlessly) */}
-      <g id="unified-foyer-tiebeam">
-        {/* Continuous top beam spanning across foyer */}
-        <rect x="410" y="374" width="440" height="32" fill="url(#cx-wall-cap)" stroke={OUT} strokeWidth="2" />
-        <line x1="411" y1="376" x2="849" y2="376" stroke="#fef08a" strokeWidth="1.6" opacity="0.9" />
-
-        {/* Central Portal Opening (x: 555 to x: 705) with Hand-Carved Curved Brackets */}
-        {/* Cutout portal arch threshold */}
-        <rect x="555" y="374" width="150" height="32" fill="#78350f" stroke="#351602" strokeWidth="1.5" />
-        <line x1="555" y1="376" x2="705" y2="376" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-        <line x1="555" y1="405" x2="705" y2="405" stroke="#241206" strokeWidth="1.5" />
-
-        {/* Sweeping hand-carved timber corbels at portal opening */}
-        <path
-          d="M 555,374 Q 555,398 540,406 L 555,406 Q 562,398 565,374 Z"
-          fill="#54280b"
-          stroke={OUT}
-          strokeWidth="1.2"
-        />
-        <path
-          d="M 705,374 Q 705,398 720,406 L 705,406 Q 698,398 695,374 Z"
-          fill="#54280b"
-          stroke={OUT}
-          strokeWidth="1.2"
-        />
+        {/* Village Doorway Step Riser */}
+        <line x1="506" y1="592" x2="634" y2="592" stroke="#CD7F32" strokeWidth="1" opacity="0.65" />
+        <rect x="505" y="604" width="130" height="8" fill="#3e210d" stroke={OUT} strokeWidth="1.2" />
       </g>
 
       {/* =========================================================================
-          LAYER 7: RUSTIC COTTAGE WINDOWS & VOLUMETRIC SUNBEAMS
+          LAYER 3: GROUNDING AMBIENT OCCLUSION SHADOWS (Wall Bases & Raised Steps)
           ========================================================================= */}
-      <CottageWindow x={245} y={102} width={44} height={52} />
-      <CottageWindow x={535} y={42} width={42} height={50} />
-      <CottageWindow x={685} y={42} width={42} height={50} />
-      <CottageWindow x={965} y={102} width={44} height={52} />
+      <g id="cx-ambient-occlusion">
+        {/* Wall Face Drop Shadows */}
+        {FACES.map(f => (
+          <rect key={`aof-${f.id}`} x={f.x1} y={f.base} width={f.x2 - f.x1} height="28" fill="url(#cxs-ao-down)" />
+        ))}
 
-      {/* Volumetric Sunbeams */}
-      <polygon
-        points="247,150 289,150 250,440 90,440"
-        fill="url(#sunbeam-left-grad)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
-      <polygon
-        points="90,430 250,430 230,480 70,480"
-        fill="url(#sun-floor-patch-radial)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
+        {/* Side Wall Strip Shadows */}
+        {STRIPS.map((s, i) => (
+          <React.Fragment key={`aos-${i}`}>
+            <rect x={s.x + s.w} y={s.y1} width="16" height={s.y2 - s.y1} fill="url(#cxs-ao-right)" />
+            <rect x={s.x - 16} y={s.y1} width="16" height={s.y2 - s.y1} fill="url(#cxs-ao-left)" />
+          </React.Fragment>
+        ))}
 
-      <polygon
-        points="537,90 577,90 610,340 480,340"
-        fill="url(#sunbeam-center-grad)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
-      <polygon
-        points="687,90 727,90 760,340 640,340"
-        fill="url(#sunbeam-center-grad)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
-      <ellipse
-        cx="545"
-        cy="335"
-        rx="75"
-        ry="34"
-        fill="url(#sun-floor-patch-radial)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
-      <ellipse
-        cx="695"
-        cy="335"
-        rx="75"
-        ry="34"
-        fill="url(#sun-floor-patch-radial)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
+        {/* Low-Profile Front Sill Drop Shadows */}
+        {LOW_WALLS.map((l, i) => (
+          <rect key={`aol-${i}`} x={l.x1} y={l.y - 16} width={l.x2 - l.x1} height="16" fill="url(#cxs-ao-up)" />
+        ))}
 
-      <polygon
-        points="967,150 1009,150 1170,440 1010,440"
-        fill="url(#sunbeam-right-grad)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
-      <polygon
-        points="1010,430 1170,430 1190,480 1030,480"
-        fill="url(#sun-floor-patch-radial)"
-        style={{ mixBlendMode: 'screen', pointerEvents: 'none' }}
-      />
+        {/* East Partition Shadow */}
+        <rect x="900" y="384" width="130" height="16" fill="url(#cxs-ao-up)" />
+        <rect x="1100" y="384" width="80" height="16" fill="url(#cxs-ao-up)" />
+
+        {/* Raised Step Grounding Drop Shadows */}
+        {STEPS.map((s, i) => (
+          <rect key={`aost-${i}`} x={s.x1} y={s.y + 6} width={s.x2 - s.x1} height="12" fill="url(#cxs-ao-down)" />
+        ))}
+      </g>
 
       {/* =========================================================================
-          LAYER 8: UNIFIED HAND-CARVED TIMBER ARCHWAYS
-          Morphing organically from the partition walls with curved brackets
+          LAYER 4: VOLUMETRIC SUNBEAMS & PILLAR CAST SHADOWS (Clipped to Floor)
           ========================================================================= */}
-      {/* 8.1 West Archway (Transition between Urgent Room and Foyer/Hall) */}
-      <WoodenArchway x={410} y={420} width={36} height={135} hasStep={false} />
+      <g id="cx-sunbeams-and-shadows" clipPath="url(#cxs-clip-floor)" style={{ pointerEvents: 'none' }}>
+        {/* Volumetric Morning Light Beams */}
+        {WINDOWS.map(([wx, base], i) => (
+          <Sunbeam key={`beam-${i}`} wx={wx} ys={base - 8} />
+        ))}
 
-      {/* 8.2 East Archway WITH 1-STEP SPLIT-LEVEL THRESHOLD (Sanctuary Inset) */}
-      <WoodenArchway x={814} y={420} width={36} height={135} hasStep={true} />
+        {/* Pillars Blocking Light: Realistic Diagonal Cast Shadows */}
+        {PILLARS.map((p, i) => {
+          const hw = (p.w || 14) / 2 + 1;
+          const len = 50;
+          const sx = SLOPE * len;
+          return (
+            <polygon
+              key={`cast-${i}`}
+              points={`${p.cx - hw},${p.base} ${p.cx + hw},${p.base} ${p.cx + hw + sx},${p.base + len} ${p.cx - hw + sx},${p.base + len}`}
+              fill="url(#cxs-cast)"
+            />
+          );
+        })}
+      </g>
 
       {/* =========================================================================
-          LAYER 9: LOW-PROFILE FRONT-FACING WALLS (WITH 45° SLOPED CORNER SILLS)
+          LAYER 5: WALL FACES, WINDOWS & CONTINUOUS CEILING CROWN TIMBERS
           ========================================================================= */}
-      {/* Left Wing South Horizontal Sill */}
-      <rect x="160" y="605" width="250" height="14" fill="url(#cx-bottom-facing-wall)" stroke={OUT} strokeWidth="1.8" />
-      <line x1="160" y1="606.5" x2="410" y2="606.5" stroke="#fef08a" strokeWidth="1.2" opacity="0.75" />
+      <g id="cx-wall-faces">
+        {FACES.map(f => <Face key={`face-${f.id}`} {...f} />)}
 
-      {/* Left Wing SW 45° Sloped Sill */}
-      <polygon points="46,470 160,584 170,574 56,460" fill="url(#cx-bottom-facing-wall)" stroke={OUT} strokeWidth="1.8" />
-      <line x1="48" y1="468" x2="162" y2="582" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
+        {/* Back-Wall Cottage Windows */}
+        {WINDOWS.map(([wx, base], i) => (
+          <CottageWindow key={`win-${i}`} x={wx} y={base - F + 10} />
+        ))}
 
-      {/* Right Wing South Horizontal Sill */}
-      <rect x="850" y="605" width="250" height="14" fill="url(#cx-bottom-facing-wall)" stroke={OUT} strokeWidth="1.8" />
-      <line x1="850" y1="606.5" x2="1100" y2="606.5" stroke="#fef08a" strokeWidth="1.2" opacity="0.75" />
+        {/* Continuous Horizontal Ceiling Timbers (Crown Rafters) */}
+        {CROWNS.map((c, i) => (
+          <g key={`crown-${i}`}>
+            <rect x={c.x1} y={c.y} width={c.x2 - c.x1} height="7" fill="url(#cxs-crown)" />
+            <line x1={c.x1} y1={c.y + 1.2} x2={c.x2} y2={c.y + 1.2} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
+            <line x1={c.x1} y1={c.y + 7.6} x2={c.x2} y2={c.y + 7.6} stroke="rgba(24,10,2,0.5)" strokeWidth="1.2" />
+          </g>
+        ))}
+      </g>
 
-      {/* Right Wing SE 45° Sloped Sill */}
-      <polygon points="1214,470 1100,584 1090,574 1204,460" fill="url(#cx-bottom-facing-wall)" stroke={OUT} strokeWidth="1.8" />
-      <line x1="1212" y1="468" x2="1098" y2="582" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
+      {/* =========================================================================
+          LAYER 6: MASTER CARPENTRY FRAMES — ZERO MODULAR SEAMS & COHESIVE TIMBER
+          (Single Unified Outer Silhouette, Continuous Grain, Soft Miter Joints)
+          ========================================================================= */}
+      <g id="cx-master-framing">
+        {/* 6.1 Outer Silhouette Pass: Dark Outline against the Void (#241206) */}
+        <g id="framing-outer-silhouette">
+          {CAPS.map((c, i) => (
+            <rect key={`co-${i}`} x={c.x1} y={c.y} width={c.x2 - c.x1} height={CAP} fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
+          ))}
+          {STRIPS.map((s, i) => (
+            <rect key={`so-${i}`} x={s.x} y={s.y1} width={s.w} height={s.y2 - s.y1} fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
+          ))}
+          {LOW_WALLS.map((l, i) => (
+            <rect key={`lo-${i}`} x={l.x1} y={l.y} width={l.x2 - l.x1} height="12" fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
+          ))}
+          {SLOPED_CORNERS.map((sc, i) => (
+            <polygon key={`sco-${i}`} points={sc.poly} fill={OUT} stroke={OUT} strokeWidth="2.5" strokeLinejoin="round" />
+          ))}
+        </g>
 
-      {/* Foyer South Sills & Entrance Step */}
-      <rect x="446" y="605" width="124" height="14" fill="url(#cx-bottom-facing-wall)" stroke={OUT} strokeWidth="1.8" />
-      <rect x="690" y="605" width="124" height="14" fill="url(#cx-bottom-facing-wall)" stroke={OUT} strokeWidth="1.8" />
-      <rect x="570" y="605" width="120" height="20" fill="#78350f" stroke={OUT} strokeWidth="1.8" />
-      <line x1="570" y1="606.5" x2="690" y2="606.5" stroke="#fef08a" strokeWidth="1.2" opacity="0.7" />
-      <rect x="580" y="618" width="100" height="8" rx="2" fill="#451a03" stroke={OUT} strokeWidth="1.2" />
+        {/* 6.2 Continuous Wood Fill: Cedar (#5c3a21) & Rustic Oak (#8B5A2B) */}
+        <g id="framing-wood-fill">
+          {/* Horizontal Rafter Caps */}
+          {CAPS.map((c, i) => (
+            <g key={`cf-${i}`}>
+              <rect x={c.x1} y={c.y} width={c.x2 - c.x1} height={CAP} fill="url(#cxs-timber-cap)" />
+              <rect x={c.x1} y={c.y} width={c.x2 - c.x1} height={CAP} fill="url(#cxs-grain)" />
+              {/* Soft Muted Copper Top Highlight */}
+              <line x1={c.x1} y1={c.y + 1} x2={c.x2} y2={c.y + 1} stroke="#CD7F32" strokeWidth="1.1" opacity="0.85" />
+              {/* Pixel-Level Inner Shading for Hand-Carved Volumetric Depth */}
+              <line x1={c.x1} y1={c.y + CAP - 1} x2={c.x2} y2={c.y + CAP - 1} stroke="rgba(35,14,3,0.6)" strokeWidth="1.2" />
+            </g>
+          ))}
+
+          {/* Vertical Side Wall Strips */}
+          {STRIPS.map((s, i) => (
+            <g key={`sf-${i}`}>
+              <rect x={s.x} y={s.y1} width={s.w} height={s.y2 - s.y1} fill="url(#cxs-timber-cap)" />
+              <rect x={s.x} y={s.y1} width={s.w} height={s.y2 - s.y1} fill="url(#cxs-grain)" />
+              {/* Soft Muted Copper Left Highlight */}
+              <line x1={s.x + 1.2} y1={s.y1 + 1} x2={s.x + 1.2} y2={s.y2 - 1} stroke="#CD7F32" strokeWidth="1.1" opacity="0.85" />
+              {/* Inner Edge Hand-Carved Shading */}
+              <line x1={s.x + s.w - 1.2} y1={s.y1 + 1} x2={s.x + s.w - 1.2} y2={s.y2 - 1} stroke="rgba(35,14,3,0.6)" strokeWidth="1.2" />
+            </g>
+          ))}
+
+          {/* Low-Profile Front Sills */}
+          {LOW_WALLS.map((l, i) => (
+            <g key={`lf-${i}`}>
+              <rect x={l.x1} y={l.y} width={l.x2 - l.x1} height="12" fill="url(#cxs-low-wall)" />
+              <line x1={l.x1} y1={l.y + 1} x2={l.x2} y2={l.y + 1} stroke="#CD7F32" strokeWidth="1" opacity="0.85" />
+              <line x1={l.x1} y1={l.y + 6.5} x2={l.x2} y2={l.y + 6.5} stroke="rgba(24,10,2,0.4)" strokeWidth="0.8" />
+            </g>
+          ))}
+
+          {/* 45° Sloped Corner Timber Polygons (Smoothly Blended) */}
+          {SLOPED_CORNERS.map((sc, i) => (
+            <g key={`scf-${i}`}>
+              <polygon points={sc.poly} fill="url(#cxs-low-wall)" />
+              <polygon points={sc.poly} fill="url(#cxs-grain)" opacity="0.85" />
+            </g>
+          ))}
+        </g>
+
+        {/* 6.3 Soft Carpentry Seams: 45° Miter Joints at Timber Intersections */}
+        <g id="framing-soft-miter-joints">
+          {MITER_JOINTS.map((m, i) => (
+            <line
+              key={`mj-${i}`}
+              x1={m.x1}
+              y1={m.y1}
+              x2={m.x2}
+              y2={m.y2}
+              stroke="rgba(45,20,5,0.45)"
+              strokeWidth="1.1"
+              strokeLinecap="round"
+            />
+          ))}
+        </g>
+      </g>
+
+      {/* =========================================================================
+          LAYER 7: SPLIT-LEVEL STEPS, ARCHWAYS & STRUCTURAL TIMBER COLUMNS
+          ========================================================================= */}
+      <g id="cx-steps-and-archways">
+        {/* Split-Level Raised Steps with Cedar Nosing */}
+        {STEPS.map((s, i) => (
+          <g key={`step-${i}`}>
+            <rect x={s.x1} y={s.y} width={s.x2 - s.x1} height="6" fill="#4a250e" stroke={OUT} strokeWidth="1.2" />
+            <line x1={s.x1 + 1} y1={s.y + 0.8} x2={s.x2 - 1} y2={s.y + 0.8} stroke="#CD7F32" strokeWidth="1.1" opacity="0.9" />
+          </g>
+        ))}
+
+        {/* Seamless Wooden Archways */}
+        <Archway x1={506} x2={614} y={84} ix1={520} ix2={600} s={16} />
+        <Archway x1={528} x2={592} y={424} ix1={542} ix2={578} s={12} />
+        <Archway x1={1030} x2={1100} y={412} ix1={1044} ix2={1086} s={14} />
+
+        {/* Carved Cedar Support Pillars */}
+        {PILLARS.map((p, i) => <Pillar key={`pil-${i}`} {...p} />)}
+
+        {/* Village Exit Doorway Jambs */}
+        <rect x="498" y="588" width="8" height="16" fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
+        <rect x="634" y="588" width="8" height="16" fill="url(#cxs-pillar)" stroke={OUT} strokeWidth="1.2" />
+      </g>
     </svg>
   );
 }
 
 // =========================================================================
-// 5. VOLUMETRIC LIGHTING OVERLAY
+// 6. SOFT AMBIENT LAMPLIGHT POOLS (Cozy Warm Glow)
 // =========================================================================
 const POOLS = [
-  { x: 630, y: 180, rx: 250, ry: 160, o: 0.95 },
-  { x: 230, y: 350, rx: 210, ry: 190, o: 0.75 },
-  { x: 1010, y: 350, rx: 210, ry: 190, o: 0.8 },
-  { x: 630, y: 500, rx: 170, ry: 120, o: 0.7 },
-  { x: 630, y: 610, rx: 110, ry: 55, o: 0.75 },
-  { x: 180, y: 175, rx: 90, ry: 70, o: 0.6 }
+  { x: 105, y: 150, rx: 60, ry: 40, o: 0.55 },   // Bed nook
+  { x: 225, y: 235, rx: 100, ry: 70, o: 0.6 },   // NW wing
+  { x: 355, y: 260, rx: 80, ry: 24, o: 0.4 },    // W-E corridor
+  { x: 560, y: 240, rx: 170, ry: 110, o: 0.85 }, // Central Hall
+  { x: 560, y: 128, rx: 60, ry: 30, o: 0.55 },   // Hearth alcove
+  { x: 735, y: 310, rx: 55, ry: 22, o: 0.4 },    // East connector
+  { x: 560, y: 410, rx: 40, ry: 70, o: 0.4 },    // N-S corridor
+  { x: 560, y: 535, rx: 130, ry: 60, o: 0.6 },   // Foyer
+  { x: 980, y: 330, rx: 210, ry: 110, o: 0.75 }, // East wing
+  { x: 1040, y: 525, rx: 120, ry: 50, o: 0.55 }, // East south room
 ];
 
 export function ComplexLightingSVG() {
@@ -1226,7 +766,7 @@ export function ComplexLightingSVG() {
         </radialGradient>
       </defs>
       {POOLS.map((p, i) => (
-        <g key={i} className="complex-light-pool" style={{ animationDelay: `${(i % 6) * 0.35}s` }}>
+        <g key={i} className="complex-light-pool" style={{ animationDelay: `${(i % 5) * 0.35}s` }}>
           <ellipse cx={p.x} cy={p.y} rx={p.rx} ry={p.ry} fill="url(#cx-lamp-glow)" opacity={p.o} style={{ mixBlendMode: 'soft-light' }} />
           <ellipse cx={p.x} cy={p.y} rx={p.rx * 0.75} ry={p.ry * 0.75} fill="url(#cx-lamp-glow)" opacity={p.o * 0.35} style={{ mixBlendMode: 'screen' }} />
         </g>

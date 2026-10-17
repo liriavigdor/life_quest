@@ -1,36 +1,60 @@
-// Geometry for the authentic Stardew Valley 4-chamber house floorplan.
-// 1. Neutral Entrance Foyer (Center-Bottom)
-// 2. Urgent Room (Left Wing • 🔴 Red)
-// 3. In-Progress Room (Center-Top • 🟡 Yellow)
-// 4. Routine Room (Right Wing • 🟢 Green)
-// Fits 1260x660 with zero camera scrolling.
+// Geometry for the asymmetric multi-wing cottage shell (mirrors ComplexArchitecture.jsx).
+//   A  NW wing (+ front-jutting nook), W-E corridor C1, central hall B (+ alcove),
+//   E connector C2, east wing D (+ partitioned south room), N-S corridor C3, foyer.
+// Pillar / half-wall footprints are carved out of the walkable rectangles.
 // Pure navigation math: no React, no game state.
 
 export const COMPLEX_PAD = 0;
 export const COMPLEX_WORLD_W = 1260;
 export const COMPLEX_WORLD_H = 660;
 
-// Walkable floor zones for the 4 interconnected chambers
+// Walkable floor zones [x1, y1, x2, y2]. Corridors are ~1 tile (32-36px) wide;
+// 45° corner cuts are approximated with stepped rectangles.
 export const COMPLEX_ZONES = [
-  // 1. Neutral Entrance Foyer (Center-Bottom)
-  { id: 'entry_foyer', rects: [[460, 390, 800, 605]] },
+  // Foyer (center-bottom, SW/SE corners cut at 45°)
+  { id: 'entry_foyer', rects: [[430, 480, 690, 554], [450, 554, 670, 590]] },
 
-  // 2. Left Store & Registry Chamber (🔴 Red Zone / Urgent)
-  { id: 'left_store', rects: [[60, 120, 460, 595]] },
+  // Central hall + raised alcove + N-S corridor + east connector
+  {
+    id: 'main_hall',
+    rects: [
+      [430, 140, 690, 340],
+      [524, 112, 596, 140],
+      [544, 340, 576, 480],
+      [690, 292, 780, 328]
+    ]
+  },
 
-  // 3. Central Grand Hearth Hall (🟡 Yellow Zone / In-Progress)
-  { id: 'main_hall', rects: [[360, 60, 900, 395]] },
+  // NW wing: deep bed nook + wing (divider wall + post at x 146-168 blocks y < 246),
+  // front nook (SW corner cut), W-E corridor
+  {
+    id: 'left_store',
+    rects: [
+      [60, 118, 146, 290],
+      [168, 170, 280, 290],
+      [60, 246, 280, 290],
+      [60, 290, 180, 334],
+      [84, 334, 180, 370],
+      [280, 242, 430, 278]
+    ]
+  },
 
-  // 4. Right Sacred Sanctuary Chamber (🟢 Green Zone / Routine)
-  { id: 'right_sanctuary', rects: [[800, 120, 1195, 595]] },
+  // East wing (nook half-wall + post at x 1034-1058 blocks y < 330), partition doorway,
+  // south room (SE corner cut)
+  {
+    id: 'right_sanctuary',
+    rects: [
+      [780, 250, 1034, 400],
+      [1060, 250, 1180, 400],
+      [780, 330, 1180, 400],
+      [1048, 400, 1082, 468],
+      [900, 468, 1180, 540],
+      [900, 540, 1160, 580]
+    ]
+  },
 
-  // Threshold Archways connecting Foyer symmetrically to Left, North, and Right
-  { id: 'arch_left', rects: [[430, 440, 480, 545]] },
-  { id: 'arch_north', rects: [[560, 370, 700, 410]] },
-  { id: 'arch_right', rects: [[780, 440, 830, 545]] },
-
-  // Bottom entrance/exit threshold to village
-  { id: 'doorway', rects: [[570, 600, 690, 635]] }
+  // Exit stoop to the village
+  { id: 'doorway', rects: [[505, 586, 635, 612]] }
 ];
 
 const inRect = (x, y, r) => x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3];
@@ -60,7 +84,7 @@ export function snapToWalkable(x, y) {
       best = { x: cx, y: cy };
     }
   }));
-  return best || { x: 630, y: 500 };
+  return best || { x: 595, y: 510 };
 }
 
 /** Apply a step with wall sliding */
@@ -73,36 +97,67 @@ export function resolveMove(prev, dx, dy) {
   return { x: prev.x, y: prev.y };
 }
 
-/** Symmetrical Doorway Waypoints from the Neutral Foyer to all 3 rooms */
-const DOOR_WAYPOINTS = {
-  // Direct Foyer access
-  'entry_foyer-left_store': [{ x: 450, y: 490 }],
-  'left_store-entry_foyer': [{ x: 450, y: 490 }],
-  'entry_foyer-main_hall': [{ x: 630, y: 390 }],
-  'main_hall-entry_foyer': [{ x: 630, y: 390 }],
-  'entry_foyer-right_sanctuary': [{ x: 810, y: 490 }],
-  'right_sanctuary-entry_foyer': [{ x: 810, y: 490 }],
+// Circulation hubs (doors, corridor centrelines, room corners). Routes are found
+// by line-of-sight over this graph, so click-to-move never cuts through walls.
+const HUBS = [
+  { x: 570, y: 600 },                                   // exit stoop
+  { x: 560, y: 540 }, { x: 560, y: 500 },               // foyer
+  { x: 560, y: 440 }, { x: 560, y: 380 },               // N-S corridor
+  { x: 560, y: 300 }, { x: 470, y: 260 }, { x: 650, y: 310 }, // hall
+  { x: 560, y: 126 },                                   // alcove
+  { x: 350, y: 260 }, { x: 300, y: 260 },               // W-E corridor
+  { x: 240, y: 262 }, { x: 170, y: 268 },               // NW wing, south of divider
+  { x: 110, y: 210 }, { x: 230, y: 210 }, { x: 120, y: 330 },
+  { x: 100, y: 150 },                                   // deep bed nook
+  { x: 735, y: 310 },                                   // east connector
+  { x: 810, y: 300 }, { x: 900, y: 360 }, { x: 1000, y: 290 },
+  { x: 1040, y: 365 }, { x: 1065, y: 365 }, { x: 1120, y: 290 }, // east wing
+  { x: 1065, y: 430 },                                  // partition doorway
+  { x: 1065, y: 500 }, { x: 980, y: 530 }, { x: 1130, y: 530 } // south room
+];
 
-  // Room to Room routes (transit through the neutral foyer)
-  'left_store-main_hall': [{ x: 450, y: 490 }, { x: 630, y: 490 }, { x: 630, y: 390 }],
-  'main_hall-left_store': [{ x: 630, y: 390 }, { x: 630, y: 490 }, { x: 450, y: 490 }],
-  'right_sanctuary-main_hall': [{ x: 810, y: 490 }, { x: 630, y: 490 }, { x: 630, y: 390 }],
-  'main_hall-right_sanctuary': [{ x: 630, y: 390 }, { x: 630, y: 490 }, { x: 810, y: 490 }],
-  'left_store-right_sanctuary': [{ x: 450, y: 490 }, { x: 630, y: 490 }, { x: 810, y: 490 }],
-  'right_sanctuary-left_store': [{ x: 810, y: 490 }, { x: 630, y: 490 }, { x: 450, y: 490 }]
+const hasLineOfSight = (a, b) => {
+  const d = Math.hypot(b.x - a.x, b.y - a.y);
+  const steps = Math.max(1, Math.ceil(d / 2));
+  for (let i = 1; i < steps; i++) {
+    const t = i / steps;
+    if (!isWalkable(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t)) return false;
+  }
+  return true;
 };
 
 export function buildRoute(from, to) {
-  const startZone = pointZone(from.x, from.y);
-  const endZone = pointZone(to.x, to.y);
+  if (hasLineOfSight(from, to)) return [to];
 
-  if (startZone && endZone && startZone !== endZone) {
-    const key = `${startZone}-${endZone}`;
-    if (DOOR_WAYPOINTS[key]) {
-      return [...DOOR_WAYPOINTS[key], to];
+  const nodes = [from, ...HUBS, to];
+  const last = nodes.length - 1;
+  const dist = new Array(nodes.length).fill(Infinity);
+  const prev = new Array(nodes.length).fill(-1);
+  const done = new Array(nodes.length).fill(false);
+  dist[0] = 0;
+
+  for (let iter = 0; iter < nodes.length; iter++) {
+    let u = -1;
+    for (let i = 0; i < nodes.length; i++) {
+      if (!done[i] && (u === -1 || dist[i] < dist[u])) u = i;
+    }
+    if (u === -1 || dist[u] === Infinity) break;
+    done[u] = true;
+    if (u === last) break;
+    for (let v = 0; v < nodes.length; v++) {
+      if (done[v] || v === u) continue;
+      const w = Math.hypot(nodes[v].x - nodes[u].x, nodes[v].y - nodes[u].y);
+      if (dist[u] + w < dist[v] && hasLineOfSight(nodes[u], nodes[v])) {
+        dist[v] = dist[u] + w;
+        prev[v] = u;
+      }
     }
   }
-  return [to];
+
+  if (prev[last] === -1) return [to];
+  const path = [];
+  for (let n = last; n !== 0; n = prev[n]) path.unshift(nodes[n]);
+  return path;
 }
 
 export function computeCamera() {
