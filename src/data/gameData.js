@@ -113,6 +113,19 @@ export const BUILDINGS_META = {
     costMultiplier: 1.5,
     icon: 'Flame'
   }
+  },
+  blacksmith_cottage: {
+    id: 'blacksmith_cottage',
+    name: 'בית נגרות הפורץ',
+    category: 'CREATIVE',
+    description: 'קוטג׳ אסימטרי של נפח כבד עם חדר פורג׳ וכניסה צרה.',
+    gridPos: { x: 3, y: 3 },
+    size: { w: 2, h: 2 },
+    maxLevel: 5,
+    baseCost: { gold: 80, xp: 40 },
+    costMultiplier: 1.5,
+    icon: 'Hammer'
+  }
 };
 
 export const INITIAL_QUESTS = [

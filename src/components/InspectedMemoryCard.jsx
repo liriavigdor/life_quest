@@ -12,7 +12,10 @@ import {
   Heart,
   Droplet,
   Wheat,
-  Smile
+  Smile,
+  Lock,
+  Unlock,
+  Zap
 } from 'lucide-react';
 import { BUILD_CATALOG } from '../data/catalog';
 import { sounds } from '../utils/sound';
@@ -30,7 +33,11 @@ export function InspectedMemoryCard({
   onRemove,
   onVisit,
   onEnterInterior,
-  onNourishRecall
+  onNourishRecall,
+  isInteriorUnlocked = true,
+  isBuildingLocked = false,
+  requiredStage = 1,
+  onTriggerQuickQuiz
 }) {
   if (!object) return null;
 
@@ -327,17 +334,67 @@ export function InspectedMemoryCard({
           )}
         </div>
 
+        {/* Building Locked Cue (For future stages along the mental walk) */}
+        {isBuildingLocked && (
+          <div className="building-locked-cue">
+            <Lock size={18} className="text-amber" />
+            <div className="locked-cue-text">
+              <strong>מבנה נעול • נדרש שלב {requiredStage}</strong>
+              <span>כדי למנוע עומס והתברברות, השלם תחילה את מבחן השליפה של התחנה הקודמת לפתיחת שביל הגישה למבנה זה!</span>
+            </div>
+          </div>
+        )}
+
+        {/* Interior Locked Banner (Requires quick blitz recall test) */}
+        {hasInterior && !isBuildingLocked && !isInteriorUnlocked && (
+          <div className="interior-locked-banner">
+            <div className="interior-locked-info">
+              <Lock size={16} className="text-amber" />
+              <div>
+                <strong>חלל הפנים של הבית נעול • מבוקר משחק 🧠</strong>
+                <span>ענה על שאלת שליפה קצרה (5 שניות) לווידוא חקיקת הזיכרון לפתיחת הפנים והרחבת הכפר!</span>
+              </div>
+            </div>
+            {onTriggerQuickQuiz && (
+              <button 
+                type="button" 
+                className="interior-quiz-trigger-btn"
+                onClick={() => onTriggerQuickQuiz(object)}
+                title="התחל מבחן שליפה מהיר"
+              >
+                <Zap size={14} />
+                <span>בחן אותי ⚡</span>
+              </button>
+            )}
+          </div>
+        )}
+
         {/* Action Buttons Row */}
         <div className="memory-actions-row">
-          {hasInterior && onEnterInterior && (
-            <button 
-              className="mem-action-btn mem-interior-btn"
-              onClick={() => onEnterInterior(object, catalogItem)}
-              title="כניסה לתוך חלל הפנים המעוצב של המבנה"
-            >
-              <DoorOpen size={16} />
-              <span>היכנס פנימה 🚪</span>
-            </button>
+          {hasInterior && !isBuildingLocked && (
+            isInteriorUnlocked ? (
+              onEnterInterior && (
+                <button 
+                  className="mem-action-btn mem-interior-btn"
+                  onClick={() => onEnterInterior(object, catalogItem)}
+                  title="כניסה לתוך חלל הפנים המעוצב של המבנה"
+                >
+                  <DoorOpen size={16} />
+                  <span>היכנס פנימה 🚪</span>
+                </button>
+              )
+            ) : (
+              onTriggerQuickQuiz && (
+                <button 
+                  className="mem-action-btn mem-quiz-unlock-btn"
+                  onClick={() => onTriggerQuickQuiz(object)}
+                  title="בצע מבחן שליפה קצר (5 שניות) לפתיחת חלל הפנים והרחבת הכפר"
+                >
+                  <Zap size={15} className="text-amber" />
+                  <span>פתיחת פנים הבית (מבחן 5 שנ') ⚡</span>
+                </button>
+              )
+            )
           )}
 
           <button 
@@ -349,14 +406,16 @@ export function InspectedMemoryCard({
             <span>בקר בפינה 🚶‍♂️</span>
           </button>
 
-          <button 
-            className="mem-action-btn mem-remove-btn"
-            onClick={() => onRemove(object)}
-            title="הסרת הפריט מהכפר"
-          >
-            <Trash2 size={15} />
-            <span>הסר 🧹</span>
-          </button>
+          {!isBuildingLocked && (
+            <button 
+              className="mem-action-btn mem-remove-btn"
+              onClick={() => onRemove(object)}
+              title="הסרת הפריט מהכפר"
+            >
+              <Trash2 size={15} />
+              <span>הסר 🧹</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

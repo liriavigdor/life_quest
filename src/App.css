@@ -10992,6 +10992,21 @@ body, html {
   align-items: center;
   gap: 6px;
 }
+/* In-Room Wall Picture Frames (Real User Photo Memories) */
+.in-room-wall-picture-frame {
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.in-room-wall-picture-frame:hover {
+  transform: translate(-50%, -54%) scale(1.08) !important;
+  z-index: 35 !important;
+}
+
+.wall-frame-hover-glow:hover {
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.45), 0 0 20px rgba(245, 158, 11, 0.25), inset 0 1px 3px rgba(254, 240, 138, 0.8) !important;
+  border-color: #f59e0b !important;
+}
 
 /* --- Modals for Complex Stations --- */
 .store-inventory-grid {
@@ -14060,4 +14075,963 @@ body, html {
   font-size: 0.72rem;
   color: #a8a29e;
   font-style: italic;
+}
+
+/* ==========================================================================
+   Active Navigation Controls Dock (Active D-Pad + WASD / Arrow Keys HUD)
+   ========================================================================== */
+.sanctuary-active-nav-dock {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 45;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 10px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  user-select: none;
+  touch-action: manipulation;
+  pointer-events: auto;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sanctuary-active-nav-dock:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55), 0 0 16px rgba(56, 189, 248, 0.15);
+}
+
+.active-nav-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.4px;
+}
+
+.active-nav-icon {
+  font-size: 0.85rem;
+}
+
+.active-dpad-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dpad-middle-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dpad-key {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(30, 41, 59, 0.88);
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dpad-key:hover {
+  background: rgba(51, 65, 85, 0.95);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.dpad-key:active {
+  background: #38bdf8;
+  color: #0f172a;
+  border-color: #7dd3fc;
+  transform: translateY(1px) scale(0.94);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.dpad-center-guide {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 7px;
+}
+
+.dpad-wasd-text {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.active-nav-keys-hint {
+  font-size: 0.68rem;
+  color: #cbd5e1;
+  opacity: 0.85;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Controlled Village Cognitive Progression & Micro-Quiz HUD
+   ========================================================================== */
+.village-progression-hud-pill {
+  position: absolute;
+  top: 20px;
+  right: 220px;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 0 12px rgba(245, 158, 11, 0.15);
+  direction: rtl;
+  user-select: none;
+  animation: fadeInDown 0.3s ease;
+}
+
+.progression-pill-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progression-pill-icon {
+  font-size: 1.15rem;
+}
+
+.progression-pill-texts {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.progression-pill-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #fef08a;
+  line-height: 1.2;
+}
+
+.progression-pill-sub {
+  font-size: 0.68rem;
+  color: #cbd5e1;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.progression-quick-quiz-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border: none;
+  border-radius: 9999px;
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.74rem;
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.35);
+  white-space: nowrap;
+}
+
+.progression-quick-quiz-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.55);
+}
+
+.progression-quick-quiz-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* ==========================================================================
+   Village Quick Quiz Modal (Active Recall Blitz Check, 5-10s)
+   ========================================================================== */
+.village-quick-quiz-backdrop {
+  z-index: 105;
+  background: rgba(10, 15, 30, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.village-quick-quiz-modal {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(245, 158, 11, 0.2);
+  direction: rtl;
+  color: #f8fafc;
+  animation: quizPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes quizPopIn {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.quick-quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.quick-quiz-stage-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+.quick-quiz-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.quick-quiz-icon-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(15, 23, 42, 0.6) 70%);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.quick-quiz-station-emoji {
+  font-size: 2rem;
+}
+
+.quick-quiz-spark-badge {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  font-size: 1rem;
+  background: #f59e0b;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-quiz-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 6px 0;
+}
+
+.quick-quiz-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0 0 18px 0;
+  line-height: 1.4;
+}
+
+.quick-quiz-subtitle strong {
+  color: #38bdf8;
+}
+
+.quick-quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.quick-quiz-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(30, 41, 59, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: #e2e8f0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: right;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.quick-quiz-opt-btn:hover {
+  background: rgba(51, 65, 85, 0.95);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.2);
+}
+
+.quick-quiz-opt-btn.opt-wrong {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.opt-emoji {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.opt-text {
+  flex: 1;
+}
+
+.opt-arrow {
+  color: #64748b;
+  font-size: 1.1rem;
+  transition: transform 0.15s ease;
+}
+
+.quick-quiz-opt-btn:hover .opt-arrow {
+  color: #38bdf8;
+  transform: translateX(-3px);
+}
+
+.quick-quiz-wrong-hint {
+  font-size: 0.82rem;
+  color: #fbbf24;
+  margin-bottom: 12px;
+}
+
+.quick-quiz-footer-note {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Passed Screen */
+.quick-quiz-passed-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.passed-badge-burst {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.3) 0%, rgba(15, 23, 42, 0.8) 75%);
+  border: 2px solid #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.45);
+}
+
+.passed-big-icon {
+  font-size: 2.2rem;
+}
+
+.passed-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #86efac;
+  margin: 0 0 6px 0;
+}
+
+.passed-desc {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.passed-unlocks-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+.passed-unlock-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: right;
+}
+
+.unlock-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.unlock-icon-circle.green {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.unlock-icon-circle.amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.unlock-icon-circle.emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.unlock-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.unlock-info strong {
+  font-size: 0.88rem;
+  color: #f1f5f9;
+}
+
+.unlock-info span {
+  font-size: 0.74rem;
+  color: #94a3b8;
+}
+
+.passed-actions-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.quick-quiz-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.quick-quiz-action-btn.primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.quick-quiz-action-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
+}
+
+.quick-quiz-action-btn.secondary {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+}
+
+.quick-quiz-action-btn.secondary:hover {
+  background: rgba(51, 65, 85, 0.95);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Inspected Card Progression Locking Cues
+   ========================================================================== */
+.building-locked-cue {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  direction: rtl;
+  text-align: right;
+}
+
+.locked-cue-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.locked-cue-text strong {
+  font-size: 0.82rem;
+  color: #fef08a;
+}
+
+.locked-cue-text span {
+  font-size: 0.74rem;
+  color: #cbd5e1;
+}
+
+.interior-locked-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  direction: rtl;
+}
+
+.interior-locked-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: right;
+}
+
+.interior-locked-info strong {
+  display: block;
+  font-size: 0.82rem;
+  color: #fef08a;
+}
+
+.interior-locked-info span {
+  font-size: 0.74rem;
+  color: #94a3b8;
+}
+
+.interior-quiz-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f59e0b;
+  border: none;
+  border-radius: 8px;
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.76rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.interior-quiz-trigger-btn:hover {
+  background: #fbbf24;
+  transform: scale(1.04);
+}
+
+.mem-quiz-unlock-btn {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.2));
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fef08a;
+}
+
+.mem-quiz-unlock-btn:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(217, 119, 6, 0.35));
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+/* =========================================================================
+   AUTHENTIC 2.5D INTERIOR CORRIDOR DOORS & PROGRESSION SYSTEM
+   ========================================================================= */
+.interior-mastery-hud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(20, 15, 30, 0.85);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fef08a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.stardew-doors-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.stardew-corridor-door {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.stardew-corridor-door.door-locked:hover {
+  transform: scale(1.05);
+  z-index: 35;
+}
+
+/* Horizontal corridor doors (C3, East-South) */
+.stardew-corridor-door.door-h .door-panel-closed {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(180deg, #6d3910 0%, #4a2205 60%, #2f1301 100%);
+  border: 2px solid #230d02;
+  border-radius: 4px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(254, 240, 138, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vertical corridor doors (C1, C2) */
+.stardew-corridor-door.door-v .door-panel-closed {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(90deg, #6d3910 0%, #4a2205 60%, #2f1301 100%);
+  border: 2px solid #230d02;
+  border-radius: 4px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.75), inset 1px 0 0 rgba(254, 240, 138, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timber framing and plank lines */
+.door-oak-planks {
+  position: absolute;
+  inset: 2px;
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+}
+.door-h .door-oak-planks {
+  flex-direction: row;
+}
+.door-v .door-oak-planks {
+  flex-direction: column;
+}
+.door-h .plank-line {
+  width: 1px;
+  height: 100%;
+  background: rgba(20, 8, 2, 0.7);
+  box-shadow: 1px 0 0 rgba(254, 240, 138, 0.15);
+}
+.door-v .plank-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(20, 8, 2, 0.7);
+  box-shadow: 0 1px 0 rgba(254, 240, 138, 0.15);
+}
+
+/* Black Forged Iron Strap Hinges */
+.door-iron-strap {
+  position: absolute;
+  background: #1e293b;
+  border: 1px solid #0f172a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.door-h .strap-top {
+  top: 5px;
+  left: 4px;
+  right: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+.door-h .strap-bottom {
+  bottom: 5px;
+  left: 4px;
+  right: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+.door-v .strap-top {
+  left: 3px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 2px;
+}
+.door-v .strap-bottom {
+  right: 3px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 2px;
+}
+
+/* Golden Padlock Emblem */
+.door-lock-emblem {
+  position: relative;
+  z-index: 5;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fbbf24 20%, #d97706 70%, #92400e 100%);
+  border: 1.5px solid #fef08a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #451a03;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.75), 0 2px 4px rgba(0, 0, 0, 0.6);
+  animation: pulse-lock-amber 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-lock-amber {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.95);
+  }
+}
+
+/* Hover Chip */
+.door-hover-chip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(15, 10, 25, 0.94);
+  border: 1.2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fef08a;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.65);
+  z-index: 40;
+}
+.stardew-corridor-door:hover .door-hover-chip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Opened Doorways */
+.door-panel-opened {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1.5px dashed rgba(245, 158, 11, 0.3);
+  border-radius: 4px;
+  background: rgba(245, 158, 11, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.door-threshold-glow {
+  color: #fbbf24;
+  opacity: 0.85;
+}
+.door-leaf-swung {
+  position: absolute;
+  background: #542b08;
+  border: 1px solid #271406;
+  border-radius: 2px;
+}
+.door-h .door-leaf-swung {
+  top: 0;
+  left: 2px;
+  width: 8px;
+  height: 90%;
+  transform: skewY(-15deg);
+}
+.door-v .door-leaf-swung {
+  top: 2px;
+  right: 0;
+  width: 90%;
+  height: 8px;
+  transform: skewX(-15deg);
+}
+
+/* ==========================================================================
+   BRAWL STARS STYLE FLOATING MOBILE JOYSTICK
+   ========================================================================== */
+.brawl-joystick-container {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 140px;
+  height: 140px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+}
+
+/* Strictly hide on desktop / mouse devices */
+@media (pointer: fine) and (min-width: 901px) {
+  .brawl-joystick-container {
+    display: none !important;
+  }
+}
+
+.brawl-joystick-base {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.45) 80%, rgba(15, 23, 42, 0.75) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 16px rgba(56, 189, 248, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.brawl-joystick-container.is-active .brawl-joystick-base {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(56, 189, 248, 0.35), 0 0 18px rgba(56, 189, 248, 0.3);
+  transform: scale(1.04);
+}
+
+.brawl-joystick-ring {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.brawl-joystick-crosshair {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.brawl-joystick-crosshair.h {
+  width: 28px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.brawl-joystick-crosshair.v {
+  width: 2px;
+  height: 28px;
+  border-radius: 1px;
+}
+
+.brawl-joystick-knob {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #38bdf8 0%, #0284c7 50%, #0369a1 100%);
+  border: 2.5px solid #e0f2fe;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 14px rgba(56, 189, 248, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  will-change: transform;
+  transition: filter 0.15s ease;
+}
+
+.brawl-joystick-container.is-active .brawl-joystick-knob {
+  filter: brightness(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 22px rgba(56, 189, 248, 0.85);
+}
+
+.brawl-knob-core {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.brawl-knob-spark {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 10px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: rotate(-30deg);
 }

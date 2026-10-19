@@ -1,110 +1,80 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Lock, 
-  Unlock, 
-  Eye, 
-  RotateCcw, 
-  Sparkles, 
-  Hash, 
-  Key, 
-  ChevronUp, 
-  ChevronDown, 
-  Check, 
-  HelpCircle,
-  GripVertical
-} from 'lucide-react';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { getStoredDeposits, saveDeposit } from '../utils/keyMethodStorage';
 
 /**
  * ActiveRecallLocker:
- * An authentic physical wooden locker cabinet ("ארונית לוקר ומגירות פיזית").
- * Users and their in-game character physically inspect the cabinet,
- * pull drawers out to reveal active-recall keywords, and shift/reorder drawers.
+ * כרטיסיות פשוטות ונקיות.
+ * המידע לא מוצג אוטומטית (נפתח רק בלחיצה), ללא מילים מיותרות וללא הודעות על מבחן.
  */
 export function ActiveRecallLocker({
   depositId,
   items = [],
   criterion = '',
-  associationWord = '',
-  villageCipher = 'יער',
-  houseCipher = 'אבק',
-  compact = false,
-  showCharacterAvatar = false,
+  visualAnchor = null,
   onReorder = null
 }) {
-  // Current drawer items (allow reordering)
-  const [drawerItems, setDrawerItems] = useState(items);
-
-  // Track which drawers are currently pulled open (Active Recall)
-  const [pulledDrawers, setPulledDrawers] = useState({});
-  const [activeHintDrawer, setActiveHintDrawer] = useState(null);
-
-  // Keep internal items in sync if props change
-  useEffect(() => {
-    if (items && items.length > 0) {
-      setDrawerItems(items);
-    }
-  }, [items]);
-
-  // Pull a drawer out or push it back in
-  const toggleDrawer = (idx) => {
-    sounds.playTap?.();
-    setPulledDrawers(prev => ({
-      ...prev,
-      [idx]: !prev[idx]
+  const normalize = (raw) => {
+    return (raw || []).map((it, idx) => ({
+      id: it.id || `item_${idx}`,
+      name: typeof it === 'string' ? it : (it.name || it.text || `פריט ${idx + 1}`),
+      rank: it.rank || idx + 1
     }));
   };
 
-  // Pull all drawers open
-  const handlePullAllDrawers = (e) => {
-    e?.stopPropagation();
-    sounds.playCultivate?.();
-    const all = {};
-    drawerItems.forEach((_, idx) => { all[idx] = true; });
-    setPulledDrawers(all);
-  };
+  const [cardItems, setCardItems] = useState(() => normalize(items));
+  
+  // Drawers/cards start closed by default (Active Recall happens implicitly on click)
+  const [openedIds, setOpenedIds] = useState({});
 
-  // Push all drawers shut (Reset for Active Recall practice)
-  const handlePushAllDrawers = (e) => {
-    e?.stopPropagation();
+  useEffect(() => {
+    if (items && items.length > 0) {
+      setCardItems(normalize(items));
+    }
+  }, [items]);
+
+  // Click card to toggle open/close (Implicit Active Recall)
+  const handleToggleCard = (id) => {
     sounds.playTap?.();
-    setPulledDrawers({});
-    setActiveHintDrawer(null);
+    setOpenedIds(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+
+    if (depositId) {
+      const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+      const all = getStoredDeposits();
+      const dep = all.find(d => d.id === depositId);
+      if (dep && dep.lastPracticed !== todayStr) {
+        saveDeposit({
+          ...dep,
+          lastPracticed: todayStr
+        });
+      }
+    }
   };
 
-  // Reorder drawers up or down ("מזיזים מגירות")
-  const handleMoveDrawer = (index, direction, e) => {
+  // Move a card up or down
+  const handleMoveCard = (index, direction, e) => {
     e?.stopPropagation();
     sounds.playTap?.();
 
     const targetIndex = index + direction;
-    if (targetIndex < 0 || targetIndex >= drawerItems.length) return;
+    if (targetIndex < 0 || targetIndex >= cardItems.length) return;
 
-    const newItems = [...drawerItems];
-    const temp = newItems[index];
-    newItems[index] = newItems[targetIndex];
-    newItems[targetIndex] = temp;
+    const copy = [...cardItems];
+    const temp = copy[index];
+    copy[index] = copy[targetIndex];
+    copy[targetIndex] = temp;
 
-    // Update ranks
-    const reRanked = newItems.map((item, idx) => ({
-      ...item,
+    const reRanked = copy.map((it, idx) => ({
+      ...it,
       rank: idx + 1
     }));
 
-    setDrawerItems(reRanked);
+    setCardItems(reRanked);
 
-    // Also swap the pulled state so the drawer stays in its opened/closed state
-    setPulledDrawers(prev => {
-      const updated = { ...prev };
-      const currentVal = !!prev[index];
-      const targetVal = !!prev[targetIndex];
-      updated[index] = targetVal;
-      updated[targetIndex] = currentVal;
-      return updated;
-    });
-
-    // Notify parent or persist if depositId provided
     if (onReorder) {
       onReorder(reRanked);
     } else if (depositId) {
@@ -119,229 +89,147 @@ export function ActiveRecallLocker({
     }
   };
 
-  const openCount = Object.values(pulledDrawers).filter(Boolean).length;
-  const isAllOpen = drawerItems.length > 0 && openCount === drawerItems.length;
+  const anchorEmoji = visualAnchor?.emoji || '🗄️';
 
   return (
-    <div className={`physical-locker-furniture-container ${compact ? 'compact' : ''}`}>
-      {/* Optional In-Scene Companion Character standing beside the locker */}
-      {showCharacterAvatar && (
-        <div className="locker-companion-stage">
-          <div className="companion-character-avatar">
-            <div className="char-sprite-mini" title="הדמות שלך מתבוננת בלוקר ומאמנת את הזיכרון!">
-              <div className="char-hat"></div>
-              <div className="char-head">
-                <div className="char-eyes"></div>
-                <div className="char-smile"></div>
-              </div>
-              <div className="char-torso">
-                <div className="char-backpack"></div>
-              </div>
-            </div>
-            <div className="companion-speech-bubble">
-              <span>"בוא נראה מה זכרת! משוך את המגירה רק אחרי שניחשת 🧠"</span>
-            </div>
-          </div>
+    <div 
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        width: '100%',
+        maxWidth: '520px',
+        margin: '0 auto',
+        direction: 'rtl'
+      }}
+    >
+      {/* Simple Question Header */}
+      {criterion && (
+        <div 
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            background: 'rgba(255, 255, 255, 0.04)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '14px',
+            padding: '12px 16px',
+            boxSizing: 'border-box'
+          }}
+        >
+          <span style={{ fontSize: '1.4rem' }}>{anchorEmoji}</span>
+          <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#fef08a' }}>
+            {criterion}
+          </h4>
         </div>
       )}
 
-      {/* Main Physical Wooden Cabinet Shell */}
-      <div className="wooden-cabinet-shell">
-        {/* Brass Header Plate with Engraved Bizarre Question & Anchors */}
-        <div className="cabinet-brass-header">
-          <div className="brass-screws-row">
-            <span className="brass-screw top-left">✛</span>
-            <span className="brass-screw top-right">✛</span>
-          </div>
+      {/* Simple Clean Cards */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        {cardItems.map((item, index) => {
+          const isOpen = !!openedIds[item.id];
 
-          <div className="cabinet-header-content">
-            <div className="cabinet-header-badge">
-              <span className="cabinet-icon">🗄️</span>
-              <strong className="cabinet-title">ארונית לוקר פיזית • {drawerItems.length} מגירות עץ</strong>
-            </div>
-
-            <div className="bizarre-q-highlight-strip">
-              <span className="q-label">שאלה ממיינת:</span>
-              <h4 className="bizarre-q-text">
-                {criterion || 'את מה היית דוחף לפה קודם? 👄'}
-              </h4>
-            </div>
-
-            <div className="cabinet-anchors-row">
-              <span className="anchor-pill village-pill">
-                הכפר ({villageCipher})
-              </span>
-              <span className="anchor-sep">←</span>
-              <span className="anchor-pill house-pill">
-                הבית ({houseCipher})
-              </span>
-              <span className="anchor-sep">←</span>
-              <span className="anchor-pill assoc-pill">
-                <Key size={12} className="text-amber" />
-                מפתח: <strong>"{associationWord || 'בלוע'}"</strong>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Tactile Cabinet Active Recall Controls */}
-        <div className="cabinet-tactile-toolbar">
-          <div className="drawers-status-counter">
-            <span className="counter-icon">{isAllOpen ? '🔓' : '🔒'}</span>
-            <span><strong>{openCount}</strong> מתוך <strong>{drawerItems.length}</strong> מגירות פתוחות</span>
-          </div>
-
-          <div className="cabinet-toolbar-actions">
-            <button
-              type="button"
-              className="cabinet-tool-btn push-all-btn"
-              onClick={handlePushAllDrawers}
-              title="דחוף את כל המגירות פנימה כדי לבחון את עצמך בשליפה אקטיבית"
+          return (
+            <div
+              key={item.id}
+              onClick={() => handleToggleCard(item.id)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                background: index === 0 
+                  ? 'rgba(245, 158, 11, 0.12)' 
+                  : 'rgba(255, 255, 255, 0.04)',
+                border: index === 0 
+                  ? '1.5px solid rgba(245, 158, 11, 0.5)' 
+                  : '1px solid rgba(255, 255, 255, 0.08)',
+                borderRadius: '12px',
+                padding: '10px 14px',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                userSelect: 'none'
+              }}
+              title={isOpen ? 'לחץ לסגירה' : 'לחץ לפתיחה'}
             >
-              <RotateCcw size={13} />
-              <span>דחוף הכל פנימה 🔒</span>
-            </button>
+              {/* Rank & Item Content */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
+                <span 
+                  style={{
+                    width: '26px',
+                    height: '26px',
+                    borderRadius: '6px',
+                    background: index === 0 ? '#f59e0b' : 'rgba(255, 255, 255, 0.1)',
+                    color: index === 0 ? '#000000' : '#e2e8f0',
+                    fontWeight: 800,
+                    fontSize: '0.82rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}
+                >
+                  {index + 1}
+                </span>
 
-            {!isAllOpen && (
-              <button
-                type="button"
-                className="cabinet-tool-btn pull-all-btn"
-                onClick={handlePullAllDrawers}
-                title="משוך את כל המגירות החוצה וחשוף את כל המילים"
-              >
-                <Eye size={13} />
-                <span>שלוף הכל 👁️</span>
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Tier Hierarchy Guide (Extreme Bizarre Question Context) */}
-        <div className="drawer-tier-guide">
-          <span className="tier-guide-top">
-            ⬆️ מגירה עליונה (1): הראשון שהיית דוחף לפה ובולע 👄
-          </span>
-          <span className="tier-guide-bottom">
-            ⬇️ מגירה תחתונה ({drawerItems.length}): בחיים לא מתקרב לפה! 🚫
-          </span>
-        </div>
-
-        {/* The Physical Tiered Drawers Stack */}
-        <div className="drawers-stack-frame">
-          {drawerItems.map((item, idx) => {
-            const isPulled = !!pulledDrawers[idx];
-
-            return (
-              <div 
-                key={item.id || `drawer-${idx}`} 
-                className={`physical-drawer-bay ${isPulled ? 'drawer-open' : 'drawer-closed'}`}
-              >
-                {/* Drawer Cavity / Depth Interior Background */}
-                <div className="drawer-cavity-shadow">
-                  {/* Sliding Wooden Drawer Body */}
-                  <div 
-                    className={`sliding-drawer-body ${isPulled ? 'is-slid-out' : ''}`}
-                    onClick={() => toggleDrawer(idx)}
-                  >
-                    {/* Drawer Side Wood & Dovetail Joints (visible when pulled open!) */}
-                    <div className="drawer-wood-side left-side">
-                      <div className="dovetail-joint"></div>
-                      <div className="dovetail-joint"></div>
-                    </div>
-
-                    {/* Drawer Front Wooden Face */}
-                    <div className="drawer-front-face">
-                      {/* Brass Number Plate */}
-                      <div className="brass-number-plate">
-                        <span className="plate-rivet left">●</span>
-                        <span className="plate-text">מגירה {idx + 1}</span>
-                        <span className="plate-rivet right">●</span>
-                      </div>
-
-                      {/* Solid Brass Pull Handle */}
-                      <div 
-                        className="brass-pull-handle"
-                        title={isPulled ? "לחץ לדחיפת המגירה פנימה" : "לחץ למשיכת המגירה החוצה"}
-                      >
-                        <div className="handle-mount top"></div>
-                        <div className="handle-ring"></div>
-                        <div className="handle-mount bottom"></div>
-                      </div>
-
-                      {/* Brass Keyhole */}
-                      <div className="brass-keyhole-socket" title={`מנעול אסוציאציה: "${associationWord || 'בלוע'}"`}>
-                        <div className="keyhole-slot"></div>
-                      </div>
-
-                      {/* Tactile Reordering Arrows ("מזיזים מגירות") */}
-                      <div className="drawer-reorder-controls" onClick={e => e.stopPropagation()}>
-                        <button
-                          type="button"
-                          className="drawer-reorder-btn"
-                          disabled={idx === 0}
-                          onClick={(e) => handleMoveDrawer(idx, -1, e)}
-                          title="הזז מגירה זו שלב אחד למעלה"
-                        >
-                          <ChevronUp size={15} />
-                        </button>
-                        <button
-                          type="button"
-                          className="drawer-reorder-btn"
-                          disabled={idx === drawerItems.length - 1}
-                          onClick={(e) => handleMoveDrawer(idx, 1, e)}
-                          title="הזז מגירה זו שלב אחד למטה"
-                        >
-                          <ChevronDown size={15} />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Inner Velvet Lining / Secret Compartment Revealed Upon Pulling */}
-                    <div className="drawer-inner-compartment">
-                      <div className="velvet-tray">
-                        <div className="velvet-texture-overlay"></div>
-                        <div className="secret-item-card animate-fade-in">
-                          <span className="secret-item-badge">פריט שמור במגירה:</span>
-                          <strong className="secret-item-word">{item.text}</strong>
-                          <span className="secret-item-rank">דרגה #{idx + 1}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Drawer Side Wood Right */}
-                    <div className="drawer-wood-side right-side">
-                      <div className="dovetail-joint"></div>
-                      <div className="dovetail-joint"></div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Subtle Drawer Interactive Status Pill */}
-                <div className="drawer-status-cue" onClick={() => toggleDrawer(idx)}>
-                  {isPulled ? (
-                    <span className="cue-badge open">
-                      <Unlock size={11} />
-                      מגירה פתוחה (לחץ לסגירה)
-                    </span>
-                  ) : (
-                    <span className="cue-badge closed">
-                      <Lock size={11} />
-                      משוך מגירה לחשיפה 👁️
-                    </span>
-                  )}
-                </div>
+                <span 
+                  style={{
+                    fontSize: '1rem',
+                    fontWeight: isOpen ? 700 : 400,
+                    color: isOpen ? '#ffffff' : '#64748b',
+                    letterSpacing: isOpen ? 'normal' : '2px'
+                  }}
+                >
+                  {isOpen ? item.name : '•••••'}
+                </span>
               </div>
-            );
-          })}
-        </div>
 
-        {/* Bottom Brass Reinforced Plinth */}
-        <div className="cabinet-bottom-plinth">
-          <div className="plinth-brass-trim"></div>
-          <span className="plinth-maker-seal">
-            🏛️ ארמון הזיכרון • שיטת המפתחות והאסוציאציות
-          </span>
-        </div>
+              {/* Up / Down Controls */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+                <button
+                  type="button"
+                  disabled={index === 0}
+                  onClick={(e) => handleMoveCard(index, -1, e)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: index === 0 ? 'rgba(255, 255, 255, 0.15)' : '#cbd5e1',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '6px',
+                    cursor: index === 0 ? 'default' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                  title="העלה למעלה"
+                >
+                  <ChevronUp size={18} />
+                </button>
+
+                <button
+                  type="button"
+                  disabled={index === cardItems.length - 1}
+                  onClick={(e) => handleMoveCard(index, 1, e)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: index === cardItems.length - 1 ? 'rgba(255, 255, 255, 0.15)' : '#cbd5e1',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '6px',
+                    cursor: index === cardItems.length - 1 ? 'default' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                  title="הורד למטה"
+                >
+                  <ChevronDown size={18} />
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

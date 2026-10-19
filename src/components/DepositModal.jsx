@@ -1,23 +1,103 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   X, 
-  Key, 
-  Package, 
-  Layers, 
-  ArrowUpDown, 
   ChevronUp, 
   ChevronDown, 
-  Sparkles, 
   Check, 
+  Sparkles, 
+  ArrowRight, 
+  RotateCcw,
   HelpCircle,
-  Hash
+  Dices
 } from 'lucide-react';
+import confetti from 'canvas-confetti';
 import { sounds } from '../utils/sound';
-import { 
-  SORTING_BENCHMARKS, 
-  formatPhysicalChain, 
-  saveDeposit 
-} from '../utils/keyMethodStorage';
+import { saveDeposit } from '../utils/keyMethodStorage';
+
+// Clean, direct questions for memory palace encoding
+const SCENARIOS = [
+  {
+    id: 'roach',
+    icon: '🪳',
+    title: 'ג\'וק מעופף',
+    question: 'במה היית משתמש כדי לנטרל ג\'וק מעופף?',
+    task: 'דרג את הפריטים שלך: מהכי יעיל (1) ועד להכי פחות יעיל',
+    singleTask: 'דרג את מידת היעילות של הפריט לנטרול ג\'וק מעופף:',
+    anchorQuestion: 'בחר עוגן ויזואלי שייצג את הארונית בחדר:',
+    anchors: [
+      { emoji: '🪳', label: 'ג\'וק מעופף' },
+      { emoji: '👞', label: 'כפכף קטלני' },
+      { emoji: '🧹', label: 'מטאטא עץ' },
+      { emoji: '💥', label: 'מחבט חשמלי' }
+    ]
+  },
+  {
+    id: 'zombie',
+    icon: '🧟',
+    title: 'מתקפת זומבי',
+    question: 'במה היית מתגונן מפני זומבי רעב?',
+    task: 'דרג את הפריטים שלך: מהכי מועיל להגנה (1) ועד להכי פחות מועיל',
+    singleTask: 'דרג את מידת היעילות של הפריט להגנה מפני זומבי:',
+    anchorQuestion: 'בחר עוגן ויזואלי שייצג את הארונית בחדר:',
+    anchors: [
+      { emoji: '🧟', label: 'זומבי רעב' },
+      { emoji: '🛡️', label: 'מגן פלדה' },
+      { emoji: '🧠', label: 'מוח מבריק' },
+      { emoji: '🚪', label: 'בריח ברזל' }
+    ]
+  },
+  {
+    id: 'island',
+    icon: '🏝️',
+    title: 'הישרדות על אי בודד',
+    question: 'מה הכי חיוני להישרדות על אי בודד?',
+    task: 'דרג את הפריטים שלך: מהכי מציל חיים (1) ועד להכי פחות חיוני',
+    singleTask: 'דרג את מידת החיוניות של הפריט להישרדות על אי בודד:',
+    anchorQuestion: 'בחר עוגן ויזואלי שייצג את הארונית בחדר:',
+    anchors: [
+      { emoji: '🏝️', label: 'אי בודד' },
+      { emoji: '🥥', label: 'קוקוס מציל' },
+      { emoji: '🔥', label: 'אש הישרדות' },
+      { emoji: '⛺', label: 'אוהל מחסה' }
+    ]
+  },
+  {
+    id: 'rocket',
+    icon: '🚀',
+    title: 'חללית במצב חירום',
+    question: 'מה הכי דחוף לשמור עליו בחללית שמאבדת גובה?',
+    task: 'דרג את הפריטים שלך: מהכי קריטי לשמור (1) ועד להכי פחות קריטי',
+    singleTask: 'דרג כמה קריטי לשמור על הפריט הזה בחללית:',
+    anchorQuestion: 'בחר עוגן ויזואלי שייצג את הארונית בחדר:',
+    anchors: [
+      { emoji: '🚀', label: 'חללית מהירה' },
+      { emoji: '🛸', label: 'צלחת מעופפת' },
+      { emoji: '🌌', label: 'כוכב זוהר' },
+      { emoji: '👨‍🚀', label: 'קסדת חלל' }
+    ]
+  }
+];
+
+// Helper to parse input items by newlines, commas, semicolons, or spaces
+export function parseInputItems(text) {
+  if (!text) return [];
+  const trimmed = text.trim();
+  if (!trimmed) return [];
+
+  // Check if text has commas, newlines, or semicolons
+  if (/[\n,;\u060C]/.test(trimmed)) {
+    return trimmed
+      .split(/[\n,;\u060C]+/)
+      .map(s => s.trim().replace(/^[-•*]\s*/, ''))
+      .filter(Boolean);
+  }
+
+  // Otherwise, split by whitespace (spaces / tabs)
+  return trimmed
+    .split(/\s+/)
+    .map(s => s.trim())
+    .filter(Boolean);
+}
 
 export function DepositModal({
   isOpen,
@@ -25,434 +105,659 @@ export function DepositModal({
   villageCipher = 'יער',
   villageName = 'כפר יער הצבא והביטחון',
   houseCipher = 'אבק',
-  houseName = 'מחלקת לוגיסטיקה וציוד',
+  houseName = 'מתחם הבית',
   room,
   onDepositSaved
 }) {
-  const [depositType, setDepositType] = useState('single'); // 'single' | 'list'
+  // Step navigation: 'input' -> 'bizarre_question' -> 'pick_anchor'
+  const [step, setStep] = useState('input');
 
-  // Single Item State
-  const [singleItemName, setSingleItemName] = useState('');
-  const [singleAssociationWord, setSingleAssociationWord] = useState('');
+  // Input state
+  const [rawText, setRawText] = useState('');
+  const [itemsArray, setItemsArray] = useState([]);
 
-  // List State
-  const [listRawInput, setListRawInput] = useState('');
-  const [selectedBenchmarkId, setSelectedBenchmarkId] = useState('mouth_first');
-  const [customCriterion, setCustomCriterion] = useState('');
-  const [customAssociationWord, setCustomAssociationWord] = useState('');
+  // Question & rating state
+  const [scenarioIdx, setScenarioIdx] = useState(0);
   const [sortedItems, setSortedItems] = useState([]);
-  const [isSortedConfirmed, setIsSortedConfirmed] = useState(false);
+  const [singleRating, setSingleRating] = useState(5);
+  const [singleNote, setSingleNote] = useState('');
 
-  // Active benchmark details
-  const activeBenchmark = SORTING_BENCHMARKS.find(b => b.id === selectedBenchmarkId) || SORTING_BENCHMARKS[0];
-  const effectiveAssociationWord = depositType === 'single'
-    ? singleAssociationWord.trim()
-    : (selectedBenchmarkId === 'custom' ? customAssociationWord.trim() : activeBenchmark.associationWord);
-
-  const effectiveCriterion = selectedBenchmarkId === 'custom'
-    ? (customCriterion.trim() || 'שאלה ביזארית מותאמת')
-    : (activeBenchmark.question || activeBenchmark.label);
-
-  // Sync list raw input to sorted items
-  useEffect(() => {
-    if (depositType === 'list') {
-      const lines = listRawInput
-        .split(/[\n,]+/)
-        .map(s => s.trim())
-        .filter(Boolean);
-
-      if (lines.length > 0) {
-        setSortedItems(lines.map((text, idx) => ({
-          id: `item-${idx}-${text}`,
-          text,
-          rank: idx + 1
-        })));
-      } else {
-        setSortedItems([]);
-      }
-    }
-  }, [listRawInput, depositType]);
+  // Chosen visual anchor
+  const [selectedAnchor, setSelectedAnchor] = useState(null);
 
   if (!isOpen) return null;
 
+  const activeScenario = SCENARIOS[scenarioIdx];
+
+  // Step 1 -> Step 2: Parse raw text into array and initiate clean question
+  const handleProceedFromInput = (e) => {
+    e?.preventDefault();
+    const parsed = parseInputItems(rawText);
+
+    if (parsed.length === 0) {
+      alert('אנא הקלד לפחות פריט אחד שברצונך לזכור.');
+      return;
+    }
+
+    sounds.playTap?.();
+    setItemsArray(parsed);
+
+    if (parsed.length > 1) {
+      // List: setup reorderable items
+      setSortedItems(parsed.map((name, idx) => ({
+        id: `item_${idx}_${Date.now()}`,
+        name,
+        rank: idx + 1
+      })));
+    } else {
+      // Single item: setup default 5-star rating
+      setSingleRating(5);
+      setSingleNote('');
+    }
+
+    // Default anchor to scenario's first icon
+    setSelectedAnchor(activeScenario.anchors[0]);
+    setStep('bizarre_question');
+  };
+
+  // Switch scenario (e.g. if user wants a different funny question)
+  const handleNextScenario = () => {
+    sounds.playTap?.();
+    const nextIdx = (scenarioIdx + 1) % SCENARIOS.length;
+    setScenarioIdx(nextIdx);
+    setSelectedAnchor(SCENARIOS[nextIdx].anchors[0]);
+  };
+
+  // Reorder items in list
   const handleMoveItem = (index, direction) => {
     sounds.playTap?.();
-    const newItems = [...sortedItems];
-    const targetIndex = index + direction;
-    if (targetIndex < 0 || targetIndex >= newItems.length) return;
+    const target = index + direction;
+    if (target < 0 || target >= sortedItems.length) return;
 
-    const temp = newItems[index];
-    newItems[index] = newItems[targetIndex];
-    newItems[targetIndex] = temp;
-
-    // Re-assign ranks
-    const reRanked = newItems.map((item, idx) => ({
-      ...item,
-      rank: idx + 1
-    }));
-
-    setSortedItems(reRanked);
-    setIsSortedConfirmed(true);
+    const copy = [...sortedItems];
+    const temp = copy[index];
+    copy[index] = copy[target];
+    copy[target] = temp;
+    setSortedItems(copy.map((it, idx) => ({ ...it, rank: idx + 1 })));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (depositType === 'single') {
-      if (!singleItemName.trim()) {
-        alert('אנא הזן את שם החפץ או המידע שברצונך להפקיד.');
-        return;
-      }
-      if (!singleAssociationWord.trim()) {
-        alert('אנא הזן מילת אסוציאציה לקשירת המידע ברצף הפיזי.');
-        return;
-      }
-
-      const newDeposit = {
-        id: `dep_${Date.now()}`,
-        createdAt: Date.now(),
-        villageCipher,
-        villageName,
-        houseCipher,
-        houseName,
-        roomId: room?.id || 'main_hall',
-        roomName: room?.name || 'חדר מרכזי',
-        type: 'single',
-        itemName: singleItemName.trim(),
-        associationWord: singleAssociationWord.trim(),
-        physicalChain: formatPhysicalChain(villageCipher, houseCipher, singleAssociationWord.trim())
-      };
-
-      saveDeposit(newDeposit);
-      sounds.playSuccess?.();
-      onDepositSaved?.(newDeposit);
-      onClose();
-    } else {
-      // List
-      if (sortedItems.length === 0) {
-        alert('אנא הזן לפחות 2 פריטים לרשימה.');
-        return;
-      }
-      if (selectedBenchmarkId === 'custom' && (!customCriterion.trim() || !customAssociationWord.trim())) {
-        alert('אנא הזן אמת מידה ומילת אסוציאציה מותאמת אישית.');
-        return;
-      }
-
-      const newDeposit = {
-        id: `dep_${Date.now()}`,
-        createdAt: Date.now(),
-        villageCipher,
-        villageName,
-        houseCipher,
-        houseName,
-        roomId: room?.id || 'main_hall',
-        roomName: room?.name || 'חדר מרכזי',
-        type: 'list',
-        criterion: effectiveCriterion,
-        associationWord: effectiveAssociationWord,
-        physicalChain: formatPhysicalChain(villageCipher, houseCipher, effectiveAssociationWord),
-        lockerTitle: `לוקר ממוין (${effectiveCriterion})`,
-        items: sortedItems
-      };
-
-      saveDeposit(newDeposit);
-      sounds.playLevelUp?.();
-      onDepositSaved?.(newDeposit);
-      onClose();
-    }
+  // Step 2 -> Step 3: Go to Visual Anchor picker
+  const handleProceedToAnchor = () => {
+    sounds.playTap?.();
+    setStep('pick_anchor');
   };
 
-  const physicalChainPreview = formatPhysicalChain(
-    villageCipher,
-    houseCipher,
-    effectiveAssociationWord || '?'
-  );
+  // Final Step: Save deposit to room storage and celebrate
+  const handleFinalSave = () => {
+    sounds.playFanfare?.();
+
+    const isList = itemsArray.length > 1;
+    const finalAnchor = selectedAnchor || activeScenario.anchors[0];
+
+    const newDeposit = {
+      id: `dep_${Date.now()}`,
+      createdAt: Date.now(),
+      villageCipher,
+      villageName,
+      houseCipher,
+      houseName,
+      roomId: room?.id || 'main_hall',
+      roomName: room?.name || 'חדר מרכזי',
+      type: isList ? 'list' : 'single',
+      visualAnchor: finalAnchor,
+      bizarreScenarioId: activeScenario.id,
+      criterion: activeScenario.question,
+      associationWord: finalAnchor.label,
+      
+      // Data payload
+      ...(isList ? {
+        items: sortedItems.map((it, idx) => ({
+          id: it.id,
+          name: it.name,
+          text: it.name,
+          rank: idx + 1
+        })),
+        lockerTitle: `ארונית ${finalAnchor.emoji} (${finalAnchor.label})`
+      } : {
+        itemName: itemsArray[0],
+        rating: singleRating,
+        singleNote: singleNote.trim(),
+        lockerTitle: `פריט ${finalAnchor.emoji} (${itemsArray[0]})`
+      })
+    };
+
+    saveDeposit(newDeposit);
+
+    // Confetti celebration
+    try {
+      confetti({
+        particleCount: 70,
+        spread: 60,
+        origin: { y: 0.6 }
+      });
+    } catch {}
+
+    onDepositSaved?.(newDeposit);
+    onClose();
+  };
 
   return (
-    <div className="journal-backdrop key-method-backdrop" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="key-method-modal glass-card" onClick={e => e.stopPropagation()}>
-        {/* Header */}
-        <div className="key-modal-header">
-          <div className="key-header-title">
-            <span className="key-icon-badge">🗝️</span>
+    <div 
+      className="journal-backdrop key-method-backdrop animate-fade-in" 
+      onClick={onClose} 
+      role="dialog" 
+      aria-modal="true"
+      style={{ zIndex: 1100 }}
+    >
+      <div 
+        className="glass-card" 
+        onClick={e => e.stopPropagation()}
+        style={{
+          width: '92%',
+          maxWidth: '560px',
+          borderRadius: '24px',
+          background: 'linear-gradient(165deg, #1c1829 0%, #110e1c 100%)',
+          border: '1.5px solid rgba(245, 158, 11, 0.4)',
+          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.15)',
+          color: '#f8fafc',
+          direction: 'rtl',
+          overflow: 'hidden'
+        }}
+      >
+        {/* Simple & Quiet Header */}
+        <div 
+          style={{
+            padding: '16px 22px',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            background: 'rgba(0, 0, 0, 0.25)'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ fontSize: '1.4rem' }}>{activeScenario.icon}</span>
             <div>
-              <h2>שיטת המפתחות • מה אתה מפקיד היום?</h2>
-              <div className="key-chain-breadcrumbs">
-                <span className="chain-step">🌲 כפר: <strong>"{villageCipher}"</strong></span>
-                <span className="chain-arrow">➔</span>
-                <span className="chain-step">🏠 בית: <strong>"{houseCipher}"</strong></span>
-                <span className="chain-arrow">➔</span>
-                <span className="chain-step room-step" style={{ color: room?.color || '#f59e0b' }}>
-                  {room?.emoji || '🚪'} <strong>{room?.name || 'חדר הארמון'}</strong>
-                </span>
-              </div>
+              <h3 style={{ margin: 0, fontSize: '1.15rem', color: '#fef08a', fontWeight: 800 }}>
+                {room?.name ? `הפקדת רשימה לארונית — ${room.name}` : 'הפקדת רשימה לארונית'}
+              </h3>
+              <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>
+                {step === 'input' && 'שלב 1: הזנת פריטי הרשימה'}
+                {step === 'bizarre_question' && 'שלב 2: שאלת הפתעה ודירוג הרשימה'}
+                {step === 'pick_anchor' && 'שלב 3: בחירת עוגן ויזואלי לארונית'}
+              </span>
             </div>
           </div>
-          <button className="close-mini-btn" onClick={onClose} title="סגור חלון (Esc)">
-            <X size={20} />
-          </button>
-        </div>
-
-        {/* Step 1: Choose Deposit Mode */}
-        <div className="key-mode-tabs">
-          <button
-            type="button"
-            className={`key-mode-tab ${depositType === 'single' ? 'active' : ''}`}
-            onClick={() => {
-              sounds.playTap?.();
-              setDepositType('single');
-            }}
-          >
-            <Package size={18} />
-            <div className="tab-text">
-              <strong>פריט בודד</strong>
-              <span>עוגן מילולי ברצף פיזי</span>
-            </div>
-          </button>
 
           <button
             type="button"
-            className={`key-mode-tab ${depositType === 'list' ? 'active' : ''}`}
-            onClick={() => {
-              sounds.playTap?.();
-              setDepositType('list');
+            onClick={onClose}
+            style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: 'none',
+              color: '#94a3b8',
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-            <Layers size={18} />
-            <div className="tab-text">
-              <strong>רשימת פריטים</strong>
-              <span>ארונית לוקר ממוספרת וממוינת</span>
-            </div>
+            <X size={18} />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="key-deposit-form">
-          {/* SINGLE ITEM FORM */}
-          {depositType === 'single' ? (
-            <div className="key-single-body animate-fade-in">
-              <div className="form-group">
-                <label className="form-label">
-                  <span>📦 מה אתה מפקיד היום בחדר זה?</span>
-                  <span className="label-hint">(שם החפץ, מידע, משימה או מושג)</span>
-                </label>
-                <input
-                  type="text"
-                  className="key-input"
-                  placeholder="למשל: מפתחות הרכב, סיסמת מחשב, פגישה חשובה..."
-                  value={singleItemName}
-                  onChange={e => setSingleItemName(e.target.value)}
-                  autoFocus
-                  required
-                />
-              </div>
+        {/* Modal Body */}
+        <div style={{ padding: '22px' }}>
 
-              <div className="form-group">
-                <label className="form-label">
-                  <span>✨ מילת אסוציאציה לקשירה</span>
-                  <span className="label-hint">(מילה חיה שתשמש מפתח לשליפה מהירה)</span>
-                </label>
-                <input
-                  type="text"
-                  className="key-input"
-                  placeholder="למשל: מנעול, ברק, פטיש, להבה..."
-                  value={singleAssociationWord}
-                  onChange={e => setSingleAssociationWord(e.target.value)}
-                  required
-                />
-              </div>
-
-              {/* Physical Chain Live Seal */}
-              <div className="physical-chain-seal glass-card">
-                <div className="seal-head">
-                  <Key size={16} className="text-amber" />
-                  <strong>עוגן מילולי פיזי שנוצר (לפי רצף השמירה בזיכרון):</strong>
-                </div>
-                <div className="seal-chain-display">
-                  <span className="chain-node village-node">הכפר ({villageCipher})</span>
-                  <span className="chain-sep">←</span>
-                  <span className="chain-node house-node">הבית ({houseCipher})</span>
-                  <span className="chain-sep">←</span>
-                  <span className="chain-node assoc-node">{singleAssociationWord.trim() || '[מילת אסוציאציה]'}</span>
-                </div>
-                <p className="seal-tip">
-                  💡 כדי להיזכר: תמיד צעד מנטלית מ<strong>הכפר ({villageCipher})</strong>, אל <strong>הבית ({houseCipher})</strong>, ומיד תצוף מילת המפתח שתשלוף את הפריט!
-                </p>
-              </div>
-            </div>
-          ) : (
-            /* LIST FORM: NUMBERED LOCKER & SORTING BENCHMARK */
-            <div className="key-list-body animate-fade-in">
-              {/* 1. Raw Input */}
-              <div className="form-group">
-                <label className="form-label">
-                  <span>📝 הזן את פריטי הרשימה</span>
-                  <span className="label-hint">(פריט בכל שורה או מופרדים בפסיקים)</span>
+          {/* ======================================================== */}
+          {/* STEP 1: CLEAN MINIMAL INPUT ("הקלד כאן..")               */}
+          {/* ======================================================== */}
+          {step === 'input' && (
+            <form onSubmit={handleProceedFromInput}>
+              <div style={{ marginBottom: '16px' }}>
+                <label 
+                  style={{ 
+                    display: 'block', 
+                    fontSize: '1rem', 
+                    fontWeight: 700, 
+                    color: '#ffffff', 
+                    marginBottom: '8px' 
+                  }}
+                >
+                  מה תרצה לזכור?
                 </label>
                 <textarea
-                  className="key-textarea"
-                  rows={3}
-                  placeholder={`טלפון נייד\nמשקפי שמש\nחולצה להחלפה\nבקבוק מים\nמשקולת`}
-                  value={listRawInput}
-                  onChange={e => setListRawInput(e.target.value)}
+                  rows={4}
+                  autoFocus
+                  value={rawText}
+                  onChange={e => setRawText(e.target.value)}
+                  placeholder="הקלד כאן... (למשל: חוגר, דסקית, דוח1, גלחצ או כל רשימה)"
+                  style={{
+                    width: '100%',
+                    padding: '14px 16px',
+                    borderRadius: '16px',
+                    background: 'rgba(0, 0, 0, 0.45)',
+                    border: '1.5px solid rgba(245, 158, 11, 0.35)',
+                    color: '#ffffff',
+                    fontSize: '1.05rem',
+                    outline: 'none',
+                    resize: 'none',
+                    boxSizing: 'border-box',
+                    fontFamily: 'inherit'
+                  }}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                      handleProceedFromInput(e);
+                    }
+                  }}
                 />
-              </div>
 
-              {/* 2. Bizarre Sorting Question Card (The Key Method Anchor) */}
-              <div className="form-group">
-                <div className="bizarre-challenge-card glass-card">
-                  <div className="bizarre-card-top">
-                    <span className="bizarre-tag">🤪 שאלת מיון ביזארית לקידוד עמוק</span>
-                    <span className="bizarre-tag-sub">שיטת המפתחות: חריטה רגשית וצחוק = זיכרון שלא נמחק!</span>
-                  </div>
-
-                  <div className="bizarre-highlight-question">
-                    <span className="bizarre-big-icon">{activeBenchmark.icon || '👄'}</span>
-                    <div className="bizarre-q-content">
-                      <h3 className="bizarre-q-title">"{activeBenchmark.question || activeBenchmark.label}"</h3>
-                      <p className="bizarre-q-hint">💡 {activeBenchmark.hint}</p>
+                {/* Real-time chips preview of parsed items */}
+                {rawText.trim() && (
+                  <div style={{ marginTop: '10px' }}>
+                    <div style={{ fontSize: '0.8rem', color: '#fde047', fontWeight: 600, marginBottom: '6px' }}>
+                      {parseInputItems(rawText).length > 1 
+                        ? `זוהו ${parseInputItems(rawText).length} פריטים נפרדים:` 
+                        : 'פריט יחיד:'}
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {parseInputItems(rawText).map((it, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            background: 'rgba(245, 158, 11, 0.2)',
+                            border: '1px solid rgba(245, 158, 11, 0.45)',
+                            color: '#fef08a',
+                            fontSize: '0.82rem',
+                            padding: '3px 10px',
+                            borderRadius: '8px',
+                            fontWeight: 700
+                          }}
+                        >
+                          {it}
+                        </span>
+                      ))}
                     </div>
                   </div>
+                )}
 
-                  <div className="bizarre-assoc-ribbon">
-                    <span className="bizarre-assoc-label">🔑 מילת אסוציאציה נגזרת שתפתח את הלוקר:</span>
-                    <strong className="bizarre-assoc-target">"{effectiveAssociationWord || '...'}"</strong>
+                <span style={{ fontSize: '0.78rem', color: '#94a3b8', marginTop: '8px', display: 'block' }}>
+                  💡 טיפ: הפרד פריטים ברווחים, בפסיקים או בשורות חדשות.
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }}>
+                <button
+                  type="submit"
+                  disabled={!rawText.trim()}
+                  style={{
+                    background: rawText.trim() ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' : 'rgba(255, 255, 255, 0.1)',
+                    border: 'none',
+                    color: rawText.trim() ? '#000000' : '#64748b',
+                    fontWeight: 800,
+                    fontSize: '0.95rem',
+                    padding: '10px 24px',
+                    borderRadius: '12px',
+                    cursor: rawText.trim() ? 'pointer' : 'default',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    boxShadow: rawText.trim() ? '0 4px 15px rgba(245, 158, 11, 0.4)' : 'none'
+                  }}
+                >
+                  <span>המשך</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </form>
+          )}
+
+          {/* ======================================================== */}
+          {/* STEP 2: CLEAN QUESTION & RANKING                          */}
+          {/* ======================================================== */}
+          {step === 'bizarre_question' && (
+            <div>
+              {/* Question Banner - Clean and without bloat */}
+              <div 
+                style={{
+                  background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(217, 119, 6, 0.08))',
+                  border: '1.5px solid #f59e0b',
+                  borderRadius: '18px',
+                  padding: '16px',
+                  marginBottom: '18px',
+                  position: 'relative'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ fontSize: '1.4rem' }}>{activeScenario.icon}</span>
+                    <span style={{ fontSize: '0.9rem', color: '#fef08a', fontWeight: 800 }}>
+                      {activeScenario.title}
+                    </span>
                   </div>
+                  <button
+                    type="button"
+                    onClick={handleNextScenario}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      color: '#cbd5e1',
+                      padding: '4px 10px',
+                      borderRadius: '8px',
+                      fontSize: '0.74rem',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}
+                    title="החלף לשאלה אחרת"
+                  >
+                    <Dices size={13} color="#f59e0b" />
+                    <span>שאלה אחרת</span>
+                  </button>
                 </div>
 
-                <div className="switch-benchmark-wrapper">
-                  <span className="switch-benchmark-label">או בחר שאלה ביזארית אחרת:</span>
-                  <div className="benchmarks-grid">
-                    {SORTING_BENCHMARKS.map(b => (
+                <h4 style={{ margin: 0, fontSize: '1.2rem', color: '#ffffff', fontWeight: 800, lineHeight: 1.35 }}>
+                  {activeScenario.question}
+                </h4>
+                <div style={{ fontSize: '0.84rem', color: '#cbd5e1', marginTop: '6px', fontWeight: 500 }}>
+                  {itemsArray.length > 1 ? activeScenario.task : activeScenario.singleTask}
+                </div>
+              </div>
+
+              {/* Multi-item sorting UI */}
+              {itemsArray.length > 1 ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                  {sortedItems.map((item, index) => (
+                    <div
+                      key={item.id}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        background: index === 0 
+                          ? 'rgba(245, 158, 11, 0.2)' 
+                          : (index === sortedItems.length - 1 ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 255, 255, 0.05)'),
+                        border: index === 0 
+                          ? '1.5px solid #f59e0b' 
+                          : (index === sortedItems.length - 1 ? '1px solid #ef4444' : '1px solid rgba(255, 255, 255, 0.1)'),
+                        borderRadius: '12px',
+                        padding: '10px 14px'
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <span 
+                          style={{
+                            width: '26px',
+                            height: '26px',
+                            borderRadius: '50%',
+                            background: index === 0 ? '#f59e0b' : 'rgba(255, 255, 255, 0.15)',
+                            color: index === 0 ? '#000000' : '#ffffff',
+                            fontWeight: 800,
+                            fontSize: '0.85rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                        >
+                          {index + 1}
+                        </span>
+                        <span style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff' }}>
+                          {item.name}
+                        </span>
+                        {index === 0 && (
+                          <span style={{ fontSize: '0.72rem', color: '#fde047', fontWeight: 700 }}>
+                            (מקום ראשון 🏆)
+                          </span>
+                        )}
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <button
+                          type="button"
+                          disabled={index === 0}
+                          onClick={() => handleMoveItem(index, -1)}
+                          style={{
+                            background: index === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.08)',
+                            border: 'none',
+                            borderRadius: '6px',
+                            color: index === 0 ? '#475569' : '#cbd5e1',
+                            cursor: index === 0 ? 'default' : 'pointer',
+                            padding: '4px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                          title="העלה בדירוג"
+                        >
+                          <ChevronUp size={20} />
+                        </button>
+                        <button
+                          type="button"
+                          disabled={index === sortedItems.length - 1}
+                          onClick={() => handleMoveItem(index, 1)}
+                          style={{
+                            background: index === sortedItems.length - 1 ? 'transparent' : 'rgba(255, 255, 255, 0.08)',
+                            border: 'none',
+                            borderRadius: '6px',
+                            color: index === sortedItems.length - 1 ? '#475569' : '#cbd5e1',
+                            cursor: index === sortedItems.length - 1 ? 'default' : 'pointer',
+                            padding: '4px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                          title="הורד בדירוג"
+                        >
+                          <ChevronDown size={20} />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                /* Single item rating UI */
+                <div style={{ marginBottom: '20px' }}>
+                  <label style={{ display: 'block', fontSize: '0.9rem', color: '#cbd5e1', marginBottom: '10px' }}>
+                    דרג את רמת היעילות עבור <strong style={{ color: '#fef08a' }}>{itemsArray[0]}</strong>:
+                  </label>
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '14px' }}>
+                    {[1, 2, 3, 4, 5].map((stars) => (
                       <button
-                        key={b.id}
+                        key={stars}
                         type="button"
-                        className={`benchmark-pill ${selectedBenchmarkId === b.id ? 'active' : ''}`}
                         onClick={() => {
                           sounds.playTap?.();
-                          setSelectedBenchmarkId(b.id);
+                          setSingleRating(stars);
+                        }}
+                        style={{
+                          flex: 1,
+                          padding: '10px 4px',
+                          borderRadius: '12px',
+                          border: singleRating === stars ? '2px solid #f59e0b' : '1px solid rgba(255, 255, 255, 0.15)',
+                          background: singleRating === stars ? 'rgba(245, 158, 11, 0.25)' : 'rgba(255, 255, 255, 0.06)',
+                          color: singleRating === stars ? '#fde047' : '#e2e8f0',
+                          fontSize: '0.9rem',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          gap: '2px'
                         }}
                       >
-                        <span className="bench-icon">{b.icon}</span>
-                        <div className="bench-info">
-                          <strong>{b.question || b.label}</strong>
-                          {b.associationWord && (
-                            <span className="bench-assoc">אסוציאציה: "{b.associationWord}"</span>
-                          )}
-                        </div>
+                        <span style={{ fontSize: '1.1rem' }}>{'⭐'.repeat(stars)}</span>
+                        <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>דרגה {stars}</span>
                       </button>
                     ))}
                   </div>
-
-                  {selectedBenchmarkId === 'custom' && (
-                    <div className="custom-benchmark-row animate-fade-in">
-                      <input
-                        type="text"
-                        className="key-input"
-                        placeholder="הגדר שאלה ביזארית משלך..."
-                        value={customCriterion}
-                        onChange={e => setCustomCriterion(e.target.value)}
-                      />
-                      <input
-                        type="text"
-                        className="key-input"
-                        placeholder="מילת אסוציאציה נגזרת..."
-                        value={customAssociationWord}
-                        onChange={e => setCustomAssociationWord(e.target.value)}
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* 3. Numbered Locker Interactive Sorting Area */}
-              {sortedItems.length > 0 && (
-                <div className="numbered-locker-station glass-card">
-                  <div className="locker-station-head">
-                    <div className="locker-title-wrap">
-                      <span className="locker-brass-tag">🗄️ ארונית לוקר ממוספרת</span>
-                      <span className="locker-bench-badge">
-                        שאלה: <strong>{effectiveCriterion}</strong>
-                      </span>
-                      <span className="locker-assoc-badge">
-                        🗝️ מילת אסוציאציה: <strong>"{effectiveAssociationWord || '?'}"</strong>
-                      </span>
-                    </div>
-                    <span className="reorder-prompt-hint">
-                      {selectedBenchmarkId === 'mouth_first'
-                        ? `👄 סדר מהפריט שהכי היית דוחף לפה ובולע (תא 1) ועד לזה שבחיים לא היית נוגע בו בלשון (תא ${sortedItems.length}) בעזרת 🔼 🔽:`
-                        : `מיין לפי השאלה "${effectiveCriterion}" בעזרת החצים 🔼 🔽:`}
-                    </span>
-                  </div>
-
-                  <div className="locker-slots-list">
-                    {sortedItems.map((item, idx) => (
-                      <div key={item.id} className="locker-slot-row">
-                        <div className="slot-number-badge">
-                          <Hash size={13} />
-                          <span>תא {idx + 1}</span>
-                        </div>
-
-                        <div className="slot-item-text">
-                          {item.text}
-                        </div>
-
-                        <div className="slot-order-actions">
-                          <button
-                            type="button"
-                            className="order-btn"
-                            disabled={idx === 0}
-                            onClick={() => handleMoveItem(idx, -1)}
-                            title="העלה תא למעלה"
-                          >
-                            <ChevronUp size={16} />
-                          </button>
-                          <button
-                            type="button"
-                            className="order-btn"
-                            disabled={idx === sortedItems.length - 1}
-                            onClick={() => handleMoveItem(idx, 1)}
-                            title="הורד תא למטה"
-                          >
-                            <ChevronDown size={16} />
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Physical Chain for List */}
-                  <div className="seal-chain-display" style={{ marginTop: '12px' }}>
-                    <span className="chain-node village-node">הכפר ({villageCipher})</span>
-                    <span className="chain-sep">←</span>
-                    <span className="chain-node house-node">הבית ({houseCipher})</span>
-                    <span className="chain-sep">←</span>
-                    <span className="chain-node assoc-node">{effectiveAssociationWord || '[מילה]'}</span>
-                    <span className="chain-sep">←</span>
-                    <span className="chain-node locker-node">ארונית לוקר ({sortedItems.length} תאים ממוספרים)</span>
-                  </div>
+                  <input
+                    type="text"
+                    value={singleNote}
+                    onChange={e => setSingleNote(e.target.value)}
+                    placeholder="הוסף הערה או אסוציאציה (אופציונלי)..."
+                    style={{
+                      width: '100%',
+                      padding: '10px 14px',
+                      borderRadius: '12px',
+                      background: 'rgba(0, 0, 0, 0.4)',
+                      border: '1px solid rgba(245, 158, 11, 0.3)',
+                      color: '#ffffff',
+                      fontSize: '0.92rem',
+                      outline: 'none',
+                      boxSizing: 'border-box'
+                    }}
+                  />
                 </div>
               )}
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  onClick={() => setStep('input')}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#94a3b8',
+                    cursor: 'pointer',
+                    fontSize: '0.85rem'
+                  }}
+                >
+                  חזור לעריכת הטקסט
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleProceedToAnchor}
+                  style={{
+                    background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                    border: 'none',
+                    color: '#000000',
+                    fontWeight: 800,
+                    fontSize: '0.92rem',
+                    padding: '10px 22px',
+                    borderRadius: '12px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}
+                >
+                  <span>המשך לבחירת עוגן</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
             </div>
           )}
 
-          {/* Modal Actions */}
-          <div className="key-modal-footer">
-            <button
-              type="button"
-              className="key-cancel-btn"
-              onClick={onClose}
-            >
-              ביטול
-            </button>
-            <button
-              type="submit"
-              className="key-submit-btn"
-            >
-              <Sparkles size={17} />
-              <span>הפקד בארמון המנטלי 🗝️</span>
-            </button>
-          </div>
-        </form>
+          {/* ======================================================== */}
+          {/* STEP 3: PICK VISUAL ANCHOR ("מה מזכיר לך ג'וק?")          */}
+          {/* ======================================================== */}
+          {step === 'pick_anchor' && (
+            <div>
+              <div style={{ marginBottom: '16px', textAlign: 'center' }}>
+                <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '8px' }}>
+                  {selectedAnchor?.emoji || activeScenario.icon}
+                </span>
+                <h4 style={{ margin: '0 0 6px 0', fontSize: '1.15rem', color: '#fef08a', fontWeight: 800 }}>
+                  {activeScenario.anchorQuestion}
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#94a3b8' }}>
+                  הסמל שתבחר יוצג על גבי הארונית בחדר, ויפעיל את הזיכרון בכל פעם שתביט בו!
+                </p>
+              </div>
+
+              {/* Anchor choices grid */}
+              <div 
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '12px',
+                  marginBottom: '24px'
+                }}
+              >
+                {activeScenario.anchors.map((anc) => {
+                  const isSelected = selectedAnchor?.emoji === anc.emoji;
+
+                  return (
+                    <div
+                      key={anc.emoji}
+                      onClick={() => {
+                        sounds.playTap?.();
+                        setSelectedAnchor(anc);
+                      }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        padding: '12px 14px',
+                        borderRadius: '14px',
+                        background: isSelected ? 'rgba(245, 158, 11, 0.25)' : 'rgba(255, 255, 255, 0.05)',
+                        border: isSelected ? '2px solid #f59e0b' : '1px solid rgba(255, 255, 255, 0.1)',
+                        cursor: 'pointer',
+                        transition: 'all 0.15s ease',
+                        boxShadow: isSelected ? '0 4px 15px rgba(245, 158, 11, 0.3)' : 'none'
+                      }}
+                    >
+                      <span style={{ fontSize: '1.8rem' }}>{anc.emoji}</span>
+                      <div>
+                        <div style={{ fontSize: '0.95rem', fontWeight: 700, color: isSelected ? '#fef08a' : '#ffffff' }}>
+                          {anc.label}
+                        </div>
+                        <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>
+                          עוגן חזותי
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Footer Save Button */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  onClick={() => setStep('bizarre_question')}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#94a3b8',
+                    cursor: 'pointer',
+                    fontSize: '0.85rem'
+                  }}
+                >
+                  חזור לשאלה
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleFinalSave}
+                  style={{
+                    background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                    border: 'none',
+                    color: '#ffffff',
+                    fontWeight: 800,
+                    fontSize: '1rem',
+                    padding: '12px 28px',
+                    borderRadius: '14px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    boxShadow: '0 4px 20px rgba(16, 185, 129, 0.45)'
+                  }}
+                >
+                  <Sparkles size={18} />
+                  <span>שמור בארמון הזיכרון 🏛️</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+        </div>
       </div>
     </div>
   );

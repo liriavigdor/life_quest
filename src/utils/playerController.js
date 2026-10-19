@@ -25,8 +25,9 @@ export const WALKABLE_SURFACES = new Set([
 
 /**
  * Checks whether a tile (gx, gy) can be walked on by the player character.
+ * Strict Constraint: Character cannot deviate from the path!
  */
-export function isTileWalkable(gx, gy, { checkClearing, placedObjects = [], gridSize = 32 }) {
+export function isTileWalkable(gx, gy, { checkClearing, placedObjects = [], placedMap = null, hasPaths = true, gridSize = 32, startPos = null, progressionStage = 99 }) {
   // Must be within grid bounds
   if (gx < 2 || gx >= gridSize - 2 || gy < 2 || gy >= gridSize - 2) {
     return false;
@@ -37,26 +38,50 @@ export function isTileWalkable(gx, gy, { checkClearing, placedObjects = [], grid
     return false;
   }
 
-  // Check placed objects at this tile
-  const obj = placedObjects.find(o => o.gx === gx && o.gy === gy);
+  // Controlled Progressive Village Checkpoints (Gates unlock upon station mastery)
+  // At Stage 1, the player can approach the gate tile (12, 11), but cannot step BEYOND it into Stage 2
+  if (progressionStage === 1 && gx === 12 && gy > 11) {
+    return false;
+  }
+
+  // Fast O(1) lookup if map provided, fallback to find
+  const obj = placedMap ? placedMap.get((gx << 8) | gy) : placedObjects.find(o => o.gx === gx && o.gy === gy);
+
+  if (hasPaths) {
+    // If character is currently on this tile (e.g. initial spawn position before stepping on a path), allow stepping off
+    if (startPos && gx === startPos.gx && gy === startPos.gy) {
+      return true;
+    }
+
+    if (!obj) {
+      // STRICT CONSTRAINT: Character cannot deviate from the path! Grass is non-walkable.
+      return false;
+    }
+
+    // Only paths, roads, bridges, and trails are walkable
+    return (
+      WALKABLE_SURFACES.has(obj.type) ||
+      obj.type?.includes('path') ||
+      obj.type?.includes('road') ||
+      obj.type?.includes('bridge') ||
+      obj.type?.includes('trail')
+    );
+  }
+
+  // Fallback for empty villages with 0 paths:
   if (!obj) {
-    // Empty grass tile inside clearing is always walkable!
     return true;
   }
 
-  // Paths and bridges are walkable
-  if (WALKABLE_SURFACES.has(obj.type) || obj.type?.includes('path') || obj.type?.includes('road') || obj.type?.includes('bridge')) {
-    return true;
-  }
-
-  // Swimming is allowed in river tiles or ponds
-  if (obj.type === 'river_tile' || obj.type === 'water_lily_pond') {
-    return true;
-  }
-
-  // Large buildings, walls, trees, fences, boulders are solid obstacles
-  return false;
+  return (
+    WALKABLE_SURFACES.has(obj.type) ||
+    obj.type?.includes('path') ||
+    obj.type?.includes('road') ||
+    obj.type?.includes('bridge') ||
+    obj.type?.includes('trail')
+  );
 }
+
 
 /**
  * Lightweight A* Pathfinding for bounded 2D Isometric Grids.
@@ -229,8 +254,10 @@ export class PlayerController {
     this.destinationMarker = null;
     this.pendingAction = null;
     this.heldKeys = new Set();
-    this.walkSpeed = 3.3; // Agile, fluid Stardew pace (tiles/sec)
+    this.walkSpeed = 3.57; // 15% reduction from 4.2 (controllable, graceful Stardew pace)
     this.isManualMoving = false;
+    this.activeJoystickVector = null;
+    this.lastStepDir = null; // Anti-reversal hysteresis preventing back-and-forth ping-ponging
 
     this.onKeyDown = this.handleKeyDown.bind(this);
     this.onKeyUp = this.handleKeyUp.bind(this);
@@ -287,53 +314,112 @@ export class PlayerController {
   }
 
   /**
-   * Sets a destination waypoint using Click / Tap to move.
+   * Active Navigation Only: Directional press handler (for on-screen D-Pad or keyboard)
    */
-  moveTo(targetGx, targetGy, { checkClearing, placedObjects, gridSize }, pendingAction = null) {
-    const v = this.villagerRef.current;
-    if (!v) return false;
-
-    const start = { gx: Math.round(v.currGx), gy: Math.round(v.currGy) };
-    const isWalkableFn = (gx, gy) => isTileWalkable(gx, gy, { checkClearing, placedObjects, gridSize });
-
-    const computedPath = findPath(start, { gx: targetGx, gy: targetGy }, isWalkableFn, gridSize);
-    if (computedPath.length > 0) {
-      this.path = computedPath;
-      this.pendingAction = pendingAction;
-      this.destinationMarker = {
-        gx: targetGx,
-        gy: targetGy,
-        createdAt: Date.now(),
-        active: true
-      };
-      sounds.playTap();
-      return true;
-    } else {
-      // If clicking directly on adjacent building, trigger action immediately
-      const dist = Math.hypot(start.gx - targetGx, start.gy - targetGy);
-      if (dist <= 1.5 && pendingAction) {
-        pendingAction();
-        return true;
-      }
+  pressDirection(dir) {
+    const keyMap = {
+      up: 'KeyW',
+      down: 'KeyS',
+      left: 'KeyA',
+      right: 'KeyD'
+    };
+    const code = keyMap[dir];
+    if (code) {
+      this.heldKeys.add(code);
+      this.path = [];
+      this.destinationMarker = null;
     }
+  }
+
+  /**
+   * Active Navigation Only: Directional release handler
+   */
+  releaseDirection(dir) {
+    const keyMap = {
+      up: 'KeyW',
+      down: 'KeyS',
+      left: 'KeyA',
+      right: 'KeyD'
+    };
+    const code = keyMap[dir];
+    if (code) {
+      this.heldKeys.delete(code);
+    }
+  }
+
+  /**
+   * Click-to-move disabled by design: Active navigation only (WASD / Arrows / D-Pad)
+   */
+  moveTo() {
+    this.path = [];
+    this.destinationMarker = null;
     return false;
+  }
+
+  /**
+   * Virtual Joystick Support (Brawl Stars style touch movement)
+   */
+  setJoystickVector(screenVx, screenVy) {
+    if (Math.hypot(screenVx, screenVy) < 0.18) {
+      this.activeJoystickVector = null;
+      return;
+    }
+    this.activeJoystickVector = { x: screenVx, y: screenVy };
+    this.path = [];
+    this.destinationMarker = null;
   }
 
   /**
    * Main Per-Frame Update (Continuous sub-frame time chaining, zero freeze at tile boundaries, 60fps).
    */
-  update(dt, { checkClearing, placedObjects, gridSize, onReachAction }) {
+  update(dt, { checkClearing, placedObjects = [], gridSize, onReachAction, progressionStage = 99 }) {
     const v = this.villagerRef.current;
     if (!v) return;
 
-    const isWalkableFn = (gx, gy) => isTileWalkable(gx, gy, { checkClearing, placedObjects, gridSize });
+    // Fast O(1) grid lookup map
+    const placedMap = new Map();
+    let hasPaths = false;
+    for (let i = 0; i < placedObjects.length; i++) {
+      const o = placedObjects[i];
+      placedMap.set((o.gx << 8) | o.gy, o);
+      if (!hasPaths && (WALKABLE_SURFACES.has(o.type) || o.type?.includes('path') || o.type?.includes('road') || o.type?.includes('bridge') || o.type?.includes('trail'))) {
+        hasPaths = true;
+      }
+    }
+
+    const start = { gx: Math.round(v.currGx), gy: Math.round(v.currGy) };
+    const isWalkableFn = (gx, gy) => isTileWalkable(gx, gy, { checkClearing, placedObjects, placedMap, hasPaths, gridSize, startPos: start, progressionStage });
 
     let remainingDt = Math.min(0.08, dt); // Protect against background tab spikes
     let safetyLoop = 0;
 
-    const hasActiveKey = this.heldKeys.size > 0 && !this.isTypingInInput();
+    // Determine unified screen motion vector (vx, vy)
+    let moveVx = 0;
+    let moveVy = 0;
+
+    if (!this.isTypingInInput()) {
+      if (this.heldKeys.has('KeyW') || this.heldKeys.has('ArrowUp')) moveVy -= 1;
+      if (this.heldKeys.has('KeyS') || this.heldKeys.has('ArrowDown')) moveVy += 1;
+      if (this.heldKeys.has('KeyA') || this.heldKeys.has('ArrowLeft')) moveVx -= 1;
+      if (this.heldKeys.has('KeyD') || this.heldKeys.has('ArrowRight')) moveVx += 1;
+    }
+
+    if (this.activeJoystickVector) {
+      moveVx = this.activeJoystickVector.x;
+      moveVy = this.activeJoystickVector.y;
+    }
+
+    const inputMag = Math.hypot(moveVx, moveVy);
+    const hasActiveInput = inputMag > 0.15;
+    if (hasActiveInput) {
+      moveVx /= inputMag;
+      moveVy /= inputMag;
+    } else {
+      this.lastStepDir = null; // Clear hysteresis when user releases controls
+    }
+
     const hasPath = this.path.length > 0;
-    const isMovingRequested = (v.progress < 1) || hasActiveKey || hasPath;
+    const isMovingRequested = (v.progress < 1) || hasActiveInput || hasPath;
     v.isWalking = isMovingRequested;
 
     while (remainingDt > 0.0001 && safetyLoop < 4) {
@@ -383,35 +469,49 @@ export class PlayerController {
             act();
           }
         }
-      } else if (this.heldKeys.size > 0 && !this.isTypingInInput()) {
-        let kdx = 0;
-        let kdy = 0;
+      } else if (hasActiveInput) {
+        // The 4 cardinal isometric grid neighbors and their normalized screen direction vectors:
+        // In 2:1 isometric space:
+        // screenX = (dgx - dgy) * 34, screenY = (dgx + dgy) * 17
+        const candidates = [
+          { dgx: 0, dgy: -1, sx: 0.894, sy: -0.447 }, // North (Up-Right in screen space)
+          { dgx: -1, dgy: 0, sx: -0.894, sy: -0.447 }, // West (Up-Left in screen space)
+          { dgx: 0, dgy: 1, sx: -0.894, sy: 0.447 },  // South (Down-Left in screen space)
+          { dgx: 1, dgy: 0, sx: 0.894, sy: 0.447 }    // East (Down-Right in screen space)
+        ];
 
-        if (this.heldKeys.has('KeyW') || this.heldKeys.has('ArrowUp')) kdx -= 1;
-        if (this.heldKeys.has('KeyS') || this.heldKeys.has('ArrowDown')) kdx += 1;
-        if (this.heldKeys.has('KeyA') || this.heldKeys.has('ArrowLeft')) kdy += 1;
-        if (this.heldKeys.has('KeyD') || this.heldKeys.has('ArrowRight')) kdy -= 1;
+        let bestCandidate = null;
+        let bestScore = 0.12; // Minimum alignment threshold in direction of intent
 
-        kdx = Math.sign(kdx);
-        kdy = Math.sign(kdy);
+        for (let i = 0; i < candidates.length; i++) {
+          const c = candidates[i];
+          const testGx = v.gx + c.dgx;
+          const testGy = v.gy + c.dgy;
 
-        if (kdx !== 0 || kdy !== 0) {
-          const testGx = v.gx + kdx;
-          const testGy = v.gy + kdy;
-          if (isWalkableFn(testGx, testGy)) {
-            nextTarget = { gx: testGx, gy: testGy };
-          } else {
-            // Smooth sliding if diagonal is blocked
-            if (kdx !== 0 && kdy !== 0) {
-              if (isWalkableFn(v.gx + kdx, v.gy)) {
-                nextTarget = { gx: v.gx + kdx, gy: v.gy };
-              } else if (isWalkableFn(v.gx, v.gy + kdy)) {
-                nextTarget = { gx: v.gx, gy: v.gy + kdy };
-              }
-            }
+          // Check if candidate tile is walkable
+          if (!isWalkableFn(testGx, testGy)) continue;
+
+          // Score alignment with user's intended screen vector (dot product)
+          let score = c.sx * moveVx + c.sy * moveVy;
+
+          // Anti-reversal hysteresis: if candidate is the exact opposite of the last step,
+          // require a strong intentional reverse input to prevent jittering back-and-forth!
+          if (this.lastStepDir && c.dgx === -this.lastStepDir.dgx && c.dgy === -this.lastStepDir.dgy) {
+            score -= 0.38;
+          }
+
+          if (score > bestScore) {
+            bestScore = score;
+            bestCandidate = { gx: testGx, gy: testGy, dgx: c.dgx, dgy: c.dgy };
           }
         }
+
+        if (bestCandidate) {
+          nextTarget = { gx: bestCandidate.gx, gy: bestCandidate.gy };
+          this.lastStepDir = { dgx: bestCandidate.dgx, dgy: bestCandidate.dgy };
+        }
       }
+
 
       if (nextTarget) {
         // Immediately start next tile step without 1-frame pause!

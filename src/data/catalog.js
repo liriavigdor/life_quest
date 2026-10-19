@@ -139,6 +139,18 @@ export const BUILD_CATALOG = [
     hasInterior: false,
     emoji: '💎'
   },
+  {
+    id: 'blacksmith_cottage',
+    name: "בית נגרות הפורץ",
+    category: 'מבנים ובתים',
+    tag: 'תפסיק את האנטי‑חלקים',
+    desc: 'קוטג׳ אסימטרי של נפח כבד עם חדר פורג׳ וכניסה צרה ל‑36 px. ללא רהיטים, רק מבנה.',
+    reflectionPrompt: 'איזה מבנה של חזון יוצר לך תחושת בטחון?',
+    costSeeds: 0,
+    renderType: 'new_cottage_engine',
+    hasInterior: true,
+    emoji: '🏚️'
+  },
 
   // --- חיות ויצורים (Living Animals) ---
   {

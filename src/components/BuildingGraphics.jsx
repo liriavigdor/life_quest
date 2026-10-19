@@ -6,6 +6,7 @@ export function BuildingGraphics({ type, level, isSelected }) {
   const renderBuilding = () => {
     switch (type) {
       case 'townHall':
+        // existing code unchanged
         return (
           <g className="building-svg-group">
             {/* SVG Gradients & Filters definitions */}
@@ -514,6 +515,47 @@ export function BuildingGraphics({ type, level, isSelected }) {
                 <circle cx="23" cy="-94" r="8" fill="#e2e8f0" opacity="0.4" />
               </g>
             )}
+          </g>
+        );
+
+      case 'new_cottage_engine':
+      case 'blacksmith_cottage':
+        return (
+          <g className="building-svg-group blacksmith-cottage-sprite">
+            {/* Ground Shadow */}
+            <ellipse cx="0" cy="15" rx="36" ry="18" fill="rgba(15, 23, 42, 0.45)" />
+
+            {/* Base Stone Foundation */}
+            <path d="M -32,5 L 0,22 L 32,5 L 32,-15 L 0,-32 L -32,-15 Z" fill="#475569" stroke="#1e293b" strokeWidth="2" />
+            <path d="M 0,22 L 32,5 L 32,-15 L 0,2 Z" fill="#334155" />
+
+            {/* Timber-Framed Upper Walls */}
+            <path d="M -30,-14 L 0,3 L 30,-14 L 30,-48 L 0,-65 L -30,-48 Z" fill="#92400e" stroke="#451a03" strokeWidth="2" />
+            <path d="M 0,3 L 30,-14 L 30,-48 L 0,-31 Z" fill="#78350f" />
+            <path d="M -30,-14 L 0,3 L 0,-31 L -30,-48 Z" fill="#b45309" />
+
+            {/* Half-timber cross beams */}
+            <line x1="-30" y1="-48" x2="0" y2="3" stroke="#451a03" strokeWidth="1.5" />
+            <line x1="0" y1="-65" x2="0" y2="3" stroke="#451a03" strokeWidth="2" />
+            <line x1="0" y1="-31" x2="30" y2="-14" stroke="#451a03" strokeWidth="1.5" />
+
+            {/* Cozy Gable Roof (Slate Shingles) */}
+            <path d="M 0,-78 L 38,-55 L 0,-32 L -38,-55 Z" fill="#1e3a8a" stroke="#0f172a" strokeWidth="2" />
+            <path d="M 0,-78 L 38,-55 L 0,-32 Z" fill="#172554" />
+
+            {/* Stone Chimney with Smoke */}
+            <rect x="14" y="-85" width="10" height="25" fill="#64748b" stroke="#334155" strokeWidth="1.5" />
+            <g className="smoke-puff">
+              <circle cx="19" cy="-92" r="4" fill="#cbd5e1" opacity="0.6" />
+              <circle cx="22" cy="-102" r="6" fill="#e2e8f0" opacity="0.4" />
+            </g>
+
+            {/* Warm Glowing Workshop Window */}
+            <ellipse cx="-12" cy="-22" rx="6" ry="8" fill="#f59e0b" stroke="#78350f" strokeWidth="1.5" />
+            <ellipse cx="-12" cy="-22" rx="3" ry="5" fill="#fef08a" opacity="0.9" />
+
+            {/* Wooden Entrance Door */}
+            <path d="M -4,15 L 4,11 L 4,-3 L -4,1 Z" fill="#78350f" stroke="#451a03" strokeWidth="1.2" />
           </g>
         );
 

@@ -49,23 +49,145 @@ export const VILLAGE_PRESETS = [
     horizonType: 'dense_forest_mist',
     particleType: 'firefly_spores',
     starterObjects: [
-      { gx: 12, gy: 12, type: 'animal_coop', customName: 'מפקדת הפלוגה והתדריכים', customEmoji: '🪖', dedicatedTo: 'מפקדת הפלוגה — מוקד פיקוד ומוכנות' },
-      { gx: 12, gy: 9, type: 'bonfire', customName: 'לפיד המסדרים ותורן הדגל', customEmoji: '🚩', dedicatedTo: 'נקודת כינוס ומסדרים' },
-      { gx: 11, gy: 12, type: 'cobblestone_road', dedicatedTo: 'רחבת מסדרים מיושרת' },
-      { gx: 13, gy: 12, type: 'cobblestone_road', dedicatedTo: 'רחבת מסדרים מיושרת' },
-      { gx: 12, gy: 11, type: 'cobblestone_road', dedicatedTo: 'רחבת מסדרים מיושרת' },
-      { gx: 12, gy: 13, type: 'cobblestone_road', dedicatedTo: 'רחבת מסדרים מיושרת' },
+      // 1. מבנים ראשיים ומסלול הזיכרון (5 מבנים שונים)
+      // מבנה 1 (ראשי): מפקדת הפיקוד והתדריכים בלב המבצר הפנימי
+      { gx: 12, gy: 9, type: 'wooden_cabin', customName: 'מפקדת הפיקוד והתדריכים', customEmoji: '🪖', dedicatedTo: '1. מוקד פקודות היום, תכנון מבצעי ועוגן ראשי' },
+      
+      // מבנה 2: ספריית המודיעין והמפות (באגף המערבי)
+      { gx: 8, gy: 12, type: 'library', customName: 'ספריית המודיעין והתחקירים', customEmoji: '📚', dedicatedTo: '2. ספריית מודיעין, מפות שטח ותובנות קרב' },
+
+      // מבנה 3: מאפיית השדה ומטבח הפלוגה (באגף הדרום-מערבי)
+      { gx: 9, gy: 16, type: 'bakery', customName: 'מאפיית השדה ומטבח הפלוגה', customEmoji: '🥖', dedicatedTo: '3. הזנה, אנרגיה יומית ומטבח הפלוגה' },
+
+      // מבנה 4: היכל הכושר והאימון המבצעי (באגף הדרום-מזרחי)
+      { gx: 15, gy: 16, type: 'gym', customName: 'היכל הכושר והכשירות המבצעית', customEmoji: '🏋️', dedicatedTo: '4. משמעת גופנית, אימוני כוח וחוסן לוחמים' },
+
+      // מבנה 5: חממת הרפואה וצמחי המרפא (באגף המזרחי מול הנהר)
+      { gx: 16, gy: 12, type: 'greenhouse', customName: 'חממת הרפואה וצמחי המרפא', customEmoji: '🪴', dedicatedTo: '5. התאוששות, בריאות, רפואה ורוגע מנטלי' },
+
+      // 2. השביל הרציף (מתחיל במפקדה הראשית, ועובר פעם אחת בדיוק בכל מבנה אחר)
+      // יציאה ממבנה 1 ומעבר דרך שער החומה הפנימית:
+      { gx: 11, gy: 10, type: 'cobblestone_road' },
+      { gx: 12, gy: 10, type: 'cobblestone_road', dedicatedTo: 'נתיב מסדר הבוקר — יציאה מהמפקדה' },
+      { gx: 13, gy: 10, type: 'cobblestone_road' },
+      { gx: 12, gy: 11, type: 'cobblestone_road', dedicatedTo: 'שער המבצר הפנימי — מעבר מבוקר יחיד' },
+      { gx: 12, gy: 12, type: 'cobblestone_road' },
+      // פנייה מערבה אל מבנה 2 (ספריית המודיעין):
+      { gx: 11, gy: 12, type: 'cobblestone_road' },
       { gx: 10, gy: 12, type: 'cobblestone_road' },
-      { gx: 14, gy: 12, type: 'cobblestone_road' },
-      { gx: 12, gy: 10, type: 'cobblestone_road' },
-      { gx: 12, gy: 14, type: 'cobblestone_road' },
-      { gx: 10, gy: 10, type: 'bush' },
-      { gx: 14, gy: 10, type: 'bush' },
-      { gx: 10, gy: 14, type: 'bush' },
-      { gx: 14, gy: 14, type: 'bush' },
-      { gx: 9, gy: 12, type: 'stone_wall' },
-      { gx: 15, gy: 12, type: 'stone_wall' },
-      { gx: 10, gy: 11, type: 'reading_bench', customName: 'עמדת תדריכים ופקודות', customEmoji: '📋', dedicatedTo: 'פקודת יום ומשימות שוטפות' }
+      { gx: 9, gy: 12, type: 'cobblestone_road', dedicatedTo: 'גישה לספריית המודיעין' },
+      // המשך דרומה אל מבנה 3 (מאפיית השדה):
+      { gx: 9, gy: 13, type: 'cobblestone_road' },
+      { gx: 9, gy: 14, type: 'cobblestone_road' },
+      { gx: 9, gy: 15, type: 'cobblestone_road', dedicatedTo: 'שביל חדר האוכל ומטבח השדה' },
+      // חצייה מזרחה אל מבנה 4 (היכל הכושר):
+      { gx: 10, gy: 15, type: 'cobblestone_road' },
+      { gx: 11, gy: 15, type: 'cobblestone_road' },
+      { gx: 12, gy: 15, type: 'cobblestone_road', dedicatedTo: 'רחבת ציר המבצר' },
+      { gx: 13, gy: 15, type: 'cobblestone_road' },
+      { gx: 14, gy: 15, type: 'cobblestone_road' },
+      { gx: 15, gy: 15, type: 'cobblestone_road', dedicatedTo: 'מבואת מתחם הכושר והאימונים' },
+      // פנייה מזרחה וחציית הנהר אל מבנה 5 (חממת הרפואה):
+      { gx: 16, gy: 15, type: 'cobblestone_road' },
+      { gx: 16, gy: 14, type: 'wooden_bridge', dedicatedTo: 'גשר פלג המים המזרחי' },
+      { gx: 16, gy: 13, type: 'cobblestone_road', dedicatedTo: 'נתיב המרפאה וצמחי המרפא' },
+
+      // שביל גישה לשער החיצוני הראשי בדרום (מעבר יחיד החוצה)
+      { gx: 12, gy: 16, type: 'cobblestone_road' },
+      { gx: 12, gy: 17, type: 'cobblestone_road' },
+      { gx: 12, gy: 18, type: 'cobblestone_road', dedicatedTo: 'שער המבצר החיצוני — שער כניסה ויציאה יחיד' },
+
+      // 3. שכבת חומה פנימית (Inner Wall - הגנה הרמטית על מפקדת הפיקוד עם מעבר אחד ב-(12,11))
+      { gx: 10, gy: 7, type: 'stone_wall' },
+      { gx: 11, gy: 7, type: 'stone_wall' },
+      { gx: 12, gy: 7, type: 'stone_wall' },
+      { gx: 13, gy: 7, type: 'stone_wall' },
+      { gx: 14, gy: 7, type: 'stone_wall' },
+      { gx: 10, gy: 8, type: 'stone_wall' },
+      { gx: 10, gy: 9, type: 'stone_wall' },
+      { gx: 10, gy: 10, type: 'stone_wall' },
+      { gx: 10, gy: 11, type: 'stone_wall' },
+      { gx: 14, gy: 8, type: 'stone_wall' },
+      { gx: 14, gy: 9, type: 'stone_wall' },
+      { gx: 14, gy: 10, type: 'stone_wall' },
+      { gx: 14, gy: 11, type: 'stone_wall' },
+      { gx: 11, gy: 11, type: 'stone_wall' },
+      // (12, 11) הוא השער הפנימי המבוקר היחיד - דרכו עובר השביל
+      { gx: 13, gy: 11, type: 'stone_wall' },
+
+      // 4. שכבת חומה חיצונית (Outer Wall - חומת מגן מקיפה סביב כל המחנה, שער יחיד ב-(12,18))
+      // חומה צפונית
+      { gx: 7, gy: 6, type: 'stone_wall' },
+      { gx: 8, gy: 6, type: 'stone_wall' },
+      { gx: 9, gy: 6, type: 'stone_wall' },
+      { gx: 10, gy: 6, type: 'stone_wall' },
+      { gx: 11, gy: 6, type: 'stone_wall' },
+      { gx: 12, gy: 6, type: 'stone_wall' },
+      { gx: 13, gy: 6, type: 'stone_wall' },
+      { gx: 14, gy: 6, type: 'stone_wall' },
+      { gx: 15, gy: 6, type: 'stone_wall' },
+      { gx: 16, gy: 6, type: 'stone_wall' },
+      { gx: 17, gy: 6, type: 'stone_wall' },
+      { gx: 18, gy: 6, type: 'stone_wall' },
+      // חומה מערבית
+      { gx: 7, gy: 7, type: 'stone_wall' },
+      { gx: 7, gy: 8, type: 'stone_wall' },
+      { gx: 7, gy: 9, type: 'stone_wall' },
+      { gx: 7, gy: 10, type: 'stone_wall' },
+      { gx: 7, gy: 11, type: 'stone_wall' },
+      { gx: 7, gy: 12, type: 'stone_wall' },
+      { gx: 7, gy: 13, type: 'stone_wall' },
+      { gx: 7, gy: 14, type: 'stone_wall' },
+      { gx: 7, gy: 15, type: 'stone_wall' },
+      { gx: 7, gy: 16, type: 'stone_wall' },
+      { gx: 7, gy: 17, type: 'stone_wall' },
+      // חומה מזרחית
+      { gx: 18, gy: 7, type: 'stone_wall' },
+      { gx: 18, gy: 8, type: 'stone_wall' },
+      { gx: 18, gy: 9, type: 'stone_wall' },
+      { gx: 18, gy: 10, type: 'stone_wall' },
+      { gx: 18, gy: 11, type: 'stone_wall' },
+      { gx: 18, gy: 12, type: 'stone_wall' },
+      { gx: 18, gy: 13, type: 'stone_wall' },
+      { gx: 18, gy: 14, type: 'stone_wall' },
+      { gx: 18, gy: 15, type: 'stone_wall' },
+      { gx: 18, gy: 16, type: 'stone_wall' },
+      { gx: 18, gy: 17, type: 'stone_wall' },
+      // חומה דרומית (שער יחיד ב-(12,18))
+      { gx: 7, gy: 18, type: 'stone_wall' },
+      { gx: 8, gy: 18, type: 'stone_wall' },
+      { gx: 9, gy: 18, type: 'stone_wall' },
+      { gx: 10, gy: 18, type: 'stone_wall' },
+      { gx: 11, gy: 18, type: 'stone_wall' },
+      // (12, 18) שער חיצוני יחיד
+      { gx: 13, gy: 18, type: 'stone_wall' },
+      { gx: 14, gy: 18, type: 'stone_wall' },
+      { gx: 15, gy: 18, type: 'stone_wall' },
+      { gx: 16, gy: 18, type: 'stone_wall' },
+      { gx: 17, gy: 18, type: 'stone_wall' },
+      { gx: 18, gy: 18, type: 'stone_wall' },
+
+      // 5. נהרות ופלגי מים (קצת נהרות פה ושם + בריכה)
+      { gx: 17, gy: 13, type: 'river_tile', dedicatedTo: 'פלג מים מטהר שזורם באגף המזרחי' },
+      { gx: 17, gy: 14, type: 'river_tile', dedicatedTo: 'מי פלג חיים תחת גשר העץ' },
+      { gx: 17, gy: 15, type: 'river_tile' },
+      { gx: 17, gy: 16, type: 'river_tile' },
+      { gx: 17, gy: 12, type: 'water_lily_pond', dedicatedTo: 'בריכת נימפיאות שלווה לרפואה ושקט' },
+
+      // 6. גינות ירק, פרחי כבוד ועוגני אווירה
+      { gx: 16, gy: 11, type: 'veggie_garden', dedicatedTo: 'ערוגות תבלין וצמחי מרפא ליד המרפאה' },
+      { gx: 15, gy: 11, type: 'veggie_garden', dedicatedTo: 'ערוגות ירק וחיזוק חיסוני' },
+      { gx: 9, gy: 8, type: 'flower_garden', dedicatedTo: 'גן פרחי הניצחון והדגלים' },
+      { gx: 15, gy: 8, type: 'flower_garden', dedicatedTo: 'גן כבוד וזיכרון מזרחי' },
+
+      // 7. עוגני פיקוד, אלונים ושיחים
+      { gx: 11, gy: 9, type: 'reading_bench' },
+      { gx: 13, gy: 9, type: 'bonfire' },
+      { gx: 8, gy: 11, type: 'reading_bench' },
+      { gx: 8, gy: 8, type: 'oak_tree' },
+      { gx: 16, gy: 8, type: 'oak_tree' },
+      { gx: 8, gy: 17, type: 'bush' },
+      { gx: 17, gy: 17, type: 'bush' }
     ]
   },
 
@@ -181,9 +303,34 @@ export const VILLAGE_PRESETS = [
   }
 ];
 
-// Pure v4 storage keys ensuring strictly 3 villages
-export const STORAGE_KEY_VILLAGES_REGISTRY = 'lifequest_catan_villages_v4';
-export const STORAGE_KEY_ACTIVE_VILLAGE = 'lifequest_catan_active_v4';
+// Pure v5 storage keys ensuring strictly 3 villages
+export const STORAGE_KEY_VILLAGES_REGISTRY = 'lifequest_catan_villages_v5';
+export const STORAGE_KEY_ACTIVE_VILLAGE = 'lifequest_catan_active_v5';
+
+// Cognitive Progression Stations along the Mental Walk
+export const VILLAGE_STATIONS = {
+  military: [
+    { stage: 1, type: 'wooden_cabin', name: 'מפקדת הפיקוד והתדריכים', emoji: '🪖', defaultMemory: '1. מוקד פקודות היום, תכנון מבצעי ועוגן ראשי', gx: 12, gy: 9 },
+    { stage: 2, type: 'library', name: 'ספריית המודיעין והתחקירים', emoji: '📚', defaultMemory: '2. ספריית מודיעין, מפות שטח ותובנות קרב', gx: 8, gy: 12 },
+    { stage: 3, type: 'bakery', name: 'מאפיית השדה ומטבח הפלוגה', emoji: '🥖', defaultMemory: '3. הזנה, אנרגיה יומית ומטבח הפלוגה', gx: 9, gy: 16 },
+    { stage: 4, type: 'gym', name: 'היכל הכושר והכשירות המבצעית', emoji: '🏋️', defaultMemory: '4. משמעת גופנית, אימוני כוח וחוסן לוחמים', gx: 15, gy: 16 },
+    { stage: 5, type: 'greenhouse', name: 'חממת הרפואה וצמחי המרפא', emoji: '🪴', defaultMemory: '5. התאוששות, בריאות, רפואה ורוגע מנטלי', gx: 16, gy: 12 }
+  ],
+  business: [
+    { stage: 1, type: 'wooden_cabin', name: 'משרד ההנהלה והיזמות', emoji: '🏛️', defaultMemory: '1. חזון העסק, החלטות אסטרטגיות ועוגן ראשי', gx: 12, gy: 9 },
+    { stage: 2, type: 'library', name: 'ארכיון הפיננסים והחוזים', emoji: '📊', defaultMemory: '2. דוחות כספיים, הסכמים ומדדי צמיחה', gx: 8, gy: 12 },
+    { stage: 3, type: 'bakery', name: 'טרקלין הפגישות והסגירות', emoji: '☕', defaultMemory: '3. פגישות נטוורקינג, לקוחות וקשרים', gx: 9, gy: 16 },
+    { stage: 4, type: 'gym', name: 'סדנת החדשנות והמוצרים', emoji: '💡', defaultMemory: '4. פיתוח מוצרים, בדיקות שוק ויוזמות חדשות', gx: 15, gy: 16 },
+    { stage: 5, type: 'greenhouse', name: 'גינת השקט והאיזון', emoji: '🌿', defaultMemory: '5. איזון בין עבודה לחיים ושקט פנימי', gx: 16, gy: 12 }
+  ],
+  sanctuary: [
+    { stage: 1, type: 'wooden_cabin', name: 'בקתת השלווה והמשכן האישי', emoji: '🏡', defaultMemory: '1. משכן אישי, עוגני שגרה ושקט פנימי', gx: 12, gy: 9 },
+    { stage: 2, type: 'library', name: 'חדר המחשבות וההשראה', emoji: '📖', defaultMemory: '2. תובנות, קריאה והתפתחות אישית', gx: 8, gy: 12 },
+    { stage: 3, type: 'bakery', name: 'מטבח הניחוחות והטעמים', emoji: '🍲', defaultMemory: '3. תזונה מודעת, רגעי חמימות ושיתוף', gx: 9, gy: 16 },
+    { stage: 4, type: 'gym', name: 'מרחב התנועה והגוף', emoji: '🧘', defaultMemory: '4. נשימה, יוגה, שחרור מתחים ותנועה', gx: 15, gy: 16 },
+    { stage: 5, type: 'greenhouse', name: 'חממת הנשמה והפרחים', emoji: '🌸', defaultMemory: '5. טיפוח עדין, הכרת תודה ורוגע עמוק', gx: 16, gy: 12 }
+  ]
+};
 
 // Helper to strictly maintain the 3 user-chosen villages
 export function loadVillagesRegistry() {
@@ -223,9 +370,19 @@ export function loadVillagesRegistry() {
           scienceTip: preset.scienceTip,
           placedObjects: preset.starterObjects,
           expansionTier: 1,
+          progressionStage: 1,
+          interiorUnlocked: false,
           cultivatedPlots: [],
           lastVisited: new Date().toISOString()
         };
+      } else {
+        // Guarantee progression fields exist
+        if (typeof registry[preset.id].progressionStage !== 'number') {
+          registry[preset.id].progressionStage = 1;
+        }
+        if (typeof registry[preset.id].interiorUnlocked !== 'boolean') {
+          registry[preset.id].interiorUnlocked = false;
+        }
       }
     });
 
@@ -243,6 +400,8 @@ export function loadVillagesRegistry() {
         badge: p.badge,
         placedObjects: p.starterObjects,
         expansionTier: 1,
+        progressionStage: 1,
+        interiorUnlocked: false,
         cultivatedPlots: [],
         lastVisited: new Date().toISOString()
       };

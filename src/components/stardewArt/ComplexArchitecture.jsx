@@ -38,15 +38,15 @@ const FLOORS = [
   [80, 90, 190, 150],     // Deep bed nook (raised bay)
   [80, 150, 380, 310],    // NW wing main room (A1)
   [80, 310, 220, 410],    // NW front-jutting nook (A2)
-  // W-E Corridor C1 (Tightened to 50px)
-  [380, 230, 430, 266],   // W-E timber corridor tunnel (36px wide)
+  // W-E Corridor C1 (Widened to 56px opening to match right passage)
+  [380, 220, 430, 276],   // W-E timber corridor tunnel (56px opening)
   // Central Grand Hall (Hearth Wing - Asymmetric Layout)
   [430, 108, 760, 340],   // Central Grand Hall (B)
   [610, 76, 700, 108],    // Asymmetric Off-Center Hearth alcove
-  // East Connector C2 (Tightened to 50px)
-  [760, 230, 810, 266],   // East connector corridor tunnel (36px wide)
-  // N-S Corridor C3 (80px long, 40px wide - Eliminates room collision!)
-  [575, 340, 615, 420],   // N-S connector corridor tunnel
+  // East Connector C2 (Widened to 56px opening to match right passage)
+  [760, 220, 810, 276],   // East connector corridor tunnel (56px opening)
+  // N-S Corridor C3 (80px long, 56px wide - 3 full floor planks!)
+  [567, 340, 623, 420],   // N-S connector corridor tunnel
   // Entrance Foyer (Asymmetric Layout with Inset Cloak Alcove Nook)
   [440, 420, 750, 570],   // Main Foyer floor
   [750, 510, 776, 570],   // Inset cloak alcove nook floor
@@ -98,7 +98,7 @@ const ZONE1_BACK_WALL = [
 ];
 // Corridor C1 (Left Wing <-> Grand Hall, horizontal hallway)
 const ZONE1_CORRIDOR_BACK = [
-  [380, 230], [430, 230]
+  [380, 220], [430, 220]
 ];
 
 // Zone 2: Central Grand Hall Asymmetric Paths (Off-Center Hearth + Chamfered Corners)
@@ -108,15 +108,15 @@ const ZONE2_BACK_WALL = [
 ];
 // Corridor C2 (Grand Hall <-> East Wing North, horizontal hallway)
 const ZONE2_CORRIDOR_BACK = [
-  [760, 230], [810, 230]
+  [760, 220], [810, 220]
 ];
 
 // Zone 3: Entrance Foyer Asymmetric Paths (NW Chamfer, Straight NE, SW Chamfer, SE Inset Nook)
 const ZONE3_BACK_WALL_LEFT = [
-  [440, 444], [464, 420], [575, 420]
+  [440, 444], [464, 420], [567, 420]
 ];
 const ZONE3_BACK_WALL_RIGHT = [
-  [615, 420], [750, 420]
+  [623, 420], [750, 420]
 ];
 
 // Zone 4: East Wing Asymmetric Paths (North Room, Partition Doorway, South Room)
@@ -145,13 +145,13 @@ const GRAND_UNIFIED_PERIMETER_FRAME = [
   // 3. Foyer West Wall & NW 45° Chamfer (at ceiling height)
   [440, 388], [464, 364],
   // 4. Foyer North Wall to Corridor C3 West Jamb
-  [575, 364],
+  [567, 364],
   // 5. Corridor C3 West Jamb into Central Grand Hall (open passage - NO cross beam!)
-  [575, 340],
+  [567, 340],
   // 6. Grand Hall South Sill & SW 45° Chamfer
   [454, 340], [430, 316],
   // 7. Grand Hall West Sill & Corridor C1 South Sill into Left Wing
-  [430, 266], [380, 266],
+  [430, 276], [380, 276],
   // 8. Left Wing A1/A2 Transition & Front Nook
   [380, 310], [220, 310], [220, 410],
   // 9. Left Wing SW 45° Chamfer & West Wall up to Bed Nook Roof
@@ -161,7 +161,7 @@ const GRAND_UNIFIED_PERIMETER_FRAME = [
   // 11. Left Wing Gallery Ceiling Rafter & NE 45° Chamfer
   [354, 94], [380, 120],
   // 12. Left Wing East Upper Wall & Corridor C1 North Ceiling into Grand Hall
-  [380, 230], [430, 230],
+  [380, 220], [430, 220],
   // 13. Grand Hall West Upper Wall & NW 45° Chamfer
   [430, 76], [454, 52],
   // 14. Grand Hall Hearth Alcove (Asymmetric Multi-Facet Roof Peak)
@@ -169,7 +169,7 @@ const GRAND_UNIFIED_PERIMETER_FRAME = [
   // 15. Grand Hall East Gallery Ceiling & NE 45° Chamfer
   [736, 52], [760, 76],
   // 16. Grand Hall East Upper Wall & Corridor C2 North Ceiling into East Wing North
-  [760, 230], [810, 230],
+  [760, 220], [810, 220],
   // 17. East Wing North West Upper Wall & NW 45° Chamfer
   [810, 138], [834, 114],
   // 18. East Wing North Ceiling Rafter to Far East Corner (Seamless 90° Miter)
@@ -189,13 +189,13 @@ const GRAND_UNIFIED_PERIMETER_FRAME = [
   // 25. East Doorway West Jamb into East Wing North Room (open passage - NO cross beam!)
   [970, 340],
   // 26. East Wing North South Sill to Corridor C2 South Sill
-  [810, 340], [810, 266],
+  [810, 340], [810, 276],
   // 27. Across Corridor C2 South Sill into Grand Hall South Sill
-  [760, 266], [760, 340],
+  [760, 276], [760, 340],
   // 28. Grand Hall South Sill to Corridor C3 East Jamb
-  [615, 340],
+  [623, 340],
   // 29. Corridor C3 East Jamb into Foyer (open passage - NO cross beam!)
-  [615, 364],
+  [623, 364],
   // 30. Foyer North Wall Ceiling to East Wall
   [750, 364],
   // 31. Foyer East Wall & Inset Cloak Alcove Nook
@@ -911,7 +911,7 @@ const Sunbeam = ({ wx, ys, w = 36, L = 200 }) => {
 // =========================================================================
 // 5. MAIN ARCHITECTURAL COMPONENT
 // =========================================================================
-export function ComplexArchitectureSVG() {
+export const ComplexArchitectureSVG = React.memo(function ComplexArchitectureSVG() {
   return (
     <svg
       className="complex-architecture-svg"
@@ -1014,26 +1014,28 @@ export function ComplexArchitectureSVG() {
       </g>
     </svg>
   );
-}
+});
 
 // =========================================================================
-// 6. SOFT AMBIENT LAMPLIGHT POOLS (Cozy Warm Glow)
+// 6. SOFT AMBIENT LAMPLIGHT POOLS (Cozy Warm Glow with Room Progression)
 // =========================================================================
 const POOLS = [
-  { x: 135, y: 120, rx: 65, ry: 40, o: 0.55 },   // Bed nook
-  { x: 280, y: 230, rx: 110, ry: 75, o: 0.65 },  // NW wing
-  { x: 405, y: 248, rx: 50, ry: 20, o: 0.4 },    // W-E corridor C1
-  { x: 540, y: 220, rx: 150, ry: 100, o: 0.85 }, // Central Hall gallery
-  { x: 655, y: 92, rx: 60, ry: 30, o: 0.6 },     // Hearth alcove (off-center)
-  { x: 785, y: 248, rx: 50, ry: 20, o: 0.4 },    // East connector C2
-  { x: 595, y: 380, rx: 36, ry: 40, o: 0.4 },    // N-S corridor C3
-  { x: 595, y: 490, rx: 140, ry: 70, o: 0.65 },  // Foyer
-  { x: 762, y: 540, rx: 40, ry: 25, o: 0.45 },   // Foyer inset cloak alcove
-  { x: 995, y: 260, rx: 200, ry: 100, o: 0.75 }, // East wing north
-  { x: 1030, y: 495, rx: 130, ry: 60, o: 0.55 }, // East south room
+  { x: 135, y: 120, rx: 65, ry: 40, o: 0.55, room: 'left_store' },   // Bed nook
+  { x: 280, y: 230, rx: 110, ry: 75, o: 0.65, room: 'left_store' },  // NW wing
+  { x: 405, y: 248, rx: 50, ry: 28, o: 0.4, room: 'left_store' },    // W-E corridor C1 (widened)
+  { x: 540, y: 220, rx: 150, ry: 100, o: 0.85, room: 'main_hall' }, // Central Hall gallery
+  { x: 655, y: 92, rx: 60, ry: 30, o: 0.6, room: 'main_hall' },     // Hearth alcove (off-center)
+  { x: 785, y: 248, rx: 50, ry: 28, o: 0.4, room: 'right_sanctuary' }, // East connector C2 (widened)
+  { x: 595, y: 380, rx: 44, ry: 40, o: 0.4, room: 'entry_foyer' },   // N-S corridor C3
+  { x: 595, y: 490, rx: 140, ry: 70, o: 0.65, room: 'entry_foyer' },  // Foyer (FIRST ROOM)
+  { x: 762, y: 540, rx: 40, ry: 25, o: 0.45, room: 'entry_foyer' },   // Foyer inset cloak alcove
+  { x: 995, y: 260, rx: 200, ry: 100, o: 0.75, room: 'right_sanctuary' }, // East wing north
+  { x: 1030, y: 495, rx: 130, ry: 60, o: 0.55, room: 'right_south' }, // East south room
 ];
 
-export function ComplexLightingSVG() {
+export const ComplexLightingSVG = React.memo(function ComplexLightingSVG({ unlockedRooms = ['entry_foyer'] }) {
+  const isUnlocked = (room) => unlockedRooms.includes(room);
+
   return (
     <svg
       className="complex-lighting-svg"
@@ -1050,12 +1052,68 @@ export function ComplexLightingSVG() {
           <stop offset="1" stopColor="rgba(255, 150, 50, 0)" />
         </radialGradient>
       </defs>
-      {POOLS.map((p, i) => (
-        <g key={i} className="complex-light-pool" style={{ animationDelay: `${(i % 5) * 0.35}s` }}>
-          <ellipse cx={p.x} cy={p.y} rx={p.rx} ry={p.ry} fill="url(#cx-lamp-glow)" opacity={p.o} style={{ mixBlendMode: 'soft-light' }} />
-          <ellipse cx={p.x} cy={p.y} rx={p.rx * 0.75} ry={p.ry * 0.75} fill="url(#cx-lamp-glow)" opacity={p.o * 0.35} style={{ mixBlendMode: 'screen' }} />
-        </g>
-      ))}
+
+      {/* 65% Atmospheric Shadow Darkness Veils over Locked Rooms (Reduced lighting by exactly 65%) */}
+      {/* 1. Main Hall Shadow Veil */}
+      <polygon
+        points="430,76 760,76 760,340 623,340 623,360 567,360 567,340 430,340"
+        fill="#04060e"
+        opacity={isUnlocked('main_hall') ? 0 : 0.65}
+        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
+      />
+
+      {/* 2. Left Wing (West) Shadow Veil */}
+      <polygon
+        points="80,90 380,90 380,220 405,220 405,276 380,276 380,310 220,310 220,410 80,410"
+        fill="#04060e"
+        opacity={isUnlocked('left_store') ? 0 : 0.65}
+        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
+      />
+
+      {/* 3. East Wing North Shadow Veil */}
+      <polygon
+        points="785,220 810,170 1180,170 1180,340 1026,340 1026,360 970,360 970,340 785,340"
+        fill="#04060e"
+        opacity={isUnlocked('right_sanctuary') ? 0 : 0.65}
+        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
+      />
+
+      {/* 4. East Wing South Shadow Veil */}
+      <polygon
+        points="880,360 970,360 970,420 1180,420 1180,570 880,570"
+        fill="#04060e"
+        opacity={isUnlocked('right_south') ? 0 : 0.65}
+        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
+      />
+
+      {/* Warm Ambient Lamplight Pools (Dimmed by 65% when room is locked) */}
+      {POOLS.map((p, i) => {
+        const roomOpen = isUnlocked(p.room);
+        const effectiveOpacity = roomOpen ? p.o : p.o * 0.35; // 65% drop in locked rooms
+
+        return (
+          <g key={i} className="complex-light-pool" style={{ animationDelay: `${(i % 5) * 0.35}s` }}>
+            <ellipse 
+              cx={p.x} 
+              cy={p.y} 
+              rx={p.rx} 
+              ry={p.ry} 
+              fill="url(#cx-lamp-glow)" 
+              opacity={effectiveOpacity} 
+              style={{ mixBlendMode: 'soft-light', transition: 'opacity 0.6s ease' }} 
+            />
+            <ellipse 
+              cx={p.x} 
+              cy={p.y} 
+              rx={p.rx * 0.75} 
+              ry={p.ry * 0.75} 
+              fill="url(#cx-lamp-glow)" 
+              opacity={effectiveOpacity * 0.35} 
+              style={{ mixBlendMode: 'screen', transition: 'opacity 0.6s ease' }} 
+            />
+          </g>
+        );
+      })}
     </svg>
   );
-}
+});

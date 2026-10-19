@@ -10,6 +10,7 @@ import { drawAnimal } from './utils/animalRenderer';
 import { drawParchmentBadge, stepBadgeReveal } from './utils/badgeRenderer';
 import { loadSavedAnimals, saveAnimals, createAnimal, updateAnimalsSimulation } from './utils/animalSimulation';
 import { PlayerController, drawDestinationIndicator } from './utils/playerController';
+import { BrawlStarsJoystick } from './components/BrawlStarsJoystick';
 import { sounds } from './utils/sound';
 import {
   Wheat,
@@ -37,12 +38,16 @@ import {
   Compass,
   MapPin,
   Layers,
-  GitBranch
+  GitBranch,
+  Zap,
+  Lock,
+  Unlock
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
 import {
   BIOMES,
   VILLAGE_PRESETS,
+  VILLAGE_STATIONS,
   STORAGE_KEY_VILLAGES_REGISTRY,
   STORAGE_KEY_ACTIVE_VILLAGE,
   loadVillagesRegistry,
@@ -51,6 +56,7 @@ import {
 import { VILLAGE_TEMPLATES } from './data/villageTemplates';
 import { WorldRealmMapModal } from './components/WorldRealmMapModal';
 import { VillageTemplatesModal } from './components/VillageTemplatesModal';
+import { VillageQuickQuizModal } from './components/VillageQuickQuizModal';
 import { CognitiveSurveyModal } from './components/CognitiveSurveyModal';
 import { StoryToMonumentModal } from './components/StoryToMonumentModal';
 import { MemoryHierarchyTreeModal } from './components/MemoryHierarchyTreeModal';
@@ -73,6 +79,76 @@ const GRID_SIZE = 26;
 const TILE_W = 68;
 const TILE_H = 34;
 const GRID_ORIGIN_Y_RATIO = 0.065;
+
+// Visual Spaced Repetition Food Mapping (Zero-Text & Frictionless)
+const ANIMAL_FOOD_MAP = {
+  chicken: '🌾',
+  sheep: '🌾',
+  duck: '🌾',
+  rabbit: '🥕',
+  cat: '🐟',
+  dog: '🦴'
+};
+
+// Plant & Garden types that receive daily watering / care
+const PLANT_CARE_TYPES = new Set([
+  'flower_garden',
+  'veggie_garden',
+  'sunflower_patch',
+  'fruit_tree',
+  'bush',
+  'sakura_tree',
+  'oak_tree',
+  'willow_tree',
+  'pine_tree',
+  'cypress_tree',
+  'glow_mushrooms',
+  'farm'
+]);
+
+// Floating Bobbing Care Indicator Bubble (💧 for thirsty plants, 🌾 for hungry animals)
+function drawFloatingCareBubble(ctx, x, y, emoji, isWater = true) {
+  const time = Date.now() * 0.0035;
+  const bobY = Math.sin(time + x * 0.05) * 3.5;
+  const by = y + bobY;
+
+  ctx.save();
+  ctx.translate(x, by);
+
+  // Soft glowing aura
+  ctx.save();
+  ctx.shadowColor = isWater ? 'rgba(56, 189, 248, 0.75)' : 'rgba(251, 191, 36, 0.75)';
+  ctx.shadowBlur = 10;
+  ctx.fillStyle = isWater ? 'rgba(224, 242, 254, 0.94)' : 'rgba(254, 243, 199, 0.94)';
+  ctx.beginPath();
+  ctx.arc(0, 0, 13, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // Subtle border ring
+  ctx.lineWidth = 1.6;
+  ctx.strokeStyle = isWater ? '#38bdf8' : '#f59e0b';
+  ctx.beginPath();
+  ctx.arc(0, 0, 13, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Downward pointer pip
+  ctx.fillStyle = isWater ? 'rgba(224, 242, 254, 0.94)' : 'rgba(254, 243, 199, 0.94)';
+  ctx.beginPath();
+  ctx.moveTo(-4, 11);
+  ctx.lineTo(0, 16);
+  ctx.lineTo(4, 11);
+  ctx.closePath();
+  ctx.fill();
+
+  // Clean centered emoji
+  ctx.font = '14px "Segoe UI Emoji", "Apple Color Emoji", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(emoji, 0, 1);
+
+  ctx.restore();
+}
 
 // Calculate optimal camera zoom and pan to fit the active village beautifully on any screen size,
 // with dedicated mobile landscape optimization (Clash of Clans style)
@@ -202,14 +278,31 @@ export default function App() {
     try {
       const activeVid = localStorage.getItem(STORAGE_KEY_ACTIVE_VILLAGE) || 'military';
       const rawReg = localStorage.getItem(STORAGE_KEY_VILLAGES_REGISTRY);
+      const MAJOR_STATIONS = new Set(['wooden_cabin', 'library', 'bakery', 'gym', 'greenhouse']);
+
       if (rawReg) {
         const parsedReg = JSON.parse(rawReg);
         if (parsedReg && parsedReg[activeVid] && Array.isArray(parsedReg[activeVid].placedObjects) && parsedReg[activeVid].placedObjects.length > 0) {
-          return parsedReg[activeVid].placedObjects;
+          const cleaned = parsedReg[activeVid].placedObjects.map(o => {
+            if (activeVid === 'military' && !MAJOR_STATIONS.has(o.type)) {
+              return { ...o, customName: '', customEmoji: '', dedicatedTo: '' };
+            }
+            return o;
+          });
+          parsedReg[activeVid].placedObjects = cleaned;
+          try {
+            localStorage.setItem(STORAGE_KEY_VILLAGES_REGISTRY, JSON.stringify(parsedReg));
+          } catch {}
+          return cleaned;
         }
       }
       const initialPreset = VILLAGE_PRESETS.find(p => p.id === activeVid) || VILLAGE_PRESETS[0];
-      return initialPreset.starterObjects;
+      return initialPreset.starterObjects.map(o => {
+        if (activeVid === 'military' && !MAJOR_STATIONS.has(o.type)) {
+          return { ...o, customName: '', customEmoji: '', dedicatedTo: '' };
+        }
+        return o;
+      });
     } catch {
       return VILLAGE_PRESETS[0].starterObjects;
     }
@@ -319,7 +412,32 @@ export default function App() {
   const [showSurveyModal, setShowSurveyModal] = useState(false);
   const [showStoryModal, setShowStoryModal] = useState(false);
   const [showHierarchyTree, setShowHierarchyTree] = useState(false);
+  const [showQuickQuizModal, setShowQuickQuizModal] = useState(null);
   const [travelingNotice, setTravelingNotice] = useState(null);
+
+  // Cognitive Controlled Village Progression (Stage 1..5 & Interior Lock State)
+  const [villageProgression, setVillageProgression] = useState(() => {
+    try {
+      const activeVid = localStorage.getItem(STORAGE_KEY_ACTIVE_VILLAGE) || 'military';
+      const rawReg = localStorage.getItem(STORAGE_KEY_VILLAGES_REGISTRY);
+      if (rawReg) {
+        const parsed = JSON.parse(rawReg);
+        if (parsed && parsed[activeVid]) {
+          return {
+            stage: typeof parsed[activeVid].progressionStage === 'number' ? parsed[activeVid].progressionStage : 1,
+            interiorUnlocked: Boolean(parsed[activeVid].interiorUnlocked)
+          };
+        }
+      }
+      return { stage: 1, interiorUnlocked: false };
+    } catch {
+      return { stage: 1, interiorUnlocked: false };
+    }
+  });
+  const villageProgressionRef = useRef(villageProgression);
+  useEffect(() => {
+    villageProgressionRef.current = villageProgression;
+  }, [villageProgression]);
 
   // Keep active village data in sync with villagesRegistry
   useEffect(() => {
@@ -332,13 +450,15 @@ export default function App() {
           placedObjects,
           expansionTier,
           cultivatedPlots,
+          progressionStage: villageProgression.stage,
+          interiorUnlocked: villageProgression.interiorUnlocked,
           lastVisited: new Date().toISOString()
         }
       };
       saveVillagesRegistry(updated);
       return updated;
     });
-  }, [placedObjects, expansionTier, cultivatedPlots, currentVillageId]);
+  }, [placedObjects, expansionTier, cultivatedPlots, currentVillageId, villageProgression]);
 
   // Responsive camera zoom & pan state
   const [cameraZoom, setCameraZoom] = useState(() => {
@@ -465,6 +585,7 @@ export default function App() {
   const inspectedObjectRef = useRef(inspectedObject);
   const draggingObjectRef = useRef(draggingObject);
   const movingObjectRef = useRef(movingObject);
+  const placedGridMapRef = useRef(new Map());
   const isDemolishModeRef = useRef(isDemolishMode);
   const timeOfDayRef = useRef(timeOfDay);
   const currentOutfitRef = useRef(currentOutfit);
@@ -501,7 +622,15 @@ export default function App() {
   // Pointer down info ref
   const pointerDownInfoRef = useRef(null);
 
-  useEffect(() => { placedObjectsRef.current = placedObjects; }, [placedObjects]);
+  useEffect(() => {
+    placedObjectsRef.current = placedObjects;
+    const map = new Map();
+    for (let i = 0; i < placedObjects.length; i++) {
+      const o = placedObjects[i];
+      map.set((o.gx << 8) | o.gy, o);
+    }
+    placedGridMapRef.current = map;
+  }, [placedObjects]);
   useEffect(() => { selectedBuildItemRef.current = selectedBuildItem; }, [selectedBuildItem]);
   useEffect(() => { inspectedObjectRef.current = inspectedObject; }, [inspectedObject]);
   useEffect(() => { draggingObjectRef.current = draggingObject; }, [draggingObject]);
@@ -576,14 +705,14 @@ export default function App() {
       { x: 1250, y: 160, rx: 200, ry: 95, speed: 0.24 }
     ],
     villager: {
-      gx: 11,
-      gy: 11,
-      currGx: 11,
-      currGy: 11,
-      startGx: 11,
-      startGy: 11,
-      targetGx: 11,
-      targetGy: 11,
+      gx: 12,
+      gy: 10,
+      currGx: 12,
+      currGy: 10,
+      startGx: 12,
+      startGy: 10,
+      targetGx: 12,
+      targetGy: 10,
       progress: 1,
       speed: 0.011,
       idleTimer: 60,
@@ -607,6 +736,9 @@ export default function App() {
       emoteTimer: 130
     }
   });
+
+  // Rising care reaction particles (💧 water droplet, 🌾 grain pop)
+  const carePopsRef = useRef([]);
 
   // Active Player Movement Controller (WASD, Arrows, Click-to-Move, Pathfinding)
   const playerControllerRef = useRef(null);
@@ -698,7 +830,7 @@ export default function App() {
         const inClearing = isTileClearedHelper(gx, gy, tier, cultivated, placed);
         const isFrontier = !inClearing && isCultivableFrontierHelper(gx, gy, tier, cultivated, placed);
         const isCultivated = cultivated ? cultivated.some(p => p.gx === gx && p.gy === gy) : false;
-        const isWildflower = (gx * 17 + gy * 23) % 9 === 0;
+        const isWildflower = (gx * 17 + gy * 23) % 31 === 0 && ((gx + gy) % 3 === 0);
 
         let colorType = 0;
         if ((gx * 7 + gy * 13) % 11 === 0) colorType = 2;
@@ -906,10 +1038,8 @@ export default function App() {
       return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
     };
 
-    // Optional trailing args (visual only): seed = deterministic per-tile hash, featherBase = underlying
-    // grass color so highlight tiles (dirt / meadow patches) melt softly into their neighbours.
-    const drawTile = (sx, sy, color, isHovered, isBuildable, seed, featherBase) => {
-      // Seam softening: the painted diamond overdraws its neighbours by ~0.5px so no hairlines show through
+    // Streamlined high-speed diamond tile fill (single fill call per tile, 0 gradient allocations)
+    const drawTile = (sx, sy, color, isHovered, isBuildable) => {
       const ex = 1.0, ey = 0.5;
       ctx.beginPath();
       ctx.moveTo(sx, sy - ey);
@@ -917,51 +1047,10 @@ export default function App() {
       ctx.lineTo(sx, sy + TILE_H + ey);
       ctx.lineTo(sx - TILE_W / 2 - ex, sy + TILE_H / 2);
       ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
 
-      if (featherBase) {
-        // Feathered patch: base grass + radial fade of the patch colour (fades to the SAME hue at alpha 0,
-        // so there is no muddy dark halo), clipped to the diamond. Dense core = pool of sunlight.
-        ctx.fillStyle = featherBase;
-        ctx.fill();
-        ctx.save();
-        ctx.clip();
-        const fcx = sx, fcy = sy + TILE_H / 2;
-        const feather = ctx.createRadialGradient(fcx, fcy, 1, fcx, fcy, TILE_W * 0.55);
-        feather.addColorStop(0, color);
-        feather.addColorStop(0.55, color);
-        feather.addColorStop(1, hexToRgba(color, 0));
-        ctx.fillStyle = feather;
-        ctx.fillRect(sx - TILE_W / 2 - 2, sy - 1, TILE_W + 4, TILE_H + 2);
-        ctx.restore();
-      } else {
-        ctx.fillStyle = color;
-        ctx.fill();
-      }
-
-      if (seed !== undefined) {
-        // Seeded jitter: gentle cream / plum-brown tonal wash (max ~7% alpha) breaks the checkerboard
-        let h = (Math.imul(seed ^ 0x9e3779b9, 1664525) + 1013904223) >>> 0;
-        const r1 = h / 4294967296;
-        const a = Math.abs(r1 - 0.5) * 0.14;
-        ctx.fillStyle = r1 < 0.5 ? `rgba(42, 24, 16, ${a})` : `rgba(255, 244, 214, ${a})`;
-        ctx.fill();
-
-        // Tiny hand-drawn grass blades (single batched path per tile)
-        ctx.beginPath();
-        for (let i = 0; i < 3; i++) {
-          h = (Math.imul(h, 1664525) + 1013904223) >>> 0;
-          const bx = sx + ((h & 0xff) / 255 - 0.5) * TILE_W * 0.5;
-          h = (Math.imul(h, 1664525) + 1013904223) >>> 0;
-          const by = sy + TILE_H * 0.3 + ((h & 0xff) / 255) * TILE_H * 0.4;
-          ctx.moveTo(bx - 1.2, by);
-          ctx.lineTo(bx, by - 3.2);
-          ctx.lineTo(bx + 1.2, by);
-        }
-        ctx.fillStyle = r1 < 0.5 ? 'rgba(255, 244, 214, 0.16)' : 'rgba(42, 24, 16, 0.14)';
-        ctx.fill();
-      }
-
-      // Only stroke and highlight when tile is hovered or active (eliminates 34,500+ heavy stroke calls/sec)
+      // Only stroke and highlight when tile is hovered or active
       if (isHovered) {
         ctx.beginPath();
         ctx.moveTo(sx, sy);
@@ -975,6 +1064,26 @@ export default function App() {
         ctx.fillStyle = isBuildable ? 'rgba(254, 240, 138, 0.3)' : 'rgba(239, 68, 68, 0.2)';
         ctx.fill();
       }
+    };
+
+    // Instant O(1) neighbor adjacency helper (replaces hundreds of array scans)
+    const getAdjacentItem = (ogx, ogy, filterFn) => {
+      if (ogx === undefined || ogy === undefined) {
+        return { hasEast: false, hasWest: false, hasSouth: false, hasNorth: false, isConnected: false };
+      }
+      const map = placedGridMapRef.current;
+      if (!map) {
+        return { hasEast: false, hasWest: false, hasSouth: false, hasNorth: false, isConnected: false };
+      }
+      const e = map.get(((ogx + 1) << 8) | ogy);
+      const w = map.get(((ogx - 1) << 8) | ogy);
+      const s = map.get((ogx << 8) | (ogy + 1));
+      const n = map.get((ogx << 8) | (ogy - 1));
+      const hasEast = !!e && filterFn(e.type);
+      const hasWest = !!w && filterFn(w.type);
+      const hasSouth = !!s && filterFn(s.type);
+      const hasNorth = !!n && filterFn(n.type);
+      return { hasEast, hasWest, hasSouth, hasNorth, isConnected: hasEast || hasWest || hasSouth || hasNorth };
     };
 
     // Wholesome object drawing (warm, handcrafted, calming aesthetics)
@@ -1014,103 +1123,223 @@ export default function App() {
 
       switch (type) {
         case 'river_tile': {
-          // Flowing isometric river tile with layered translucent depth and banks
+          // Sleek, continuous flowing river stream (straight unbroken water ribbon when connected, natural pond when standalone)
           ctx.save();
-          // Riverbed base
-          ctx.beginPath();
-          ctx.moveTo(sx, sy);
-          ctx.lineTo(sx + TILE_W / 2, sy + TILE_H / 2);
-          ctx.lineTo(sx, sy + TILE_H);
-          ctx.lineTo(sx - TILE_W / 2, sy + TILE_H / 2);
-          ctx.closePath();
-          const bedGrad = ctx.createLinearGradient(sx - TILE_W / 2, sy, sx + TILE_W / 2, sy + TILE_H);
-          bedGrad.addColorStop(0, '#0369a1');
-          bedGrad.addColorStop(0.5, '#0284c7');
-          bedGrad.addColorStop(1, '#075985');
-          ctx.fillStyle = bedGrad;
-          ctx.fill();
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const isWaterType = (t) => ['river_tile', 'water_lily_pond', 'wooden_bridge', 'bridge'].includes(t);
+          const { hasEast, hasWest, hasSouth, hasNorth, isConnected } = getAdjacentItem(ogx, ogy, isWaterType);
 
-          // River banks (soft natural mud / pebble shorelines)
-          ctx.fillStyle = '#452b14';
-          ctx.beginPath();
-          ctx.moveTo(sx - TILE_W / 2, sy + TILE_H / 2);
-          ctx.quadraticCurveTo(sx - 12, sy + 6, sx, sy);
-          ctx.lineTo(sx - TILE_W / 2 + 5, sy + TILE_H / 2 - 2);
-          ctx.closePath();
-          ctx.fill();
+          // Animation time phase for natural flowing caustics
+          const flowPhase = (Date.now() * 0.0028) + ((ogx || 0) * 1.7 + (ogy || 0) * 2.3);
 
-          // Water body with subtle turquoise transparency
-          const waterGrad = ctx.createLinearGradient(sx, sy, sx, sy + TILE_H);
-          waterGrad.addColorStop(0, 'rgba(56, 189, 248, 0.85)');
-          waterGrad.addColorStop(0.6, 'rgba(14, 165, 233, 0.9)');
-          waterGrad.addColorStop(1, 'rgba(2, 132, 199, 0.95)');
-          ctx.fillStyle = waterGrad;
-          ctx.beginPath();
-          ctx.moveTo(sx, sy + 2);
-          ctx.lineTo(sx + TILE_W / 2 - 2, sy + TILE_H / 2);
-          ctx.lineTo(sx, sy + TILE_H - 2);
-          ctx.lineTo(sx - TILE_W / 2 + 2, sy + TILE_H / 2);
-          ctx.closePath();
-          ctx.fill();
+          // Vector offsets in 2:1 isometric space (width ~11px matching paths, trench ~16px)
+          const ew_water_p = { x: -5.5, y: 2.75 };
+          const ew_water_n = { x: 5.5, y: -2.75 };
+          const ew_bank_p  = { x: -8.2, y: 4.1 };
+          const ew_bank_n  = { x: 8.2, y: -4.1 };
+          const ew_core_p  = { x: -2.6, y: 1.3 };
+          const ew_core_n  = { x: 2.6, y: -1.3 };
+          const ew_dir     = { x: 0.894, y: 0.447 };
 
-          // Flowing animated water caustics / gentle river ripples
-          const wavePhase = (Date.now() * 0.0022);
-          ctx.strokeStyle = 'rgba(255, 255, 255, 0.65)';
-          ctx.lineWidth = 1.6;
-          ctx.lineCap = 'round';
+          const sn_water_p = { x: 5.5, y: 2.75 };
+          const sn_water_n = { x: -5.5, y: -2.75 };
+          const sn_bank_p  = { x: 8.2, y: 4.1 };
+          const sn_bank_n  = { x: -8.2, y: -4.1 };
+          const sn_core_p  = { x: 2.6, y: 1.3 };
+          const sn_core_n  = { x: -2.6, y: -1.3 };
+          const sn_dir     = { x: -0.894, y: 0.447 };
 
-          // Ripple 1
-          const w1 = Math.sin(wavePhase) * 3;
-          ctx.beginPath();
-          ctx.moveTo(cx - 18, cy - 4 + w1);
-          ctx.bezierCurveTo(cx - 8, cy - 8 + w1, cx + 4, cy - 2 + w1, cx + 16, cy - 5 + w1);
-          ctx.stroke();
-
-          // Ripple 2
-          const w2 = Math.cos(wavePhase * 1.2) * 2.5;
-          ctx.strokeStyle = 'rgba(224, 242, 254, 0.55)';
-          ctx.beginPath();
-          ctx.moveTo(cx - 12, cy + 4 + w2);
-          ctx.bezierCurveTo(cx - 2, cy + 1 + w2, cx + 8, cy + 6 + w2, cx + 18, cy + 3 + w2);
-          ctx.stroke();
-
-          // Smooth colored river pebbles along shore
-          const pebbles = [
-            { x: cx - 20, y: cy + 3, rx: 4, ry: 2.5, col: '#cbd5e1' },
-            { x: cx - 14, y: cy + 8, rx: 3, ry: 2, col: '#94a3b8' },
-            { x: cx + 18, y: cy - 4, rx: 3.5, ry: 2.2, col: '#e2e8f0' },
-            { x: cx + 12, y: cy - 8, rx: 4.2, ry: 2.6, col: '#64748b' }
-          ];
-          pebbles.forEach(p => {
-            ctx.fillStyle = 'rgba(0,0,0,0.25)';
+          // Helper to draw a clean, continuous straight water ribbon (NO internal circles)
+          const drawStraightRiver = (x1, y1, x2, y2, bp, bn, wp, wn, cp, cn, dir, isStartCap, isEndCap) => {
+            // 1. Recessed earthy trench / riverbed underlay
+            ctx.fillStyle = '#1e381b';
             ctx.beginPath();
-            ctx.ellipse(p.x, p.y + 1, p.rx, p.ry, 0, 0, Math.PI * 2);
+            ctx.moveTo(x1 + bp.x, y1 + bp.y);
+            ctx.lineTo(x2 + bp.x, y2 + bp.y);
+            if (isEndCap) {
+              ctx.quadraticCurveTo(x2 + dir.x * 4, y2 + dir.y * 4, x2 + bn.x, y2 + bn.y);
+            } else {
+              ctx.lineTo(x2 + bn.x, y2 + bn.y);
+            }
+            ctx.lineTo(x1 + bn.x, y1 + bn.y);
+            if (isStartCap) {
+              ctx.quadraticCurveTo(x1 - dir.x * 4, y1 - dir.y * 4, x1 + bp.x, y1 + bp.y);
+            } else {
+              ctx.lineTo(x1 + bp.x, y1 + bp.y);
+            }
+            ctx.closePath();
             ctx.fill();
-            ctx.fillStyle = p.col;
+
+            // 2. Moist shoreline silt
+            ctx.fillStyle = '#164e63';
             ctx.beginPath();
-            ctx.ellipse(p.x, p.y, p.rx, p.ry, 0, 0, Math.PI * 2);
+            ctx.moveTo(x1 + bp.x * 0.85, y1 + bp.y * 0.85);
+            ctx.lineTo(x2 + bp.x * 0.85, y2 + bp.y * 0.85);
+            if (isEndCap) {
+              ctx.quadraticCurveTo(x2 + dir.x * 3.2, y2 + dir.y * 3.2, x2 + bn.x * 0.85, y2 + bn.y * 0.85);
+            } else {
+              ctx.lineTo(x2 + bn.x * 0.85, y2 + bn.y * 0.85);
+            }
+            ctx.lineTo(x1 + bn.x * 0.85, y1 + bn.y * 0.85);
+            if (isStartCap) {
+              ctx.quadraticCurveTo(x1 - dir.x * 3.2, y1 - dir.y * 3.2, x1 + bp.x * 0.85, y1 + bp.y * 0.85);
+            } else {
+              ctx.lineTo(x1 + bp.x * 0.85, y1 + bp.y * 0.85);
+            }
+            ctx.closePath();
             ctx.fill();
-            // Tiny highlight on pebble
-            ctx.fillStyle = 'rgba(255,255,255,0.6)';
+
+            // 3. Clear turquoise-blue river water body
+            const grad = ctx.createLinearGradient(x1 + wp.x, y1 + wp.y, x1 + wn.x, y1 + wn.y);
+            grad.addColorStop(0, 'rgba(56, 189, 248, 0.95)');
+            grad.addColorStop(0.5, '#0284c7');
+            grad.addColorStop(1, 'rgba(14, 165, 233, 0.92)');
+            ctx.fillStyle = grad;
             ctx.beginPath();
-            ctx.arc(p.x - 1, p.y - 0.8, 1, 0, Math.PI * 2);
+            ctx.moveTo(x1 + wp.x, y1 + wp.y);
+            ctx.lineTo(x2 + wp.x, y2 + wp.y);
+            if (isEndCap) {
+              ctx.quadraticCurveTo(x2 + dir.x * 2.5, y2 + dir.y * 2.5, x2 + wn.x, y2 + wn.y);
+            } else {
+              ctx.lineTo(x2 + wn.x, y2 + wn.y);
+            }
+            ctx.lineTo(x1 + wn.x, y1 + wn.y);
+            if (isStartCap) {
+              ctx.quadraticCurveTo(x1 - dir.x * 2.5, y1 - dir.y * 2.5, x1 + wp.x, y1 + wp.y);
+            } else {
+              ctx.lineTo(x1 + wp.x, y1 + wp.y);
+            }
+            ctx.closePath();
             ctx.fill();
-          });
+
+            // 4. Deeper azure current core
+            ctx.fillStyle = 'rgba(3, 105, 161, 0.65)';
+            ctx.beginPath();
+            ctx.moveTo(x1 + cp.x, y1 + cp.y);
+            ctx.lineTo(x2 + cp.x, y2 + cp.y);
+            ctx.lineTo(x2 + cn.x, y2 + cn.y);
+            ctx.lineTo(x1 + cn.x, y1 + cn.y);
+            ctx.closePath();
+            ctx.fill();
+
+            // 5. Longitudinal current wave line (smooth water flow, NO circle ripples)
+            const mx = (x1 + x2) / 2;
+            const my = (y1 + y2) / 2;
+            const wOff = Math.sin(flowPhase) * 1.3;
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.68)';
+            ctx.lineWidth = 1.0;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.quadraticCurveTo(mx + bp.x * 0.2 * wOff, my + bp.y * 0.2 * wOff, x2, y2);
+            ctx.stroke();
+
+            const wOff2 = Math.cos(flowPhase * 1.3) * 1.1;
+            ctx.strokeStyle = 'rgba(224, 242, 254, 0.38)';
+            ctx.lineWidth = 0.75;
+            ctx.beginPath();
+            ctx.moveTo(x1 + wp.x * 0.4, y1 + wp.y * 0.4);
+            ctx.quadraticCurveTo(mx + wp.x * 0.4 + wOff2, my + wp.y * 0.4 + wOff2 * 0.5, x2 + wp.x * 0.4, y2 + wp.y * 0.4);
+            ctx.stroke();
+          };
+
+          if (isConnected) {
+            const isStraightEW = (hasEast || hasWest) && !hasSouth && !hasNorth;
+            const isStraightSN = (hasSouth || hasNorth) && !hasEast && !hasWest;
+
+            if (isStraightEW) {
+              // Continuous unbroken East-West river stream spanning the tile
+              const x1 = hasWest ? (cx - 17) : (cx - 14);
+              const y1 = hasWest ? (cy - 8.5) : (cy - 7);
+              const x2 = hasEast ? (cx + 17) : (cx + 14);
+              const y2 = hasEast ? (cy + 8.5) : (cy + 7);
+              drawStraightRiver(x1, y1, x2, y2, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_core_p, ew_core_n, ew_dir, !hasWest, !hasEast);
+            } else if (isStraightSN) {
+              // Continuous unbroken South-North river stream spanning the tile
+              const x1 = hasNorth ? (cx + 17) : (cx + 14);
+              const y1 = hasNorth ? (cy - 8.5) : (cy - 7);
+              const x2 = hasSouth ? (cx - 17) : (cx - 14);
+              const y2 = hasSouth ? (cy + 8.5) : (cy + 7);
+              drawStraightRiver(x1, y1, x2, y2, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_core_p, sn_core_n, sn_dir, !hasNorth, !hasSouth);
+            } else {
+              // Multi-branch junction / bend: draw branches to each edge and merge center without circles
+              if (hasEast) drawStraightRiver(cx, cy, cx + 17, cy + 8.5, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_core_p, ew_core_n, ew_dir, false, false);
+              if (hasWest) drawStraightRiver(cx - 17, cy - 8.5, cx, cy, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_core_p, ew_core_n, ew_dir, false, false);
+              if (hasSouth) drawStraightRiver(cx, cy, cx - 17, cy + 8.5, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_core_p, sn_core_n, sn_dir, false, false);
+              if (hasNorth) drawStraightRiver(cx + 17, cy - 8.5, cx, cy, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_core_p, sn_core_n, sn_dir, false, false);
+
+              // Seamless flat junction fill (pure water color, NO outlines, NO concentric rings)
+              ctx.fillStyle = '#1e381b';
+              ctx.beginPath();
+              ctx.ellipse(cx, cy, 7.5, 3.75, 0, 0, Math.PI * 2);
+              ctx.fill();
+
+              ctx.fillStyle = '#0284c7';
+              ctx.beginPath();
+              ctx.ellipse(cx, cy, 5.2, 2.6, 0, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          } else {
+            // Standalone pond / spring pool (natural compact oval when standing alone)
+            ctx.fillStyle = 'rgba(15, 30, 15, 0.35)';
+            ctx.beginPath();
+            ctx.ellipse(cx, cy + 2, 13, 6.5, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#1e381b';
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, 11, 5.5, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            const springGrad = ctx.createRadialGradient(cx, cy, 1, cx, cy, 8.5);
+            springGrad.addColorStop(0, '#38bdf8');
+            springGrad.addColorStop(0.55, '#0284c7');
+            springGrad.addColorStop(1, '#0369a1');
+            ctx.fillStyle = springGrad;
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, 8.5, 4.25, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Subtle shimmering water ring for standalone pond
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.55)';
+            ctx.lineWidth = 0.9;
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, 4.5 + Math.sin(flowPhase) * 1.0, 2.2 + Math.sin(flowPhase) * 0.5, 0, 0, Math.PI * 2);
+            ctx.stroke();
+          }
           ctx.restore();
           break;
         }
 
         case 'wooden_bridge': {
           ctx.save();
-          // 1. Water flowing underneath
+          // 1. Sleek water stream flowing naturally underneath the bridge
+          const ogx = objData.gx;
+          const ogy = objData.gy;
+          const flowPhase = (Date.now() * 0.0028) + ((ogx || 0) * 1.7 + (ogy || 0) * 2.3);
+
+          ctx.fillStyle = '#1e381b';
           ctx.beginPath();
-          ctx.moveTo(sx, sy);
-          ctx.lineTo(sx + TILE_W / 2, sy + TILE_H / 2);
-          ctx.lineTo(sx, sy + TILE_H);
-          ctx.lineTo(sx - TILE_W / 2, sy + TILE_H / 2);
-          ctx.closePath();
-          ctx.fillStyle = '#0284c7';
+          ctx.ellipse(cx, cy + 3, 24, 9, 0, 0, Math.PI * 2);
           ctx.fill();
+
+          const bridgeWaterGrad = ctx.createLinearGradient(cx - 20, cy, cx + 20, cy);
+          bridgeWaterGrad.addColorStop(0, 'rgba(56, 189, 248, 0.85)');
+          bridgeWaterGrad.addColorStop(0.5, '#0284c7');
+          bridgeWaterGrad.addColorStop(1, 'rgba(14, 165, 233, 0.85)');
+          ctx.fillStyle = bridgeWaterGrad;
+          ctx.beginPath();
+          ctx.ellipse(cx, cy + 2, 19, 6.5, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Flowing water ripple under bridge
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.65)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(cx - 14, cy + 2 + Math.sin(flowPhase) * 1.2);
+          ctx.lineTo(cx + 14, cy + 2 + Math.cos(flowPhase) * 1.2);
+          ctx.stroke();
 
           // 2. Soft cast shadow of bridge onto the water
           ctx.fillStyle = 'rgba(15, 23, 42, 0.4)';
@@ -1925,138 +2154,120 @@ export default function App() {
         }
 
         case 'cobblestone_road': {
+          // Authentic Natural River Cobblestones (חלוקי נחל עגולים וטבעיים — רוחב מותאם, אלגנטי ופסטורלי)
           ctx.save();
           const ogx = objData.gx;
           const ogy = objData.gy;
-          const objs = placedObjectsRef.current || [];
           const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
-          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
-          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
-          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
-          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
+          const { hasEast, hasWest, hasSouth, hasNorth, isConnected } = getAdjacentItem(ogx, ogy, isPathType);
 
-          // Base connector ribbons for continuous road underlay
-          const drawRoadConnector = (p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y) => {
-            ctx.fillStyle = '#26221f';
-            ctx.beginPath();
-            ctx.moveTo(p1x, p1y);
-            ctx.lineTo(p2x, p2y);
-            ctx.lineTo(p3x, p3y);
-            ctx.lineTo(p4x, p4y);
-            ctx.closePath();
-            ctx.fill();
-            ctx.fillStyle = '#44403c';
-            ctx.beginPath();
-            ctx.moveTo(p1x * 0.9 + cx * 0.1, p1y * 0.9 + cy * 0.1);
-            ctx.lineTo(p2x * 0.9 + cx * 0.1, p2y * 0.9 + cy * 0.1);
-            ctx.lineTo(p3x * 0.9 + cx * 0.1, p3y * 0.9 + cy * 0.1);
-            ctx.lineTo(p4x * 0.9 + cx * 0.1, p4y * 0.9 + cy * 0.1);
-            ctx.closePath();
-            ctx.fill();
-          };
+          // Perpendicular offsets in 2:1 isometric space (width ~14px total, matching character width)
+          const ew_p = { x: -6.5, y: 3.25 };
+          const ew_n = { x: 6.5, y: -3.25 };
+          const sn_p = { x: 6.5, y: 3.25 };
+          const sn_n = { x: -6.5, y: -3.25 };
 
-          if (hasEast) drawRoadConnector(cx - 6, cy + 3, cx + 6, cy - 3, cx + 23, cy + 5.5, cx + 11, cy + 11.5);
-          if (hasWest) drawRoadConnector(cx + 6, cy - 3, cx - 6, cy + 3, cx - 11, cy - 11.5, cx - 23, cy - 5.5);
-          if (hasSouth) drawRoadConnector(cx - 6, cy - 3, cx + 6, cy + 3, cx - 11, cy + 11.5, cx - 23, cy + 5.5);
-          if (hasNorth) drawRoadConnector(cx + 6, cy + 3, cx - 6, cy - 3, cx + 23, cy - 5.5, cx + 11, cy - 11.5);
+          const ew_bed_p = { x: -8.0, y: 4.0 };
+          const ew_bed_n = { x: 8.0, y: -4.0 };
+          const sn_bed_p = { x: 8.0, y: 4.0 };
+          const sn_bed_n = { x: -8.0, y: -4.0 };
 
-          // Pass 1: Foundation base mortar bed (slightly recessed diamond with feathered edges)
-          ctx.fillStyle = '#26221f';
-          ctx.beginPath();
-          ctx.moveTo(cx, cy - 16.5);
-          ctx.lineTo(cx + 33.5, cy);
-          ctx.lineTo(cx, cy + 16.5);
-          ctx.lineTo(cx - 33.5, cy);
-          ctx.closePath();
-          ctx.fill();
-
-          // Pass 2: Base gravel underlay
-          ctx.fillStyle = '#44403c';
-          ctx.beginPath();
-          ctx.moveTo(cx, cy - 14.5);
-          ctx.lineTo(cx + 30.5, cy);
-          ctx.lineTo(cx, cy + 14.5);
-          ctx.lineTo(cx - 30.5, cy);
-          ctx.closePath();
-          ctx.fill();
-
-          // Pass 3: Interlocking hand-hewn river cobblestones
-          const cobbles = [
-            { cx: 0, cy: 0, rx: 7, ry: 4, col: '#78716c', light: '#a8a29e' },
-            { cx: -12, cy: -3, rx: 5.5, ry: 3.3, col: '#64748b', light: '#94a3b8' },
-            { cx: 12, cy: 3, rx: 6, ry: 3.5, col: '#6b7280', light: '#9ca3af' },
-            { cx: 0, cy: -8.5, rx: 6.5, ry: 3.4, col: '#57534e', light: '#854d0e' },
-            { cx: -13, cy: -7.5, rx: 4.8, ry: 2.8, col: '#71717a', light: '#a1a1aa' },
-            { cx: 13, cy: -5, rx: 5.2, ry: 3, col: '#78716c', light: '#a8a29e' },
-            { cx: 0, cy: 8.5, rx: 6.5, ry: 3.4, col: '#64748b', light: '#94a3b8' },
-            { cx: -13, cy: 5, rx: 5.4, ry: 3.1, col: '#57534e', light: '#78716c' },
-            { cx: 13, cy: 8, rx: 5, ry: 2.9, col: '#71717a', light: '#a1a1aa' },
-            { cx: -23, cy: 0, rx: 4.2, ry: 2.6, col: '#64748b', light: '#94a3b8' },
-            { cx: 23, cy: 0, rx: 4.2, ry: 2.6, col: '#78716c', light: '#a8a29e' },
-            { cx: 0, cy: -13, rx: 3.8, ry: 2.2, col: '#6b7280', light: '#9ca3af' },
-            { cx: 0, cy: 13, rx: 3.8, ry: 2.2, col: '#57534e', light: '#78716c' },
+          // Pebble color palette: authentic natural river stones
+          const stoneColors = [
+            { base: '#64748b', light: '#cbd5e1' }, // slate
+            { base: '#475569', light: '#94a3b8' }, // deep river stone
+            { base: '#94a3b8', light: '#f1f5f9' }, // limestone
+            { base: '#cbd5e1', light: '#ffffff' }, // pale pebble
+            { base: '#78716c', light: '#d6d3d1' }  // warm river pebble
           ];
 
-          // Dynamic connector stones extending across edges to neighbors
-          if (hasEast) {
-            cobbles.push({ cx: 17, cy: 8.5, rx: 5.5, ry: 3.2, col: '#78716c', light: '#a8a29e' });
-            cobbles.push({ cx: 25, cy: 12, rx: 4.2, ry: 2.5, col: '#64748b', light: '#94a3b8' });
-          }
-          if (hasWest) {
-            cobbles.push({ cx: -17, cy: -8.5, rx: 5.5, ry: 3.2, col: '#6b7280', light: '#9ca3af' });
-            cobbles.push({ cx: -25, cy: -12, rx: 4.2, ry: 2.5, col: '#57534e', light: '#78716c' });
-          }
-          if (hasSouth) {
-            cobbles.push({ cx: -17, cy: 8.5, rx: 5.5, ry: 3.2, col: '#71717a', light: '#a1a1aa' });
-            cobbles.push({ cx: -25, cy: 12, rx: 4.2, ry: 2.5, col: '#64748b', light: '#94a3b8' });
-          }
-          if (hasNorth) {
-            cobbles.push({ cx: 17, cy: -8.5, rx: 5.5, ry: 3.2, col: '#57534e', light: '#854d0e' });
-            cobbles.push({ cx: 25, cy: -12, rx: 4.2, ry: 2.5, col: '#78716c', light: '#a8a29e' });
-          }
-
-          cobbles.forEach(c => {
-            const sx = cx + c.cx;
-            const sy = cy + c.cy;
-            // Contact shadow
-            ctx.fillStyle = 'rgba(15, 23, 42, 0.45)';
+          const drawSinglePebble = (px, py, rx, ry, seed) => {
+            const col = stoneColors[Math.abs(seed) % stoneColors.length];
+            // 1. Soft ground contact shadow
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.3)';
             ctx.beginPath();
-            ctx.ellipse(sx, sy + 1.2, c.rx, c.ry, 0, 0, Math.PI * 2);
+            ctx.ellipse(px, py + 1.2, rx, ry * 0.75, 0, 0, Math.PI * 2);
             ctx.fill();
 
-            // Cobblestone core
-            ctx.fillStyle = c.col;
+            // 2. Smooth natural rounded stone body
+            ctx.fillStyle = col.base;
             ctx.beginPath();
-            ctx.ellipse(sx, sy, c.rx, c.ry, 0, 0, Math.PI * 2);
+            ctx.ellipse(px, py, rx, ry, 0, 0, Math.PI * 2);
             ctx.fill();
 
-            // Sunlit beveled rim
-            ctx.strokeStyle = c.light;
-            ctx.lineWidth = 0.9;
+            // 3. Sunlit bevel highlight along top-left arc
+            ctx.strokeStyle = col.light;
+            ctx.lineWidth = 0.85;
             ctx.beginPath();
-            ctx.ellipse(sx - 0.4, sy - 0.5, c.rx * 0.78, c.ry * 0.75, 0, Math.PI * 0.75, Math.PI * 1.85);
+            ctx.ellipse(px - 0.4, py - 0.4, rx * 0.78, ry * 0.7, 0, Math.PI * 0.8, Math.PI * 1.9);
             ctx.stroke();
 
-            // Bottom shadow facet
-            ctx.strokeStyle = 'rgba(28, 25, 23, 0.55)';
-            ctx.lineWidth = 0.8;
-            ctx.beginPath();
-            ctx.ellipse(sx + 0.3, sy + 0.4, c.rx * 0.82, c.ry * 0.8, 0, 0, Math.PI * 0.85);
-            ctx.stroke();
-          });
+            // 4. Subtle moss speck
+            if ((seed % 3) === 0) {
+              ctx.fillStyle = 'rgba(101, 163, 13, 0.55)';
+              ctx.fillRect(px - 1, py + ry * 0.3, 1.2, 1.2);
+            }
+          };
 
-          // Crevice moss & wildflower
-          ctx.fillStyle = '#84cc16';
-          ctx.fillRect(cx - 5, cy + 2.5, 1.4, 2);
-          ctx.fillRect(cx + 6, cy - 4.5, 1.8, 1.5);
-          ctx.fillRect(cx - 18, cy + 1, 1.5, 1.8);
-          // Tiny white chamomile daisy
-          ctx.fillStyle = '#ffffff';
-          ctx.beginPath();
-          ctx.arc(cx - 4.5, cy + 1.8, 0.9, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.fillStyle = '#f59e0b';
-          ctx.fillRect(cx - 4.8, cy + 1.5, 0.6, 0.6);
+          // Helper to draw natural stepping river pebbles along a corridor segment
+          const drawPebbleCorridor = (x1, y1, x2, y2, bed_p, bed_n, p, n, axisSeed) => {
+            // 1. Recessed earthy underlay bedding (blends naturally into grass)
+            ctx.fillStyle = '#1e293b';
+            ctx.beginPath();
+            ctx.moveTo(x1 + bed_p.x, y1 + bed_p.y);
+            ctx.lineTo(x2 + bed_p.x, y2 + bed_p.y);
+            ctx.lineTo(x2 + bed_n.x, y2 + bed_n.y);
+            ctx.lineTo(x1 + bed_n.x, y1 + bed_n.y);
+            ctx.closePath();
+            ctx.fill();
+
+            // 2. Staggered organic river pebbles (חלוקי נחל) flowing along the corridor
+            const steps = 3;
+            for (let i = 0; i < steps; i++) {
+              const t = (i + 0.5) / steps;
+              const mx = x1 + (x2 - x1) * t;
+              const my = y1 + (y2 - y1) * t;
+              const sVal = (axisSeed + i * 7 + (ogx || 0) * 11 + (ogy || 0) * 13);
+
+              // 2 staggered pebbles across the width of the path
+              const shift1 = (sVal % 2 === 0) ? 0.46 : 0.52;
+              const shift2 = (sVal % 2 === 0) ? -0.46 : -0.52;
+
+              drawSinglePebble(
+                mx + p.x * shift1,
+                my + p.y * shift1,
+                3.8 + (sVal % 3) * 0.4,
+                2.2 + (sVal % 2) * 0.3,
+                sVal
+              );
+
+              drawSinglePebble(
+                mx + n.x * (-shift2),
+                my + n.y * (-shift2),
+                3.6 + ((sVal + 1) % 3) * 0.4,
+                2.1 + ((sVal + 1) % 2) * 0.3,
+                sVal + 3
+              );
+            }
+          };
+
+          if (isConnected) {
+            // Draw connecting pebble corridors
+            if (hasEast) drawPebbleCorridor(cx, cy, cx + 17, cy + 8.5, ew_bed_p, ew_bed_n, ew_p, ew_n, 1);
+            if (hasWest) drawPebbleCorridor(cx - 17, cy - 8.5, cx, cy, ew_bed_p, ew_bed_n, ew_p, ew_n, 2);
+            if (hasSouth) drawPebbleCorridor(cx, cy, cx - 17, cy + 8.5, sn_bed_p, sn_bed_n, sn_p, sn_n, 3);
+            if (hasNorth) drawPebbleCorridor(cx + 17, cy - 8.5, cx, cy, sn_bed_p, sn_bed_n, sn_p, sn_n, 4);
+
+            // Center junction: organic cluster of rounded pebbles merging smoothly (NO center circle/diamond!)
+            drawSinglePebble(cx - 2, cy - 1, 4.4, 2.4, (ogx || 0) + (ogy || 0));
+            drawSinglePebble(cx + 3, cy + 1, 4.0, 2.2, (ogx || 0) * 3 + 1);
+            drawSinglePebble(cx - 1, cy + 2.5, 3.6, 2.0, (ogy || 0) * 5 + 2);
+          } else {
+            // Standalone paver (natural stepping cluster of 3 pebbles)
+            drawSinglePebble(cx - 4, cy - 1, 4.5, 2.5, 10);
+            drawSinglePebble(cx + 3, cy - 2, 4.2, 2.3, 20);
+            drawSinglePebble(cx, cy + 2, 4.8, 2.6, 30);
+          }
 
           ctx.restore();
           break;
@@ -2118,13 +2329,8 @@ export default function App() {
           ctx.save();
           const ogx = objData.gx;
           const ogy = objData.gy;
-          const objs = placedObjectsRef.current || [];
           const isPathType = (t) => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail', 'bridge', 'wooden_bridge'].includes(t);
-          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && isPathType(o.type));
-          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && isPathType(o.type));
-          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && isPathType(o.type));
-          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && isPathType(o.type));
-          const isConnected = hasEast || hasWest || hasSouth || hasNorth;
+          const { hasEast, hasWest, hasSouth, hasNorth, isConnected } = getAdjacentItem(ogx, ogy, isPathType);
 
           // Natural earthy soil palette (warm, handcrafted, authentic road texture)
           const soilBase = '#42220c';      // Deep damp ground underlay
@@ -2280,14 +2486,8 @@ export default function App() {
           ctx.save();
           const ogx = objData.gx;
           const ogy = objData.gy;
-          const objs = placedObjectsRef.current || [];
-
-          // Check adjacent stone walls for seamless modular fortress connections
-          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
-          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && (o.type === 'stone_wall' || o.type.includes('wall')));
-          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
-          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'stone_wall' || o.type.includes('wall')));
-          const isConnected = hasEast || hasWest || hasSouth || hasNorth;
+          const isWallType = (t) => t === 'stone_wall' || t?.includes('wall');
+          const { hasEast, hasWest, hasSouth, hasNorth, isConnected } = getAdjacentItem(ogx, ogy, isWallType);
 
           // Wall dimensions
           const wallH = 11; // low fortress rampart height
@@ -4880,14 +5080,8 @@ export default function App() {
           ctx.save();
           const ogx = objData.gx;
           const ogy = objData.gy;
-          const objs = placedObjectsRef.current || [];
-
-          // Check adjacent wooden fences for seamless modular ranch / palisade connections
-          const hasEast = ogx !== undefined && objs.some(o => o.gx === ogx + 1 && o.gy === ogy && (o.type === 'wooden_fence' || o.type === 'fence'));
-          const hasWest = ogx !== undefined && objs.some(o => o.gx === ogx - 1 && o.gy === ogy && (o.type === 'wooden_fence' || o.type === 'fence'));
-          const hasSouth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy + 1 && (o.type === 'wooden_fence' || o.type === 'fence'));
-          const hasNorth = ogy !== undefined && objs.some(o => o.gx === ogx && o.gy === ogy - 1 && (o.type === 'wooden_fence' || o.type === 'fence'));
-          const isConnected = hasEast || hasWest || hasSouth || hasNorth;
+          const isFenceType = (t) => t === 'wooden_fence' || t?.includes('fence');
+          const { hasEast, hasWest, hasSouth, hasNorth, isConnected } = getAdjacentItem(ogx, ogy, isFenceType);
 
           // Scaled down contact ground shadow
           ctx.fillStyle = 'rgba(15, 30, 10, 0.3)';
@@ -5318,10 +5512,11 @@ export default function App() {
       ctx.restore();
     };
 
-    // Soft glowing firefly / grass cricket sparkle
+    // Soft glowing firefly sparkle (strictly dusk and night, zero daytime clutter)
     const drawFirefly = (f, isNight, isSunset) => {
+      if (!isNight && !isSunset) return;
       const alpha = 0.35 + 0.65 * (Math.sin(f.phase) * 0.5 + 0.5);
-      const intensity = isNight ? alpha : (isSunset ? alpha * 0.8 : alpha * 0.45);
+      const intensity = isNight ? alpha * 0.75 : alpha * 0.4;
       if (intensity < 0.05) return;
 
       ctx.save();
@@ -6336,12 +6531,13 @@ export default function App() {
           }
         }
 
-        // Controlled Player Movement Engine (WASD & Click-to-Move, 60 FPS silky smooth)
+        // Controlled Player Movement Engine (WASD & Active Navigation, 60 FPS silky smooth)
         if (playerControllerRef.current) {
           playerControllerRef.current.update(dt, {
             checkClearing,
             placedObjects: currentPlaced,
-            gridSize: GRID_SIZE
+            gridSize: GRID_SIZE,
+            progressionStage: villageProgressionRef.current?.stage || 1
           });
         }
 
@@ -6429,7 +6625,35 @@ export default function App() {
 
       const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
       const animTime = Date.now() * 0.003;
-      const BADGE_PROXIMITY_TILES = 2.5; // villager distance (in tiles) that reveals a name badge
+
+      // STRICT SINGLE-TARGET FOCUS: At most ONE badge can ever be displayed at any time!
+      // Completely eliminates overlapping popups and visual clutter.
+      let activeBadgeKey = null;
+      if (currentInspected?.gx !== undefined) {
+        activeBadgeKey = `o:${currentInspected.gx},${currentInspected.gy}`;
+      } else if (currentHovered?.gx !== undefined) {
+        const hoveredObj = placedObjects.find(o => o.gx === currentHovered.gx && o.gy === currentHovered.gy);
+        if (hoveredObj && hoveredObj.customName) {
+          activeBadgeKey = `o:${hoveredObj.gx},${hoveredObj.gy}`;
+        }
+      }
+
+      if (!activeBadgeKey && v && showMindMapTagsRef.current) {
+        let minD = 1.35; // Close personal proximity only
+        renderEntities.forEach(it => {
+          if (it.kind === 'object' && it.obj?.customName) {
+            const isMajor = ['wooden_cabin', 'library', 'bakery', 'gym', 'greenhouse'].includes(it.obj.type);
+            const d = Math.hypot(v.currGx - it.obj.gx, v.currGy - it.obj.gy);
+            const effectiveD = isMajor ? d : d + 0.6; // Priority to major buildings
+            if (effectiveD < minD) {
+              minD = effectiveD;
+              activeBadgeKey = `o:${it.obj.gx},${it.obj.gy}`;
+            }
+          }
+        });
+      }
+
+      let badgeDrawn = false;
 
       renderEntities.forEach(item => {
         if (item.kind === 'border_scenery') {
@@ -6454,13 +6678,14 @@ export default function App() {
 
           drawItem(item.obj.type, sx, sy, isInspected || isSelectedMove, item.obj);
 
-          // Associative Mind Map Badge floating above object (visual only):
-          // hidden by default; revealed on mouse hover, villager proximity, or while inspected.
+          // Associative Mind Map Badge floating above object:
+          // STRICT EXCLUSIVITY: At most ONE badge is drawn on screen at any time!
           if (showMindMapTagsRef.current && item.obj.customName) {
-            const isHoveredObj = !!currentHovered && currentHovered.gx === item.obj.gx && currentHovered.gy === item.obj.gy;
-            const nearVillager = !!v && Math.hypot(v.currGx - item.obj.gx, v.currGy - item.obj.gy) < BADGE_PROXIMITY_TILES;
-            const reveal = stepBadgeReveal(`o:${item.obj.gx},${item.obj.gy}`, isHoveredObj || nearVillager || isInspected);
-            if (reveal > 0.01) {
+            const itemKey = `o:${item.obj.gx},${item.obj.gy}`;
+            const isTarget = activeBadgeKey === itemKey;
+            const reveal = stepBadgeReveal(itemKey, isTarget);
+            if (reveal > 0.01 && (isTarget || !badgeDrawn)) {
+              badgeDrawn = true;
               const nameText = item.obj.customEmoji ? `${item.obj.customEmoji} ${item.obj.customName}` : item.obj.customName;
               drawParchmentBadge(ctx, {
                 x: sx,
@@ -6468,9 +6693,38 @@ export default function App() {
                 text: nameText,
                 cared: item.obj.lastCaredDate === todayStr,
                 reveal,
-                key: `o:${item.obj.gx},${item.obj.gy}`
+                key: itemKey
               });
             }
+          }
+
+          // Gentle Spaced Repetition Floating Care Bubble (💧) strictly within close proximity
+          const isPlant = PLANT_CARE_TYPES.has(item.obj.type);
+          const isPlantNear = !!v && Math.hypot(v.currGx - item.obj.gx, v.currGy - item.obj.gy) < 1.1;
+          const isPlantHovered = !!currentHovered && currentHovered.gx === item.obj.gx && currentHovered.gy === item.obj.gy;
+          if (isPlant && item.obj.lastCaredDate !== todayStr && (isPlantNear || isPlantHovered || isInspected)) {
+            const isTree = item.obj.type.includes('tree');
+            const bubbleY = isTree ? sy - 44 : sy - 18;
+            drawFloatingCareBubble(ctx, sx, bubbleY, '💧', true);
+          }
+
+          // Floating locked badge for buildings in future stages along the mental walk
+          const stations = VILLAGE_STATIONS[currentVillageIdRef.current] || VILLAGE_STATIONS.military;
+          const stationMatch = stations.find(s => s.type === item.obj.type || s.name === item.obj.customName);
+          if (stationMatch && stationMatch.stage > (villageProgressionRef.current?.stage || 1)) {
+            ctx.save();
+            ctx.font = '14px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+            ctx.beginPath();
+            ctx.arc(sx, sy - 34, 13, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.fillText('🔒', sx, sy - 34);
+            ctx.restore();
           }
         } else if (item.kind === 'animal') {
           const { x: sx, y: sy } = toScreen(item.animal.currGx, item.animal.currGy, origin.x, origin.y);
@@ -6478,10 +6732,10 @@ export default function App() {
             x: origin.x + (sx - origin.x) * zoom,
             y: origin.y + (sy + TILE_H / 2 - origin.y) * zoom
           };
-          // Name tag is hidden by default; reveal on hover over the animal's tile or villager proximity
+          // Name tag is hidden by default; reveal on hover over the animal's tile or when inspected
           const animalHovered = !!currentHovered &&
             currentHovered.gx === Math.round(item.animal.currGx) && currentHovered.gy === Math.round(item.animal.currGy);
-          const animalNear = !!v && Math.hypot(v.currGx - item.animal.currGx, v.currGy - item.animal.currGy) < BADGE_PROXIMITY_TILES;
+          const animalNear = !!v && Math.hypot(v.currGx - item.animal.currGx, v.currGy - item.animal.currGy) < 1.1;
           const animalReveal = stepBadgeReveal(`a:${item.animal.id || item.animal.name}`, animalHovered || animalNear);
           drawAnimal(ctx, item.animal, { x: sx, y: sy + TILE_H / 2 }, {
             isSunset,
@@ -6491,10 +6745,39 @@ export default function App() {
             isHovered: currentHovered?.gx === item.animal.gx && currentHovered?.gy === item.animal.gy,
             todayStr
           });
+
+          // Floating Care Bubble (🌾) strictly when close or hovered, NEVER across the whole meadow
+          const isHungry = item.animal.lastCaredDate !== todayStr && !item.animal.completed;
+          const isAnimalNear = !!v && Math.hypot(v.currGx - item.animal.currGx, v.currGy - item.animal.currGy) < 1.1;
+          const isAnimalHovered = !!currentHovered && currentHovered.gx === Math.round(item.animal.currGx) && currentHovered.gy === Math.round(item.animal.currGy);
+          if (isHungry && (isAnimalNear || isAnimalHovered)) {
+            const foodEmoji = ANIMAL_FOOD_MAP[item.animal.type] || '🌾';
+            const bubbleY = sy + (TILE_H / 2) - 24 + (item.animal.hopY || 0);
+            drawFloatingCareBubble(ctx, sx, bubbleY, foodEmoji, false);
+          }
         } else if (item.kind === 'villager') {
           drawVillager(item.villager, origin, isSunset, isNight);
         }
       });
+
+      // Stage 1 Inner Gate Lock Indicator (Military Village controlled checkpoint)
+      if (currentVillageIdRef.current === 'military' && (villageProgressionRef.current?.stage || 1) === 1) {
+        const { x: gxPos, y: gyPos } = toScreen(12, 11, origin.x, origin.y);
+        ctx.save();
+        const pulse = (Math.sin(performance.now() * 0.005) + 1) * 0.5;
+        ctx.fillStyle = `rgba(245, 158, 11, ${0.15 + pulse * 0.18})`;
+        ctx.strokeStyle = `rgba(245, 158, 11, ${0.65 + pulse * 0.35})`;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.ellipse(gxPos, gyPos + TILE_H / 2, 22, 11, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = 'bold 10px system-ui, sans-serif';
+        ctx.fillStyle = '#fef08a';
+        ctx.textAlign = 'center';
+        ctx.fillText('🔒 שער נעול • שלב 2', gxPos, gyPos - 8);
+        ctx.restore();
+      }
 
       // Dragging Object Levitation Animation & Target Highlight
       if (activeDrag && currentHovered && checkClearing(currentHovered.gx, currentHovered.gy)) {
@@ -6544,6 +6827,33 @@ export default function App() {
           ctx.globalAlpha = 0.72;
           drawItem(previewItem.renderType, sx, sy, false, { level: 1 });
           ctx.restore();
+        }
+      }
+
+      // Rising care pop reactions (💧 water droplet, 🌾 grain, etc. floating away gently)
+      const carePops = carePopsRef.current;
+      if (carePops && carePops.length > 0) {
+        for (let i = carePops.length - 1; i >= 0; i--) {
+          const pop = carePops[i];
+          pop.y += pop.vy;
+          pop.life += 1;
+          const progress = pop.life / pop.maxLife;
+          const alpha = Math.max(0, 1 - progress);
+          const scale = 1 + Math.sin(progress * Math.PI) * 0.45;
+
+          ctx.save();
+          ctx.globalAlpha = alpha;
+          ctx.font = `${Math.round(20 * scale)}px "Segoe UI Emoji", "Apple Color Emoji", sans-serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.shadowColor = 'rgba(255, 255, 255, 0.85)';
+          ctx.shadowBlur = 8;
+          ctx.fillText(pop.emoji, pop.x, pop.y);
+          ctx.restore();
+
+          if (pop.life >= pop.maxLife) {
+            carePops.splice(i, 1);
+          }
         }
       }
 
@@ -6787,6 +7097,8 @@ export default function App() {
         placedObjects,
         expansionTier,
         cultivatedPlots,
+        progressionStage: villageProgression.stage,
+        interiorUnlocked: villageProgression.interiorUnlocked,
         lastVisited: new Date().toISOString()
       }
     };
@@ -6802,6 +7114,8 @@ export default function App() {
     const newObjs = targetVillage.placedObjects || targetVillage.starterObjects || [];
     const newTier = targetVillage.expansionTier || 1;
     const newCultivated = targetVillage.cultivatedPlots || [];
+    const newStage = targetVillage.progressionStage || 1;
+    const newInteriorUnlocked = Boolean(targetVillage.interiorUnlocked);
 
     setPlacedObjects(newObjs);
     placedObjectsRef.current = newObjs;
@@ -6809,6 +7123,14 @@ export default function App() {
     expansionTierRef.current = newTier;
     setCultivatedPlots(newCultivated);
     cultivatedPlotsRef.current = newCultivated;
+    setVillageProgression({
+      stage: newStage,
+      interiorUnlocked: newInteriorUnlocked
+    });
+    villageProgressionRef.current = {
+      stage: newStage,
+      interiorUnlocked: newInteriorUnlocked
+    };
 
     // 4. Update grid cache and border scenery
     tileGridCacheRef.current = computeTileGrid(newTier, newCultivated, newObjs);
@@ -7203,7 +7525,7 @@ export default function App() {
     }
   };
 
-  // Active Recall & Daily Care Routine (חזרתיות ותרגול הזיכרון)
+  // Active Recall & Daily Care Routine (חזרתיות ותרגול הזיכרון - שקט, ויזואלי וללא עומס)
   const handleNourishRecall = (obj) => {
     sounds.playNourish();
     const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
@@ -7216,7 +7538,9 @@ export default function App() {
             return {
               ...a,
               lastCaredDate: todayStr,
-              completed: true
+              completed: true,
+              hopVy: -4.8,
+              state: 'eating'
             };
           }
           return a;
@@ -7244,16 +7568,15 @@ export default function App() {
       completed: true
     } : null);
 
-    const v = animEntitiesRef.current.villager;
+    const v = animEntitiesRef.current?.villager;
     if (v) {
-      v.hopVy = -5.0;
-      const targetName = obj.customName || 'העוגן';
-      v.bubble = { 
-        text: `מעולה! הזיכרון של "${targetName}" חודד וטופח היום בהצלחה! 🌟`, 
-        timer: 300 
-      };
-      v.emote = '✨';
-      v.emoteTimer = 130;
+      v.hopVy = -4.5;
+      const rawType = (obj.type || '').replace('animal_', '');
+      v.emote = (obj.animalId || obj.isAnimal) ? (ANIMAL_FOOD_MAP[rawType] || '🌾') : '💧';
+      v.emoteTimer = 110;
+      if (obj.customName) {
+        v.bubble = { text: `✨ ${obj.customEmoji || ''} ${obj.customName}`, timer: 140 };
+      }
     }
   };
 
@@ -7425,6 +7748,21 @@ export default function App() {
     let placedOnDownGx = null;
     let placedOnDownGy = null;
 
+    // Check path placement quota (10 path tiles per building)
+    const PATH_SURFACES = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
+    const BUILDING_TYPES = ['wooden_cabin', 'animal_coop', 'gym', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio', 'windmill', 'community_center'];
+
+    if (isModularBuild && PATH_SURFACES.includes(currentBuildItem.renderType)) {
+      const currentBuildings = (placedObjectsRef.current || []).filter(o => BUILDING_TYPES.includes(o.type) || o.type?.includes('cabin') || o.type?.includes('coop')).length;
+      const currentPaths = (placedObjectsRef.current || []).filter(o => PATH_SURFACES.includes(o.type)).length;
+      const maxPathAllowance = currentBuildings * 10;
+      if (currentBuildings === 0 || currentPaths >= maxPathAllowance) {
+        sounds.playTap();
+        alert(`מכסת השבילים מוצתה! כל מבנה בכפר מעניק עד 10 מקטעי שביל (${currentPaths}/${maxPathAllowance}). בנה מבנה נוסף להרחבת המכסה.`);
+        return;
+      }
+    }
+
     // Instant placement on initial click/touch for paths & walls (makes drag-to-pave feel ultra-responsive)
     if (isModularBuild && !itemOnTile && inClearing && !isDemolishModeRef.current) {
       placedOnDownGx = gx;
@@ -7559,6 +7897,18 @@ export default function App() {
         if (downInfo.lastPlacedGx !== gx || downInfo.lastPlacedGy !== gy) {
           const isOccupied = placedObjectsRef.current.some(o => o.gx === gx && o.gy === gy);
           if (!isOccupied) {
+            // Check path placement quota (10 path tiles per building)
+            const PATH_SURFACES = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
+            const BUILDING_TYPES = ['wooden_cabin', 'animal_coop', 'gym', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio', 'windmill', 'community_center'];
+            if (PATH_SURFACES.includes(currentBuildItem.renderType)) {
+              const currentBuildings = (placedObjectsRef.current || []).filter(o => BUILDING_TYPES.includes(o.type) || o.type?.includes('cabin') || o.type?.includes('coop')).length;
+              const currentPaths = (placedObjectsRef.current || []).filter(o => PATH_SURFACES.includes(o.type)).length;
+              const maxPathAllowance = currentBuildings * 10;
+              if (currentBuildings === 0 || currentPaths >= maxPathAllowance) {
+                return;
+              }
+            }
+
             downInfo.hasMoved = true;
             downInfo.lastPlacedGx = gx;
             downInfo.lastPlacedGy = gy;
@@ -7748,6 +8098,20 @@ export default function App() {
             sounds.playTap();
             alert('משבצת זו כבר תפוסה על ידי פריט אחר.');
           } else {
+            // Check path placement quota (10 path tiles per building)
+            const PATH_SURFACES = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'];
+            const BUILDING_TYPES = ['wooden_cabin', 'animal_coop', 'gym', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio', 'windmill', 'community_center'];
+            if (PATH_SURFACES.includes(selectedBuildItem.renderType)) {
+              const currentBuildings = (placedObjectsRef.current || []).filter(o => BUILDING_TYPES.includes(o.type) || o.type?.includes('cabin') || o.type?.includes('coop')).length;
+              const currentPaths = (placedObjectsRef.current || []).filter(o => PATH_SURFACES.includes(o.type)).length;
+              const maxPathAllowance = currentBuildings * 10;
+              if (currentBuildings === 0 || currentPaths >= maxPathAllowance) {
+                sounds.playTap();
+                alert(`מכסת השבילים מוצתה! כל מבנה בכפר מעניק עד 10 מקטעי שביל (${currentPaths}/${maxPathAllowance}). בנה מבנה נוסף כדי להרחיב את המכסה.`);
+                return;
+              }
+            }
+
             sounds.playPlant();
             const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
             const memoryText = `רגע של ${selectedBuildItem.tag}`;
@@ -7815,35 +8179,86 @@ export default function App() {
           (a.gx === gx && a.gy === gy)
         );
 
+        const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+
         if (clickedAnimal) {
-          const onReachAnimal = () => {
-            sounds.playTap();
-            setInspectedObject({
-              gx: clickedAnimal.gx,
-              gy: clickedAnimal.gy,
-              type: `animal_${clickedAnimal.type}`,
-              customName: clickedAnimal.name,
-              customEmoji: clickedAnimal.customEmoji || '',
-              memory: clickedAnimal.customNote || 'חיה כפרית שלווה',
-              date: new Date().toLocaleDateString('he-IL'),
-              isAnimal: true,
-              animalId: clickedAnimal.id,
-              lastCaredDate: clickedAnimal.lastCaredDate || null
+          const isHungry = clickedAnimal.lastCaredDate !== todayStr && !clickedAnimal.completed;
+          if (isHungry) {
+            // Direct 1-click frictionless feeding:
+            const foodEmoji = ANIMAL_FOOD_MAP[clickedAnimal.type] || '🌾';
+            const originX = (canvasRef.current ? canvasRef.current.width / 2 : 0) + (cameraPanRef.current?.x || 0);
+            const originY = (canvasRef.current ? canvasRef.current.height * GRID_ORIGIN_Y_RATIO : 0) + (cameraPanRef.current?.y || 0);
+            const aGx = clickedAnimal.currGx ?? clickedAnimal.gx;
+            const aGy = clickedAnimal.currGy ?? clickedAnimal.gy;
+            const animalScreen = {
+              x: originX + (aGx - aGy) * (TILE_W / 2),
+              y: originY + (aGx + aGy) * (TILE_H / 2)
+            };
+
+            carePopsRef.current.push({
+              x: animalScreen.x,
+              y: animalScreen.y + TILE_H / 2 - 20,
+              emoji: foodEmoji,
+              vy: -1.4,
+              life: 0,
+              maxLife: 45
             });
-            setMovingObject(null);
-          };
-          playerControllerRef.current?.moveTo(gx, gy, { checkClearing, placedObjects, gridSize: GRID_SIZE }, onReachAnimal);
+
+            handleNourishRecall({
+              ...clickedAnimal,
+              animalId: clickedAnimal.id,
+              isAnimal: true
+            });
+            pointerDownInfoRef.current = null;
+            return;
+          }
+
+          sounds.playTap();
+          setInspectedObject({
+            gx: clickedAnimal.gx,
+            gy: clickedAnimal.gy,
+            type: `animal_${clickedAnimal.type}`,
+            customName: clickedAnimal.name,
+            customEmoji: clickedAnimal.customEmoji || '',
+            memory: clickedAnimal.customNote || 'חיה כפרית שלווה',
+            date: todayStr,
+            isAnimal: true,
+            animalId: clickedAnimal.id,
+            lastCaredDate: clickedAnimal.lastCaredDate || null
+          });
+          setMovingObject(null);
         } else if (existing) {
-          const onReachBuilding = () => {
-            sounds.playTap();
-            setInspectedObject(existing);
-            setMovingObject(null);
-          };
-          playerControllerRef.current?.moveTo(gx, gy, { checkClearing, placedObjects, gridSize: GRID_SIZE }, onReachBuilding);
+          const isPlant = PLANT_CARE_TYPES.has(existing.type);
+          const isThirsty = isPlant && existing.lastCaredDate !== todayStr;
+          if (isThirsty) {
+            // Direct 1-click frictionless watering:
+            const originX = (canvasRef.current ? canvasRef.current.width / 2 : 0) + (cameraPanRef.current?.x || 0);
+            const originY = (canvasRef.current ? canvasRef.current.height * GRID_ORIGIN_Y_RATIO : 0) + (cameraPanRef.current?.y || 0);
+            const objScreen = {
+              x: originX + (existing.gx - existing.gy) * (TILE_W / 2),
+              y: originY + (existing.gx + existing.gy) * (TILE_H / 2)
+            };
+
+            carePopsRef.current.push({
+              x: objScreen.x,
+              y: objScreen.y - 12,
+              emoji: '💧',
+              vy: -1.4,
+              life: 0,
+              maxLife: 45
+            });
+
+            handleNourishRecall(existing);
+            pointerDownInfoRef.current = null;
+            return;
+          }
+
+          sounds.playTap();
+          setInspectedObject(existing);
+          setMovingObject(null);
         } else {
           setMovingObject(null);
           setInspectedObject(null);
-          playerControllerRef.current?.moveTo(gx, gy, { checkClearing, placedObjects, gridSize: GRID_SIZE });
         }
       }
     }
@@ -8134,6 +8549,41 @@ export default function App() {
         <Compass size={14} className="realm-hud-compass" />
       </button>
 
+      {/* Top Cognitive Village Mastery & Micro-Quiz HUD Pill */}
+      <div className="village-progression-hud-pill glass-card" aria-label="התקדמות קוגניטיבית">
+        <div className="progression-pill-content">
+          <span className="progression-pill-icon">🧠</span>
+          <div className="progression-pill-texts">
+            <span className="progression-pill-title">
+              שליטה בכפר: שלב {villageProgression.stage} מתוך 5
+            </span>
+            <span className="progression-pill-sub">
+              {villageProgression.stage === 1
+                ? (villageProgression.interiorUnlocked ? 'המשכן המרכזי פתוח • שער פתוח!' : 'עוגן ראשי במשכן • חלל הפנים נעול')
+                : `שלב ${villageProgression.stage}: ${((VILLAGE_STATIONS[currentVillageId] || VILLAGE_STATIONS.military)[villageProgression.stage - 1]?.name) || 'אזור מורחב'}`}
+            </span>
+          </div>
+        </div>
+        <button
+          type="button"
+          className="progression-quick-quiz-btn"
+          onClick={() => {
+            sounds.playTap();
+            const currentStation = (VILLAGE_STATIONS[currentVillageId] || VILLAGE_STATIONS.military)[villageProgression.stage - 1]
+              || (VILLAGE_STATIONS[currentVillageId] || VILLAGE_STATIONS.military)[0];
+            const targetBuilding = placedObjects.find(o => o.type === currentStation.type) || { customName: currentStation.name, type: currentStation.type };
+            setShowQuickQuizModal({
+              station: currentStation,
+              targetBuilding
+            });
+          }}
+          title="בצע מבחן שליפה מהיר (5 שניות) לפתיחת חלל הפנים והרחבת הכפר"
+        >
+          <Zap size={14} className="text-amber" />
+          <span>מבחן שליפה בזק ⚡</span>
+        </button>
+      </div>
+
       {/* Interactive Contiguous Island Border Gateways (1-click travel on village borders) */}
       <div className="island-border-gateways-container">
         {currentVillageId === 'military' && (
@@ -8367,25 +8817,31 @@ export default function App() {
       )}
 
       {/* Floating Building Mode Banner */}
-      {selectedBuildItem && !showPathsPalette && (
-        <div className="wholesome-plant-banner">
-          <span>
-            🛠️ בונה כעת: <strong>{selectedBuildItem.name}</strong>{' '}
-            {['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'].includes(selectedBuildItem.renderType)
-              ? '🛤️ (סלילת שבילים — לחץ או גרור עם העכבר/אצבע לסלילת דרך רציפה וחלקה)'
-              : (selectedBuildItem.isModular || ['stone_wall', 'wooden_fence', 'fence'].includes(selectedBuildItem.renderType)
-                ? '🧱 (בנייה חופשית בערמות — לחץ על משבצות או גרור עם העכבר להנחה רציפה)'
-                : (continuousBuild ? '🌿 (בנייה רציפה פעילה 🔁)' : ''))}
-            {' '}— לחץ על משבצת בדשא להנחה
-          </span>
-          <button
-            className="cancel-plant-pill"
-            onClick={() => setSelectedBuildItem(null)}
-          >
-            סיום ✕
-          </button>
-        </div>
-      )}
+      {selectedBuildItem && !showPathsPalette && (() => {
+        const isPath = ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'].includes(selectedBuildItem.renderType);
+        const currentBuildings = (placedObjects || []).filter(o => ['wooden_cabin', 'animal_coop', 'gym', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio', 'windmill', 'community_center'].includes(o.type) || o.type?.includes('cabin') || o.type?.includes('coop')).length;
+        const currentPaths = (placedObjects || []).filter(o => ['cobblestone_road', 'stone_path', 'wood_path', 'brick_path', 'dirt_trail'].includes(o.type)).length;
+        const maxPaths = currentBuildings * 10;
+        return (
+          <div className="wholesome-plant-banner">
+            <span>
+              🛠️ בונה כעת: <strong>{selectedBuildItem.name}</strong>{' '}
+              {isPath
+                ? `🛤️ (סלילת שבילים — מכסה: ${currentPaths}/${maxPaths} | 10 אריחים לכל מבנה)`
+                : (selectedBuildItem.isModular || ['stone_wall', 'wooden_fence', 'fence'].includes(selectedBuildItem.renderType)
+                  ? '🧱 (בנייה חופשית בערמות — לחץ על משבצות או גרור עם העכבר להנחה רציפה)'
+                  : (continuousBuild ? '🌿 (בנייה רציפה פעילה 🔁)' : ''))}
+              {' '}— לחץ על משבצת בדשא להנחה
+            </span>
+            <button
+              className="cancel-plant-pill"
+              onClick={() => setSelectedBuildItem(null)}
+            >
+              סיום ✕
+            </button>
+          </div>
+        );
+      })()}
 
       {/* Floating Moving Object Banner (Placing item) */}
       {movingObject && (
@@ -8482,6 +8938,13 @@ export default function App() {
             <span style={{ fontSize: '1.05rem', lineHeight: 1 }}>📲</span>
           </button>
         </div>
+
+        {/* Mobile-Only Brawl Stars Style Virtual Joystick (completely hidden on Desktop) */}
+        <BrawlStarsJoystick
+          onMove={(vx, vy) => {
+            playerControllerRef.current?.setJoystickVector(vx, vy);
+          }}
+        />
       </main>
 
       {/* Clash of Clans Mobile Landscape Orientation Guide Overlay */}
@@ -8865,17 +9328,91 @@ export default function App() {
       />
 
       {/* Inspected Object Memory Card Modal */}
-      {inspectedObject && !movingObject && !draggingObject && (
-        <InspectedMemoryCard
-          object={inspectedObject}
-          onClose={() => setInspectedObject(null)}
-          onUpdateMemory={handleUpdateObjectMemory}
-          onRemove={handleRemoveObject}
-          onVisit={handleDirectVillagerToItem}
-          onNourishRecall={handleNourishRecall}
-          onEnterInterior={(obj, catItem) => {
-            sounds.playTap();
-            setInteriorBuilding({ building: obj, catalogItem: catItem });
+      {inspectedObject && !movingObject && !draggingObject && (() => {
+        const stations = VILLAGE_STATIONS[currentVillageId] || VILLAGE_STATIONS.military;
+        const stationMatch = stations.find(s => s.type === inspectedObject.type || s.name === inspectedObject.customName);
+        const requiredStage = stationMatch ? stationMatch.stage : 1;
+        const isBuildingLocked = Boolean(stationMatch && requiredStage > villageProgression.stage);
+        const isInteriorUnlocked = Boolean(
+          villageProgression.interiorUnlocked && (
+            (inspectedObject.type === 'wooden_cabin' && villageProgression.stage >= 1) ||
+            (requiredStage < villageProgression.stage)
+          )
+        );
+
+        return (
+          <InspectedMemoryCard
+            object={inspectedObject}
+            onClose={() => setInspectedObject(null)}
+            onUpdateMemory={handleUpdateObjectMemory}
+            onRemove={handleRemoveObject}
+            onVisit={handleDirectVillagerToItem}
+            onNourishRecall={handleNourishRecall}
+            isInteriorUnlocked={isInteriorUnlocked}
+            isBuildingLocked={isBuildingLocked}
+            requiredStage={requiredStage}
+            onTriggerQuickQuiz={(obj) => {
+              setShowQuickQuizModal({
+                station: stationMatch || stations[0],
+                targetBuilding: obj
+              });
+            }}
+            onEnterInterior={(obj, catItem) => {
+              sounds.playTap();
+              setInteriorBuilding({ building: obj, catalogItem: catItem });
+              setInspectedObject(null);
+            }}
+          />
+        );
+      })()}
+
+      {/* Short Blitz Active Recall Test Modal (5-10 seconds) */}
+      {showQuickQuizModal && (
+        <VillageQuickQuizModal
+          isOpen={!!showQuickQuizModal}
+          onClose={() => setShowQuickQuizModal(null)}
+          station={showQuickQuizModal.station}
+          targetBuildingName={showQuickQuizModal.targetBuilding?.customName || showQuickQuizModal.station?.name || 'הבית הראשי'}
+          targetBuildingType={showQuickQuizModal.targetBuilding?.type || showQuickQuizModal.station?.type || 'wooden_cabin'}
+          currentMemory={showQuickQuizModal.targetBuilding?.memory || showQuickQuizModal.targetBuilding?.dedicatedTo || showQuickQuizModal.station?.defaultMemory}
+          stationEmoji={showQuickQuizModal.station?.emoji || '🪖'}
+          stageNumber={villageProgression.stage}
+          totalStages={5}
+          onPassedQuiz={(stg) => {
+            const nextStage = Math.max(villageProgression.stage, stg + 1);
+            setVillageProgression({
+              stage: nextStage,
+              interiorUnlocked: true
+            });
+            villageProgressionRef.current = {
+              stage: nextStage,
+              interiorUnlocked: true
+            };
+            setVillagesRegistry(prev => {
+              if (!prev || !prev[currentVillageId]) return prev;
+              const updated = {
+                ...prev,
+                [currentVillageId]: {
+                  ...prev[currentVillageId],
+                  progressionStage: nextStage,
+                  interiorUnlocked: true
+                }
+              };
+              saveVillagesRegistry(updated);
+              return updated;
+            });
+            setSeeds(s => s + 20);
+            const v = animEntitiesRef.current?.villager;
+            if (v) {
+              v.emote = '🎉';
+              v.emoteTimer = 160;
+              v.bubble = { text: 'הזיכרון נחקק בהצלחה! פנים הבית והכפר המורחב פתוחים כעת! ✨', timer: 280 };
+            }
+          }}
+          onEnterInteriorDirectly={() => {
+            const cabin = placedObjects.find(o => o.type === 'wooden_cabin') || { gx: 12, gy: 9, type: 'wooden_cabin', customName: 'מפקדת הפיקוד' };
+            const catItem = BUILD_CATALOG.find(c => c.renderType === 'wooden_cabin') || { id: 'wooden_cabin', name: 'מפקדת הפיקוד', emoji: '🪖' };
+            setInteriorBuilding({ building: cabin, catalogItem: catItem });
             setInspectedObject(null);
           }}
         />

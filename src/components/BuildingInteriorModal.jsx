@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NewCottageEngine from './NewCottageEngine';
 import { 
   X, 
   Plus, 
@@ -185,6 +186,77 @@ export function BuildingInteriorModal({
   const [interiorStyle, setInteriorStyle] = useState('complex');
 
   if (!isCoop) {
+    // Dedicated Experimental Interior Sandbox for the Blacksmith Cottage (does NOT touch any other building)
+    const isNewCottage = building.type === 'new_cottage_engine' || 
+                         building.type === 'blacksmith_cottage' || 
+                         catalogItem?.id === 'blacksmith_cottage' ||
+                         catalogItem?.renderType === 'new_cottage_engine';
+    if (isNewCottage) {
+      return (
+        <div className="interior-modal-overlay" onClick={onClose} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 99999 }}>
+          <div 
+            className="interior-room-stage"
+            onClick={(e) => e.stopPropagation()} 
+            style={{ 
+              position: 'relative', 
+              width: '95vw', 
+              maxWidth: '1100px', 
+              height: '85vh', 
+              maxHeight: '750px',
+              backgroundColor: '#0a0806',
+              borderRadius: '16px',
+              border: '2px solid rgba(217, 119, 6, 0.4)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            {/* Header bar with Close Button */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px 20px',
+              background: 'linear-gradient(to bottom, #1e130b, #0f0a06)',
+              borderBottom: '1px solid rgba(217, 119, 6, 0.25)',
+              zIndex: 10
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.4rem' }}>🏚️</span>
+                <span style={{ color: '#fef3c7', fontWeight: 'bold', fontSize: '1.1rem' }}>
+                  {building.customName || catalogItem?.name || 'בית נגרות הפורץ — מעבדת ארכיטקטורה'}
+                </span>
+                <span style={{ fontSize: '0.75rem', background: '#451a03', color: '#fde047', padding: '2px 8px', borderRadius: '4px' }}>
+                  סביבת ניסוי מבודדת (NewCottageEngine)
+                </span>
+              </div>
+              <button
+                onClick={onClose}
+                style={{
+                  background: 'rgba(239, 68, 68, 0.2)',
+                  border: '1px solid rgba(239, 68, 68, 0.4)',
+                  color: '#fca5a5',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontSize: '0.9rem',
+                  fontWeight: 'bold'
+                }}
+              >
+                ✕ סגור חלל
+              </button>
+            </div>
+
+            {/* Stage Canvas */}
+            <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <NewCottageEngine />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     if (interiorStyle === 'complex') {
       return (
         <StardewInstitutionComplex

@@ -19,7 +19,7 @@ export const COMPLEX_ZONES = [
     rects: [
       [456, 430, 734, 556],       // Main foyer floor
       [734, 520, 764, 556],       // Inset cloak alcove nook
-      [585, 420, 605, 430],       // Mouth to N-S tunnel C3
+      [575, 420, 615, 430],       // Mouth to N-S tunnel C3 (widened)
       [550, 556, 640, 584]        // Exit doorway stoop to village
     ],
     // Chamfer cut: [x1, y1, x2, y2, type]
@@ -35,9 +35,9 @@ export const COMPLEX_ZONES = [
     rects: [
       [446, 118, 744, 326],       // Main grand hall floor
       [622, 86, 688, 118],        // Asymmetric off-center hearth alcove
-      [585, 326, 605, 420],       // N-S corridor tunnel C3
-      [364, 236, 446, 260],       // W-E corridor tunnel C1
-      [744, 236, 826, 260]        // East connector tunnel C2
+      [575, 326, 615, 420],       // N-S corridor tunnel C3 (56px wide)
+      [364, 226, 446, 270],       // W-E corridor tunnel C1 (56px opening)
+      [744, 226, 826, 270]        // East connector tunnel C2 (56px opening)
     ],
     cuts: [
       // Grand Hall SW chamfer from (446, 302) to (468, 326)
@@ -52,7 +52,7 @@ export const COMPLEX_ZONES = [
       [96, 160, 364, 296],        // NW wing main room (A1)
       [96, 100, 174, 160],        // Raised bed nook
       [96, 296, 204, 396],        // Front-jutting nook (A2)
-      [364, 236, 380, 260]        // Corridor mouth C1
+      [364, 226, 380, 270]        // Corridor mouth C1
     ],
     cuts: [
       // Front-jut A2 SW chamfer from (96, 368) to (124, 396)
@@ -65,9 +65,9 @@ export const COMPLEX_ZONES = [
     id: 'right_sanctuary',
     rects: [
       [826, 180, 1164, 326],      // East wing north room
-      [980, 326, 1016, 430],      // Partition doorway tunnel
+      [980, 326, 1016, 430],      // Partition doorway tunnel (56px wide)
       [896, 430, 1164, 556],      // East wing south room
-      [810, 236, 826, 260]        // East connector C2 mouth
+      [810, 226, 826, 270]        // East connector C2 mouth
     ],
     cuts: [
       // East south room SE chamfer from (1134, 556) to (1164, 524)
@@ -80,8 +80,35 @@ const inRect = (x, y, r) => x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3];
 
 /**
  * Validates if (x, y) is safely inside the walkable floor boundaries.
+ * Enforces locked door barriers between room corridors.
  */
-export function isWalkable(x, y) {
+export function isWalkable(x, y, doorsState = {}) {
+  // Check locked physical doors blocking corridor transitions:
+  // 1. Door C3 (Foyer to Grand Hall)
+  if (doorsState.door_c3 !== false) {
+    if (x >= 560 && x <= 630 && y >= 340 && y <= 415) {
+      return false; // Physical closed wooden door
+    }
+  }
+  // 2. Door C1 (Grand Hall to Left Wing)
+  if (doorsState.door_c1 !== false) {
+    if (x >= 370 && x <= 430 && y >= 210 && y <= 286) {
+      return false;
+    }
+  }
+  // 3. Door C2 (Grand Hall to East Wing North)
+  if (doorsState.door_c2 !== false) {
+    if (x >= 755 && x <= 815 && y >= 210 && y <= 286) {
+      return false;
+    }
+  }
+  // 4. Door East South (East North to East South partition doorway)
+  if (doorsState.door_east_south !== false) {
+    if (x >= 960 && x <= 1035 && y >= 340 && y <= 415) {
+      return false;
+    }
+  }
+
   for (const zone of COMPLEX_ZONES) {
     const insideRect = zone.rects.some(r => inRect(x, y, r));
     if (insideRect) {
@@ -108,8 +135,8 @@ export function pointZone(x, y) {
 /**
  * Snaps (x, y) to the nearest safe walkable point.
  */
-export function snapToWalkable(x, y) {
-  if (isWalkable(x, y)) return { x, y };
+export function snapToWalkable(x, y, doorsState = {}) {
+  if (isWalkable(x, y, doorsState)) return { x, y };
 
   let best = null;
   let bestDist = Infinity;
@@ -118,7 +145,7 @@ export function snapToWalkable(x, y) {
     z.rects.forEach(r => {
       const cx = Math.max(r[0], Math.min(r[2], x));
       const cy = Math.max(r[1], Math.min(r[3], y));
-      if (isWalkable(cx, cy)) {
+      if (isWalkable(cx, cy, doorsState)) {
         const d = Math.hypot(cx - x, cy - y);
         if (d < bestDist) {
           bestDist = d;
@@ -133,33 +160,33 @@ export function snapToWalkable(x, y) {
 
 /**
  * Fluid wall sliding physics:
- * If diagonal movement hits a wall, slides along the wall surface.
+ * If diagonal movement hits a wall or locked door, slides along the surface.
  */
-export function resolveMove(prev, dx, dy) {
+export function resolveMove(prev, dx, dy, doorsState = {}) {
   const nx = prev.x + dx;
   const ny = prev.y + dy;
 
   // 1. Direct step
-  if (isWalkable(nx, ny)) {
+  if (isWalkable(nx, ny, doorsState)) {
     return { x: nx, y: ny };
   }
 
   // 2. Horizontal slide
-  if (dx !== 0 && isWalkable(nx, prev.y)) {
+  if (dx !== 0 && isWalkable(nx, prev.y, doorsState)) {
     return { x: nx, y: prev.y };
   }
 
   // 3. Vertical slide
-  if (dy !== 0 && isWalkable(prev.x, ny)) {
+  if (dy !== 0 && isWalkable(prev.x, ny, doorsState)) {
     return { x: prev.x, y: ny };
   }
 
   // 4. Micro sub-step for gentle corner rounding
   if (dx !== 0 && dy !== 0) {
-    if (isWalkable(prev.x + dx * 0.5, prev.y)) {
+    if (isWalkable(prev.x + dx * 0.5, prev.y, doorsState)) {
       return { x: prev.x + dx * 0.5, y: prev.y };
     }
-    if (isWalkable(prev.x, prev.y + dy * 0.5)) {
+    if (isWalkable(prev.x, prev.y + dy * 0.5, doorsState)) {
       return { x: prev.x, y: prev.y + dy * 0.5 };
     }
   }

@@ -11,8 +11,13 @@ import {
   RotateCcw,
   Key,
   GitBranch,
-  Layers
+  Layers,
+  Dices,
+  Lock,
+  Unlock,
+  Zap
 } from 'lucide-react';
+import confetti from 'canvas-confetti';
 import { sounds } from '../utils/sound';
 import { drawCompleteVillager } from '../utils/villagerRenderer';
 import { 
@@ -22,10 +27,14 @@ import {
 import { BizarreStackingEngine, generatePegKeyword } from './stardewArt/BizarreStackingEngine';
 import { BizarreStackingModal } from './stardewArt/BizarreStackingModal';
 import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/ComplexArchitecture';
+import { StardewDoorsLayer, INTERIOR_DOORS_CONFIG } from './stardewArt/StardewDoors';
+import { VillageQuickQuizModal } from './VillageQuickQuizModal';
 import { DepositModal } from './DepositModal';
+import { PhotoFrameModal } from './PhotoFrameModal';
 import { MemoryHierarchyTreeModal } from './MemoryHierarchyTreeModal';
 import { ActiveRecallLocker } from './ActiveRecallLocker';
 import { ActiveRecallSingle } from './ActiveRecallSingle';
+import { BizarreSortChallengeModal } from './BizarreSortChallengeModal';
 import { 
   getChamberForPosition, 
   HOUSE_CHAMBERS, 
@@ -40,6 +49,21 @@ import {
   buildRoute,
   computeCamera
 } from '../utils/complexNavigation';
+
+// Fixed furniture positions for memory locus discovery (Stardew Valley strategy)
+export const LOCKER_POSITIONS = {
+  entry_foyer: { x: 505, y: 490, name: 'חדר כניסה (מבואה נייטרלית)' },
+  left_store: { x: 195, y: 190, name: 'חדר דחוף (אגף שמאל)' },
+  main_hall: { x: 595, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
+  right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' }
+};
+
+export const WALL_PHOTO_POSITIONS = {
+  left_store: { x: 280, y: 88, name: 'חדר דחוף (אגף שמאל)' },
+  main_hall: { x: 605, y: 56, name: 'חדר בטיפול (האולם המרכזי)' },
+  entry_foyer: { x: 600, y: 350, name: 'חדר כניסה (מבואה נייטרלית)' },
+  right_sanctuary: { x: 1005, y: 105, name: 'חדר שגרה (היכל השלווה)' }
+};
 
 // Helper to detect if coordinates are resting on a thick woven Area Rug
 const isOnAreaRug = (x, y) => {
@@ -153,7 +177,6 @@ export function StardewInstitutionComplex({
   };
 
   // Player Positioning & Real-time Canvas Rendering
-  const [playerPos, setPlayerPos] = useState({ x: 595, y: 510 });
   const playerPosRef = useRef({ x: 595, y: 510 });
   const isWalkingRef = useRef(false);
   const facingLeftRef = useRef(false);
@@ -173,11 +196,32 @@ export function StardewInstitutionComplex({
 
   // Key Method State (שיטת המפתחות)
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
+  const [selectedWallPhotoRoom, setSelectedWallPhotoRoom] = useState(null);
   const [isHierarchyTreeOpen, setIsHierarchyTreeOpen] = useState(false);
   const [modalTargetRoom, setModalTargetRoom] = useState(null);
-  const [promptChamber, setPromptChamber] = useState(null);
   const [storedDeposits, setStoredDeposits] = useState(() => getStoredDeposits());
   const [inspectingLockerData, setInspectingLockerData] = useState(null);
+  const [isRoomChallengeOpen, setIsRoomChallengeOpen] = useState(false);
+
+  // Stardew Valley Proximity Discovery State:
+  // Contents of lockers and wall frames remain concealed until the player approaches!
+  const [nearObjectId, setNearObjectId] = useState(null);
+  const nearObjectIdRef = useRef(null);
+  const [hoveredObjectId, setHoveredObjectId] = useState(null);
+
+  const roomItemsForChallenge = useMemo(() => {
+    if (!inspectingLockerData?.deposits) return [];
+    const list = [];
+    inspectingLockerData.deposits.forEach(d => {
+      if (d.type === 'list' && Array.isArray(d.items)) {
+        d.items.forEach(it => list.push(it));
+      } else if (d.itemName) {
+        list.push({ id: d.id, name: d.itemName });
+      }
+    });
+    return list;
+  }, [inspectingLockerData]);
 
   useEffect(() => {
     const handleUpdate = () => setStoredDeposits(getStoredDeposits());
@@ -185,18 +229,77 @@ export function StardewInstitutionComplex({
     return () => window.removeEventListener('lifequest_deposits_updated', handleUpdate);
   }, []);
 
-  // Track current chamber based on player position in the multi-chamber burrow
-  const currentChamber = useMemo(() => {
-    return getChamberForPosition(playerPos.x, playerPos.y);
-  }, [playerPos.x, playerPos.y]);
-
-  const lastChamberRef = useRef(null);
-  useEffect(() => {
-    if (currentChamber && currentChamber.id !== lastChamberRef.current) {
-      lastChamberRef.current = currentChamber.id;
-      setPromptChamber(currentChamber);
+  // Controlled Cognitive Interior Progression:
+  // Starts with only Room 1 (entry_foyer) unlocked and 100% lit.
+  // All other rooms are dimmed by 65% behind physical closed 2.5D wooden doors.
+  // Mastering Room 1 unlocks door_c3, lifts the darkness veil, and illuminates the Grand Hall.
+  const interiorMasteryKey = `lifequest_interior_mastery_${building?.id || 'main'}`;
+  const [interiorMastery, setInteriorMastery] = useState(() => {
+    try {
+      const saved = localStorage.getItem(interiorMasteryKey);
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.error(e);
     }
-  }, [currentChamber]);
+    return {
+      unlockedRooms: ['entry_foyer'],
+      masteredRooms: [],
+      doors: {
+        door_c3: true,
+        door_c1: true,
+        door_c2: true,
+        door_east_south: true
+      }
+    };
+  });
+
+  const doorsRef = useRef(interiorMastery.doors);
+  useEffect(() => {
+    doorsRef.current = interiorMastery.doors;
+    try {
+      localStorage.setItem(interiorMasteryKey, JSON.stringify(interiorMastery));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [interiorMastery, interiorMasteryKey]);
+
+  // Active quiz state for unlocking doors via fast Active Recall Check
+  const [activeQuizDoor, setActiveQuizDoor] = useState(null);
+
+  const handleDoorClick = (door, isLocked) => {
+    if (!isLocked) {
+      showToast(`דלת ${door.toRoomName} פתוחה לרווחה ✨`);
+      return;
+    }
+    setActiveQuizDoor(door);
+  };
+
+  const handlePassDoorQuiz = (door) => {
+    sounds.playLevelUp?.();
+    try {
+      confetti({
+        particleCount: 100,
+        spread: 80,
+        origin: { y: 0.5 }
+      });
+    } catch (e) {}
+
+    setInteriorMastery(prev => {
+      const nextDoors = { ...prev.doors, [door.id]: false };
+      const nextUnlocked = Array.from(new Set([...prev.unlockedRooms, door.toRoom]));
+      const nextMastered = Array.from(new Set([...prev.masteredRooms, door.requiredRoom]));
+      return {
+        doors: nextDoors,
+        unlockedRooms: nextUnlocked,
+        masteredRooms: nextMastered
+      };
+    });
+
+    showToast(`שליטה ב${door.fromRoomName} אומתה! דלת ${door.toRoomName} נפתחה והחדר הואר במלואו 💡`);
+    setActiveQuizDoor(null);
+  };
+
+
 
   // Full-screen responsive fit scale
   const stageRef = useRef(null);
@@ -276,32 +379,10 @@ export function StardewInstitutionComplex({
     };
   }, [editingLocusKey, isAddingCustomAnchor, onClose]);
 
-  // Click-to-Move with precise coordinate mapping & Stardew-style glowing pulse ring
+  // Active navigation only: Click-to-move disabled by design (WASD / Arrow keys navigation)
   const handleFloorClick = (e) => {
-    if (editingLocusKey || isAddingCustomAnchor) return;
-    if (!worldRef.current) return;
-
-    const rect = worldRef.current.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
-
-    const clickX = (e.clientX - rect.left) / (rect.width / COMPLEX_WORLD_W);
-    const clickY = (e.clientY - rect.top) / (rect.height / COMPLEX_WORLD_H);
-
-    const target = snapToWalkable(clickX, clickY);
-    const curPos = playerPosRef.current;
-    const route = buildRoute(curPos, target);
-
-    if (route && route.length > 0) {
-      playerTargetRef.current = route[0];
-      routeRef.current = route.slice(1);
-      destinationMarkerRef.current = {
-        x: target.x,
-        y: target.y,
-        createdAt: performance.now(),
-        active: true
-      };
-      sounds.playTap?.();
-    }
+    // Active navigation only - clicks on floor do not move the character
+    return;
   };
 
   // Continuous 60fps Autonomous Physics & Canvas Rendering Engine
@@ -338,7 +419,7 @@ export function StardewInstitutionComplex({
           const vx = (kdx / len) * stepDist;
           const vy = (kdy / len) * stepDist;
 
-          const next = resolveMove(curPos, vx, vy);
+          const next = resolveMove(curPos, vx, vy, doorsRef.current);
 
           if (kdx < 0) facingLeftRef.current = true;
           else if (kdx > 0) facingLeftRef.current = false;
@@ -383,7 +464,7 @@ export function StardewInstitutionComplex({
           const vx = (dx / dist) * stepDist;
           const vy = (dy / dist) * stepDist;
 
-          const next = resolveMove(curPos, vx, vy);
+          const next = resolveMove(curPos, vx, vy, doorsRef.current);
 
           if (dx < 0) facingLeftRef.current = true;
           else if (dx > 0) facingLeftRef.current = false;
@@ -408,12 +489,32 @@ export function StardewInstitutionComplex({
         isWalkingRef.current = false;
       }
 
-      // Throttle React state updates to ~10Hz (every 100ms) for UI station proximity badges
-      throttleTimer += dt;
-      if (throttleTimer >= 0.09) {
-        throttleTimer = 0;
-        const p = playerPosRef.current;
-        setPlayerPos({ x: Math.round(p.x), y: Math.round(p.y) });
+      // 2.5 STARDEW PROXIMITY DISCOVERY:
+      // Furniture pieces conceal lists & photos until the player approaches nearby!
+      const px = playerPosRef.current.x;
+      const py = playerPosRef.current.y;
+      let closestNear = null;
+      let minD = 125;
+
+      for (const [roomId, pos] of Object.entries(LOCKER_POSITIONS)) {
+        const d = Math.hypot(px - (pos.x + 38), py - (pos.y + 45));
+        if (d < minD) {
+          minD = d;
+          closestNear = `locker_${roomId}`;
+        }
+      }
+
+      for (const [roomId, pos] of Object.entries(WALL_PHOTO_POSITIONS)) {
+        const d = Math.hypot(px - pos.x, py - (pos.y + 70));
+        if (d < minD) {
+          minD = d;
+          closestNear = `photo_${roomId}`;
+        }
+      }
+
+      if (closestNear !== nearObjectIdRef.current) {
+        nearObjectIdRef.current = closestNear;
+        setNearObjectId(closestNear);
       }
 
       // 3. CANVAS DRAWING (Guaranteed single draw per frame, zero ghosts)
@@ -505,12 +606,13 @@ export function StardewInstitutionComplex({
     exit_door: { x: 630, y: 615, name: 'יציאה לכפר', locusKey: null }
   };
 
-  const nearestStation = useMemo(() => {
+  const getNearestStation = () => {
     let nearest = null;
     let minDist = 75;
+    const p = playerPosRef.current;
 
     Object.entries(STATIONS).forEach(([key, loc]) => {
-      const dist = Math.hypot(playerPos.x - loc.x, playerPos.y - loc.y);
+      const dist = Math.hypot(p.x - loc.x, p.y - loc.y);
       if (dist < minDist) {
         minDist = dist;
         nearest = { key, ...loc, dist };
@@ -518,38 +620,45 @@ export function StardewInstitutionComplex({
     });
 
     return nearest;
-  }, [playerPos]);
+  };
 
   const checkProximityInteraction = () => {
-    // 1. Check if near any physical locker furniture with deposits
-    const lockerPositions = {
-      entry_foyer: { x: 520, y: 480, name: 'חדר כניסה (מבואה נייטרלית)' },
-      left_store: { x: 233, y: 235, name: 'חדר דחוף (אגף שמאל)' },
-      main_hall: { x: 630, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-      right_sanctuary: { x: 998, y: 305, name: 'חדר שגרה (היכל השלווה)' }
-    };
-
-    for (const [roomId, pos] of Object.entries(lockerPositions)) {
-      const roomDeposits = storedDeposits.filter(d => d.roomId === roomId);
-      if (roomDeposits.length > 0) {
-        const dist = Math.hypot(playerPos.x - pos.x, playerPos.y - pos.y);
-        if (dist < 140) {
-          sounds.playTap?.();
+    const near = nearObjectIdRef.current;
+    if (near) {
+      if (near.startsWith('locker_')) {
+        const roomId = near.replace('locker_', '');
+        const pos = LOCKER_POSITIONS[roomId];
+        const roomDeposits = storedDeposits.filter(d => d.roomId === roomId && d.type !== 'photo');
+        sounds.playTap?.();
+        if (roomDeposits.length > 0) {
           setInspectingLockerData({
             roomId,
-            roomName: pos.name,
+            roomName: pos?.name || 'ארונית רשימות',
             deposits: roomDeposits
           });
-          return;
+        } else {
+          setModalTargetRoom({ id: roomId, name: pos?.name || 'ארונית רשימות' });
+          setIsDepositModalOpen(true);
         }
+        return;
+      }
+
+      if (near.startsWith('photo_')) {
+        const roomId = near.replace('photo_', '');
+        const pos = WALL_PHOTO_POSITIONS[roomId];
+        sounds.playTap?.();
+        setSelectedWallPhotoRoom({ id: roomId, name: pos?.name || 'תמונה על הקיר' });
+        setIsPhotoModalOpen(true);
+        return;
       }
     }
 
-    if (!nearestStation) return;
-    if (nearestStation.key === 'exit_door') {
+    const nearest = getNearestStation();
+    if (!nearest) return;
+    if (nearest.key === 'exit_door') {
       onClose();
     } else {
-      openLocusEditor(nearestStation.locusKey);
+      openLocusEditor(nearest.locusKey);
     }
   };
 
@@ -728,8 +837,8 @@ export function StardewInstitutionComplex({
     sounds.playTap?.();
     const newA = {
       id: Date.now().toString(),
-      x: playerPos.x,
-      y: playerPos.y,
+      x: Math.round(playerPosRef.current.x),
+      y: Math.round(playerPosRef.current.y),
       icon: customFormIcon,
       title: customFormTitle.trim(),
       note: customFormNote.trim(),
@@ -767,7 +876,7 @@ export function StardewInstitutionComplex({
       setEditingLocusKey(null);
       setIsAddingCustomAnchor(false);
     }}>
-      {/* 1. Elevated Stardew Top HUD Bar */}
+      {/* 1. Minimal Stardew Top HUD Bar — Zero Gratuitous Stimuli */}
       <header className="stardew-top-hud" onClick={e => e.stopPropagation()}>
         <div className="stardew-hud-left" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <button 
@@ -781,147 +890,19 @@ export function StardewInstitutionComplex({
           
           <div className="stardew-room-indicator">
             <span className="room-cottage-icon">{isGym ? '🏋️' : '🏛️'}</span>
-            <div className="room-title-with-cipher">
-              <span className="room-indicator-title">
-                {isGym ? 'היכל הכושר והאימון (Gym)' : (building?.customName || catalogItem?.name || 'מחלקת לוגיסטיקה — כפר הצבא')}
-              </span>
-              <span className="room-cipher-badge">🗝️ צופן מחלקה: "אבק" • צופן כפר: "יער"</span>
-            </div>
-            <div className="urgency-room-pills">
-              <span className="urg-pill red-pill">🔴 דחוף</span>
-              <span className="urg-pill yellow-pill">🟡 בטיפול</span>
-              <span className="urg-pill green-pill">🟢 שגרה</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Center: Key Method & Memory Tree Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          <button 
-            className="stardew-mode-switch-btn deposit-key-action-btn"
-            style={{
-              background: 'linear-gradient(135deg, #10b981, #059669)',
-              border: 'none',
-              color: '#ffffff',
-              fontWeight: 'bold',
-              padding: '7px 16px',
-              borderRadius: '20px',
-              boxShadow: '0 4px 14px rgba(16, 185, 129, 0.45)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              cursor: 'pointer',
-              fontSize: '0.86rem'
-            }}
-            onClick={() => {
-              sounds.playTap?.();
-              setModalTargetRoom(currentChamber || HOUSE_CHAMBERS[0]);
-              setIsDepositModalOpen(true);
-            }}
-            title="מה אתה מפקיד היום? — שיטת המפתחות"
-          >
-            <Key size={15} />
-            <span>מה אתה מפקיד היום? 🗝️</span>
-          </button>
-
-          <button 
-            className="stardew-mode-switch-btn tree-view-btn"
-            style={{
-              background: 'linear-gradient(135deg, #6366f1, #4f46e5)',
-              border: 'none',
-              color: '#ffffff',
-              fontWeight: 'bold',
-              padding: '7px 16px',
-              borderRadius: '20px',
-              boxShadow: '0 4px 14px rgba(99, 102, 241, 0.45)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              cursor: 'pointer',
-              fontSize: '0.86rem'
-            }}
-            onClick={() => {
-              sounds.playTap?.();
-              setIsHierarchyTreeOpen(true);
-            }}
-            title="עץ בינארי רב אפשרויות — כל ההיררכיה של ארמון הזיכרון"
-          >
-            <GitBranch size={15} />
-            <span>עץ הזיכרון 🌳</span>
-          </button>
-
-          <button 
-            className="stardew-mode-switch-btn peg-bonus-btn"
-            style={{
-              background: 'rgba(245, 158, 11, 0.2)',
-              border: '1px solid rgba(245, 158, 11, 0.5)',
-              color: '#fef08a',
-              fontWeight: 'bold',
-              padding: '6px 14px',
-              borderRadius: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '5px',
-              cursor: 'pointer',
-              fontSize: '0.8rem'
-            }}
-            onClick={() => setIsStackingModalOpen(true)}
-            title="פתח חלון ליצירת דמות זיכרון מרשימה"
-          >
-            <Sparkles size={14} color="#f59e0b" />
-            <span>
-              {activePeg.word ? `דמות: "${activePeg.word}" ⚡` : 'דמות זיכרון ⚡'}
+            <span className="room-indicator-title">
+              {isGym ? 'היכל הכושר והאימון' : (building?.customName || catalogItem?.name || 'מתחם הבית')}
             </span>
-          </button>
-        </div>
+          </div>
 
-        <div className="stardew-hud-right">
-          {onSwitchToCabin && (
-            <button 
-              className="stardew-mode-switch-btn"
-              onClick={onSwitchToCabin}
-              title="עבור אל בקתת החווה"
-              style={{ fontSize: '0.8rem', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
-            >
-              <span>🏡 בקתת החווה</span>
-            </button>
-          )}
+          {/* Controlled Cognitive Interior Progression HUD badge */}
+          <div className="interior-mastery-hud-pill" title="התקדמות קוגניטיבית מבוקרת בחלל הבית">
+            <Lock size={13} className="text-amber" />
+            <span>חדרים מוארים: {interiorMastery.unlockedRooms.length}/4</span>
+          </div>
         </div>
       </header>
 
-      {/* 2. Room Entrance Deposit Question Prompt */}
-      {promptChamber && (
-        <div className="room-deposit-prompt-bar glass-card animate-slide-down" onClick={e => e.stopPropagation()}>
-          <div className="prompt-room-meta">
-            <span className="prompt-room-icon">{promptChamber.emoji}</span>
-            <div className="prompt-room-text">
-              <span className="prompt-question">🚪 נכנסת אל <strong>{promptChamber.name}</strong> • מה אתה מפקיד היום?</span>
-              <span className="prompt-ciphers">צופן בית: <strong>"אבק"</strong> • צופן כפר: <strong>"יער"</strong></span>
-            </div>
-          </div>
-          <div className="prompt-actions">
-            <button 
-              className="prompt-deposit-btn"
-              onClick={() => {
-                sounds.playTap?.();
-                setModalTargetRoom(promptChamber);
-                setIsDepositModalOpen(true);
-                setPromptChamber(null);
-              }}
-            >
-              <Key size={15} />
-              <span>🗝️ הפקדת מידע בחדר</span>
-            </button>
-            <button 
-              className="prompt-dismiss-btn"
-              onClick={() => setPromptChamber(null)}
-              title="סגור הודעה"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* 3. Floating Notification Toast */}
       {toastMessage && (
@@ -967,39 +948,129 @@ export function StardewInstitutionComplex({
           </div>
         ))}
 
-        {/* --- IN-ROOM AUTHENTIC PHYSICAL WOODEN LOCKER FURNITURE --- */}
-        {Object.entries({
-          entry_foyer: { x: 505, y: 490, name: 'חדר כניסה (מבואה נייטרלית)' },
-          left_store: { x: 195, y: 190, name: 'חדר דחוף (אגף שמאל)' },
-          main_hall: { x: 595, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-          right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' }
-        }).map(([roomId, pos]) => {
-          const roomDeposits = storedDeposits.filter(d => d.roomId === roomId);
-          if (roomDeposits.length === 0) return null;
-
-          const distToPlayer = Math.hypot(playerPos.x - pos.x, playerPos.y - pos.y);
-          const isNear = distToPlayer < 140;
+        {/* --- IN-ROOM AUTHENTIC PHYSICAL WOODEN LOCKER FURNITURE (DEDICATED FOR LISTS) --- */}
+        {Object.entries(LOCKER_POSITIONS).map(([roomId, pos]) => {
+          const roomDeposits = storedDeposits.filter(d => d.roomId === roomId && d.type !== 'photo');
+          const hasDeposits = roomDeposits.length > 0;
+          const latestDeposit = roomDeposits[roomDeposits.length - 1];
+          const anchorEmoji = latestDeposit?.visualAnchor?.emoji || '🗄️';
+          const anchorLabel = latestDeposit?.visualAnchor?.label || (hasDeposits ? `${roomDeposits.length} רשימות` : 'ארונית רשימות ריקה');
+          const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+          const needsPractice = hasDeposits && roomDeposits.some(d => d.lastPracticed !== todayStr);
+          const isNear = nearObjectId === `locker_${roomId}` || hoveredObjectId === `locker_${roomId}`;
 
           return (
             <div 
               key={roomId} 
               className="in-room-physical-locker-anchor"
               style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 26 }}
+              onMouseEnter={() => setHoveredObjectId(`locker_${roomId}`)}
+              onMouseLeave={() => setHoveredObjectId(null)}
             >
+              {/* Proximity Interaction Prompt (Spacebar) */}
+              {isNear && (
+                <div 
+                  className="animate-fade-in"
+                  style={{
+                    position: 'absolute',
+                    top: '-42px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(15, 23, 42, 0.94)',
+                    border: '1.5px solid #f59e0b',
+                    borderRadius: '20px',
+                    padding: '3px 10px',
+                    whiteSpace: 'nowrap',
+                    fontSize: '0.74rem',
+                    fontWeight: 800,
+                    color: '#fef08a',
+                    boxShadow: '0 4px 14px rgba(0,0,0,0.7)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    zIndex: 40,
+                    pointerEvents: 'none'
+                  }}
+                >
+                  <span style={{ background: '#78350f', padding: '1px 5px', borderRadius: '4px', fontSize: '0.68rem', color: '#fff' }}>רווח</span>
+                  <span>{hasDeposits ? 'בדוק רשימה 📜' : 'הפקד רשימה ➕'}</span>
+                </div>
+              )}
+
               {/* Isometric Physical Wooden Locker Furniture Piece */}
               <div 
                 className="physical-locker-furniture-piece"
                 onClick={(e) => {
                   e.stopPropagation();
                   sounds.playTap?.();
-                  setInspectingLockerData({
-                    roomId,
-                    roomName: pos.name,
-                    deposits: roomDeposits
-                  });
+                  if (hasDeposits) {
+                    setInspectingLockerData({
+                      roomId,
+                      roomName: pos.name,
+                      deposits: roomDeposits
+                    });
+                  } else {
+                    setModalTargetRoom({ id: roomId, name: pos.name });
+                    setIsDepositModalOpen(true);
+                  }
                 }}
-                title={`לחץ לבדיקת ארונית המגירות (${roomDeposits.length} הפקדות)`}
+                title={hasDeposits ? `ארונית רשימות ${anchorEmoji} (${anchorLabel}) — לחץ לבדיקה` : `ארונית רשימות ריקה — לחץ להפקדת רשימה ודירוג`}
               >
+                {/* Visual Anchor Token perched atop the locker - Revealed ONLY when approaching! */}
+                {hasDeposits && latestDeposit?.visualAnchor?.emoji && (
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      top: '-16px',
+                      left: '50%',
+                      transform: isNear ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0.5)',
+                      opacity: isNear ? 1 : 0,
+                      pointerEvents: isNear ? 'auto' : 'none',
+                      transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      background: 'rgba(20, 15, 30, 0.88)',
+                      border: '1.5px solid #f59e0b',
+                      borderRadius: '50%',
+                      width: '26px',
+                      height: '26px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1rem',
+                      boxShadow: '0 2px 8px rgba(245, 158, 11, 0.4)',
+                      zIndex: 10
+                    }}
+                    title={`עוגן ויזואלי של הארונית: ${anchorLabel}`}
+                  >
+                    {latestDeposit.visualAnchor.emoji}
+
+                    {/* Subtle floating repetition cue (💧) when review is due */}
+                    {needsPractice && isNear && (
+                      <div 
+                        className="animate-bounce-gentle"
+                        style={{
+                          position: 'absolute',
+                          top: '-18px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          fontSize: '0.82rem',
+                          background: 'rgba(224, 242, 254, 0.95)',
+                          border: '1px solid #38bdf8',
+                          borderRadius: '50%',
+                          width: '18px',
+                          height: '18px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          boxShadow: '0 2px 6px rgba(56, 189, 248, 0.6)'
+                        }}
+                        title="תרגול זיכרון יומי"
+                      >
+                        💧
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 <svg width="76" height="90" viewBox="0 0 76 90" className="locker-furniture-svg">
                   <defs>
                     <radialGradient id={`shadow-${roomId}`} cx="50%" cy="50%" r="50%">
@@ -1085,16 +1156,238 @@ export function StardewInstitutionComplex({
                   <circle cx="39" cy="10" r="1.6" fill="#f59e0b" />
                 </svg>
 
-                {/* Elegant Brass Nameplate & Count Tag */}
-                <div className="furniture-brass-tag">
-                  <span className="tag-lock-icon">🗄️</span>
-                  <span className="tag-title">{roomDeposits.length} הפקדות</span>
+                {/* Elegant Brass Nameplate & Count Tag - Revealed ONLY when approaching! */}
+                <div 
+                  className="furniture-brass-tag"
+                  style={{
+                    opacity: isNear ? 1 : 0,
+                    transform: isNear ? 'translateY(0)' : 'translateY(6px)',
+                    transition: 'all 0.25s ease',
+                    pointerEvents: isNear ? 'auto' : 'none'
+                  }}
+                >
+                  <span className="tag-lock-icon">{anchorEmoji}</span>
+                  <span className="tag-title">{hasDeposits ? anchorLabel : 'ארונית ריקה'}</span>
                 </div>
               </div>
-
             </div>
           );
         })}
+
+        {/* --- IN-ROOM AUTHENTIC WALL PICTURE FRAMES (FOR REAL USER PHOTOS) --- */}
+        {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
+          const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
+          const hasPhoto = !!photoDeposit;
+          const isNear = nearObjectId === `photo_${roomId}` || hoveredObjectId === `photo_${roomId}`;
+
+          return (
+            <div
+              key={`wall-photo-${roomId}`}
+              className="in-room-wall-picture-frame"
+              style={{
+                position: 'absolute',
+                left: `${pos.x}px`,
+                top: `${pos.y}px`,
+                zIndex: 18,
+                transform: 'translate(-50%, -50%)',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={() => setHoveredObjectId(`photo_${roomId}`)}
+              onMouseLeave={() => setHoveredObjectId(null)}
+              onClick={(e) => {
+                e.stopPropagation();
+                sounds.playTap?.();
+                setSelectedWallPhotoRoom({ id: roomId, name: pos.name });
+                setIsPhotoModalOpen(true);
+              }}
+              title={hasPhoto ? `תמונה על הקיר: "${photoDeposit.title}" — לחץ לצפייה` : `תמונה על הקיר ריקה — לחץ להוספת תמונה אישית`}
+            >
+              {/* Proximity Interaction Prompt (Spacebar) */}
+              {isNear && (
+                <div 
+                  className="animate-fade-in"
+                  style={{
+                    position: 'absolute',
+                    top: '-32px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(15, 23, 42, 0.94)',
+                    border: '1.5px solid #f59e0b',
+                    borderRadius: '20px',
+                    padding: '2px 8px',
+                    whiteSpace: 'nowrap',
+                    fontSize: '0.72rem',
+                    fontWeight: 800,
+                    color: '#fef08a',
+                    boxShadow: '0 4px 14px rgba(0,0,0,0.7)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    zIndex: 40,
+                    pointerEvents: 'none'
+                  }}
+                >
+                  <span style={{ background: '#78350f', padding: '1px 4px', borderRadius: '4px', fontSize: '0.65rem', color: '#fff' }}>רווח</span>
+                  <span>{hasPhoto ? 'הצג תמונה 🖼️' : 'תלה תמונה ➕'}</span>
+                </div>
+              )}
+
+              {/* Hanging wire to wall nail */}
+              <div 
+                style={{
+                  position: 'absolute',
+                  top: '-10px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  background: '#1c1917',
+                  border: '1px solid #78716c',
+                  zIndex: 2
+                }}
+              />
+              <svg 
+                width="28" 
+                height="12" 
+                viewBox="0 0 28 12" 
+                style={{
+                  position: 'absolute',
+                  top: '-8px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 1,
+                  pointerEvents: 'none'
+                }}
+              >
+                <path d="M 1 12 L 14 2 L 27 12" fill="none" stroke="#78716c" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
+
+              {/* Ornate Frame Body */}
+              <div
+                className="wall-frame-hover-glow"
+                style={{
+                  width: '64px',
+                  height: '52px',
+                  background: 'linear-gradient(135deg, #78350f 0%, #451a03 50%, #78350f 100%)',
+                  borderRadius: '8px',
+                  padding: '5px',
+                  boxShadow: '0 8px 18px rgba(0, 0, 0, 0.75), inset 0 1px 2px rgba(253, 224, 71, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.8)',
+                  border: isNear ? '2px solid #f59e0b' : '1.5px solid #b45309',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {hasPhoto ? (
+                  <div style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>
+                    {/* Stardew Mysterious Distant Silhouette Canvas */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(135deg, #2d1b11 0%, #1a0f0a 100%)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        opacity: isNear ? 0 : 1,
+                        transition: 'opacity 0.28s ease',
+                        zIndex: 1
+                      }}
+                    >
+                      <span style={{ fontSize: '1.1rem', opacity: 0.65 }}>🌄</span>
+                    </div>
+
+                    {/* The User's Real Photo - Reveals smoothly when approaching! */}
+                    <img
+                      src={photoDeposit.imageUrl}
+                      alt={photoDeposit.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block',
+                        opacity: isNear ? 1 : 0,
+                        transition: 'opacity 0.28s ease',
+                        position: 'relative',
+                        zIndex: 2
+                      }}
+                    />
+                    {/* Glass glaze highlight */}
+                    <div 
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: '50%',
+                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%)',
+                        pointerEvents: 'none',
+                        zIndex: 3
+                      }} 
+                    />
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      background: 'radial-gradient(circle, #3e2617 0%, #201209 100%)',
+                      borderRadius: '4px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '2px',
+                      border: isNear ? '1.5px solid #f59e0b' : '1px dashed rgba(245, 158, 11, 0.35)',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <span style={{ fontSize: '1.1rem', opacity: isNear ? 1 : 0.6 }}>🖼️</span>
+                    <span style={{ fontSize: '0.55rem', color: isNear ? '#fef08a' : '#94a3b8', fontWeight: 700 }}>
+                      {isNear ? '+ תמונה' : 'קנבס'}
+                    </span>
+                  </div>
+                )}
+
+                {/* Brass Plaque with title underneath if has photo - Revealed ONLY when approaching! */}
+                {hasPhoto && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '-14px',
+                      left: '50%',
+                      transform: isNear ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(6px)',
+                      opacity: isNear ? 1 : 0,
+                      pointerEvents: isNear ? 'auto' : 'none',
+                      transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      background: 'linear-gradient(180deg, #fef08a 0%, #ca8a04 100%)',
+                      color: '#000000',
+                      fontSize: '0.62rem',
+                      fontWeight: 800,
+                      padding: '1px 6px',
+                      borderRadius: '4px',
+                      whiteSpace: 'nowrap',
+                      maxWidth: '84px',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      boxShadow: '0 2px 5px rgba(0,0,0,0.6)',
+                      border: '0.5px solid #854d0e',
+                      zIndex: 10
+                    }}
+                  >
+                    {photoDeposit.title}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+
+
 
         {/* Canvas for Character Motion (Player + Villager NPCs!) */}
         <canvas 
@@ -1113,8 +1406,14 @@ export function StardewInstitutionComplex({
           }}
         />
 
-        {/* Dynamic Warm Ambient Lamplight Pools */}
-        <ComplexLightingSVG />
+        {/* Dynamic 2.5D Physical Wooden Doors installed at every interior corridor */}
+        <StardewDoorsLayer 
+          doorsState={interiorMastery.doors} 
+          onDoorClick={handleDoorClick} 
+        />
+
+        {/* Dynamic Warm Ambient Lamplight Pools with 65% Darkness Veil over locked chambers */}
+        <ComplexLightingSVG unlockedRooms={interiorMastery.unlockedRooms} />
 
         {/* Bottom Exit Doorway Notch */}
         <div 
@@ -1375,7 +1674,7 @@ export function StardewInstitutionComplex({
                 </div>
                 <div>
                   <h3>הצבת עוגן ויזואלי ברצפת החדר</h3>
-                  <span className="dialog-sub">מיקום הדמות: ({Math.round(playerPos.x)}, {Math.round(playerPos.y)})</span>
+                  <span className="dialog-sub">מיקום הדמות: ({Math.round(playerPosRef.current.x)}, {Math.round(playerPosRef.current.y)})</span>
                 </div>
               </div>
               <button className="close-mini-btn" onClick={() => setIsAddingCustomAnchor(false)}>
@@ -1435,25 +1734,67 @@ export function StardewInstitutionComplex({
           aria-modal="true"
         >
           <div className="physical-locker-inspection-modal glass-card" onClick={e => e.stopPropagation()}>
-            <div className="inspection-modal-header">
-              <div className="inspection-header-title">
-                <span className="inspection-badge-icon">🗄️</span>
+            <div className="inspection-modal-header" style={{ padding: '16px 20px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div className="inspection-header-title" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.6rem' }}>
+                  {inspectingLockerData.deposits[inspectingLockerData.deposits.length - 1]?.visualAnchor?.emoji || '🗄️'}
+                </span>
                 <div>
-                  <h3>ארונית המגירות הפיזית • {inspectingLockerData.roomName || 'חדר'}</h3>
-                  <span className="inspection-sub">הדמות שלך מתאמנת ב-Active Recall על הלוקר הפיזי! משוך והזז מגירות 🧠</span>
+                  <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#fef08a', fontWeight: 800 }}>
+                    {inspectingLockerData.roomName || 'ארונית הזיכרון'}
+                  </h3>
                 </div>
               </div>
-              <button 
-                type="button"
-                className="key-modal-close" 
-                onClick={() => setInspectingLockerData(null)}
-                title="סגור (Esc)"
-              >
-                <X size={18} />
-              </button>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <button 
+                  type="button"
+                  style={{
+                    background: 'rgba(245, 158, 11, 0.2)',
+                    border: '1px solid rgba(245, 158, 11, 0.5)',
+                    color: '#fef08a',
+                    padding: '6px 14px',
+                    borderRadius: '10px',
+                    cursor: 'pointer',
+                    fontSize: '0.84rem',
+                    fontWeight: 700,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                  onClick={() => {
+                    sounds.playTap?.();
+                    setModalTargetRoom({ id: inspectingLockerData.roomId, name: inspectingLockerData.roomName });
+                    setIsDepositModalOpen(true);
+                  }}
+                  title="הוסף פריט או רשימה חדשה"
+                >
+                  <Plus size={15} />
+                  <span>הוסף פריט</span>
+                </button>
+                <button 
+                  type="button"
+                  className="key-modal-close" 
+                  onClick={() => setInspectingLockerData(null)}
+                  title="סגור (Esc)"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: 'none',
+                    color: '#94a3b8',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
-            <div className="inspection-modal-body">
+            <div className="inspection-modal-body" style={{ padding: '20px' }}>
               {inspectingLockerData.deposits.map(dep => (
                 dep.type === 'list' ? (
                   <ActiveRecallLocker
@@ -1462,17 +1803,14 @@ export function StardewInstitutionComplex({
                     items={dep.items || []}
                     criterion={dep.criterion}
                     associationWord={dep.associationWord}
-                    villageCipher={dep.villageCipher}
-                    houseCipher={dep.houseCipher}
-                    showCharacterAvatar={true}
+                    visualAnchor={dep.visualAnchor}
                   />
                 ) : (
                   <ActiveRecallSingle
                     key={dep.id}
                     itemName={dep.itemName}
                     associationWord={dep.associationWord}
-                    villageCipher={dep.villageCipher}
-                    houseCipher={dep.houseCipher}
+                    visualAnchor={dep.visualAnchor}
                   />
                 )
               ))}
@@ -1498,9 +1836,24 @@ export function StardewInstitutionComplex({
         villageName="כפר יער הצבא והביטחון"
         houseCipher="אבק"
         houseName={isGym ? "היכל הכושר והאימון" : (building?.customName || "מחלקת לוגיסטיקה וציוד")}
-        room={modalTargetRoom || currentChamber || HOUSE_CHAMBERS[0]}
+        room={modalTargetRoom || getChamberForPosition(playerPosRef.current.x, playerPosRef.current.y) || HOUSE_CHAMBERS[0]}
         onDepositSaved={(newDeposit) => {
-          showToast(newDeposit.type === 'single' ? 'פריט הופקד בהצלחה! 🗝️' : 'ארונית לוקר ממוספרת נוצרה! 🗄️');
+          showToast(newDeposit.type === 'single' ? 'פריט הופקד בהצלחה! 🗝️' : 'ארונית רשימות נוצרה! 🗄️');
+        }}
+      />
+
+      {/* 7.1 Real User Photo Wall Frame Modal */}
+      <PhotoFrameModal
+        isOpen={isPhotoModalOpen}
+        onClose={() => setIsPhotoModalOpen(false)}
+        roomId={selectedWallPhotoRoom?.id}
+        roomName={selectedWallPhotoRoom?.name}
+        existingPhoto={storedDeposits.find(d => d.roomId === selectedWallPhotoRoom?.id && d.type === 'photo')}
+        villageCipher="יער"
+        houseCipher="אבק"
+        onPhotoSaved={(saved) => {
+          setStoredDeposits(getStoredDeposits());
+          showToast(saved ? 'התמונה נתלתה על הקיר בהצלחה! 🖼️' : 'התמונה הוסרה מהקיר');
         }}
       />
 
@@ -1514,6 +1867,36 @@ export function StardewInstitutionComplex({
           setIsDepositModalOpen(true);
         }}
       />
+      {/* 9. Bizarre Sort Active Recall Challenge Modal */}
+      <BizarreSortChallengeModal
+        isOpen={isRoomChallengeOpen}
+        onClose={() => setIsRoomChallengeOpen(false)}
+        items={roomItemsForChallenge}
+        depositTitle={`ארונית: ${inspectingLockerData?.roomName || 'חדר'}`}
+      />
+
+      {/* 10. Fast Zero-Friction Active Recall Door Check Modal */}
+      {activeQuizDoor && (
+        <VillageQuickQuizModal
+          isOpen={!!activeQuizDoor}
+          onClose={() => setActiveQuizDoor(null)}
+          targetBuildingName={activeQuizDoor.toRoomName}
+          currentMemory={(() => {
+            const reqDeps = storedDeposits.filter(d => d.roomId === activeQuizDoor.requiredRoom);
+            if (reqDeps.length > 0) {
+              const latest = reqDeps[reqDeps.length - 1];
+              return latest.visualAnchor?.label || latest.itemName || latest.associationWord || 'עוגן חדר הכניסה: סדר ומיקוד';
+            }
+            return activeQuizDoor.requiredRoom === 'entry_foyer'
+              ? 'עוגן חדר הכניסה: מיקוד וסדר יום'
+              : `עוגן ${activeQuizDoor.fromRoomName}`;
+          })()}
+          stationEmoji="🔒"
+          stageNumber={interiorMastery.unlockedRooms.length}
+          totalStages={4}
+          onPassedQuiz={() => handlePassDoorQuiz(activeQuizDoor)}
+        />
+      )}
     </div>
   );
 }
