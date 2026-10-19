@@ -1309,18 +1309,18 @@ export function StardewInstitutionComplex({
               {activeItem && (
                 <div style={{
                   position: 'absolute',
-                  top: '-24px',
+                  top: '-28px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                   backgroundColor: 'rgba(15, 23, 42, 0.95)',
                   border: '1.5px solid #f59e0b',
                   color: '#fef3c7',
-                  fontSize: '0.72rem',
+                  fontSize: '0.82rem',
                   fontWeight: 'bold',
-                  padding: '2px 9px',
-                  borderRadius: '12px',
+                  padding: '3px 11px',
+                  borderRadius: '14px',
                   whiteSpace: 'nowrap',
-                  boxShadow: '0 3px 10px rgba(0,0,0,0.6), 0 0 10px rgba(245, 158, 11, 0.3)',
+                  boxShadow: '0 3px 12px rgba(0,0,0,0.7), 0 0 12px rgba(245, 158, 11, 0.35)',
                   pointerEvents: 'none',
                   zIndex: 25
                 }}>
@@ -1328,18 +1328,18 @@ export function StardewInstitutionComplex({
                 </div>
               )}
 
-              {/* Authentic 2.5D Wooden Beveled Picture Frame (Fits 100% within the 56px wall face) */}
+              {/* Authentic 2.5D Wooden Beveled Picture Frame (150% Enlarged Display) */}
               <div
                 style={{
-                  width: '52px',
-                  height: '38px',
+                  width: '78px',
+                  height: '56px',
                   backgroundColor: '#3b1c09',
-                  border: isNear ? '2px solid #fbbf24' : '2px solid #d97706',
-                  borderRadius: '4px',
+                  border: isNear ? '2.5px solid #fbbf24' : '2px solid #d97706',
+                  borderRadius: '5px',
                   boxShadow: isNear 
-                    ? '0 3px 10px rgba(0, 0, 0, 0.7), 0 0 12px rgba(245, 158, 11, 0.5)' 
-                    : '0 2px 6px rgba(0, 0, 0, 0.5)',
-                  padding: '2px',
+                    ? '0 4px 14px rgba(0, 0, 0, 0.8), 0 0 16px rgba(245, 158, 11, 0.6)' 
+                    : '0 3px 8px rgba(0, 0, 0, 0.55)',
+                  padding: '3px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -1424,22 +1424,22 @@ export function StardewInstitutionComplex({
               {/* Floor Shadow */}
               <div style={{
                 position: 'absolute',
-                bottom: '-3px',
-                width: '42px',
-                height: '12px',
+                bottom: '-4px',
+                width: '64px',
+                height: '16px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(0, 0, 0, 0.45)',
-                filter: 'blur(1.5px)'
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                filter: 'blur(2px)'
               }} />
 
-              {/* Wooden Stand & Golden Plaque */}
+              {/* Wooden Stand & Golden Plaque (150% Enlarged) */}
               <div style={{
-                width: '36px',
-                height: '26px',
+                width: '56px',
+                height: '40px',
                 backgroundColor: '#0f172a',
-                border: isNear ? '2px solid #fbbf24' : '1.5px solid #d97706',
-                borderRadius: '5px',
-                boxShadow: isNear ? '0 0 12px rgba(251, 191, 36, 0.65)' : '0 2px 6px rgba(0,0,0,0.4)',
+                border: isNear ? '2.5px solid #fbbf24' : '2px solid #d97706',
+                borderRadius: '7px',
+                boxShadow: isNear ? '0 0 16px rgba(251, 191, 36, 0.75)' : '0 3px 8px rgba(0,0,0,0.5)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1459,16 +1459,16 @@ export function StardewInstitutionComplex({
 
               {/* Station Chip Badge */}
               <div style={{
-                marginTop: '3px',
-                backgroundColor: isNear ? '#b45309' : 'rgba(15, 23, 42, 0.92)',
-                border: isNear ? '1px solid #fde047' : '1px solid rgba(245, 158, 11, 0.45)',
+                marginTop: '4px',
+                backgroundColor: isNear ? '#b45309' : 'rgba(15, 23, 42, 0.94)',
+                border: isNear ? '1.5px solid #fde047' : '1px solid rgba(245, 158, 11, 0.5)',
                 color: isNear ? '#ffffff' : '#fef3c7',
-                fontSize: '0.66rem',
+                fontSize: '0.76rem',
                 fontWeight: 'bold',
-                padding: '2px 7px',
-                borderRadius: '8px',
+                padding: '3px 9px',
+                borderRadius: '10px',
                 whiteSpace: 'nowrap',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.45)',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
                 transition: 'all 0.15s ease'
               }}>
                 <span>{lociItem.order}. {lociItem.title} {lociItem.emoji}</span>

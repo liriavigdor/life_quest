@@ -308,16 +308,21 @@ export function LociCumulativeQuizModal({
                       /* Filled Slot Card */
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
                         <div style={{
-                          width: '48px',
-                          height: '36px',
-                          borderRadius: '6px',
+                          width: '72px',
+                          height: '52px',
+                          borderRadius: '8px',
                           overflow: 'hidden',
-                          border: '1px solid #4ade80'
+                          border: '1.5px solid #4ade80'
                         }}>
                           <img 
-                            src={filledItem.imageUrl} 
+                            src={filledItem.celebrationImage || filledItem.imageUrl} 
                             alt={filledItem.title} 
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                            onError={(e) => {
+                              if (filledItem.imageUrl && e.target.src !== filledItem.imageUrl) {
+                                e.target.src = filledItem.imageUrl;
+                              }
+                            }}
                           />
                         </div>
                         <span style={{ fontSize: '0.82rem', fontWeight: 'bold', color: '#fef3c7' }}>
@@ -426,8 +431,8 @@ export function LociCumulativeQuizModal({
 
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
-              gap: '10px'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
+              gap: '12px'
             }}>
               {LOCI_WORK_PRACTICE_ITEMS.map((item) => {
                 const isAlreadyPlaced = selectedChain.some(c => c.order === item.order);
@@ -467,19 +472,24 @@ export function LociCumulativeQuizModal({
                       }
                     }}
                   >
-                    {/* Visual Art Thumbnail */}
+                    {/* Visual Art Thumbnail (150% Enlarged) */}
                     <div style={{
-                      width: '68px',
-                      height: '48px',
-                      borderRadius: '8px',
+                      width: '102px',
+                      height: '72px',
+                      borderRadius: '10px',
                       overflow: 'hidden',
                       backgroundColor: '#0f172a',
-                      border: '1px solid rgba(255, 255, 255, 0.1)'
+                      border: '1.5px solid rgba(255, 255, 255, 0.15)'
                     }}>
                       <img 
-                        src={item.imageUrl} 
+                        src={item.celebrationImage || item.imageUrl} 
                         alt={item.title} 
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        onError={(e) => {
+                          if (item.imageUrl && e.target.src !== item.imageUrl) {
+                            e.target.src = item.imageUrl;
+                          }
+                        }}
                       />
                     </div>
 

@@ -154,22 +154,6 @@ export function LociSurpriseCelebrationModal({
               <span>{data.emoji}</span>
             </div>
           </div>
-              backgroundColor: 'rgba(15, 23, 42, 0.92)',
-              border: '1.5px solid #fbbf24',
-              borderRadius: '12px',
-              padding: '4px 12px',
-              color: '#fef08a',
-              fontSize: '0.85rem',
-              fontWeight: 'bold',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.6)'
-            }}>
-              <span>{data.order ? `תחנה ${data.order}: ` : ''}{data.title}</span>
-              <span>{data.emoji}</span>
-            </div>
-          </div>
 
           {/* Funny Quote / Mnemonic Anchor Message */}
           <div style={{

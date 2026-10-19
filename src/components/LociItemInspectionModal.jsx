@@ -30,9 +30,9 @@ export function LociItemInspectionModal({
         onClick={(e) => e.stopPropagation()}
         style={{
           width: '100%',
-          maxWidth: '520px',
+          maxWidth: '700px',
           backgroundColor: '#111827',
-          borderRadius: '20px',
+          borderRadius: '24px',
           border: '2px solid #f59e0b',
           boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(245, 158, 11, 0.25)',
           overflow: 'hidden',
@@ -98,14 +98,14 @@ export function LociItemInspectionModal({
         {/* Body */}
         <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
           
-          {/* Large High Definition Image Display */}
+          {/* Large High Definition Image Display (150% Bigger) */}
           <div style={{
             width: '100%',
-            height: '220px',
-            borderRadius: '14px',
+            height: '380px',
+            borderRadius: '18px',
             overflow: 'hidden',
             backgroundColor: '#0f172a',
-            border: '2px solid rgba(245, 158, 11, 0.4)',
+            border: '2.5px solid rgba(245, 158, 11, 0.5)',
             boxShadow: '0 8px 24px rgba(0,0,0,0.5)',
             display: 'flex',
             alignItems: 'center',
