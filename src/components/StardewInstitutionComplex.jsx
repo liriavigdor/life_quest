@@ -30,6 +30,8 @@ import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/Complex
 import { StardewDoorsLayer, INTERIOR_DOORS_CONFIG } from './stardewArt/StardewDoors';
 import { LociCumulativeQuizModal } from './LociCumulativeQuizModal';
 import { LociItemInspectionModal } from './LociItemInspectionModal';
+import { LociSurpriseCelebrationModal } from './LociSurpriseCelebrationModal';
+import { drawLociCharacterMetamorphosis, lociParticles } from '../utils/lociCharacterTransformation';
 import { LOCI_DOOR_STAGES, LOCI_WORK_PRACTICE_ITEMS } from '../data/lociPracticeData';
 import { DepositModal } from './DepositModal';
 import { PhotoFrameModal } from './PhotoFrameModal';
@@ -189,6 +191,8 @@ export function StardewInstitutionComplex({
 
   // Key Method State (שיטת המפתחות)
   const [selectedLociItem, setSelectedLociItem] = useState(null);
+  const [celebrationData, setCelebrationData] = useState(null);
+  const prevChamberRef = useRef('entry_foyer');
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const [selectedWallPhotoRoom, setSelectedWallPhotoRoom] = useState(null);
@@ -275,11 +279,24 @@ export function StardewInstitutionComplex({
     sounds.playLevelUp?.();
     try {
       confetti({
-        particleCount: 120,
+        particleCount: 140,
         spread: 85,
         origin: { y: 0.55 }
       });
     } catch (e) {}
+
+    // Map door to the hilarious surprise celebration item requested for dad!
+    const doorToSurpriseItem = {
+      door_c3: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 1), // 1. שמש לוהטת עם משקפי שמש
+      door_c1: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 2), // 2. סטיב ג'ובס והאייפון
+      door_c2: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 3), // 3. רונאלדו מניף חולצה
+      door_east_south: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 4), // 4. מפלי הניאגרה
+      vault_master: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 5) // 5. פרארי אדומה נוצצת
+    };
+    const surpriseItem = doorToSurpriseItem[door.id];
+    if (surpriseItem) {
+      setCelebrationData(surpriseItem);
+    }
 
     if (door.id === 'vault_master') {
       showToast('גאונות! אבא פתר את כל 5 תחנות ארמון הזיכרון! הוכתר כאמן Loci! 🏆👑✨');
@@ -616,8 +633,21 @@ export function StardewInstitutionComplex({
           }
         }
 
-        // B. Draw Player Character
+        // B. Draw Player Character & Bizarre Metamorphosis
         const p = playerPosRef.current;
+        const currentChamber = getChamberForPosition(p.x, p.y)?.id || 'entry_foyer';
+
+        // Trigger Poof Particles & Magic Sound when crossing into a new chamber!
+        if (prevChamberRef.current !== currentChamber) {
+          lociParticles.spawnPoof(p.x, p.y);
+          sounds.playSparkle?.();
+          prevChamberRef.current = currentChamber;
+        }
+
+        // Draw active dynamic particles (laundry bubbles, Wi-Fi rings, water droplets, sparkles)
+        lociParticles.updateAndDraw(ctx);
+
+        // Draw Villager base
         drawCompleteVillager(ctx, {
           cx: p.x,
           cy: p.y,
@@ -629,6 +659,17 @@ export function StardewInstitutionComplex({
           look: villagerLookRef.current,
           timestamp: time,
           onRug: false
+        });
+
+        // Draw Hilarious Bizarre Metamorphosis Costume right on the character!
+        drawLociCharacterMetamorphosis(ctx, {
+          x: p.x,
+          y: p.y,
+          chamberId: currentChamber,
+          time,
+          walkCycle: walkCycleRef.current,
+          facingLeft: facingLeftRef.current,
+          isWalking: isWalkingRef.current
         });
       }
 
@@ -1320,13 +1361,18 @@ export function StardewInstitutionComplex({
                   }}
                 >
                   <img
-                    src={activeItem?.imageUrl}
+                    src={activeItem?.celebrationImage || activeItem?.imageUrl}
                     alt={activeItem?.title}
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'contain',
+                      objectFit: activeItem?.celebrationImage ? 'cover' : 'contain',
                       display: 'block'
+                    }}
+                    onError={(e) => {
+                      if (activeItem?.imageUrl && e.target.src !== activeItem.imageUrl) {
+                        e.target.src = activeItem.imageUrl;
+                      }
                     }}
                   />
                   {/* Gentle Oil-Painting Glaze */}
@@ -1400,9 +1446,14 @@ export function StardewInstitutionComplex({
                 overflow: 'hidden'
               }}>
                 <img 
-                  src={lociItem.imageUrl} 
+                  src={lociItem.celebrationImage || lociItem.imageUrl} 
                   alt={lociItem.title} 
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  style={{ width: '100%', height: '100%', objectFit: lociItem.celebrationImage ? 'cover' : 'contain' }}
+                  onError={(e) => {
+                    if (lociItem.imageUrl && e.target.src !== lociItem.imageUrl) {
+                      e.target.src = lociItem.imageUrl;
+                    }
+                  }}
                 />
               </div>
 
@@ -2171,6 +2222,15 @@ export function StardewInstitutionComplex({
           isOpen={!!selectedLociItem}
           item={selectedLociItem}
           onClose={() => setSelectedLociItem(null)}
+        />
+      )}
+
+      {/* 12. Hilarious Surprise Celebration Pop-Up for Dad! */}
+      {celebrationData && (
+        <LociSurpriseCelebrationModal
+          isOpen={!!celebrationData}
+          data={celebrationData}
+          onClose={() => setCelebrationData(null)}
         />
       )}
     </div>

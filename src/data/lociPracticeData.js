@@ -180,7 +180,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     story: 'משקפי שמש מוזהבים ונוצצים מונחים על המעמד בכניסה — כדי להגן על העיניים ברגע שיוצאים מהבית!',
     memoryAnchor: 'עוגן 1: משקפי שמש בכניסה',
     hint: 'בכניסה לבית, מה שמנו על המעמד כדי שלא נסתנוור מהשמש כשנצא?',
-    imageUrl: SUNGLASSES_DATA_URL
+    imageUrl: SUNGLASSES_DATA_URL,
+    celebrationTitle: '☀️ בום! שמש לוהטת ומסנוורת!',
+    celebrationSubtitle: 'מזל ענק שזכרת לקחת משקפי שמש בכניסה! 😎',
+    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Sun_wearing_sunglasses.svg',
+    quote: '"אבא, השמש מסנוורת בטירוף! טוב שהרכבת את משקפי השמש בכניסה!" 🕶️☀️'
   },
   {
     id: 'loci-work-2',
@@ -194,7 +198,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     story: 'טלפון נייד חכם זוהר במרכז השולחן באולם — תמיד מחובר לשיחות, הודעות ומשימות היום!',
     memoryAnchor: 'עוגן 2: טלפון נייד באולם',
     hint: 'על השולחן במרכז האולם, איזה מכשיר זוהר ורוטט כדי לתקשר עם כולם?',
-    imageUrl: PHONE_DATA_URL
+    imageUrl: PHONE_DATA_URL,
+    celebrationTitle: '🍏 סטיב ג׳ובס מתקשר לאולם המרכזי!',
+    celebrationSubtitle: '"אבא, One More Thing... איפה שמת את האייפון?!" 📱',
+    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Steve_Jobs_presents_iPhone.jpg',
+    quote: '"Stay hungry, stay foolish... ואל תשכח את הטלפון שלך על השולחן באולם!" — סטיב ג׳ובס 📱'
   },
   {
     id: 'loci-work-3',
@@ -208,7 +216,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     story: 'חולצה נקייה להחלפה תלויה על קולב העץ באגף שמאל — להתרעננות מושלמת אחרי יום עבודה!',
     memoryAnchor: 'עוגן 3: חולצה להחלפה באגף שמאל',
     hint: 'באגף שמאל, מה תלוי על הקולב מוכן כדי להתרענן ולהחליף בגדים?',
-    imageUrl: SHIRT_DATA_URL
+    imageUrl: SHIRT_DATA_URL,
+    celebrationTitle: '⚽ SIIIUUU! רונאלדו מניף חולצה להחלפה!',
+    celebrationSubtitle: 'חולצה נקייה ורעננה נזרקת אליך באגף שמאל! 👕',
+    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg',
+    quote: '"אחרי אימון קשה מגיע הרגע הכי טוב: חולצה נקייה להחלפה! SIIIUUU!" — כריסטיאנו רונאלדו 👕⚽'
   },
   {
     id: 'loci-work-4',
@@ -222,7 +234,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     story: 'בקבוק מים צלולים וקרים עומד על מדף השלווה — שותים לגימה מרעננת ומרווים את הגוף!',
     memoryAnchor: 'עוגן 4: בקבוק מים בהיכל השלווה',
     hint: 'בהיכל השלווה, מה עומד קריר וצלול כדי להרוות את הצמא?',
-    imageUrl: WATER_DATA_URL
+    imageUrl: WATER_DATA_URL,
+    celebrationTitle: '🌊 מפלי הניאגרה השוצפים בהיכל השלווה!',
+    celebrationSubtitle: 'שפכנו את כל מי הניאגרה היישר לתוך בקבוק המים שלך! 💧',
+    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Niagara_Falls_%28Horseshoe_Falls%29.jpg',
+    quote: '"מיליוני ליטרים של מים קרירים ומרעננים כדי שתמיד תזכור לשתות מים!" 💧🌊'
   },
   {
     id: 'loci-work-5',
@@ -236,7 +252,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     story: 'צרור מפתחות לרכב עם שלט חכם תלויים על וו מוזהב בחדר הדרומי — המפתחות שפותחים את האוטו לנסיעה חזרה הביתה!',
     memoryAnchor: 'עוגן 5: מפתחות לאוטו בחדר הדרומי',
     hint: 'בחדר הדרומי, מה תלוי על הוו ופותח את האוטו כשחוזרים הביתה?',
-    imageUrl: CAR_KEYS_DATA_URL
+    imageUrl: CAR_KEYS_DATA_URL,
+    celebrationTitle: '🏎️ בראאאם! פרארי אדומה ממתינה בחניה!',
+    celebrationSubtitle: 'הנה המפתחות! תן בגז, נסיעה טובה הביתה! 🔑🔥',
+    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Ferrari_F430_Scuderia_red.JPG',
+    quote: '"ביפ-ביפ! המפתחות פתחו את מפלצת המהירות האדומה! סע בזהירות אבא!" 🏎️💨🏆'
   }
 ];
 

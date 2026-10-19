@@ -112,15 +112,36 @@ export function LociItemInspectionModal({
             justifyContent: 'center'
           }}>
             <img 
-              src={item.imageUrl} 
-              alt={item.title}
+              src={item.celebrationImage || item.imageUrl} 
+              alt={item.celebrationTitle || item.title}
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'contain'
+                objectFit: item.celebrationImage ? 'cover' : 'contain'
+              }}
+              onError={(e) => {
+                if (item.imageUrl && e.target.src !== item.imageUrl) {
+                  e.target.src = item.imageUrl;
+                }
               }}
             />
           </div>
+
+          {/* Funny Mnemonic Quote */}
+          {item.quote && (
+            <div style={{
+              backgroundColor: 'rgba(245, 158, 11, 0.15)',
+              border: '1px solid rgba(245, 158, 11, 0.4)',
+              borderRadius: '12px',
+              padding: '10px 14px',
+              color: '#fef08a',
+              fontSize: '0.9rem',
+              fontWeight: 'bold',
+              lineHeight: 1.4
+            }}>
+              <span>💬 {item.quote}</span>
+            </div>
+          )}
 
           {/* Mnemonic Story Card */}
           <div style={{
