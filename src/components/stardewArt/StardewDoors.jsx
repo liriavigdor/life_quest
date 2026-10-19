@@ -42,14 +42,14 @@ export const INTERIOR_DOORS_CONFIG = {
     name: 'דלת אגף ימין (שגרה)',
     fromRoom: 'main_hall',
     toRoom: 'right_sanctuary',
-    fromRoomName: 'האולם המרכזי',
-    toRoomName: 'אגף ימין (צפון)',
+    fromRoomName: 'אגף שמאל',
+    toRoomName: 'היכל השלווה',
     orientation: 'vertical', // runs across W-E corridor C2
     x: 775,
     y: 220,
     w: 24,
     h: 56,
-    requiredRoom: 'main_hall'
+    requiredRoom: 'left_store'
   },
   door_east_south: {
     id: 'door_east_south',

@@ -27,7 +27,9 @@ export const DEFAULT_HOUSES = {
   ]
 };
 
-// Chambers / Rooms in the House Floorplan (Exact 4 rooms: 🚪 כניסה, 🔴 דחוף, 🟡 בטיפול, 🟢 שגרה)
+import { LOCI_WORK_PRACTICE_ITEMS } from '../data/lociPracticeData';
+
+// Chambers / Rooms in the House Floorplan (Exact 5 rooms: 🚪 כניסה, 🔴 דחוף, 🟡 בטיפול, 🟢 שגרה, 🏆 שלווה דרומית)
 export const HOUSE_CHAMBERS = [
   {
     id: 'entry_foyer',
@@ -38,7 +40,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🚪',
     color: '#94a3b8',
     bgBadge: 'rgba(148, 163, 184, 0.15)',
-    bounds: { x1: 420, y1: 440, x2: 700, y2: 620 }
+    bounds: { x1: 420, y1: 420, x2: 780, y2: 600 }
   },
   {
     id: 'left_store',
@@ -49,7 +51,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🔴',
     color: '#ef4444',
     bgBadge: 'rgba(239, 68, 68, 0.15)',
-    bounds: { x1: 40, y1: 90, x2: 420, y2: 390 }
+    bounds: { x1: 40, y1: 90, x2: 420, y2: 420 }
   },
   {
     id: 'main_hall',
@@ -60,7 +62,7 @@ export const HOUSE_CHAMBERS = [
     emoji: '🟡',
     color: '#f59e0b',
     bgBadge: 'rgba(245, 158, 11, 0.15)',
-    bounds: { x1: 420, y1: 40, x2: 780, y2: 440 }
+    bounds: { x1: 420, y1: 40, x2: 780, y2: 420 }
   },
   {
     id: 'right_sanctuary',
@@ -71,7 +73,18 @@ export const HOUSE_CHAMBERS = [
     emoji: '🟢',
     color: '#10b981',
     bgBadge: 'rgba(16, 185, 129, 0.15)',
-    bounds: { x1: 780, y1: 170, x2: 1210, y2: 600 }
+    bounds: { x1: 780, y1: 170, x2: 1210, y2: 360 }
+  },
+  {
+    id: 'right_south',
+    name: 'שלווה דרומית',
+    shortName: 'דרום',
+    subtitle: 'היכל השלווה הדרומי',
+    urgency: 'routine',
+    emoji: '🏆',
+    color: '#8b5cf6',
+    bgBadge: 'rgba(139, 92, 246, 0.15)',
+    bounds: { x1: 820, y1: 360, x2: 1210, y2: 600 }
   }
 ];
 
@@ -80,21 +93,24 @@ export const LOCKER_POSITIONS = {
   entry_foyer: { x: 505, y: 490, name: 'חדר כניסה (מבואה נייטרלית)' },
   left_store: { x: 195, y: 190, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 595, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-  right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' }
+  right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' },
+  right_south: { x: 940, y: 490, name: 'חדר שלווה דרומי' }
 };
 
 export const WALL_PHOTO_POSITIONS = {
   left_store: { x: 272, y: 122, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 532, y: 80, name: 'חדר בטיפול (האולם המרכזי)' },
   entry_foyer: { x: 686, y: 392, name: 'חדר כניסה (מבואה נייטרלית)' },
-  right_sanctuary: { x: 995, y: 142, name: 'חדר שגרה (היכל השלווה)' }
+  right_sanctuary: { x: 995, y: 142, name: 'חדר שגרה (היכל השלווה)' },
+  right_south: { x: 1080, y: 392, name: 'חדר השלווה הדרומי' }
 };
 
 export const CHEST_POSITIONS = {
   entry_foyer: { x: 675, y: 495, name: 'חדר כניסה (מבואה נייטרלית)' },
   left_store: { x: 300, y: 240, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 495, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-  right_sanctuary: { x: 1040, y: 480, name: 'חדר שגרה (היכל השלווה)' }
+  right_sanctuary: { x: 1040, y: 260, name: 'חדר שגרה (היכל השלווה)' },
+  right_south: { x: 1040, y: 480, name: 'חדר שלווה דרומי (כספת האמן)' }
 };
 
 export const RADIO_POSITIONS = {
@@ -186,6 +202,36 @@ export function getStoredDeposits() {
       if (Array.isArray(parsed) && parsed.length > 0) {
         // Auto-upgrade legacy seed deposit if it still contains the old fragility question
         let modified = false;
+
+        // Ensure 5 Loci Practice Photos for House "עבודה" exist
+        const defaultLociPhotos = LOCI_WORK_PRACTICE_ITEMS.map(item => ({
+          id: item.id,
+          createdAt: Date.now() - 3600000,
+          villageCipher: 'יער',
+          villageName: 'כפר עבודה וצמיחה',
+          villageId: 'forest',
+          houseCipher: 'עבודה',
+          houseName: 'בית עבודה',
+          houseId: 'work',
+          roomId: item.roomId,
+          roomName: item.roomName,
+          type: 'photo',
+          title: item.title,
+          emoji: item.emoji,
+          story: item.story,
+          imageUrl: item.imageUrl,
+          associationWord: item.associationWord,
+          order: item.order,
+          physicalChain: `הכפר (יער) ← הבית (עבודה) ← ${item.title}`
+        }));
+
+        defaultLociPhotos.forEach(p => {
+          if (!parsed.some(d => d.id === p.id || (d.roomId === p.roomId && d.type === 'photo'))) {
+            parsed.push(p);
+            modified = true;
+          }
+        });
+
         const upgraded = parsed.map(d => {
           if (d.id === 'seed-deposit-2' && (d.criterion === 'מי הכי שביר?' || d.associationWord === 'שבור')) {
             modified = true;
@@ -219,7 +265,29 @@ export function getStoredDeposits() {
   }
 
   // Initial seed deposit if empty so user immediately sees how it works
+  const defaultLociPhotos = LOCI_WORK_PRACTICE_ITEMS.map(item => ({
+    id: item.id,
+    createdAt: Date.now() - 3600000,
+    villageCipher: 'יער',
+    villageName: 'כפר עבודה וצמיחה',
+    villageId: 'forest',
+    houseCipher: 'עבודה',
+    houseName: 'בית עבודה',
+    houseId: 'work',
+    roomId: item.roomId,
+    roomName: item.roomName,
+    type: 'photo',
+    title: item.title,
+    emoji: item.emoji,
+    story: item.story,
+    imageUrl: item.imageUrl,
+    associationWord: item.associationWord,
+    order: item.order,
+    physicalChain: `הכפר (יער) ← הבית (עבודה) ← ${item.title}`
+  }));
+
   const initialSeed = [
+    ...defaultLociPhotos,
     {
       id: 'seed-deposit-1',
       createdAt: Date.now() - 3600000,

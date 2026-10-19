@@ -28,7 +28,8 @@ import { BizarreStackingEngine, generatePegKeyword } from './stardewArt/BizarreS
 import { BizarreStackingModal } from './stardewArt/BizarreStackingModal';
 import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/ComplexArchitecture';
 import { StardewDoorsLayer, INTERIOR_DOORS_CONFIG } from './stardewArt/StardewDoors';
-import { VillageQuickQuizModal } from './VillageQuickQuizModal';
+import { LociCumulativeQuizModal } from './LociCumulativeQuizModal';
+import { LOCI_DOOR_STAGES, LOCI_WORK_PRACTICE_ITEMS } from '../data/lociPracticeData';
 import { DepositModal } from './DepositModal';
 import { PhotoFrameModal } from './PhotoFrameModal';
 import { AcronymChestModal } from './AcronymChestModal';
@@ -272,11 +273,17 @@ export function StardewInstitutionComplex({
     sounds.playLevelUp?.();
     try {
       confetti({
-        particleCount: 100,
-        spread: 80,
-        origin: { y: 0.5 }
+        particleCount: 120,
+        spread: 85,
+        origin: { y: 0.55 }
       });
     } catch (e) {}
+
+    if (door.id === 'vault_master') {
+      showToast('גאונות! אבא פתר את כל 5 תחנות ארמון הזיכרון! הוכתר כאמן Loci! 🏆👑✨');
+      setActiveQuizDoor(null);
+      return;
+    }
 
     setInteriorMastery(prev => {
       const nextDoors = { ...prev.doors, [door.id]: false };
@@ -291,6 +298,21 @@ export function StardewInstitutionComplex({
 
     showToast(`שליטה ב${door.fromRoomName} אומתה! דלת ${door.toRoomName} נפתחה והחדר הואר במלואו 💡`);
     setActiveQuizDoor(null);
+  };
+
+  const handleResetLociProgress = () => {
+    sounds.playTap?.();
+    setInteriorMastery({
+      unlockedRooms: ['entry_foyer'],
+      masteredRooms: [],
+      doors: {
+        door_c3: true,
+        door_c1: true,
+        door_c2: true,
+        door_east_south: true
+      }
+    });
+    showToast('החדרים ננעלו מחדש! כעת ניתן לתרגל שוב את שרשרת הזיכרון מתחילתה 🏰🔒');
   };
 
 
@@ -956,8 +978,30 @@ export function StardewInstitutionComplex({
           {/* Controlled Cognitive Interior Progression HUD badge */}
           <div className="interior-mastery-hud-pill" title="התקדמות קוגניטיבית מבוקרת בחלל הבית">
             <Lock size={13} className="text-amber" />
-            <span>חדרים מוארים: {interiorMastery.unlockedRooms.length}/4</span>
+            <span>חדרים מוארים: {interiorMastery.unlockedRooms.length}/5</span>
           </div>
+
+          <button
+            onClick={handleResetLociProgress}
+            title="נעילת החדרים מחדש לתרגול חוזר של שיטת Loci עם אבא"
+            style={{
+              background: 'rgba(245, 158, 11, 0.18)',
+              border: '1px solid rgba(245, 158, 11, 0.45)',
+              color: '#fef08a',
+              borderRadius: '10px',
+              padding: '4px 10px',
+              fontSize: '0.78rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              fontWeight: 'bold',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            <RotateCcw size={13} />
+            <span>נעל חדרים לתרגול חוזר 🔒</span>
+          </button>
         </div>
       </header>
 
@@ -1217,14 +1261,37 @@ export function StardewInstitutionComplex({
               }}
               title={hasPhoto ? `תמונת קיר: "${photoDeposit.title}" — לחץ לצפייה ועריכה` : `תמונת נוף כפרית — לחץ להוספת תמונה אישית`}
             >
+              {/* Floating Loci Anchor Tag */}
+              {hasPhoto && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-22px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                  border: '1px solid rgba(245, 158, 11, 0.65)',
+                  color: '#fef3c7',
+                  fontSize: '0.68rem',
+                  fontWeight: 'bold',
+                  padding: '2px 8px',
+                  borderRadius: '10px',
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.6)',
+                  pointerEvents: 'none',
+                  zIndex: 25
+                }}>
+                  <span>{photoDeposit.order ? `${photoDeposit.order}. ` : ''}{photoDeposit.title} {photoDeposit.emoji || '🖼️'}</span>
+                </div>
+              )}
+
               {/* Authentic 2.5D Wooden Beveled Picture Frame (Fits 100% within the 56px wall face) */}
               <div
                 style={{
-                  width: '44px',
-                  height: '32px',
+                  width: '48px',
+                  height: '34px',
                   backgroundColor: '#3b1c09',
                   border: isNear ? '2px solid #f59e0b' : '2px solid #5a2c0d',
-                  borderRadius: '3px',
+                  borderRadius: '4px',
                   boxShadow: isNear 
                     ? '0 3px 8px rgba(0, 0, 0, 0.65), 0 0 8px rgba(245, 158, 11, 0.35)' 
                     : '0 2px 5px rgba(0, 0, 0, 0.5)',
@@ -1331,6 +1398,15 @@ export function StardewInstitutionComplex({
                 onClick={(e) => {
                   e.stopPropagation();
                   sounds.playTap?.();
+                  if (roomId === 'right_south') {
+                    setActiveQuizDoor({
+                      id: 'vault_master',
+                      name: 'כספת אמן ארמון הזיכרון 🏆',
+                      fromRoomName: 'כלל הארמון',
+                      toRoomName: 'אוצר הזיכרון'
+                    });
+                    return;
+                  }
                   if (hasChest) {
                     setInspectingChestData({
                       roomId,
@@ -1342,7 +1418,7 @@ export function StardewInstitutionComplex({
                     setIsDepositModalOpen(true);
                   }
                 }}
-                title={hasChest ? `תיבת ראשי תיבות: "${acronymText}" — לחץ לבדיקה ותרגול` : `תיבה ריקה — לחץ להפקדת רשימה עם ראשי תיבות`}
+                title={roomId === 'right_south' ? 'כספת אמן ארמון הזיכרון 🏆 — לחץ למבחן המסלול השלם של כל 5 התחנות!' : (hasChest ? `תיבת ראשי תיבות: "${acronymText}" — לחץ לבדיקה ותרגול` : `תיבה ריקה — לחץ להפקדת רשימה עם ראשי תיבות`)}
               >
                 <svg width="58" height="50" viewBox="0 0 58 50" className="chest-furniture-svg">
                   <defs>
@@ -2028,26 +2104,13 @@ export function StardewInstitutionComplex({
         depositTitle={`ארונית: ${inspectingLockerData?.roomName || 'חדר'}`}
       />
 
-      {/* 10. Fast Zero-Friction Active Recall Door Check Modal */}
+      {/* 10. Loci Cumulative Active Recall Door Unlock Modal */}
       {activeQuizDoor && (
-        <VillageQuickQuizModal
+        <LociCumulativeQuizModal
           isOpen={!!activeQuizDoor}
+          door={activeQuizDoor}
           onClose={() => setActiveQuizDoor(null)}
-          targetBuildingName={activeQuizDoor.toRoomName}
-          currentMemory={(() => {
-            const reqDeps = storedDeposits.filter(d => d.roomId === activeQuizDoor.requiredRoom);
-            if (reqDeps.length > 0) {
-              const latest = reqDeps[reqDeps.length - 1];
-              return latest.visualAnchor?.label || latest.itemName || latest.associationWord || 'עוגן חדר הכניסה: סדר ומיקוד';
-            }
-            return activeQuizDoor.requiredRoom === 'entry_foyer'
-              ? 'עוגן חדר הכניסה: מיקוד וסדר יום'
-              : `עוגן ${activeQuizDoor.fromRoomName}`;
-          })()}
-          stationEmoji="🔒"
-          stageNumber={interiorMastery.unlockedRooms.length}
-          totalStages={4}
-          onPassedQuiz={() => handlePassDoorQuiz(activeQuizDoor)}
+          onUnlockDoor={(door) => handlePassDoorQuiz(door)}
         />
       )}
     </div>
