@@ -85,7 +85,6 @@ export function StardewFarmhouseInterior({
   };
 
   // Player Character Movement & Canvas (Autonomous 60fps Engine)
-  const [playerPos, setPlayerPos] = useState({ x: 300, y: 380 });
   const playerPosRef = useRef({ x: 300, y: 380 });
   const isWalkingRef = useRef(false);
   const facingLeftRef = useRef(false);
@@ -242,13 +241,7 @@ export function StardewFarmhouseInterior({
         isWalkingRef.current = false;
       }
 
-      // Throttle React state
-      throttleTimer += dt;
-      if (throttleTimer >= 0.09) {
-        throttleTimer = 0;
-        const p = playerPosRef.current;
-        setPlayerPos({ x: Math.round(p.x), y: Math.round(p.y) });
-      }
+
 
       // Draw Villager
       const canvas = canvasRef.current;
@@ -398,8 +391,8 @@ export function StardewFarmhouseInterior({
 
     const newAnchor = {
       id: Date.now().toString(),
-      x: playerPos.x,
-      y: playerPos.y,
+      x: Math.round(playerPosRef.current.x),
+      y: Math.round(playerPosRef.current.y),
       icon: customFormIcon,
       title: customFormTitle.trim(),
       note: customFormNote.trim(),

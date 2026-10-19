@@ -13,6 +13,7 @@ import {
 import confetti from 'canvas-confetti';
 import { sounds } from '../utils/sound';
 import { saveDeposit } from '../utils/keyMethodStorage';
+import { analyzeAcronym } from '../utils/acronymEngine';
 
 // Clean, direct questions for memory palace encoding
 const SCENARIOS = [
@@ -79,7 +80,7 @@ const SCENARIOS = [
 ];
 
 // Helper to parse input items by newlines, commas, semicolons, or spaces
-export function parseInputItems(text) {
+function parseInputItems(text) {
   if (!text) return [];
   const trimmed = text.trim();
   if (!trimmed) return [];
@@ -143,7 +144,15 @@ export function DepositModal({
     setItemsArray(parsed);
 
     if (parsed.length > 1) {
-      // List: setup reorderable items
+      // Check if algorithmic acronym / Hebrew phrase is formed!
+      const acronymAnalysis = analyzeAcronym(parsed);
+      if (acronymAnalysis && acronymAnalysis.isRealWord) {
+        // Automatically save as an Acronym Chest directly without interrupting the customer!
+        handleSaveAsChest(acronymAnalysis);
+        return;
+      }
+
+      // Fallback: list without a real word acronym proceeds to bizarre question ranking flow
       setSortedItems(parsed.map((name, idx) => ({
         id: `item_${idx}_${Date.now()}`,
         name,
@@ -158,6 +167,40 @@ export function DepositModal({
     // Default anchor to scenario's first icon
     setSelectedAnchor(activeScenario.anchors[0]);
     setStep('bizarre_question');
+  };
+
+  // Convert and save directly into the room's Acronym Chest (תיבה)
+  const handleSaveAsChest = (acronymInfo) => {
+    sounds.playFanfare?.();
+    const newDeposit = {
+      id: `dep_${Date.now()}`,
+      createdAt: Date.now(),
+      villageCipher,
+      villageName,
+      houseCipher,
+      houseName,
+      roomId: room?.id || 'main_hall',
+      roomName: room?.name || 'חדר מרכזי',
+      type: 'chest',
+      acronym: acronymInfo.bestAcronym,
+      matchedWord: acronymInfo.matchedWord,
+      isRealWord: acronymInfo.isRealWord,
+      orderedItems: acronymInfo.orderedItems,
+      items: acronymInfo.orderedItems.map(p => p.item),
+      title: `תיבת ראשי תיבות: ${acronymInfo.bestAcronym}`,
+      visualAnchor: { emoji: '🧰', label: acronymInfo.bestAcronym },
+      lastPracticed: new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' })
+    };
+    saveDeposit(newDeposit);
+    try {
+      confetti({
+        particleCount: 70,
+        spread: 60,
+        origin: { y: 0.6 }
+      });
+    } catch {}
+    onDepositSaved?.(newDeposit);
+    onClose();
   };
 
   // Switch scenario (e.g. if user wants a different funny question)
@@ -384,6 +427,8 @@ export function DepositModal({
                   </div>
                 )}
 
+
+
                 <span style={{ fontSize: '0.78rem', color: '#94a3b8', marginTop: '8px', display: 'block' }}>
                   💡 טיפ: הפרד פריטים ברווחים, בפסיקים או בשורות חדשות.
                 </span>
@@ -420,6 +465,71 @@ export function DepositModal({
           {/* ======================================================== */}
           {step === 'bizarre_question' && (
             <div>
+              {/* Optional Acronym Chest Conversion Banner in Step 2 */}
+              {(() => {
+                if (itemsArray.length < 2) return null;
+                const acronymInfo = analyzeAcronym(itemsArray);
+                if (!acronymInfo) return null;
+
+                return (
+                  <div
+                    className="animate-fade-in"
+                    style={{
+                      marginBottom: '16px',
+                      padding: '12px 16px',
+                      background: 'linear-gradient(135deg, rgba(69, 26, 3, 0.95), rgba(28, 12, 4, 0.98))',
+                      border: '1.5px solid #f59e0b',
+                      borderRadius: '16px',
+                      boxShadow: '0 4px 18px rgba(0,0,0,0.5)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '12px',
+                      flexWrap: 'wrap'
+                    }}
+                  >
+                    <div style={{ flex: 1, minWidth: '220px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                        <span style={{ fontSize: '1.3rem' }}>🧰</span>
+                        <strong style={{ color: '#fef08a', fontSize: '0.94rem' }}>
+                          {acronymInfo.isRealWord
+                            ? (acronymInfo.isPhrase ? `זוהה ביטוי עברי מושלם: "${acronymInfo.matchedWord}" (${acronymInfo.bestAcronym})!` : `נמצאו ראשי תיבות מושלמים: "${acronymInfo.matchedWord}" (${acronymInfo.bestAcronym})!`)
+                            : `הצעת ראשי תיבות: [ ${acronymInfo.bestAcronym} ]`}
+                        </strong>
+                      </div>
+                      <div style={{ fontSize: '0.8rem', color: '#fde68a', lineHeight: 1.35 }}>
+                        {acronymInfo.isRealWord
+                          ? (acronymInfo.isPhrase ? `הביטוי "${acronymInfo.matchedWord}" מחבר את הפריטים בצורה קליטה וטבעית. מעדיף לשמור ישירות בתיבה במקום לדרג?` : `המילה "${acronymInfo.matchedWord}" מחברת את הפריטים בצורה קליטה וטבעית. מעדיף לשמור ישירות בתיבה במקום לדרג?`)
+                          : `מעדיף לשמור כתיבת ראשי תיבות בחדר במקום בארונית עם שאלת דירוג?`}
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => handleSaveAsChest(acronymInfo)}
+                      style={{
+                        background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                        border: 'none',
+                        color: '#1c0a00',
+                        fontWeight: 900,
+                        fontSize: '0.88rem',
+                        padding: '9px 16px',
+                        borderRadius: '10px',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        whiteSpace: 'nowrap',
+                        boxShadow: '0 3px 12px rgba(245, 158, 11, 0.45)'
+                      }}
+                    >
+                      <Sparkles size={15} />
+                      <span>הפקד בתיבה ({acronymInfo.bestAcronym}) 🧰</span>
+                    </button>
+                  </div>
+                );
+              })()}
+
               {/* Question Banner - Clean and without bloat */}
               <div 
                 style={{

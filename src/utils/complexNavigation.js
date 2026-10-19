@@ -191,6 +191,25 @@ export function resolveMove(prev, dx, dy, doorsState = {}) {
     }
   }
 
+  // 5. Intelligent Corner Gliding & Chamfer Sliders:
+  // If moving vertically (dy !== 0) but blocked by a doorway lip, nudge horizontally
+  if (dy !== 0 && dx === 0) {
+    for (const offset of [2, -2, 4, -4, 6, -6]) {
+      if (isWalkable(prev.x + offset, ny, doorsState)) {
+        return { x: prev.x + Math.sign(offset) * 1.5, y: ny };
+      }
+    }
+  }
+
+  // If moving horizontally (dx !== 0) but blocked, nudge vertically
+  if (dx !== 0 && dy === 0) {
+    for (const offset of [2, -2, 4, -4, 6, -6]) {
+      if (isWalkable(nx, prev.y + offset, doorsState)) {
+        return { x: nx, y: prev.y + Math.sign(offset) * 1.5 };
+      }
+    }
+  }
+
   return { x: prev.x, y: prev.y };
 }
 

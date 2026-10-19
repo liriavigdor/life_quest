@@ -31,6 +31,8 @@ import { StardewDoorsLayer, INTERIOR_DOORS_CONFIG } from './stardewArt/StardewDo
 import { VillageQuickQuizModal } from './VillageQuickQuizModal';
 import { DepositModal } from './DepositModal';
 import { PhotoFrameModal } from './PhotoFrameModal';
+import { AcronymChestModal } from './AcronymChestModal';
+import { VintageRadioModal } from './VintageRadioModal';
 import { MemoryHierarchyTreeModal } from './MemoryHierarchyTreeModal';
 import { ActiveRecallLocker } from './ActiveRecallLocker';
 import { ActiveRecallSingle } from './ActiveRecallSingle';
@@ -38,7 +40,11 @@ import { BizarreSortChallengeModal } from './BizarreSortChallengeModal';
 import { 
   getChamberForPosition, 
   HOUSE_CHAMBERS, 
-  getStoredDeposits 
+  getStoredDeposits,
+  LOCKER_POSITIONS,
+  WALL_PHOTO_POSITIONS,
+  CHEST_POSITIONS,
+  RADIO_POSITIONS
 } from '../utils/keyMethodStorage';
 import {
   COMPLEX_PAD,
@@ -49,21 +55,6 @@ import {
   buildRoute,
   computeCamera
 } from '../utils/complexNavigation';
-
-// Fixed furniture positions for memory locus discovery (Stardew Valley strategy)
-export const LOCKER_POSITIONS = {
-  entry_foyer: { x: 505, y: 490, name: 'חדר כניסה (מבואה נייטרלית)' },
-  left_store: { x: 195, y: 190, name: 'חדר דחוף (אגף שמאל)' },
-  main_hall: { x: 595, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
-  right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' }
-};
-
-export const WALL_PHOTO_POSITIONS = {
-  left_store: { x: 280, y: 88, name: 'חדר דחוף (אגף שמאל)' },
-  main_hall: { x: 605, y: 56, name: 'חדר בטיפול (האולם המרכזי)' },
-  entry_foyer: { x: 600, y: 350, name: 'חדר כניסה (מבואה נייטרלית)' },
-  right_sanctuary: { x: 1005, y: 105, name: 'חדר שגרה (היכל השלווה)' }
-};
 
 // Helper to detect if coordinates are resting on a thick woven Area Rug
 const isOnAreaRug = (x, y) => {
@@ -202,6 +193,9 @@ export function StardewInstitutionComplex({
   const [modalTargetRoom, setModalTargetRoom] = useState(null);
   const [storedDeposits, setStoredDeposits] = useState(() => getStoredDeposits());
   const [inspectingLockerData, setInspectingLockerData] = useState(null);
+  const [inspectingChestData, setInspectingChestData] = useState(null);
+  const [isRadioModalOpen, setIsRadioModalOpen] = useState(false);
+  const [selectedRadioRoom, setSelectedRadioRoom] = useState(null);
   const [isRoomChallengeOpen, setIsRoomChallengeOpen] = useState(false);
 
   // Stardew Valley Proximity Discovery State:
@@ -379,24 +373,43 @@ export function StardewInstitutionComplex({
     };
   }, [editingLocusKey, isAddingCustomAnchor, onClose]);
 
-  // Active navigation only: Click-to-move disabled by design (WASD / Arrow keys navigation)
+  // Responsive fluid Click-to-move pathfinding + keyboard navigation
   const handleFloorClick = (e) => {
-    // Active navigation only - clicks on floor do not move the character
-    return;
+    if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+    if (!stageRef.current) return;
+    const rect = stageRef.current.getBoundingClientRect();
+    const clickX = (e.clientX - rect.left) / fitScale;
+    const clickY = (e.clientY - rect.top) / fitScale;
+
+    const snapped = snapToWalkable(clickX, clickY, doorsRef.current);
+    if (!snapped) return;
+
+    const cur = playerPosRef.current;
+    const route = buildRoute(cur, snapped, doorsRef.current);
+    if (route && route.length > 0) {
+      destinationMarkerRef.current = {
+        x: snapped.x,
+        y: snapped.y,
+        createdAt: performance.now(),
+        active: true
+      };
+      playerTargetRef.current = route.shift();
+      routeRef.current = route;
+    }
   };
 
   // Continuous 60fps Autonomous Physics & Canvas Rendering Engine
   useEffect(() => {
     let isCancelled = false;
     let lastTime = performance.now();
-    let throttleTimer = 0;
+    let lastProximityTime = 0;
 
     const loop = (time) => {
       if (isCancelled) return;
 
       const rawDt = (time - lastTime) / 1000;
       lastTime = time;
-      const dt = Math.min(0.06, Math.max(0.001, rawDt));
+      const dt = Math.min(0.04, Math.max(0.001, rawDt));
 
       const curPos = playerPosRef.current;
       const heldKeys = heldKeysRef.current;
@@ -425,7 +438,7 @@ export function StardewInstitutionComplex({
           else if (kdx > 0) facingLeftRef.current = false;
 
           playerPosRef.current = next;
-          isWalkingRef.current = (next.x !== curPos.x || next.y !== curPos.y);
+          isWalkingRef.current = true;
           walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
 
           // Village exit check
@@ -489,32 +502,50 @@ export function StardewInstitutionComplex({
         isWalkingRef.current = false;
       }
 
-      // 2.5 STARDEW PROXIMITY DISCOVERY:
-      // Furniture pieces conceal lists & photos until the player approaches nearby!
-      const px = playerPosRef.current.x;
-      const py = playerPosRef.current.y;
-      let closestNear = null;
-      let minD = 125;
+      // 2.5 STARDEW PROXIMITY DISCOVERY (Throttled to 180ms to avoid React re-render thrashing!)
+      if (time - lastProximityTime > 180) {
+        lastProximityTime = time;
+        const px = playerPosRef.current.x;
+        const py = playerPosRef.current.y;
+        let closestNear = null;
+        let minD = 65;
 
-      for (const [roomId, pos] of Object.entries(LOCKER_POSITIONS)) {
-        const d = Math.hypot(px - (pos.x + 38), py - (pos.y + 45));
-        if (d < minD) {
-          minD = d;
-          closestNear = `locker_${roomId}`;
+        for (const [roomId, pos] of Object.entries(LOCKER_POSITIONS)) {
+          const d = Math.hypot(px - (pos.x + 38), py - (pos.y + 45));
+          if (d < minD) {
+            minD = d;
+            closestNear = `locker_${roomId}`;
+          }
         }
-      }
 
-      for (const [roomId, pos] of Object.entries(WALL_PHOTO_POSITIONS)) {
-        const d = Math.hypot(px - pos.x, py - (pos.y + 70));
-        if (d < minD) {
-          minD = d;
-          closestNear = `photo_${roomId}`;
+        for (const [roomId, pos] of Object.entries(WALL_PHOTO_POSITIONS)) {
+          const d = Math.hypot(px - pos.x, py - (pos.y + 70));
+          if (d < minD) {
+            minD = d;
+            closestNear = `photo_${roomId}`;
+          }
         }
-      }
 
-      if (closestNear !== nearObjectIdRef.current) {
-        nearObjectIdRef.current = closestNear;
-        setNearObjectId(closestNear);
+        for (const [roomId, pos] of Object.entries(CHEST_POSITIONS)) {
+          const d = Math.hypot(px - (pos.x + 29), py - (pos.y + 25));
+          if (d < minD) {
+            minD = d;
+            closestNear = `chest_${roomId}`;
+          }
+        }
+
+        for (const [roomId, pos] of Object.entries(RADIO_POSITIONS)) {
+          const d = Math.hypot(px - (pos.x + 24), py - (pos.y + 20));
+          if (d < minD) {
+            minD = d;
+            closestNear = `radio_${roomId}`;
+          }
+        }
+
+        if (closestNear !== nearObjectIdRef.current) {
+          nearObjectIdRef.current = closestNear;
+          setNearObjectId(closestNear);
+        }
       }
 
       // 3. CANVAS DRAWING (Guaranteed single draw per frame, zero ghosts)
@@ -649,6 +680,33 @@ export function StardewInstitutionComplex({
         sounds.playTap?.();
         setSelectedWallPhotoRoom({ id: roomId, name: pos?.name || 'תמונה על הקיר' });
         setIsPhotoModalOpen(true);
+        return;
+      }
+
+      if (near.startsWith('chest_')) {
+        const roomId = near.replace('chest_', '');
+        const pos = CHEST_POSITIONS[roomId];
+        const chestDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'chest');
+        sounds.playTap?.();
+        if (chestDeposit) {
+          setInspectingChestData({
+            roomId,
+            roomName: pos?.name || 'תיבת ראשי תיבות',
+            deposit: chestDeposit
+          });
+        } else {
+          setModalTargetRoom({ id: roomId, name: pos?.name || 'תיבת ראשי תיבות' });
+          setIsDepositModalOpen(true);
+        }
+        return;
+      }
+
+      if (near.startsWith('radio_')) {
+        const roomId = near.replace('radio_', '');
+        const pos = RADIO_POSITIONS[roomId];
+        sounds.playTap?.();
+        setSelectedRadioRoom({ id: roomId, name: pos?.name || 'רדיו וינטג\'' });
+        setIsRadioModalOpen(true);
         return;
       }
     }
@@ -967,36 +1025,6 @@ export function StardewInstitutionComplex({
               onMouseEnter={() => setHoveredObjectId(`locker_${roomId}`)}
               onMouseLeave={() => setHoveredObjectId(null)}
             >
-              {/* Proximity Interaction Prompt (Spacebar) */}
-              {isNear && (
-                <div 
-                  className="animate-fade-in"
-                  style={{
-                    position: 'absolute',
-                    top: '-42px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    background: 'rgba(15, 23, 42, 0.94)',
-                    border: '1.5px solid #f59e0b',
-                    borderRadius: '20px',
-                    padding: '3px 10px',
-                    whiteSpace: 'nowrap',
-                    fontSize: '0.74rem',
-                    fontWeight: 800,
-                    color: '#fef08a',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.7)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    zIndex: 40,
-                    pointerEvents: 'none'
-                  }}
-                >
-                  <span style={{ background: '#78350f', padding: '1px 5px', borderRadius: '4px', fontSize: '0.68rem', color: '#fff' }}>רווח</span>
-                  <span>{hasDeposits ? 'בדוק רשימה 📜' : 'הפקד רשימה ➕'}</span>
-                </div>
-              )}
-
               {/* Isometric Physical Wooden Locker Furniture Piece */}
               <div 
                 className="physical-locker-furniture-piece"
@@ -1155,26 +1183,12 @@ export function StardewInstitutionComplex({
                   <path d="M 36 6 Q 39 2 42 6" fill="none" stroke="#78350f" strokeWidth="1.2" />
                   <circle cx="39" cy="10" r="1.6" fill="#f59e0b" />
                 </svg>
-
-                {/* Elegant Brass Nameplate & Count Tag - Revealed ONLY when approaching! */}
-                <div 
-                  className="furniture-brass-tag"
-                  style={{
-                    opacity: isNear ? 1 : 0,
-                    transform: isNear ? 'translateY(0)' : 'translateY(6px)',
-                    transition: 'all 0.25s ease',
-                    pointerEvents: isNear ? 'auto' : 'none'
-                  }}
-                >
-                  <span className="tag-lock-icon">{anchorEmoji}</span>
-                  <span className="tag-title">{hasDeposits ? anchorLabel : 'ארונית ריקה'}</span>
-                </div>
               </div>
             </div>
           );
         })}
 
-        {/* --- IN-ROOM AUTHENTIC WALL PICTURE FRAMES (FOR REAL USER PHOTOS) --- */}
+        {/* --- IN-ROOM AUTHENTIC WALL PICTURE FRAMES (EMBEDDED COTTAGE DECOR) --- */}
         {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
           const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
           const hasPhoto = !!photoDeposit;
@@ -1190,7 +1204,8 @@ export function StardewInstitutionComplex({
                 top: `${pos.y}px`,
                 zIndex: 18,
                 transform: 'translate(-50%, -50%)',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                transition: 'transform 0.18s ease'
               }}
               onMouseEnter={() => setHoveredObjectId(`photo_${roomId}`)}
               onMouseLeave={() => setHoveredObjectId(null)}
@@ -1200,188 +1215,290 @@ export function StardewInstitutionComplex({
                 setSelectedWallPhotoRoom({ id: roomId, name: pos.name });
                 setIsPhotoModalOpen(true);
               }}
-              title={hasPhoto ? `תמונה על הקיר: "${photoDeposit.title}" — לחץ לצפייה` : `תמונה על הקיר ריקה — לחץ להוספת תמונה אישית`}
+              title={hasPhoto ? `תמונת קיר: "${photoDeposit.title}" — לחץ לצפייה ועריכה` : `תמונת נוף כפרית — לחץ להוספת תמונה אישית`}
             >
-              {/* Proximity Interaction Prompt (Spacebar) */}
-              {isNear && (
-                <div 
-                  className="animate-fade-in"
-                  style={{
-                    position: 'absolute',
-                    top: '-32px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    background: 'rgba(15, 23, 42, 0.94)',
-                    border: '1.5px solid #f59e0b',
-                    borderRadius: '20px',
-                    padding: '2px 8px',
-                    whiteSpace: 'nowrap',
-                    fontSize: '0.72rem',
-                    fontWeight: 800,
-                    color: '#fef08a',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.7)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    zIndex: 40,
-                    pointerEvents: 'none'
-                  }}
-                >
-                  <span style={{ background: '#78350f', padding: '1px 4px', borderRadius: '4px', fontSize: '0.65rem', color: '#fff' }}>רווח</span>
-                  <span>{hasPhoto ? 'הצג תמונה 🖼️' : 'תלה תמונה ➕'}</span>
-                </div>
-              )}
-
-              {/* Hanging wire to wall nail */}
-              <div 
-                style={{
-                  position: 'absolute',
-                  top: '-10px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '50%',
-                  background: '#1c1917',
-                  border: '1px solid #78716c',
-                  zIndex: 2
-                }}
-              />
-              <svg 
-                width="28" 
-                height="12" 
-                viewBox="0 0 28 12" 
-                style={{
-                  position: 'absolute',
-                  top: '-8px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  zIndex: 1,
-                  pointerEvents: 'none'
-                }}
-              >
-                <path d="M 1 12 L 14 2 L 27 12" fill="none" stroke="#78716c" strokeWidth="1.2" strokeLinecap="round" />
-              </svg>
-
-              {/* Ornate Frame Body */}
+              {/* Authentic 2.5D Wooden Beveled Picture Frame (Fits 100% within the 56px wall face) */}
               <div
-                className="wall-frame-hover-glow"
                 style={{
-                  width: '64px',
-                  height: '52px',
-                  background: 'linear-gradient(135deg, #78350f 0%, #451a03 50%, #78350f 100%)',
-                  borderRadius: '8px',
-                  padding: '5px',
-                  boxShadow: '0 8px 18px rgba(0, 0, 0, 0.75), inset 0 1px 2px rgba(253, 224, 71, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.8)',
-                  border: isNear ? '2px solid #f59e0b' : '1.5px solid #b45309',
+                  width: '44px',
+                  height: '32px',
+                  backgroundColor: '#3b1c09',
+                  border: isNear ? '2px solid #f59e0b' : '2px solid #5a2c0d',
+                  borderRadius: '3px',
+                  boxShadow: isNear 
+                    ? '0 3px 8px rgba(0, 0, 0, 0.65), 0 0 8px rgba(245, 158, 11, 0.35)' 
+                    : '0 2px 5px rgba(0, 0, 0, 0.5)',
+                  padding: '2px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   position: 'relative',
-                  transition: 'all 0.2s ease'
+                  overflow: 'hidden',
+                  transition: 'all 0.18s ease'
                 }}
               >
-                {hasPhoto ? (
-                  <div style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>
-                    {/* Stardew Mysterious Distant Silhouette Canvas */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        background: 'linear-gradient(135deg, #2d1b11 0%, #1a0f0a 100%)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        opacity: isNear ? 0 : 1,
-                        transition: 'opacity 0.28s ease',
-                        zIndex: 1
-                      }}
+                {/* Inner Gold Inlay Fillet */}
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    border: '1px solid #b45309',
+                    borderRadius: '2px',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    backgroundColor: '#1c1917'
+                  }}
+                >
+                  {hasPhoto ? (
+                    <>
+                      {/* Real User Photo Canvas */}
+                      <img
+                        src={photoDeposit.imageUrl}
+                        alt={photoDeposit.title}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block'
+                        }}
+                      />
+                      {/* Gentle Oil-Painting Glaze */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.12) 100%)',
+                          pointerEvents: 'none'
+                        }}
+                      />
+                    </>
+                  ) : (
+                    /* Default Miniature Cottage Landscape (Blends naturally with scenery) */
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 36 24"
+                      preserveAspectRatio="none"
+                      style={{ display: 'block' }}
                     >
-                      <span style={{ fontSize: '1.1rem', opacity: 0.65 }}>🌄</span>
-                    </div>
+                      <defs>
+                        <linearGradient id={`frameSky-${roomId}`} x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#fdba74" />
+                          <stop offset="60%" stopColor="#fed7aa" />
+                          <stop offset="100%" stopColor="#fef08a" />
+                        </linearGradient>
+                      </defs>
+                      {/* Sunset Sky */}
+                      <rect width="36" height="24" fill={`url(#frameSky-${roomId})`} />
+                      {/* Warm Sun */}
+                      <circle cx="27" cy="8" r="3.5" fill="#f59e0b" opacity="0.85" />
+                      {/* Distant Purple Mountains */}
+                      <polygon points="2,24 12,11 22,24" fill="#7c3aed" opacity="0.45" />
+                      <polygon points="14,24 24,13 34,24" fill="#6d28d9" opacity="0.5" />
+                      {/* Rolling Green Foreground Hills */}
+                      <ellipse cx="10" cy="25" rx="16" ry="9" fill="#15803d" />
+                      <ellipse cx="28" cy="26" rx="14" ry="8" fill="#166534" />
+                      {/* Tiny Cypress Tree */}
+                      <polygon points="7,20 9,14 11,20" fill="#052e16" />
+                    </svg>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })}
 
-                    {/* The User's Real Photo - Reveals smoothly when approaching! */}
-                    <img
-                      src={photoDeposit.imageUrl}
-                      alt={photoDeposit.title}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block',
-                        opacity: isNear ? 1 : 0,
-                        transition: 'opacity 0.28s ease',
-                        position: 'relative',
-                        zIndex: 2
-                      }}
-                    />
-                    {/* Glass glaze highlight */}
-                    <div 
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: '50%',
-                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%)',
-                        pointerEvents: 'none',
-                        zIndex: 3
-                      }} 
-                    />
-                  </div>
-                ) : (
-                  <div
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      background: 'radial-gradient(circle, #3e2617 0%, #201209 100%)',
-                      borderRadius: '4px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '2px',
-                      border: isNear ? '1.5px solid #f59e0b' : '1px dashed rgba(245, 158, 11, 0.35)',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    <span style={{ fontSize: '1.1rem', opacity: isNear ? 1 : 0.6 }}>🖼️</span>
-                    <span style={{ fontSize: '0.55rem', color: isNear ? '#fef08a' : '#94a3b8', fontWeight: 700 }}>
-                      {isNear ? '+ תמונה' : 'קנבס'}
-                    </span>
-                  </div>
-                )}
+        {/* --- IN-ROOM AUTHENTIC 2.5D WOODEN CHESTS (DEDICATED FOR ACRONYMS / ראשי תיבות) --- */}
+        {Object.entries(CHEST_POSITIONS).map(([roomId, pos]) => {
+          const chestDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'chest');
+          const hasChest = !!chestDeposit;
+          const acronymText = chestDeposit?.acronym || 'תיבה ריקה';
+          const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
+          const needsPractice = hasChest && chestDeposit.lastPracticed !== todayStr;
+          const isNear = nearObjectId === `chest_${roomId}` || hoveredObjectId === `chest_${roomId}`;
 
-                {/* Brass Plaque with title underneath if has photo - Revealed ONLY when approaching! */}
-                {hasPhoto && (
+          return (
+            <div
+              key={`chest-${roomId}`}
+              className="in-room-physical-chest-anchor"
+              style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 24 }}
+              onMouseEnter={() => setHoveredObjectId(`chest_${roomId}`)}
+              onMouseLeave={() => setHoveredObjectId(null)}
+            >
+              {/* 2.5D Stardew Valley Wooden Chest SVG */}
+              <div
+                className="physical-chest-furniture-piece"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  sounds.playTap?.();
+                  if (hasChest) {
+                    setInspectingChestData({
+                      roomId,
+                      roomName: pos.name,
+                      deposit: chestDeposit
+                    });
+                  } else {
+                    setModalTargetRoom({ id: roomId, name: pos.name });
+                    setIsDepositModalOpen(true);
+                  }
+                }}
+                title={hasChest ? `תיבת ראשי תיבות: "${acronymText}" — לחץ לבדיקה ותרגול` : `תיבה ריקה — לחץ להפקדת רשימה עם ראשי תיבות`}
+              >
+                <svg width="58" height="50" viewBox="0 0 58 50" className="chest-furniture-svg">
+                  <defs>
+                    <radialGradient id={`chestShadow-${roomId}`} cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#000" stopOpacity="0.55" />
+                      <stop offset="100%" stopColor="#000" stopOpacity="0" />
+                    </radialGradient>
+                    <linearGradient id={`chestOakTop-${roomId}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#d97706" />
+                      <stop offset="50%" stopColor="#b45309" />
+                      <stop offset="100%" stopColor="#78350f" />
+                    </linearGradient>
+                    <linearGradient id={`chestOakFace-${roomId}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#92400e" />
+                      <stop offset="50%" stopColor="#78350f" />
+                      <stop offset="100%" stopColor="#451a03" />
+                    </linearGradient>
+                    <linearGradient id={`chestBrass-${roomId}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#fef08a" />
+                      <stop offset="50%" stopColor="#f59e0b" />
+                      <stop offset="100%" stopColor="#b45309" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Ground contact shadow */}
+                  <ellipse cx="29" cy="44" rx="27" ry="5.5" fill={`url(#chestShadow-${roomId})`} />
+
+                  {/* Base Chest Box */}
+                  <rect x="6" y="18" width="46" height="24" rx="2" fill={`url(#chestOakFace-${roomId})`} stroke="#1e0f05" strokeWidth="1.4" />
+                  {/* Wood planks divider lines */}
+                  <line x1="6" y1="26" x2="52" y2="26" stroke="rgba(0,0,0,0.35)" strokeWidth="0.8" />
+                  <line x1="6" y1="34" x2="52" y2="34" stroke="rgba(0,0,0,0.35)" strokeWidth="0.8" />
+
+                  {/* 3/4 Perspective Curved/Arched Chest Lid */}
+                  <polygon points="2,6 56,6 52,18 6,18" fill={`url(#chestOakTop-${roomId})`} stroke="#1e0f05" strokeWidth="1.4" />
+                  {/* Sunlight rim */}
+                  <line x1="3" y1="7" x2="55" y2="7" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
+
+                  {/* Iron/Brass Reinforcing Bands with Rivets */}
+                  <rect x="14" y="6" width="4" height="36" fill={`url(#chestBrass-${roomId})`} stroke="#1e0f05" strokeWidth="0.8" />
+                  <circle cx="16" cy="11" r="1.1" fill="#fff" />
+                  <circle cx="16" cy="22" r="1.1" fill="#fff" />
+                  <circle cx="16" cy="30" r="1.1" fill="#fff" />
+                  <circle cx="16" cy="38" r="1.1" fill="#fff" />
+
+                  <rect x="40" y="6" width="4" height="36" fill={`url(#chestBrass-${roomId})`} stroke="#1e0f05" strokeWidth="0.8" />
+                  <circle cx="42" cy="11" r="1.1" fill="#fff" />
+                  <circle cx="42" cy="22" r="1.1" fill="#fff" />
+                  <circle cx="42" cy="30" r="1.1" fill="#fff" />
+                  <circle cx="42" cy="38" r="1.1" fill="#fff" />
+
+                  {/* Central Golden Padlock / Clasp */}
+                  <rect x="25" y="14" width="8" height="9" rx="1.5" fill={`url(#chestBrass-${roomId})`} stroke="#1e0f05" strokeWidth="1" />
+                  <circle cx="29" cy="17" r="1.3" fill="#1e0f05" />
+                  <line x1="29" y1="18.5" x2="29" y2="21" stroke="#1e0f05" strokeWidth="1" />
+                </svg>
+
+                {/* Review Due Droplet 💧 */}
+                {needsPractice && isNear && (
                   <div
+                    className="animate-bounce-gentle"
                     style={{
                       position: 'absolute',
-                      bottom: '-14px',
+                      top: '-18px',
                       left: '50%',
-                      transform: isNear ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(6px)',
-                      opacity: isNear ? 1 : 0,
-                      pointerEvents: isNear ? 'auto' : 'none',
-                      transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                      background: 'linear-gradient(180deg, #fef08a 0%, #ca8a04 100%)',
-                      color: '#000000',
-                      fontSize: '0.62rem',
-                      fontWeight: 800,
-                      padding: '1px 6px',
-                      borderRadius: '4px',
-                      whiteSpace: 'nowrap',
-                      maxWidth: '84px',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      boxShadow: '0 2px 5px rgba(0,0,0,0.6)',
-                      border: '0.5px solid #854d0e',
-                      zIndex: 10
+                      transform: 'translateX(-50%)',
+                      fontSize: '0.82rem',
+                      background: 'rgba(224, 242, 254, 0.95)',
+                      border: '1px solid #38bdf8',
+                      borderRadius: '50%',
+                      width: '18px',
+                      height: '18px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 2px 6px rgba(56, 189, 248, 0.6)'
                     }}
+                    title="תרגול שליפה יומי של ראשי התיבות"
                   >
-                    {photoDeposit.title}
+                    💧
                   </div>
                 )}
+              </div>
+            </div>
+          );
+        })}
+
+        {/* --- IN-ROOM AUTHENTIC 2.5D VINTAGE RETRO RADIO (DEDICATED FOR AUDITORY / ECHOIC MEMORY) --- */}
+        {Object.entries(RADIO_POSITIONS).map(([roomId, pos]) => {
+          const radioDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'radio');
+          const hasRadio = !!radioDeposit;
+          const radioTitle = radioDeposit?.title || 'רדיו וינטג\'';
+          const isNear = nearObjectId === `radio_${roomId}` || hoveredObjectId === `radio_${roomId}`;
+
+          return (
+            <div
+              key={`radio-${roomId}`}
+              className="in-room-physical-radio-anchor"
+              style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 24 }}
+              onMouseEnter={() => setHoveredObjectId(`radio_${roomId}`)}
+              onMouseLeave={() => setHoveredObjectId(null)}
+            >
+              {/* 2.5D Stardew Valley Vintage Wooden Radio SVG */}
+              <div
+                className="physical-radio-furniture-piece"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  sounds.playTap?.();
+                  setSelectedRadioRoom({ id: roomId, name: pos.name });
+                  setIsRadioModalOpen(true);
+                }}
+                title={hasRadio ? `רדיו קולי: "${radioTitle}" — לחץ להאזנה` : `רדיו וינטג' שולחני — לחץ להקלטת הודעה קולית`}
+                style={{ cursor: 'pointer', position: 'relative' }}
+              >
+                <svg width="48" height="42" viewBox="0 0 48 42" className="radio-furniture-svg">
+                  <defs>
+                    <radialGradient id={`radioShadow-${roomId}`} cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#000" stopOpacity="0.55" />
+                      <stop offset="100%" stopColor="#000" stopOpacity="0" />
+                    </radialGradient>
+                    <linearGradient id={`radioWood-${roomId}`} x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#92400e" />
+                      <stop offset="50%" stopColor="#78350f" />
+                      <stop offset="100%" stopColor="#451a03" />
+                    </linearGradient>
+                    <linearGradient id={`radioDial-${roomId}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#fef08a" />
+                      <stop offset="100%" stopColor="#d97706" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Drop shadow */}
+                  <ellipse cx="24" cy="38" rx="21" ry="4" fill={`url(#radioShadow-${roomId})`} />
+
+                  {/* Radio Antenna */}
+                  <line x1="12" y1="12" x2="6" y2="2" stroke="#94a3b8" strokeWidth="1.2" strokeLinecap="round" />
+                  <circle cx="6" cy="2" r="1.2" fill="#e2e8f0" />
+
+                  {/* Radio Wooden Cabinet */}
+                  <rect x="4" y="12" width="40" height="24" rx="3" fill={`url(#radioWood-${roomId})`} stroke="#1e0f05" strokeWidth="1.2" />
+
+                  {/* Speaker Cloth Slits (Left) */}
+                  <rect x="8" y="16" width="16" height="16" rx="2" fill="#291206" stroke="#451a03" strokeWidth="0.8" />
+                  <line x1="11" y1="19" x2="21" y2="19" stroke="#78350f" strokeWidth="1" />
+                  <line x1="11" y1="23" x2="21" y2="23" stroke="#78350f" strokeWidth="1" />
+                  <line x1="11" y1="27" x2="21" y2="27" stroke="#78350f" strokeWidth="1" />
+
+                  {/* Tuning Dial & Vacuum Tube Window (Right) */}
+                  <rect x="27" y="16" width="13" height="8" rx="1.5" fill="#180903" stroke="#b45309" strokeWidth="0.8" />
+                  <line x1="29" y1="20" x2="38" y2="20" stroke={`url(#radioDial-${roomId})`} strokeWidth="1.2" />
+                  <line x1="33" y1="17" x2="33" y2="23" stroke="#ef4444" strokeWidth="1" />
+
+                  {/* Volume & Tuning Knobs */}
+                  <circle cx="30" cy="28" r="2.2" fill="#d97706" stroke="#1e0f05" strokeWidth="0.8" />
+                  <circle cx="37" cy="28" r="2.2" fill="#d97706" stroke="#1e0f05" strokeWidth="0.8" />
+                </svg>
               </div>
             </div>
           );
@@ -1838,7 +1955,12 @@ export function StardewInstitutionComplex({
         houseName={isGym ? "היכל הכושר והאימון" : (building?.customName || "מחלקת לוגיסטיקה וציוד")}
         room={modalTargetRoom || getChamberForPosition(playerPosRef.current.x, playerPosRef.current.y) || HOUSE_CHAMBERS[0]}
         onDepositSaved={(newDeposit) => {
-          showToast(newDeposit.type === 'single' ? 'פריט הופקד בהצלחה! 🗝️' : 'ארונית רשימות נוצרה! 🗄️');
+          setStoredDeposits(getStoredDeposits());
+          showToast(
+            newDeposit.type === 'chest' 
+              ? `תיבת ראשי תיבות נוצרה: ${newDeposit.acronym || ''}! 🧰`
+              : (newDeposit.type === 'single' ? 'פריט הופקד בהצלחה! 🗝️' : 'ארונית רשימות נוצרה! 🗄️')
+          );
         }}
       />
 
@@ -1854,6 +1976,37 @@ export function StardewInstitutionComplex({
         onPhotoSaved={(saved) => {
           setStoredDeposits(getStoredDeposits());
           showToast(saved ? 'התמונה נתלתה על הקיר בהצלחה! 🖼️' : 'התמונה הוסרה מהקיר');
+        }}
+      />
+
+      {/* 7.2 Acronym Chest (תיבת ראשי תיבות) Modal */}
+      <AcronymChestModal
+        isOpen={!!inspectingChestData}
+        onClose={() => setInspectingChestData(null)}
+        chestData={inspectingChestData}
+        onDepositUpdated={(updated) => {
+          setStoredDeposits(getStoredDeposits());
+          if (updated) {
+            setInspectingChestData(prev => prev ? { ...prev, deposit: updated } : null);
+            showToast('תיבת ראשי התיבות עודכנה בהצלחה! 🧰');
+          } else {
+            showToast('התיבה פונתה בהצלחה');
+          }
+        }}
+      />
+
+      {/* 7.3 Vintage Retro Radio (Auditory Echoic Memory) Modal */}
+      <VintageRadioModal
+        isOpen={isRadioModalOpen}
+        onClose={() => setIsRadioModalOpen(false)}
+        roomId={selectedRadioRoom?.id}
+        roomName={selectedRadioRoom?.name}
+        existingRadio={storedDeposits.find(d => d.roomId === selectedRadioRoom?.id && d.type === 'radio')}
+        villageCipher="יער"
+        houseCipher="אבק"
+        onRadioSaved={(saved) => {
+          setStoredDeposits(getStoredDeposits());
+          showToast(saved ? 'ההקלטה נשמרה ברדיו בהצלחה! 📻🎙️' : 'ההקלטה הוסרה מהרדיו');
         }}
       />
 

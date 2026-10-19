@@ -22,6 +22,7 @@ import {
   Volume2,
   VolumeX,
   BookHeart,
+  BookOpen,
   Sunset,
   Sun,
   Moon,
@@ -60,6 +61,7 @@ import { VillageQuickQuizModal } from './components/VillageQuickQuizModal';
 import { CognitiveSurveyModal } from './components/CognitiveSurveyModal';
 import { StoryToMonumentModal } from './components/StoryToMonumentModal';
 import { MemoryHierarchyTreeModal } from './components/MemoryHierarchyTreeModal';
+import { VillageGuideModal } from './components/VillageGuideModal';
 import { drawStoryDiorama } from './utils/storyDioramaRenderer';
 import './App.css';
 
@@ -414,6 +416,13 @@ export default function App() {
   const [showHierarchyTree, setShowHierarchyTree] = useState(false);
   const [showQuickQuizModal, setShowQuickQuizModal] = useState(null);
   const [travelingNotice, setTravelingNotice] = useState(null);
+  const [showGuideModal, setShowGuideModal] = useState(() => {
+    try {
+      return !localStorage.getItem('lifequest_guide_seen_v1');
+    } catch {
+      return false;
+    }
+  });
 
   // Cognitive Controlled Village Progression (Stage 1..5 & Interior Lock State)
   const [villageProgression, setVillageProgression] = useState(() => {
@@ -6638,16 +6647,17 @@ export default function App() {
         }
       }
 
-      if (!activeBadgeKey && v && showMindMapTagsRef.current) {
-        let minD = 1.35; // Close personal proximity only
+      if (!activeBadgeKey && v && showMindMapTagsRef.current && (!v.isWalking && v.progress >= 1)) {
+        let minD = 1.05; // Strict intimate proximity when standing still
         renderEntities.forEach(it => {
           if (it.kind === 'object' && it.obj?.customName) {
             const isMajor = ['wooden_cabin', 'library', 'bakery', 'gym', 'greenhouse'].includes(it.obj.type);
-            const d = Math.hypot(v.currGx - it.obj.gx, v.currGy - it.obj.gy);
-            const effectiveD = isMajor ? d : d + 0.6; // Priority to major buildings
-            if (effectiveD < minD) {
-              minD = effectiveD;
-              activeBadgeKey = `o:${it.obj.gx},${it.obj.gy}`;
+            if (isMajor) {
+              const d = Math.hypot(v.currGx - it.obj.gx, v.currGy - it.obj.gy);
+              if (d < minD) {
+                minD = d;
+                activeBadgeKey = `o:${it.obj.gx},${it.obj.gy}`;
+              }
             }
           }
         });
@@ -6684,7 +6694,7 @@ export default function App() {
             const itemKey = `o:${item.obj.gx},${item.obj.gy}`;
             const isTarget = activeBadgeKey === itemKey;
             const reveal = stepBadgeReveal(itemKey, isTarget);
-            if (reveal > 0.01 && (isTarget || !badgeDrawn)) {
+            if (isTarget && reveal > 0.01 && !badgeDrawn) {
               badgeDrawn = true;
               const nameText = item.obj.customEmoji ? `${item.obj.customEmoji} ${item.obj.customName}` : item.obj.customName;
               drawParchmentBadge(ctx, {
@@ -6698,20 +6708,20 @@ export default function App() {
             }
           }
 
-          // Gentle Spaced Repetition Floating Care Bubble (💧) strictly within close proximity
+          // Gentle Spaced Repetition Floating Care Bubble (💧) strictly when hovered with mouse or inspected
           const isPlant = PLANT_CARE_TYPES.has(item.obj.type);
-          const isPlantNear = !!v && Math.hypot(v.currGx - item.obj.gx, v.currGy - item.obj.gy) < 1.1;
           const isPlantHovered = !!currentHovered && currentHovered.gx === item.obj.gx && currentHovered.gy === item.obj.gy;
-          if (isPlant && item.obj.lastCaredDate !== todayStr && (isPlantNear || isPlantHovered || isInspected)) {
+          if (isPlant && item.obj.lastCaredDate !== todayStr && (isPlantHovered || isInspected)) {
             const isTree = item.obj.type.includes('tree');
             const bubbleY = isTree ? sy - 44 : sy - 18;
             drawFloatingCareBubble(ctx, sx, bubbleY, '💧', true);
           }
 
-          // Floating locked badge for buildings in future stages along the mental walk
+          // Subtle locked badge for buildings in future stages - only when hovered or inspected
           const stations = VILLAGE_STATIONS[currentVillageIdRef.current] || VILLAGE_STATIONS.military;
           const stationMatch = stations.find(s => s.type === item.obj.type || s.name === item.obj.customName);
-          if (stationMatch && stationMatch.stage > (villageProgressionRef.current?.stage || 1)) {
+          const isBuildingHovered = !!currentHovered && currentHovered.gx === item.obj.gx && currentHovered.gy === item.obj.gy;
+          if (stationMatch && stationMatch.stage > (villageProgressionRef.current?.stage || 1) && (isBuildingHovered || isInspected)) {
             ctx.save();
             ctx.font = '14px sans-serif';
             ctx.textAlign = 'center';
@@ -6732,11 +6742,10 @@ export default function App() {
             x: origin.x + (sx - origin.x) * zoom,
             y: origin.y + (sy + TILE_H / 2 - origin.y) * zoom
           };
-          // Name tag is hidden by default; reveal on hover over the animal's tile or when inspected
+          // Animal name tag revealed only when hovered or inspected
           const animalHovered = !!currentHovered &&
             currentHovered.gx === Math.round(item.animal.currGx) && currentHovered.gy === Math.round(item.animal.currGy);
-          const animalNear = !!v && Math.hypot(v.currGx - item.animal.currGx, v.currGy - item.animal.currGy) < 1.1;
-          const animalReveal = stepBadgeReveal(`a:${item.animal.id || item.animal.name}`, animalHovered || animalNear);
+          const animalReveal = stepBadgeReveal(`a:${item.animal.id || item.animal.name}`, animalHovered);
           drawAnimal(ctx, item.animal, { x: sx, y: sy + TILE_H / 2 }, {
             isSunset,
             isNight,
@@ -6746,13 +6755,12 @@ export default function App() {
             todayStr
           });
 
-          // Floating Care Bubble (🌾) strictly when close or hovered, NEVER across the whole meadow
+          // Floating Care Bubble (🌾) strictly when hovered with mouse
           const isHungry = item.animal.lastCaredDate !== todayStr && !item.animal.completed;
-          const isAnimalNear = !!v && Math.hypot(v.currGx - item.animal.currGx, v.currGy - item.animal.currGy) < 1.1;
-          const isAnimalHovered = !!currentHovered && currentHovered.gx === Math.round(item.animal.currGx) && currentHovered.gy === Math.round(item.animal.currGy);
-          if (isHungry && (isAnimalNear || isAnimalHovered)) {
+          if (isHungry && animalHovered) {
             const foodEmoji = ANIMAL_FOOD_MAP[item.animal.type] || '🌾';
-            const bubbleY = sy + (TILE_H / 2) - 24 + (item.animal.hopY || 0);
+            const aScale = item.animal.type === 'sheep' ? 0.78 : (item.animal.type === 'dog' ? 0.66 : 0.55);
+            const bubbleY = sy + (TILE_H / 2) - Math.round(10 + 16 * aScale) + (item.animal.hopY || 0);
             drawFloatingCareBubble(ctx, sx, bubbleY, foodEmoji, false);
           }
         } else if (item.kind === 'villager') {
@@ -6760,8 +6768,9 @@ export default function App() {
         }
       });
 
-      // Stage 1 Inner Gate Lock Indicator (Military Village controlled checkpoint)
-      if (currentVillageIdRef.current === 'military' && (villageProgressionRef.current?.stage || 1) === 1) {
+      // Stage 1 Inner Gate Lock Indicator - revealed only when hovered
+      const isGateHovered = !!currentHovered && currentHovered.gx === 12 && currentHovered.gy === 11;
+      if (currentVillageIdRef.current === 'military' && (villageProgressionRef.current?.stage || 1) === 1 && isGateHovered) {
         const { x: gxPos, y: gyPos } = toScreen(12, 11, origin.x, origin.y);
         ctx.save();
         const pulse = (Math.sin(performance.now() * 0.005) + 1) * 0.5;
@@ -8724,6 +8733,16 @@ export default function App() {
           {soundMuted ? <VolumeX size={19} /> : <Volume2 size={19} />}
           <span className="dock-btn-label">{soundMuted ? 'מושתק' : 'סאונד'}</span>
         </button>
+
+        {/* 5. Village Guide & Memory Palace Tips (Master Eldor) */}
+        <button
+          className={`dock-btn guide-dock-btn ${showGuideModal ? 'active' : ''}`}
+          onClick={() => setShowGuideModal(true)}
+          title="מנחה הכפר וטיפים לארמון הזיכרון 🧙‍♂️"
+        >
+          <BookOpen size={19} className="text-amber" />
+          <span className="dock-btn-label">מנחה</span>
+        </button>
       </aside>
 
       {/* Floating Dedicated Paths & Roads Paving Palette */}
@@ -9618,6 +9637,12 @@ export default function App() {
       <MemoryHierarchyTreeModal
         isOpen={showHierarchyTree}
         onClose={() => setShowHierarchyTree(false)}
+      />
+
+      {/* Deterministic Village Guide & Memory Palace Coach (Master Eldor) */}
+      <VillageGuideModal
+        isOpen={showGuideModal}
+        onClose={() => setShowGuideModal(false)}
       />
     </div>
   );

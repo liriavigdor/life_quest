@@ -2,6 +2,22 @@
 // Renders adorable, peaceful living animals with idle/walk/peck animations and mind map tags
 import { drawParchmentBadge } from './badgeRenderer';
 
+// Realistic & harmonious scale map for animals in comparison to human villager (~33px) and houses:
+// Sheep: ~20px (78%) - reaches farmer's waist
+// Dog: ~16px (66%) - reaches farmer's mid-thigh
+// Cat: ~13px (55%) - reaches farmer's calf/knees, distinct & clear without being giant
+// Duck: ~11px (52%) - cozy pond waterfowl
+// Chicken: ~10.5px (50%) - classic farm fowl
+// Rabbit: ~11px (50%) - cute field bunny
+export const ANIMAL_SCALE_MAP = {
+  sheep: 0.78,
+  dog: 0.66,
+  cat: 0.55,
+  duck: 0.52,
+  chicken: 0.50,
+  rabbit: 0.50
+};
+
 export function drawAnimal(ctx, animal, screenPos, options = {}) {
   const { isSunset = false, isNight = false, showTag = true, isHovered = false, todayStr = '', tagReveal = 1 } = options;
   const { x: cx, y: cy } = screenPos;
@@ -10,14 +26,17 @@ export function drawAnimal(ctx, animal, screenPos, options = {}) {
   const hopY = animal.hopY || 0;
   const time = Date.now() * 0.003;
 
+  const scale = ANIMAL_SCALE_MAP[animal.type] || 0.55;
+
   ctx.save();
   ctx.translate(cx, cy + hopY);
 
-  // Soft ground contact shadow (warm plum-brown, feathered edge)
-  const shadowW = animal.type === 'sheep' ? 16 : (animal.type === 'dog' ? 14 : (animal.type === 'duck' || animal.type === 'cat' ? 12 : 9));
+  // Soft ground contact shadow (warm plum-brown, feathered edge, scaled to animal)
+  const baseShadowW = animal.type === 'sheep' ? 16 : (animal.type === 'dog' ? 14 : (animal.type === 'duck' || animal.type === 'cat' ? 12 : 9));
+  const shadowW = baseShadowW * scale;
   const shadowH = shadowW * 0.45;
   ctx.save();
-  ctx.translate(0, 4 - hopY * 0.3);
+  ctx.translate(0, (4 * scale) - hopY * 0.3);
   ctx.scale(1, shadowH / shadowW);
   const aoGrad = ctx.createRadialGradient(0, 0, shadowW * 0.1, 0, 0, shadowW * 1.15);
   aoGrad.addColorStop(0, isNight ? 'rgba(45, 31, 24, 0.45)' : 'rgba(45, 31, 24, 0.3)');
@@ -29,9 +48,8 @@ export function drawAnimal(ctx, animal, screenPos, options = {}) {
   ctx.fill();
   ctx.restore();
 
-  if (facingLeft) {
-    ctx.scale(-1, 1);
-  }
+  // Apply facing direction AND proportional scale
+  ctx.scale(facingLeft ? -scale : scale, scale);
 
   switch (animal.type) {
     case 'chicken': {
@@ -69,9 +87,10 @@ export function drawAnimal(ctx, animal, screenPos, options = {}) {
   // Floating Mind Map Label / Name Tag (parchment sign; hidden unless revealed by hover / proximity)
   if (showTag && animal.name && tagReveal > 0.01) {
     const labelText = animal.customEmoji ? `${animal.customEmoji} ${animal.name}` : animal.name;
+    const badgeYOffset = Math.round(12 + 15 * scale);
     drawParchmentBadge(ctx, {
       x: cx,
-      tipY: cy - 22 + hopY,
+      tipY: cy - badgeYOffset + hopY,
       text: labelText,
       cared: !!animal.completed,
       reveal: tagReveal,
