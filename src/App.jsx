@@ -9974,6 +9974,29 @@ export default function App() {
         isOpen={showGuideModal}
         onClose={() => setShowGuideModal(false)}
       />
+
+      {/* Global Black Version Tag for Dad & User Verification */}
+      <div 
+        title="מספר גרסה לתיאום בין מחשבים"
+        style={{
+          position: 'fixed',
+          bottom: '12px',
+          left: '12px',
+          zIndex: 99999,
+          backgroundColor: '#ffffff',
+          border: '2.5px solid #000000',
+          color: '#000000',
+          fontWeight: 900,
+          fontSize: '0.88rem',
+          padding: '4px 12px',
+          borderRadius: '8px',
+          boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
+          fontFamily: 'Rubik, sans-serif',
+          pointerEvents: 'none'
+        }}
+      >
+        גרסה: 5.5
+      </div>
     </div>
   );
 }

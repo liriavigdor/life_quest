@@ -1033,6 +1033,28 @@ export function StardewInstitutionComplex({
             <span>חדרים מוארים: {interiorMastery.unlockedRooms.length}/5</span>
           </div>
 
+          {/* Sync Version Badge in Bold Black */}
+          <div 
+            title="מספר גרסה לתיאום וסנכרון בין המחשבים"
+            style={{
+              backgroundColor: '#ffffff',
+              border: '2px solid #000000',
+              color: '#000000',
+              fontWeight: 900,
+              fontSize: '0.86rem',
+              padding: '3px 10px',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+              fontFamily: 'Rubik, sans-serif'
+            }}
+          >
+            <span style={{ color: '#000000' }}>גרסה:</span>
+            <strong style={{ color: '#000000', fontSize: '0.92rem' }}>5.5</strong>
+          </div>
+
           <button
             onClick={handleResetLociProgress}
             title="נעילת החדרים מחדש לתרגול חוזר של שיטת Loci עם אבא"
@@ -2224,6 +2246,28 @@ export function StardewInstitutionComplex({
           onUnlockDoor={(door) => handlePassDoorQuiz(door)}
         />
       )}
+
+      {/* Persistent Black Version Tag in Bottom Corner */}
+      <div 
+        style={{
+          position: 'fixed',
+          bottom: '12px',
+          left: '12px',
+          zIndex: 99999,
+          backgroundColor: '#ffffff',
+          border: '2.5px solid #000000',
+          color: '#000000',
+          fontWeight: 900,
+          fontSize: '0.9rem',
+          padding: '5px 12px',
+          borderRadius: '8px',
+          boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
+          fontFamily: 'Rubik, sans-serif',
+          pointerEvents: 'none'
+        }}
+      >
+        גרסה: 5.5
+      </div>
 
       {/* 11. Full-Screen High Definition Loci Item Inspection Modal */}
       {selectedLociItem && (
