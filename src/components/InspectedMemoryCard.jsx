@@ -103,7 +103,7 @@ export function InspectedMemoryCard({
   const displayName = customTitle || catalogItem?.name || (isStoryMonument ? 'אנדרטת סיפור חי' : 'פינת כפר מיוחדת');
   const displayEmoji = customEmoji || catalogItem?.emoji || (isAnimal ? '🐾' : (isTotem ? '🍭' : (isStoryMonument ? '📖' : '🌿')));
   const hasInterior = catalogItem?.hasInterior || object.hasInterior || [
-    'animal_coop', 'wooden_cabin', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio'
+    'animal_coop', 'wooden_cabin', 'library', 'bakery', 'greenhouse', 'farm', 'art_studio', 'veggie_garden', 'flower_garden'
   ].includes(object.type);
 
   return (

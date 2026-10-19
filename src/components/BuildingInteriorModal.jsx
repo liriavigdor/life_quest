@@ -20,6 +20,8 @@ import { sounds } from '../utils/sound';
 import { RealCoopInterior } from './RealCoopInterior';
 import { StardewFarmhouseInterior } from './StardewFarmhouseInterior';
 import { StardewInstitutionComplex } from './StardewInstitutionComplex';
+import { StardewGardenComplex } from './StardewGardenComplex';
+import { StardewFarmComplex } from './StardewFarmComplex';
 
 export function BuildingInteriorModal({
   building,
@@ -108,6 +110,7 @@ export function BuildingInteriorModal({
   const [editTitle, setEditTitle] = useState(interiorData.roomTitle);
   const [editNote, setEditNote] = useState(interiorData.roomNote);
   const [newItemName, setNewItemName] = useState('');
+  const [interiorStyle, setInteriorStyle] = useState('complex');
 
   // Save changes to localStorage
   useEffect(() => {
@@ -183,7 +186,45 @@ export function BuildingInteriorModal({
   const isCabin = building.type === 'wooden_cabin' || building.type === 'art_studio';
   const isLibrary = building.type === 'library';
 
-  const [interiorStyle, setInteriorStyle] = useState('complex');
+  const isGarden = building.type === 'veggie_garden' || 
+                   building.type === 'flower_garden' || 
+                   building.type === 'greenhouse' || 
+                   catalogItem?.id === 'veggie_garden' ||
+                   catalogItem?.id === 'flower_garden' ||
+                   catalogItem?.renderType === 'veggie_garden';
+
+  if (isGarden) {
+    return (
+      <StardewGardenComplex
+        building={building}
+        catalogItem={catalogItem}
+        onClose={onClose}
+        seeds={seeds}
+        onEarnSeeds={onEarnSeeds}
+        villagerLook={villagerLook}
+        currentOutfit={currentOutfit}
+      />
+    );
+  }
+
+  const isFarm = building.type === 'farm' || 
+                 catalogItem?.id === 'farm' || 
+                 catalogItem?.renderType === 'farm' ||
+                 catalogItem?.interiorType === 'farm';
+
+  if (isFarm) {
+    return (
+      <StardewFarmComplex
+        building={building}
+        catalogItem={catalogItem}
+        onClose={onClose}
+        seeds={seeds}
+        onEarnSeeds={onEarnSeeds}
+        villagerLook={villagerLook}
+        currentOutfit={currentOutfit}
+      />
+    );
+  }
 
   if (!isCoop) {
     // Dedicated Experimental Interior Sandbox for the Blacksmith Cottage (does NOT touch any other building)

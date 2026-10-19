@@ -23,6 +23,7 @@ import {
   VolumeX,
   BookHeart,
   BookOpen,
+  Palette,
   Sunset,
   Sun,
   Moon,
@@ -1139,28 +1140,24 @@ export default function App() {
           const isWaterType = (t) => ['river_tile', 'water_lily_pond', 'wooden_bridge', 'bridge'].includes(t);
           const { hasEast, hasWest, hasSouth, hasNorth, isConnected } = getAdjacentItem(ogx, ogy, isWaterType);
 
-          // Animation time phase for natural flowing caustics
-          const flowPhase = (Date.now() * 0.0028) + ((ogx || 0) * 1.7 + (ogy || 0) * 2.3);
+          // Animation time phase for natural flowing caustics (globally continuous so waves flow seamlessly between tiles)
+          const flowPhase = Date.now() * 0.0028;
 
           // Vector offsets in 2:1 isometric space (width ~11px matching paths, trench ~16px)
           const ew_water_p = { x: -5.5, y: 2.75 };
           const ew_water_n = { x: 5.5, y: -2.75 };
           const ew_bank_p  = { x: -8.2, y: 4.1 };
           const ew_bank_n  = { x: 8.2, y: -4.1 };
-          const ew_core_p  = { x: -2.6, y: 1.3 };
-          const ew_core_n  = { x: 2.6, y: -1.3 };
           const ew_dir     = { x: 0.894, y: 0.447 };
 
           const sn_water_p = { x: 5.5, y: 2.75 };
           const sn_water_n = { x: -5.5, y: -2.75 };
           const sn_bank_p  = { x: 8.2, y: 4.1 };
           const sn_bank_n  = { x: -8.2, y: -4.1 };
-          const sn_core_p  = { x: 2.6, y: 1.3 };
-          const sn_core_n  = { x: -2.6, y: -1.3 };
           const sn_dir     = { x: -0.894, y: 0.447 };
 
-          // Helper to draw a clean, continuous straight water ribbon (NO internal circles)
-          const drawStraightRiver = (x1, y1, x2, y2, bp, bn, wp, wn, cp, cn, dir, isStartCap, isEndCap) => {
+          // Helper to draw a clean, continuous straight water ribbon (NO internal circles, seamless across tile boundaries)
+          const drawStraightRiver = (x1, y1, x2, y2, bp, bn, wp, wn, dir, isStartCap, isEndCap) => {
             // 1. Recessed earthy trench / riverbed underlay
             ctx.fillStyle = '#1e381b';
             ctx.beginPath();
@@ -1199,11 +1196,13 @@ export default function App() {
             ctx.closePath();
             ctx.fill();
 
-            // 3. Clear turquoise-blue river water body
+            // 3. Clear turquoise-blue river water body (100% opaque, seamless depth gradient)
             const grad = ctx.createLinearGradient(x1 + wp.x, y1 + wp.y, x1 + wn.x, y1 + wn.y);
-            grad.addColorStop(0, 'rgba(56, 189, 248, 0.95)');
-            grad.addColorStop(0.5, '#0284c7');
-            grad.addColorStop(1, 'rgba(14, 165, 233, 0.92)');
+            grad.addColorStop(0, '#38bdf8');
+            grad.addColorStop(0.25, '#0284c7');
+            grad.addColorStop(0.5, '#0369a1');
+            grad.addColorStop(0.75, '#0284c7');
+            grad.addColorStop(1, '#0ea5e9');
             ctx.fillStyle = grad;
             ctx.beginPath();
             ctx.moveTo(x1 + wp.x, y1 + wp.y);
@@ -1222,27 +1221,30 @@ export default function App() {
             ctx.closePath();
             ctx.fill();
 
-            // 4. Deeper azure current core
-            ctx.fillStyle = 'rgba(3, 105, 161, 0.65)';
-            ctx.beginPath();
-            ctx.moveTo(x1 + cp.x, y1 + cp.y);
-            ctx.lineTo(x2 + cp.x, y2 + cp.y);
-            ctx.lineTo(x2 + cn.x, y2 + cn.y);
-            ctx.lineTo(x1 + cn.x, y1 + cn.y);
-            ctx.closePath();
-            ctx.fill();
-
-            // 5. Longitudinal current wave line (smooth water flow, NO circle ripples)
+            // 4. Longitudinal current wave line (smooth water flow, seamless across tile boundaries)
             const mx = (x1 + x2) / 2;
             const my = (y1 + y2) / 2;
             const wOff = Math.sin(flowPhase) * 1.3;
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.68)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
             ctx.lineWidth = 1.0;
             ctx.lineCap = 'round';
             ctx.beginPath();
             ctx.moveTo(x1, y1);
             ctx.quadraticCurveTo(mx + bp.x * 0.2 * wOff, my + bp.y * 0.2 * wOff, x2, y2);
             ctx.stroke();
+
+            // Animated traveling foam streaks along the current
+            ctx.save();
+            ctx.setLineDash([4, 8]);
+            ctx.lineDashOffset = -flowPhase * 13;
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.88)';
+            ctx.lineWidth = 1.1;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.quadraticCurveTo(mx + bp.x * 0.2 * wOff, my + bp.y * 0.2 * wOff, x2, y2);
+            ctx.stroke();
+            ctx.restore();
 
             const wOff2 = Math.cos(flowPhase * 1.3) * 1.1;
             ctx.strokeStyle = 'rgba(224, 242, 254, 0.38)';
@@ -1258,36 +1260,383 @@ export default function App() {
             const isStraightSN = (hasSouth || hasNorth) && !hasEast && !hasWest;
 
             if (isStraightEW) {
-              // Continuous unbroken East-West river stream spanning the tile
-              const x1 = hasWest ? (cx - 17) : (cx - 14);
-              const y1 = hasWest ? (cy - 8.5) : (cy - 7);
-              const x2 = hasEast ? (cx + 17) : (cx + 14);
-              const y2 = hasEast ? (cy + 8.5) : (cy + 7);
-              drawStraightRiver(x1, y1, x2, y2, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_core_p, ew_core_n, ew_dir, !hasWest, !hasEast);
+              // Continuous unbroken East-West river stream spanning the tile (generous 18.5px overlap across tile boundaries)
+              const x1 = hasWest ? (cx - 18.5) : (cx - 14);
+              const y1 = hasWest ? (cy - 9.25) : (cy - 7);
+              const x2 = hasEast ? (cx + 18.5) : (cx + 14);
+              const y2 = hasEast ? (cy + 9.25) : (cy + 7);
+              drawStraightRiver(x1, y1, x2, y2, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_dir, !hasWest, !hasEast);
             } else if (isStraightSN) {
-              // Continuous unbroken South-North river stream spanning the tile
-              const x1 = hasNorth ? (cx + 17) : (cx + 14);
-              const y1 = hasNorth ? (cy - 8.5) : (cy - 7);
-              const x2 = hasSouth ? (cx - 17) : (cx - 14);
-              const y2 = hasSouth ? (cy + 8.5) : (cy + 7);
-              drawStraightRiver(x1, y1, x2, y2, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_core_p, sn_core_n, sn_dir, !hasNorth, !hasSouth);
+              // Continuous unbroken South-North river stream spanning the tile (generous 18.5px overlap across tile boundaries)
+              const x1 = hasNorth ? (cx + 18.5) : (cx + 14);
+              const y1 = hasNorth ? (cy - 9.25) : (cy - 7);
+              const x2 = hasSouth ? (cx - 18.5) : (cx - 14);
+              const y2 = hasSouth ? (cy + 9.25) : (cy + 7);
+              drawStraightRiver(x1, y1, x2, y2, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_dir, !hasNorth, !hasSouth);
             } else {
-              // Multi-branch junction / bend: draw branches to each edge and merge center without circles
-              if (hasEast) drawStraightRiver(cx, cy, cx + 17, cy + 8.5, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_core_p, ew_core_n, ew_dir, false, false);
-              if (hasWest) drawStraightRiver(cx - 17, cy - 8.5, cx, cy, ew_bank_p, ew_bank_n, ew_water_p, ew_water_n, ew_core_p, ew_core_n, ew_dir, false, false);
-              if (hasSouth) drawStraightRiver(cx, cy, cx - 17, cy + 8.5, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_core_p, sn_core_n, sn_dir, false, false);
-              if (hasNorth) drawStraightRiver(cx + 17, cy - 8.5, cx, cy, sn_bank_p, sn_bank_n, sn_water_p, sn_water_n, sn_core_p, sn_core_n, sn_dir, false, false);
-
-              // Seamless flat junction fill (pure water color, NO outlines, NO concentric rings)
+              // Multi-branch junction / bend: layer-by-layer composite without seams, holes, or visible tile borders
+              // 1. Recessed earthy trench / riverbed underlay (overlapping 18.5px into neighboring tiles)
               ctx.fillStyle = '#1e381b';
               ctx.beginPath();
-              ctx.ellipse(cx, cy, 7.5, 3.75, 0, 0, Math.PI * 2);
+              if (hasWest) {
+                ctx.moveTo(cx - 18.5 + ew_bank_p.x, cy - 9.25 + ew_bank_p.y);
+                ctx.lineTo(cx + ew_bank_p.x, cy + ew_bank_p.y);
+                ctx.lineTo(cx + ew_bank_n.x, cy + ew_bank_n.y);
+                ctx.lineTo(cx - 18.5 + ew_bank_n.x, cy - 9.25 + ew_bank_n.y);
+                ctx.closePath();
+              }
+              if (hasEast) {
+                ctx.moveTo(cx + 18.5 + ew_bank_p.x, cy + 9.25 + ew_bank_p.y);
+                ctx.lineTo(cx + ew_bank_p.x, cy + ew_bank_p.y);
+                ctx.lineTo(cx + ew_bank_n.x, cy + ew_bank_n.y);
+                ctx.lineTo(cx + 18.5 + ew_bank_n.x, cy + 9.25 + ew_bank_n.y);
+                ctx.closePath();
+              }
+              if (hasSouth) {
+                ctx.moveTo(cx - 18.5 + sn_bank_p.x, cy + 9.25 + sn_bank_p.y);
+                ctx.lineTo(cx + sn_bank_p.x, cy + sn_bank_p.y);
+                ctx.lineTo(cx + sn_bank_n.x, cy + sn_bank_n.y);
+                ctx.lineTo(cx - 18.5 + sn_bank_n.x, cy + 9.25 + sn_bank_n.y);
+                ctx.closePath();
+              }
+              if (hasNorth) {
+                ctx.moveTo(cx + 18.5 + sn_bank_p.x, cy - 9.25 + sn_bank_p.y);
+                ctx.lineTo(cx + sn_bank_p.x, cy + sn_bank_p.y);
+                ctx.lineTo(cx + sn_bank_n.x, cy + sn_bank_n.y);
+                ctx.lineTo(cx + 18.5 + sn_bank_n.x, cy - 9.25 + sn_bank_n.y);
+                ctx.closePath();
+              }
               ctx.fill();
 
+              // Fillet trench corners between adjacent branches (smooth natural meanders)
+              if (hasWest && hasSouth) {
+                // Inner bank meander curve
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_p.x, cy + ew_bank_p.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_n.x, cy + sn_bank_n.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer bank meander curve for L-bend (smooth rounded natural curve, NO sharp points)
+                if (!hasEast && !hasNorth) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_n.x, cy + ew_bank_n.y);
+                  ctx.quadraticCurveTo(cx + 16.4, cy, cx + sn_bank_p.x, cy + sn_bank_p.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasWest && hasNorth) {
+                // Inner bank meander curve
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_n.x, cy + ew_bank_n.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_n.x, cy + sn_bank_n.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer bank meander curve for L-bend
+                if (!hasSouth && !hasEast) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_p.x, cy + ew_bank_p.y);
+                  ctx.quadraticCurveTo(cx, cy + 8.2, cx + sn_bank_p.x, cy + sn_bank_p.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasEast && hasNorth) {
+                // Inner bank meander curve
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_n.x, cy + ew_bank_n.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_p.x, cy + sn_bank_p.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer bank meander curve for L-bend
+                if (!hasWest && !hasSouth) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_p.x, cy + ew_bank_p.y);
+                  ctx.quadraticCurveTo(cx - 16.4, cy, cx + sn_bank_n.x, cy + sn_bank_n.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasEast && hasSouth) {
+                // Inner bank meander curve
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_p.x, cy + ew_bank_p.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_p.x, cy + sn_bank_p.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer bank meander curve for L-bend
+                if (!hasNorth && !hasWest) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_n.x, cy + ew_bank_n.y);
+                  ctx.quadraticCurveTo(cx, cy - 8.2, cx + sn_bank_n.x, cy + sn_bank_n.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+
+              // 2. Moist shoreline silt (overlapping 18.5px into neighboring tiles)
+              ctx.fillStyle = '#164e63';
+              ctx.beginPath();
+              if (hasWest) {
+                ctx.moveTo(cx - 18.5 + ew_bank_p.x * 0.85, cy - 9.25 + ew_bank_p.y * 0.85);
+                ctx.lineTo(cx + ew_bank_p.x * 0.85, cy + ew_bank_p.y * 0.85);
+                ctx.lineTo(cx + ew_bank_n.x * 0.85, cy + ew_bank_n.y * 0.85);
+                ctx.lineTo(cx - 18.5 + ew_bank_n.x * 0.85, cy - 9.25 + ew_bank_n.y * 0.85);
+                ctx.closePath();
+              }
+              if (hasEast) {
+                ctx.moveTo(cx + 18.5 + ew_bank_p.x * 0.85, cy + 9.25 + ew_bank_p.y * 0.85);
+                ctx.lineTo(cx + ew_bank_p.x * 0.85, cy + ew_bank_p.y * 0.85);
+                ctx.lineTo(cx + ew_bank_n.x * 0.85, cy + ew_bank_n.y * 0.85);
+                ctx.lineTo(cx + 18.5 + ew_bank_n.x * 0.85, cy + 9.25 + ew_bank_n.y * 0.85);
+                ctx.closePath();
+              }
+              if (hasSouth) {
+                ctx.moveTo(cx - 18.5 + sn_bank_p.x * 0.85, cy + 9.25 + sn_bank_p.y * 0.85);
+                ctx.lineTo(cx + sn_bank_p.x * 0.85, cy + sn_bank_p.y * 0.85);
+                ctx.lineTo(cx + sn_bank_n.x * 0.85, cy + sn_bank_n.y * 0.85);
+                ctx.lineTo(cx - 18.5 + sn_bank_n.x * 0.85, cy + 9.25 + sn_bank_n.y * 0.85);
+                ctx.closePath();
+              }
+              if (hasNorth) {
+                ctx.moveTo(cx + 18.5 + sn_bank_p.x * 0.85, cy - 9.25 + sn_bank_p.y * 0.85);
+                ctx.lineTo(cx + sn_bank_p.x * 0.85, cy + sn_bank_p.y * 0.85);
+                ctx.lineTo(cx + sn_bank_n.x * 0.85, cy + sn_bank_n.y * 0.85);
+                ctx.lineTo(cx + 18.5 + sn_bank_n.x * 0.85, cy - 9.25 + sn_bank_n.y * 0.85);
+                ctx.closePath();
+              }
+              ctx.fill();
+
+              // Fillet silt corners (smooth curves)
+              if (hasWest && hasSouth) {
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_p.x * 0.85, cy + ew_bank_p.y * 0.85);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_n.x * 0.85, cy + sn_bank_n.y * 0.85);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                if (!hasEast && !hasNorth) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_n.x * 0.85, cy + ew_bank_n.y * 0.85);
+                  ctx.quadraticCurveTo(cx + 13.9, cy, cx + sn_bank_p.x * 0.85, cy + sn_bank_p.y * 0.85);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasWest && hasNorth) {
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_n.x * 0.85, cy + ew_bank_n.y * 0.85);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_n.x * 0.85, cy + sn_bank_n.y * 0.85);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                if (!hasSouth && !hasEast) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_p.x * 0.85, cy + ew_bank_p.y * 0.85);
+                  ctx.quadraticCurveTo(cx, cy + 7.0, cx + sn_bank_p.x * 0.85, cy + sn_bank_p.y * 0.85);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasEast && hasNorth) {
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_n.x * 0.85, cy + ew_bank_n.y * 0.85);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_p.x * 0.85, cy + sn_bank_p.y * 0.85);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                if (!hasWest && !hasSouth) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_p.x * 0.85, cy + ew_bank_p.y * 0.85);
+                  ctx.quadraticCurveTo(cx - 13.9, cy, cx + sn_bank_n.x * 0.85, cy + sn_bank_n.y * 0.85);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasEast && hasSouth) {
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_bank_p.x * 0.85, cy + ew_bank_p.y * 0.85);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_bank_p.x * 0.85, cy + sn_bank_p.y * 0.85);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                if (!hasNorth && !hasWest) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_bank_n.x * 0.85, cy + ew_bank_n.y * 0.85);
+                  ctx.quadraticCurveTo(cx, cy - 7.0, cx + sn_bank_n.x * 0.85, cy + sn_bank_n.y * 0.85);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+
+              // 3. Clear turquoise-blue river water body (100% opaque, seamless 18.5px overlap, NO seams, NO grid borders!)
               ctx.fillStyle = '#0284c7';
               ctx.beginPath();
-              ctx.ellipse(cx, cy, 5.2, 2.6, 0, 0, Math.PI * 2);
+              if (hasWest) {
+                ctx.moveTo(cx - 18.5 + ew_water_p.x, cy - 9.25 + ew_water_p.y);
+                ctx.lineTo(cx + ew_water_p.x, cy + ew_water_p.y);
+                ctx.lineTo(cx + ew_water_n.x, cy + ew_water_n.y);
+                ctx.lineTo(cx - 18.5 + ew_water_n.x, cy - 9.25 + ew_water_n.y);
+                ctx.closePath();
+              }
+              if (hasEast) {
+                ctx.moveTo(cx + 18.5 + ew_water_p.x, cy + 9.25 + ew_water_p.y);
+                ctx.lineTo(cx + ew_water_p.x, cy + ew_water_p.y);
+                ctx.lineTo(cx + ew_water_n.x, cy + ew_water_n.y);
+                ctx.lineTo(cx + 18.5 + ew_water_n.x, cy + 9.25 + ew_water_n.y);
+                ctx.closePath();
+              }
+              if (hasSouth) {
+                ctx.moveTo(cx - 18.5 + sn_water_p.x, cy + 9.25 + sn_water_p.y);
+                ctx.lineTo(cx + sn_water_p.x, cy + sn_water_p.y);
+                ctx.lineTo(cx + sn_water_n.x, cy + sn_water_n.y);
+                ctx.lineTo(cx - 18.5 + sn_water_n.x, cy + 9.25 + sn_water_n.y);
+                ctx.closePath();
+              }
+              if (hasNorth) {
+                ctx.moveTo(cx + 18.5 + sn_water_p.x, cy - 9.25 + sn_water_p.y);
+                ctx.lineTo(cx + sn_water_p.x, cy + sn_water_p.y);
+                ctx.lineTo(cx + sn_water_n.x, cy + sn_water_n.y);
+                ctx.lineTo(cx + 18.5 + sn_water_n.x, cy - 9.25 + sn_water_n.y);
+                ctx.closePath();
+              }
               ctx.fill();
+
+              // Fillet water corners between adjacent branches (Inner curves & Outer rounded meanders)
+              if (hasWest && hasSouth) {
+                // Inner water meander
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_water_p.x, cy + ew_water_p.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_water_n.x, cy + sn_water_n.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer water meander for L-bend (smooth curved meander, NO sharp corners)
+                if (!hasEast && !hasNorth) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_water_n.x, cy + ew_water_n.y);
+                  ctx.quadraticCurveTo(cx + 11.0, cy, cx + sn_water_p.x, cy + sn_water_p.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasWest && hasNorth) {
+                // Inner water meander
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_water_n.x, cy + ew_water_n.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_water_n.x, cy + sn_water_n.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer water meander
+                if (!hasSouth && !hasEast) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_water_p.x, cy + ew_water_p.y);
+                  ctx.quadraticCurveTo(cx, cy + 5.5, cx + sn_water_p.x, cy + sn_water_p.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasEast && hasNorth) {
+                // Inner water meander
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_water_n.x, cy + ew_water_n.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_water_p.x, cy + sn_water_p.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer water meander
+                if (!hasWest && !hasSouth) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_water_p.x, cy + ew_water_p.y);
+                  ctx.quadraticCurveTo(cx - 11.0, cy, cx + sn_water_n.x, cy + sn_water_n.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+              if (hasEast && hasSouth) {
+                // Inner water meander
+                ctx.beginPath();
+                ctx.moveTo(cx + ew_water_p.x, cy + ew_water_p.y);
+                ctx.quadraticCurveTo(cx, cy, cx + sn_water_p.x, cy + sn_water_p.y);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+                // Outer water meander
+                if (!hasNorth && !hasWest) {
+                  ctx.beginPath();
+                  ctx.moveTo(cx + ew_water_n.x, cy + ew_water_n.y);
+                  ctx.quadraticCurveTo(cx, cy - 5.5, cx + sn_water_n.x, cy + sn_water_n.y);
+                  ctx.lineTo(cx, cy);
+                  ctx.closePath();
+                  ctx.fill();
+                }
+              }
+
+              // 4. Water flow simulation between intersecting streams (flowing caustics & continuous streamlines)
+              const drawFlowPath = (x1, y1, cpx, cpy, x2, y2) => {
+                // Soft underlying water shimmer
+                ctx.strokeStyle = 'rgba(224, 242, 254, 0.4)';
+                ctx.lineWidth = 1.6;
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.quadraticCurveTo(cpx, cpy, x2, y2);
+                ctx.stroke();
+
+                // Animated white foam streaks flowing smoothly along the curve (continuous global phase)
+                ctx.save();
+                ctx.setLineDash([4, 8]);
+                ctx.lineDashOffset = -flowPhase * 13;
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.88)';
+                ctx.lineWidth = 1.1;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.quadraticCurveTo(cpx, cpy, x2, y2);
+                ctx.stroke();
+                ctx.restore();
+              };
+
+              // Main continuous through-streams (connecting past tile boundaries)
+              if (hasNorth && hasSouth) {
+                drawFlowPath(cx + 18.5, cy - 9.25, cx, cy, cx - 18.5, cy + 9.25);
+              }
+              if (hasWest && hasEast) {
+                drawFlowPath(cx - 18.5, cy - 9.25, cx, cy, cx + 18.5, cy + 9.25);
+              }
+
+              // Curving flow between adjacent streams (smooth natural meanders along the bend)
+              if (hasWest && hasSouth) {
+                const cpx = (!hasEast && !hasNorth) ? (cx + 24) : (cx + 8);
+                drawFlowPath(cx - 18.5, cy - 9.25, cpx, cy, cx - 18.5, cy + 9.25);
+              }
+              if (hasWest && hasNorth) {
+                const cpy = (!hasSouth && !hasEast) ? (cy + 12) : (cy + 4);
+                drawFlowPath(cx - 18.5, cy - 9.25, cx, cpy, cx + 18.5, cy - 9.25);
+              }
+              if (hasEast && hasSouth) {
+                const cpy = (!hasNorth && !hasWest) ? (cy - 12) : (cy - 4);
+                drawFlowPath(cx + 18.5, cy + 9.25, cx, cpy, cx - 18.5, cy + 9.25);
+              }
+              if (hasEast && hasNorth) {
+                const cpx = (!hasWest && !hasSouth) ? (cx - 24) : (cx - 8);
+                drawFlowPath(cx + 18.5, cy + 9.25, cpx, cy, cx + 18.5, cy - 9.25);
+              }
             }
           } else {
             // Standalone pond / spring pool (natural compact oval when standing alone)
@@ -7709,39 +8058,6 @@ export default function App() {
     if (!coords) return;
     const { gx, gy, clientX, clientY } = coords;
 
-    // Check if clicked directly on the player villager character!
-    const v = animEntitiesRef.current.villager;
-    if (v) {
-      const canvas = canvasRef.current;
-      const rect = canvas ? canvas.getBoundingClientRect() : { left: 0, top: 0 };
-      const clickScreenX = clientX - rect.left;
-      const clickScreenY = clientY - rect.top;
-
-      const zoom = cameraZoomRef.current || 1;
-      const originX = (canvas ? canvas.width / 2 : 0) + (cameraPanRef.current?.x || 0);
-      const originY = (canvas ? canvas.height * GRID_ORIGIN_Y_RATIO : 0) + (cameraPanRef.current?.y || 0);
-
-      // Compare in world space
-      const worldClickX = originX + (clickScreenX - originX) / zoom;
-      const worldClickY = originY + (clickScreenY - originY) / zoom;
-      const vWorldX = originX + (v.currGx - v.currGy) * (TILE_W / 2);
-      const vWorldY = originY + (v.currGx + v.currGy) * (TILE_H / 2) + TILE_H / 2;
-
-      const dist = Math.hypot(worldClickX - vWorldX, worldClickY - (vWorldY - 18));
-      const gridDist = Math.hypot(gx - v.currGx, gy - v.currGy);
-      if (dist < 34 || gridDist < 0.95) {
-        sounds.playTap();
-        v.hopVy = -6.5;
-        v.hopY = -1;
-        v.emote = '👗';
-        v.emoteTimer = 130;
-        setWardrobeInitialTab('wardrobe');
-        setShowWardrobe(true);
-        pointerDownInfoRef.current = null;
-        return;
-      }
-    }
-
     const inClearing = checkClearing(gx, gy);
     const isFrontier = !inClearing && checkFrontier(gx, gy);
 
@@ -8742,6 +9058,20 @@ export default function App() {
         >
           <BookOpen size={19} className="text-amber" />
           <span className="dock-btn-label">מנחה</span>
+        </button>
+
+        {/* 6. Character Styling & Wardrobe Studio */}
+        <button
+          className={`dock-btn wardrobe-dock-btn ${showWardrobe ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setWardrobeInitialTab('wardrobe');
+            setShowWardrobe(true);
+          }}
+          title="סטודיו עיצוב הדמות, לבוש ומראה 🎨"
+        >
+          <Palette size={19} className="text-amber" />
+          <span className="dock-btn-label">עיצוב</span>
         </button>
       </aside>
 

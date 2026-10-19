@@ -319,6 +319,8 @@ export const BUILD_CATALOG = [
     reflectionPrompt: 'איזה רגע של שלווה לקחת לעצמך היום?',
     costSeeds: 0,
     renderType: 'flower_garden',
+    hasInterior: true,
+    interiorType: 'garden',
     emoji: '🌺'
   },
   {
@@ -326,10 +328,12 @@ export const BUILD_CATALOG = [
     name: 'ערוגות ירק וגזרים',
     category: 'טבע וצמחים',
     tag: 'הזנה ובריאות',
-    desc: 'ערוגות אדמה תחוחה וגזרים רעננים המזכירים להזין את הגוף באהבה.',
+    desc: 'ערוגות אדמה תחוחה וגזרים רעננים המזכירים להזין את הגוף באהבה. ניתן להיכנס לחממת הבוטניקה!',
     reflectionPrompt: 'איזה הרגל מזין או ארוחה טובה הענקת לגוף שלך היום?',
     costSeeds: 0,
     renderType: 'veggie_garden',
+    hasInterior: true,
+    interiorType: 'garden',
     emoji: '🥕'
   },
   {
