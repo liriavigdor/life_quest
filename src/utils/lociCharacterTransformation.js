@@ -638,7 +638,7 @@ function drawJinglingCarKeysCostume(ctx, { x, y, time, facingLeft, walkCycle }) 
   ctx.restore();
 
   // Floating Speech Bubble
-  drawFloatingSpeechBubble(ctx, 0, -32, '🔑 ביפ-ביפ! מפתחות לרכב!', 'פותחים את האוטו ונוסעים הביתה!');
+  drawFloatingSpeechBubble(ctx, 0, -32, '🏎️ רונאלדו וסטיב ג׳ובס בפרארי!', 'עם משקפי שמש ושתו בקבוק מים! 🕶️💧');
 
   ctx.restore();
 }

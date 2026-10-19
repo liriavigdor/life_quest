@@ -641,6 +641,15 @@ export function StardewInstitutionComplex({
         if (prevChamberRef.current !== currentChamber) {
           lociParticles.spawnPoof(p.x, p.y);
           sounds.playSparkle?.();
+
+          // When entering Room 5: Immediately present the epic Climax story!
+          if (currentChamber === 'right_south') {
+            const r5 = LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 5);
+            if (r5) {
+              setCelebrationData(r5);
+            }
+          }
+
           prevChamberRef.current = currentChamber;
         }
 

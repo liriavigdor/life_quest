@@ -253,10 +253,10 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     memoryAnchor: 'עוגן 5: מפתחות לאוטו בחדר הדרומי',
     hint: 'בחדר הדרומי, מה תלוי על הוו ופותח את האוטו כשחוזרים הביתה?',
     imageUrl: CAR_KEYS_DATA_URL,
-    celebrationTitle: '🏎️ בראאאם! פרארי אדומה ממתינה בחניה!',
-    celebrationSubtitle: 'הנה המפתחות! תן בגז, נסיעה טובה הביתה! 🔑🔥',
-    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Ferrari_F430_Scuderia_red.JPG',
-    quote: '"ביפ-ביפ! המפתחות פתחו את מפלצת המהירות האדומה! סע בזהירות אבא!" 🏎️💨🏆'
+    celebrationTitle: '🏎️ רונאלדו וסטיב ג׳ובס נהגו בפרארי עם משקפי שמש ושתו בקבוק מים! 🕶️💧',
+    celebrationSubtitle: 'סיפור העל שמחבר את כל 5 תחנות הזיכרון בתמונה אחת אגדית!',
+    celebrationImage: './ronaldo_jobs_ferrari.jpg',
+    quote: '"רונאלדו וסטיב ג׳ובס נהגו בפרארי עם משקפי שמש ושתו בקבוק מים!" — כל הארמון נעול לך בזיכרון לנצח! 🏆👑'
   }
 ];
 
