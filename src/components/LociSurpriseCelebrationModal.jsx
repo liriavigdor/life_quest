@@ -44,11 +44,11 @@ export function LociSurpriseCelebrationModal({
         onClick={(e) => e.stopPropagation()}
         style={{
           width: '100%',
-          maxWidth: '560px',
+          maxWidth: '740px',
           backgroundColor: '#0f172a',
-          borderRadius: '24px',
+          borderRadius: '26px',
           border: '3px solid #fbbf24',
-          boxShadow: '0 30px 70px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(245, 158, 11, 0.4)',
+          boxShadow: '0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 50px rgba(245, 158, 11, 0.45)',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
@@ -60,22 +60,22 @@ export function LociSurpriseCelebrationModal({
       >
         {/* Celebration Header */}
         <div style={{
-          padding: '16px 22px',
+          padding: '18px 26px',
           background: 'linear-gradient(135deg, #78350f 0%, #1c1917 100%)',
           borderBottom: '2px solid rgba(245, 158, 11, 0.4)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '2rem', animation: 'bounce 1s infinite' }}>{data.emoji || '🎉'}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <span style={{ fontSize: '2.4rem', animation: 'bounce 1s infinite' }}>{data.emoji || '🎉'}</span>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ fontSize: '1.25rem', fontWeight: 900, color: '#fef08a' }}>
+                <span style={{ fontSize: '1.45rem', fontWeight: 900, color: '#fef08a' }}>
                   {data.celebrationTitle}
                 </span>
               </div>
-              <span style={{ fontSize: '0.85rem', color: '#fde047', fontWeight: 600 }}>
+              <span style={{ fontSize: '0.98rem', color: '#fde047', fontWeight: 600 }}>
                 {data.celebrationSubtitle}
               </span>
             </div>
@@ -88,7 +88,7 @@ export function LociSurpriseCelebrationModal({
               border: 'none',
               color: '#cbd5e1',
               cursor: 'pointer',
-              padding: '7px',
+              padding: '8px',
               borderRadius: '10px',
               display: 'flex',
               alignItems: 'center',
@@ -96,21 +96,21 @@ export function LociSurpriseCelebrationModal({
               transition: 'background 0.15s ease'
             }}
           >
-            <X size={22} />
+            <X size={24} />
           </button>
         </div>
 
-        {/* Big Hilarious Photo Card */}
-        <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        {/* Big Hilarious Photo Card (150% Enormous Display) */}
+        <div style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
           
           <div style={{
             width: '100%',
-            height: '260px',
-            borderRadius: '18px',
+            height: '420px',
+            borderRadius: '20px',
             overflow: 'hidden',
             backgroundColor: '#020617',
-            border: '2px solid rgba(245, 158, 11, 0.5)',
-            boxShadow: '0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(251, 191, 36, 0.2)',
+            border: '2.5px solid rgba(245, 158, 11, 0.6)',
+            boxShadow: '0 16px 36px rgba(0, 0, 0, 0.7), 0 0 25px rgba(251, 191, 36, 0.3)',
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
@@ -136,8 +136,24 @@ export function LociSurpriseCelebrationModal({
             {/* Glowing Tag Pill */}
             <div style={{
               position: 'absolute',
-              bottom: '12px',
-              right: '12px',
+              bottom: '16px',
+              right: '16px',
+              backgroundColor: 'rgba(15, 23, 42, 0.94)',
+              border: '2px solid #fbbf24',
+              borderRadius: '14px',
+              padding: '6px 16px',
+              color: '#fef08a',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.7)'
+            }}>
+              <span>{data.order ? `תחנה ${data.order}: ` : ''}{data.title}</span>
+              <span>{data.emoji}</span>
+            </div>
+          </div>
               backgroundColor: 'rgba(15, 23, 42, 0.92)',
               border: '1.5px solid #fbbf24',
               borderRadius: '12px',
