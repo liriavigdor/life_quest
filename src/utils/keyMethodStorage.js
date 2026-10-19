@@ -226,9 +226,16 @@ export function getStoredDeposits() {
         }));
 
         defaultLociPhotos.forEach(p => {
-          if (!parsed.some(d => d.id === p.id || (d.roomId === p.roomId && d.type === 'photo'))) {
+          const existingIdx = parsed.findIndex(d => d.id === p.id || (d.roomId === p.roomId && d.type === 'photo'));
+          if (existingIdx === -1) {
             parsed.push(p);
             modified = true;
+          } else {
+            // Guarantee latest illustration, title, and mnemonic story
+            if (parsed[existingIdx].imageUrl !== p.imageUrl || parsed[existingIdx].title !== p.title) {
+              parsed[existingIdx] = { ...parsed[existingIdx], ...p };
+              modified = true;
+            }
           }
         });
 

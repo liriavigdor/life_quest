@@ -29,6 +29,7 @@ import { BizarreStackingModal } from './stardewArt/BizarreStackingModal';
 import { ComplexArchitectureSVG, ComplexLightingSVG } from './stardewArt/ComplexArchitecture';
 import { StardewDoorsLayer, INTERIOR_DOORS_CONFIG } from './stardewArt/StardewDoors';
 import { LociCumulativeQuizModal } from './LociCumulativeQuizModal';
+import { LociItemInspectionModal } from './LociItemInspectionModal';
 import { LOCI_DOOR_STAGES, LOCI_WORK_PRACTICE_ITEMS } from '../data/lociPracticeData';
 import { DepositModal } from './DepositModal';
 import { PhotoFrameModal } from './PhotoFrameModal';
@@ -187,6 +188,7 @@ export function StardewInstitutionComplex({
   useEffect(() => { currentOutfitRef.current = currentOutfit; }, [currentOutfit]);
 
   // Key Method State (שיטת המפתחות)
+  const [selectedLociItem, setSelectedLociItem] = useState(null);
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const [selectedWallPhotoRoom, setSelectedWallPhotoRoom] = useState(null);
@@ -1234,8 +1236,10 @@ export function StardewInstitutionComplex({
 
         {/* --- IN-ROOM AUTHENTIC WALL PICTURE FRAMES (EMBEDDED COTTAGE DECOR) --- */}
         {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
+          const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
           const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
-          const hasPhoto = !!photoDeposit;
+          // Always guarantee the exact 5 items requested for Loci Memory Palace practice
+          const activeItem = lociItem || photoDeposit;
           const isNear = nearObjectId === `photo_${roomId}` || hoveredObjectId === `photo_${roomId}`;
 
           return (
@@ -1256,45 +1260,44 @@ export function StardewInstitutionComplex({
               onClick={(e) => {
                 e.stopPropagation();
                 sounds.playTap?.();
-                setSelectedWallPhotoRoom({ id: roomId, name: pos.name });
-                setIsPhotoModalOpen(true);
+                setSelectedLociItem(activeItem);
               }}
-              title={hasPhoto ? `תמונת קיר: "${photoDeposit.title}" — לחץ לצפייה ועריכה` : `תמונת נוף כפרית — לחץ להוספת תמונה אישית`}
+              title={`תמונת ארמון הזיכרון: ${activeItem?.order ? `${activeItem.order}. ` : ''}${activeItem?.title} ${activeItem?.emoji || ''} — לחץ לצפייה מוגדלת ולמידה`}
             >
               {/* Floating Loci Anchor Tag */}
-              {hasPhoto && (
+              {activeItem && (
                 <div style={{
                   position: 'absolute',
-                  top: '-22px',
+                  top: '-24px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                   backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                  border: '1px solid rgba(245, 158, 11, 0.65)',
+                  border: '1.5px solid #f59e0b',
                   color: '#fef3c7',
-                  fontSize: '0.68rem',
+                  fontSize: '0.72rem',
                   fontWeight: 'bold',
-                  padding: '2px 8px',
-                  borderRadius: '10px',
+                  padding: '2px 9px',
+                  borderRadius: '12px',
                   whiteSpace: 'nowrap',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.6)',
+                  boxShadow: '0 3px 10px rgba(0,0,0,0.6), 0 0 10px rgba(245, 158, 11, 0.3)',
                   pointerEvents: 'none',
                   zIndex: 25
                 }}>
-                  <span>{photoDeposit.order ? `${photoDeposit.order}. ` : ''}{photoDeposit.title} {photoDeposit.emoji || '🖼️'}</span>
+                  <span>{activeItem.order ? `${activeItem.order}. ` : ''}{activeItem.title} {activeItem.emoji || '🖼️'}</span>
                 </div>
               )}
 
               {/* Authentic 2.5D Wooden Beveled Picture Frame (Fits 100% within the 56px wall face) */}
               <div
                 style={{
-                  width: '48px',
-                  height: '34px',
+                  width: '52px',
+                  height: '38px',
                   backgroundColor: '#3b1c09',
-                  border: isNear ? '2px solid #f59e0b' : '2px solid #5a2c0d',
+                  border: isNear ? '2px solid #fbbf24' : '2px solid #d97706',
                   borderRadius: '4px',
                   boxShadow: isNear 
-                    ? '0 3px 8px rgba(0, 0, 0, 0.65), 0 0 8px rgba(245, 158, 11, 0.35)' 
-                    : '0 2px 5px rgba(0, 0, 0, 0.5)',
+                    ? '0 3px 10px rgba(0, 0, 0, 0.7), 0 0 12px rgba(245, 158, 11, 0.5)' 
+                    : '0 2px 6px rgba(0, 0, 0, 0.5)',
                   padding: '2px',
                   display: 'flex',
                   alignItems: 'center',
@@ -1313,63 +1316,111 @@ export function StardewInstitutionComplex({
                     borderRadius: '2px',
                     overflow: 'hidden',
                     position: 'relative',
-                    backgroundColor: '#1c1917'
+                    backgroundColor: '#0f172a'
                   }}
                 >
-                  {hasPhoto ? (
-                    <>
-                      {/* Real User Photo Canvas */}
-                      <img
-                        src={photoDeposit.imageUrl}
-                        alt={photoDeposit.title}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          display: 'block'
-                        }}
-                      />
-                      {/* Gentle Oil-Painting Glaze */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          inset: 0,
-                          background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.12) 100%)',
-                          pointerEvents: 'none'
-                        }}
-                      />
-                    </>
-                  ) : (
-                    /* Default Miniature Cottage Landscape (Blends naturally with scenery) */
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 36 24"
-                      preserveAspectRatio="none"
-                      style={{ display: 'block' }}
-                    >
-                      <defs>
-                        <linearGradient id={`frameSky-${roomId}`} x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#fdba74" />
-                          <stop offset="60%" stopColor="#fed7aa" />
-                          <stop offset="100%" stopColor="#fef08a" />
-                        </linearGradient>
-                      </defs>
-                      {/* Sunset Sky */}
-                      <rect width="36" height="24" fill={`url(#frameSky-${roomId})`} />
-                      {/* Warm Sun */}
-                      <circle cx="27" cy="8" r="3.5" fill="#f59e0b" opacity="0.85" />
-                      {/* Distant Purple Mountains */}
-                      <polygon points="2,24 12,11 22,24" fill="#7c3aed" opacity="0.45" />
-                      <polygon points="14,24 24,13 34,24" fill="#6d28d9" opacity="0.5" />
-                      {/* Rolling Green Foreground Hills */}
-                      <ellipse cx="10" cy="25" rx="16" ry="9" fill="#15803d" />
-                      <ellipse cx="28" cy="26" rx="14" ry="8" fill="#166534" />
-                      {/* Tiny Cypress Tree */}
-                      <polygon points="7,20 9,14 11,20" fill="#052e16" />
-                    </svg>
-                  )}
+                  <img
+                    src={activeItem?.imageUrl}
+                    alt={activeItem?.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain',
+                      display: 'block'
+                    }}
+                  />
+                  {/* Gentle Oil-Painting Glaze */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.1) 100%)',
+                      pointerEvents: 'none'
+                    }}
+                  />
                 </div>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* --- IN-ROOM 2.5D LOCI PEDESTAL DISPLAY ON THE FLOOR --- */}
+        {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
+          const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
+          if (!lociItem) return null;
+          const isNear = nearObjectId === `pedestal_${roomId}` || hoveredObjectId === `pedestal_${roomId}`;
+          const pedestalY = roomId === 'main_hall' ? 155 : (roomId === 'left_store' ? 195 : (roomId === 'right_sanctuary' ? 220 : (pos.y + 60)));
+
+          return (
+            <div
+              key={`loci-pedestal-${roomId}`}
+              className="loci-station-pedestal"
+              style={{
+                position: 'absolute',
+                left: `${pos.x}px`,
+                top: `${pedestalY}px`,
+                transform: 'translate(-50%, -50%)',
+                zIndex: 22,
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+              onMouseEnter={() => setHoveredObjectId(`pedestal_${roomId}`)}
+              onMouseLeave={() => setHoveredObjectId(null)}
+              onClick={(e) => {
+                e.stopPropagation();
+                sounds.playTap?.();
+                setSelectedLociItem(lociItem);
+              }}
+              title={`תחנה ${lociItem.order}: ${lociItem.title} ${lociItem.emoji} — לחץ לבדיקה ושינון`}
+            >
+              {/* Floor Shadow */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-3px',
+                width: '42px',
+                height: '12px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(0, 0, 0, 0.45)',
+                filter: 'blur(1.5px)'
+              }} />
+
+              {/* Wooden Stand & Golden Plaque */}
+              <div style={{
+                width: '36px',
+                height: '26px',
+                backgroundColor: '#0f172a',
+                border: isNear ? '2px solid #fbbf24' : '1.5px solid #d97706',
+                borderRadius: '5px',
+                boxShadow: isNear ? '0 0 12px rgba(251, 191, 36, 0.65)' : '0 2px 6px rgba(0,0,0,0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
+                <img 
+                  src={lociItem.imageUrl} 
+                  alt={lociItem.title} 
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
+              </div>
+
+              {/* Station Chip Badge */}
+              <div style={{
+                marginTop: '3px',
+                backgroundColor: isNear ? '#b45309' : 'rgba(15, 23, 42, 0.92)',
+                border: isNear ? '1px solid #fde047' : '1px solid rgba(245, 158, 11, 0.45)',
+                color: isNear ? '#ffffff' : '#fef3c7',
+                fontSize: '0.66rem',
+                fontWeight: 'bold',
+                padding: '2px 7px',
+                borderRadius: '8px',
+                whiteSpace: 'nowrap',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.45)',
+                transition: 'all 0.15s ease'
+              }}>
+                <span>{lociItem.order}. {lociItem.title} {lociItem.emoji}</span>
               </div>
             </div>
           );
@@ -2111,6 +2162,15 @@ export function StardewInstitutionComplex({
           door={activeQuizDoor}
           onClose={() => setActiveQuizDoor(null)}
           onUnlockDoor={(door) => handlePassDoorQuiz(door)}
+        />
+      )}
+
+      {/* 11. Full-Screen High Definition Loci Item Inspection Modal */}
+      {selectedLociItem && (
+        <LociItemInspectionModal
+          isOpen={!!selectedLociItem}
+          item={selectedLociItem}
+          onClose={() => setSelectedLociItem(null)}
         />
       )}
     </div>
