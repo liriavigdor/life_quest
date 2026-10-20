@@ -183,7 +183,8 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     imageUrl: SUNGLASSES_DATA_URL,
     celebrationTitle: '☀️ בום! שמש לוהטת ומסנוורת!',
     celebrationSubtitle: 'מזל ענק שזכרת לקחת משקפי שמש בכניסה! 😎',
-    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Sun_wearing_sunglasses.svg',
+    celebrationImage: './sun_sunglasses.jpg',
+    objectPosition: 'center center',
     quote: '"אבא, השמש מסנוורת בטירוף! טוב שהרכבת את משקפי השמש בכניסה!" 🕶️☀️'
   },
   {
@@ -201,7 +202,8 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     imageUrl: PHONE_DATA_URL,
     celebrationTitle: '🍏 סטיב ג׳ובס מתקשר לאולם המרכזי!',
     celebrationSubtitle: '"אבא, One More Thing... איפה שמת את האייפון?!" 📱',
-    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Steve_Jobs_presents_iPhone.jpg',
+    celebrationImage: './steve_jobs_iphone.jpg',
+    objectPosition: 'center center',
     quote: '"Stay hungry, stay foolish... ואל תשכח את הטלפון שלך על השולחן באולם!" — סטיב ג׳ובס 📱'
   },
   {
@@ -219,7 +221,8 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     imageUrl: SHIRT_DATA_URL,
     celebrationTitle: '⚽ SIIIUUU! רונאלדו מניף חולצה להחלפה!',
     celebrationSubtitle: 'חולצה נקייה ורעננה נזרקת אליך באגף שמאל! 👕',
-    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg',
+    celebrationImage: './ronaldo_shirt.jpg',
+    objectPosition: 'center center',
     quote: '"אחרי אימון קשה מגיע הרגע הכי טוב: חולצה נקייה להחלפה! SIIIUUU!" — כריסטיאנו רונאלדו 👕⚽'
   },
   {
@@ -237,7 +240,8 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     imageUrl: WATER_DATA_URL,
     celebrationTitle: '🌊 מפלי הניאגרה השוצפים בהיכל השלווה!',
     celebrationSubtitle: 'שפכנו את כל מי הניאגרה היישר לתוך בקבוק המים שלך! 💧',
-    celebrationImage: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Niagara_Falls_%28Horseshoe_Falls%29.jpg',
+    celebrationImage: './niagara_falls.jpg',
+    objectPosition: 'center center',
     quote: '"מיליוני ליטרים של מים קרירים ומרעננים כדי שתמיד תזכור לשתות מים!" 💧🌊'
   },
   {
@@ -256,6 +260,7 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     celebrationTitle: '🏎️ רונאלדו וסטיב ג׳ובס נהגו בפרארי עם משקפי שמש ושתו בקבוק מים! 🕶️💧',
     celebrationSubtitle: 'סיפור העל שמחבר את כל 5 תחנות הזיכרון בתמונה אחת אגדית!',
     celebrationImage: './ronaldo_jobs_ferrari.jpg',
+    objectPosition: 'center center',
     quote: '"רונאלדו וסטיב ג׳ובס נהגו בפרארי עם משקפי שמש ושתו בקבוק מים!" — כל הארמון נעול לך בזיכרון לנצח! 🏆👑'
   }
 ];

@@ -551,35 +551,11 @@ export function StardewInstitutionComplex({
         let closestNear = null;
         let minD = 65;
 
-        for (const [roomId, pos] of Object.entries(LOCKER_POSITIONS)) {
-          const d = Math.hypot(px - (pos.x + 38), py - (pos.y + 45));
-          if (d < minD) {
-            minD = d;
-            closestNear = `locker_${roomId}`;
-          }
-        }
-
         for (const [roomId, pos] of Object.entries(WALL_PHOTO_POSITIONS)) {
-          const d = Math.hypot(px - pos.x, py - (pos.y + 70));
+          const d = Math.hypot(px - pos.x, py - (pos.y + 60));
           if (d < minD) {
             minD = d;
             closestNear = `photo_${roomId}`;
-          }
-        }
-
-        for (const [roomId, pos] of Object.entries(CHEST_POSITIONS)) {
-          const d = Math.hypot(px - (pos.x + 29), py - (pos.y + 25));
-          if (d < minD) {
-            minD = d;
-            closestNear = `chest_${roomId}`;
-          }
-        }
-
-        for (const [roomId, pos] of Object.entries(RADIO_POSITIONS)) {
-          const d = Math.hypot(px - (pos.x + 24), py - (pos.y + 20));
-          if (d < minD) {
-            minD = d;
-            closestNear = `radio_${roomId}`;
           }
         }
 
@@ -750,10 +726,11 @@ export function StardewInstitutionComplex({
 
       if (near.startsWith('photo_')) {
         const roomId = near.replace('photo_', '');
-        const pos = WALL_PHOTO_POSITIONS[roomId];
+        const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
+        const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
+        const activeItem = lociItem || photoDeposit;
         sounds.playTap?.();
-        setSelectedWallPhotoRoom({ id: roomId, name: pos?.name || 'תמונה על הקיר' });
-        setIsPhotoModalOpen(true);
+        setSelectedLociItem(activeItem);
         return;
       }
 
@@ -1124,188 +1101,6 @@ export function StardewInstitutionComplex({
           </div>
         ))}
 
-        {/* --- IN-ROOM AUTHENTIC PHYSICAL WOODEN LOCKER FURNITURE (DEDICATED FOR LISTS) --- */}
-        {Object.entries(LOCKER_POSITIONS).map(([roomId, pos]) => {
-          const roomDeposits = storedDeposits.filter(d => d.roomId === roomId && d.type !== 'photo');
-          const hasDeposits = roomDeposits.length > 0;
-          const latestDeposit = roomDeposits[roomDeposits.length - 1];
-          const anchorEmoji = latestDeposit?.visualAnchor?.emoji || '🗄️';
-          const anchorLabel = latestDeposit?.visualAnchor?.label || (hasDeposits ? `${roomDeposits.length} רשימות` : 'ארונית רשימות ריקה');
-          const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
-          const needsPractice = hasDeposits && roomDeposits.some(d => d.lastPracticed !== todayStr);
-          const isNear = nearObjectId === `locker_${roomId}` || hoveredObjectId === `locker_${roomId}`;
-
-          return (
-            <div 
-              key={roomId} 
-              className="in-room-physical-locker-anchor"
-              style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 26 }}
-              onMouseEnter={() => setHoveredObjectId(`locker_${roomId}`)}
-              onMouseLeave={() => setHoveredObjectId(null)}
-            >
-              {/* Isometric Physical Wooden Locker Furniture Piece */}
-              <div 
-                className="physical-locker-furniture-piece"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  sounds.playTap?.();
-                  if (hasDeposits) {
-                    setInspectingLockerData({
-                      roomId,
-                      roomName: pos.name,
-                      deposits: roomDeposits
-                    });
-                  } else {
-                    setModalTargetRoom({ id: roomId, name: pos.name });
-                    setIsDepositModalOpen(true);
-                  }
-                }}
-                title={hasDeposits ? `ארונית רשימות ${anchorEmoji} (${anchorLabel}) — לחץ לבדיקה` : `ארונית רשימות ריקה — לחץ להפקדת רשימה ודירוג`}
-              >
-                {/* Visual Anchor Token perched atop the locker - Revealed ONLY when approaching! */}
-                {hasDeposits && latestDeposit?.visualAnchor?.emoji && (
-                  <div 
-                    style={{
-                      position: 'absolute',
-                      top: '-16px',
-                      left: '50%',
-                      transform: isNear ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0.5)',
-                      opacity: isNear ? 1 : 0,
-                      pointerEvents: isNear ? 'auto' : 'none',
-                      transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                      background: 'rgba(20, 15, 30, 0.88)',
-                      border: '1.5px solid #f59e0b',
-                      borderRadius: '50%',
-                      width: '26px',
-                      height: '26px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '1rem',
-                      boxShadow: '0 2px 8px rgba(245, 158, 11, 0.4)',
-                      zIndex: 10
-                    }}
-                    title={`עוגן ויזואלי של הארונית: ${anchorLabel}`}
-                  >
-                    {latestDeposit.visualAnchor.emoji}
-
-                    {/* Subtle floating repetition cue (💧) when review is due */}
-                    {needsPractice && isNear && (
-                      <div 
-                        className="animate-bounce-gentle"
-                        style={{
-                          position: 'absolute',
-                          top: '-18px',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          fontSize: '0.82rem',
-                          background: 'rgba(224, 242, 254, 0.95)',
-                          border: '1px solid #38bdf8',
-                          borderRadius: '50%',
-                          width: '18px',
-                          height: '18px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          boxShadow: '0 2px 6px rgba(56, 189, 248, 0.6)'
-                        }}
-                        title="תרגול זיכרון יומי"
-                      >
-                        💧
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                <svg width="76" height="90" viewBox="0 0 76 90" className="locker-furniture-svg">
-                  <defs>
-                    <radialGradient id={`shadow-${roomId}`} cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#000" stopOpacity="0.55" />
-                      <stop offset="100%" stopColor="#000" stopOpacity="0" />
-                    </radialGradient>
-                    <linearGradient id={`oakTop-${roomId}`} x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#fbbf24" />
-                      <stop offset="40%" stopColor="#d97706" />
-                      <stop offset="80%" stopColor="#b45309" />
-                      <stop offset="100%" stopColor="#78350f" />
-                    </linearGradient>
-                    <linearGradient id={`oakSide-${roomId}`} x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#3d1d05" />
-                      <stop offset="100%" stopColor="#241206" />
-                    </linearGradient>
-                    <linearGradient id={`oakFace-${roomId}`} x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#854d0e" />
-                      <stop offset="40%" stopColor="#713f12" />
-                      <stop offset="100%" stopColor="#3d1d05" />
-                    </linearGradient>
-                    <linearGradient id={`brassGold-${roomId}`} x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#fef08a" />
-                      <stop offset="50%" stopColor="#f59e0b" />
-                      <stop offset="100%" stopColor="#b45309" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* 1. Deep Ground Contact Shadow directly under base on floor/rug */}
-                  <ellipse cx="38" cy="85" rx="36" ry="7.5" fill={`url(#shadow-${roomId})`} />
-
-                  {/* 2. Plinth Baseboard at Bottom */}
-                  <polygon points="8,75 68,75 65,84 11,84" fill="#241206" stroke="#120803" strokeWidth="1.2" />
-
-                  {/* 3. 3D Left-Side Facet (showing physical cabinet depth) */}
-                  <polygon points="2,6 10,24 10,78 2,72" fill={`url(#oakSide-${roomId})`} stroke="#1a0b03" strokeWidth="1.2" />
-                  <line x1="2" y1="6" x2="10" y2="24" stroke="rgba(254, 240, 138, 0.25)" strokeWidth="0.8" />
-
-                  {/* 4. Main Cabinet Box Front Face */}
-                  <rect x="10" y="24" width="58" height="52" rx="2" fill={`url(#oakFace-${roomId})`} stroke="#241206" strokeWidth="1.6" />
-
-                  {/* 5. PRONOUNCED 3/4 PERSPECTIVE TOP LID (18px deep horizontal surface) */}
-                  <polygon points="2,6 74,6 68,24 10,24" fill={`url(#oakTop-${roomId})`} stroke="#241206" strokeWidth="1.5" />
-                  {/* Sunlight rim */}
-                  <line x1="4" y1="7" x2="72" y2="7" stroke="#fef08a" strokeWidth="1.4" opacity="0.85" />
-                  <line x1="3" y1="7" x2="10" y2="23" stroke="#fef08a" strokeWidth="1" opacity="0.75" />
-                  {/* Front vertical lip of top cornice */}
-                  <rect x="10" y="22" width="58" height="3" fill="#92400e" stroke="#241206" strokeWidth="0.8" />
-                  <rect x="10" y="25" width="58" height="3" fill="rgba(0,0,0,0.38)" />
-
-                  {/* 6. 4 Tiered Physical Drawers in 3/4 Perspective */}
-                  <rect x="15" y="28" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
-                  <line x1="16" y1="29" x2="62" y2="29" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
-                  <circle cx="39" cy="32.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
-                  <line x1="33" y1="32.5" x2="45" y2="32.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
-
-                  <rect x="15" y="40" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
-                  <line x1="16" y1="41" x2="62" y2="41" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
-                  <circle cx="39" cy="44.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
-                  <line x1="33" y1="44.5" x2="45" y2="44.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
-
-                  <rect x="15" y="52" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
-                  <line x1="16" y1="53" x2="62" y2="53" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
-                  <circle cx="39" cy="56.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
-                  <line x1="33" y1="56.5" x2="45" y2="56.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
-
-                  <rect x="15" y="64" width="48" height="9.5" rx="1.5" fill="#542b08" stroke="#241206" strokeWidth="1" />
-                  <line x1="16" y1="65" x2="62" y2="65" stroke="rgba(254, 240, 138, 0.2)" strokeWidth="0.8" />
-                  <circle cx="39" cy="68.5" r="1.8" fill={`url(#brassGold-${roomId})`} />
-                  <line x1="33" y1="68.5" x2="45" y2="68.5" stroke={`url(#brassGold-${roomId})`} strokeWidth="1.4" strokeLinecap="round" />
-
-                  {/* 7. Corner Brass Brackets */}
-                  <polygon points="10,24 16,24 10,30" fill={`url(#brassGold-${roomId})`} />
-                  <polygon points="68,24 62,24 68,30" fill={`url(#brassGold-${roomId})`} />
-                  <polygon points="10,76 16,76 10,70" fill={`url(#brassGold-${roomId})`} />
-                  <polygon points="68,76 62,76 68,70" fill={`url(#brassGold-${roomId})`} />
-
-                  {/* 8. Glowing Oil Lantern firmly seated on 3/4 top surface */}
-                  <ellipse cx="39" cy="18" rx="8" ry="3" fill="rgba(0,0,0,0.3)" />
-                  <circle cx="39" cy="7" r="8" fill="rgba(245, 158, 11, 0.3)" />
-                  <rect x="36" y="6" width="6" height="8" rx="1" fill="#fef08a" stroke="#78350f" strokeWidth="0.8" />
-                  <path d="M 36 6 Q 39 2 42 6" fill="none" stroke="#78350f" strokeWidth="1.2" />
-                  <circle cx="39" cy="10" r="1.6" fill="#f59e0b" />
-                </svg>
-              </div>
-            </div>
-          );
-        })}
-
         {/* --- IN-ROOM AUTHENTIC WALL PICTURE FRAMES (EMBEDDED COTTAGE DECOR) --- */}
         {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
           const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
@@ -1336,37 +1131,14 @@ export function StardewInstitutionComplex({
               }}
               title={`תמונת ארמון הזיכרון: ${activeItem?.order ? `${activeItem.order}. ` : ''}${activeItem?.title} ${activeItem?.emoji || ''} — לחץ לצפייה מוגדלת ולמידה`}
             >
-              {/* Floating Loci Anchor Tag */}
-              {activeItem && (
-                <div style={{
-                  position: 'absolute',
-                  top: '-28px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                  border: '1.5px solid #f59e0b',
-                  color: '#fef3c7',
-                  fontSize: '0.82rem',
-                  fontWeight: 'bold',
-                  padding: '3px 11px',
-                  borderRadius: '14px',
-                  whiteSpace: 'nowrap',
-                  boxShadow: '0 3px 12px rgba(0,0,0,0.7), 0 0 12px rgba(245, 158, 11, 0.35)',
-                  pointerEvents: 'none',
-                  zIndex: 25
-                }}>
-                  <span>{activeItem.order ? `${activeItem.order}. ` : ''}{activeItem.title} {activeItem.emoji || '🖼️'}</span>
-                </div>
-              )}
-
-              {/* Authentic 2.5D Wooden Beveled Picture Frame (150% Enlarged Display) */}
+              {/* Authentic 2.5D Wooden Beveled Picture Frame (Enlarged & Focused Display) */}
               <div
                 style={{
-                  width: '78px',
-                  height: '56px',
+                  width: '84px',
+                  height: '60px',
                   backgroundColor: '#3b1c09',
                   border: isNear ? '2.5px solid #fbbf24' : '2px solid #d97706',
-                  borderRadius: '5px',
+                  borderRadius: '6px',
                   boxShadow: isNear 
                     ? '0 4px 14px rgba(0, 0, 0, 0.8), 0 0 16px rgba(245, 158, 11, 0.6)' 
                     : '0 3px 8px rgba(0, 0, 0, 0.55)',
@@ -1385,7 +1157,7 @@ export function StardewInstitutionComplex({
                     width: '100%',
                     height: '100%',
                     border: '1px solid #b45309',
-                    borderRadius: '2px',
+                    borderRadius: '3px',
                     overflow: 'hidden',
                     position: 'relative',
                     backgroundColor: '#0f172a'
@@ -1398,6 +1170,7 @@ export function StardewInstitutionComplex({
                       width: '100%',
                       height: '100%',
                       objectFit: activeItem?.celebrationImage ? 'cover' : 'contain',
+                      objectPosition: activeItem?.objectPosition || 'center center',
                       display: 'block'
                     }}
                     onError={(e) => {
@@ -1416,298 +1189,6 @@ export function StardewInstitutionComplex({
                     }}
                   />
                 </div>
-              </div>
-            </div>
-          );
-        })}
-
-        {/* --- IN-ROOM 2.5D LOCI PEDESTAL DISPLAY ON THE FLOOR --- */}
-        {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
-          const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
-          if (!lociItem) return null;
-          const isNear = nearObjectId === `pedestal_${roomId}` || hoveredObjectId === `pedestal_${roomId}`;
-          const pedestalY = roomId === 'main_hall' ? 155 : (roomId === 'left_store' ? 195 : (roomId === 'right_sanctuary' ? 220 : (pos.y + 60)));
-
-          return (
-            <div
-              key={`loci-pedestal-${roomId}`}
-              className="loci-station-pedestal"
-              style={{
-                position: 'absolute',
-                left: `${pos.x}px`,
-                top: `${pedestalY}px`,
-                transform: 'translate(-50%, -50%)',
-                zIndex: 22,
-                cursor: 'pointer',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-              }}
-              onMouseEnter={() => setHoveredObjectId(`pedestal_${roomId}`)}
-              onMouseLeave={() => setHoveredObjectId(null)}
-              onClick={(e) => {
-                e.stopPropagation();
-                sounds.playTap?.();
-                setSelectedLociItem(lociItem);
-              }}
-              title={`תחנה ${lociItem.order}: ${lociItem.title} ${lociItem.emoji} — לחץ לבדיקה ושינון`}
-            >
-              {/* Floor Shadow */}
-              <div style={{
-                position: 'absolute',
-                bottom: '-4px',
-                width: '64px',
-                height: '16px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                filter: 'blur(2px)'
-              }} />
-
-              {/* Wooden Stand & Golden Plaque (150% Enlarged) */}
-              <div style={{
-                width: '56px',
-                height: '40px',
-                backgroundColor: '#0f172a',
-                border: isNear ? '2.5px solid #fbbf24' : '2px solid #d97706',
-                borderRadius: '7px',
-                boxShadow: isNear ? '0 0 16px rgba(251, 191, 36, 0.75)' : '0 3px 8px rgba(0,0,0,0.5)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden'
-              }}>
-                <img 
-                  src={lociItem.celebrationImage || lociItem.imageUrl} 
-                  alt={lociItem.title} 
-                  style={{ width: '100%', height: '100%', objectFit: lociItem.celebrationImage ? 'cover' : 'contain' }}
-                  onError={(e) => {
-                    if (lociItem.imageUrl && e.target.src !== lociItem.imageUrl) {
-                      e.target.src = lociItem.imageUrl;
-                    }
-                  }}
-                />
-              </div>
-
-              {/* Station Chip Badge */}
-              <div style={{
-                marginTop: '4px',
-                backgroundColor: isNear ? '#b45309' : 'rgba(15, 23, 42, 0.94)',
-                border: isNear ? '1.5px solid #fde047' : '1px solid rgba(245, 158, 11, 0.5)',
-                color: isNear ? '#ffffff' : '#fef3c7',
-                fontSize: '0.76rem',
-                fontWeight: 'bold',
-                padding: '3px 9px',
-                borderRadius: '10px',
-                whiteSpace: 'nowrap',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                transition: 'all 0.15s ease'
-              }}>
-                <span>{lociItem.order}. {lociItem.title} {lociItem.emoji}</span>
-              </div>
-            </div>
-          );
-        })}
-
-        {/* --- IN-ROOM AUTHENTIC 2.5D WOODEN CHESTS (DEDICATED FOR ACRONYMS / ראשי תיבות) --- */}
-        {Object.entries(CHEST_POSITIONS).map(([roomId, pos]) => {
-          const chestDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'chest');
-          const hasChest = !!chestDeposit;
-          const acronymText = chestDeposit?.acronym || 'תיבה ריקה';
-          const todayStr = new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' });
-          const needsPractice = hasChest && chestDeposit.lastPracticed !== todayStr;
-          const isNear = nearObjectId === `chest_${roomId}` || hoveredObjectId === `chest_${roomId}`;
-
-          return (
-            <div
-              key={`chest-${roomId}`}
-              className="in-room-physical-chest-anchor"
-              style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 24 }}
-              onMouseEnter={() => setHoveredObjectId(`chest_${roomId}`)}
-              onMouseLeave={() => setHoveredObjectId(null)}
-            >
-              {/* 2.5D Stardew Valley Wooden Chest SVG */}
-              <div
-                className="physical-chest-furniture-piece"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  sounds.playTap?.();
-                  if (roomId === 'right_south') {
-                    setActiveQuizDoor({
-                      id: 'vault_master',
-                      name: 'כספת אמן ארמון הזיכרון 🏆',
-                      fromRoomName: 'כלל הארמון',
-                      toRoomName: 'אוצר הזיכרון'
-                    });
-                    return;
-                  }
-                  if (hasChest) {
-                    setInspectingChestData({
-                      roomId,
-                      roomName: pos.name,
-                      deposit: chestDeposit
-                    });
-                  } else {
-                    setModalTargetRoom({ id: roomId, name: pos.name });
-                    setIsDepositModalOpen(true);
-                  }
-                }}
-                title={roomId === 'right_south' ? 'כספת אמן ארמון הזיכרון 🏆 — לחץ למבחן המסלול השלם של כל 5 התחנות!' : (hasChest ? `תיבת ראשי תיבות: "${acronymText}" — לחץ לבדיקה ותרגול` : `תיבה ריקה — לחץ להפקדת רשימה עם ראשי תיבות`)}
-              >
-                <svg width="58" height="50" viewBox="0 0 58 50" className="chest-furniture-svg">
-                  <defs>
-                    <radialGradient id={`chestShadow-${roomId}`} cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#000" stopOpacity="0.55" />
-                      <stop offset="100%" stopColor="#000" stopOpacity="0" />
-                    </radialGradient>
-                    <linearGradient id={`chestOakTop-${roomId}`} x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#d97706" />
-                      <stop offset="50%" stopColor="#b45309" />
-                      <stop offset="100%" stopColor="#78350f" />
-                    </linearGradient>
-                    <linearGradient id={`chestOakFace-${roomId}`} x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#92400e" />
-                      <stop offset="50%" stopColor="#78350f" />
-                      <stop offset="100%" stopColor="#451a03" />
-                    </linearGradient>
-                    <linearGradient id={`chestBrass-${roomId}`} x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#fef08a" />
-                      <stop offset="50%" stopColor="#f59e0b" />
-                      <stop offset="100%" stopColor="#b45309" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* Ground contact shadow */}
-                  <ellipse cx="29" cy="44" rx="27" ry="5.5" fill={`url(#chestShadow-${roomId})`} />
-
-                  {/* Base Chest Box */}
-                  <rect x="6" y="18" width="46" height="24" rx="2" fill={`url(#chestOakFace-${roomId})`} stroke="#1e0f05" strokeWidth="1.4" />
-                  {/* Wood planks divider lines */}
-                  <line x1="6" y1="26" x2="52" y2="26" stroke="rgba(0,0,0,0.35)" strokeWidth="0.8" />
-                  <line x1="6" y1="34" x2="52" y2="34" stroke="rgba(0,0,0,0.35)" strokeWidth="0.8" />
-
-                  {/* 3/4 Perspective Curved/Arched Chest Lid */}
-                  <polygon points="2,6 56,6 52,18 6,18" fill={`url(#chestOakTop-${roomId})`} stroke="#1e0f05" strokeWidth="1.4" />
-                  {/* Sunlight rim */}
-                  <line x1="3" y1="7" x2="55" y2="7" stroke="#fef08a" strokeWidth="1.2" opacity="0.8" />
-
-                  {/* Iron/Brass Reinforcing Bands with Rivets */}
-                  <rect x="14" y="6" width="4" height="36" fill={`url(#chestBrass-${roomId})`} stroke="#1e0f05" strokeWidth="0.8" />
-                  <circle cx="16" cy="11" r="1.1" fill="#fff" />
-                  <circle cx="16" cy="22" r="1.1" fill="#fff" />
-                  <circle cx="16" cy="30" r="1.1" fill="#fff" />
-                  <circle cx="16" cy="38" r="1.1" fill="#fff" />
-
-                  <rect x="40" y="6" width="4" height="36" fill={`url(#chestBrass-${roomId})`} stroke="#1e0f05" strokeWidth="0.8" />
-                  <circle cx="42" cy="11" r="1.1" fill="#fff" />
-                  <circle cx="42" cy="22" r="1.1" fill="#fff" />
-                  <circle cx="42" cy="30" r="1.1" fill="#fff" />
-                  <circle cx="42" cy="38" r="1.1" fill="#fff" />
-
-                  {/* Central Golden Padlock / Clasp */}
-                  <rect x="25" y="14" width="8" height="9" rx="1.5" fill={`url(#chestBrass-${roomId})`} stroke="#1e0f05" strokeWidth="1" />
-                  <circle cx="29" cy="17" r="1.3" fill="#1e0f05" />
-                  <line x1="29" y1="18.5" x2="29" y2="21" stroke="#1e0f05" strokeWidth="1" />
-                </svg>
-
-                {/* Review Due Droplet 💧 */}
-                {needsPractice && isNear && (
-                  <div
-                    className="animate-bounce-gentle"
-                    style={{
-                      position: 'absolute',
-                      top: '-18px',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      fontSize: '0.82rem',
-                      background: 'rgba(224, 242, 254, 0.95)',
-                      border: '1px solid #38bdf8',
-                      borderRadius: '50%',
-                      width: '18px',
-                      height: '18px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 2px 6px rgba(56, 189, 248, 0.6)'
-                    }}
-                    title="תרגול שליפה יומי של ראשי התיבות"
-                  >
-                    💧
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-
-        {/* --- IN-ROOM AUTHENTIC 2.5D VINTAGE RETRO RADIO (DEDICATED FOR AUDITORY / ECHOIC MEMORY) --- */}
-        {Object.entries(RADIO_POSITIONS).map(([roomId, pos]) => {
-          const radioDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'radio');
-          const hasRadio = !!radioDeposit;
-          const radioTitle = radioDeposit?.title || 'רדיו וינטג\'';
-          const isNear = nearObjectId === `radio_${roomId}` || hoveredObjectId === `radio_${roomId}`;
-
-          return (
-            <div
-              key={`radio-${roomId}`}
-              className="in-room-physical-radio-anchor"
-              style={{ position: 'absolute', left: `${pos.x}px`, top: `${pos.y}px`, zIndex: 24 }}
-              onMouseEnter={() => setHoveredObjectId(`radio_${roomId}`)}
-              onMouseLeave={() => setHoveredObjectId(null)}
-            >
-              {/* 2.5D Stardew Valley Vintage Wooden Radio SVG */}
-              <div
-                className="physical-radio-furniture-piece"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  sounds.playTap?.();
-                  setSelectedRadioRoom({ id: roomId, name: pos.name });
-                  setIsRadioModalOpen(true);
-                }}
-                title={hasRadio ? `רדיו קולי: "${radioTitle}" — לחץ להאזנה` : `רדיו וינטג' שולחני — לחץ להקלטת הודעה קולית`}
-                style={{ cursor: 'pointer', position: 'relative' }}
-              >
-                <svg width="48" height="42" viewBox="0 0 48 42" className="radio-furniture-svg">
-                  <defs>
-                    <radialGradient id={`radioShadow-${roomId}`} cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#000" stopOpacity="0.55" />
-                      <stop offset="100%" stopColor="#000" stopOpacity="0" />
-                    </radialGradient>
-                    <linearGradient id={`radioWood-${roomId}`} x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#92400e" />
-                      <stop offset="50%" stopColor="#78350f" />
-                      <stop offset="100%" stopColor="#451a03" />
-                    </linearGradient>
-                    <linearGradient id={`radioDial-${roomId}`} x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#fef08a" />
-                      <stop offset="100%" stopColor="#d97706" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* Drop shadow */}
-                  <ellipse cx="24" cy="38" rx="21" ry="4" fill={`url(#radioShadow-${roomId})`} />
-
-                  {/* Radio Antenna */}
-                  <line x1="12" y1="12" x2="6" y2="2" stroke="#94a3b8" strokeWidth="1.2" strokeLinecap="round" />
-                  <circle cx="6" cy="2" r="1.2" fill="#e2e8f0" />
-
-                  {/* Radio Wooden Cabinet */}
-                  <rect x="4" y="12" width="40" height="24" rx="3" fill={`url(#radioWood-${roomId})`} stroke="#1e0f05" strokeWidth="1.2" />
-
-                  {/* Speaker Cloth Slits (Left) */}
-                  <rect x="8" y="16" width="16" height="16" rx="2" fill="#291206" stroke="#451a03" strokeWidth="0.8" />
-                  <line x1="11" y1="19" x2="21" y2="19" stroke="#78350f" strokeWidth="1" />
-                  <line x1="11" y1="23" x2="21" y2="23" stroke="#78350f" strokeWidth="1" />
-                  <line x1="11" y1="27" x2="21" y2="27" stroke="#78350f" strokeWidth="1" />
-
-                  {/* Tuning Dial & Vacuum Tube Window (Right) */}
-                  <rect x="27" y="16" width="13" height="8" rx="1.5" fill="#180903" stroke="#b45309" strokeWidth="0.8" />
-                  <line x1="29" y1="20" x2="38" y2="20" stroke={`url(#radioDial-${roomId})`} strokeWidth="1.2" />
-                  <line x1="33" y1="17" x2="33" y2="23" stroke="#ef4444" strokeWidth="1" />
-
-                  {/* Volume & Tuning Knobs */}
-                  <circle cx="30" cy="28" r="2.2" fill="#d97706" stroke="#1e0f05" strokeWidth="0.8" />
-                  <circle cx="37" cy="28" r="2.2" fill="#d97706" stroke="#1e0f05" strokeWidth="0.8" />
-                </svg>
               </div>
             </div>
           );

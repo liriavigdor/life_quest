@@ -647,59 +647,8 @@ function drawJinglingCarKeysCostume(ctx, { x, y, time, facingLeft, walkCycle }) 
  * Utility: Comic Speech Bubble
  */
 function drawFloatingSpeechBubble(ctx, x, y, title, subtitle) {
-  ctx.save();
-  ctx.translate(x, y);
-
-  const padX = 10;
-  const padY = 5;
-  ctx.font = 'bold 9.5px Rubik, sans-serif';
-  const titleW = ctx.measureText(title).width;
-  ctx.font = '7.5px Rubik, sans-serif';
-  const subW = ctx.measureText(subtitle).width;
-  const boxW = Math.max(titleW, subW) + padX * 2;
-  const boxH = 26;
-
-  // Bubble Shadow
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.65)';
-  roundRect(ctx, -boxW / 2 + 1.5, -boxH + 1.5, boxW, boxH, 8);
-  ctx.fill();
-
-  // Bubble Background (Dark Slate with Golden Border)
-  ctx.fillStyle = '#0f172a';
-  ctx.strokeStyle = '#f59e0b';
-  ctx.lineWidth = 1.8;
-  roundRect(ctx, -boxW / 2, -boxH, boxW, boxH, 8);
-  ctx.fill();
-  ctx.stroke();
-
-  // Pointer Triangle
-  ctx.fillStyle = '#0f172a';
-  ctx.beginPath();
-  ctx.moveTo(-5, 0);
-  ctx.lineTo(5, 0);
-  ctx.lineTo(0, 6);
-  ctx.closePath();
-  ctx.fill();
-  ctx.strokeStyle = '#f59e0b';
-  ctx.lineWidth = 1.8;
-  ctx.beginPath();
-  ctx.moveTo(-5, 0);
-  ctx.lineTo(0, 6);
-  ctx.lineTo(5, 0);
-  ctx.stroke();
-
-  // Text: Title
-  ctx.fillStyle = '#fef08a';
-  ctx.font = 'bold 9.5px Rubik, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText(title, 0, -boxH + 11);
-
-  // Text: Subtitle
-  ctx.fillStyle = '#94a3b8';
-  ctx.font = '7.5px Rubik, sans-serif';
-  ctx.fillText(subtitle, 0, -boxH + 21);
-
-  ctx.restore();
+  // Popups disabled per user preference
+  return;
 }
 
 function roundRect(ctx, x, y, w, h, r) {
