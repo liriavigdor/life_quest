@@ -609,30 +609,22 @@ export function StardewInstitutionComplex({
           }
         }
 
-        // B. Draw Player Character & Bizarre Metamorphosis
+        // B. Draw Player Character (Normal Villager)
         const p = playerPosRef.current;
         const currentChamber = getChamberForPosition(p.x, p.y)?.id || 'entry_foyer';
 
-        // Trigger Poof Particles & Magic Sound when crossing into a new chamber!
+        // When entering Room 5: Immediately present the epic Climax story!
         if (prevChamberRef.current !== currentChamber) {
-          lociParticles.spawnPoof(p.x, p.y);
-          sounds.playSparkle?.();
-
-          // When entering Room 5: Immediately present the epic Climax story!
           if (currentChamber === 'right_south') {
             const r5 = LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 5);
             if (r5) {
               setCelebrationData(r5);
             }
           }
-
           prevChamberRef.current = currentChamber;
         }
 
-        // Draw active dynamic particles (laundry bubbles, Wi-Fi rings, water droplets, sparkles)
-        lociParticles.updateAndDraw(ctx);
-
-        // Draw Villager base
+        // Draw Standard Villager (No metamorphosis, no trail)
         drawCompleteVillager(ctx, {
           cx: p.x,
           cy: p.y,
@@ -644,17 +636,6 @@ export function StardewInstitutionComplex({
           look: villagerLookRef.current,
           timestamp: time,
           onRug: false
-        });
-
-        // Draw Hilarious Bizarre Metamorphosis Costume right on the character!
-        drawLociCharacterMetamorphosis(ctx, {
-          x: p.x,
-          y: p.y,
-          chamberId: currentChamber,
-          time,
-          walkCycle: walkCycleRef.current,
-          facingLeft: facingLeftRef.current,
-          isWalking: isWalkingRef.current
         });
       }
 

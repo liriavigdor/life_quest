@@ -174,45 +174,9 @@ export const lociParticles = new ParticleSystem();
 /**
  * Draws the character metamorphosis on canvas
  */
-export function drawLociCharacterMetamorphosis(ctx, {
-  x,
-  y,
-  chamberId,
-  time,
-  walkCycle,
-  facingLeft,
-  isWalking
-}) {
-  if (!chamberId) return;
-
-  ctx.save();
-
-  // Draw ground trail if walking
-  if (isWalking) {
-    lociParticles.spawnTrail(x, y, chamberId);
-  }
-
-  switch (chamberId) {
-    case 'entry_foyer':
-      drawGiantSunglassesCostume(ctx, { x, y, time, facingLeft, walkCycle });
-      break;
-    case 'main_hall':
-      drawWalkingSmartphoneCostume(ctx, { x, y, time, facingLeft, walkCycle, isWalking });
-      break;
-    case 'left_store':
-      drawBillowingTShirtCostume(ctx, { x, y, time, facingLeft, walkCycle, isWalking });
-      break;
-    case 'right_sanctuary':
-      drawSloshingWaterBottleCostume(ctx, { x, y, time, facingLeft, walkCycle, isWalking });
-      break;
-    case 'right_south':
-      drawJinglingCarKeysCostume(ctx, { x, y, time, facingLeft, walkCycle });
-      break;
-    default:
-      break;
-  }
-
-  ctx.restore();
+export function drawLociCharacterMetamorphosis(ctx, params) {
+  // Transformation animations and trail disabled per user request (normal character)
+  return;
 }
 
 /**
