@@ -34,56 +34,51 @@ const SLOPE = 0.6;  // Uniform diagonal sunbeam slope
 // 1. FLOOR GEOMETRY (Asymmetric & Space-Optimized Blueprint)
 // -------------------------------------------------------------------------
 const FLOORS = [
-  // Left Wing (Urgent Wing)
-  [80, 90, 190, 150],     // Deep bed nook (raised bay)
-  [80, 150, 380, 310],    // NW wing main room (A1)
-  [80, 310, 220, 410],    // NW front-jutting nook (A2)
-  // W-E Corridor C1 (Widened to 56px opening to match right passage)
-  [380, 220, 430, 276],   // W-E timber corridor tunnel (56px opening)
-  // Central Grand Hall (Hearth Wing - Asymmetric Layout)
-  [430, 108, 760, 340],   // Central Grand Hall (B)
+  // Left Wing (Room 2) - Lowered down, distinct elegant room
+  [100, 150, 210, 210],   // Raised bed nook bay
+  [100, 210, 320, 470],   // Room 2 main room
+  // Corridor C1 (Room 2 <-> Grand Hall Room 3 - lengthened to 110px!)
+  [320, 220, 430, 276],   // W-E timber corridor tunnel (56px opening, 110px long!)
+  // Central Grand Hall (Room 3)
+  [430, 108, 760, 310],   // Central Grand Hall (B)
   [610, 76, 700, 108],    // Asymmetric Off-Center Hearth alcove
-  // East Connector C2 (Widened to 56px opening to match right passage)
+  // East Connector C2 (Grand Hall Room 3 <-> East Wing North Room 4)
   [760, 220, 810, 276],   // East connector corridor tunnel (56px opening)
-  // N-S Corridor C3 (80px long, 56px wide - 3 full floor planks!)
-  [567, 340, 623, 420],   // N-S connector corridor tunnel
-  // Entrance Foyer (Asymmetric Layout with Inset Cloak Alcove Nook)
-  [440, 420, 750, 570],   // Main Foyer floor
-  [750, 510, 776, 570],   // Inset cloak alcove nook floor
-  [535, 570, 655, 594],   // Village entrance stoop
+  // Distinct Corridor C-West (Room 1 Foyer <-> Room 2 - 100px intimate connector!)
+  [320, 410, 420, 466],   // Elegant gallery connector from Room 1 (Foyer) into Room 2 (Left Wing)
+  // Entrance Foyer (Room 1 - Shifted left to x:420..710 for organic cottage staggering!)
+  [420, 390, 710, 570],   // Main Foyer floor (y: 390..570)
+  [710, 510, 736, 570],   // Inset cloak alcove nook floor
+  [495, 570, 615, 594],   // Village entrance stoop
   // East Wing (Sanctuary Wing - Asymmetric Layout)
-  [810, 170, 1180, 340],  // East wing north room
+  [810, 170, 1180, 340],  // East wing north room (Room 4)
   [970, 340, 1026, 420],  // Asymmetric partition doorway tunnel (80px long, 56px wide)
-  [880, 420, 1180, 570],  // East wing south room
+  [880, 420, 1180, 570],  // East wing south room (Room 5)
 ];
 
 // Asymmetric Corner Floor Cuts
 const FLOOR_CUTS = [
-  // Left Wing A2 front-jut: SW chamfer cut only (SE is straight plinth)
-  [[80, 374], [80, 410], [116, 410]],
+  // Room 2 front-jut: SW chamfer cut
+  [[100, 434], [100, 470], [136, 470]],
 
   // Foyer: SW chamfer cut only (SE has inset cloak nook!)
-  [[440, 534], [440, 570], [476, 570]],
+  [[420, 534], [420, 570], [456, 570]],
 
   // East South Room: SE chamfer cut only (SW is straight!)
   [[1144, 570], [1180, 570], [1180, 534]],
 
   // Inner chamfer cuts:
   // Bed Nook back corners:
-  [[80, 90], [106, 90], [80, 116]],
-  [[190, 90], [164, 90], [190, 116]],
-  // Left Wing NE:
-  [[354, 150], [380, 150], [380, 176]],
+  [[100, 150], [126, 150], [100, 176]],
+  [[210, 150], [184, 150], [210, 176]],
   // Hearth Alcove corners (Off-Center):
   [[610, 76], [626, 76], [610, 92]],
   [[700, 76], [684, 76], [700, 92]],
   // Grand Hall back corners:
   [[430, 108], [454, 108], [430, 132]],
   [[760, 108], [736, 108], [760, 132]],
-  // Grand Hall SW front chamfer cut only (SE is straight):
-  [[430, 316], [430, 340], [454, 340]],
-  // Foyer back NW chamfer cut only (NE is straight):
-  [[440, 420], [464, 420], [440, 444]],
+  // Grand Hall SW front chamfer cut (chamfered corner into C1 south sill):
+  [[430, 286], [430, 310], [454, 310]],
   // East North Room back NW chamfer cut only (NE is straight):
   [[810, 170], [834, 170], [810, 194]],
 ];
@@ -92,13 +87,13 @@ const FLOOR_CUTS = [
 // 2. ASYMMETRIC UNIFIED POLY-WALL PATHS (Completely Sealed Boundaries)
 // -------------------------------------------------------------------------
 
-// Zone 1: Left Wing Asymmetric Paths (Exclusively South-Facing Back Walls & Front Sills)
+// Zone 1: Left Wing Asymmetric Paths (Room 2)
 const ZONE1_BACK_WALL = [
-  [80, 116], [106, 90], [164, 90], [190, 116], [190, 150], [354, 150], [380, 176]
+  [100, 176], [126, 150], [184, 150], [210, 176], [210, 210], [320, 210]
 ];
-// Corridor C1 (Left Wing <-> Grand Hall, horizontal hallway)
+// Corridor C1 (Room 2 <-> Grand Hall Room 3, horizontal hallway 110px long)
 const ZONE1_CORRIDOR_BACK = [
-  [380, 220], [430, 220]
+  [320, 220], [430, 220]
 ];
 
 // Zone 2: Central Grand Hall Asymmetric Paths (Off-Center Hearth + Chamfered Corners)
@@ -111,13 +106,14 @@ const ZONE2_CORRIDOR_BACK = [
   [760, 220], [810, 220]
 ];
 
-// Zone 3: Entrance Foyer Asymmetric Paths (NW Chamfer, Straight NE, SW Chamfer, SE Inset Nook)
+// Zone 3: Distinct Corridor C-West North Wall & Foyer North Wall
+const ZONE3_CORRIDOR_WEST_BACK = [
+  [320, 410], [420, 410]
+];
 const ZONE3_BACK_WALL_LEFT = [
-  [440, 444], [464, 420], [567, 420]
+  [420, 390], [710, 390]
 ];
-const ZONE3_BACK_WALL_RIGHT = [
-  [623, 420], [750, 420]
-];
+const ZONE3_BACK_WALL_RIGHT = [];
 
 // Zone 4: East Wing Asymmetric Paths (North Room, Partition Doorway, South Room)
 const ZONE4_NORTH_BACK_WALL = [
@@ -131,97 +127,99 @@ const ZONE4_SOUTH_NORTH_WALL_RIGHT = [
 ];
 
 // =========================================================================
-// =========================================================================
-// =========================================================================
 // GRAND UNIFIED ARCHITECTURAL TIMBER FRAME (Under [MASTER ROOM FRAMER] Skill)
 // One continuous, monolithic, unbroken ribbon wrapping the entire cottage perimeter.
 // Seamlessly merges room-to-room transitions with 100% open passages (ZERO overlapping beams).
 // =========================================================================
 const GRAND_UNIFIED_PERIMETER_FRAME = [
   // 1. Entrance Stoop West start (flat butt cut flush with doorway)
-  [535, 570],
+  [495, 570],
   // 2. Foyer South Sill & SW 45° Chamfer
-  [476, 570], [440, 534],
-  // 3. Foyer West Wall & NW 45° Chamfer (at ceiling height)
-  [440, 388], [464, 364],
-  // 4. Foyer North Wall to Corridor C3 West Jamb
-  [567, 364],
-  // 5. Corridor C3 West Jamb into Central Grand Hall (open passage - NO cross beam!)
-  [567, 340],
-  // 6. Grand Hall South Sill & SW 45° Chamfer
-  [454, 340], [430, 316],
-  // 7. Grand Hall West Sill & Corridor C1 South Sill into Left Wing
-  [430, 276], [380, 276],
-  // 8. Left Wing A1/A2 Transition & Front Nook
-  [380, 310], [220, 310], [220, 410],
-  // 9. Left Wing SW 45° Chamfer & West Wall up to Bed Nook Roof
-  [116, 410], [80, 374], [80, 60],
-  // 10. Bed Nook 45° Roof Chamfer & Horizontal Ridge
-  [106, 34], [164, 34], [190, 60], [190, 94],
-  // 11. Left Wing Gallery Ceiling Rafter & NE 45° Chamfer
-  [354, 94], [380, 120],
-  // 12. Left Wing East Upper Wall & Corridor C1 North Ceiling into Grand Hall
-  [380, 220], [430, 220],
-  // 13. Grand Hall West Upper Wall & NW 45° Chamfer
+  [456, 570], [420, 534],
+  // 3. Foyer West Sill up to Corridor C-West South Sill
+  [420, 466],
+  // 4. Corridor C-West South Sill heading West into Room 2
+  [320, 466],
+  // 5. Room 2 South Sill & SW 45° Chamfer
+  [320, 470], [136, 470], [100, 434],
+  // 6. Room 2 West Wall up to Bed Nook
+  [100, 210],
+  // 7. Bed Nook 45° Roof Chamfer & Horizontal Ridge
+  [100, 150], [126, 124], [184, 124], [210, 150],
+  // 8. Room 2 North Ceiling Rafter
+  [210, 154], [320, 154],
+  // 9. Down Room 2 East Upper Wall & Corridor C1 North Ceiling into Grand Hall
+  [320, 220], [430, 220],
+  // 10. Grand Hall West Upper Wall & NW 45° Chamfer
   [430, 76], [454, 52],
-  // 14. Grand Hall Hearth Alcove (Asymmetric Multi-Facet Roof Peak)
+  // 11. Grand Hall Hearth Alcove (Asymmetric Multi-Facet Roof Peak)
   [610, 52], [610, 36], [626, 20], [684, 20], [700, 36], [700, 52],
-  // 15. Grand Hall East Gallery Ceiling & NE 45° Chamfer
+  // 12. Grand Hall East Gallery Ceiling & NE 45° Chamfer
   [736, 52], [760, 76],
-  // 16. Grand Hall East Upper Wall & Corridor C2 North Ceiling into East Wing North
+  // 13. Grand Hall East Upper Wall & Corridor C2 North Ceiling into East Wing North
   [760, 220], [810, 220],
-  // 17. East Wing North West Upper Wall & NW 45° Chamfer
+  // 14. East Wing North West Upper Wall & NW 45° Chamfer
   [810, 138], [834, 114],
-  // 18. East Wing North Ceiling Rafter to Far East Corner (Seamless 90° Miter)
+  // 15. East Wing North Ceiling Rafter to Far East Corner (Seamless 90° Miter)
   [1180, 114],
-  // 19. East Wing North East Wall & South Sill to East Doorway East Jamb
+  // 16. East Wing North East Wall & South Sill to East Doorway East Jamb
   [1180, 340], [1026, 340],
-  // 20. East Doorway East Jamb into East Wing South Room (open passage - NO cross beam!)
+  // 17. East Doorway East Jamb into East Wing South Room (open passage - NO cross beam!)
   [1026, 364],
-  // 21. East South North Wall Ceiling to Far East Corner
+  // 18. East South North Wall Ceiling to Far East Corner
   [1180, 364],
-  // 22. East South East Wall & SE 45° Chamfer (The Benchmark Image 5 Standard!)
+  // 19. East South East Wall & SE 45° Chamfer (The Benchmark Image 5 Standard!)
   [1180, 534], [1144, 570],
-  // 23. East South Front Sill & West Wall up to Ceiling
+  // 20. East South Front Sill & West Wall up to Ceiling
   [880, 570], [880, 364],
-  // 24. East South North Wall to East Doorway West Jamb
+  // 21. East South North Wall to East Doorway West Jamb
   [970, 364],
-  // 25. East Doorway West Jamb into East Wing North Room (open passage - NO cross beam!)
+  // 22. East Doorway West Jamb into East Wing North Room (open passage - NO cross beam!)
   [970, 340],
-  // 26. East Wing North South Sill to Corridor C2 South Sill
+  // 23. East Wing North South Sill to Corridor C2 South Sill
   [810, 340], [810, 276],
-  // 27. Across Corridor C2 South Sill into Grand Hall South Sill
-  [760, 276], [760, 340],
-  // 28. Grand Hall South Sill to Corridor C3 East Jamb
-  [623, 340],
-  // 29. Corridor C3 East Jamb into Foyer (open passage - NO cross beam!)
-  [623, 364],
-  // 30. Foyer North Wall Ceiling to East Wall
-  [750, 364],
-  // 31. Foyer East Wall & Inset Cloak Alcove Nook
-  [750, 510], [776, 510], [776, 570],
-  // 32. Foyer Front Sill to Entrance Stoop East end (flat butt cut flush with doorway)
-  [655, 570]
+  // 24. Across Corridor C2 South Sill into Grand Hall South Sill
+  [760, 276], [760, 310],
+  // 25. Grand Hall Solid South Sill & SW 45° Chamfer (Sealed)
+  [454, 310], [430, 286],
+  // 26. Grand Hall West Wall up to Corridor C1 South Sill
+  [430, 276],
+  // 27. Across Corridor C1 South Sill to Room 2 East Wall (110px length)
+  [320, 276],
+  // 28. Down Room 2 East Wall to Corridor C-West North Ceiling
+  [320, 354],
+  // 29. Corridor C-West North Ceiling heading East towards Foyer
+  [420, 354],
+  // 30. Up Foyer West Wall to Foyer North Ceiling (creates exact 24px gap to Grand Hall!)
+  [420, 334],
+  // 31. Foyer North Wall Ceiling to East Wall
+  [710, 334],
+  // 32. Foyer East Wall & Inset Cloak Alcove Nook
+  [710, 510], [736, 510], [736, 570],
+  // 33. Foyer Front Sill to Entrance Stoop East end
+  [615, 570]
 ];
 
 // Wooden Doorway Threshold Strips across exterior openings (Only at stoop)
 const THRESHOLDS = [
-  { x1: 535, x2: 655, y: 570 },  // Village Stoop
+  { x1: 495, x2: 615, y: 570 },  // Village Stoop
 ];
 
 // Elevated Bullnose Wooden Steps
 const STEPS = [
   { x1: 608, x2: 702, y: 106, label: 'hearth' },  // Asymmetric Hearth Step
-  { x1: 78, x2: 192, y: 148, label: 'bed_nook' },  // Deep Bed Nook Step
-  { x1: 534, x2: 656, y: 570, label: 'stoop' },    // Village Entrance Stoop
+  { x1: 98, x2: 212, y: 208, label: 'bed_nook' },  // Room 2 Bed Nook Step
+  { x1: 494, x2: 616, y: 570, label: 'stoop' },    // Village Entrance Stoop
 ];
 
 // Windows on Back Walls (Exclusively on South-Facing Back Walls - Zero Side Bleeding)
 const WINDOWS = [
-  [130, 90],              // Bed nook
-  [270, 150],             // NW wing main room
-  [480, 108], [550, 108], // Grand Hall gallery double windows
-  [910, 170], [1070, 170], // East North Room double windows
+  [145, 150],              // Room 2 Bed nook
+  [260, 210],              // Room 2 Main room
+  [480, 108], [550, 108],  // Grand Hall gallery double windows
+  [370, 410],              // Distinct West Corridor C-West window
+  [540, 390],              // Foyer sunbeam window
+  [910, 170], [1070, 170],  // East North Room double windows
 ];
 
 // =========================================================================
@@ -968,7 +966,8 @@ export const ComplexArchitectureSVG = React.memo(function ComplexArchitectureSVG
         <UnifiedWallFace pts={ZONE2_BACK_WALL} wallpaper="cxs-stripes-burgundy" wainscot="cxs-wainscot-mahogany" chairRailColor="#4a1518" />
         <UnifiedWallFace pts={ZONE2_CORRIDOR_BACK} wallpaper="cxs-stripes-burgundy" wainscot="cxs-wainscot-mahogany" chairRailColor="#4a1518" />
 
-        {/* Zone 3: Entrance Foyer - Warm Country Cottage Damask Wallpaper */}
+        {/* Zone 3: Entrance Foyer & West Corridor - Warm Country Cottage Damask Wallpaper */}
+        <UnifiedWallFace pts={ZONE3_CORRIDOR_WEST_BACK} wallpaper="cxs-damask-warm" wainscot="cxs-wainscot" />
         <UnifiedWallFace pts={ZONE3_BACK_WALL_LEFT} wallpaper="cxs-damask-warm" wainscot="cxs-wainscot" />
         <UnifiedWallFace pts={ZONE3_BACK_WALL_RIGHT} wallpaper="cxs-damask-warm" wainscot="cxs-wainscot" />
 
@@ -985,14 +984,16 @@ export const ComplexArchitectureSVG = React.memo(function ComplexArchitectureSVG
         ))}
 
         {/* Authentic Stardew Brass Wall Sconces with Cozy Glowing Amber Flame */}
-        <WallSconce x={220} y={150 - 36} />
-        <WallSconce x={340} y={150 - 36} />
+        <WallSconce x={165} y={150 - 36} />
+        <WallSconce x={280} y={210 - 36} />
+        <WallSconce x={375} y={220 - 36} />
         <WallSconce x={475} y={108 - 36} />
         <WallSconce x={735} y={108 - 36} />
         <WallSconce x={875} y={170 - 36} />
         <WallSconce x={1135} y={170 - 36} />
-        <WallSconce x={495} y={420 - 36} />
-        <WallSconce x={700} y={420 - 36} />
+        <WallSconce x={370} y={410 - 36} />
+        <WallSconce x={475} y={390 - 36} />
+        <WallSconce x={660} y={390 - 36} />
       </g>
 
       {/* LAYER 5: MASTER ARCHITECTURAL FRAMING (Under [MASTER ROOM FRAMER] Skill) */}
@@ -1020,15 +1021,15 @@ export const ComplexArchitectureSVG = React.memo(function ComplexArchitectureSVG
 // 6. SOFT AMBIENT LAMPLIGHT POOLS (Cozy Warm Glow with Room Progression)
 // =========================================================================
 const POOLS = [
-  { x: 135, y: 120, rx: 65, ry: 40, o: 0.55, room: 'left_store' },   // Bed nook
-  { x: 280, y: 230, rx: 110, ry: 75, o: 0.65, room: 'left_store' },  // NW wing
-  { x: 405, y: 248, rx: 50, ry: 28, o: 0.4, room: 'left_store' },    // W-E corridor C1 (widened)
-  { x: 540, y: 220, rx: 150, ry: 100, o: 0.85, room: 'main_hall' }, // Central Hall gallery
+  { x: 155, y: 175, rx: 55, ry: 30, o: 0.55, room: 'left_store' },   // Room 2 Bed nook
+  { x: 210, y: 340, rx: 95, ry: 75, o: 0.65, room: 'left_store' },  // Room 2 Main room
+  { x: 375, y: 248, rx: 50, ry: 28, o: 0.45, room: 'left_store' },   // Corridor C1
+  { x: 540, y: 210, rx: 140, ry: 80, o: 0.85, room: 'main_hall' },  // Central Hall gallery
   { x: 655, y: 92, rx: 60, ry: 30, o: 0.6, room: 'main_hall' },     // Hearth alcove (off-center)
   { x: 785, y: 248, rx: 50, ry: 28, o: 0.4, room: 'right_sanctuary' }, // East connector C2 (widened)
-  { x: 595, y: 380, rx: 44, ry: 40, o: 0.4, room: 'entry_foyer' },   // N-S corridor C3
-  { x: 595, y: 490, rx: 140, ry: 70, o: 0.65, room: 'entry_foyer' },  // Foyer (FIRST ROOM)
-  { x: 762, y: 540, rx: 40, ry: 25, o: 0.45, room: 'entry_foyer' },   // Foyer inset cloak alcove
+  { x: 370, y: 438, rx: 55, ry: 28, o: 0.5, room: 'entry_foyer' },  // Corridor C-West
+  { x: 565, y: 480, rx: 130, ry: 65, o: 0.7, room: 'entry_foyer' },  // Foyer (FIRST ROOM)
+  { x: 722, y: 540, rx: 40, ry: 25, o: 0.45, room: 'entry_foyer' },  // Foyer inset cloak alcove
   { x: 995, y: 260, rx: 200, ry: 100, o: 0.75, room: 'right_sanctuary' }, // East wing north
   { x: 1030, y: 495, rx: 130, ry: 60, o: 0.55, room: 'right_south' }, // East south room
 ];
@@ -1053,38 +1054,7 @@ export const ComplexLightingSVG = React.memo(function ComplexLightingSVG({ unloc
         </radialGradient>
       </defs>
 
-      {/* 65% Atmospheric Shadow Darkness Veils over Locked Rooms (Reduced lighting by exactly 65%) */}
-      {/* 1. Main Hall Shadow Veil */}
-      <polygon
-        points="430,76 760,76 760,340 623,340 623,360 567,360 567,340 430,340"
-        fill="#04060e"
-        opacity={isUnlocked('main_hall') ? 0 : 0.65}
-        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
-      />
-
-      {/* 2. Left Wing (West) Shadow Veil */}
-      <polygon
-        points="80,90 380,90 380,220 405,220 405,276 380,276 380,310 220,310 220,410 80,410"
-        fill="#04060e"
-        opacity={isUnlocked('left_store') ? 0 : 0.65}
-        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
-      />
-
-      {/* 3. East Wing North Shadow Veil */}
-      <polygon
-        points="785,220 810,170 1180,170 1180,340 1026,340 1026,360 970,360 970,340 785,340"
-        fill="#04060e"
-        opacity={isUnlocked('right_sanctuary') ? 0 : 0.65}
-        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
-      />
-
-      {/* 4. East Wing South Shadow Veil */}
-      <polygon
-        points="880,360 970,360 970,420 1180,420 1180,570 880,570"
-        fill="#04060e"
-        opacity={isUnlocked('right_south') ? 0 : 0.65}
-        style={{ transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)' }}
-      />
+      {/* Rooms are kept naturally lit without flat dark polygon veil overlays */}
 
       {/* Warm Ambient Lamplight Pools (Dimmed by 65% when room is locked) */}
       {POOLS.map((p, i) => {

@@ -1,0 +1,165 @@
+{
+  "bill_gates": {
+    "id": "bill_gates",
+    "title": "ביל גייטס",
+    "oldImageUrl": "/staged_images/bill_gates.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_bill_gates.jpg",
+    "destFileName": "authentic_bill_gates.jpg"
+  },
+  "charlie_chaplin": {
+    "id": "charlie_chaplin",
+    "title": "צ'ארלי צ'פלין",
+    "oldImageUrl": "/staged_images/charlie_chaplin.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_charlie_chaplin.jpg",
+    "destFileName": "authentic_charlie_chaplin.jpg"
+  },
+  "colosseum": {
+    "id": "colosseum",
+    "title": "הקולוסיאום",
+    "oldImageUrl": "/staged_images/colosseum.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_colosseum.jpg",
+    "destFileName": "authentic_colosseum.jpg"
+  },
+  "compass": {
+    "id": "compass",
+    "title": "מצפן עתיק",
+    "oldImageUrl": "/staged_images/compass.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_compass.jpg",
+    "destFileName": "authentic_compass.jpg"
+  },
+  "freddie_mercury": {
+    "id": "freddie_mercury",
+    "title": "פרדי מרקורי",
+    "oldImageUrl": "/staged_images/freddie_mercury.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_freddie_mercury.jpg",
+    "destFileName": "authentic_freddie_mercury.jpg"
+  },
+  "gollum": {
+    "id": "gollum",
+    "title": "גולום",
+    "oldImageUrl": "/staged_images/gollum.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_gollum.jpg",
+    "destFileName": "authentic_gollum.jpg"
+  },
+  "sonic_the_hedgehog": {
+    "id": "sonic_the_hedgehog",
+    "title": "סוניק הקיפוד",
+    "oldImageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
+    "newImageUrl": "/staged_images/pool/authentic_sonic_the_hedgehog.jpg",
+    "destFileName": "authentic_sonic_the_hedgehog.jpg"
+  },
+  "michael_jordan": {
+    "id": "michael_jordan",
+    "title": "מייקל ג'ורדן",
+    "newImageUrl": "/staged_images/pool/authentic_michael_jordan.jpg",
+    "destFileName": "authentic_michael_jordan.jpg"
+  },
+  "spiderman": {
+    "id": "spiderman",
+    "title": "ספיידרמן",
+    "newImageUrl": "/staged_images/pool/authentic_spiderman.jpg",
+    "destFileName": "authentic_spiderman.jpg"
+  },
+  "the_white_house": {
+    "id": "the_white_house",
+    "title": "הבית הלבן",
+    "newImageUrl": "/staged_images/pool/authentic_the_white_house.jpg",
+    "destFileName": "authentic_the_white_house.jpg"
+  },
+  "coastal_lighthouse": {
+    "id": "coastal_lighthouse",
+    "title": "מגדלור",
+    "newImageUrl": "/staged_images/pool/authentic_coastal_lighthouse.jpg",
+    "destFileName": "authentic_coastal_lighthouse.jpg"
+  },
+  "classic_red_barn": {
+    "id": "classic_red_barn",
+    "title": "אסם אמריקאי קלאסי",
+    "newImageUrl": "/staged_images/pool/authentic_classic_red_barn.jpg",
+    "destFileName": "authentic_classic_red_barn.jpg"
+  },
+  "barbie_doll": {
+    "id": "barbie_doll",
+    "title": "ברבי",
+    "newImageUrl": "/staged_images/pool/authentic_barbie_doll.jpg",
+    "destFileName": "authentic_barbie_doll.jpg"
+  },
+  "dracula": {
+    "id": "dracula",
+    "title": "דרקולה",
+    "newImageUrl": "/staged_images/pool/authentic_dracula.jpg",
+    "destFileName": "authentic_dracula.jpg"
+  },
+  "pinocchio": {
+    "id": "pinocchio",
+    "title": "פינוקיו",
+    "newImageUrl": "/staged_images/pool/authentic_pinocchio.jpg",
+    "destFileName": "authentic_pinocchio.jpg"
+  },
+  "peter_pan": {
+    "id": "peter_pan",
+    "title": "פיטר פן",
+    "newImageUrl": "/staged_images/pool/authentic_peter_pan.jpg",
+    "destFileName": "authentic_peter_pan.jpg"
+  },
+  "scooby_doo": {
+    "id": "scooby_doo",
+    "title": "סקובי דו",
+    "newImageUrl": "/staged_images/pool/authentic_scooby_doo.jpg",
+    "destFileName": "authentic_scooby_doo.jpg"
+  },
+  "captain_america": {
+    "id": "captain_america",
+    "title": "קפטן אמריקה",
+    "newImageUrl": "/staged_images/pool/authentic_captain_america.jpg",
+    "destFileName": "authentic_captain_america.jpg"
+  },
+  "bilbo_baggins": {
+    "id": "bilbo_baggins",
+    "title": "בילבו בגינס",
+    "newImageUrl": "/staged_images/pool/authentic_bilbo_baggins.jpg",
+    "destFileName": "authentic_bilbo_baggins.jpg"
+  },
+  "super_mario": {
+    "id": "super_mario",
+    "title": "סופר מריו",
+    "newImageUrl": "/staged_images/pool/authentic_super_mario.jpg",
+    "destFileName": "authentic_super_mario.jpg"
+  },
+  "treasure_chest": {
+    "id": "treasure_chest",
+    "title": "תיבת אוצר",
+    "newImageUrl": "/staged_images/pool/authentic_treasure_chest.jpg",
+    "destFileName": "authentic_treasure_chest.jpg"
+  },
+  "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת": {
+    "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
+    "title": "פצצה שחורה עם פתיל בוער",
+    "newImageUrl": "/staged_images/pool/authentic_item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
+    "destFileName": "authentic_item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg"
+  },
+  "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל": {
+    "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
+    "title": "מד חום כספית",
+    "newImageUrl": "/staged_images/pool/authentic_item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg",
+    "destFileName": "authentic_item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg"
+  },
+  "item_172_מנעול_סגור__ומפתח_בצד___מסמל": {
+    "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
+    "title": "מנעול סגור ומפתח",
+    "newImageUrl": "/staged_images/pool/authentic_item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
+    "destFileName": "authentic_item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg"
+  },
+  "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל": {
+    "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
+    "title": "תלתן ארבעה עלים",
+    "newImageUrl": "/staged_images/pool/authentic_item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
+    "destFileName": "authentic_item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg"
+  },
+  "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל": {
+    "id": "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל",
+    "title": "סרט מודעות",
+    "newImageUrl": "/staged_images/pool/authentic_item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל.jpg",
+    "destFileName": "authentic_item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל.jpg"
+  }
+}

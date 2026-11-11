@@ -11,16 +11,16 @@ import { sounds } from '../../utils/sound';
 export const INTERIOR_DOORS_CONFIG = {
   door_c3: {
     id: 'door_c3',
-    name: 'דלת האולם המרכזי',
+    name: 'דלת אגף שמאל',
     fromRoom: 'entry_foyer',
-    toRoom: 'main_hall',
+    toRoom: 'left_store',
     fromRoomName: 'חדר הכניסה',
-    toRoomName: 'האולם המרכזי',
-    orientation: 'horizontal', // runs across N-S corridor C3
-    x: 567,
-    y: 355,
-    w: 56,
-    h: 38,
+    toRoomName: 'אגף שמאל',
+    orientation: 'vertical',
+    x: 365,
+    y: 412,
+    w: 24,
+    h: 54,
     requiredRoom: 'entry_foyer'
   },
   door_c1: {
@@ -31,11 +31,11 @@ export const INTERIOR_DOORS_CONFIG = {
     fromRoomName: 'האולם המרכזי',
     toRoomName: 'אגף שמאל',
     orientation: 'vertical', // runs across W-E corridor C1
-    x: 395,
+    x: 375,
     y: 220,
     w: 24,
     h: 56,
-    requiredRoom: 'main_hall'
+    requiredRoom: 'left_store'
   },
   door_c2: {
     id: 'door_c2',

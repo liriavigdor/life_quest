@@ -1,0 +1,1275 @@
+{
+  "savedAt": "2026-11-11T16:21:07.679Z",
+  "discardedIds": [
+    "newtons_cradle",
+    "sherlock_holmes",
+    "starry_night",
+    "taj_mahal",
+    "the_scream",
+    "trojan_horse",
+    "winston_churchill",
+    "frankenstein_monster",
+    "cleopatra",
+    "combat_fight_arena",
+    "silver_flute",
+    "super_mario",
+    "king_kong",
+    "godzilla",
+    "james_bond",
+    "the_last_supper",
+    "pink_panther",
+    "colonel_sanders",
+    "alf",
+    "colosseum_rome",
+    "sydney_opera_house",
+    "dutch_windmill",
+    "empire_state_building",
+    "hollywood_sign",
+    "stonehenge",
+    "parthenon_acropolis",
+    "burj_khalifa",
+    "kaaba_mecca",
+    "pantheon_rome",
+    "arc_de_triomphe",
+    "plaza_de_toros",
+    "burj_al_arab",
+    "sagrada_familia",
+    "tower_bridge_london",
+    "checkpoint_charlie",
+    "mount_rushmore",
+    "medieval_castle_fortress",
+    "mud_hut_african",
+    "aircraft_hangar",
+    "watermill_cabin",
+    "abandoned_gas_station",
+    "roman_ruins_arch",
+    "hall_of_mirrors_versailles",
+    "mona_lisa",
+    "airport_control_tower",
+    "statue_of_david",
+    "creation_of_adam",
+    "the_birth_of_venus",
+    "persistence_of_memory",
+    "venus_de_milo",
+    "guernica_picasso",
+    "american_gothic",
+    "girl_with_pearl_earring",
+    "the_son_of_man",
+    "vitruvian_man",
+    "campbell_soup_can",
+    "the_kiss_klimt",
+    "jackson_pollock_splatter",
+    "sunflowers_van_gogh",
+    "balloon_girl_banksy",
+    "terracotta_army",
+    "rosetta_stone",
+    "egyptian_hieroglyphs",
+    "balloon_dog_jeff_koons",
+    "egyptian_sarcophagus",
+    "bubble_graffiti_lettering",
+    "japanese_kanji_calligraphy",
+    "capitoline_wolf",
+    "crucifixion_silhouette",
+    "ten_commandments_tablets",
+    "golden_calf_idol",
+    "flower_thrower_banksy",
+    "rolling_stones_tongue",
+    "portuguese_azulejos",
+    "classic_snowman",
+    "gargoyle_stone_statue",
+    "egyptian_mummy_wraps",
+    "christian_holy_cross",
+    "item_154_דיסקט_3_5_אינץ___מסמל",
+    "item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות",
+    "item_170_עוגן_ברזל_שחור__מסמל",
+    "item_182_פרסה_של_סוס__מסמלת",
+    "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל"
+  ],
+  "flaggedBadMap": {
+    "bill_gates": {
+      "name": "ביל גייטס",
+      "imageUrl": "/staged_images/bill_gates.jpg",
+      "topic": "celebrities",
+      "flaggedAt": 1793446293298
+    },
+    "charlie_chaplin": {
+      "name": "צ'ארלי צ'פלין",
+      "imageUrl": "/staged_images/charlie_chaplin.jpg",
+      "topic": "celebrities",
+      "flaggedAt": 1793446329747
+    },
+    "colosseum": {
+      "name": "הקולוסיאום",
+      "imageUrl": "/staged_images/colosseum.jpg",
+      "topic": "associative",
+      "flaggedAt": 1793446336676
+    },
+    "compass": {
+      "name": "מצפן עתיק",
+      "imageUrl": "/staged_images/compass.jpg",
+      "topic": "associative",
+      "flaggedAt": 1793446337917
+    },
+    "freddie_mercury": {
+      "name": "פרדי מרקורי",
+      "imageUrl": "/staged_images/freddie_mercury.jpg",
+      "topic": "celebrities",
+      "flaggedAt": 1793446346272
+    },
+    "gollum": {
+      "name": "גולום",
+      "imageUrl": "/staged_images/gollum.jpg",
+      "topic": "fictional",
+      "flaggedAt": 1793446437322
+    },
+    "michael_jordan": {
+      "name": "מייקל ג'ורדן",
+      "imageUrl": "/staged_images/michael_jordan.jpg",
+      "topic": "celebrities",
+      "flaggedAt": 1793447214760
+    },
+    "spiderman": {
+      "name": "ספיידרמן",
+      "imageUrl": "/staged_images/spiderman.jpg",
+      "topic": "fictional",
+      "flaggedAt": 1793447964708
+    },
+    "super_mario": {
+      "name": "סופר מריו",
+      "imageUrl": "/staged_images/super_mario.jpg",
+      "topic": "fictional",
+      "flaggedAt": 1793448150139
+    },
+    "treasure_chest": {
+      "name": "תיבת אוצר",
+      "imageUrl": "/staged_images/treasure_chest.jpg",
+      "topic": "associative",
+      "flaggedAt": 1793448209385
+    },
+    "sonic_the_hedgehog": {
+      "id": "sonic_the_hedgehog",
+      "title": "סוניק הקיפוד",
+      "name": "סוניק הקיפוד",
+      "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400507418
+    },
+    "barbie_doll": {
+      "id": "barbie_doll",
+      "title": "ברבי",
+      "name": "ברבי",
+      "imageUrl": "/staged_images/pool/barbie_doll_classic.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400660397
+    },
+    "dracula": {
+      "id": "dracula",
+      "title": "דרקולה",
+      "name": "דרקולה",
+      "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400677807
+    },
+    "pinocchio": {
+      "id": "pinocchio",
+      "title": "פינוקיו",
+      "name": "פינוקיו",
+      "imageUrl": "/staged_images/pool/pinocchio.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400704604
+    },
+    "peter_pan": {
+      "id": "peter_pan",
+      "title": "פיטר פן",
+      "name": "פיטר פן",
+      "imageUrl": "/staged_images/pool/peter_pan.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400764050
+    },
+    "scooby_doo": {
+      "id": "scooby_doo",
+      "title": "סקובי דו",
+      "name": "סקובי דו",
+      "imageUrl": "/staged_images/pool/scooby_doo_snack.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400796013
+    },
+    "captain_america": {
+      "id": "captain_america",
+      "title": "קפטן אמריקה",
+      "name": "קפטן אמריקה",
+      "imageUrl": "/staged_images/pool/captain_america_steve.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794400911781
+    },
+    "bilbo_baggins": {
+      "id": "bilbo_baggins",
+      "title": "בילבו בגינס",
+      "name": "בילבו בגינס",
+      "imageUrl": "/staged_images/pool/bilbo_baggins_ring.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794401015513
+    },
+    "the_white_house": {
+      "id": "the_white_house",
+      "title": "הבית הלבן",
+      "name": "הבית הלבן",
+      "imageUrl": "/staged_images/pool/the_white_house.jpg",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794401209144
+    },
+    "coastal_lighthouse": {
+      "id": "coastal_lighthouse",
+      "title": "מגדלור",
+      "name": "מגדלור",
+      "imageUrl": "/staged_images/pool/coastal_lighthouse.jpg",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794401466736
+    },
+    "classic_red_barn": {
+      "id": "classic_red_barn",
+      "title": "אסם אמריקאי קלאסי",
+      "name": "אסם אמריקאי קלאסי",
+      "imageUrl": "/staged_images/pool/classic_red_barn.jpg",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794401494911
+    },
+    "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת": {
+      "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
+      "title": "פצצה שחורה עם פתיל בוער",
+      "name": "פצצה שחורה עם פתיל בוער",
+      "imageUrl": "/staged_images/pool/item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794402456773
+    },
+    "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל": {
+      "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
+      "title": "מד חום כספית",
+      "name": "מד חום כספית",
+      "imageUrl": "/staged_images/pool/item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794402621296
+    },
+    "item_172_מנעול_סגור__ומפתח_בצד___מסמל": {
+      "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
+      "title": "מנעול סגור ומפתח",
+      "name": "מנעול סגור ומפתח",
+      "imageUrl": "/staged_images/pool/item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794402723732
+    },
+    "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל": {
+      "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
+      "title": "תלתן ארבעה עלים",
+      "name": "תלתן ארבעה עלים",
+      "imageUrl": "/staged_images/pool/item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794403196685
+    },
+    "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל": {
+      "id": "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל",
+      "title": "סרט מודעות",
+      "name": "סרט מודעות",
+      "imageUrl": "/staged_images/pool/item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל.jpg",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794403448132
+    }
+  },
+  "localEdits": {
+    "sonic_the_hedgehog": {
+      "title": "סוניק הקיפוד",
+      "isModified": true
+    },
+    "guilty_prisoner_mugshot": {
+      "keywords": [
+        "מודה",
+        "אשם",
+        "אשמה",
+        "משפט"
+      ],
+      "isModified": true
+    },
+    "judge_gavel_guilty": {
+      "keywords": [
+        "פטיש",
+        "שופטים",
+        "אשם",
+        "אשמים"
+      ],
+      "isModified": true
+    },
+    "pointing_finger_accusation": {
+      "keywords": [
+        "מאשימה",
+        "אשם",
+        "אתה",
+        "אשמה"
+      ],
+      "isModified": true
+    },
+    "pac_man": {
+      "keywords": [
+        "פאקמן",
+        "משחק מחשב",
+        "ארקייד",
+        "רוחות רפאים",
+        "נקודות",
+        "רטרו",
+        "גיימינג",
+        "צהוב",
+        "משחק"
+      ],
+      "isModified": true
+    },
+    "homer_simpson": {
+      "keywords": [
+        "דיאטה",
+        "בירה",
+        "ספה",
+        "צהוב",
+        "עצלן"
+      ],
+      "isModified": true
+    },
+    "darth_vader": {
+      "keywords": [
+        "נשימה",
+        "קסדה",
+        "רוע",
+        "קולנוע",
+        "חרב",
+        "שחור"
+      ],
+      "isModified": true
+    },
+    "shrek": {
+      "keywords": [
+        "ירוק",
+        "ביצה",
+        "מקלחת",
+        "לנקות",
+        "לכלוך"
+      ],
+      "isModified": true
+    },
+    "r2_d2": {
+      "keywords": [
+        "מלחמת הכוכבים",
+        "רובוט",
+        "חלל",
+        "מחשב",
+        "תיקון",
+        "חללית"
+      ],
+      "isModified": true
+    },
+    "bugs_bunny": {
+      "keywords": [
+        "גזר",
+        "ארנב",
+        "דיסני",
+        "אנימציה",
+        "ציד",
+        "שיניים"
+      ],
+      "isModified": true
+    },
+    "winnie_the_pooh": {
+      "keywords": [
+        "דב",
+        "דבש",
+        "יער",
+        "חברים",
+        "חמוד",
+        "מתוק",
+        "ילד"
+      ],
+      "isModified": true
+    },
+    "hello_kitty": {
+      "keywords": [
+        "חתול",
+        "ורוד",
+        "חמוד",
+        "ילדות",
+        "אופנה",
+        "ילדה",
+        "הילדה"
+      ],
+      "isModified": true
+    },
+    "spongebob": {
+      "keywords": [
+        "סדר",
+        "ניקיון",
+        "ספוג",
+        "בועות",
+        "קרצוף",
+        "קציצה",
+        "קציצות"
+      ],
+      "isModified": true
+    },
+    "king_kong": {
+      "keywords": [
+        "קינג קונג",
+        "גורילה",
+        "מגדל",
+        "מפלצת",
+        "קולנוע",
+        "ג'ונגל"
+      ],
+      "isModified": true
+    },
+    "hulk": {
+      "keywords": [
+        "כושר",
+        "זעם",
+        "הובלות",
+        "שרירים",
+        "עצבים",
+        "גדול",
+        "כעס",
+        "אימון"
+      ],
+      "isModified": true
+    },
+    "scrooge_mcduck": {
+      "keywords": [
+        "בנק",
+        "השקעות",
+        "חיסכון",
+        "כספומט",
+        "מניה",
+        "כסף",
+        "מניות"
+      ],
+      "isModified": true
+    },
+    "pyramids_of_giza": {
+      "keywords": [
+        "טיול",
+        "מדבר",
+        "חול",
+        "עתיקות",
+        "מצריים"
+      ],
+      "isModified": true
+    },
+    "hiking_trail_hiker": {
+      "keywords": [
+        "תיק",
+        "שביל",
+        "הרים",
+        "תיק גב",
+        "טיול"
+      ],
+      "isModified": true
+    },
+    "fresh_bread_loaf": {
+      "keywords": [
+        "לחם",
+        "מאפה",
+        "בגט",
+        "מאפייה",
+        "חלה"
+      ],
+      "isModified": true
+    },
+    "tarzan": {
+      "keywords": [
+        "גיזום",
+        "עצים",
+        "טיפוס",
+        "חבל",
+        "ילד",
+        "קוף",
+        "שעשועים"
+      ],
+      "isModified": true
+    },
+    "donald_duck": {
+      "keywords": [
+        "דונלד",
+        "דאק",
+        "ברווז"
+      ],
+      "isModified": true
+    },
+    "tom_and_jerry": {
+      "keywords": [
+        "טום",
+        "הדברה",
+        "מלכודת",
+        "חולדות",
+        "מרדף",
+        "ג'רי",
+        "אחים",
+        "לתפוס",
+        "תופסת",
+        "חתול",
+        "עכבר"
+      ],
+      "isModified": true
+    },
+    "popeye": {
+      "keywords": [
+        "אימון",
+        "ירקות",
+        "שרירים",
+        "חלבון",
+        "תרד",
+        "מלח",
+        "כושר",
+        "כוח",
+        "חדר כושר",
+        "פלג גוף עליון",
+        "ידיים"
+      ],
+      "isModified": true
+    },
+    "wolverine": {
+      "keywords": [
+        "ציפורניים",
+        "מניקור",
+        "גילוח",
+        "סכין",
+        "כאב"
+      ],
+      "isModified": true
+    },
+    "ronald_mcdonald": {
+      "keywords": [
+        "המבורגר",
+        "ילדים",
+        "אוכל"
+      ],
+      "isModified": true
+    },
+    "the_grinch": {
+      "keywords": [
+        "ירוק",
+        "חג מולד"
+      ],
+      "isModified": true
+    },
+    "minions": {
+      "keywords": [
+        "בננות",
+        "סופר",
+        "ילדים",
+        "צהוב",
+        "בננה",
+        "חמוד",
+        "קטן",
+        "ירח"
+      ],
+      "isModified": true
+    },
+    "bilbo_baggins": {
+      "keywords": [
+        "אירוח",
+        "ארוחה",
+        "אורחים",
+        "בישול",
+        "טבעת"
+      ],
+      "isModified": true
+    },
+    "great_sphinx_giza": {
+      "keywords": [
+        "אבן",
+        "אריה",
+        "מצריים"
+      ],
+      "isModified": true
+    },
+    "great_wall_china": {
+      "keywords": [
+        "חומה",
+        "סין",
+        "הגנה"
+      ],
+      "isModified": true
+    },
+    "leaning_tower_pisa": {
+      "keywords": [
+        "מגדל",
+        "פיזה",
+        "נטייה",
+        "תיקון",
+        "מהנדס",
+        "עקום"
+      ],
+      "isModified": true
+    },
+    "christ_the_redeemer": {
+      "keywords": [
+        "פסל",
+        "ברזיל",
+        "ריו"
+      ],
+      "isModified": true
+    },
+    "big_ben_london": {
+      "keywords": [
+        "שעון",
+        "לונדון",
+        "שעה",
+        "זמן"
+      ],
+      "isModified": true
+    },
+    "golden_gate_bridge": {
+      "keywords": [
+        "גשר"
+      ],
+      "isModified": true
+    },
+    "saint_basil_cathedral": {
+      "keywords": [
+        "הקרמלין",
+        "מוסקבה",
+        "חורף"
+      ],
+      "isModified": true
+    },
+    "azrieli_towers": {
+      "keywords": [
+        "עזריאלי",
+        "קניון",
+        "קניות",
+        "מגדל",
+        "3",
+        "עיגול",
+        "משולש",
+        "ריבוע"
+      ],
+      "isModified": true
+    },
+    "moai_easter_island": {
+      "keywords": [
+        "פסל",
+        "טיקי",
+        "אבן"
+      ],
+      "isModified": true
+    },
+    "kaaba_mecca": {
+      "keywords": [
+        "תפילה",
+        "דת"
+      ],
+      "isModified": true
+    },
+    "neuschwanstein_castle": {
+      "keywords": [
+        "דיסני",
+        "אגדה",
+        "טירה",
+        "נסיכה",
+        "ילדים",
+        "ארמון"
+      ],
+      "isModified": true
+    },
+    "chichen_itza_pyramid": {
+      "keywords": [
+        "מקדש",
+        "פירמידה",
+        "מדרגות",
+        "כושר",
+        "ארכיאולוגיה",
+        "מאיה"
+      ],
+      "isModified": true
+    },
+    "western_wall": {
+      "keywords": [
+        "הכותל",
+        "המערבי",
+        "תפילה",
+        "פתק",
+        "כותל",
+        "ברכה",
+        "ירושלים"
+      ],
+      "isModified": true
+    },
+    "mount_rushmore": {
+      "keywords": [],
+      "isModified": true
+    },
+    "igloo_ice_dome": {
+      "keywords": [
+        "אסקימואי",
+        "קור",
+        "קרח",
+        "שלג",
+        "חורף",
+        "קפוא",
+        "איגלו",
+        "קר"
+      ],
+      "isModified": true
+    },
+    "teepee_tent": {
+      "keywords": [
+        "קמפינג",
+        "אינדיאני",
+        "מדורה",
+        "אוהל"
+      ],
+      "isModified": true
+    },
+    "chinese_pagoda": {
+      "keywords": [
+        "סין"
+      ],
+      "isModified": true
+    },
+    "coastal_lighthouse": {
+      "keywords": [
+        "חוף",
+        "ים",
+        "אור"
+      ],
+      "isModified": true
+    },
+    "watermill_cabin": {
+      "keywords": [
+        "מים",
+        "אסם",
+        "תבואה",
+        "חווה",
+        "סוסים"
+      ],
+      "isModified": true
+    },
+    "classic_red_barn": {
+      "keywords": [
+        "פרה",
+        "חווה",
+        "כפר"
+      ],
+      "isModified": true
+    },
+    "military_cemetery": {
+      "keywords": [
+        "קברות",
+        "לוויה",
+        "קבר",
+        "אזכרה"
+      ],
+      "isModified": true
+    },
+    "concrete_bunker": {
+      "keywords": [
+        "בונקר",
+        "בטון",
+        "הגנה",
+        "מקלט",
+        "ממד"
+      ],
+      "isModified": true
+    },
+    "neon_motel_sign": {
+      "keywords": [
+        "כלב",
+        "טיול",
+        "לצאת",
+        "לצאת עם",
+        "טיול עם"
+      ],
+      "isModified": true
+    },
+    "the_thinker": {
+      "keywords": [
+        "החלטה",
+        "ייעוץ",
+        "פסל",
+        "חושב",
+        "לחשוב",
+        "מחשבה"
+      ],
+      "isModified": true
+    },
+    "persistence_of_memory": {
+      "keywords": [
+        "שעון",
+        "זמן",
+        "איחור"
+      ],
+      "isModified": true
+    },
+    "golden_mask_tutankhamun": {
+      "title": "פרעה",
+      "isModified": true,
+      "keywords": [
+        "זהב",
+        "מצרים",
+        "פסח"
+      ]
+    },
+    "great_wave_off_kanagawa": {
+      "keywords": [
+        "גל",
+        "ים",
+        "גלישה",
+        "לגלוש",
+        "גלשן"
+      ],
+      "isModified": true
+    },
+    "native_totem_pole": {
+      "keywords": [
+        "טוטם",
+        "אינדיאני"
+      ],
+      "isModified": true
+    },
+    "russian_matryoshka": {
+      "keywords": [
+        "בבושקה",
+        "בובה",
+        "משפחה",
+        "עץ",
+        "ילדים"
+      ],
+      "isModified": true
+    },
+    "japanese_folding_fan": {
+      "keywords": [
+        "מניפה",
+        "אוורור",
+        "רוח"
+      ],
+      "isModified": true
+    },
+    "chess_knight_piece": {
+      "keywords": [
+        "חייל",
+        "שחמט",
+        "חשיבה",
+        "אסטרטגיה"
+      ],
+      "isModified": true
+    },
+    "golden_menorah_seven": {
+      "keywords": [
+        "מנורה",
+        "חנוכה",
+        "זהב",
+        "אור"
+      ],
+      "isModified": true
+    },
+    "hamsa_hand_amulet": {
+      "keywords": [
+        "חמסה",
+        "עין",
+        "5",
+        "חמש",
+        "יד"
+      ],
+      "isModified": true
+    },
+    "item_155_זכוכית_מגדלת__מסמלת": {
+      "keywords": [
+        "חיפוש",
+        "בדיקה",
+        "חקירה",
+        "בלש",
+        "הגדלה"
+      ],
+      "isModified": true
+    },
+    "item_156_מפתח_מכני_גדול__מסמל": {
+      "keywords": [
+        "מוסך",
+        "תיקון",
+        "בורג",
+        "כלים",
+        "מכונאי",
+        "התקנה"
+      ],
+      "isModified": true
+    },
+    "item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת": {
+      "keywords": [
+        "מחשבה",
+        "רעיון",
+        "קומיקס",
+        "דימיון",
+        "חלום",
+        "ענן"
+      ],
+      "isModified": true
+    },
+    "item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל": {
+      "keywords": [
+        "לב",
+        "שבור",
+        "פרידה",
+        "כאב",
+        "שיחה"
+      ],
+      "isModified": true
+    },
+    "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל": {
+      "keywords": [
+        "תואר",
+        "לימודים",
+        "אוניברסיטה",
+        "טקס",
+        "תעודה",
+        "כובע"
+      ],
+      "isModified": true
+    },
+    "item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל": {
+      "keywords": [
+        "מטרה",
+        "יעד",
+        "מכירות",
+        "הצלחה",
+        "קליעה",
+        "מרכז"
+      ],
+      "isModified": true
+    },
+    "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל": {
+      "keywords": [
+        "מדחום",
+        "מד חום",
+        "חום",
+        "חום גבוה",
+        "טמפרטורה",
+        "רופא",
+        "מרפאה",
+        "בדיקה",
+        "מחלה",
+        "חולה"
+      ],
+      "isModified": true
+    },
+    "item_166_שעון_חול__חצי_מלא___מסמל": {
+      "keywords": [
+        "דדליין",
+        "איחור",
+        "פגישה",
+        "שעון",
+        "זמן"
+      ],
+      "isModified": true
+    },
+    "item_167_שטיח_אדום_ארוך__מסמל": {
+      "keywords": [
+        "שטיח",
+        "אירוע",
+        "טקס",
+        "הוליווד",
+        "גאלה",
+        "הזמנה"
+      ],
+      "isModified": true
+    },
+    "item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות": {
+      "keywords": [
+        "הימורים",
+        "מזל",
+        "קזינו",
+        "ערב משחקים",
+        "הטלה"
+      ],
+      "isModified": true
+    },
+    "item_169_גביע_זהב_עם_ידיות__מסמל": {
+      "keywords": [
+        "אליפות",
+        "פרס",
+        "תחרות",
+        "זהב",
+        "הישג",
+        "טורניר"
+      ],
+      "isModified": true
+    },
+    "item_170_עוגן_ברזל_שחור__מסמל": {
+      "keywords": [
+        "ספינה",
+        "יציבות",
+        "ביטחון",
+        "ים",
+        "עגינה",
+        "נמל"
+      ],
+      "isModified": true
+    },
+    "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל": {
+      "keywords": [
+        "אימון",
+        "כושר",
+        "חדר כושר",
+        "משקולות",
+        "כוח",
+        "ספורט"
+      ],
+      "isModified": true
+    },
+    "item_174_שלט_עצור__מתומן_אדום___מסמל": {
+      "keywords": [
+        "עצור",
+        "זהירות"
+      ],
+      "isModified": true
+    },
+    "item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת": {
+      "keywords": [
+        "שלום",
+        "תקווה",
+        "ציפור",
+        "שלווה"
+      ],
+      "isModified": true
+    },
+    "item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל": {
+      "keywords": [
+        "שאלה",
+        "ספק",
+        "בירור"
+      ],
+      "isModified": true
+    },
+    "item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל": {
+      "keywords": [
+        "אזהרה",
+        "זהירות",
+        "סכנה",
+        "משולש צהוב",
+        "דחוף"
+      ],
+      "isModified": true
+    },
+    "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת": {
+      "keywords": [
+        "גולגולת",
+        "רעל",
+        "שודדי ים",
+        "מוות",
+        "סכנה",
+        "אזהרה",
+        "פיראט"
+      ],
+      "isModified": true
+    },
+    "item_179_מטוס_נייר_מקופל__מסמל": {
+      "keywords": [
+        "מכתב",
+        "הודעה",
+        "מסר"
+      ],
+      "isModified": true
+    },
+    "item_180_כתר_זהב_עם_יהלומים__מסמל": {
+      "keywords": [
+        "כתר",
+        "מלך",
+        "מלכה",
+        "מלוכה",
+        "יהלומים",
+        "ארמון"
+      ],
+      "isModified": true
+    },
+    "item_181_עניבת_פרפר_שחורה__פפיון___מסמלת": {
+      "keywords": [
+        "אירוע",
+        "חליפה",
+        "אלגנטי",
+        "חתונה",
+        "טוקסידו",
+        "נשף"
+      ],
+      "isModified": true
+    },
+    "item_182_פרסה_של_סוס__מסמלת": {
+      "keywords": [
+        "ברזל",
+        "חווה"
+      ],
+      "isModified": true
+    },
+    "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל": {
+      "keywords": [
+        "חץ וקשת",
+        "אהבה",
+        "רומנטיקה",
+        "מלאך",
+        "זוגיות",
+        "דייט"
+      ],
+      "isModified": true
+    },
+    "item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל": {
+      "keywords": [
+        "מצפון",
+        "התלבטות",
+        "דילמה",
+        "מוסר",
+        "טוב ורע",
+        "החלטה"
+      ],
+      "isModified": true
+    },
+    "item_186_טביעת_אצבע_שחורה__דיו___מסמלת": {
+      "keywords": [
+        "זיהוי",
+        "ביומטרי",
+        "משטרה",
+        "זיהוי פלילי",
+        "אבטחה"
+      ],
+      "isModified": true
+    },
+    "item_187_עקבות_רגליים_בחול__מסמלות": {
+      "keywords": [
+        "חול",
+        "צעדים",
+        "חוף",
+        "הליכה",
+        "מדבר",
+        "מסלול"
+      ],
+      "isModified": true
+    },
+    "item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל": {
+      "keywords": [
+        "צ'יפ",
+        "מעבד",
+        "טכנולוגיה",
+        "מחשב",
+        "הייטק",
+        "חומרה",
+        "לוח אם"
+      ],
+      "isModified": true
+    },
+    "item_189_פאזל__חתיכה_אחת_חסרה___מסמלת": {
+      "keywords": [
+        "פתרון",
+        "הרכבה",
+        "משחק",
+        "חשיבה",
+        "חסר"
+      ],
+      "isModified": true
+    },
+    "item_190_סיכת_נעץ_משרדית__אדומה___מסמלת": {
+      "keywords": [
+        "נעץ",
+        "לוח מודעות",
+        "משרד",
+        "פתק",
+        "תזכורת",
+        "מודעה"
+      ],
+      "isModified": true
+    },
+    "item_191_עגלת_קניות_מסורתית__מסמלת": {
+      "keywords": [
+        "סופר",
+        "סופרמרקט",
+        "קניות",
+        "מצרכים",
+        "שוק"
+      ],
+      "isModified": true
+    },
+    "item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל": {
+      "keywords": [
+        "אשפה",
+        "ניקיון",
+        "זבל",
+        "גרוע"
+      ],
+      "isModified": true
+    },
+    "item_194_כדור_בדולח_על_מפה_כהה__מסמל": {
+      "keywords": [
+        "עתיד",
+        "נבואה",
+        "כדור"
+      ],
+      "isModified": true
+    },
+    "item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת": {
+      "keywords": [
+        "טיסה",
+        "נסיעה",
+        "חופשה",
+        "שדה תעופה",
+        "אריזה",
+        "טיול"
+      ],
+      "isModified": true
+    },
+    "item_196_מטאטא_זרדים_ישן__מסמל": {
+      "keywords": [
+        "מטאטא",
+        "מכשפה",
+        "אגדות",
+        "טאטוא",
+        "ניקיון"
+      ],
+      "isModified": true
+    },
+    "item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל": {
+      "keywords": [
+        "קסם",
+        "מופע",
+        "שליפה",
+        "אחיזת עיניים"
+      ],
+      "isModified": true
+    },
+    "item_198_נוצה_טבולה_בקסת_דיו__מסמלת": {
+      "keywords": [
+        "מכתב",
+        "כתיבה",
+        "מגילה",
+        "הודעה",
+        "לכתוב"
+      ],
+      "isModified": true
+    },
+    "item_286_סופת_טורנדו": {
+      "keywords": [
+        "מקלט סופה",
+        "אזהרת חירום",
+        "קנזס",
+        "עקירת גגות",
+        "רוחות עזות"
+      ],
+      "isModified": true
+    }
+  },
+  "totalItems": 511,
+  "timestamp": 1794414067676
+}

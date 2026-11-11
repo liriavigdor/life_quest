@@ -258,6 +258,56 @@ class CalmingSoundEngine {
     });
   }
 
+  // Enchanting book opening sound: soft parchment flutter followed by a sparkling chord
+  playBookOpen() {
+    if (this.muted) return;
+    this.init();
+    if (!this.ctx) return;
+
+    const now = this.ctx.currentTime;
+
+    // 1. Soft textured parchment paper sweep
+    try {
+      const bufferSize = this.ctx.sampleRate * 0.15;
+      const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.4));
+      }
+      const noise = this.ctx.createBufferSource();
+      noise.buffer = buffer;
+      const filter = this.ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(600, now);
+      filter.frequency.linearRampToValueAtTime(1400, now + 0.12);
+      const noiseGain = this.ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.06, now);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+      noise.connect(filter);
+      filter.connect(noiseGain);
+      noiseGain.connect(this.ctx.destination);
+      noise.start(now);
+    } catch {}
+
+    // 2. Ascending magical celestial chord (G4, C5, E5, B5)
+    const chord = [392.0, 523.25, 659.25, 987.77];
+    chord.forEach((freq, idx) => {
+      try {
+        const time = now + 0.08 + idx * 0.06;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, time);
+        gain.gain.setValueAtTime(0.12, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.6);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(time);
+        osc.stop(time + 0.65);
+      } catch {}
+    });
+  }
+
   // Crisp UI button click
   playClick() {
     this.playTap();

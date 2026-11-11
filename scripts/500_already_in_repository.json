@@ -1,0 +1,1186 @@
+[
+  {
+    "num": 2,
+    "name": "סופר מריו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "super_mario_wonder",
+    "arsenalName": "סופר מריו",
+    "imageUrl": "/staged_images/pool/super_mario_wonder.jpg",
+    "associations": [
+      "אינסטלטור",
+      "פטריות",
+      "כובע אדום",
+      "שפם",
+      "נינטנדו"
+    ]
+  },
+  {
+    "num": 3,
+    "name": "פיקאצ'ו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "pikachu_electric_mouse",
+    "arsenalName": "פיקאצ'ו",
+    "imageUrl": "/staged_images/pool/pikachu_electric_mouse.jpg",
+    "associations": [
+      "חשמל",
+      "צהוב",
+      "פוקימון",
+      "קטן",
+      "חמוד"
+    ]
+  },
+  {
+    "num": 4,
+    "name": "סוניק הקיפוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "sonic_the_hedgehog",
+    "arsenalName": "סוניק הקיפוד",
+    "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
+    "associations": [
+      "קיפוד כחול",
+      "מהירות",
+      "טבעות זהב",
+      "נעלי ריצה",
+      "סגה"
+    ]
+  },
+  {
+    "num": 8,
+    "name": "ברבי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "barbie_doll_classic",
+    "arsenalName": "בובת ברבי",
+    "imageUrl": "/staged_images/pool/barbie_doll_classic.jpg",
+    "associations": [
+      "בובת ברבי",
+      "שמלה ורודה",
+      "בלונדינית",
+      "אופנה",
+      "צעצוע"
+    ]
+  },
+  {
+    "num": 9,
+    "name": "דארת' ויידר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "darth_vader_mask",
+    "arsenalName": "דארת' ויידר",
+    "imageUrl": "/staged_images/pool/darth_vader_mask.jpg",
+    "associations": [
+      "קסדה שחורה",
+      "חרב אור אדומה",
+      "נשימה כבדה",
+      "הצד האפל",
+      "מלחמת הכוכבים"
+    ]
+  },
+  {
+    "num": 11,
+    "name": "שרק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "shrek_ogre_swamp",
+    "arsenalName": "שרק (ענק ירוק)",
+    "imageUrl": "/staged_images/pool/shrek_ogre_swamp.jpg",
+    "associations": [
+      "עוג ירוק",
+      "ביצה",
+      "אוזניים עגולות",
+      "חמור",
+      "טוב לב"
+    ]
+  },
+  {
+    "num": 12,
+    "name": "פאק-מן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "pac_man_arcade",
+    "arsenalName": "פאק-מן",
+    "imageUrl": "/staged_images/pool/pac_man_arcade.jpg",
+    "associations": [
+      "צהוב",
+      "רוחות רפאים",
+      "ארקייד",
+      "נקודות",
+      "מבוך"
+    ]
+  },
+  {
+    "num": 13,
+    "name": "רובוט R2-D2",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "r2_d2_droid",
+    "arsenalName": "אר-2 די-2 (R2-D2)",
+    "imageUrl": "/staged_images/pool/r2_d2_droid.jpg",
+    "associations": [
+      "רובוט גלילי",
+      "צפצופים אלקטרוניים",
+      "מקרן הולוגרמה",
+      "כחול ולבן",
+      "חלל"
+    ]
+  },
+  {
+    "num": 14,
+    "name": "באגס באני",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "bugs_bunny_carrot",
+    "arsenalName": "באגס באני",
+    "imageUrl": "/staged_images/pool/bugs_bunny_carrot.jpg",
+    "associations": [
+      "ארנב",
+      "גזר כתום",
+      "מה נשמע דוק",
+      "שובב",
+      "אפור"
+    ]
+  },
+  {
+    "num": 20,
+    "name": "דרקולה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "bela_lugosi_dracula",
+    "arsenalName": "בלה לוגוסי (דרקולה)",
+    "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+    "associations": [
+      "גלימה שחורה",
+      "ניבים מחודדים",
+      "דם",
+      "עטלף",
+      "רוזן מטרנסילבניה"
+    ]
+  },
+  {
+    "num": 21,
+    "name": "האלק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "hulk_bruce_banner",
+    "arsenalName": "הענק הירוק (האלק)",
+    "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg",
+    "associations": [
+      "ענק ירוק",
+      "שרירים",
+      "זעם",
+      "ריסוק",
+      "מדען"
+    ]
+  },
+  {
+    "num": 22,
+    "name": "איירון מן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "iron_man_tony",
+    "arsenalName": "איירון מן (טוני סטארק)",
+    "imageUrl": "/staged_images/pool/iron_man_tony.jpg",
+    "associations": [
+      "שריון אדום וזהב",
+      "טכנולוגיה",
+      "כור חזה",
+      "מיליארדר",
+      "רוברט דאוני"
+    ]
+  },
+  {
+    "num": 23,
+    "name": "ג'יימס בונד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "james_bond_007",
+    "arsenalName": "ג'יימס בונד 007",
+    "imageUrl": "/staged_images/pool/james_bond_007.jpg",
+    "associations": [
+      "טוקסידו",
+      "מרטיני",
+      "אסטון מרטין",
+      "אקדח מושתק",
+      "מרגל 007"
+    ]
+  },
+  {
+    "num": 27,
+    "name": "טרזן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "tarzan_vine_swing",
+    "arsenalName": "טרזן",
+    "imageUrl": "/staged_images/pool/tarzan_vine_swing.jpg",
+    "associations": [
+      "חבל גפנים",
+      "ג'ונגל",
+      "קופים",
+      "איש הפרא",
+      "צעקה"
+    ]
+  },
+  {
+    "num": 32,
+    "name": "הארי פוטר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "harry_potter_hero",
+    "arsenalName": "הארי פוטר",
+    "imageUrl": "/staged_images/pool/harry_potter_hero.jpg",
+    "associations": [
+      "משקפיים עגולים",
+      "צלקת ברק",
+      "שרביט קסמים",
+      "מטאטא נימבוס",
+      "הוגוורטס"
+    ]
+  },
+  {
+    "num": 33,
+    "name": "דונלד דאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "donald_duck_sailor",
+    "arsenalName": "דונלד דאק",
+    "imageUrl": "/staged_images/pool/donald_duck_sailor.jpg",
+    "associations": [
+      "ברווז",
+      "בגדי מלחים",
+      "מקור צהוב",
+      "עצבים",
+      "דיסני"
+    ]
+  },
+  {
+    "num": 37,
+    "name": "טרמינטור",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "arnold_terminator",
+    "arsenalName": "המחסל (טרמינטור)",
+    "imageUrl": "/staged_images/pool/arnold_terminator.jpg",
+    "associations": [
+      "משקפי שמש שחורים",
+      "מעיל עור",
+      "אופנוע כבד",
+      "עין אדומה",
+      "רובוט מחסל"
+    ]
+  },
+  {
+    "num": 38,
+    "name": "קפטן אמריקה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "captain_america_steve",
+    "arsenalName": "קפטן אמריקה",
+    "imageUrl": "/staged_images/pool/captain_america_steve.jpg",
+    "associations": [
+      "מגן עגול",
+      "כוכב לבן",
+      "חייל",
+      "כחול אדום",
+      "צדק"
+    ]
+  },
+  {
+    "num": 39,
+    "name": "וולברין",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "wolverine_logan",
+    "arsenalName": "וולברין (לוגאן)",
+    "imageUrl": "/staged_images/pool/wolverine_logan.jpg",
+    "associations": [
+      "טפרי אדמנטיום",
+      "ריפוי עצמי",
+      "זאב",
+      "ז'קט עור",
+      "סיגר"
+    ]
+  },
+  {
+    "num": 40,
+    "name": "גנדלף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "gandalf_the_grey",
+    "arsenalName": "גנדלף האפור",
+    "imageUrl": "/staged_images/pool/gandalf_the_grey.jpg",
+    "associations": [
+      "כובע מחודד אפור",
+      "מקל הליכה",
+      "מקטרת עץ",
+      "זקן לבן",
+      "קוסם"
+    ]
+  },
+  {
+    "num": 41,
+    "name": "גולום",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "gollum_smeagol",
+    "arsenalName": "גולום (סמיגול)",
+    "imageUrl": "/staged_images/pool/gollum_smeagol.jpg",
+    "associations": [
+      "היקר שלי",
+      "עיניים גדולות",
+      "מערה חשוכה",
+      "טבעת זהב",
+      "דג חי"
+    ]
+  },
+  {
+    "num": 46,
+    "name": "בילבו בגינס",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "bilbo_baggins_ring",
+    "arsenalName": "בילבו באגינס",
+    "imageUrl": "/staged_images/pool/bilbo_baggins_ring.jpg",
+    "associations": [
+      "הוביט",
+      "חרב עוקץ",
+      "טבעת הקסם",
+      "פלך ירוק",
+      "הרפתקה"
+    ]
+  },
+  {
+    "num": 49,
+    "name": "הטורף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "predator_hunter_mask",
+    "arsenalName": "הטורף (פרדטור)",
+    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg",
+    "associations": [
+      "ראיית אינפרא-אדום",
+      "ראסטות מתכת",
+      "להבים בזרוע",
+      "צייד חייזרים",
+      "הסוואה שקופה"
+    ]
+  },
+  {
+    "num": 50,
+    "name": "מפלצת פרנקנשטיין",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "arsenalId": "boris_karloff_frankenstein",
+    "arsenalName": "בוריס קרלוף (פרנקנשטיין)",
+    "imageUrl": "/staged_images/pool/boris_karloff_frankenstein.jpg",
+    "associations": [
+      "מפלצת ירוקה",
+      "ברגים בצוואר",
+      "חשמל",
+      "מעבדה",
+      "אימה קלאסית"
+    ]
+  },
+  {
+    "num": 51,
+    "name": "מגדל אייפל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "eiffel_tower_paris",
+    "arsenalName": "מגדל אייפל",
+    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg",
+    "associations": [
+      "מגדל ברזל",
+      "פריז",
+      "צרפת",
+      "תצפית",
+      "רומנטיקה"
+    ]
+  },
+  {
+    "num": 52,
+    "name": "פסל החירות",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "statue_of_liberty_ny",
+    "arsenalName": "פסל החירות",
+    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg",
+    "associations": [
+      "לפיד זהב",
+      "כתר",
+      "ניו יורק",
+      "חירות",
+      "ירוק"
+    ]
+  },
+  {
+    "num": 53,
+    "name": "הפירמידות בגיזה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "pyramids_of_giza_egypt",
+    "arsenalName": "הפירמידות בגיזה",
+    "imageUrl": "/staged_images/pool/pyramids_of_giza_egypt.jpg",
+    "associations": [
+      "פירמידות",
+      "מצרים",
+      "מדבר",
+      "פרעונים",
+      "עתיק"
+    ]
+  },
+  {
+    "num": 54,
+    "name": "הספינקס",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "sphinx_giza_sand",
+    "arsenalName": "הספינקס (פותר החידות)",
+    "imageUrl": "/staged_images/pool/sphinx_giza_sand.jpg",
+    "associations": [
+      "גוף אריה וראש אדם",
+      "חידה מסתורית",
+      "חולות גיזה",
+      "שומר הפירמידות",
+      "מצרים"
+    ]
+  },
+  {
+    "num": 55,
+    "name": "הטאג' מהאל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "taj_mahal_agra",
+    "arsenalName": "הטאג' מאהל",
+    "imageUrl": "/staged_images/pool/taj_mahal_agra.jpg",
+    "associations": [
+      "שיש לבן",
+      "ארמון אהבה",
+      "הודו",
+      "כיפה",
+      "בריכת שיקוף"
+    ]
+  },
+  {
+    "num": 56,
+    "name": "הקוליסאום",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "colosseum_rome_italy",
+    "arsenalName": "הקולוסיאום ברומא",
+    "imageUrl": "/staged_images/pool/colosseum_rome_italy.jpg",
+    "associations": [
+      "אמפיתיאטרון",
+      "גלדיאטורים",
+      "קשתות אבן",
+      "רומא",
+      "היסטוריה"
+    ]
+  },
+  {
+    "num": 57,
+    "name": "החומה הסינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "great_wall_of_china_mutianyu",
+    "arsenalName": "החומה הגדולה של סין",
+    "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg",
+    "associations": [
+      "חומה ארוכה",
+      "מגדלי שמירה",
+      "סין",
+      "הרים",
+      "אבנים"
+    ]
+  },
+  {
+    "num": 58,
+    "name": "מגדל פיזה הנוטה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "leaning_tower_of_pisa",
+    "arsenalName": "המגדל הנטוי בפיזה",
+    "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg",
+    "associations": [
+      "מגדל נטוי",
+      "שיש לבן",
+      "איטליה",
+      "פעמונים",
+      "שיפוע"
+    ]
+  },
+  {
+    "num": 59,
+    "name": "ביג בן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "big_ben_london",
+    "arsenalName": "ביג בן (מגדל אליזבת)",
+    "imageUrl": "/staged_images/pool/big_ben_london.jpg",
+    "associations": [
+      "מגדל שעון",
+      "פעמון ענק",
+      "לונדון",
+      "בית הפרלמנט",
+      "מחוגים"
+    ]
+  },
+  {
+    "num": 60,
+    "name": "בית האופרה של סידני",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "sydney_opera_house_sails",
+    "arsenalName": "בית האופרה של סידני",
+    "imageUrl": "/staged_images/pool/sydney_opera_house_sails.jpg",
+    "associations": [
+      "מפרשי בטון",
+      "נמל סידני",
+      "אוסטרליה",
+      "אולם מופעים",
+      "אדריכלות"
+    ]
+  },
+  {
+    "num": 61,
+    "name": "פסל ישו הגואל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "christ_the_redeemer_rio",
+    "arsenalName": "פסל ישו הגואל (ריו)",
+    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
+    "associations": [
+      "פסל ישו",
+      "זרועות פרוסות",
+      "ריו דה ז'ניירו",
+      "הר קורקובדו",
+      "ברזיל"
+    ]
+  },
+  {
+    "num": 62,
+    "name": "גשר שער הזהב",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "golden_gate_bridge_fog",
+    "arsenalName": "גשר שער הזהב",
+    "imageUrl": "/staged_images/pool/golden_gate_bridge_fog.jpg",
+    "associations": [
+      "גשר כתום",
+      "ערפל",
+      "סן פרנסיסקו",
+      "כבלי פלדה",
+      "מפרץ"
+    ]
+  },
+  {
+    "num": 67,
+    "name": "האמפייר סטייט בילדינג",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "empire_state_building_ny",
+    "arsenalName": "בניין האמפייר סטייט",
+    "imageUrl": "/staged_images/pool/empire_state_building_ny.jpg",
+    "associations": [
+      "גורד שחקים",
+      "מנהטן",
+      "ניו יורק",
+      "אנטנה",
+      "נוף"
+    ]
+  },
+  {
+    "num": 69,
+    "name": "סטונהנג'",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "stonehenge_england",
+    "arsenalName": "סטונהנג'",
+    "imageUrl": "/staged_images/pool/stonehenge_england.jpg",
+    "associations": [
+      "מעגל אבנים",
+      "ענקיות",
+      "אנגליה",
+      "תעלומה",
+      "שמש"
+    ]
+  },
+  {
+    "num": 71,
+    "name": "הפרתנון / האקרופוליס",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "acropolis_parthenon_athens",
+    "arsenalName": "הפרתנון באקרופוליס",
+    "imageUrl": "/staged_images/pool/acropolis_parthenon_athens.jpg",
+    "associations": [
+      "עמודי שיש",
+      "מקדש אתנה",
+      "אתונה",
+      "יוון העתיקה",
+      "גבעה"
+    ]
+  },
+  {
+    "num": 72,
+    "name": "בורג' ח'ליפה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "burj_khalifa_dubai",
+    "arsenalName": "בורג' ח'ליפה (דובאי)",
+    "imageUrl": "/staged_images/pool/burj_khalifa_dubai.jpg",
+    "associations": [
+      "המגדל הגבוה בעולם",
+      "דובאי",
+      "פלדה וזכוכית",
+      "עננים",
+      "מעלית מהירה"
+    ]
+  },
+  {
+    "num": 77,
+    "name": "טירת דיסני / נוישוונשטיין",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "neuschwanstein_castle_bavaria",
+    "arsenalName": "טירת נוישוונשטיין",
+    "imageUrl": "/staged_images/pool/neuschwanstein_castle_bavaria.jpg",
+    "associations": [
+      "טירת אגדות",
+      "צריחים לבנים",
+      "בוואריה",
+      "יערות שלג",
+      "דיסני"
+    ]
+  },
+  {
+    "num": 79,
+    "name": "מקדש המאיה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "chichen_itza_pyramid",
+    "arsenalName": "צ'יצ'ן איצה (פירמידת המאיה)",
+    "imageUrl": "/staged_images/pool/chichen_itza_pyramid.jpg",
+    "associations": [
+      "פירמידת המאיה",
+      "מקסיקו",
+      "מדרגות אבן",
+      "נחש",
+      "שמש"
+    ]
+  },
+  {
+    "num": 80,
+    "name": "הכותל המערבי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "western_wall_jerusalem",
+    "arsenalName": "הכותל המערבי",
+    "imageUrl": "/staged_images/pool/western_wall_jerusalem.jpg",
+    "associations": [
+      "אבני הכותל",
+      "פתקי תפילה",
+      "ירושלים",
+      "עתיק",
+      "קדושה"
+    ]
+  },
+  {
+    "num": 81,
+    "name": "כנסיית סגרדה פמיליה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "sagrada_familia_barcelona",
+    "arsenalName": "סגרדה פמיליה (ברצלונה)",
+    "imageUrl": "/staged_images/pool/sagrada_familia_barcelona.jpg",
+    "associations": [
+      "כנסיית ענק",
+      "צריחים מפותלים",
+      "גאודי",
+      "ברצלונה",
+      "ויטראז'"
+    ]
+  },
+  {
+    "num": 82,
+    "name": "גשר מצודת לונדון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "arsenalId": "tower_bridge_london",
+    "arsenalName": "גשר מצודת לונדון",
+    "imageUrl": "/staged_images/pool/tower_bridge_london.jpg",
+    "associations": [
+      "גשר מתרומם",
+      "נהר התמזה",
+      "לונדון",
+      "שני מגדלים",
+      "ספינות"
+    ]
+  },
+  {
+    "num": 101,
+    "name": "המונה ליזה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "mona_lisa_louvre",
+    "arsenalName": "ציור המונה ליזה",
+    "imageUrl": "/staged_images/pool/mona_lisa_louvre.jpg",
+    "associations": [
+      "חיוך מסתורי",
+      "ציור שמן",
+      "דה וינצ'י",
+      "מוזיאון הלובר",
+      "אמנות"
+    ]
+  },
+  {
+    "num": 103,
+    "name": "האדם החושב",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "the_thinker_rodin_statue",
+    "arsenalName": "האדם החושב (רודן)",
+    "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg",
+    "associations": [
+      "פסל ברונזה",
+      "האדם החושב",
+      "יד על הסנטר",
+      "רודן",
+      "פילוסופיה"
+    ]
+  },
+  {
+    "num": 104,
+    "name": "פסל דוד",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "david_michelangelo_marble",
+    "arsenalName": "פסל דוד (מיכלאנג'לו)",
+    "imageUrl": "/staged_images/pool/david_michelangelo_marble.jpg",
+    "associations": [
+      "פסל שיש",
+      "מיכלאנג'לו",
+      "דוד המלך",
+      "פירנצה",
+      "אמנות"
+    ]
+  },
+  {
+    "num": 110,
+    "name": "מסכת הזהב של תות ענח' אמון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "tutankhamun",
+    "arsenalName": "תות ענח' אמון",
+    "imageUrl": "/staged_images/pool/tutankhamun.jpg",
+    "associations": [
+      "מסכת זהב טהור",
+      "קבר עמק המלכים",
+      "פרעה הצעיר",
+      "סרקופג מוזהב",
+      "ארכיאולוגיה"
+    ]
+  },
+  {
+    "num": 123,
+    "name": "פסל החרות האוריינטלי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "terracotta_army_xian",
+    "arsenalName": "צבא הטרקוטה של שי-אן",
+    "imageUrl": "/staged_images/pool/terracotta_army_xian.jpg",
+    "associations": [
+      "צבא טרקוטה",
+      "חיילי חימר",
+      "קבר קיסר",
+      "שיאן",
+      "סין"
+    ]
+  },
+  {
+    "num": 124,
+    "name": "רוזטה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "rosetta_stone_british_museum",
+    "arsenalName": "אבן רוזטה",
+    "imageUrl": "/staged_images/pool/rosetta_stone_british_museum.jpg",
+    "associations": [
+      "אבן רוזטה",
+      "כתב חרטומים",
+      "פענוח",
+      "מצרים העתיקה",
+      "ארכיאולוגיה"
+    ]
+  },
+  {
+    "num": 141,
+    "name": "בבושקה / מטריושקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "arsenalId": "matryoshka_nesting_dolls",
+    "arsenalName": "בובות מטריושקה (בבושקה) מעץ",
+    "imageUrl": "/staged_images/pool/matryoshka_nesting_dolls.jpg",
+    "associations": [
+      "מטריושקה",
+      "בובות עץ",
+      "בבושקה",
+      "אחת בתוך השנייה",
+      "רוסיה"
+    ]
+  },
+  {
+    "num": 166,
+    "name": "שעון חול (חצי מלא) (מסמל",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "arsenalId": "hourglass_golden_sand",
+    "arsenalName": "שעון חול עתיק",
+    "imageUrl": "/staged_images/pool/hourglass_golden_sand.jpg",
+    "associations": [
+      "שעון חול",
+      "גרגירים נופלים",
+      "זמן אוזל",
+      "זכוכית",
+      "עתיק"
+    ]
+  },
+  {
+    "num": 208,
+    "name": "מטוס ג'מבו",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "arsenalId": "boeing_747_jumbo_jet",
+    "arsenalName": "בואינג 747 (ג'מבו ג'ט)",
+    "imageUrl": "/staged_images/pool/boeing_747_jumbo_jet.jpg",
+    "associations": [
+      "בואינג 747",
+      "ג'מבו ג'ט",
+      "דבשת עליונה",
+      "מטוס נוסעים",
+      "תעופה"
+    ]
+  },
+  {
+    "num": 210,
+    "name": "צפלין",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "arsenalId": "zeppelin_hindenburg_airship",
+    "arsenalName": "ספינת אוויר (צפלין)",
+    "imageUrl": "/staged_images/pool/zeppelin_hindenburg_airship.jpg",
+    "associations": [
+      "ספינת אוויר",
+      "צפלין",
+      "ענק בשמיים",
+      "גז מימן",
+      "תעופה היסטורית"
+    ]
+  },
+  {
+    "num": 219,
+    "name": "קטנוע וספה איטלקי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "arsenalId": "vespa_scooter_classic",
+    "arsenalName": "קטנוע ווספה קלאסי",
+    "imageUrl": "/staged_images/pool/vespa_scooter_classic.jpg",
+    "associations": [
+      "קטנוע",
+      "שני גלגלים",
+      "איטליה",
+      "רטרו",
+      "עירוני"
+    ]
+  },
+  {
+    "num": 220,
+    "name": "ספינת טיטאניק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "arsenalId": "titanic_ship_ocean",
+    "arsenalName": "אוניית הטיטאניק",
+    "imageUrl": "/staged_images/pool/titanic_ship_ocean.jpg",
+    "associations": [
+      "אונייה ענקית",
+      "קרחון",
+      "טביעה",
+      "אוקיינוס",
+      "הפלגה"
+    ]
+  },
+  {
+    "num": 242,
+    "name": "מכונית חיפושית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "arsenalId": "volkswagen_beetle_yellow",
+    "arsenalName": "פולקסווגן חיפושית צהובה",
+    "imageUrl": "/staged_images/pool/volkswagen_beetle_yellow.jpg",
+    "associations": [
+      "חיפושית צהובה",
+      "פולקסווגן",
+      "עגלגלה",
+      "רטרו",
+      "גרמניה"
+    ]
+  },
+  {
+    "num": 253,
+    "name": "כריש לבן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "great_white_shark_jaws",
+    "arsenalName": "עמלץ לבן (כריש לבן)",
+    "imageUrl": "/staged_images/pool/great_white_shark_jaws.jpg",
+    "associations": [
+      "כריש לבן",
+      "מלתעות",
+      "שיניים חדות",
+      "סנפיר",
+      "אוקיינוס"
+    ]
+  },
+  {
+    "num": 254,
+    "name": "דוב פנדה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "red_panda_bamboo_tail",
+    "arsenalName": "פנדה אדומה",
+    "imageUrl": "/staged_images/pool/red_panda_bamboo_tail.jpg",
+    "associations": [
+      "פנדה אדומה",
+      "זנב מפוספס",
+      "במבוק",
+      "חמוד",
+      "עצים"
+    ]
+  },
+  {
+    "num": 255,
+    "name": "אריה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "griffin_lion_eagle",
+    "arsenalName": "גריפין (חצי אריה חצי עיט)",
+    "imageUrl": "/staged_images/pool/griffin_lion_eagle.jpg",
+    "associations": [
+      "גריפין",
+      "גוף אריה וכנפי עיט",
+      "מקור חד וטפרים",
+      "שומר אוצרות",
+      "מיתולוגיה"
+    ]
+  },
+  {
+    "num": 256,
+    "name": "פיל אפריקאי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "african_elephant_tusks",
+    "arsenalName": "פיל אפריקאי",
+    "imageUrl": "/staged_images/pool/african_elephant_tusks.jpg",
+    "associations": [
+      "חדק ארוך",
+      "חטי שנהב",
+      "אוזניים ענקיות",
+      "אפור",
+      "ענק"
+    ]
+  },
+  {
+    "num": 257,
+    "name": "ג'ירפה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "giraffe_tall_neck_trees",
+    "arsenalName": "ג'ירפה",
+    "imageUrl": "/staged_images/pool/giraffe_tall_neck_trees.jpg",
+    "associations": [
+      "ג'ירפה",
+      "צוואר ארוך ביותר",
+      "כתמים חומים",
+      "לשון סגולה",
+      "עצי סוואנה"
+    ]
+  },
+  {
+    "num": 269,
+    "name": "נשר דואה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "bald_eagle_flight",
+    "arsenalName": "עיטם לבן-ראש (עיטם אמריקאי)",
+    "imageUrl": "/staged_images/pool/bald_eagle_flight.jpg",
+    "associations": [
+      "עיטם לבן ראש",
+      "מקור צהוב",
+      "כנפיים פרוסות",
+      "שמיים",
+      "סמל אמריקה"
+    ]
+  },
+  {
+    "num": 284,
+    "name": "הגרנד קניון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "arsenalId": "grand_canyon_arizona",
+    "arsenalName": "הגרנד קניון",
+    "imageUrl": "/staged_images/pool/grand_canyon_arizona.jpg",
+    "associations": [
+      "קניון ענק",
+      "שכבות סלע אדומות",
+      "נהר הקולורדו",
+      "אריזונה",
+      "מצוקים"
+    ]
+  },
+  {
+    "num": 325,
+    "name": "קובייה הונגרית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "arsenalId": "rubiks_cube_solved",
+    "arsenalName": "קוביה הונגרית (רוביק)",
+    "imageUrl": "/staged_images/pool/rubiks_cube_solved.jpg",
+    "associations": [
+      "קוביה הונגרית",
+      "צבעים תואמים",
+      "חידת היגיון",
+      "סיבובים",
+      "מוח"
+    ]
+  },
+  {
+    "num": 367,
+    "name": "מצית זיפו",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "arsenalId": "zippo_lighter_chrome",
+    "arsenalName": "מצית זיפו ממתכת",
+    "imageUrl": "/staged_images/pool/zippo_lighter_chrome.jpg",
+    "associations": [
+      "מצית זיפו",
+      "מתכת כסופה",
+      "קליק פתיחה",
+      "להבה",
+      "וינטג'"
+    ]
+  },
+  {
+    "num": 405,
+    "name": "שרק",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "arsenalId": "donkey_shrek_waffles",
+    "arsenalName": "חמור (שרק)",
+    "imageUrl": "/staged_images/pool/donkey_shrek_waffles.jpg",
+    "associations": [
+      "חמור מדבר",
+      "וופלים",
+      "מצחיק",
+      "חבר נאמן",
+      "שרק"
+    ]
+  },
+  {
+    "num": 417,
+    "name": "מזוודת כסף",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "arsenalId": "aston_martin_db5_silver",
+    "arsenalName": "אסטון מרטין DB5 (ג'יימס בונד)",
+    "imageUrl": "/staged_images/pool/aston_martin_db5_silver.jpg",
+    "associations": [
+      "אסטון מרטין",
+      "ג'יימס בונד",
+      "מושב מפלט",
+      "כסופה",
+      "סוכן חשאי"
+    ]
+  },
+  {
+    "num": 447,
+    "name": "פסל ישו הגואל בריו",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "arsenalId": "christ_the_redeemer_rio",
+    "arsenalName": "פסל ישו הגואל (ריו)",
+    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
+    "associations": [
+      "פסל ישו",
+      "זרועות פרוסות",
+      "ריו דה ז'ניירו",
+      "הר קורקובדו",
+      "ברזיל"
+    ]
+  },
+  {
+    "num": 458,
+    "name": "אריה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "arsenalId": "cowardly_lion_badge",
+    "arsenalName": "האריה הפחדן",
+    "imageUrl": "/staged_images/pool/cowardly_lion_badge.jpg",
+    "associations": [
+      "אריה פחדן",
+      "רעמה עבה",
+      "זנב רועד",
+      "חיפוש אומץ",
+      "הקוסם מארץ עוץ"
+    ]
+  },
+  {
+    "num": 461,
+    "name": "נשר",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "arsenalId": "bald_eagle_flight",
+    "arsenalName": "עיטם לבן-ראש (עיטם אמריקאי)",
+    "imageUrl": "/staged_images/pool/bald_eagle_flight.jpg",
+    "associations": [
+      "עיטם לבן ראש",
+      "מקור צהוב",
+      "כנפיים פרוסות",
+      "שמיים",
+      "סמל אמריקה"
+    ]
+  },
+  {
+    "num": 468,
+    "name": "מייקל ג'ורדן (צללית ה-Jumpman)",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "arsenalId": "petra_treasury_jordan",
+    "arsenalName": "האוצר בפטרה",
+    "imageUrl": "/staged_images/pool/petra_treasury_jordan.jpg",
+    "associations": [
+      "חצוב בסלע",
+      "אבן אדומה",
+      "ירדן",
+      "קניון צר",
+      "מקדש"
+    ]
+  },
+  {
+    "num": 484,
+    "name": "בודהה מחייך",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "arsenalId": "borobudur_buddha_stupas",
+    "arsenalName": "מקדש בורובודור (אינדונזיה)",
+    "imageUrl": "/staged_images/pool/borobudur_buddha_stupas.jpg",
+    "associations": [
+      "מקדש בודהיסטי ענק",
+      "סטופות אבן עם פעמונים",
+      "פסלי בודהה יושבים",
+      "בורובודור",
+      "אינדונזיה"
+    ]
+  }
+]

@@ -31,6 +31,11 @@ import { StardewDoorsLayer, INTERIOR_DOORS_CONFIG } from './stardewArt/StardewDo
 import { LociCumulativeQuizModal } from './LociCumulativeQuizModal';
 import { LociItemInspectionModal } from './LociItemInspectionModal';
 import { LociSurpriseCelebrationModal } from './LociSurpriseCelebrationModal';
+import { QuickListInputModal } from './QuickListInputModal';
+import { MnemonicStudioModal } from './MnemonicStudioModal';
+import { subscribeToUserImages, findUserImageByKeyword } from '../utils/userImageRepository';
+// (Legacy get5MnemonicAssociationsForTask removed to prevent destructive overwriting of curated stations)
+import { weaveDeterministicStory, generateDynamicFallbackCard, composeCodexNarrativeSentence } from '../utils/deterministicStoryEngine';
 import { drawLociCharacterMetamorphosis, lociParticles } from '../utils/lociCharacterTransformation';
 import { LOCI_DOOR_STAGES, LOCI_WORK_PRACTICE_ITEMS } from '../data/lociPracticeData';
 import { DepositModal } from './DepositModal';
@@ -65,6 +70,96 @@ const isOnAreaRug = (x, y) => {
   // The architectural shell is intentionally empty: no rugs exist.
   return false;
 };
+
+const ROOM_SEQUENCE = [
+  { roomId: 'entry_foyer', roomName: 'חדר הכניסה (הנעה וציוד)', roomShortName: 'כניסה' },
+  { roomId: 'left_store', roomName: 'אגף שמאל (דחוף)', roomShortName: 'אגף שמאל' },
+  { roomId: 'main_hall', roomName: 'האולם המרכזי (בטיפול)', roomShortName: 'אולם מרכזי' },
+  { roomId: 'right_sanctuary', roomName: 'היכל השלווה (שגרה צפון)', roomShortName: 'היכל שלווה' },
+  { roomId: 'right_south', roomName: 'היכל השלווה הדרומי (ארכיון)', roomShortName: 'חדר דרומי' }
+];
+
+const DEFAULT_STATION_ANCHORS = ['משקפי שמש', 'טלפון', 'חולצה להחלפה', 'בקבוק מים', 'מפתחות לאוטו'];
+
+function buildCustomPracticeStations(input = DEFAULT_STATION_ANCHORS, forcedStory = null) {
+  let storyResult = null;
+  let customGrandStory = forcedStory;
+
+  // Handle both { stations: [...] } from Gemini AND [...] array of curated objects from curateListWithAi!
+  const rawStations = Array.isArray(input)
+    ? (typeof input[0] === 'object' && input[0] !== null ? input : null)
+    : (input && Array.isArray(input.stations) ? input.stations : null);
+
+  if (rawStations) {
+    storyResult = {
+      stations: rawStations.map((s, i) => ({
+        order: i + 1,
+        itemTitle: s.title || s.originalItem || s.itemTitle || `פריט ${i + 1}`,
+        coreConcept: s.coreConcept || s.title || '',
+        card: s.card || s,
+        associationWord: s.associationWord || s.card?.name || s.title,
+        hasRepositoryImage: Boolean(s.hasRepositoryImage ?? (s.imageUrl && !s.imageUrl.startsWith('data:image/svg'))),
+        isUserApproved: Boolean(s.isUserApproved),
+        candidates: Array.isArray(s.candidates) ? s.candidates : [],
+        currentCandidateIndex: typeof s.currentCandidateIndex === 'number' ? s.currentCandidateIndex : 0,
+        imageUrl: s.imageUrl,
+        roomSensoryGuidedPrompt: s.story || `${s.associationWord || s.title} בארמון`,
+        roomQuote: s.story || `${s.associationWord || s.title} בארמון`
+      })),
+      grandFinaleStory: (input && input.grandFinaleStory) || forcedStory || '',
+      headline: 'סיפור הדרך של הארמון (AI Live Engine) 📜✨'
+    };
+    customGrandStory = (input && input.grandFinaleStory) || forcedStory;
+  } else {
+    storyResult = weaveDeterministicStory(input);
+  }
+
+  if (!storyResult?.stations) return LOCI_WORK_PRACTICE_ITEMS;
+
+  return storyResult.stations.map((st, idx) => {
+    const room = ROOM_SEQUENCE[idx] || ROOM_SEQUENCE[ROOM_SEQUENCE.length - 1];
+    const isLastIndex = idx === storyResult.stations.length - 1;
+    const finalGrand = customGrandStory || storyResult.grandFinaleStory;
+    const srcObj = Array.isArray(input) && typeof input[idx] === 'object' ? input[idx] : null;
+    const candidates = st.candidates || srcObj?.candidates || [];
+    const currentCandidateIndex = typeof st.currentCandidateIndex === 'number'
+      ? st.currentCandidateIndex
+      : (typeof srcObj?.currentCandidateIndex === 'number' ? srcObj.currentCandidateIndex : 0);
+
+    let finalImageUrl = st.imageUrl;
+    let finalCandidates = candidates;
+    let finalAssocWord = st.associationWord || st.card?.name || st.itemTitle;
+    let finalEmoji = st.card?.emoji || srcObj?.emoji || st.celebrity?.emoji || '📌';
+    let finalStory = srcObj?.story || st.roomSensoryGuidedPrompt;
+
+    // Curated stations from modern orchestrator / user selection are strictly preserved without legacy hijacking
+
+    return {
+      id: `loci-custom-${idx + 1}`,
+      order: idx + 1,
+      roomId: room.roomId,
+      roomName: room.roomName,
+      roomShortName: room.roomShortName,
+      title: st.itemTitle,
+      coreConcept: st.coreConcept || srcObj?.coreConcept || st.itemTitle,
+      hasRepositoryImage: Boolean(finalImageUrl && !finalImageUrl.startsWith('data:image/svg')),
+      isUserApproved: Boolean(st.isUserApproved || srcObj?.isUserApproved),
+      candidates: finalCandidates,
+      currentCandidateIndex,
+      emoji: finalEmoji,
+      associationWord: finalAssocWord,
+      story: finalStory,
+      roomQuote: finalStory || st.roomQuote,
+      memoryAnchor: `עוגן ${idx + 1}: ${st.itemTitle}`,
+      hint: finalStory,
+      imageUrl: finalImageUrl,
+      celebrationTitle: isLastIndex ? (storyResult.headline || 'סיום המסלול 📜✨') : `תחנה ${idx + 1}: ${st.itemTitle}`,
+      celebrationSubtitle: isLastIndex ? 'משפט הזיכרון המזוקק שנחרט לנצח:' : finalStory,
+      celebrationImage: finalImageUrl,
+      quote: isLastIndex ? finalGrand : (finalStory || st.roomQuote)
+    };
+  });
+}
 
 export function StardewInstitutionComplex({
   building,
@@ -172,7 +267,7 @@ export function StardewInstitutionComplex({
   };
 
   // Player Positioning & Real-time Canvas Rendering
-  const playerPosRef = useRef({ x: 595, y: 510 });
+  const playerPosRef = useRef({ x: 555, y: 510 });
   const isWalkingRef = useRef(false);
   const facingLeftRef = useRef(false);
   const walkCycleRef = useRef(0);
@@ -191,6 +286,26 @@ export function StardewInstitutionComplex({
 
   // Key Method State (שיטת המפתחות)
   const [selectedLociItem, setSelectedLociItem] = useState(null);
+  const [discoveredPhotoRooms, setDiscoveredPhotoRooms] = useState(() => {
+    try {
+      const saved = localStorage.getItem('lifequest_discovered_photos');
+      return saved ? JSON.parse(saved) : [];
+    } catch (_) {
+      return [];
+    }
+  });
+
+  const markPhotoDiscovered = (roomId) => {
+    if (!roomId) return;
+    setDiscoveredPhotoRooms((prev) => {
+      if (prev.includes(roomId)) return prev;
+      const updated = [...prev, roomId];
+      try {
+        localStorage.setItem('lifequest_discovered_photos', JSON.stringify(updated));
+      } catch (_) {}
+      return updated;
+    });
+  };
   const [celebrationData, setCelebrationData] = useState(null);
   const prevChamberRef = useRef('entry_foyer');
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
@@ -204,6 +319,91 @@ export function StardewInstitutionComplex({
   const [isRadioModalOpen, setIsRadioModalOpen] = useState(false);
   const [selectedRadioRoom, setSelectedRadioRoom] = useState(null);
   const [isRoomChallengeOpen, setIsRoomChallengeOpen] = useState(false);
+  const [isQuickListModalOpen, setIsQuickListModalOpen] = useState(false);
+  const [isMnemonicStudioOpen, setIsMnemonicStudioOpen] = useState(false);
+  const [activePracticeStations, setActivePracticeStations] = useState(() => {
+    try {
+      const version = localStorage.getItem('lifequest_practice_stations_version');
+      const saved = localStorage.getItem('lifequest_active_practice_stations');
+      if (saved && version === 'v11_pure_loci_curated') {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const hasFallback = parsed.some(p => 
+            !p.imageUrl || 
+            p.imageUrl.startsWith('data:image/svg') || 
+            p.imageUrl.includes('approved_') || 
+            p.imageUrl.startsWith('http') || 
+            !p.candidates || 
+            p.candidates.length === 0 ||
+            p.imageUrl.includes('remy_ratatouille_chef')
+          );
+          if (!hasFallback) return parsed;
+          const upgraded = buildCustomPracticeStations(parsed);
+          try {
+            localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(upgraded));
+          } catch (_) {}
+          return upgraded;
+        }
+      } else if (saved) {
+        // Upgrade legacy cache to new curated version
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            const upgraded = buildCustomPracticeStations(parsed);
+            localStorage.setItem('lifequest_practice_stations_version', 'v11_pure_loci_curated');
+            localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(upgraded));
+            return upgraded;
+          }
+        } catch (_) {}
+      }
+    } catch (_) {}
+    const defaults = buildCustomPracticeStations(DEFAULT_STATION_ANCHORS);
+    try {
+      localStorage.setItem('lifequest_practice_stations_version', 'v11_pure_loci_curated');
+      localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(defaults));
+    } catch (_) {}
+    return defaults;
+  });
+
+  // Automatically enrich practice stations whenever user approves or uploads an image in the studio/modal (without wiping AI candidates!)
+  useEffect(() => {
+    const unsubscribe = subscribeToUserImages(() => {
+      setActivePracticeStations((prev) => {
+        let changed = false;
+        const refreshed = prev.map((st) => {
+          // Strictly match ONLY if user explicitly uploaded/approved an image for this EXACT task title
+          const matchedUserImg = findUserImageByKeyword(st.title);
+          if (matchedUserImg && matchedUserImg.isUserApproved && matchedUserImg.imageUrl && !matchedUserImg.imageUrl.startsWith('data:image/svg')) {
+            const isExactTitle = matchedUserImg.title && matchedUserImg.title.trim().toLowerCase() === st.title.trim().toLowerCase();
+            if (isExactTitle && st.imageUrl !== matchedUserImg.imageUrl) {
+              changed = true;
+              return {
+                ...st,
+                imageUrl: matchedUserImg.imageUrl,
+                celebrationImage: matchedUserImg.imageUrl,
+                associationWord: matchedUserImg.title,
+                hasRepositoryImage: true,
+                isUserApproved: true
+              };
+            }
+          }
+          return st;
+        });
+        if (!changed) return prev;
+        try {
+          localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(refreshed));
+        } catch (_) {}
+        return refreshed;
+      });
+    });
+    return unsubscribe;
+  }, []);
+
+  // Dynamic Journey Story for the active palace practice (woven from the exact visual anchors shown to the user)
+  const grandPalaceStory = useMemo(() => {
+    const storyRes = weaveDeterministicStory(activePracticeStations);
+    return storyRes?.grandFinaleStory || composeCodexNarrativeSentence([], activePracticeStations);
+  }, [activePracticeStations]);
 
   // Stardew Valley Proximity Discovery State:
   // Contents of lockers and wall frames remain concealed until the player approaches!
@@ -243,13 +443,13 @@ export function StardewInstitutionComplex({
       console.error(e);
     }
     return {
-      unlockedRooms: ['entry_foyer'],
+      unlockedRooms: ['entry_foyer', 'main_hall', 'left_store', 'right_sanctuary', 'right_south'],
       masteredRooms: [],
       doors: {
-        door_c3: true,
-        door_c1: true,
-        door_c2: true,
-        door_east_south: true
+        door_c3: false,
+        door_c1: false,
+        door_c2: false,
+        door_east_south: false
       }
     };
   });
@@ -285,13 +485,13 @@ export function StardewInstitutionComplex({
       });
     } catch (e) {}
 
-    // Map door to the hilarious surprise celebration item requested for dad!
+    // Map door to the surprise celebration item for the current active practice list
     const doorToSurpriseItem = {
-      door_c3: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 1), // 1. שמש לוהטת עם משקפי שמש
-      door_c1: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 2), // 2. סטיב ג'ובס והאייפון
-      door_c2: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 3), // 3. רונאלדו מניף חולצה
-      door_east_south: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 4), // 4. מפלי הניאגרה
-      vault_master: LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 5) // 5. פרארי אדומה נוצצת
+      door_c3: activePracticeStations.find(i => i.order === 1),
+      door_c1: activePracticeStations.find(i => i.order === 2),
+      door_c2: activePracticeStations.find(i => i.order === 3),
+      door_east_south: activePracticeStations.find(i => i.order === 4),
+      vault_master: activePracticeStations.find(i => i.order === 5) || activePracticeStations[activePracticeStations.length - 1]
     };
     const surpriseItem = doorToSurpriseItem[door.id];
     if (surpriseItem) {
@@ -299,7 +499,7 @@ export function StardewInstitutionComplex({
     }
 
     if (door.id === 'vault_master') {
-      showToast('גאונות! אבא פתר את כל 5 תחנות ארמון הזיכרון! הוכתר כאמן Loci! 🏆👑✨');
+      showToast('גאונות! הושלמה כל שרשרת ארמון הזיכרון! 🏆👑✨');
       setActiveQuizDoor(null);
       return;
     }
@@ -325,13 +525,85 @@ export function StardewInstitutionComplex({
       unlockedRooms: ['entry_foyer'],
       masteredRooms: [],
       doors: {
-        door_c3: true,
-        door_c1: true,
-        door_c2: true,
-        door_east_south: true
+        door_c3: false,
+        door_c1: false,
+        door_c2: false,
+        door_east_south: false
       }
     });
+    setDiscoveredPhotoRooms([]);
+    try {
+      localStorage.removeItem('lifequest_discovered_photos');
+    } catch (_) {}
     showToast('החדרים ננעלו מחדש! כעת ניתן לתרגל שוב את שרשרת הזיכרון מתחילתה 🏰🔒');
+  };
+
+  // Autonomous Behind-the-Scenes Memory Engine
+  const handleGenerateQuickList = (parsedItems) => {
+    sounds.playLevelUp?.();
+    const newStations = buildCustomPracticeStations(parsedItems);
+    setActivePracticeStations(newStations);
+    try {
+      localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(newStations));
+    } catch (_) {}
+
+    const allChambers = ['entry_foyer', 'main_hall', 'left_store', 'right_sanctuary', 'right_south'];
+    setInteriorMastery({
+      unlockedRooms: allChambers,
+      masteredRooms: [],
+      doors: {
+        door_c3: false,
+        door_c1: false,
+        door_c2: false,
+        door_east_south: false
+      }
+    });
+    setDiscoveredPhotoRooms(allChambers);
+    try {
+      localStorage.setItem('lifequest_discovered_photos', JSON.stringify(allChambers));
+    } catch (_) {}
+
+    showToast(`הרשימה שובצה אוטומטית ב-${newStations.length} חדרי הבית! צא לדרך 🏰💡`);
+  };
+
+  // Update station image when client uploads custom image or AI regenerates
+  const handleUpdateStationImage = (targetItem, newImageUrl, newAssociationWord = null) => {
+    if (!targetItem || !newImageUrl) return;
+    setActivePracticeStations((prev) => {
+      const updated = prev.map((st) => {
+        if (st.id === targetItem.id || st.title === targetItem.title || st.order === targetItem.order) {
+          return {
+            ...st,
+            imageUrl: newImageUrl,
+            celebrationImage: newImageUrl,
+            ...(newAssociationWord ? { associationWord: newAssociationWord } : {})
+          };
+        }
+        return st;
+      });
+      try {
+        localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(updated));
+      } catch (_) {}
+      return updated;
+    });
+
+    if (selectedLociItem && (selectedLociItem.id === targetItem.id || selectedLociItem.title === targetItem.title)) {
+      setSelectedLociItem((prev) => prev ? { 
+        ...prev, 
+        imageUrl: newImageUrl, 
+        celebrationImage: newImageUrl,
+        ...(newAssociationWord ? { associationWord: newAssociationWord } : {})
+      } : null);
+    }
+    if (celebrationData && (celebrationData.id === targetItem.id || celebrationData.title === targetItem.title)) {
+      setCelebrationData((prev) => prev ? { 
+        ...prev, 
+        imageUrl: newImageUrl, 
+        celebrationImage: newImageUrl,
+        ...(newAssociationWord ? { associationWord: newAssociationWord } : {})
+      } : null);
+    }
+    showToast(`התמונה עודכנה ושובצה בחדר ובמאגר האישי שלך! 📸✨`);
   };
 
 
@@ -480,7 +752,7 @@ export function StardewInstitutionComplex({
 
           playerPosRef.current = next;
           isWalkingRef.current = true;
-          walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
+          walkCycleRef.current += Math.PI * 2 * 2.0 * dt;
 
           // Village exit check
           if (next.x >= 550 && next.x <= 640 && next.y >= 570) {
@@ -536,7 +808,7 @@ export function StardewInstitutionComplex({
           } else {
             playerPosRef.current = next;
             isWalkingRef.current = true;
-            walkCycleRef.current += Math.PI * 2 * 3.4 * dt;
+            walkCycleRef.current += Math.PI * 2 * 2.0 * dt;
           }
         }
       } else {
@@ -613,14 +885,8 @@ export function StardewInstitutionComplex({
         const p = playerPosRef.current;
         const currentChamber = getChamberForPosition(p.x, p.y)?.id || 'entry_foyer';
 
-        // When entering Room 5: Immediately present the epic Climax story!
+        // Character movement tracking
         if (prevChamberRef.current !== currentChamber) {
-          if (currentChamber === 'right_south') {
-            const r5 = LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === 5);
-            if (r5) {
-              setCelebrationData(r5);
-            }
-          }
           prevChamberRef.current = currentChamber;
         }
 
@@ -1034,6 +1300,59 @@ export function StardewInstitutionComplex({
             <RotateCcw size={13} />
             <span>נעל חדרים לתרגול חוזר 🔒</span>
           </button>
+
+          <button
+            onClick={() => {
+              setActiveQuizDoor({
+                id: 'vault_master',
+                name: 'מבחן אמן ארמון הזיכרון',
+                fromRoomName: 'כל 5 החדרים',
+                toRoomName: 'הסיפור המושלם'
+              });
+            }}
+            title="בחינה מסכמת על כל 5 התמונות בסדר מבולבל — רק מעבר יחשוף את סיפור הדרך!"
+            style={{
+              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              border: '1.5px solid #34d399',
+              color: '#ffffff',
+              borderRadius: '10px',
+              padding: '4px 14px',
+              fontSize: '0.84rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontWeight: 800,
+              boxShadow: '0 2px 10px rgba(16, 185, 129, 0.4)',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            <Brain size={15} />
+            <span>מבחן זיכרון מסכם 🧠🏆</span>
+          </button>
+
+          <button
+            onClick={() => setIsQuickListModalOpen(true)}
+            title="הזן רשימה אישית — המערכת תשבץ אותה אוטומטית בחדרים"
+            style={{
+              background: 'linear-gradient(135deg, rgba(217, 119, 6, 0.4), rgba(180, 83, 9, 0.6))',
+              border: '1.5px solid #f59e0b',
+              color: '#fef08a',
+              borderRadius: '10px',
+              padding: '4px 14px',
+              fontSize: '0.84rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontWeight: 800,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            <Sparkles size={14} className="text-amber-400" />
+            <span>הזן רשימה לשינון 📝</span>
+          </button>
         </div>
       </header>
 
@@ -1084,11 +1403,13 @@ export function StardewInstitutionComplex({
 
         {/* --- IN-ROOM AUTHENTIC WALL PICTURE FRAMES (EMBEDDED COTTAGE DECOR) --- */}
         {Object.entries(WALL_PHOTO_POSITIONS).map(([roomId, pos]) => {
-          const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
+          const lociItem = activePracticeStations.find(item => item.roomId === roomId);
           const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
           // Always guarantee the exact 5 items requested for Loci Memory Palace practice
           const activeItem = lociItem || photoDeposit;
           const isNear = nearObjectId === `photo_${roomId}` || hoveredObjectId === `photo_${roomId}`;
+
+          const isDiscovered = true; // Always display the real associative memory image in the wall picture frame!
 
           return (
             <div
@@ -1108,17 +1429,22 @@ export function StardewInstitutionComplex({
               onClick={(e) => {
                 e.stopPropagation();
                 sounds.playTap?.();
+                markPhotoDiscovered(roomId);
                 setSelectedLociItem(activeItem);
               }}
-              title={`תמונת ארמון הזיכרון: ${activeItem?.order ? `${activeItem.order}. ` : ''}${activeItem?.title} ${activeItem?.emoji || ''} — לחץ לצפייה מוגדלת ולמידה`}
+              title={isDiscovered 
+                ? `תמונת ארמון הזיכרון: ${activeItem?.order ? `${activeItem.order}. ` : ''}${activeItem?.title} ${activeItem?.emoji || ''} — לחץ לצפייה מוגדלת ולמידה`
+                : `תמונה נסתרת בחדר — לחץ כדי לגלות וללמוד את העוגן! ❓`}
             >
               {/* Authentic 2.5D Wooden Beveled Picture Frame (Enlarged & Focused Display) */}
               <div
                 style={{
                   width: '84px',
                   height: '60px',
-                  backgroundColor: '#3b1c09',
-                  border: isNear ? '2.5px solid #fbbf24' : '2px solid #d97706',
+                  backgroundColor: isDiscovered ? '#3b1c09' : '#27272a',
+                  border: isNear 
+                    ? '2.5px solid #fbbf24' 
+                    : isDiscovered ? '2px solid #d97706' : '2px solid #71717a',
                   borderRadius: '6px',
                   boxShadow: isNear 
                     ? '0 4px 14px rgba(0, 0, 0, 0.8), 0 0 16px rgba(245, 158, 11, 0.6)' 
@@ -1132,43 +1458,68 @@ export function StardewInstitutionComplex({
                   transition: 'all 0.18s ease'
                 }}
               >
-                {/* Inner Gold Inlay Fillet */}
+                {/* Inner Frame */}
                 <div
                   style={{
                     width: '100%',
                     height: '100%',
-                    border: '1px solid #b45309',
+                    border: isDiscovered ? '1px solid #b45309' : '1px solid #52525b',
                     borderRadius: '3px',
                     overflow: 'hidden',
                     position: 'relative',
-                    backgroundColor: '#0f172a'
+                    backgroundColor: isDiscovered ? '#0f172a' : '#3f3f46',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}
                 >
-                  <img
-                    src={activeItem?.celebrationImage || activeItem?.imageUrl}
-                    alt={activeItem?.title}
-                    style={{
+                  {isDiscovered ? (
+                    <>
+                      <img
+                        src={activeItem?.imageUrl || activeItem?.celebrationImage || activeItem?.candidates?.[0]?.imageUrl || generateDynamicFallbackCard(activeItem?.title || 'עוגן זיכרון')}
+                        alt={activeItem?.title}
+                        referrerPolicy="no-referrer"
+                        loading="eager"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: activeItem?.objectPosition || 'center center',
+                          display: 'block'
+                        }}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          const fallbackUrl = activeItem?.candidates?.find(c => c.imageUrl && c.imageUrl !== e.target.src)?.imageUrl;
+                          e.target.src = fallbackUrl || generateDynamicFallbackCard(activeItem?.title || 'עוגן זיכרון');
+                        }}
+                      />
+                      {/* Gentle Oil-Painting Glaze */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.1) 100%)',
+                          pointerEvents: 'none'
+                        }}
+                      />
+                    </>
+                  ) : (
+                    /* Gray Mystery Placeholder with Question Mark */
+                    <div style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: activeItem?.celebrationImage ? 'cover' : 'contain',
-                      objectPosition: activeItem?.objectPosition || 'center center',
-                      display: 'block'
-                    }}
-                    onError={(e) => {
-                      if (activeItem?.imageUrl && e.target.src !== activeItem.imageUrl) {
-                        e.target.src = activeItem.imageUrl;
-                      }
-                    }}
-                  />
-                  {/* Gentle Oil-Painting Glaze */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.1) 100%)',
-                      pointerEvents: 'none'
-                    }}
-                  />
+                      backgroundColor: '#27272a',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#a1a1aa',
+                      userSelect: 'none'
+                    }}>
+                      <span style={{ fontSize: '1.4rem', fontWeight: 900, color: '#e4e4e7', textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>❓</span>
+                      <span style={{ fontSize: '0.62rem', fontWeight: 700, color: '#a1a1aa', marginTop: '-2px' }}>לחץ לגילוי</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1706,29 +2057,64 @@ export function StardewInstitutionComplex({
           door={activeQuizDoor}
           onClose={() => setActiveQuizDoor(null)}
           onUnlockDoor={(door) => handlePassDoorQuiz(door)}
+          practiceItems={activePracticeStations}
         />
       )}
 
-      {/* Persistent Black Version Tag in Bottom Corner */}
+      {/* Persistent Bottom Bar with Version Tag and Mnemonic Studio Trigger */}
       <div 
         style={{
           position: 'fixed',
           bottom: '12px',
           left: '12px',
           zIndex: 99999,
-          backgroundColor: '#ffffff',
-          border: '2.5px solid #000000',
-          color: '#000000',
-          fontWeight: 900,
-          fontSize: '0.9rem',
-          padding: '5px 12px',
-          borderRadius: '8px',
-          boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
-          fontFamily: 'Rubik, sans-serif',
-          pointerEvents: 'none'
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px'
         }}
       >
-        גרסה: 5.5
+        <div 
+          style={{
+            backgroundColor: '#ffffff',
+            border: '2.5px solid #000000',
+            color: '#000000',
+            fontWeight: 900,
+            fontSize: '0.9rem',
+            padding: '5px 12px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
+            fontFamily: 'Rubik, sans-serif',
+            pointerEvents: 'none'
+          }}
+        >
+          גרסה: 7.0
+        </div>
+
+        {/* 🌟 Mnemonic Image & Association Studio Quick-Launcher Button */}
+        <button
+          onClick={() => setIsMnemonicStudioOpen(true)}
+          style={{
+            backgroundColor: '#10b981',
+            border: '2px solid #047857',
+            color: '#ffffff',
+            fontWeight: 800,
+            fontSize: '0.88rem',
+            padding: '6px 14px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 14px rgba(16, 185, 129, 0.45)',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            fontFamily: 'Rubik, sans-serif',
+            transition: 'all 0.15s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#059669'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#10b981'}
+          title="פתח את סטודיו העלאת התמונות וניהול האסוציאציות"
+        >
+          <span>🧠 העלאת תמונות ואסוציאציות</span>
+        </button>
       </div>
 
       {/* 11. Full-Screen High Definition Loci Item Inspection Modal */}
@@ -1736,7 +2122,15 @@ export function StardewInstitutionComplex({
         <LociItemInspectionModal
           isOpen={!!selectedLociItem}
           item={selectedLociItem}
-          onClose={() => setSelectedLociItem(null)}
+          grandFinaleStory={grandPalaceStory}
+          onClose={() => {
+            const current = selectedLociItem;
+            setSelectedLociItem(null);
+            if (current && (current.order >= 5 || current.isLastStation)) {
+              setCelebrationData(current);
+            }
+          }}
+          onUpdateImage={(newImg, newAnchor) => handleUpdateStationImage(selectedLociItem, newImg, newAnchor)}
         />
       )}
 
@@ -1745,9 +2139,24 @@ export function StardewInstitutionComplex({
         <LociSurpriseCelebrationModal
           isOpen={!!celebrationData}
           data={celebrationData}
+          grandFinaleStory={grandPalaceStory}
           onClose={() => setCelebrationData(null)}
+          onUpdateImage={(newImg, newAnchor) => handleUpdateStationImage(celebrationData, newImg, newAnchor)}
         />
       )}
+
+      {/* 13. Quick List Input Modal (Autonomous Behind-the-Scenes Engine) */}
+      <QuickListInputModal
+        isOpen={isQuickListModalOpen}
+        onClose={() => setIsQuickListModalOpen(false)}
+        onGenerateList={handleGenerateQuickList}
+      />
+
+      {/* 14. Mnemonic Quality Studio & Visual Inspector */}
+      <MnemonicStudioModal
+        isOpen={isMnemonicStudioOpen}
+        onClose={() => setIsMnemonicStudioOpen(false)}
+      />
     </div>
   );
 }

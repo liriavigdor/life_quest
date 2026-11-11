@@ -17,15 +17,15 @@ export const COMPLEX_ZONES = [
   {
     id: 'entry_foyer',
     rects: [
-      [456, 430, 734, 556],       // Main foyer floor
-      [734, 520, 764, 556],       // Inset cloak alcove nook
-      [575, 420, 615, 430],       // Mouth to N-S tunnel C3 (widened)
-      [550, 556, 640, 584]        // Exit doorway stoop to village
+      [430, 396, 694, 556],       // Main foyer floor (shifted left to x:420..710)
+      [694, 520, 724, 556],       // Inset cloak alcove nook
+      [304, 416, 436, 460],       // Distinct Corridor C-West tunnel (100px long!)
+      [510, 556, 600, 584]        // Exit doorway stoop to village
     ],
     // Chamfer cut: [x1, y1, x2, y2, type]
-    // SW chamfer from (456, 534) to (480, 556):
+    // SW chamfer from (420, 534) to (456, 570):
     cuts: [
-      { x1: 456, y1: 532, x2: 482, y2: 556, check: (x, y) => (y - 532) > (x - 456) * 0.92 }
+      { x1: 420, y1: 532, x2: 456, y2: 556, check: (x, y) => (y - 532) > (x - 420) * 0.92 }
     ]
   },
 
@@ -33,30 +33,29 @@ export const COMPLEX_ZONES = [
   {
     id: 'main_hall',
     rects: [
-      [446, 118, 744, 326],       // Main grand hall floor
+      [446, 118, 744, 296],       // Main grand hall floor
       [622, 86, 688, 118],        // Asymmetric off-center hearth alcove
-      [575, 326, 615, 420],       // N-S corridor tunnel C3 (56px wide)
-      [364, 226, 446, 270],       // W-E corridor tunnel C1 (56px opening)
+      [304, 226, 446, 270],       // Corridor C1 tunnel (lengthened to 110px!)
       [744, 226, 826, 270]        // East connector tunnel C2 (56px opening)
     ],
     cuts: [
-      // Grand Hall SW chamfer from (446, 302) to (468, 326)
-      { x1: 446, y1: 302, x2: 468, y2: 326, check: (x, y) => (y - 302) > (x - 446) * 1.09 }
+      // Grand Hall SW chamfer into C1 south sill
+      { x1: 446, y1: 272, x2: 468, y2: 296, check: (x, y) => (y - 272) > (x - 446) * 1.09 }
     ]
   },
 
-  // 3. Left Wing (Room A / Urgent Wing)
+  // 3. Left Wing (Room A / Urgent Wing - Room 2)
   {
     id: 'left_store',
     rects: [
-      [96, 160, 364, 296],        // NW wing main room (A1)
-      [96, 100, 174, 160],        // Raised bed nook
-      [96, 296, 204, 396],        // Front-jutting nook (A2)
-      [364, 226, 380, 270]        // Corridor mouth C1
+      [116, 216, 304, 456],       // Room 2 main room (lowered down!)
+      [116, 156, 194, 216],       // Raised bed nook
+      [304, 416, 340, 460],       // Connector to Corridor C-West from Foyer
+      [304, 226, 340, 270]        // Connector to Corridor C1 to Grand Hall
     ],
     cuts: [
-      // Front-jut A2 SW chamfer from (96, 368) to (124, 396)
-      { x1: 96, y1: 368, x2: 124, y2: 396, check: (x, y) => (y - 368) > (x - 96) * 1.0 }
+      // Room 2 SW chamfer from (100, 434) to (136, 470)
+      { x1: 100, y1: 428, x2: 136, y2: 456, check: (x, y) => (y - 428) > (x - 100) * 1.0 }
     ]
   },
 
@@ -84,15 +83,15 @@ const inRect = (x, y, r) => x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3];
  */
 export function isWalkable(x, y, doorsState = {}) {
   // Check locked physical doors blocking corridor transitions:
-  // 1. Door C3 (Foyer to Grand Hall)
+  // 1. Door C3 (Foyer to Left Wing Corridor C-West)
   if (doorsState.door_c3 !== false) {
-    if (x >= 560 && x <= 630 && y >= 340 && y <= 415) {
+    if (x >= 350 && x <= 385 && y >= 408 && y <= 468) {
       return false; // Physical closed wooden door
     }
   }
-  // 2. Door C1 (Grand Hall to Left Wing)
+  // 2. Door C1 (Grand Hall to Left Wing Corridor C1)
   if (doorsState.door_c1 !== false) {
-    if (x >= 370 && x <= 430 && y >= 210 && y <= 286) {
+    if (x >= 355 && x <= 395 && y >= 210 && y <= 286) {
       return false;
     }
   }
@@ -155,7 +154,7 @@ export function snapToWalkable(x, y, doorsState = {}) {
     });
   });
 
-  return best || { x: 595, y: 510 };
+  return best || { x: 555, y: 510 };
 }
 
 /**
@@ -217,21 +216,23 @@ export function resolveMove(prev, dx, dy, doorsState = {}) {
  * Dense Navigation Waypoint Mesh connecting all 4 chambers, corridors, and doorways.
  */
 export const NAV_HUBS = [
-  // Foyer
-  { id: 'foyer_exit', x: 595, y: 575 },
-  { id: 'foyer_bottom', x: 595, y: 540 },
-  { id: 'foyer_center', x: 595, y: 490 },
-  { id: 'foyer_left', x: 500, y: 490 },
-  { id: 'foyer_right', x: 690, y: 490 },
-  { id: 'foyer_nook', x: 745, y: 540 },
-  { id: 'foyer_top', x: 595, y: 440 },
+  // Foyer (Room 1 - shifted left to x:420..710)
+  { id: 'foyer_exit', x: 555, y: 575 },
+  { id: 'foyer_bottom', x: 555, y: 540 },
+  { id: 'foyer_center', x: 555, y: 470 },
+  { id: 'foyer_top', x: 555, y: 410 },
+  { id: 'foyer_left', x: 430, y: 438 },
+  { id: 'foyer_right', x: 650, y: 470 },
+  { id: 'foyer_nook', x: 705, y: 540 },
 
-  // Corridor C3 (Foyer <-> Grand Hall)
-  { id: 'c3_mid', x: 595, y: 375 },
+  // Distinct Corridor C-West (Room 1 Foyer <-> Room 2 - 100px long!)
+  { id: 'c_west_foyer', x: 410, y: 438 },
+  { id: 'c_west_mid', x: 365, y: 438 },
+  { id: 'c_west_left', x: 320, y: 438 },
 
-  // Grand Hall
-  { id: 'hall_bottom', x: 595, y: 310 },
-  { id: 'hall_center', x: 595, y: 248 },
+  // Grand Hall (Room 3)
+  { id: 'hall_bottom', x: 595, y: 270 },
+  { id: 'hall_center', x: 595, y: 220 },
   { id: 'hall_west', x: 470, y: 248 },
   { id: 'hall_east', x: 720, y: 248 },
   { id: 'hall_nw', x: 470, y: 150 },
@@ -239,19 +240,18 @@ export const NAV_HUBS = [
   { id: 'hearth_mouth', x: 655, y: 118 },
   { id: 'hearth_top', x: 655, y: 95 },
 
-  // Corridor C1 (Grand Hall <-> Left Wing)
-  { id: 'c1_east', x: 440, y: 248 },
-  { id: 'c1_mid', x: 405, y: 248 },
-  { id: 'c1_west', x: 370, y: 248 },
+  // Corridor C1 (Room 2 <-> Grand Hall Room 3 - lengthened to 110px!)
+  { id: 'c1_east', x: 430, y: 248 },
+  { id: 'c1_mid', x: 375, y: 248 },
+  { id: 'c1_west', x: 320, y: 248 },
 
-  // Left Wing (Urgent / Store)
-  { id: 'left_center', x: 260, y: 248 },
-  { id: 'left_west', x: 135, y: 248 },
-  { id: 'left_nook_step', x: 135, y: 160 },
-  { id: 'left_bed_nook', x: 135, y: 120 },
-  { id: 'left_front_mid', x: 135, y: 310 },
-  { id: 'left_front_deep', x: 135, y: 370 },
-  { id: 'left_front_east', x: 180, y: 350 },
+  // Left Wing (Room 2 - lowered down!)
+  { id: 'left_center', x: 210, y: 340 },
+  { id: 'left_bed_nook', x: 155, y: 180 },
+  { id: 'left_nook_step', x: 155, y: 210 },
+  { id: 'left_c1_mouth', x: 310, y: 248 },
+  { id: 'left_c_west_mouth', x: 310, y: 438 },
+  { id: 'left_sw', x: 140, y: 438 },
 
   // Corridor C2 (Grand Hall <-> East Wing North)
   { id: 'c2_west', x: 750, y: 248 },

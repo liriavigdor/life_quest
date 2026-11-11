@@ -1,0 +1,2847 @@
+[
+  {
+    "id": "indiana_jones_hero",
+    "name": "אינדיאנה ג'ונס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "luke_skywalker",
+    "name": "לוק סקייווקר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "han_solo",
+    "name": "האן סולו",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "princess_leia",
+    "name": "הנסיכה ליאה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "neo_matrix",
+    "name": "ניאו (המטריקס)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "morpheus_matrix",
+    "name": "מורפיאוס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "trinity_matrix",
+    "name": "טריניטי",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "frodo_baggins",
+    "name": "פרודו באגינס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "aragorn_ranger",
+    "name": "ארגורן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "gimli_dwarf",
+    "name": "גימלי הגמד",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "hermione_granger",
+    "name": "הרמיוני גריינג'ר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "ron_weasley",
+    "name": "רון וויזלי",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "albus_dumbledore",
+    "name": "אלבוס דמבלדור",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "severus_snape",
+    "name": "סוורוס סנייפ",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "jack_sparrow_captain",
+    "name": "קפטן ג'ק ספארו",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "vito_corleone",
+    "name": "דון ויטו קורליאונה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "michael_corleone",
+    "name": "מייקל קורליאונה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tony_montana",
+    "name": "טוני מונטנה (פני צלקת)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "rocky_balboa",
+    "name": "רוקי בלבואה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "john_rambo",
+    "name": "ג'ון רמבו",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "sarah_connor",
+    "name": "שרה קונור",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "marty_mcfly",
+    "name": "מרטי מקפליי",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "doc_brown",
+    "name": "דוק בראון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "forrest_gump_bench",
+    "name": "פורסט גאמפ",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "gladiator_maximus",
+    "name": "מקסימוס (גלדיאטור)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "william_wallace_braveheart",
+    "name": "ויליאם וואלאס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "spock_vulcan",
+    "name": "ספוק",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "captain_kirk",
+    "name": "קפטן קירק",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "walter_white_heisenberg",
+    "name": "וולטר ווייט (הייזנברג)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "jesse_pinkman",
+    "name": "ג'סי פינקמן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tony_soprano",
+    "name": "טוני סופרנו",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "don_draper",
+    "name": "דון דרייפר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "sherlock_cumberbatch",
+    "name": "שרלוק (בנדיקט קמברבאץ')",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "saruman_the_white",
+    "name": "סרומן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "galadriel_elf_queen",
+    "name": "גלדריאל",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "samwise_gamgee",
+    "name": "סמווייז גמג'י",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "hagrid_rubeus",
+    "name": "רובאוס האגריד",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "lucius_malfoy",
+    "name": "לוציוס מאלפוי",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "bellatrix_lestrange",
+    "name": "בלטריקס לסטריינג'",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "voldemort_dark_lord",
+    "name": "וולדמורט (הלורד האפל)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "sirius_black",
+    "name": "סיריוס בלק",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "remus_lupin",
+    "name": "רמוס לופין",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "minerva_mcgonagall",
+    "name": "מינרווה מקגונגל",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "dobby_free_elf",
+    "name": "דובי גמד הבית",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "clint_eastwood_blondie",
+    "name": "הטוב (קלינט איסטווד)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "marilyn_monroe_dress",
+    "name": "מרילין מונרו",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "audrey_hepburn_breakfast",
+    "name": "אודרי הפבורן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "elvis_presley_king",
+    "name": "אלביס פרסלי (המלך)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "michael_jackson_thriller",
+    "name": "מייקל ג'קסון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "freddie_mercury_wembly",
+    "name": "פרדי מרקורי (הופעה)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "madonna_like_a_virgin",
+    "name": "מדונה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "david_bowie_ziggy",
+    "name": "דייוויד בואי (זיגי סטארדאסט)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "prince_purple_rain",
+    "name": "פרינס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "bob_marley_legend",
+    "name": "בוב מארלי",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "john_lennon_imagine",
+    "name": "ג'ון לנון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "paul_mccartney_beatle",
+    "name": "פול מקרטני",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "george_harrison_beatle",
+    "name": "ג'ורג' האריסון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "ringo_starr_beatle",
+    "name": "רינגו סטאר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "bruce_springsteen_boss",
+    "name": "ברוס ספרינגסטין (הבוס)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "bob_dylan_harmonica",
+    "name": "בוב דילן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "mick_jagger_stones",
+    "name": "מיק ג'אגר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "keith_richards_guitar",
+    "name": "קית' ריצ'רדס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "jimi_hendrix_woodstock",
+    "name": "ג'ימי הנדריקס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "kurt_cobain_nirvana",
+    "name": "קורט קוביין",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "slash_guns_n_roses",
+    "name": "סלאש",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "axl_rose_guns",
+    "name": "אקסל רוז",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "kyoto_kinkakuji_golden",
+    "name": "מקדש הזהב בקיוטו",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "alhambra_granada_palace",
+    "name": "ארמון אלהמברה (גרנדה)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "forbidden_city_beijing",
+    "name": "העיר האסורה (בייג'ינג)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "kilimanjaro_snow_peak",
+    "name": "הר קילימנג'רו",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "game_boy_nintendo_retro",
+    "name": "גיים בוי (נינטנדו)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "walkman_sony_cassette",
+    "name": "ווקמן סוני (קלטות)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "polaroid_onestep_camera",
+    "name": "מצלמת פולרואיד קלאסית",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "rubiks_cube_solved",
+    "name": "קוביה הונגרית (רוביק)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "swiss_army_knife_victorinox",
+    "name": "אולר שוויצרי (ויקטורינוקס)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "feather_quill_inkwell",
+    "name": "עט נוצה וקסת דיו",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "flying_carpet_aladdin",
+    "name": "שטיח קסמים מעופף",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "aladdin_magic_lamp_gold",
+    "name": "מנורת הקסמים של אלאדין",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "pirate_treasure_map",
+    "name": "מפת אוצר של פיראטים",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "astrolabe_brass_navigation",
+    "name": "אצטרולב ימי מפליז",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "viking_longship_dragon",
+    "name": "ספינת דרקון ויקינגית",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "spitfire_fighter_plane",
+    "name": "מטוס קרב ספיטפייר",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "porsche_911_classic",
+    "name": "פורשה 911 קלאסית",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "tardis_police_box_time",
+    "name": "הטארדיס (דוקטור הו)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "komodo_dragon_lizard",
+    "name": "דרקון קומודו",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "giant_squid_kraken",
+    "name": "דיונון ענק (קראקן)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "manta_ray_flying_water",
+    "name": "חתול ים (מנטה ריי)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "pegasus_winged_horse",
+    "name": "פגסוס (הסוס המכונף)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "phoenix_fire_bird",
+    "name": "עוף החול (פניקס)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "unicorn_white_horn",
+    "name": "חד קרן",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "kraken_sea_monster_ship",
+    "name": "הקראקן (מפלצת הים)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "loch_ness_monster_nessie",
+    "name": "נסי (המפלצת מלוך נס)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "cerberus_three_headed_hound",
+    "name": "קרברוס (כלב השאול)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "luigi_mansion",
+    "name": "לואיג'י",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "princess_peach_cake",
+    "name": "הנסיכה פיץ'",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "bowser_king_koopa",
+    "name": "באוזר (מלך הקופות)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "yoshi_dinosaur",
+    "name": "יושי",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "donkey_kong_bananas",
+    "name": "דונקי קונג",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "link_legend_of_zelda",
+    "name": "לינק (זלדה)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "princess_zelda_hylia",
+    "name": "הנסיכה זלדה",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "ganondorf_king_evil",
+    "name": "גנונדורף",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "charizard_fire_dragon",
+    "name": "צ'ריזארד",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "blastoise_water_cannons",
+    "name": "בלסטויז",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "venusaur_flower",
+    "name": "ונוזאור",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "mewtwo_psychic",
+    "name": "מיוטו",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "miles_tails_prower",
+    "name": "טיילס (שועל שתי הזנבות)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "knuckles_echidna",
+    "name": "נאקלס",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "dr_eggman_robotnik",
+    "name": "ד\"ר רובוטניק (אגמן)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "crash_bandicoot_wumpa",
+    "name": "קראש בנדיקוט",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "spyro_the_dragon",
+    "name": "ספיירו הדרקון",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "kratos_god_of_war",
+    "name": "קרטוס (אל המלחמה)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "atreus_loki",
+    "name": "אטראוס (בן קרטוס)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "master_chief_halo",
+    "name": "מאסטר צ'יף (היילו)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "lara_croft_tomb_raider",
+    "name": "לארה קרופט (טומב ריידר)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "nathan_drake_uncharted",
+    "name": "ניית'ן דרייק (אנצ'רטד)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "solid_snake_metal_gear",
+    "name": "סוליד סנייק",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "geralt_of_rivia",
+    "name": "גרלט מריביה (המכשף)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "arthur_morgan_rdr2",
+    "name": "ארתור מורגן",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "john_marston_cowboy",
+    "name": "ג'ון מרסטון",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "ellie_last_of_us",
+    "name": "אלי (האחרונים מבינינו)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "joel_miller_last_of_us",
+    "name": "ג'ואל מילר",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "cloud_strife_buster_sword",
+    "name": "קלאוד סטרייף",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "mega_man_blue_bomber",
+    "name": "מגה מן (המפציץ הכחול)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "ryu_street_fighter",
+    "name": "ריו (סטריט פייטר)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "ken_masters_fire",
+    "name": "קן מאסטרס",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "chun_li_spinning_bird",
+    "name": "צ'אן לי",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "sub_zero_mortal_kombat",
+    "name": "סאב זירו (מורטל קומבט)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "scorpion_get_over_here",
+    "name": "סקורפיון (מורטל קומבט)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "goofy_disney",
+    "name": "גופי",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "daffy_duck_spit",
+    "name": "דאפי דאק",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "woody_toy_story",
+    "name": "וודי (צעצוע של סיפור)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "buzz_lightyear_space",
+    "name": "באז שנות-אור",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "puss_in_boots_eyes",
+    "name": "החתול במגפיים",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "scar_lion_king",
+    "name": "סקאר",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "genie_aladdin_lamp",
+    "name": "הג'יני (אלאדין)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "aladdin_prince_ali",
+    "name": "אלאדין",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "princess_jasmine_tiger",
+    "name": "הנסיכה יסמין",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "mulan_warrior_sword",
+    "name": "מולאן",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "pocahontas_wind",
+    "name": "פוקהונטס",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "elsa_frozen_ice",
+    "name": "אלזה (לשבור את הקרח)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "anna_frozen_cape",
+    "name": "אנה (לשבור את הקרח)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "moana_wayfinder",
+    "name": "מואנה",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "maui_demigod_hook",
+    "name": "מאווי (חצי אל)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "megara_purple_dress",
+    "name": "מגארה (מג)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "hades_blue_fire",
+    "name": "האדס (אל השאול בדיסני)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "remy_ratatouille_chef",
+    "name": "רמי (רטטוי)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "linguini_ratatouille",
+    "name": "אלפרדו לינגוויני",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "anton_ego_critic",
+    "name": "אנטון אגו (מבקר המסעדות)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "wall_e_robot_plant",
+    "name": "וול-אי",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "eve_white_robot",
+    "name": "איב (וול-אי)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "carl_fredricksen_up",
+    "name": "קארל פרדריקסן (למעלה)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "russell_wilderness_explorer",
+    "name": "ראסל (סייר הטבע)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "nemo_clownfish_lucky",
+    "name": "נמו (מוצאים את נמו)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "dory_blue_tang_forget",
+    "name": "דורי (דגה כחולה)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "sulley_monsters_inc",
+    "name": "סאלי (מפלצות בע\"מ)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "mike_wazowski_eye",
+    "name": "מייק ווזאובסקי",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "boo_monsters_inc",
+    "name": "בו (הילדה הקטנה)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "lightning_mcqueen_95",
+    "name": "ספידי מקווין (מכוניות)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "mater_tow_truck",
+    "name": "מטור (גרר חלוד)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "charlie_chaplin_tramp",
+    "name": "צ'ארלי צ'פלין (הנווד)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "buster_keaton_silent",
+    "name": "בסטר קיטון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "john_wick_keanu",
+    "name": "ג'ון וויק",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "ethan_hunt_mission",
+    "name": "איתן האנט (משימה בלתי אפשרית)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tyler_durden_fight_club",
+    "name": "טיילר דרדן (מועדון קרב)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "travis_bickle_taxi_driver",
+    "name": "טראוויס ביקל (נהג מונית)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "patrick_bateman_psycho",
+    "name": "פטריק בייטמן (אמריקן פסיכו)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "hannibal_lecter_mask",
+    "name": "חניבעל לקטר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "jack_torrance_shining",
+    "name": "ג'ק טורנס (הניצוץ)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "norman_bates_psycho",
+    "name": "נורמן בייטס (פסיכו)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "pennywise_clown_balloon",
+    "name": "פניווייז (הליצן המרקד)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "freddy_krueger_glove",
+    "name": "פרדי קרוגר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "jason_voorhees_hockey",
+    "name": "ג'ייסון וורהיס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "michael_myers_halloween",
+    "name": "מייקל מאיירס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "yoda_master_starwars",
+    "name": "מאסטר יודה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "obi_wan_kenobi",
+    "name": "אובי-וואן קנובי",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "chewbacca_wookiee",
+    "name": "צ'ובאקה (ווקי)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "c_3po_gold_droid",
+    "name": "סי-3פי-או (C-3PO)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "boba_fett_mandalorian",
+    "name": "בובה פט",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "mandalorian_din_djarin",
+    "name": "המנדלוריאן (דין דג'ארין)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "baby_yoda_grogu",
+    "name": "גרוגו (בייבי יודה)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "willy_wonka_chocolate",
+    "name": "ווילי וונקה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "dorothy_ruby_slippers",
+    "name": "דורותי (הקוסם מארץ עוץ)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "wicked_witch_west",
+    "name": "המכשפה המרשעת מהמערב",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tin_man_oil_can",
+    "name": "איש הפח (הקוסם מארץ עוץ)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "scarecrow_oz_brain",
+    "name": "הדחליל (הקוסם מארץ עוץ)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "cowardly_lion_badge",
+    "name": "האריה הפחדן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "davy_jones_tentacles",
+    "name": "דייווי ג'ונס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "mr_bean_teddy",
+    "name": "מיסטר בין",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "mrs_doubtfire_robin",
+    "name": "גברת דאוטפייר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "ace_ventura_hair",
+    "name": "אייס ונטורה (בלש חיות)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "the_mask_stanley",
+    "name": "המסיכה (ג'ים קארי)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "ellen_ripley_flamethrower",
+    "name": "אלן ריפלי (הנוסע השמיני)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "xenomorph_alien_queen",
+    "name": "החייזר (קסנומורף)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "goku_super_saiyan",
+    "name": "סון גוקו (סופר סאיין)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "vegeta_saiyan_prince",
+    "name": "וג'יטה (נסיך הסאיינים)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "naruto_uzumaki_hokage",
+    "name": "נארוטו אוזומאקי",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "sasuke_uchiha_sharingan",
+    "name": "סאסקה אוצ'יהא",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "luffy_straw_hat_pirate",
+    "name": "מונקי די לופי (וואן פיס)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "sailor_moon_usagi",
+    "name": "סיילור מון",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "totoro_umbrella_bus",
+    "name": "טוטורו (השכן שלי טוטורו)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "spirited_away_no_face",
+    "name": "ללא-פנים (המסע המופלא)",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "pompeii_ruins_vesuvius",
+    "name": "הריסות פומפיי והר וזוב",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "giant_redwood_hyperion",
+    "name": "עץ סקוויה ענק (רדווד)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "salar_de_uyuni_mirror",
+    "name": "מדבר המלח של אויוני (בוליביה)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "monopoly_rich_uncle",
+    "name": "מר מונופול (הדוד העשיר)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "barbie_doll_classic",
+    "name": "בובת ברבי",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "hot_wheels_red_car",
+    "name": "מכונית הוט ווילס",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "zinedine_zidane_volley",
+    "name": "זינדין זידאן",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "ronaldinho_gaucho_smile",
+    "name": "רונאלדיניו",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "ronaldo_nazario_r9",
+    "name": "רונאלדו הברזילאי (פנומנו)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "david_beckham_freekick",
+    "name": "דייוויד בקהאם",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "luka_modric_ballon_dor",
+    "name": "לוקה מודריץ'",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "erling_haaland_viking",
+    "name": "ארלינג הולאנד",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "kylian_mbappe_arms",
+    "name": "קיליאן אמבפה",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "zlatan_ibrahimovic_bicycle",
+    "name": "זלאטן איברהימוביץ'",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "johan_cruyff_turn",
+    "name": "יוהאן קרויף",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "franz_beckenbauer_kaiser",
+    "name": "פרנץ בקנבאואר (הקייזר)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "bruce_lee_dragon",
+    "name": "ברוס לי",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "conor_mcgregor_walk",
+    "name": "קונור מקגרגור",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "sun_tzu_art_of_war",
+    "name": "סאן דזה (אמנות המלחמה)",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "confucius_philosophy",
+    "name": "קונפוציוס",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "buddha_siddhartha",
+    "name": "בודהה (סידהארתא גואטמה)",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "lao_tzu_tao",
+    "name": "לאו דזה (ספר הטאו)",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "gilgamesh_epic_hero",
+    "name": "גלגמש (מלך ארך)",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "william_the_conqueror",
+    "name": "ויליאם הכובש",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "henry_viii_tudor",
+    "name": "הנרי השמיני",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "richard_feynman_chalkboard",
+    "name": "איבן האיום (איוואן הרביעי)",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "attila_the_hun_warrior",
+    "name": "אטילה ההוני (שוט האלוהים)",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "kublai_khan_palace",
+    "name": "קובלאי חאן",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "sauron_eye_mordor",
+    "name": "סאורון (העין של מורדור)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "witch_king_angmar",
+    "name": "מלך המכשפות של אנגמאר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "thorin_oakenshield",
+    "name": "תורין צינת-אלון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "smaug_the_dragon_gold",
+    "name": "סמאוג הדרקון",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "agent_smith_matrix",
+    "name": "הסוכן סמית' (המטריקס)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "vincent_vega_dance",
+    "name": "וינסנט וגה",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "mia_wallace_milkshake",
+    "name": "מיה וואלאס",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "beatrix_kiddo_yellow",
+    "name": "ביאטריקס קידו (הכלה)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "mad_max_interceptor",
+    "name": "מקס הזועם (רוקטאנסקי)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "john_mcclane_die_hard",
+    "name": "ג'ון מקליין (מת לחיות)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "rick_grimes_colt",
+    "name": "ריק גריימס (המתים המהלכים)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "jon_snow_longclaw",
+    "name": "ג'ון סנואו (משחקי הכס)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "daenerys_targaryen_dragons",
+    "name": "דאינריז טארגאריין",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tyrion_lannister_wine",
+    "name": "טיריון לאניסטר",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tommy_shelby_peaky",
+    "name": "טומי שלבי (כנופיית ברמינגהם)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "michael_scott_dunder",
+    "name": "מייקל סקוט (המשרד)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "dwight_schrute_beet",
+    "name": "דווייט שרוט (עוזר למנהל)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "goku_dragon_ball",
+    "name": "קאקאשי הטאקה",
+    "cat": "gaming_animation"
+  },
+  {
+    "id": "siberian_tiger_snow",
+    "name": "טיגריס סיבירי",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "black_panther_melanistic",
+    "name": "פנתר שחור (יגואר שחור)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "jaguar_amazon_bite",
+    "name": "יגואר (אמזונס)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "arctic_fox_pure_white",
+    "name": "שועל שלג (שועל ארקטי)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "spotted_hyena_pack",
+    "name": "צבוע מנוקד",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "platypus_bill_poison",
+    "name": "ברווזן (פלטיפוס)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "white_rhinoceros_horn",
+    "name": "קרנף רחב-שפה (קרנף לבן)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "hippopotamus_water_yawn",
+    "name": "היפופוטם (סוס יאור)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "silverback_gorilla_chest",
+    "name": "גורילת שפלה (גב-כסף)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "sperm_whale_deep_dive",
+    "name": "ראשתן גדול-ראש",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "sea_turtle_coral_glide",
+    "name": "צב ים ירוק",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "friedrich_nietzsche_mustache",
+    "name": "פרידריך ניטשה",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "ephraim_kishon_author",
+    "name": "אפרים קישון",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "zeev_revach_chacham",
+    "name": "זאב רווח (חכם חנוכה)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "yehuda_barkan_metsitsim",
+    "name": "יהודה בארקאן",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "tzvika_pick_maestro",
+    "name": "צביקה פיק (המאסטרו)",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "dana_international_eurovision",
+    "name": "דנה אינטרנשיונל",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "netta_barzilai_toy",
+    "name": "נטע ברזילי",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "yigal_shilon_cigar",
+    "name": "יגאל שילון (פספוסים)",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "dudu_topaz_king",
+    "name": "דודו טופז",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "james_webb_telescope",
+    "name": "טלסקופ החלל ג'יימס וב",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "hubble_telescope_orbit",
+    "name": "טלסקופ החלל האבל",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "curiosity_mars_rover",
+    "name": "רכב החלל קיוריוסיטי (מאדים)",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "voyager_golden_record",
+    "name": "תקליט הזהב של וויאג'ר",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "sputnik_1_satellite",
+    "name": "ספוטניק 1 (הלוויין הראשון)",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "iss_space_station",
+    "name": "תחנת החלל הבינלאומית (ISS)",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "cern_hadron_collider",
+    "name": "מאיץ החלקיקים ב-CERN",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "dna_double_helix_model",
+    "name": "סליל ה-DNA (הסליל הכפול)",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "penicillin_mold_discovery",
+    "name": "פניצילין (תגלית האנטיביוטיקה)",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "chinese_dragon_long",
+    "name": "דרקון סיני (לונג)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "european_dragon_fire",
+    "name": "דרקון אירופאי (יורק אש)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "medusa_gorgon_snakes",
+    "name": "מדוזה (הגורגונה)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "minotaur_labyrinth_bull",
+    "name": "המינוטאור (שור המבוך)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "centaur_archer_horse",
+    "name": "קנטאור (חצי אדם חצי סוס)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "siren_mermaid_rock",
+    "name": "סירנה / בת ים",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "golem_of_prague",
+    "name": "הגולם מפראג",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "anubis_jackal_god",
+    "name": "סובק (אל התנינים המצרי)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "quetzalcoatl_feathered_serpent",
+    "name": "קצלזקואטל (הנחש המכונף)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "lamborghini_countach_white",
+    "name": "למבורגיני קונטאש",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "ferrari_testarossa_red",
+    "name": "פרארי טסטרוסה",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "jaguar_e_type_roadster",
+    "name": "יגואר E-טייפ",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "shelby_cobra_427",
+    "name": "שלבי קוברה 427",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "ford_mustang_1967_fastback",
+    "name": "פורד מוסטנג 1967 (פאסטבק)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "chevrolet_corvette_stingray",
+    "name": "שברולט קורבט סטינגריי",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "dodge_charger_1969_black",
+    "name": "דודג' צ'ארג'ר 1969 שחורה",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "mercedes_300sl_gullwing",
+    "name": "מרצדס 300 SL גולווינג",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "mini_cooper_classic_red",
+    "name": "מיני קופר קלאסית",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "colossus_of_rhodes_ancient",
+    "name": "הקולוסוס מרודוס (פסל הענק)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "hanging_gardens_of_babylon",
+    "name": "הגנים התלויים של בבל",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "dead_sea_scrolls_jar",
+    "name": "מגילות ים המלח וכד החרס",
+    "cat": "history_figures"
+  },
+  {
+    "id": "angkor_wat_cambodia",
+    "name": "מקדש אנגקור ואט בקמבודיה",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "french_croissant_cafe",
+    "name": "קרואסון חמאה צרפתי וקפה",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "margherita_pizza_woodfire",
+    "name": "פיצה מרגריטה בתנור לבנים",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "origami_paper_crane",
+    "name": "עגור אוריגמי מקופל מנייר",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "venetian_carnival_mask",
+    "name": "מסכה ונציאנית מוזהבת",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "swiss_cheese_fondue_pot",
+    "name": "סיר פונדו גבינה שוויצרי",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "japanese_tea_ceremony_matcha",
+    "name": "קערת מאצ'ה ומקציף במבוק (צ'אסן)",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "mexican_sombrero_hat",
+    "name": "סומבררו מקסיקני רחב שוליים",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "scotland_bagpipes_kilt",
+    "name": "חמת חלילים סקוטית וחצאית משבצות",
+    "cat": "arts_creators"
+  },
+  {
+    "id": "hawaiian_flower_lei",
+    "name": "שרשרת פרחים הוואית (ליי)",
+    "cat": "nature_wildlife"
+  },
+  {
+    "id": "vintage_red_fire_hydrant",
+    "name": "ברז כיבוי אש עירוני אדום",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "retro_jukebox_wurlitzer",
+    "name": "ג'וקבוקס רטרו (מכונת תקליטים)",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "vintage_pinball_machine",
+    "name": "מכונת פינבול (משחקי וידאו רטרו)",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "antique_wooden_cuckoo_clock",
+    "name": "שעון קוקייה שוויצרי מעץ מגולף",
+    "cat": "iconic_objects"
+  },
+  {
+    "id": "julius_caesar",
+    "name": "יוליוס קיסר",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "alexander_the_great",
+    "name": "אלכסנדר מוקדון",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "cleopatra_vii",
+    "name": "קליאופטרה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "napoleon_bonaparte",
+    "name": "נפוליאון בונפרטה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "winston_churchill_pm",
+    "name": "וינסטון צ'רצ'יל",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "abraham_lincoln",
+    "name": "אברהם לינקולן",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "george_washington",
+    "name": "ג'ורג' וושינגטון",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "queen_victoria",
+    "name": "המלכה ויקטוריה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "king_solomon",
+    "name": "שלמה המלך",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "king_david",
+    "name": "דוד המלך",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "ramses_ii",
+    "name": "רעמסס השני",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "marcus_aurelius",
+    "name": "מרקוס אורליוס",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "queen_elizabeth_i",
+    "name": "אליזבת הראשונה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "queen_elizabeth_ii",
+    "name": "אליזבת השנייה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "mahatma_gandhi",
+    "name": "מהטמה גנדי",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "martin_luther_king",
+    "name": "מרטין לותר קינג",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "nelson_mandela",
+    "name": "נלסון מנדלה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "franklin_d_roosevelt",
+    "name": "פרנקלין דלאנו רוזוולט",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "theodore_roosevelt",
+    "name": "תאודור רוזוולט",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "joan_of_arc",
+    "name": "ז'אן ד'ארק",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "catherine_the_great",
+    "name": "יקטרינה הגדולה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "peter_the_great",
+    "name": "פיוטר הגדול",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "charlemagne",
+    "name": "קרל הגדול",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "genghis_khan",
+    "name": "ג'ינגיס חאן",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "cyrus_the_great",
+    "name": "כורש הגדול",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "king_arthur",
+    "name": "המלך ארתור",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "richard_lionheart",
+    "name": "ריצ'רד לב הארי",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "saladin",
+    "name": "סלאח א-דין",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "hammurabi",
+    "name": "חמורבי",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "ben_gurion",
+    "name": "דוד בן גוריון",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "golda_meir",
+    "name": "גולדה מאיר",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "menachem_begin",
+    "name": "מנחם בגין",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "yitzhak_rabin",
+    "name": "יצחק רבין",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "moshe_dayan",
+    "name": "משה דיין",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "shimon_peres",
+    "name": "שמעון פרס",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "zeev_jabotinsky",
+    "name": "זאב ז'בוטינסקי",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "theodor_herzl",
+    "name": "בנימין זאב הרצל",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "hannah_szenes",
+    "name": "חנה סנש",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "eli_cohen",
+    "name": "אלי כהן",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "sarah_aaronsohn",
+    "name": "שרה אהרנסון",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "joseph_trumpeldor",
+    "name": "יוסף טרומפלדור",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "jfk_president",
+    "name": "ג'ון פ. קנדי",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "barack_obama",
+    "name": "ברק אובמה",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "ronald_reagan",
+    "name": "רונלד רייגן",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "bill_clinton",
+    "name": "ביל קלינטון",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "dwight_eisenhower",
+    "name": "דווייט אייזנהאואר",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "nefertiti",
+    "name": "נפרטיטי",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "hatshepsut",
+    "name": "חתשפסות",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "spartacus_gladiator",
+    "name": "ספרטקוס",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "leonidas_sparta",
+    "name": "המלך ליאונידס",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "louis_xiv",
+    "name": "לואי ה-14 מלך השמש",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "marie_antoinette",
+    "name": "מארי אנטואנט",
+    "cat": "history_leaders"
+  },
+  {
+    "id": "ferrari_250_gto_red",
+    "name": "פרארי 250 GTO אדומה",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "delorean_time_machine",
+    "name": "מכונית דלוריאן (מכונת זמן)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "batmobile_tumbler",
+    "name": "באטמוביל (טמבלר)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "concorde_supersonic_jet",
+    "name": "מטוס הקונקורד העל-קולי",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "vespa_scooter_classic",
+    "name": "קטנוע ווספה קלאסי",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "london_red_bus_routemaster",
+    "name": "אוטובוס קומתיים אדום (לונדון)",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "harley_davidson_chopper",
+    "name": "אופנוע הארלי דוידסון",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "orient_express_train",
+    "name": "רכבת האוריינט אקספרס",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "excalibur_sword_stone",
+    "name": "חרב אקסקליבר בסלע",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "trojan_horse_wood",
+    "name": "סוס טרויאני מעץ",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "pandoras_box_myth",
+    "name": "תיבת פנדורה",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "holy_grail_chalice",
+    "name": "הגביע הקדוש",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "stradivarius_violin",
+    "name": "כינור סטרדיוואריוס",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "steinway_grand_piano",
+    "name": "פסנתר כנף סטיינוויי",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "fender_stratocaster_sunburst",
+    "name": "גיטרת פנדר סטראטוקסטר",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "gibson_les_paul_goldtop",
+    "name": "גיטרת גיבסון לס פול",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "sax_selmer_mark_vi",
+    "name": "סקסופון סלמר סימן 6",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "rolex_submariner_watch",
+    "name": "שעון רולקס סאבמרינר",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "omega_speedmaster_moonwatch",
+    "name": "שעון אומגה מונ-ווץ'",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "leica_m3_camera",
+    "name": "מצלמת לייקה M3",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "typewriter_remington_vintage",
+    "name": "מכונת כתיבה רמינגטון",
+    "cat": "cultural_objects"
+  },
+  {
+    "id": "pyramids_of_giza_egypt",
+    "name": "הפירמידות בגיזה",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "machu_picchu_peru",
+    "name": "מאצ'ו פיצ'ו",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "petra_treasury_jordan",
+    "name": "האוצר בפטרה",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "notre_dame_paris_cathedral",
+    "name": "קתדרלת נוטרדאם (פריז)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "saint_peter_basilica_vatican",
+    "name": "בזיליקת פטרוס הקדוש (וותיקן)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "al_aqsa_dome_of_rock",
+    "name": "כיפת הסלע בירושלים",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "mount_everest_himalayas",
+    "name": "הר האוורסט",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "niagara_falls_water",
+    "name": "מפלי הניאגרה",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "victoria_falls_smoke",
+    "name": "מפלי ויקטוריה (העשן הרועם)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "iguazu_falls_jungle",
+    "name": "מפלי איגואסו",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "neuschwanstein_castle_bavaria",
+    "name": "טירת נוישוונשטיין",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "mont_saint_michel_france",
+    "name": "מון סן מישל",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "brandenburg_gate_berlin",
+    "name": "שער ברנדנבורג",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "acropolis_rhodes_colossus",
+    "name": "קולוסוס מרודוס (שחזור)",
+    "cat": "landmarks_wonders"
+  },
+  {
+    "id": "zeus_thunderbolt_king",
+    "name": "זאוס (מלך האלים)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "poseidon_ocean_trident",
+    "name": "פוסידון (אל הים)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "hades_underworld_cerberus",
+    "name": "האדס (שליט השאול)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "athena_goddess_wisdom",
+    "name": "אתנה (אלת החוכמה)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "apollo_god_sun_lyre",
+    "name": "אפולו (אל השמש והמוזיקה)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "artemis_goddess_hunt",
+    "name": "ארטמיס (אלת הציד)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "ares_god_of_war",
+    "name": "ארס (אל המלחמה)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "aphrodite_goddess_love",
+    "name": "אפרודיטה (אלת האהבה)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "hermes_messenger_god",
+    "name": "הרמס (שליח האלים)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "hephaestus_god_forge",
+    "name": "הפייסטוס (אל הנפחים)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "dionysus_god_wine",
+    "name": "דיוניסוס (אל היין)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "heracles_12_labors",
+    "name": "הרקולס (הרקלאס)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "perseus_medusa_head",
+    "name": "פרסאוס",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "theseus_minotaur_maze",
+    "name": "תסאוס",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "jason_argonauts_fleece",
+    "name": "יאסון (והארגונאוטים)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "achilles_troy_heel",
+    "name": "אכילס",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "hector_trojan_prince",
+    "name": "הקטור (נסיך טרויה)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "odysseus_ithaca_journey",
+    "name": "אודיסאוס",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "odin_allfather_ravens",
+    "name": "אודין (האל העליון)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "loki_norse_trickster",
+    "name": "לוקי (הנורדי)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "freya_goddess_valkyrie",
+    "name": "פריה (אלת האהבה הנורדית)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "valkyrie_warrior_wings",
+    "name": "ולקיריה",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "anubis_jackal_scales",
+    "name": "אנוביס (אל התנים המצרי)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "osiris_green_pharaoh",
+    "name": "אוסיריס",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "isis_goddess_wings",
+    "name": "איסיס (אלת הקסם המצרית)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "horus_falcon_eye",
+    "name": "הורוס (אל הבז המצרי)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "ra_sun_god_egypt",
+    "name": "רע (אל השמש המצרי)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "bastet_cat_goddess",
+    "name": "בסתת (אלת החתולים)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "thoth_ibis_scribe",
+    "name": "תחות (אל החוכמה והכתב)",
+    "cat": "mythology_folklore"
+  },
+  {
+    "id": "african_lion_roar",
+    "name": "אריה אפריקאי (מלך החיות)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "bengal_tiger_stripes",
+    "name": "טיגריס בנגלי",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "snow_leopard_mountains",
+    "name": "נמר השלג",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "polar_bear_arctic_ice",
+    "name": "דוב קוטב",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "grizzly_bear_salmon",
+    "name": "דוב גריזלי",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "blue_whale_giant_ocean",
+    "name": "לווייתן כחול",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "killer_whale_orca",
+    "name": "אורקה (לווייתן קטלן)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "cheetah_fastest_sprint",
+    "name": "ברדלס (צ'יטה)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "peregrine_falcon_dive",
+    "name": "בז נודד (הציפור המהירה בעולם)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "king_cobra_hood",
+    "name": "קוברה מלכותית",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "tyrannosaurus_rex_dinosaur",
+    "name": "טירנוזאורוס רקס (טי רקס)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "triceratops_three_horns",
+    "name": "טריצרטופס",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "velociraptor_claw",
+    "name": "ולוצירפטור",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "brachiosaurus_long_neck",
+    "name": "ברכיוזאורוס",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "pterodactyl_flying_dinosaur",
+    "name": "פטרודקטיל (פטרוזאור)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "woolly_mammoth_ice_age",
+    "name": "ממותה צמרית",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "sabertooth_tiger_smilodon",
+    "name": "טיגריס שן-חרב (סמילודון)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "giant_panda_bamboo",
+    "name": "פנדה ענקית",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "koala_eucalyptus_tree",
+    "name": "קואלה",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "flamingo_pink_flock",
+    "name": "פלמינגו (חסידה ורודה)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "golden_eagle_soaring",
+    "name": "עיט זהוב",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "hummingbird_flower_nectar",
+    "name": "קוליברי (יונק דבש)",
+    "cat": "nature_beasts"
+  },
+  {
+    "id": "albert_einstein_icon",
+    "name": "אלברט איינשטיין",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "isaac_newton",
+    "name": "אייזק ניוטון",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "marie_curie",
+    "name": "מארי קירי",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "nikola_tesla",
+    "name": "ניקולה טסלה",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "leonardo_da_vinci",
+    "name": "לאונרדו דה וינצ'י",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "stephen_hawking",
+    "name": "סטיבן הוקינג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "charles_darwin",
+    "name": "צ'ארלס דרווין",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "galileo_galilei",
+    "name": "גלילאו גליליי",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "steve_jobs",
+    "name": "סטיב ג'ובס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "bill_gates_tech",
+    "name": "ביל גייטס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "ada_lovelace",
+    "name": "עדה לאבלייס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "alan_turing",
+    "name": "אלן טיורינג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "alexander_fleming",
+    "name": "אלכסנדר פלמינג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "louis_pasteur",
+    "name": "לואי פסטר",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "archimedes",
+    "name": "ארכימדס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "pythagoras",
+    "name": "פיתגורס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "socrates",
+    "name": "סוקרטס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "plato",
+    "name": "אפלטון",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "aristotle",
+    "name": "אריסטו",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "rene_descartes",
+    "name": "רנה דקארט",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "sigmund_freud",
+    "name": "זיגמונד פרויד",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "carl_jung",
+    "name": "קרל יונג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "j_robert_oppenheimer",
+    "name": "רוברט אופנהיימר",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "richard_feynman",
+    "name": "ריצ'רד פיינמן",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "niels_bohr",
+    "name": "נילס בוהר",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "max_planck",
+    "name": "מקס פלאנק",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "enrico_fermi",
+    "name": "אנריקו פרמי",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "dmitri_mendeleev",
+    "name": "דמיטרי מנדלייב",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "alfred_nobel",
+    "name": "אלפרד נובל",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "thomas_edison",
+    "name": "תומאס אדיסון",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "alexander_graham_bell",
+    "name": "אלכסנדר גרהם בל",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "guglielmo_marconi",
+    "name": "גוליילמו מרקוני",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "johannes_gutenberg",
+    "name": "יוהאן גוטנברג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "wright_brothers",
+    "name": "האחים רייט",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "henry_ford",
+    "name": "הנרי פורד",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "james_watt",
+    "name": "ג'יימס ואט",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "michael_faraday",
+    "name": "מייקל פאראדיי",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "james_clerk_maxwell",
+    "name": "ג'יימס קלרק מקסוול",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "gregor_mendel",
+    "name": "גרגור מנדל",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "edwin_hubble",
+    "name": "אדווין האבל",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "carl_sagan",
+    "name": "קרל סייגן",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "neil_degrasse_tyson",
+    "name": "ניל דה-גראס טייסון",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "mark_zuckerberg",
+    "name": "מארק צוקרברג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "elon_musk_tech",
+    "name": "אילון מאסק",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "grace_hopper",
+    "name": "גרייס הופר",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "jane_goodall",
+    "name": "ג'יין גודול",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "david_attenborough",
+    "name": "דייוויד אטנבורו",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "jonas_salk",
+    "name": "יונה סאלק",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "florence_nightingale",
+    "name": "פלורנס נייטינגייל",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "rosalind_franklin",
+    "name": "רוזלינד פרנקלין",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "chaim_weizmann",
+    "name": "חיים ויצמן",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "daniel_kahneman",
+    "name": "דניאל כהנמן",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "amos_tversky",
+    "name": "עמוס טברסקי",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "ada_yonath",
+    "name": "עדה יונת",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "yuri_gagarin",
+    "name": "יורי גגארין",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "neil_armstrong",
+    "name": "ניל ארמסטרונג",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "buzz_aldrin",
+    "name": "באז אולדרין",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "ilan_ramon",
+    "name": "אילן רמון",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "christopher_columbus",
+    "name": "כריסטופר קולומבוס",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "ferdinand_magellan",
+    "name": "פרדיננד מגלן",
+    "cat": "science_thinkers"
+  },
+  {
+    "id": "lionel_messi_world_cup",
+    "name": "ליונל מסי",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "cristiano_ronaldo_siu",
+    "name": "כריסטיאנו רונאלדו",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "diego_maradona_hand",
+    "name": "דייגו מראדונה",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "kobe_bryant_mamba",
+    "name": "קובי בראיינט (בלאק ממבה)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "lebron_james_chalk",
+    "name": "לברון ג'יימס (המלך)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "stephen_curry_night_night",
+    "name": "סטף קרי",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "shaquille_o_neal_dunk",
+    "name": "שאקיל אוניל",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "magic_johnson_lakers",
+    "name": "מג'יק ג'ונסון",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "larry_bird_celtics",
+    "name": "לארי ברד",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "muhammad_ali_knockout",
+    "name": "מוחמד עלי",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "mike_tyson_iron",
+    "name": "מייק טייסון (איירון מייק)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "usain_bolt_lightning_pose",
+    "name": "יוסיין בולט (תנוחת הברק)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "carl_lewis_olympic",
+    "name": "קרל לואיס",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "michael_phelps_medals",
+    "name": "מייקל פלפס",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "roger_federer_wimbledon",
+    "name": "רוג'ר פדרר",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "rafael_nadal_clay",
+    "name": "רפאל נדאל (מלך החימר)",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "novak_djokovic_trophy",
+    "name": "נובאק ג'וקוביץ'",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "serena_williams_serve",
+    "name": "סרינה ויליאמס",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "tiger_woods_fist_pump",
+    "name": "טייגר וודס",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "michael_schumacher_ferrari",
+    "name": "מיכאל שומאכר",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "lewis_hamilton_mercedes",
+    "name": "לואיס המילטון",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "ayrton_senna_mclaren",
+    "name": "איירטון סנה",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "simone_biles_gymnast",
+    "name": "סימון ביילס",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "nadia_comaneci_perfect_10",
+    "name": "נדיה קומנץ'",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "linoy_ashram_gold",
+    "name": "לינוי אשרם",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "gal_fridman_windsurf",
+    "name": "גל פרידמן",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "yarden_gerbi_judo",
+    "name": "ירדן ג'רבי",
+    "cat": "sports_athletes"
+  },
+  {
+    "id": "thor_god_of_thunder",
+    "name": "תור (אל הרעם)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "black_widow_natasha",
+    "name": "האלמנה השחורה (נטשה)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "hawkeye_clint_barton",
+    "name": "הוקאיי (קלינט בארטון)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "deadpool_wade_wilson",
+    "name": "דדפול (ווייד וילסון)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "doctor_strange_magic",
+    "name": "דוקטור סטריינג'",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "black_panther_t_challa",
+    "name": "הפנתר השחור (טצ'אלה)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "wonder_woman_diana",
+    "name": "וונדר וומן (דיאנה)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "aquaman_arthur_curry",
+    "name": "אקווה מן (ארתור קורי)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "flash_barry_allen",
+    "name": "הפלאש (בארי אלן)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "green_lantern_hal",
+    "name": "גרין לנטרן (האל ג'ורדן)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "ghost_rider_blaze",
+    "name": "גוסט ריידר (ג'וני בלייז)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "professor_x_charles",
+    "name": "פרופסור אקס (צ'ארלס אקסבייר)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "magneto_erik_lehnsherr",
+    "name": "מגנטו (אריק לנשר)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "mystique_raven",
+    "name": "מיסטיק (רייבן)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "thanos_mad_titan",
+    "name": "תאנוס (הטיטאן המטורף)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "loki_god_of_mischief",
+    "name": "לוקי (אל המרמה)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "green_goblin_norman",
+    "name": "הגובלין הירוק (נורמן אוסבורן)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "doctor_octopus_otto",
+    "name": "דוקטור אוקטופוס (אוטו אוקטביוס)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "venom_symbiote",
+    "name": "ונום (סימביוט)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "bane_dark_knight",
+    "name": "ביין",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "riddler_edward_nygma",
+    "name": "איש החידות (רידלר)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "two_face_harvey_dent",
+    "name": "דו-פרצוף (הארווי דנט)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "poison_ivy_pamela",
+    "name": "פויזן אייבי (קיסוס רעיל)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "catwoman_selina_kyle",
+    "name": "אשת החתול (סלינה קייל)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "harley_quinn_classic",
+    "name": "הארלי קווין",
+    "cat": "cinema_tv"
+  },
+  {
+    "id": "groot_guardian",
+    "name": "גרוט (שומרי הגלקסיה)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "rocket_raccoon",
+    "name": "רוקט ראקון",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "star_lord_peter_quill",
+    "name": "סטאר לורד (פיטר קוויל)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "gamora_zen_whoberi",
+    "name": "גאמורה",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "kingpin_wilson_fisk",
+    "name": "קינגפין (וילסון פיסק)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "dr_doom_victor",
+    "name": "דוקטור דום (ויקטור פון דום)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "mr_fantastic_reed",
+    "name": "מיסטר פנטסטיק (ריד ריצ'רדס)",
+    "cat": "superheroes_villains"
+  },
+  {
+    "id": "human_torch_johnny",
+    "name": "הלפיד האנושי (ג'וני סטורם)",
+    "cat": "superheroes_villains"
+  }
+]

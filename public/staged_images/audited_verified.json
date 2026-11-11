@@ -1,0 +1,3118 @@
+[
+  {
+    "batch": 1,
+    "index": 1,
+    "id": "fresh_bread_loaf",
+    "name": "כיכר לחם",
+    "category": "🍞 מאכלים ומאפים",
+    "imageUrl": "/staged_images/pool/fresh_bread_loaf.jpg",
+    "root": "כיכר לחם",
+    "branches": [
+      "לחם",
+      "מאפייה",
+      "טוסט",
+      "כריך"
+    ],
+    "visualNotes": "סלסלת מאפים ולחמניות פריכות בצבע זהוב עשיר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 2,
+    "id": "silver_flute",
+    "name": "חליל צד",
+    "category": "🪈 מוזיקה וכלי נגינה",
+    "imageUrl": "/staged_images/pool/silver_flute.jpg",
+    "root": "חליל צד",
+    "branches": [
+      "מוזיקה",
+      "נגינה",
+      "קונצרט",
+      "חליל"
+    ],
+    "visualNotes": "קלוז-אפ מטאלי מבריק של מפתחות חליל צד מכסף.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 3,
+    "id": "hiking_trail_hiker",
+    "name": "תרמילאי",
+    "category": "🎒 טיולים וטבע",
+    "imageUrl": "/staged_images/pool/hiking_trail_hiker.jpg",
+    "root": "תרמילאי",
+    "branches": [
+      "טיול",
+      "תרמיל",
+      "מסלול",
+      "טבע"
+    ],
+    "visualNotes": "צילום אותנטי מעולה של מטייל עם תרמיל גב בשביל הררי מרהיב.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 4,
+    "id": "vintage_ringing_phone",
+    "name": "טלפון חוגה",
+    "category": "☎️ תקשורת",
+    "imageUrl": "/staged_images/pool/vintage_ringing_phone.jpg",
+    "root": "טלפון חוגה",
+    "branches": [
+      "שיחה",
+      "טלפון",
+      "חיוג",
+      "מוקד"
+    ],
+    "visualNotes": "חוגת טלפון וינטג' אדומה קלאסית עם ספרות ברורות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 8,
+    "id": "mickey_mouse",
+    "name": "מיקי מאוס",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/mickey_mouse.jpg",
+    "root": "מיקי מאוס",
+    "branches": [
+      "דיסני",
+      "אוזניים",
+      "חיוך",
+      "קסם"
+    ],
+    "visualNotes": "דמותו המקורית של מיקי מאוס, עוגן בינלאומי מובהק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 9,
+    "id": "super_mario",
+    "name": "סופר מריו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/super_mario_wonder.jpg",
+    "root": "סופר מריו",
+    "branches": [
+      "אינסטלטור",
+      "סתימה",
+      "שפם",
+      "ברז"
+    ],
+    "visualNotes": "סופר מריו עם כובע אדום וסרבל, מתאים למשימות תחזוקה ואינסטלציה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 10,
+    "id": "pikachu",
+    "name": "פיקאצ'ו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/pikachu_electric_mouse.jpg",
+    "root": "פיקאצ'ו",
+    "branches": [
+      "חשמל",
+      "חשמלאי",
+      "סוללה",
+      "מטען"
+    ],
+    "visualNotes": "פיקאצ'ו פולט מכת ברק וניצוצות – עוגן מובהק לחשמל וטעינה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 11,
+    "id": "sonic_the_hedgehog",
+    "name": "סוניק הקיפוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
+    "root": "סוניק הקיפוד",
+    "branches": [
+      "תספורת",
+      "מספרה",
+      "מהירות",
+      "קוצים"
+    ],
+    "visualNotes": "סוניק עם קוצים כחולים זקופים – עוגן מושלם לתספורת ומספרה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 12,
+    "id": "spider_man",
+    "name": "ספיידרמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/spider_man.jpg",
+    "root": "ספיידרמן",
+    "branches": [
+      "טיפוס",
+      "עכביש",
+      "קיר",
+      "גורד שחקים"
+    ],
+    "visualNotes": "איש העכביש מטפס בזריזות על קיר בניין.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 13,
+    "id": "batman",
+    "name": "באטמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/batman.jpg",
+    "root": "באטמן",
+    "branches": [
+      "לילה",
+      "עטלף",
+      "גלימה",
+      "שמירה"
+    ],
+    "visualNotes": "באטמן במסיכה וגלימה שחורה, חד ודרמטי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 14,
+    "id": "superman",
+    "name": "סופרמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/superman.jpg",
+    "root": "סופרמן",
+    "branches": [
+      "טיסה",
+      "כוח",
+      "שרירים",
+      "חילוץ"
+    ],
+    "visualNotes": "סופרמן במעוף עם סמל S וגלימה אדומה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 15,
+    "id": "barbie_doll",
+    "name": "ברבי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/barbie_doll_classic.jpg",
+    "root": "ברבי",
+    "branches": [
+      "קוסמטיקאית",
+      "שמלה",
+      "איפור",
+      "ציפורניים"
+    ],
+    "visualNotes": "בובת ברבי אלגנטית – עוגן יומיומי מעולה לטיפוח, איפור וקניות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 16,
+    "id": "darth_vader",
+    "name": "דארת' ויידר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/darth_vader_mask.jpg",
+    "root": "דארת' ויידר",
+    "branches": [
+      "נשימה",
+      "שחור",
+      "מסיכה",
+      "רופא"
+    ],
+    "visualNotes": "הקסדה השחורה האיקונית של דארת' ויידר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 17,
+    "id": "homer_simpson",
+    "name": "הומר סימפסון",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/homer_simpson.jpg",
+    "root": "הומר סימפסון",
+    "branches": [
+      "דיאטה",
+      "דונאט",
+      "כרס",
+      "בירה"
+    ],
+    "visualNotes": "הומר סימפסון עם הדונאט הוורוד – עוגן מצוין למאפייה או דיאטה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 18,
+    "id": "shrek",
+    "name": "שרק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/shrek_ogre_swamp.jpg",
+    "root": "שרק",
+    "branches": [
+      "ביצה",
+      "ירוק",
+      "מקלחת",
+      "בוץ"
+    ],
+    "visualNotes": "העוג הירוק החביב ליד הביצה שלו.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 20,
+    "id": "r2_d2",
+    "name": "רובוט R2",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/r2_d2_droid.jpg",
+    "root": "רובוט R2",
+    "branches": [
+      "רובוט",
+      "מחשב",
+      "טכנולוגיה",
+      "תיקון"
+    ],
+    "visualNotes": "דגם R2-D2 עם הראש הכחול והחיישנים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 21,
+    "id": "bugs_bunny",
+    "name": "באגס באני",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/bugs_bunny_carrot.jpg",
+    "root": "באגס באני",
+    "branches": [
+      "גזר",
+      "ירקות",
+      "ירקן",
+      "שיניים"
+    ],
+    "visualNotes": "הארנב הקלאסי לועס גזר טרי – עוגן אידיאלי לקניות אצל הירקן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 22,
+    "id": "winnie_the_pooh",
+    "name": "פו הדב",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/winnie_the_pooh_honey.jpg",
+    "root": "פו הדב",
+    "branches": [
+      "דבש",
+      "מתוק",
+      "סופר",
+      "דוב"
+    ],
+    "visualNotes": "פו הדב עם צנצנת הדבש הזהובה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 23,
+    "id": "hello_kitty",
+    "name": "הלו קיטי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/hello_kitty.jpg",
+    "root": "הלו קיטי",
+    "branches": [
+      "סרט",
+      "ורוד",
+      "מתנה",
+      "חנות"
+    ],
+    "visualNotes": "איור נקי ואיקוני של הלו קיטי עם הסרט האדום.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 24,
+    "id": "spongebob",
+    "name": "בובספוג",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/spongebob.jpg",
+    "root": "בובספוג",
+    "branches": [
+      "ניקיון",
+      "ספוג",
+      "סדר",
+      "בועות"
+    ],
+    "visualNotes": "בובספוג הספוג הצהוב – עוגן מושלם לסדר, כביסה וניקיון הבית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 25,
+    "id": "king_kong",
+    "name": "קינג קונג",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/king_kong_empire_state.jpg",
+    "root": "קינג קונג",
+    "branches": [
+      "גורילה",
+      "טיפוס",
+      "ענק",
+      "גובה"
+    ],
+    "visualNotes": "קינג קונג הגורילה הענקית על גורד שחקים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 26,
+    "id": "godzilla",
+    "name": "גודזילה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/godzilla_monster_roar.jpg",
+    "root": "גודזילה",
+    "branches": [
+      "שאגה",
+      "לטאה",
+      "זעם",
+      "הריסה"
+    ],
+    "visualNotes": "מפלצת גודזילה האימתנית שואגת בעיר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 27,
+    "id": "dracula",
+    "name": "דרקולה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+    "root": "דרקולה",
+    "branches": [
+      "שיניים",
+      "שיננית",
+      "גלימה",
+      "ניבים"
+    ],
+    "visualNotes": "בלה לוגוסי כדרקולה – עוגן קלאסי מושלם לרופא שיניים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 28,
+    "id": "hulk",
+    "name": "האלק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg",
+    "root": "האלק",
+    "branches": [
+      "כושר",
+      "משקולות",
+      "אימון",
+      "שרירים"
+    ],
+    "visualNotes": "הענק הירוק השרירי – עוגן מנצח לאימון כושר או חדר כושר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 29,
+    "id": "iron_man",
+    "name": "איירון מן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/iron_man_tony.jpg",
+    "root": "איירון מן",
+    "branches": [
+      "שריון",
+      "מתכת",
+      "מוסך",
+      "תיקון"
+    ],
+    "visualNotes": "שריון איירון מן האדום-זהב הזוהר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 30,
+    "id": "james_bond",
+    "name": "ג'יימס בונד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/james_bond_007.jpg",
+    "root": "ג'יימס בונד",
+    "branches": [
+      "חליפה",
+      "עניבה",
+      "פגישה",
+      "בילוש"
+    ],
+    "visualNotes": "הסוכן 007 בחליפת טוקסידו יוקרתית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 31,
+    "id": "the_joker",
+    "name": "הג'וקר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/the_joker.jpg",
+    "root": "הג'וקר",
+    "branches": [
+      "חיוך",
+      "קלפים",
+      "קומדיה",
+      "צחוק"
+    ],
+    "visualNotes": "הג'וקר בחיוך מטורף ושיער ירוק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 32,
+    "id": "scrooge_mcduck",
+    "name": "סקרודג' מקדאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/scrooge_mcduck.jpg",
+    "root": "סקרודג' מקדאק",
+    "branches": [
+      "בנק",
+      "כסף",
+      "זהב",
+      "חיסכון"
+    ],
+    "visualNotes": "סקרודג' קופץ לבריכת מטבעות הזהב בכספת – עוגן שיא לבנק ותשלומים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 33,
+    "id": "pink_panther",
+    "name": "הפנתר הוורוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/pink_panther_classic.jpg",
+    "root": "הפנתר הוורוד",
+    "branches": [
+      "צעידה",
+      "ורוד",
+      "בילוש",
+      "שקט"
+    ],
+    "visualNotes": "הפנתר הוורוד האלגנטי פוסע בנחת.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 34,
+    "id": "tarzan",
+    "name": "טרזן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/tarzan_vine_swing.jpg",
+    "root": "טרזן",
+    "branches": [
+      "ג'ונגל",
+      "קפיצה",
+      "טבע",
+      "חבל"
+    ],
+    "visualNotes": "טרזן מתנדנד על גפן בג'ונגל הפראי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 36,
+    "id": "robin_hood",
+    "name": "רובין הוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/robin_hood_bow_arrow.jpg",
+    "root": "רובין הוד",
+    "branches": [
+      "קשת",
+      "חץ",
+      "עזרה",
+      "יער"
+    ],
+    "visualNotes": "רובין הוד דרוך עם קשת וחצים ביער שרווד.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 38,
+    "id": "cinderella",
+    "name": "סינדרלה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/cinderella.jpg",
+    "root": "סינדרלה",
+    "branches": [
+      "נעל",
+      "שמלה",
+      "חצות",
+      "מסיבה"
+    ],
+    "visualNotes": "סינדרלה בשמלת נשף מזהיבה משאירה את נעל הזכוכית על מדרגות הארמון.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 39,
+    "id": "harry_potter",
+    "name": "הארי פוטר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/harry_potter_hero.jpg",
+    "root": "הארי פוטר",
+    "branches": [
+      "משקפיים",
+      "ספר",
+      "שרביט",
+      "לימודים"
+    ],
+    "visualNotes": "הארי פוטר עם המשקפיים העגולים ושרביט הקסם – עוגן מעולה לבדיקת ראייה ולימודים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 40,
+    "id": "donald_duck",
+    "name": "דונלד דאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/donald_duck_sailor.jpg",
+    "root": "דונלד דאק",
+    "branches": [
+      "מלח",
+      "צעקה",
+      "נוצות",
+      "רוגז"
+    ],
+    "visualNotes": "דונלד דאק בחליפת מלחים קלאסית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 41,
+    "id": "scooby_doo",
+    "name": "סקובי דו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/scooby_doo_snack.jpg",
+    "root": "סקובי דו",
+    "branches": [
+      "כלב",
+      "חטיף",
+      "וטרינר",
+      "פחד"
+    ],
+    "visualNotes": "הכלב הדני סקובי דו עם חטיף – עוגן מצוין לווטרינר וקניות לחיות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 42,
+    "id": "tom_and_jerry",
+    "name": "טום וג'רי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/tom_and_jerry.jpg",
+    "root": "טום וג'רי",
+    "branches": [
+      "חתול",
+      "עכבר",
+      "מרדף",
+      "גבינה"
+    ],
+    "visualNotes": "טום וג'רי בכותרת הרטרו הקלאסית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 43,
+    "id": "popeye",
+    "name": "פופאי המלח",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/popeye_sailor_spinach.jpg",
+    "root": "פופאי המלח",
+    "branches": [
+      "תרד",
+      "שרירים",
+      "אימון",
+      "סבלות"
+    ],
+    "visualNotes": "פופאי מועך פחית תרד ושריריו תופחים – עוגן להובלות וספורט.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.137Z"
+  },
+  {
+    "batch": 1,
+    "index": 44,
+    "id": "terminator",
+    "name": "טרמינטור",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/arnold_terminator.jpg",
+    "root": "טרמינטור",
+    "branches": [
+      "אופנוע",
+      "משקפיים",
+      "עור",
+      "מכונה"
+    ],
+    "visualNotes": "ארנולד שוורצנגר במעיל עור שחור ומשקפי שמש.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 45,
+    "id": "captain_america",
+    "name": "קפטן אמריקה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/captain_america_steve.jpg",
+    "root": "קפטן אמריקה",
+    "branches": [
+      "מגן",
+      "אומץ",
+      "הגנה",
+      "מדים"
+    ],
+    "visualNotes": "קפטן אמריקה אוחז במגן הפלדה המעגלי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 46,
+    "id": "wolverine",
+    "name": "וולברין",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/wolverine_logan.jpg",
+    "root": "וולברין",
+    "branches": [
+      "טפרים",
+      "מתכת",
+      "זאב",
+      "קרב"
+    ],
+    "visualNotes": "וולברין שולף טפרי מתכת חדים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 47,
+    "id": "gandalf",
+    "name": "גנדלף הקוסם",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/gandalf_the_grey.jpg",
+    "root": "גנדלף הקוסם",
+    "branches": [
+      "זקן",
+      "מטה",
+      "חכמה",
+      "ייעוץ"
+    ],
+    "visualNotes": "גנדלף עם זקן שיבה ארוך וכובע קוסמים אפור.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 48,
+    "id": "gollum",
+    "name": "גולום",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/gollum_smeagol.jpg",
+    "root": "גולום",
+    "branches": [
+      "טבעת",
+      "מערה",
+      "תכשיט",
+      "אוצר"
+    ],
+    "visualNotes": "גולום במערה נועץ מבט בטבעת הזהב – עוגן לצורף ותכשיטים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 51,
+    "id": "ronald_mcdonald",
+    "name": "רונלד מקדונלד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg",
+    "root": "רונלד מקדונלד",
+    "branches": [
+      "המבורגר",
+      "ליצן",
+      "צ'יפס",
+      "ארוחה"
+    ],
+    "visualNotes": "צילום אותנטי מעולה של הליצן בחליפה הצהובה-אדומה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 54,
+    "id": "robocop",
+    "name": "רובוקופ",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/robocop.jpg",
+    "root": "רובוקופ",
+    "branches": [
+      "משטרה",
+      "מתכת",
+      "קסדה",
+      "אקדח"
+    ],
+    "visualNotes": "איור פרימיום מרהיב של רובוקופ פורץ קיר בטון עם אקדח דרוך.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 56,
+    "id": "predator",
+    "name": "הטורף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg",
+    "root": "הטורף",
+    "branches": [
+      "מסיכה",
+      "ראייה",
+      "ציד",
+      "הסוואה"
+    ],
+    "visualNotes": "מסיכת הברזל המפחידה של הטורף.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 57,
+    "id": "frankenstein_monster",
+    "name": "פרנקנשטיין",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/boris_karloff_frankenstein.jpg",
+    "root": "פרנקנשטיין",
+    "branches": [
+      "ברגים",
+      "מוסך",
+      "תיקון",
+      "חשמל"
+    ],
+    "visualNotes": "בוריס קרלוף כמפלצת פרנקנשטיין עם הברגים בצוואר – עוגן מעולה למוסך.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 58,
+    "id": "eiffel_tower",
+    "name": "מגדל אייפל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg",
+    "root": "מגדל אייפל",
+    "branches": [
+      "פריז",
+      "מגדל",
+      "צרפת",
+      "תיירות"
+    ],
+    "visualNotes": "צילום נקי ואיכותי של מגדל אייפל מזווית קלאסית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 59,
+    "id": "statue_of_liberty",
+    "name": "פסל החירות",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg",
+    "root": "פסל החירות",
+    "branches": [
+      "ניו יורק",
+      "לפיד",
+      "חירות",
+      "פסל"
+    ],
+    "visualNotes": "פסל החירות עם הלפיד המוזהב על רקע שמיים כחולים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 60,
+    "id": "pyramids_of_giza",
+    "name": "הפירמידות בגיזה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/pyramids_of_giza_egypt.jpg",
+    "root": "הפירמידות בגיזה",
+    "branches": [
+      "מדבר",
+      "פירמידה",
+      "מצרים",
+      "עתיקות"
+    ],
+    "visualNotes": "צילום פנורמי מרהיב של שלושת הפירמידות בגיזה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 62,
+    "id": "taj_mahal",
+    "name": "הטאג' מהאל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/taj_mahal.jpg",
+    "root": "הטאג' מהאל",
+    "branches": [
+      "הודו",
+      "שיש",
+      "ארמון",
+      "בריכה"
+    ],
+    "visualNotes": "צילום פרימיום נקי ללא סימני מים של הטאג' מהאל עם בריכת ההשתקפות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 63,
+    "id": "colosseum_rome",
+    "name": "הקוליסאום ברומא",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/colosseum.jpg",
+    "root": "הקוליסאום ברומא",
+    "branches": [
+      "רומא",
+      "זירה",
+      "אבן",
+      "איטליה"
+    ],
+    "visualNotes": "צילום פרימיום נקי ללא סימני מים של אמפיתיאטרון הקולוסיאום ברומא.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 64,
+    "id": "great_wall_china",
+    "name": "החומה הסינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg",
+    "root": "החומה הסינית",
+    "branches": [
+      "חומה",
+      "הרים",
+      "סין",
+      "הליכה"
+    ],
+    "visualNotes": "צילום אותנטי של מקטע מוטיאניו המתפתל על רכסי ההרים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 65,
+    "id": "leaning_tower_pisa",
+    "name": "מגדל פיזה הנוטה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg",
+    "root": "מגדל פיזה הנוטה",
+    "branches": [
+      "מגדל",
+      "נטייה",
+      "איטליה",
+      "שיפוע"
+    ],
+    "visualNotes": "צילום מלא ונקי של מגדל פיזה הלבן עם הנטייה המפורסמת.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 66,
+    "id": "big_ben_london",
+    "name": "ביג בן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/big_ben_london.jpg",
+    "root": "ביג בן",
+    "branches": [
+      "שעון",
+      "לונדון",
+      "דדליין",
+      "זמן"
+    ],
+    "visualNotes": "מגדל השעון של לונדון – עוגן מעולה לשעון, זמנים ודדליין.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 67,
+    "id": "sydney_opera_house",
+    "name": "בית האופרה של סידני",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/sydney_opera_house_sails.jpg",
+    "root": "בית האופרה של סידני",
+    "branches": [
+      "אופרה",
+      "מפרשים",
+      "נמל",
+      "מופע"
+    ],
+    "visualNotes": "גג המפרשים הלבן של בית האופרה על קו המים בסידני.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 68,
+    "id": "christ_the_redeemer",
+    "name": "פסל ישו הגואל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
+    "root": "פסל ישו הגואל",
+    "branches": [
+      "ברזיל",
+      "פסל",
+      "הרים",
+      "נוף"
+    ],
+    "visualNotes": "פסל הענק פרוש הידיים על פסגת הר הקורקובדו בריו.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 69,
+    "id": "golden_gate_bridge",
+    "name": "גשר שער הזהב",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/golden_gate_bridge_sf.jpg",
+    "root": "גשר שער הזהב",
+    "branches": [
+      "גשר",
+      "כביש",
+      "נסיעה",
+      "כתום"
+    ],
+    "visualNotes": "הגשר התלוי הכתום-אדום בסן פרנסיסקו מעל המפרץ.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 70,
+    "id": "the_white_house",
+    "name": "הבית הלבן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/the_white_house.jpg",
+    "root": "הבית הלבן",
+    "branches": [
+      "וושינגטון",
+      "נשיא",
+      "ממשלה",
+      "פגישה"
+    ],
+    "visualNotes": "חזית הבית הלבן עם המדשאה הדרומית והמזרקה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 71,
+    "id": "azrieli_towers",
+    "name": "מגדלי עזריאלי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/azrieli_towers.jpg",
+    "root": "מגדלי עזריאלי",
+    "branches": [
+      "תל אביב",
+      "קניון",
+      "מגדל",
+      "רכבת"
+    ],
+    "visualNotes": "צילום פרימיום חד ומרהיב של שלושת מגדלי עזריאלי וקניון השלום.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 73,
+    "id": "dutch_windmill",
+    "name": "טחנת רוח הולנדית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/dutch_windmill.jpg",
+    "root": "טחנת רוח הולנדית",
+    "branches": [
+      "טחנה",
+      "רוח",
+      "קמח",
+      "הולנד"
+    ],
+    "visualNotes": "טחנת רוח מסורתית מעץ ליד תעלת מים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 74,
+    "id": "empire_state_building",
+    "name": "אמפייר סטייט",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/empire_state_building_ny.jpg",
+    "root": "אמפייר סטייט",
+    "branches": [
+      "גורד שחקים",
+      "מעלית",
+      "ניו יורק",
+      "גובה"
+    ],
+    "visualNotes": "המגדל ההיסטורי בלב מנהטן מתנשא לשמיים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 75,
+    "id": "hollywood_sign",
+    "name": "שלט הוליווד",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/hollywood_sign_la.jpg",
+    "root": "שלט הוליווד",
+    "branches": [
+      "סרט",
+      "קולנוע",
+      "הוליווד",
+      "שלט"
+    ],
+    "visualNotes": "האותיות הלבנות של הוליווד על גבעות לוס אנג'לס.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 76,
+    "id": "stonehenge",
+    "name": "סטונהנג'",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/stonehenge_england.jpg",
+    "root": "סטונהנג'",
+    "branches": [
+      "אבנים",
+      "עתיק",
+      "מעגל",
+      "שמש"
+    ],
+    "visualNotes": "מעגל האבנים המגליתי המסתורי באנגליה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 77,
+    "id": "moai_easter_island",
+    "name": "פסלי המואי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/moai_easter_island.jpg",
+    "root": "פסלי המואי",
+    "branches": [
+      "פסל",
+      "אי",
+      "סלע",
+      "איסלנד"
+    ],
+    "visualNotes": "ראשי האבן הענקיים של אי הפסחא ניבטים אל האופק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 78,
+    "id": "parthenon_acropolis",
+    "name": "הפרתנון באתונה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/acropolis_parthenon_athens.jpg",
+    "root": "הפרתנון באתונה",
+    "branches": [
+      "יוון",
+      "עמודים",
+      "מקדש",
+      "עתיקות"
+    ],
+    "visualNotes": "מקדש הפרתנון המונומנטלי על גבעת האקרופוליס.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 79,
+    "id": "burj_khalifa",
+    "name": "בורג' ח'ליפה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/burj_khalifa_dubai.jpg",
+    "root": "בורג' ח'ליפה",
+    "branches": [
+      "דובאי",
+      "מגדל",
+      "גובה",
+      "שמיים"
+    ],
+    "visualNotes": "המגדל הגבוה בעולם מתנשא מעל מי המזרקה בדובאי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 80,
+    "id": "kaaba_mecca",
+    "name": "הכעבה במכה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/kaaba_mecca.jpg",
+    "root": "הכעבה במכה",
+    "branches": [
+      "מכה",
+      "זהב",
+      "תפילה",
+      "קדושה"
+    ],
+    "visualNotes": "מבנה האבן השחור במרכז מסגד אל-חראם במכה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 81,
+    "id": "pantheon_rome",
+    "name": "הפנתיאון ברומא",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/pantheon_rome.jpg",
+    "root": "הפנתיאון ברומא",
+    "branches": [
+      "כיפה",
+      "רומא",
+      "עמודים",
+      "איטליה"
+    ],
+    "visualNotes": "חזית העמודים העתיקה של הפנתיאון הרומי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 82,
+    "id": "arc_de_triomphe",
+    "name": "קשת הניצחון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/arc_de_triomphe_paris.jpg",
+    "root": "קשת הניצחון",
+    "branches": [
+      "פריז",
+      "קשת",
+      "שדרה",
+      "צרפת"
+    ],
+    "visualNotes": "קשת הניצחון המלכותית בשאנז אליזה בפריז.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 84,
+    "id": "neuschwanstein_castle",
+    "name": "טירת נוישוונשטיין",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/neuschwanstein_castle_bavaria.jpg",
+    "root": "טירת נוישוונשטיין",
+    "branches": [
+      "טירה",
+      "אגדה",
+      "יער",
+      "גרמניה"
+    ],
+    "visualNotes": "טירת האגדות הבווארית הלבנה בין צוקי האלפים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 88,
+    "id": "sagrada_familia",
+    "name": "סגרדה פמיליה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/sagrada_familia_barcelona.jpg",
+    "root": "סגרדה פמיליה",
+    "branches": [
+      "ברצלונה",
+      "כנסייה",
+      "צריח",
+      "ספרד"
+    ],
+    "visualNotes": "הקתדרלה המפורסמת של גאודי בברצלונה עם מגדליה הציוריים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 89,
+    "id": "tower_bridge_london",
+    "name": "גשר מצודת לונדון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/tower_bridge_london.jpg",
+    "root": "גשר מצודת לונדון",
+    "branches": [
+      "גשר",
+      "לונדון",
+      "נהר",
+      "ספינה"
+    ],
+    "visualNotes": "הגשר המתרומם המפורסם מעל נהר התמזה עם שני המגדלים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 90,
+    "id": "checkpoint_charlie",
+    "name": "צ'ק פוינט צ'ארלי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/checkpoint_charlie.jpg",
+    "root": "צ'ק פוינט צ'ארלי",
+    "branches": [
+      "גבול",
+      "ברלין",
+      "מחסום",
+      "חייל"
+    ],
+    "visualNotes": "עמדת הבידוק ההיסטורית בברלין עם הדגל והשלטים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 91,
+    "id": "mount_rushmore",
+    "name": "הר רושמור",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/mount_rushmore_monument.jpg",
+    "root": "הר רושמור",
+    "branches": [
+      "נשיאים",
+      "סלע",
+      "פסל",
+      "הר"
+    ],
+    "visualNotes": "ארבעת דיוקנאות הנשיאים החצובים בצוק הגרניט.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 93,
+    "id": "igloo_ice_dome",
+    "name": "איגלו שלג",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/igloo_ice_dome.jpg",
+    "root": "איגלו שלג",
+    "branches": [
+      "שלג",
+      "קרח",
+      "קור",
+      "מעיל"
+    ],
+    "visualNotes": "איגלו כיפתי אותנטי בנוי מלבני קרח ושלג – עוגן מעולה למזגן או קור.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 94,
+    "id": "teepee_tent",
+    "name": "אוהל טיפי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/teepee_tent.jpg",
+    "root": "אוהל טיפי",
+    "branches": [
+      "אוהל",
+      "קמפינג",
+      "שבט",
+      "טבע"
+    ],
+    "visualNotes": "ציור היסטורי של אוהלי טיפי ומפגש שבטי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 95,
+    "id": "mud_hut_african",
+    "name": "בקתת בוץ מסורתית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/mud_hut_african.jpg",
+    "root": "בקתת בוץ מסורתית",
+    "branches": [
+      "בקתה",
+      "כפר",
+      "קש",
+      "אפריקה"
+    ],
+    "visualNotes": "בקתות כפריות עגולות עם גגות קש וחצר כפרית אותנטית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 96,
+    "id": "chinese_pagoda",
+    "name": "פגודה סינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/chinese_pagoda.jpg",
+    "root": "פגודה סינית",
+    "branches": [
+      "פגודה",
+      "גג",
+      "מזרח",
+      "קומות"
+    ],
+    "visualNotes": "פגודה רבת קומות מרהיבה עם גגות מסורתיים מדורגים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 97,
+    "id": "coastal_lighthouse",
+    "name": "מגדלור חוף",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/coastal_lighthouse.jpg",
+    "root": "מגדלור חוף",
+    "branches": [
+      "מגדלור",
+      "ים",
+      "אור",
+      "סלעים"
+    ],
+    "visualNotes": "צילום עוצר נשימה של מגדלור לבן ואדום על צוק סלע מעל האוקיינוס.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 1,
+    "index": 99,
+    "id": "watermill_cabin",
+    "name": "גלגל טחנת מים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/watermill_cabin.jpg",
+    "root": "גלגל טחנת מים",
+    "branches": [
+      "טחנה",
+      "מים",
+      "גלגל",
+      "זרימה"
+    ],
+    "visualNotes": "גלגל ברזל ענק של טחנת מים עתיקה עם מים זורמים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:16:14.138Z"
+  },
+  {
+    "batch": 2,
+    "index": 100,
+    "id": "classic_red_barn",
+    "name": "אסם אמריקאי אדום",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/classic_red_barn.jpg",
+    "root": "אסם אמריקאי אדום",
+    "branches": [
+      "חווה",
+      "אסם",
+      "טרקטור",
+      "חציר"
+    ],
+    "visualNotes": "צילום קלאסי מרהיב של אסם עץ אדום בחווה כפרית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.229Z"
+  },
+  {
+    "batch": 2,
+    "index": 101,
+    "id": "military_cemetery",
+    "name": "בית קברות צבאי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/military_cemetery.jpg",
+    "root": "בית קברות צבאי",
+    "branches": [
+      "זיכרון",
+      "צבא",
+      "מצבה",
+      "חללים"
+    ],
+    "visualNotes": "שורות מסודרות של צלבים ומצבות לבנות על מדשאה ירוקה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 102,
+    "id": "abandoned_gas_station",
+    "name": "תחנת דלק נטושה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/abandoned_gas_station.jpg",
+    "root": "תחנת דלק נטושה",
+    "branches": [
+      "דלק",
+      "משאבה",
+      "נסיעה",
+      "כביש"
+    ],
+    "visualNotes": "תחנת דלק כפרית ישנה בדרך צדדית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 104,
+    "id": "concrete_bunker",
+    "name": "בונקר בטון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/concrete_bunker.jpg",
+    "root": "בונקר בטון",
+    "branches": [
+      "מקלט",
+      "בטון",
+      "הגנה",
+      "מלחמה"
+    ],
+    "visualNotes": "בונקר בטון צבאי מבוצר על קו החוף.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 105,
+    "id": "hall_of_mirrors_versailles",
+    "name": "אולם המראות בוורסאי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/hall_of_mirrors_versailles.jpg",
+    "root": "אולם המראות בוורסאי",
+    "branches": [
+      "ארמון",
+      "מראה",
+      "זהב",
+      "נברשת"
+    ],
+    "visualNotes": "אולם המראות המלכותי המרהיב בארמון ורסאי עם נברשות קריסטל.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 106,
+    "id": "neon_motel_sign",
+    "name": "מוטל דרכים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/neon_motel_sign.jpg",
+    "root": "מוטל דרכים",
+    "branches": [
+      "מלון",
+      "לינה",
+      "ניאון",
+      "חופשה"
+    ],
+    "visualNotes": "שלט ניאון וינטג' של מוטל אמריקאי לצד הדרך.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 107,
+    "id": "airport_control_tower",
+    "name": "מגדל פיקוח",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/airport_control_tower.jpg",
+    "root": "מגדל פיקוח",
+    "branches": [
+      "טיסה",
+      "מטוס",
+      "נמל",
+      "שדה"
+    ],
+    "visualNotes": "מגדל פיקוח מודרני מביט על מסלול המראות ונחיתות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 108,
+    "id": "mona_lisa",
+    "name": "המונה ליזה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/mona_lisa_louvre.jpg",
+    "root": "המונה ליזה",
+    "branches": [
+      "לובר",
+      "חיוך",
+      "ציור",
+      "דיוקן"
+    ],
+    "visualNotes": "יצירת המופת של לאונרדו דה וינצ'י במוזיאון הלובר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 109,
+    "id": "the_scream",
+    "name": "הצעקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/the_scream_edvard_munch.jpg",
+    "root": "הצעקה",
+    "branches": [
+      "צעקה",
+      "לחץ",
+      "דדליין",
+      "פחד"
+    ],
+    "visualNotes": "ציור הצעקה המפורסם של אדוורד מונק – עוגן מושלם ללחץ ודדליין.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 110,
+    "id": "the_thinker",
+    "name": "האדם החושב",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg",
+    "root": "האדם החושב",
+    "branches": [
+      "מחשבה",
+      "החלטה",
+      "פילוסוף",
+      "ייעוץ"
+    ],
+    "visualNotes": "פסל הברונזה האיקוני של אוגוסט רודן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 111,
+    "id": "statue_of_david",
+    "name": "פסל דוד",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/statue_of_david.jpg",
+    "root": "פסל דוד",
+    "branches": [
+      "שיש",
+      "מיכלאנג'לו",
+      "אבן",
+      "פסל"
+    ],
+    "visualNotes": "פסל השיש המונומנטלי של מיכלאנג'לו בפירנצה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 112,
+    "id": "starry_night",
+    "name": "ליל כוכבים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/starry_night.jpg",
+    "root": "ליל כוכבים",
+    "branches": [
+      "כוכבים",
+      "ואן גוך",
+      "לילה",
+      "ציור"
+    ],
+    "visualNotes": "ציור השמיים המסתחררים המפורסם של וינסנט ואן גוך.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 113,
+    "id": "creation_of_adam",
+    "name": "בריאת האדם",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/creation_of_adam.jpg",
+    "root": "בריאת האדם",
+    "branches": [
+      "אצבע",
+      "מגע",
+      "קפלה",
+      "בריאה"
+    ],
+    "visualNotes": "פרסקו נגיעת האצבעות המפורסם של מיכלאנג'לו בקפלה הסיסטינית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 114,
+    "id": "the_last_supper",
+    "name": "הסעודה האחרונה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/the_last_supper.jpg",
+    "root": "הסעודה האחרונה",
+    "branches": [
+      "ארוחה",
+      "שולחן",
+      "סעודה",
+      "מסעדה"
+    ],
+    "visualNotes": "פרסקו הסעודה האחרונה של דה וינצ'י.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 115,
+    "id": "the_birth_of_venus",
+    "name": "הולדת ונוס",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/the_birth_of_venus.jpg",
+    "root": "הולדת ונוס",
+    "branches": [
+      "צדף",
+      "יופי",
+      "ים",
+      "ציור"
+    ],
+    "visualNotes": "ונוס עומדת על צדף ענק של סנדרו בוטיצ'לי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 116,
+    "id": "persistence_of_memory",
+    "name": "שעונים נמסים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/salvador_dali_melting_clocks.jpg",
+    "root": "שעונים נמסים",
+    "branches": [
+      "שעון",
+      "דאלי",
+      "זמן",
+      "איחור"
+    ],
+    "visualNotes": "השעונים הנמסים המפורסמים של סלבדור דאלי – עוגן אידיאלי לאיחור ושעון.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 117,
+    "id": "golden_mask_tutankhamun",
+    "name": "מסכת תות ענח' אמון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/tutankhamun.jpg",
+    "root": "מסכת תות ענח' אמון",
+    "branches": [
+      "זהב",
+      "פרעה",
+      "מצרים",
+      "עתיקות"
+    ],
+    "visualNotes": "מסכת המוות המוזהבת עם הטורקיז של תות ענח' אמון.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 118,
+    "id": "venus_de_milo",
+    "name": "ונוס ממילו",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/venus_de_milo_marble.jpg",
+    "root": "ונוס ממילו",
+    "branches": [
+      "שיש",
+      "פסל",
+      "יופי",
+      "מוזיאון"
+    ],
+    "visualNotes": "פסל השיש היווני העתיק ללא הידיים במוזיאון הלובר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 119,
+    "id": "guernica_picasso",
+    "name": "גרניקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/guernica_picasso.jpg",
+    "root": "גרניקה",
+    "branches": [
+      "פיקאסו",
+      "מלחמה",
+      "זעקה",
+      "ציור"
+    ],
+    "visualNotes": "ציור המונומנט הענק של פבלו פיקאסו בשחור, אפור ולבן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 120,
+    "id": "american_gothic",
+    "name": "אמריקן גותיק",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/american_gothic.jpg",
+    "root": "אמריקן גותיק",
+    "branches": [
+      "קילשון",
+      "משקפיים",
+      "איכר",
+      "חווה"
+    ],
+    "visualNotes": "האיכר ואשתו עם הקילשון בחזית הבית של גרנט ווד.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 121,
+    "id": "girl_with_pearl_earring",
+    "name": "נערה עם עגיל פנינה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/girl_with_pearl_earring.jpg",
+    "root": "נערה עם עגיל פנינה",
+    "branches": [
+      "עגיל",
+      "פנינה",
+      "תכשיט",
+      "דיוקן"
+    ],
+    "visualNotes": "ציור השמן המהפנט של יוהנס ורמיר עם עגיל הפנינה הזוהר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 122,
+    "id": "the_son_of_man",
+    "name": "בנו של אדם",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/the_son_of_man.jpg",
+    "root": "בנו של אדם",
+    "branches": [
+      "תפוח",
+      "מגבעת",
+      "חליפה",
+      "פרי"
+    ],
+    "visualNotes": "איש החליפה עם התפוח הירוק המסתיר את פניו של רנה מגריט.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 123,
+    "id": "vitruvian_man",
+    "name": "האדם הוויטרובי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/vitruvian_man.jpg",
+    "root": "האדם הוויטרובי",
+    "branches": [
+      "פרופורציה",
+      "עיגול",
+      "גוף",
+      "אימון"
+    ],
+    "visualNotes": "רישום הפרופורציות המדויקות של גוף האדם מאת לאונרדו דה וינצ'י.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 124,
+    "id": "campbell_soup_can",
+    "name": "מרק קמפבל",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/andy_warhol_campbell_soup.jpg",
+    "root": "מרק קמפבל",
+    "branches": [
+      "מרק",
+      "פחית",
+      "סופר",
+      "ארוחה"
+    ],
+    "visualNotes": "פחית מרק העגבניות של אנדי וורהול – עוגן מושלם לקניות בסופר.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 125,
+    "id": "the_kiss_klimt",
+    "name": "הנשיקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/gustav_klimt_the_kiss.jpg",
+    "root": "הנשיקה",
+    "branches": [
+      "נשיקה",
+      "זהב",
+      "אהבה",
+      "רומנטיקה"
+    ],
+    "visualNotes": "הנשיקה המוזהבת של גוסטב קלימט בחיבוק מעוטר עלי זהב.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 126,
+    "id": "degas_little_ballerina",
+    "name": "רקדנית בלט",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/degas_little_ballerina.jpg",
+    "root": "רקדנית בלט",
+    "branches": [
+      "בלט",
+      "ריקוד",
+      "חוג",
+      "במה"
+    ],
+    "visualNotes": "פסל הברונזה המפורסם של רקדנית הבלט הצעירה מאת אדגר דגה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 127,
+    "id": "jackson_pollock_splatter",
+    "name": "התזות צבע פולוק",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/jackson_pollock_splatter.jpg",
+    "root": "התזות צבע פולוק",
+    "branches": [
+      "צבע",
+      "שיפוץ",
+      "טיפות",
+      "צביעה"
+    ],
+    "visualNotes": "ציור הדריפ המפורסם של ג'קסון פולוק – עוגן מעולה לצביעת דירה ושיפוצים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 128,
+    "id": "sunflowers_van_gogh",
+    "name": "החמניות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/van_gogh_sunflowers.jpg",
+    "root": "החמניות",
+    "branches": [
+      "חמניות",
+      "פרחים",
+      "זר",
+      "מתנה"
+    ],
+    "visualNotes": "החמניות הצהובות באגרטל של וינסנט ואן גוך – עוגן מושלם לחנות פרחים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 129,
+    "id": "balloon_girl_banksy",
+    "name": "ילדה עם בלון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/banksy_balloon_girl.jpg",
+    "root": "ילדה עם בלון",
+    "branches": [
+      "בלון",
+      "אדום",
+      "לב",
+      "תקווה"
+    ],
+    "visualNotes": "ציור הגרפיטי של הילדה המושיטה יד אל בלון הלב האדום.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 130,
+    "id": "terracotta_army",
+    "name": "צבא הטרקוטה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/terracotta_army_warriors.jpg",
+    "root": "צבא הטרקוטה",
+    "branches": [
+      "חיילים",
+      "חימר",
+      "סין",
+      "קבר"
+    ],
+    "visualNotes": "שורות חיילי החימר העתיקים בחפירות שי-אן בסין.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 131,
+    "id": "rosetta_stone",
+    "name": "אבן רוזטה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/rosetta_stone_british_museum.jpg",
+    "root": "אבן רוזטה",
+    "branches": [
+      "תרגום",
+      "שפות",
+      "כתב",
+      "אבן"
+    ],
+    "visualNotes": "אבן הבזלת השחורה במוזיאון הבריטי בעלת שלוש שפות הכתב.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 132,
+    "id": "cave_painting_bison",
+    "name": "ציור מערות ביזון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/cave_painting_bison.jpg",
+    "root": "ציור מערות ביזון",
+    "branches": [
+      "מערה",
+      "שור",
+      "קדמון",
+      "ציור"
+    ],
+    "visualNotes": "ציור הביזון בצבעי אוכרה אדומים ממערת אלטאמירה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 133,
+    "id": "egyptian_hieroglyphs",
+    "name": "הירוגליפים מצריים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/egyptian_hieroglyphs.jpg",
+    "root": "הירוגליפים מצריים",
+    "branches": [
+      "כתב",
+      "מצרים",
+      "סמלים",
+      "קיר"
+    ],
+    "visualNotes": "תבליט אבן עתיק ומפורט של כתב החרטומים המצרי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 134,
+    "id": "balloon_dog_jeff_koons",
+    "name": "כלב בלון מטאלי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/balloon_dog_jeff_koons.jpg",
+    "root": "כלב בלון מטאלי",
+    "branches": [
+      "בלון",
+      "כלב",
+      "מגנט",
+      "פסל"
+    ],
+    "visualNotes": "פסל הנירוסטה המגנטה הזוהר של ג'ף קונס בצורת כלב בלון.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 135,
+    "id": "egyptian_sarcophagus",
+    "name": "סרקופג מצרי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/egyptian_sarcophagus.jpg",
+    "root": "סרקופג מצרי",
+    "branches": [
+      "ארון",
+      "מצרים",
+      "קבר",
+      "זהב"
+    ],
+    "visualNotes": "ארון הקבורה המלכותי המעוטר של מצרים העתיקה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 136,
+    "id": "bubble_graffiti_lettering",
+    "name": "גרפיטי אותיות בלון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/bubble_graffiti_lettering.jpg",
+    "root": "גרפיטי אותיות בלון",
+    "branches": [
+      "גרפיטי",
+      "ספריי",
+      "רחוב",
+      "קיר"
+    ],
+    "visualNotes": "גרפיטי רחוב צבעוני בסגנון אותיות בלון קלאסי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 137,
+    "id": "japanese_kanji_calligraphy",
+    "name": "קליגרפיה יפנית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/japanese_kanji_calligraphy.jpg",
+    "root": "קליגרפיה יפנית",
+    "branches": [
+      "דיו",
+      "מכחול",
+      "יפן",
+      "אותיות"
+    ],
+    "visualNotes": "אות קאנג'י יפנית שחורה במשיחת מכחול דיו על נייר אורז.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 138,
+    "id": "capitoline_wolf",
+    "name": "הזאבה הקפיטולינית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/capitoline_wolf.jpg",
+    "root": "הזאבה הקפיטולינית",
+    "branches": [
+      "זאבה",
+      "רומא",
+      "הנקה",
+      "ברונזה"
+    ],
+    "visualNotes": "פסל הברונזה העתיק של הזאבה המניקה את רומולוס ורמוס ברומא.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 139,
+    "id": "crucifixion_silhouette",
+    "name": "צללית הצליבה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/crucifixion_silhouette.jpg",
+    "root": "צללית הצליבה",
+    "branches": [
+      "צלב",
+      "שקיעה",
+      "גבעה",
+      "אמונה"
+    ],
+    "visualNotes": "צללית שלושת הצלבים על רקע שקיעה דרמטית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 140,
+    "id": "ten_commandments_tablets",
+    "name": "לוחות הברית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/ten_commandments_tablets.jpg",
+    "root": "לוחות הברית",
+    "branches": [
+      "תורה",
+      "לוחות",
+      "משה",
+      "עשרת"
+    ],
+    "visualNotes": "שני לוחות אבן חצובים עם אותיות עבריות עתיקות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 141,
+    "id": "golden_calf_idol",
+    "name": "עגל הזהב",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/golden_calf_idol.jpg",
+    "root": "עגל הזהב",
+    "branches": [
+      "זהב",
+      "עגל",
+      "ריקוד",
+      "פסל"
+    ],
+    "visualNotes": "ציור המופת של ניקולא פוסן המציג את עגל הזהב והעם הרוקד.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 142,
+    "id": "great_wave_off_kanagawa",
+    "name": "הגל הגדול בקאנאגאווה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/great_wave_off_kanagawa.jpg",
+    "root": "הגל הגדול בקאנאגאווה",
+    "branches": [
+      "גל",
+      "ים",
+      "צונאמי",
+      "יפן"
+    ],
+    "visualNotes": "הדפס העץ היפני האייקוני של קצושיקה הוקוסאי עם פסגת הפוג'י.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 143,
+    "id": "native_totem_pole",
+    "name": "טוטם אינדיאני",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/native_totem_pole.jpg",
+    "root": "טוטם אינדיאני",
+    "branches": [
+      "טוטם",
+      "עץ",
+      "גילוף",
+      "שבט"
+    ],
+    "visualNotes": "עמוד עץ ענק מגולף בדמויות חיות מכונפות בצפון אמריקה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 144,
+    "id": "flower_thrower_banksy",
+    "name": "מטיח הפרחים בנקסי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/flower_thrower_banksy.jpg",
+    "root": "מטיח הפרחים בנקסי",
+    "branches": [
+      "פרחים",
+      "זר",
+      "שלום",
+      "הפגנה"
+    ],
+    "visualNotes": "הגרפיטי המפורסם של המפגין במסכה המשליך זר פרחים צבעוני.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 145,
+    "id": "rolling_stones_tongue",
+    "name": "הלשון של הרולינג סטונס",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/rolling_stones_tongue.jpg",
+    "root": "הלשון של הרולינג סטונס",
+    "branches": [
+      "לשון",
+      "רוק",
+      "אדום",
+      "מופע"
+    ],
+    "visualNotes": "לוגו הלשון האדומה האיקוני של להקת הרולינג סטונס.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 146,
+    "id": "portuguese_azulejos",
+    "name": "אריחי אזולז'ו כחולים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/portuguese_azulejos.jpg",
+    "root": "אריחי אזולז'ו כחולים",
+    "branches": [
+      "אריח",
+      "קרמיקה",
+      "כחול",
+      "קיר"
+    ],
+    "visualNotes": "אריחי קרמיקה כחולים-לבנים מעוטרים של חזית מבנה פורטוגזי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 147,
+    "id": "classic_snowman",
+    "name": "איש שלג קלאסי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/classic_snowman.jpg",
+    "root": "איש שלג קלאסי",
+    "branches": [
+      "מזגן",
+      "מעיל",
+      "שלג",
+      "גזר"
+    ],
+    "visualNotes": "איש שלג חביב בחצר מושלגת עם גזר וצעיף – עוגן לקור, מעיל ומזגן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 148,
+    "id": "russian_matryoshka",
+    "name": "בבושקה מטריושקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/matryoshka_nesting_dolls.jpg",
+    "root": "בבושקה מטריושקה",
+    "branches": [
+      "בובה",
+      "עץ",
+      "משפחה",
+      "רוסיה"
+    ],
+    "visualNotes": "בובות עץ רוסיות מדורגות הנכנסות זו לתוך זו.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 149,
+    "id": "japanese_folding_fan",
+    "name": "מניפה יפנית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/japanese_folding_fan.jpg",
+    "root": "מניפה יפנית",
+    "branches": [
+      "מניפה",
+      "אוורור",
+      "חום",
+      "משי"
+    ],
+    "visualNotes": "מניפת נייר ומשי מעוטרת בפרחי דובדבן – עוגן מעולה לחום ואוורור.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 150,
+    "id": "native_dreamcatcher",
+    "name": "לוכד חלומות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/native_dreamcatcher.jpg",
+    "root": "לוכד חלומות",
+    "branches": [
+      "חלום",
+      "נוצה",
+      "שינה",
+      "מיטה"
+    ],
+    "visualNotes": "חישוק לוכד חלומות עם רשת חוטים ונוצות תלויות – עוגן לשינה ומזרן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 151,
+    "id": "gargoyle_stone_statue",
+    "name": "פסל גרגויל מאבן",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/gargoyle_stone_statue.jpg",
+    "root": "פסל גרגויל מאבן",
+    "branches": [
+      "מפלצת",
+      "גג",
+      "אבן",
+      "כנסייה"
+    ],
+    "visualNotes": "גרגויל אבן עתיק יושב על קצה מרפסת נוטרדאם.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 152,
+    "id": "chess_knight_piece",
+    "name": "פרש שחמט מעץ",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/chess_knight_piece.jpg",
+    "root": "פרש שחמט מעץ",
+    "branches": [
+      "שחמט",
+      "סוס",
+      "משחק",
+      "אסטרטגיה"
+    ],
+    "visualNotes": "כלי פרש שחמט מעץ מגולף ומלוטש על לוח משחק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 153,
+    "id": "golden_menorah_seven",
+    "name": "מנורת שבעת הקנים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/golden_menorah_seven.jpg",
+    "root": "מנורת שבעת הקנים",
+    "branches": [
+      "מנורה",
+      "זהב",
+      "נרות",
+      "בית מקדש"
+    ],
+    "visualNotes": "מנורת זהב מפוארת בעלת 7 קנים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 154,
+    "id": "egyptian_mummy_wraps",
+    "name": "מומיה מצרית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/egyptian_mummy_wraps.jpg",
+    "root": "מומיה מצרית",
+    "branches": [
+      "תחבושת",
+      "חבישה",
+      "רופא",
+      "קבר"
+    ],
+    "visualNotes": "מומיה עתיקה חנוטה ברצועות בד – עוגן מעולה לחבישות ובית מרקחת.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 155,
+    "id": "hamsa_hand_amulet",
+    "name": "חמסה לשמירה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/hamsa_hand_amulet.jpg",
+    "root": "חמסה לשמירה",
+    "branches": [
+      "חמסה",
+      "מזל",
+      "עין",
+      "תכשיט"
+    ],
+    "visualNotes": "חמסה מעוצבת ממתכת כחולה עם עין מרכזית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 156,
+    "id": "star_of_david",
+    "name": "מגן דוד כחול",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/star_of_david.jpg",
+    "root": "מגן דוד כחול",
+    "branches": [
+      "מגן דוד",
+      "ישראל",
+      "דגל",
+      "סמל"
+    ],
+    "visualNotes": "מגן דוד כחול מבריק על רקע לבן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 157,
+    "id": "christian_holy_cross",
+    "name": "צלב עץ קלאסי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/christian_holy_cross.jpg",
+    "root": "צלב עץ קלאסי",
+    "branches": [
+      "צלב",
+      "עץ",
+      "כנסייה",
+      "אמונה"
+    ],
+    "visualNotes": "צלב עץ פשוט ומדויק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 158,
+    "id": "item_151_נורה_דולקת__מסמלת",
+    "name": "נורת להט דולקת",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_151_נורה_דולקת__מסמלת.jpg",
+    "root": "נורת להט דולקת",
+    "branches": [
+      "רעיון",
+      "נורה",
+      "חשמל",
+      "אור"
+    ],
+    "visualNotes": "נורת להט קלאסית מאירה בזוהר חם – עוגן מעולה לרעיונות ותאורה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 159,
+    "id": "item_152_תיבת_אוצר__מסמלת",
+    "name": "תיבת אוצר מוזהבת",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_152_תיבת_אוצר__מסמלת.jpg",
+    "root": "תיבת אוצר מוזהבת",
+    "branches": [
+      "אוצר",
+      "כסף",
+      "תיבה",
+      "זהב"
+    ],
+    "visualNotes": "תיבת עץ עתיקה פתוחה מלאה במטבעות זהב ויהלומים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 160,
+    "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
+    "name": "פצצה עם פתיל בוער",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
+    "root": "פצצה עם פתיל בוער",
+    "branches": [
+      "פצצה",
+      "פיצוץ",
+      "דדליין",
+      "לחץ"
+    ],
+    "visualNotes": "פצצת ברזל שחורה קלאסית עם פתיל מצית ניצוצות – עוגן לדדליין מתקרב.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 161,
+    "id": "item_154_דיסקט_3_5_אינץ___מסמל",
+    "name": "דיסקט וינטג'",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_154_דיסקט_3_5_אינץ___מסמל.jpg",
+    "root": "דיסקט וינטג'",
+    "branches": [
+      "שמירה",
+      "קובץ",
+      "גיבוי",
+      "מחשב"
+    ],
+    "visualNotes": "דיסקט פלסטיק שחור 3.5 אינץ' – עוגן מעולה לשמירת מסמכים וגיבויים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 163,
+    "id": "item_156_מפתח_מכני_גדול__מסמל",
+    "name": "מפתח שוודי מכני",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_156_מפתח_מכני_גדול__מסמל.jpg",
+    "root": "מפתח שוודי מכני",
+    "branches": [
+      "מוסך",
+      "תיקון",
+      "בורג",
+      "אינסטלטור"
+    ],
+    "visualNotes": "מפתח ברגים מפלדה מלוטשת – עוגן יומיומי חזק לתיקונים בבית.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 165,
+    "id": "item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות",
+    "name": "מסיכות תיאטרון",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות.jpg",
+    "root": "מסיכות תיאטרון",
+    "branches": [
+      "הצגה",
+      "תיאטרון",
+      "כרטיסים",
+      "מופע"
+    ],
+    "visualNotes": "צמד מסכות דרמה קלאסיות מזהב (טרגדיה וקומדיה) – עוגן להצגות וכרטיסים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 168,
+    "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
+    "name": "גלגלי שיניים שלובים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_161_גלגל_שיניים__או_שניים_שלובים___מסמל.jpg",
+    "root": "גלגלי שיניים שלובים",
+    "branches": [
+      "מנגנון",
+      "הגדרות",
+      "תיקון",
+      "מכונה"
+    ],
+    "visualNotes": "גלגלי שיניים מפליז שלובים זה בזה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 169,
+    "id": "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל",
+    "name": "כובע סיום תואר",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל.jpg",
+    "root": "כובע סיום תואר",
+    "branches": [
+      "תואר",
+      "לימודים",
+      "טקס",
+      "אוניברסיטה"
+    ],
+    "visualNotes": "כובע אקדמי שחור מרובע עם גדיל משי – עוגן למבחנים וסיום לימודים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 170,
+    "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
+    "name": "מאזני צדק מפליז",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות.jpg",
+    "root": "מאזני צדק מפליז",
+    "branches": [
+      "משפט",
+      "עורך דין",
+      "חוזה",
+      "צדק"
+    ],
+    "visualNotes": "מאזני שקילה עתיקים מפליז עם שתי כפות מאוזנות – עוגן לחתימת חוזה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 171,
+    "id": "item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל",
+    "name": "חץ פוגע במטרה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל.jpg",
+    "root": "חץ פוגע במטרה",
+    "branches": [
+      "מטרה",
+      "יעד",
+      "פגישה",
+      "דייקנות"
+    ],
+    "visualNotes": "חץ אדום תקוע בול במרכז לוח מטרה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 172,
+    "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
+    "name": "מדחום כספית רפואי",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg",
+    "root": "מדחום כספית רפואי",
+    "branches": [
+      "מדחום",
+      "חום",
+      "מרפאה",
+      "רופא"
+    ],
+    "visualNotes": "מדחום זכוכית עם עמודת כספית אדומה – עוגן מובהק למחלה ומדידת חום.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 173,
+    "id": "item_166_שעון_חול__חצי_מלא___מסמל",
+    "name": "שעון חול מעץ",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_166_שעון_חול__חצי_מלא___מסמל.jpg",
+    "root": "שעון חול מעץ",
+    "branches": [
+      "זמן",
+      "שעון",
+      "המתנה",
+      "תור"
+    ],
+    "visualNotes": "שעון חול זכוכית במסגרת עץ עם חול דק זורם – עוגן לקביעת תור והמתנה.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 174,
+    "id": "item_167_שטיח_אדום_ארוך__מסמל",
+    "name": "שטיח אדום חגיגי",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_167_שטיח_אדום_ארוך__מסמל.jpg",
+    "root": "שטיח אדום חגיגי",
+    "branches": [
+      "אירוע",
+      "חתונה",
+      "שטיח",
+      "חגיגה"
+    ],
+    "visualNotes": "שטיח אדום קטיפתי פרוס עם עמודי חבל זהב – עוגן לאירועים וחגיגות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 175,
+    "id": "item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות",
+    "name": "קוביות משחק",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות.jpg",
+    "root": "קוביות משחק",
+    "branches": [
+      "קוביות",
+      "משחק",
+      "מזל",
+      "הגרלה"
+    ],
+    "visualNotes": "צמד קוביות משחק לבנות עם נקודות שחורות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 176,
+    "id": "item_169_גביע_זהב_עם_ידיות__מסמל",
+    "name": "גביע אליפות מוזהב",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_169_גביע_זהב_עם_ידיות__מסמל.jpg",
+    "root": "גביע אליפות מוזהב",
+    "branches": [
+      "גביע",
+      "ניצחון",
+      "טורניר",
+      "תחרות"
+    ],
+    "visualNotes": "גביע ספורט מבריק עם ידיות מפוארות – עוגן לתחרות ומשחק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 177,
+    "id": "item_170_עוגן_ברזל_שחור__מסמל",
+    "name": "עוגן אונייה כבד",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_170_עוגן_ברזל_שחור__מסמל.jpg",
+    "root": "עוגן אונייה כבד",
+    "branches": [
+      "עוגן",
+      "נמל",
+      "אונייה",
+      "ים"
+    ],
+    "visualNotes": "עוגן ברזל ימי כבד על רציף הנמל.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 179,
+    "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
+    "name": "מנעול ומפתח פליז",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
+    "root": "מנעול ומפתח פליז",
+    "branches": [
+      "מנעול",
+      "מפתח",
+      "מנעולן",
+      "דלת"
+    ],
+    "visualNotes": "מנעול תליה מוצק מפליז ומפתח מותאם – עוגן מובהק למנעולן ושכפול מפתחות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 182,
+    "id": "item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת",
+    "name": "יונת שלום עם ענף זית",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת.jpg",
+    "root": "יונת שלום עם ענף זית",
+    "branches": [
+      "יונה",
+      "זית",
+      "שלום",
+      "פיוס"
+    ],
+    "visualNotes": "יונה לבנה צחה אוחזת בפיה ענף זית ירוק.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 184,
+    "id": "item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל",
+    "name": "סימן קריאה באזהרה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל.jpg",
+    "root": "סימן קריאה באזהרה",
+    "branches": [
+      "סימן קריאה",
+      "אזהרה",
+      "זהירות",
+      "סכנה"
+    ],
+    "visualNotes": "צילום אותנטי ואיכותי שנבדק חזותית ואושר לתקן.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 185,
+    "id": "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת",
+    "name": "גולגולת שודדי ים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת.jpg",
+    "root": "גולגולת שודדי ים",
+    "branches": [
+      "זהירות",
+      "סכנה",
+      "רעל",
+      "תרופות"
+    ],
+    "visualNotes": "סמל הגולגולת והעצמות המוצלבות של שודדי ים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 186,
+    "id": "item_179_מטוס_נייר_מקופל__מסמל",
+    "name": "מטוס נייר מקופל",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_179_מטוס_נייר_מקופל__מסמל.jpg",
+    "root": "מטוס נייר מקופל",
+    "branches": [
+      "מטוס",
+      "הודעה",
+      "מכתב",
+      "משלוח"
+    ],
+    "visualNotes": "מטוס נייר לבן מקופל בדיוק גיאומטרי.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 187,
+    "id": "item_180_כתר_זהב_עם_יהלומים__מסמל",
+    "name": "כתר מלכות משובץ יהלומים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_180_כתר_זהב_עם_יהלומים__מסמל.jpg",
+    "root": "כתר מלכות משובץ יהלומים",
+    "branches": [
+      "כתר",
+      "זהב",
+      "מלך",
+      "יהלום"
+    ],
+    "visualNotes": "כתר זהב מלוטש משובץ אבני אודם ויהלומים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 189,
+    "id": "item_182_פרסה_של_סוס__מסמלת",
+    "name": "פרסת סוס מברזל",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_182_פרסה_של_סוס__מסמלת.jpg",
+    "root": "פרסת סוס מברזל",
+    "branches": [
+      "פרסה",
+      "סוס",
+      "מזל",
+      "רכיבה"
+    ],
+    "visualNotes": "פרסת ברזל אותנטית של סוס – עוגן לרכיבה על סוסים ומזל.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 190,
+    "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
+    "name": "תלתן ארבעה עלים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
+    "root": "תלתן ארבעה עלים",
+    "branches": [
+      "תלתן",
+      "מזל",
+      "דשא",
+      "טבע"
+    ],
+    "visualNotes": "עלה תלתן ירוק בעל 4 עלים מושלמים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 194,
+    "id": "item_187_עקבות_רגליים_בחול__מסמלות",
+    "name": "עקבות רגליים על החוף",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_187_עקבות_רגליים_בחול__מסמלות.jpg",
+    "root": "עקבות רגליים על החוף",
+    "branches": [
+      "חוף",
+      "עקבות",
+      "ים",
+      "חול"
+    ],
+    "visualNotes": "עקבות רגליים יחפות צועדות על חול ים לח.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 195,
+    "id": "item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל",
+    "name": "שבב אלקטרוני מוליך",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל.jpg",
+    "root": "שבב אלקטרוני מוליך",
+    "branches": [
+      "מחשב",
+      "שבב",
+      "מעבדה",
+      "חומרה"
+    ],
+    "visualNotes": "לוח מודפס ירוק עם פסי זהב ומעבד מרכזי – עוגן למעבדת מחשבים.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  },
+  {
+    "batch": 2,
+    "index": 197,
+    "id": "item_190_סיכת_נעץ_משרדית__אדומה___מסמלת",
+    "name": "נעץ משרדי אדום",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_190_סיכת_נעץ_משרדית__אדומה___מסמלת.jpg",
+    "root": "נעץ משרדי אדום",
+    "branches": [
+      "נעץ",
+      "משרד",
+      "תזכורת",
+      "לוח"
+    ],
+    "visualNotes": "נעץ פלסטיק אדום נעוץ בלוח שעם משרדי – עוגן לתזכורות משרדיות.",
+    "qualityScore": 100,
+    "auditStatus": "verified",
+    "auditedAt": "2026-11-11T11:49:16.230Z"
+  }
+]

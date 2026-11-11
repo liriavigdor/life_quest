@@ -1,0 +1,10068 @@
+// Auto-generated Master Mnemonic Arsenal (500 Canonical Items)
+export const MASTER_MNEMONIC_ARSENAL = [
+  {
+    "num": 1,
+    "id": "mickey_mouse",
+    "name_he": "מיקי מאוס",
+    "suggestedName": "מיקי מאוס",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(או הצללית שלו",
+    "search_query": "מיקי מאוס",
+    "is_basic": true,
+    "everyday_associations": [
+      "עכבר",
+      "אוזניים",
+      "מתנה",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/mickey_mouse.jpg"
+  },
+  {
+    "num": 2,
+    "id": "super_mario",
+    "name_he": "סופר מריו",
+    "suggestedName": "סופר מריו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(חולצה אדומה, אוברול כחול, שפם",
+    "search_query": "סופר מריו",
+    "is_basic": true,
+    "everyday_associations": [
+      "אינסטלטור",
+      "סתימה",
+      "ברז",
+      "גילוח"
+    ],
+    "imageUrl": "/staged_images/pool/super_mario_wonder.jpg"
+  },
+  {
+    "num": 3,
+    "id": "pikachu",
+    "name_he": "פיקאצ'ו",
+    "suggestedName": "פיקאצ'ו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(צהוב, לחיים אדומות, זנב ברק",
+    "search_query": "פיקאצ'ו",
+    "is_basic": true,
+    "everyday_associations": [
+      "חשמל",
+      "חשמלאי",
+      "שקע",
+      "מטען"
+    ],
+    "imageUrl": "/staged_images/pool/pikachu_electric_mouse.jpg"
+  },
+  {
+    "num": 4,
+    "id": "sonic_the_hedgehog",
+    "name_he": "סוניק הקיפוד",
+    "suggestedName": "סוניק הקיפוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(כחול, קוצים, נעליים אדומות",
+    "search_query": "סוניק הקיפוד",
+    "is_basic": true,
+    "everyday_associations": [
+      "תספורת",
+      "מספרה",
+      "ספר",
+      "מהירות"
+    ],
+    "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg"
+  },
+  {
+    "num": 5,
+    "id": "spider_man",
+    "name_he": "ספיידרמן",
+    "suggestedName": "ספיידרמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(מסיכת קורי עכביש אדומה-כחולה",
+    "search_query": "ספיידרמן",
+    "is_basic": true,
+    "everyday_associations": [
+      "טיפוס",
+      "קירות",
+      "עכביש",
+      "הדברה"
+    ],
+    "imageUrl": "/staged_images/pool/spider_man.jpg"
+  },
+  {
+    "num": 6,
+    "id": "batman",
+    "name_he": "באטמן",
+    "suggestedName": "באטמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(סמל העטלף, הגלימה והמסכה",
+    "search_query": "באטמן",
+    "is_basic": true,
+    "everyday_associations": [
+      "לילה",
+      "אבטחה",
+      "שמירה",
+      "מנעול"
+    ],
+    "imageUrl": "/staged_images/pool/batman.jpg"
+  },
+  {
+    "num": 7,
+    "id": "superman",
+    "name_he": "סופרמן",
+    "suggestedName": "סופרמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(הסמל S על הרקע היהלום הצהוב-אדום",
+    "search_query": "סופרמן",
+    "is_basic": true,
+    "everyday_associations": [
+      "אימון",
+      "משקולות",
+      "שרירים",
+      "הצלה"
+    ],
+    "imageUrl": "/staged_images/pool/superman.jpg"
+  },
+  {
+    "num": 8,
+    "id": "barbie_doll",
+    "name_he": "ברבי",
+    "suggestedName": "ברבי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(פרופיל האישה הוורוד או בובת בלונד קלאסית",
+    "search_query": "ברבי",
+    "is_basic": true,
+    "everyday_associations": [
+      "קוסמטיקאית",
+      "ציפורניים",
+      "שמלה",
+      "קניות"
+    ],
+    "imageUrl": "/staged_images/pool/barbie_doll_classic.jpg"
+  },
+  {
+    "num": 9,
+    "id": "darth_vader",
+    "name_he": "דארת' ויידר",
+    "suggestedName": "דארת' ויידר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(הקסדה השחורה ונשימות מכניות",
+    "search_query": "דארת' ויידר",
+    "is_basic": true,
+    "everyday_associations": [
+      "נשימה",
+      "משאף",
+      "קסדה",
+      "אופנוע"
+    ],
+    "imageUrl": "/staged_images/pool/darth_vader_mask.jpg"
+  },
+  {
+    "num": 10,
+    "id": "homer_simpson",
+    "name_he": "הומר סימפסון",
+    "suggestedName": "הומר סימפסון",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(קרח, חולצה לבנה, שני שיערות, עור צהוב",
+    "search_query": "הומר סימפסון",
+    "is_basic": true,
+    "everyday_associations": [
+      "דיאטה",
+      "מאפייה",
+      "בירה",
+      "ספה"
+    ],
+    "imageUrl": "/staged_images/pool/homer_simpson.jpg"
+  },
+  {
+    "num": 11,
+    "id": "shrek",
+    "name_he": "שרק",
+    "suggestedName": "שרק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(עוגר ירוק עם אוזניים דמויות חצוצרה",
+    "search_query": "שרק",
+    "is_basic": true,
+    "everyday_associations": [
+      "בוץ",
+      "שטיפה",
+      "מקלחת",
+      "בצל"
+    ],
+    "imageUrl": "/staged_images/pool/shrek_ogre_swamp.jpg"
+  },
+  {
+    "num": 12,
+    "id": "pac_man",
+    "name_he": "פאק",
+    "suggestedName": "פאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(עיגול צהוב פתוח-פה שאוכל נקודות",
+    "search_query": "פאק",
+    "is_basic": true,
+    "everyday_associations": [
+      "פיצה",
+      "זלילה",
+      "נשנוש",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/pac_man_arcade.jpg"
+  },
+  {
+    "num": 13,
+    "id": "r2_d2",
+    "name_he": "רובוט R2",
+    "suggestedName": "רובוט R2",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(הרובוט הגלילי הלבן-כחול מסטאר וורס",
+    "search_query": "רובוט R2",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחשב",
+      "טכנאי",
+      "גיבוי",
+      "כבל"
+    ],
+    "imageUrl": "/staged_images/pool/r2_d2_droid.jpg"
+  },
+  {
+    "num": 14,
+    "id": "bugs_bunny",
+    "name_he": "באגס באני",
+    "suggestedName": "באגס באני",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ארנב אפור לועס גזר",
+    "search_query": "באגס באני",
+    "is_basic": false,
+    "everyday_associations": [
+      "ירקן",
+      "סלט",
+      "גזר",
+      "שיניים"
+    ],
+    "imageUrl": "/staged_images/pool/bugs_bunny_carrot.jpg"
+  },
+  {
+    "num": 15,
+    "id": "winnie_the_pooh",
+    "name_he": "פו הדב",
+    "suggestedName": "פו הדב",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(דוב צהוב בחולצה אדומה קטנה",
+    "search_query": "פו הדב",
+    "is_basic": false,
+    "everyday_associations": [
+      "דבש",
+      "מתוק",
+      "חיבוק",
+      "תה"
+    ],
+    "imageUrl": "/staged_images/pool/winnie_the_pooh_honey.jpg"
+  },
+  {
+    "num": 16,
+    "id": "hello_kitty",
+    "name_he": "הלו קיטי",
+    "suggestedName": "הלו קיטי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(חתולה לבנה בלי פה עם סרט אדום באוזן",
+    "search_query": "הלו קיטי",
+    "is_basic": false,
+    "everyday_associations": [
+      "קלמר",
+      "מחברת",
+      "מתנה",
+      "בובה"
+    ],
+    "imageUrl": "/staged_images/pool/hello_kitty.jpg"
+  },
+  {
+    "num": 17,
+    "id": "spongebob",
+    "name_he": "בובספוג מכנסמרובע",
+    "suggestedName": "בובספוג מכנסמרובע",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ספוג צהוב מרובע עם עניבה אדומה",
+    "search_query": "בובספוג מכנסמרובע",
+    "is_basic": true,
+    "everyday_associations": [
+      "המבורגר",
+      "מטבח",
+      "ניקיון",
+      "כלים"
+    ],
+    "imageUrl": "/staged_images/pool/spongebob.jpg"
+  },
+  {
+    "num": 18,
+    "id": "king_kong",
+    "name_he": "המלך קונג",
+    "suggestedName": "המלך קונג",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(גורילת ענק מטפסת על גורד שחקים",
+    "search_query": "המלך קונג",
+    "is_basic": false,
+    "everyday_associations": [
+      "מעלית",
+      "גורד",
+      "סבלות",
+      "הובלה"
+    ],
+    "imageUrl": "/staged_images/pool/king_kong_empire_state.jpg"
+  },
+  {
+    "num": 19,
+    "id": "godzilla",
+    "name_he": "גודזילה",
+    "suggestedName": "גודזילה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(לטאת ענק יורקת אש/לייזר קורע ערים",
+    "search_query": "גודזילה",
+    "is_basic": false,
+    "everyday_associations": [
+      "שריפה",
+      "פינוי",
+      "הריסה",
+      "שיפוץ"
+    ],
+    "imageUrl": "/staged_images/pool/godzilla_monster_roar.jpg"
+  },
+  {
+    "num": 20,
+    "id": "dracula",
+    "name_he": "דרקולה",
+    "suggestedName": "דרקולה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ניבים ארוכים, גלימה שחורה עם צווארון גבוה",
+    "search_query": "דרקולה",
+    "is_basic": false,
+    "everyday_associations": [
+      "טיפול שיניים",
+      "רופא שיניים",
+      "שיניים",
+      "שיננית",
+      "דם"
+    ],
+    "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg"
+  },
+  {
+    "num": 21,
+    "id": "hulk",
+    "name_he": "האלק",
+    "suggestedName": "האלק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ענק שרירי ירוק ומכנסיים קרועים",
+    "search_query": "האלק",
+    "is_basic": false,
+    "everyday_associations": [
+      "כושר",
+      "זעם",
+      "הובלות",
+      "שרירים"
+    ],
+    "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg"
+  },
+  {
+    "num": 22,
+    "id": "iron_man",
+    "name_he": "איירון מן",
+    "suggestedName": "איירון מן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(מסכת מתכת זהב-אדומה עם עיניים מוארות",
+    "search_query": "איירון מן",
+    "is_basic": false,
+    "everyday_associations": [
+      "מוסך",
+      "ריתוך",
+      "סוללה",
+      "שריון"
+    ],
+    "imageUrl": "/staged_images/pool/iron_man_tony.jpg"
+  },
+  {
+    "num": 23,
+    "id": "james_bond",
+    "name_he": "ג'יימס בונד",
+    "suggestedName": "ג'יימס בונד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(חליפת טוקסידו שחורה, אקדח, מבט דרך קנה קלאסי",
+    "search_query": "ג'יימס בונד",
+    "is_basic": true,
+    "everyday_associations": [
+      "חליפה",
+      "ניקוי",
+      "טוקסידו",
+      "דרכון"
+    ],
+    "imageUrl": "/staged_images/pool/james_bond_007.jpg"
+  },
+  {
+    "num": 24,
+    "id": "the_joker",
+    "name_he": "הג'וקר",
+    "suggestedName": "הג'וקר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(איפור לבן, חיוך אדום מורח, שיער ירוק",
+    "search_query": "הג'וקר",
+    "is_basic": false,
+    "everyday_associations": [
+      "איפור",
+      "מסיבה",
+      "תחפושת",
+      "הופעה"
+    ],
+    "imageUrl": "/staged_images/pool/the_joker.jpg"
+  },
+  {
+    "num": 25,
+    "id": "scrooge_mcduck",
+    "name_he": "סקרודג' מקדאק",
+    "suggestedName": "סקרודג' מקדאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ברווז זקן עם משקפיים קופץ לבריכת מטבעות זהב",
+    "search_query": "סקרודג' מקדאק",
+    "is_basic": false,
+    "everyday_associations": [
+      "בנק",
+      "השקעות",
+      "חיסכון",
+      "כספומט"
+    ],
+    "imageUrl": "/staged_images/pool/scrooge_mcduck.jpg"
+  },
+  {
+    "num": 26,
+    "id": "pink_panther",
+    "name_he": "הפנתר הוורוד",
+    "suggestedName": "הפנתר הוורוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(פנתר רזה, ארוך ורוד, סיגריה בפה/מבט אדיש",
+    "search_query": "הפנתר הוורוד",
+    "is_basic": false,
+    "everyday_associations": [
+      "צביעה",
+      "סיוד",
+      "שיפוץ",
+      "קירות"
+    ],
+    "imageUrl": "/staged_images/pool/pink_panther_classic.jpg"
+  },
+  {
+    "num": 27,
+    "id": "tarzan",
+    "name_he": "טרזן",
+    "suggestedName": "טרזן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(אדם עם תחתון בד מנומר קופץ על חבל/ליינה",
+    "search_query": "טרזן",
+    "is_basic": false,
+    "everyday_associations": [
+      "גיזום",
+      "עצים",
+      "טיפוס",
+      "חבל"
+    ],
+    "imageUrl": "/staged_images/pool/tarzan_vine_swing.jpg"
+  },
+  {
+    "num": 28,
+    "id": "pinocchio",
+    "name_he": "פינוקיו",
+    "suggestedName": "פינוקיו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ילד עץ עם אף ארוך וציפור קטנה",
+    "search_query": "פינוקיו",
+    "is_basic": false,
+    "everyday_associations": [
+      "נגר",
+      "עץ",
+      "שולחן",
+      "תיקון"
+    ],
+    "imageUrl": "/staged_images/pool/pinocchio.jpg"
+  },
+  {
+    "num": 29,
+    "id": "robin_hood",
+    "name_he": "רובין הוד",
+    "suggestedName": "רובין הוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(חץ וקשת, כובע ירוק עם נוצה",
+    "search_query": "רובין הוד",
+    "is_basic": false,
+    "everyday_associations": [
+      "תרומה",
+      "צדקה",
+      "מעשר",
+      "עזרה"
+    ],
+    "imageUrl": "/staged_images/pool/robin_hood_bow_arrow.jpg"
+  },
+  {
+    "num": 30,
+    "id": "peter_pan",
+    "name_he": "פיטר פן",
+    "suggestedName": "פיטר פן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ילד מעופף בבגדים ירוקים, צל מנותק",
+    "search_query": "פיטר פן",
+    "is_basic": false,
+    "everyday_associations": [
+      "טיסה",
+      "כרטיס",
+      "חופשה",
+      "נוער"
+    ],
+    "imageUrl": "/staged_images/pool/peter_pan.jpg"
+  },
+  {
+    "num": 31,
+    "id": "cinderella",
+    "name_he": "סינדרלה",
+    "suggestedName": "סינדרלה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(נעל זכוכית נוצצת על מדרגות",
+    "search_query": "סינדרלה",
+    "is_basic": false,
+    "everyday_associations": [
+      "נעליים",
+      "סנדלר",
+      "שמלה",
+      "אירוע"
+    ],
+    "imageUrl": "/staged_images/pool/cinderella.jpg"
+  },
+  {
+    "num": 32,
+    "id": "harry_potter",
+    "name_he": "הארי פוטר",
+    "suggestedName": "הארי פוטר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(משקפיים עגולים וצלקת ברק במצח",
+    "search_query": "הארי פוטר",
+    "is_basic": true,
+    "everyday_associations": [
+      "קסם",
+      "צלקת",
+      "שרביט",
+      "כישוף"
+    ],
+    "imageUrl": "/staged_images/pool/harry_potter_hero.jpg"
+  },
+  {
+    "num": 33,
+    "id": "donald_duck",
+    "name_he": "דונלד דאק",
+    "suggestedName": "דונלד דאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ברווז עצבני בחליפת מלח כחולה בלי מכנסיים",
+    "search_query": "דונלד דאק",
+    "is_basic": false,
+    "everyday_associations": [
+      "ברווז",
+      "מלח",
+      "כעס",
+      "סירה"
+    ],
+    "imageUrl": "/staged_images/pool/donald_duck_sailor.jpg"
+  },
+  {
+    "num": 34,
+    "id": "scooby_doo",
+    "name_he": "סקובי דו",
+    "suggestedName": "סקובי דו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(כלב דני ענק חום עם קולר תכלת ומבט מבוהל",
+    "search_query": "סקובי דו",
+    "is_basic": false,
+    "everyday_associations": [
+      "וטרינר",
+      "כלב",
+      "חיסון",
+      "חטיף"
+    ],
+    "imageUrl": "/staged_images/pool/scooby_doo_snack.jpg"
+  },
+  {
+    "num": 35,
+    "id": "tom_and_jerry",
+    "name_he": "טום וג'רי",
+    "suggestedName": "טום וג'רי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(חתול אפור רודף אחרי עכבר חום קטן",
+    "search_query": "טום וג'רי",
+    "is_basic": false,
+    "everyday_associations": [
+      "הדברה",
+      "מלכודת",
+      "חולדות",
+      "מרדף"
+    ],
+    "imageUrl": "/staged_images/pool/tom_and_jerry.jpg"
+  },
+  {
+    "num": 36,
+    "id": "popeye",
+    "name_he": "פופאי",
+    "suggestedName": "פופאי",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(מלח עם מקטרת, קעקוע עוגן ושריר נפוח מחסילת תרד",
+    "search_query": "פופאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "אימון",
+      "ירקות",
+      "שרירים",
+      "חלבון"
+    ],
+    "imageUrl": "/staged_images/pool/popeye_sailor_spinach.jpg"
+  },
+  {
+    "num": 37,
+    "id": "terminator",
+    "name_he": "טרמינטור",
+    "suggestedName": "טרמינטור",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(שלד מתכת רובוטי עם עין אדומה מבריקה",
+    "search_query": "טרמינטור",
+    "is_basic": false,
+    "everyday_associations": [
+      "משקולות",
+      "אופנוע",
+      "טסט",
+      "מנעולן"
+    ],
+    "imageUrl": "/staged_images/pool/arnold_terminator.jpg"
+  },
+  {
+    "num": 38,
+    "id": "captain_america",
+    "name_he": "קפטן אמריקה",
+    "suggestedName": "קפטן אמריקה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(מגן עגול עם כוכב בצבעי כחול-לבן-אדום",
+    "search_query": "קפטן אמריקה",
+    "is_basic": false,
+    "everyday_associations": [
+      "כושר",
+      "הליכה",
+      "הגנה",
+      "משמעת"
+    ],
+    "imageUrl": "/staged_images/pool/captain_america_steve.jpg"
+  },
+  {
+    "num": 39,
+    "id": "wolverine",
+    "name_he": "וולברין",
+    "suggestedName": "וולברין",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(שלושה טפרי מתכת ארוכים יוצאים מגב כף היד",
+    "search_query": "וולברין",
+    "is_basic": false,
+    "everyday_associations": [
+      "ציפורניים",
+      "מניקור",
+      "גילוח",
+      "סכין"
+    ],
+    "imageUrl": "/staged_images/pool/wolverine_logan.jpg"
+  },
+  {
+    "num": 40,
+    "id": "gandalf",
+    "name_he": "גנדלף",
+    "suggestedName": "גנדלף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(קוסם זקן, זקן לבן ארוך, כובע מחודד ומטה עץ",
+    "search_query": "גנדלף",
+    "is_basic": false,
+    "everyday_associations": [
+      "הרצאה",
+      "פרופסור",
+      "מורה",
+      "ייעוץ"
+    ],
+    "imageUrl": "/staged_images/pool/gandalf_the_grey.jpg"
+  },
+  {
+    "num": 41,
+    "id": "gollum",
+    "name_he": "גולום",
+    "suggestedName": "גולום",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(יצור רזה וקירח בוהה בטבעת זהב ולוחש \"My Precious\"",
+    "search_query": "גולום",
+    "is_basic": false,
+    "everyday_associations": [
+      "תכשיט",
+      "טבעת",
+      "צורף",
+      "זהב"
+    ],
+    "imageUrl": "/staged_images/pool/gollum_smeagol.jpg"
+  },
+  {
+    "num": 42,
+    "id": "minions",
+    "name_he": "המיניונים",
+    "suggestedName": "המיניונים",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(יצורים צהובים קטנים, סרבל כחול, משקפת אחת או שתיים",
+    "search_query": "המיניונים",
+    "is_basic": false,
+    "everyday_associations": [
+      "בננות",
+      "סופר",
+      "ילדים",
+      "חטיפים"
+    ],
+    "imageUrl": "/staged_images/pool/minions.jpg"
+  },
+  {
+    "num": 43,
+    "id": "colonel_sanders",
+    "name_he": "הקולונל של KFC",
+    "suggestedName": "הקולונל של KFC",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(זקן לבן, משקפיים, עניבת פרפר שחורה קטנה",
+    "search_query": "הקולונל של KFC",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארוחה",
+      "עוף",
+      "טיגון",
+      "משלוח"
+    ],
+    "imageUrl": "/staged_images/pool/colonel_sanders.jpg"
+  },
+  {
+    "num": 44,
+    "id": "ronald_mcdonald",
+    "name_he": "רונלד מקדונלד",
+    "suggestedName": "רונלד מקדונלד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ליצן בבגדי צהוב-אדום עם שיער נפוח אדום",
+    "search_query": "רונלד מקדונלד",
+    "is_basic": false,
+    "everyday_associations": [
+      "המבורגר",
+      "פאסטפוד",
+      "מסיבה",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg"
+  },
+  {
+    "num": 45,
+    "id": "the_grinch",
+    "name_he": "הגרינץ'",
+    "suggestedName": "הגרינץ'",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(יצור ירוק שעיר עם חיוך מרושע וכובע סנטה קלאוס",
+    "search_query": "הגרינץ'",
+    "is_basic": false,
+    "everyday_associations": [
+      "קניות",
+      "מתנות",
+      "חג",
+      "בזבוזים"
+    ],
+    "imageUrl": "/staged_images/pool/the_grinch.jpg"
+  },
+  {
+    "num": 46,
+    "id": "bilbo_baggins",
+    "name_he": "בילבו בגינס",
+    "suggestedName": "בילבו בגינס",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(הוביט עם רגליים שעירות ובית עם דלת עגולה ירוקה",
+    "search_query": "בילבו בגינס",
+    "is_basic": false,
+    "everyday_associations": [
+      "אירוח",
+      "ארוחה",
+      "אורחים",
+      "בישול"
+    ],
+    "imageUrl": "/staged_images/pool/bilbo_baggins_ring.jpg"
+  },
+  {
+    "num": 47,
+    "id": "robocop",
+    "name_he": "רובוקופ",
+    "suggestedName": "רובוקופ",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(שוטר סייבורג בקסדת מתכת כסופה עם פס שחור בעיניים",
+    "search_query": "רובוקופ",
+    "is_basic": false,
+    "everyday_associations": [
+      "משטרה",
+      "דו\"ח",
+      "חניה",
+      "בטיחות"
+    ],
+    "imageUrl": "/staged_images/pool/robocop.jpg"
+  },
+  {
+    "num": 48,
+    "id": "alf",
+    "name_he": "אלף",
+    "suggestedName": "אלף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ALF) (חייזר שעיר חום עם אף ארוך יושב מול חתול",
+    "search_query": "אלף",
+    "is_basic": false,
+    "everyday_associations": [
+      "וטרינר",
+      "חתול",
+      "אוכל",
+      "אימוץ"
+    ],
+    "imageUrl": "/staged_images/pool/alf.jpg"
+  },
+  {
+    "num": 49,
+    "id": "predator",
+    "name_he": "הטורף",
+    "suggestedName": "הטורף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(Predator) (מסכת מתכת מוזרה, שיער ראסטות מכני, לייזר משולש",
+    "search_query": "הטורף",
+    "is_basic": false,
+    "everyday_associations": [
+      "ציד",
+      "הסוואה",
+      "קמפינג",
+      "אוהל"
+    ],
+    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg"
+  },
+  {
+    "num": 50,
+    "id": "frankenstein_monster",
+    "name_he": "מפלצת פרנקנשטיין",
+    "suggestedName": "מפלצת פרנקנשטיין",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "(ראש מרובע, ברגים בצוואר, עור ירוק/אפור",
+    "search_query": "מפלצת פרנקנשטיין",
+    "is_basic": false,
+    "everyday_associations": [
+      "רופא",
+      "תפרים",
+      "בדיקות",
+      "מרפאה"
+    ],
+    "imageUrl": "/staged_images/pool/boris_karloff_frankenstein.jpg"
+  },
+  {
+    "num": 51,
+    "id": "eiffel_tower",
+    "name_he": "מגדל אייפל",
+    "suggestedName": "מגדל אייפל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(פריז",
+    "search_query": "מגדל אייפל",
+    "is_basic": true,
+    "everyday_associations": [
+      "חופשה",
+      "פריז",
+      "טיסה",
+      "רומנטיקה"
+    ],
+    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg"
+  },
+  {
+    "num": 52,
+    "id": "statue_of_liberty",
+    "name_he": "פסל החירות",
+    "suggestedName": "פסל החירות",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(ניו יורק",
+    "search_query": "פסל החירות",
+    "is_basic": true,
+    "everyday_associations": [
+      "ויזה",
+      "אמריקה",
+      "דרכון",
+      "חירות"
+    ],
+    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg"
+  },
+  {
+    "num": 53,
+    "id": "pyramids_of_giza",
+    "name_he": "הפירמידות בגיזה",
+    "suggestedName": "הפירמידות בגיזה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מצרים",
+    "search_query": "הפירמידות בגיזה",
+    "is_basic": true,
+    "everyday_associations": [
+      "טיול",
+      "מדבר",
+      "חול",
+      "עתיקות"
+    ],
+    "imageUrl": "/staged_images/pool/pyramids_of_giza_egypt.jpg"
+  },
+  {
+    "num": 54,
+    "id": "great_sphinx_giza",
+    "name_he": "הספינקס",
+    "suggestedName": "הספינקס",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מצרים",
+    "search_query": "הספינקס",
+    "is_basic": false,
+    "everyday_associations": [
+      "אבן",
+      "אריה",
+      "מוזיאון",
+      "תיירות"
+    ],
+    "imageUrl": "/staged_images/pool/sphinx_giza_sand.jpg"
+  },
+  {
+    "num": 55,
+    "id": "taj_mahal",
+    "name_he": "הטאג' מהאל",
+    "suggestedName": "הטאג' מהאל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(הודו",
+    "search_query": "הטאג' מהאל",
+    "is_basic": true,
+    "everyday_associations": [
+      "ארמון",
+      "הודו",
+      "שיש",
+      "אהבה"
+    ],
+    "imageUrl": "/staged_images/pool/taj_mahal_agra.jpg"
+  },
+  {
+    "num": 56,
+    "id": "colosseum_rome",
+    "name_he": "הקוליסאום",
+    "suggestedName": "הקוליסאום",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(רומא",
+    "search_query": "הקוליסאום",
+    "is_basic": true,
+    "everyday_associations": [
+      "איטליה",
+      "גלדיאטור",
+      "היסטוריה",
+      "סיור"
+    ],
+    "imageUrl": "/staged_images/pool/colosseum_rome_italy.jpg"
+  },
+  {
+    "num": 57,
+    "id": "great_wall_china",
+    "name_he": "החומה הסינית",
+    "suggestedName": "החומה הסינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(סין",
+    "search_query": "החומה הסינית",
+    "is_basic": true,
+    "everyday_associations": [
+      "חומה",
+      "הליכה",
+      "סין",
+      "מדרגות"
+    ],
+    "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg"
+  },
+  {
+    "num": 58,
+    "id": "leaning_tower_pisa",
+    "name_he": "מגדל פיזה הנוטה",
+    "suggestedName": "מגדל פיזה הנוטה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(איטליה",
+    "search_query": "מגדל פיזה הנוטה",
+    "is_basic": false,
+    "everyday_associations": [
+      "נטייה",
+      "תיקון",
+      "מהנדס",
+      "מגדל"
+    ],
+    "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg"
+  },
+  {
+    "num": 59,
+    "id": "big_ben_london",
+    "name_he": "ביג בן",
+    "suggestedName": "ביג בן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(לונדון",
+    "search_query": "ביג בן",
+    "is_basic": true,
+    "everyday_associations": [
+      "שעון",
+      "דייקנות",
+      "לונדון",
+      "שעה"
+    ],
+    "imageUrl": "/staged_images/pool/big_ben_london.jpg"
+  },
+  {
+    "num": 60,
+    "id": "sydney_opera_house",
+    "name_he": "בית האופרה של סידני",
+    "suggestedName": "בית האופרה של סידני",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(אוסטרליה",
+    "search_query": "בית האופרה של סידני",
+    "is_basic": false,
+    "everyday_associations": [
+      "אופרה",
+      "קונצרט",
+      "הופעה",
+      "כרטיסים"
+    ],
+    "imageUrl": "/staged_images/pool/sydney_opera_house_sails.jpg"
+  },
+  {
+    "num": 61,
+    "id": "christ_the_redeemer",
+    "name_he": "פסל ישו הגואל",
+    "suggestedName": "פסל ישו הגואל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(ריו דה ז'ניירו, ברזיל",
+    "search_query": "פסל ישו הגואל",
+    "is_basic": false,
+    "everyday_associations": [
+      "ברזיל",
+      "תפילה",
+      "פסל",
+      "הרים"
+    ],
+    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg"
+  },
+  {
+    "num": 62,
+    "id": "golden_gate_bridge",
+    "name_he": "גשר שער הזהב",
+    "suggestedName": "גשר שער הזהב",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(סן פרנסיסקו",
+    "search_query": "גשר שער הזהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "גשר",
+      "אגרה",
+      "פקק",
+      "כביש"
+    ],
+    "imageUrl": "/staged_images/pool/golden_gate_bridge_sf.jpg"
+  },
+  {
+    "num": 63,
+    "id": "the_white_house",
+    "name_he": "הבית הלבן",
+    "suggestedName": "הבית הלבן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(וושינגטון",
+    "search_query": "הבית הלבן",
+    "is_basic": false,
+    "everyday_associations": [
+      "פוליטיקה",
+      "חדשות",
+      "נשיא",
+      "ממשל"
+    ],
+    "imageUrl": "/staged_images/pool/the_white_house.jpg"
+  },
+  {
+    "num": 64,
+    "id": "azrieli_towers",
+    "name_he": "מגדלי עזריאלי",
+    "suggestedName": "מגדלי עזריאלי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(משולש, ריבוע, עיגול - תל אביב",
+    "search_query": "מגדלי עזריאלי",
+    "is_basic": false,
+    "everyday_associations": [
+      "קניון",
+      "משרד",
+      "רכבת",
+      "קניות"
+    ],
+    "imageUrl": "/staged_images/pool/azrieli_towers.jpg"
+  },
+  {
+    "num": 65,
+    "id": "saint_basil_cathedral",
+    "name_he": "הקרמלין / כנסיית ואסילי הקדוש",
+    "suggestedName": "הקרמלין / כנסיית ואסילי הקדוש",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(צריחי הבצל הצבעוניים, מוסקבה",
+    "search_query": "הקרמלין / כנסיית ואסילי הקדוש",
+    "is_basic": false,
+    "everyday_associations": [
+      "מוסקבה",
+      "חורף",
+      "צריח",
+      "כיפה"
+    ],
+    "imageUrl": "/staged_images/pool/kremlin_red_square_moscow.jpg"
+  },
+  {
+    "num": 66,
+    "id": "dutch_windmill",
+    "name_he": "טחנת רוח הולנדית",
+    "suggestedName": "טחנת רוח הולנדית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מבנה עץ/אבן עם כנפיים גדולות בשדה",
+    "search_query": "טחנת רוח הולנדית",
+    "is_basic": false,
+    "everyday_associations": [
+      "קמח",
+      "מאפייה",
+      "רוח",
+      "טחנה"
+    ],
+    "imageUrl": "/staged_images/pool/dutch_windmill.jpg"
+  },
+  {
+    "num": 67,
+    "id": "empire_state_building",
+    "name_he": "האמפייר סטייט בילדינג",
+    "suggestedName": "האמפייר סטייט בילדינג",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(גורד שחקים קלאסי עם אנטנה חדה",
+    "search_query": "האמפייר סטייט בילדינג",
+    "is_basic": false,
+    "everyday_associations": [
+      "מעלית",
+      "תצפית",
+      "גורד",
+      "שחקים"
+    ],
+    "imageUrl": "/staged_images/pool/empire_state_building_ny.jpg"
+  },
+  {
+    "num": 68,
+    "id": "hollywood_sign",
+    "name_he": "הוליווד",
+    "suggestedName": "הוליווד",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(השלט) (אותיות ענק לבנות על גבעה",
+    "search_query": "הוליווד",
+    "is_basic": false,
+    "everyday_associations": [
+      "סרטים",
+      "קולנוע",
+      "שחקן",
+      "שלט"
+    ],
+    "imageUrl": "/staged_images/pool/hollywood_sign_la.jpg"
+  },
+  {
+    "num": 69,
+    "id": "stonehenge",
+    "name_he": "סטונהנג'",
+    "suggestedName": "סטונהנג'",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מעגל אבני ענק עומדות בטבע",
+    "search_query": "סטונהנג'",
+    "is_basic": false,
+    "everyday_associations": [
+      "פולחן",
+      "אבנים",
+      "עתיק",
+      "טבע"
+    ],
+    "imageUrl": "/staged_images/pool/stonehenge_england.jpg"
+  },
+  {
+    "num": 70,
+    "id": "moai_easter_island",
+    "name_he": "פסלי המואי באסתר",
+    "suggestedName": "פסלי המואי באסתר",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(איי הפסחא) (ראשי אבן ענקיים עם אף ארוך",
+    "search_query": "פסלי המואי באסתר",
+    "is_basic": false,
+    "everyday_associations": [
+      "אי",
+      "פסל",
+      "הרפתקה",
+      "תעלומה"
+    ],
+    "imageUrl": "/staged_images/pool/moai_easter_island.jpg"
+  },
+  {
+    "num": 71,
+    "id": "parthenon_acropolis",
+    "name_he": "הפרתנון / האקרופוליס",
+    "suggestedName": "הפרתנון / האקרופוליס",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מקדש יווני עתיק עם עמודים חרוצים",
+    "search_query": "הפרתנון / האקרופוליס",
+    "is_basic": false,
+    "everyday_associations": [
+      "אוניברסיטה",
+      "פילוסופיה",
+      "עמודים",
+      "יוון"
+    ],
+    "imageUrl": "/staged_images/pool/acropolis_parthenon_athens.jpg"
+  },
+  {
+    "num": 72,
+    "id": "burj_khalifa",
+    "name_he": "בורג' ח'ליפה",
+    "suggestedName": "בורג' ח'ליפה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(המגדל הגבוה בעולם, דמוי מחט שלבית",
+    "search_query": "בורג' ח'ליפה",
+    "is_basic": false,
+    "everyday_associations": [
+      "דובאי",
+      "יוקרה",
+      "מגדל",
+      "מלון"
+    ],
+    "imageUrl": "/staged_images/pool/burj_khalifa_dubai.jpg"
+  },
+  {
+    "num": 73,
+    "id": "kaaba_mecca",
+    "name_he": "הכעבה במכה",
+    "suggestedName": "הכעבה במכה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(קוביה שחורה ענקית מוקפת המוני אנשים",
+    "search_query": "הכעבה במכה",
+    "is_basic": false,
+    "everyday_associations": [
+      "עלייה",
+      "תפילה",
+      "מכה",
+      "דת"
+    ],
+    "imageUrl": "/staged_images/pool/kaaba_mecca.jpg"
+  },
+  {
+    "num": 74,
+    "id": "pantheon_rome",
+    "name_he": "הפנתיאון",
+    "suggestedName": "הפנתיאון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(כיפה עם חור עגול במרכז המכניס אור שמש",
+    "search_query": "הפנתיאון",
+    "is_basic": false,
+    "everyday_associations": [
+      "אדריכלות",
+      "כיפה",
+      "רומא",
+      "אור"
+    ],
+    "imageUrl": "/staged_images/pool/pantheon_rome.jpg"
+  },
+  {
+    "num": 75,
+    "id": "arc_de_triomphe",
+    "name_he": "קשת הניצחון",
+    "suggestedName": "קשת הניצחון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(פריז",
+    "search_query": "קשת הניצחון",
+    "is_basic": false,
+    "everyday_associations": [
+      "מצעד",
+      "טקס",
+      "ניצחון",
+      "שער"
+    ],
+    "imageUrl": "/staged_images/pool/arc_de_triomphe_paris.jpg"
+  },
+  {
+    "num": 76,
+    "id": "plaza_de_toros",
+    "name_he": "פלאזה דה טורוס",
+    "suggestedName": "פלאזה דה טורוס",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(זירת מלחמת שוורים עגולה עם חול צהוב",
+    "search_query": "פלאזה דה טורוס",
+    "is_basic": false,
+    "everyday_associations": [
+      "ספרד",
+      "זירה",
+      "שור",
+      "מופע"
+    ],
+    "imageUrl": "/staged_images/pool/plaza_de_toros.jpg"
+  },
+  {
+    "num": 77,
+    "id": "neuschwanstein_castle",
+    "name_he": "טירת דיסני / נוישוונשטיין",
+    "suggestedName": "טירת דיסני / נוישוונשטיין",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(טירה מהאגדות עם צריחים כחולים ומחודדים",
+    "search_query": "טירת דיסני / נוישוונשטיין",
+    "is_basic": false,
+    "everyday_associations": [
+      "אגדה",
+      "טירה",
+      "נסיכה",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/neuschwanstein_castle_bavaria.jpg"
+  },
+  {
+    "num": 78,
+    "id": "burj_al_arab",
+    "name_he": "מגדל דובאי",
+    "suggestedName": "מגדל דובאי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(בורג' אל-ערב) (מלון בצורת מפרש של סירה בלב ים",
+    "search_query": "מגדל דובאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "מלון",
+      "ריזורט",
+      "סוויטה",
+      "חופשה"
+    ],
+    "imageUrl": "/staged_images/pool/burj_al_arab.jpg"
+  },
+  {
+    "num": 79,
+    "id": "chichen_itza_pyramid",
+    "name_he": "מקדש המאיה",
+    "suggestedName": "מקדש המאיה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(צ'יצ'ן איצה) (פירמידת מדרגות עם גרם מדרגות תלול באמצע",
+    "search_query": "מקדש המאיה",
+    "is_basic": false,
+    "everyday_associations": [
+      "פירמידה",
+      "מדרגות",
+      "כושר",
+      "ארכיאולוגיה"
+    ],
+    "imageUrl": "/staged_images/pool/chichen_itza_pyramid.jpg"
+  },
+  {
+    "num": 80,
+    "id": "western_wall",
+    "name_he": "הכותל המערבי",
+    "suggestedName": "הכותל המערבי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(אבני ענק, פתקאות בין החריצים",
+    "search_query": "הכותל המערבי",
+    "is_basic": true,
+    "everyday_associations": [
+      "תפילה",
+      "פתק",
+      "כותל",
+      "ברכה"
+    ],
+    "imageUrl": "/staged_images/pool/western_wall_jerusalem.jpg"
+  },
+  {
+    "num": 81,
+    "id": "sagrada_familia",
+    "name_he": "כנסיית סגרדה פמיליה",
+    "suggestedName": "כנסיית סגרדה פמיליה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מגדלים דמויי נטיפים אורגניים, ברצלונה",
+    "search_query": "כנסיית סגרדה פמיליה",
+    "is_basic": false,
+    "everyday_associations": [
+      "גאודי",
+      "שיפוץ",
+      "כנסייה",
+      "אמנות"
+    ],
+    "imageUrl": "/staged_images/pool/sagrada_familia_barcelona.jpg"
+  },
+  {
+    "num": 82,
+    "id": "tower_bridge_london",
+    "name_he": "גשר מצודת לונדון",
+    "suggestedName": "גשר מצודת לונדון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(Tower Bridge) (גשר נפתח עם שני מגדלי אבן",
+    "search_query": "גשר מצודת לונדון",
+    "is_basic": false,
+    "everyday_associations": [
+      "גשר",
+      "נהר",
+      "ספינה",
+      "לונדון"
+    ],
+    "imageUrl": "/staged_images/pool/tower_bridge_london.jpg"
+  },
+  {
+    "num": 83,
+    "id": "checkpoint_charlie",
+    "name_he": "צ'ק פוינט צ'ארלי",
+    "suggestedName": "צ'ק פוינט צ'ארלי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(בוטקה צבאי קטן עם שקי חול באמצע כביש ברלינאי",
+    "search_query": "צ'ק פוינט צ'ארלי",
+    "is_basic": false,
+    "everyday_associations": [
+      "דרכון",
+      "גבול",
+      "בידוק",
+      "שמירה"
+    ],
+    "imageUrl": "/staged_images/pool/checkpoint_charlie.jpg"
+  },
+  {
+    "num": 84,
+    "id": "mount_rushmore",
+    "name_he": "הר רושמור",
+    "suggestedName": "הר רושמור",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(ארבעה ראשי נשיאים חצובים בסלע",
+    "search_query": "הר רושמור",
+    "is_basic": false,
+    "everyday_associations": [
+      "נשיאות",
+      "חציבה",
+      "אנדרטה",
+      "הר"
+    ],
+    "imageUrl": "/staged_images/pool/mount_rushmore_monument.jpg"
+  },
+  {
+    "num": 85,
+    "id": "medieval_castle_fortress",
+    "name_he": "מבצר מלחמה מימי הביניים",
+    "suggestedName": "מבצר מלחמה מימי הביניים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(חומה משוננת, חרכי ירי, גשר הרמה",
+    "search_query": "מבצר מלחמה מימי הביניים",
+    "is_basic": false,
+    "everyday_associations": [
+      "מבצר",
+      "חומות",
+      "הגנה",
+      "שער"
+    ],
+    "imageUrl": "/staged_images/pool/medieval_castle_fortress.jpg"
+  },
+  {
+    "num": 86,
+    "id": "igloo_ice_dome",
+    "name_he": "אסקימואי באיגלו",
+    "suggestedName": "אסקימואי באיגלו",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(אסקימואי בבית כיפה עשוי קוביות קרח לבנות",
+    "search_query": "אסקימואי באיגלו",
+    "is_basic": false,
+    "everyday_associations": [
+      "קרח",
+      "אסקימואי",
+      "קור",
+      "איגלו",
+      "שלג"
+    ],
+    "imageUrl": "/staged_images/pool/igloo_ice_dome.jpg"
+  },
+  {
+    "num": 87,
+    "id": "teepee_tent",
+    "name_he": "אוהל טיפי",
+    "suggestedName": "אוהל טיפי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(אינדיאני) (אוהל חרוטי מעורות/בד עם מוטות עץ בולטים למעלה",
+    "search_query": "אוהל טיפי",
+    "is_basic": false,
+    "everyday_associations": [
+      "קמפינג",
+      "אוהל",
+      "אינדיאני",
+      "מדורה"
+    ],
+    "imageUrl": "/staged_images/pool/teepee_tent.jpg"
+  },
+  {
+    "num": 88,
+    "id": "mud_hut_african",
+    "name_he": "בקתת בוץ אפריקאית",
+    "suggestedName": "בקתת בוץ אפריקאית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(קירות עגולים מבוץ וגג קש חרוטי",
+    "search_query": "בקתת בוץ אפריקאית",
+    "is_basic": false,
+    "everyday_associations": [
+      "בקתה",
+      "בוץ",
+      "טבע",
+      "שקט"
+    ],
+    "imageUrl": "/staged_images/pool/mud_hut_african.jpg"
+  },
+  {
+    "num": 89,
+    "id": "chinese_pagoda",
+    "name_he": "פגודה סינית",
+    "suggestedName": "פגודה סינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מגדל קומות עם גגות שוליים מעוקלים כלפי מעלה",
+    "search_query": "פגודה סינית",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזרח",
+      "בודהיזם",
+      "שלווה",
+      "מקדש"
+    ],
+    "imageUrl": "/staged_images/pool/chinese_pagoda.jpg"
+  },
+  {
+    "num": 90,
+    "id": "coastal_lighthouse",
+    "name_he": "מגדלור",
+    "suggestedName": "מגדלור",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מגדל פסים אדום-לבן על צוק השולח אלומת אור לים",
+    "search_query": "מגדלור",
+    "is_basic": false,
+    "everyday_associations": [
+      "מגדלור",
+      "חוף",
+      "לילה",
+      "הכוונה"
+    ],
+    "imageUrl": "/staged_images/pool/coastal_lighthouse.jpg"
+  },
+  {
+    "num": 91,
+    "id": "aircraft_hangar",
+    "name_he": "האנגר מטוסים",
+    "suggestedName": "האנגר מטוסים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מבנה חצי גליל מתכת ענק פתוח",
+    "search_query": "האנגר מטוסים",
+    "is_basic": false,
+    "everyday_associations": [
+      "האנגר",
+      "מטוס",
+      "חניה",
+      "מחסן"
+    ],
+    "imageUrl": "/staged_images/pool/aircraft_hangar.jpg"
+  },
+  {
+    "num": 92,
+    "id": "watermill_cabin",
+    "name_he": "טחנת מים",
+    "suggestedName": "טחנת מים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(בקתה על נחל עם גלגל עץ ענק שמסתובב במים",
+    "search_query": "טחנת מים",
+    "is_basic": false,
+    "everyday_associations": [
+      "אסם",
+      "תבואה",
+      "חווה",
+      "סוסים"
+    ],
+    "imageUrl": "/staged_images/pool/watermill_cabin.jpg"
+  },
+  {
+    "num": 93,
+    "id": "classic_red_barn",
+    "name_he": "אסם אמריקאי קלאסי",
+    "suggestedName": "אסם אמריקאי קלאסי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מבנה עץ אדום גדול עם גג לבן בשדה",
+    "search_query": "אסם אמריקאי קלאסי",
+    "is_basic": false,
+    "everyday_associations": [
+      "גשר",
+      "חבלים",
+      "תהום",
+      "אומגה"
+    ],
+    "imageUrl": "/staged_images/pool/classic_red_barn.jpg"
+  },
+  {
+    "num": 94,
+    "id": "military_cemetery",
+    "name_he": "בית קברות צבאי",
+    "suggestedName": "בית קברות צבאי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(שורות אינסופיות של צלבים לבנים אחידים על דשא",
+    "search_query": "בית קברות צבאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "שער",
+      "ברלין",
+      "סיור",
+      "עמודים"
+    ],
+    "imageUrl": "/staged_images/pool/military_cemetery.jpg"
+  },
+  {
+    "num": 95,
+    "id": "abandoned_gas_station",
+    "name_he": "תחנת דלק נטושה",
+    "suggestedName": "תחנת דלק נטושה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(משאבות ישנות בלב מדבר, שלט חלוד",
+    "search_query": "תחנת דלק נטושה",
+    "is_basic": false,
+    "everyday_associations": [
+      "בונקר",
+      "מקלט",
+      "חירום",
+      "בטון"
+    ],
+    "imageUrl": "/staged_images/pool/abandoned_gas_station.jpg"
+  },
+  {
+    "num": 96,
+    "id": "roman_ruins_arch",
+    "name_he": "קולוסיאום רומי",
+    "suggestedName": "קולוסיאום רומי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(הריסות) (קיר קשתות שבור בחצי גובה",
+    "search_query": "קולוסיאום רומי",
+    "is_basic": false,
+    "everyday_associations": [
+      "טחנה",
+      "מים",
+      "נחל",
+      "גלגל"
+    ],
+    "imageUrl": "/staged_images/pool/roman_ruins_arch.jpg"
+  },
+  {
+    "num": 97,
+    "id": "concrete_bunker",
+    "name_he": "בונקר בטון",
+    "suggestedName": "בונקר בטון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מבנה בטון אפור נמוך, חרך צר וארוך לחזית",
+    "search_query": "בונקר בטון",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזח",
+      "דייג",
+      "סירה",
+      "שקיעה"
+    ],
+    "imageUrl": "/staged_images/pool/concrete_bunker.jpg"
+  },
+  {
+    "num": 98,
+    "id": "hall_of_mirrors_versailles",
+    "name_he": "ארמון ורסאי",
+    "suggestedName": "ארמון ורסאי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(אולם המראות) (אולם ענק מלא נברשות ומראות קשתות",
+    "search_query": "ארמון ורסאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "איצטדיון",
+      "משחק",
+      "כרטיסים",
+      "אוהדים"
+    ],
+    "imageUrl": "/staged_images/pool/hall_of_mirrors_versailles.jpg"
+  },
+  {
+    "num": 99,
+    "id": "neon_motel_sign",
+    "name_he": "פנסיון דרכים",
+    "suggestedName": "פנסיון דרכים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מוטל) (שלט ניאון מהבהב \"Motel / Vacancy\" בצד כביש",
+    "search_query": "פנסיון דרכים",
+    "is_basic": false,
+    "everyday_associations": [
+      "סכר",
+      "חשמל",
+      "מים",
+      "הצפה"
+    ],
+    "imageUrl": "/staged_images/pool/neon_motel_sign.jpg"
+  },
+  {
+    "num": 100,
+    "id": "airport_control_tower",
+    "name_he": "מגדל פיקוח בנמל תעופה",
+    "suggestedName": "מגדל פיקוח בנמל תעופה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "subCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "(מגדל גבוה עם חדר זכוכית היקפי בראשו",
+    "search_query": "מגדל פיקוח בנמל תעופה",
+    "is_basic": false,
+    "everyday_associations": [
+      "טיסה",
+      "המראה",
+      "נחיתה",
+      "מגדל"
+    ],
+    "imageUrl": "/staged_images/pool/airport_control_tower.jpg"
+  },
+  {
+    "num": 101,
+    "id": "mona_lisa",
+    "name_he": "המונה ליזה",
+    "suggestedName": "המונה ליזה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(לאונרדו דה וינצ'י - החיוך והידיים המשולבות",
+    "search_query": "המונה ליזה",
+    "is_basic": true,
+    "everyday_associations": [
+      "חיוך",
+      "תערוכה",
+      "מוזיאון",
+      "ציור"
+    ],
+    "imageUrl": "/staged_images/pool/mona_lisa_louvre.jpg"
+  },
+  {
+    "num": 102,
+    "id": "the_scream",
+    "name_he": "הצעקה",
+    "suggestedName": "הצעקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(אדברד מונק - הדמות האוחזת בראשה בפה פעור",
+    "search_query": "הצעקה",
+    "is_basic": true,
+    "everyday_associations": [
+      "פחד",
+      "חרדה",
+      "זעקה",
+      "טיפול"
+    ],
+    "imageUrl": "/staged_images/pool/the_scream_edvard_munch.jpg"
+  },
+  {
+    "num": 103,
+    "id": "the_thinker",
+    "name_he": "האדם החושב",
+    "suggestedName": "האדם החושב",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(רודן - פסל ברונזה של אדם יושב, סנטר על כף היד",
+    "search_query": "האדם החושב",
+    "is_basic": true,
+    "everyday_associations": [
+      "מחשבה",
+      "החלטה",
+      "פילוסופיה",
+      "ייעוץ"
+    ],
+    "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg"
+  },
+  {
+    "num": 104,
+    "id": "statue_of_david",
+    "name_he": "פסל דוד",
+    "suggestedName": "פסל דוד",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מיכלאנג'לו - גבר עירום משיש לבן במבט הצידה",
+    "search_query": "פסל דוד",
+    "is_basic": true,
+    "everyday_associations": [
+      "פסל",
+      "שיש",
+      "אימון",
+      "יופי"
+    ],
+    "imageUrl": "/staged_images/pool/statue_of_david.jpg"
+  },
+  {
+    "num": 105,
+    "id": "starry_night",
+    "name_he": "ליל כוכבים",
+    "suggestedName": "ליל כוכבים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ואן גוך - שמיים מסולסלים בצהוב וכחול מעל כפר",
+    "search_query": "ליל כוכבים",
+    "is_basic": true,
+    "everyday_associations": [
+      "כוכבים",
+      "לילה",
+      "ציור",
+      "השראה"
+    ],
+    "imageUrl": "/staged_images/pool/starry_night.jpg"
+  },
+  {
+    "num": 106,
+    "id": "creation_of_adam",
+    "name_he": "בריאת האדם",
+    "suggestedName": "בריאת האדם",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מיכלאנג'לו - שתי אצבעות כמעט נוגעות",
+    "search_query": "בריאת האדם",
+    "is_basic": true,
+    "everyday_associations": [
+      "בריאה",
+      "אלוהים",
+      "אצבע",
+      "חיבור"
+    ],
+    "imageUrl": "/staged_images/pool/creation_of_adam.jpg"
+  },
+  {
+    "num": 107,
+    "id": "the_last_supper",
+    "name_he": "הסעודה האחרונה",
+    "suggestedName": "הסעודה האחרונה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(דה וינצ'י - שולחן ארוך, ישו במרכז, שליחים משני הצדדים",
+    "search_query": "הסעודה האחרונה",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארוחה",
+      "שולחן",
+      "לחם",
+      "יין"
+    ],
+    "imageUrl": "/staged_images/pool/the_last_supper.jpg"
+  },
+  {
+    "num": 108,
+    "id": "the_birth_of_venus",
+    "name_he": "הולדת ונוס",
+    "suggestedName": "הולדת ונוס",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(בוטיצ'לי - אישה ג'ינג'ית עומדת בתוך צדף ענק על המים",
+    "search_query": "הולדת ונוס",
+    "is_basic": false,
+    "everyday_associations": [
+      "יופי",
+      "רחצה",
+      "צדפה",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/the_birth_of_venus.jpg"
+  },
+  {
+    "num": 109,
+    "id": "persistence_of_memory",
+    "name_he": "התמדה של זיכרון",
+    "suggestedName": "התמדה של זיכרון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(דאלי - שעונים נמסים על ענפים ועל קוביות",
+    "search_query": "התמדה של זיכרון",
+    "is_basic": false,
+    "everyday_associations": [
+      "שעון",
+      "זמן",
+      "איחור",
+      "חלום"
+    ],
+    "imageUrl": "/staged_images/pool/salvador_dali_melting_clocks.jpg"
+  },
+  {
+    "num": 110,
+    "id": "golden_mask_tutankhamun",
+    "name_he": "מסכת הזהב של תות ענח' אמון",
+    "suggestedName": "מסכת הזהב של תות ענח' אמון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מסכה מצרית בפסי זהב וכחול",
+    "search_query": "מסכת הזהב של תות ענח' אמון",
+    "is_basic": false,
+    "everyday_associations": [
+      "זהב",
+      "תכשיט",
+      "קבר",
+      "פרעה"
+    ],
+    "imageUrl": "/staged_images/pool/tutankhamun.jpg"
+  },
+  {
+    "num": 111,
+    "id": "venus_de_milo",
+    "name_he": "ונוס ממילו",
+    "suggestedName": "ונוס ממילו",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(פסל שיש של אישה ללא זרועות",
+    "search_query": "ונוס ממילו",
+    "is_basic": false,
+    "everyday_associations": [
+      "פסל",
+      "יוון",
+      "מוזיאון",
+      "שיש"
+    ],
+    "imageUrl": "/staged_images/pool/venus_de_milo_marble.jpg"
+  },
+  {
+    "num": 112,
+    "id": "guernica_picasso",
+    "name_he": "גרניקה",
+    "suggestedName": "גרניקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(פיקאסו - ציור בשחור-לבן של סוס צורח, שברים ונורת חשמל",
+    "search_query": "גרניקה",
+    "is_basic": false,
+    "everyday_associations": [
+      "מלחמה",
+      "זעקה",
+      "שלום",
+      "מחאה"
+    ],
+    "imageUrl": "/staged_images/pool/guernica_picasso.jpg"
+  },
+  {
+    "num": 113,
+    "id": "american_gothic",
+    "name_he": "התאומים",
+    "suggestedName": "התאומים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(האמריקאית הגותית) (איכר עם קלשון ואישה רצינית לידו מול בית",
+    "search_query": "התאומים",
+    "is_basic": false,
+    "everyday_associations": [
+      "חווה",
+      "איכר",
+      "קלשון",
+      "עבודה"
+    ],
+    "imageUrl": "/staged_images/pool/american_gothic.jpg"
+  },
+  {
+    "num": 114,
+    "id": "girl_with_pearl_earring",
+    "name_he": "הנערה עם עגיל פנינה",
+    "suggestedName": "הנערה עם עגיל פנינה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ורמיר - נערה עם טורבן כחול-צהוב מביטה מעבר לכתף",
+    "search_query": "הנערה עם עגיל פנינה",
+    "is_basic": false,
+    "everyday_associations": [
+      "פנינה",
+      "עגיל",
+      "תכשיט",
+      "מבט"
+    ],
+    "imageUrl": "/staged_images/pool/girl_with_pearl_earring.jpg"
+  },
+  {
+    "num": 115,
+    "id": "the_son_of_man",
+    "name_he": "בנו של אדם",
+    "suggestedName": "בנו של אדם",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מגריט - גבר בחליפה וכובע קניידל, תפוח ירוק מסתיר את פניו",
+    "search_query": "בנו של אדם",
+    "is_basic": false,
+    "everyday_associations": [
+      "תפוח",
+      "מגבעת",
+      "חליפה",
+      "סוד"
+    ],
+    "imageUrl": "/staged_images/pool/the_son_of_man.jpg"
+  },
+  {
+    "num": 116,
+    "id": "vitruvian_man",
+    "name_he": "האדם הוויטרובי",
+    "suggestedName": "האדם הוויטרובי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(דה וינצ'י - רישום גבר בעיגול וריבוע עם 4 ידיים ו-4 רגליים",
+    "search_query": "האדם הוויטרובי",
+    "is_basic": false,
+    "everyday_associations": [
+      "אנטומיה",
+      "כושר",
+      "גוף",
+      "איזון"
+    ],
+    "imageUrl": "/staged_images/pool/vitruvian_man.jpg"
+  },
+  {
+    "num": 117,
+    "id": "campbell_soup_can",
+    "name_he": "מרק קמפבל",
+    "suggestedName": "מרק קמפבל",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(פופ ארט) (אנדי וורהול - פחית שימורים אדומה-לבנה",
+    "search_query": "מרק קמפבל",
+    "is_basic": false,
+    "everyday_associations": [
+      "מרק",
+      "שימורים",
+      "סופר",
+      "ארוחה"
+    ],
+    "imageUrl": "/staged_images/pool/andy_warhol_campbell_soup.jpg"
+  },
+  {
+    "num": 118,
+    "id": "the_kiss_klimt",
+    "name_he": "הנשיקה",
+    "suggestedName": "הנשיקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(גוסטב קלימט - זוג מתחבק עטוף בבגדי זהב גיאומטריים",
+    "search_query": "הנשיקה",
+    "is_basic": false,
+    "everyday_associations": [
+      "נשיקה",
+      "רומנטיקה",
+      "חיבוק",
+      "אהבה"
+    ],
+    "imageUrl": "/staged_images/pool/gustav_klimt_the_kiss.jpg"
+  },
+  {
+    "num": 119,
+    "id": "degas_little_ballerina",
+    "name_he": "רקדנית בלט",
+    "suggestedName": "רקדנית בלט",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(דגה - פסל או ציור של ילדה בשמלת טוטו מחזיקה ידיים מאחור",
+    "search_query": "רקדנית בלט",
+    "is_basic": false,
+    "everyday_associations": [
+      "בלט",
+      "ריקוד",
+      "חוג",
+      "הופעה"
+    ],
+    "imageUrl": "/staged_images/pool/degas_little_ballerina.jpg"
+  },
+  {
+    "num": 120,
+    "id": "jackson_pollock_splatter",
+    "name_he": "פחיות צבע משפריצות",
+    "suggestedName": "פחיות צבע משפריצות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ג'קסון פולוק - בד קנבס ענק מלא השפרצות צבע אקראיות",
+    "search_query": "פחיות צבע משפריצות",
+    "is_basic": false,
+    "everyday_associations": [
+      "צבע",
+      "לכלוך",
+      "שיפוץ",
+      "קנבס"
+    ],
+    "imageUrl": "/staged_images/pool/jackson_pollock_splatter.jpg"
+  },
+  {
+    "num": 121,
+    "id": "sunflowers_van_gogh",
+    "name_he": "החמניות",
+    "suggestedName": "החמניות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ואן גוך - כד עם פרחי חמניה צהובים נובלים בחלקם",
+    "search_query": "החמניות",
+    "is_basic": false,
+    "everyday_associations": [
+      "פרחים",
+      "אגרטל",
+      "זר",
+      "שמחה"
+    ],
+    "imageUrl": "/staged_images/pool/van_gogh_sunflowers.jpg"
+  },
+  {
+    "num": 122,
+    "id": "balloon_girl_banksy",
+    "name_he": "בלון ילדה",
+    "suggestedName": "בלון ילדה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(בנקסי - ילדה מושיטה יד לבלון לב אדום שנסחף ברוח",
+    "search_query": "בלון ילדה",
+    "is_basic": false,
+    "everyday_associations": [
+      "בלון",
+      "ילדים",
+      "תקווה",
+      "קיר"
+    ],
+    "imageUrl": "/staged_images/pool/banksy_balloon_girl.jpg"
+  },
+  {
+    "num": 123,
+    "id": "terracotta_army",
+    "name_he": "פסל החרות האוריינטלי",
+    "suggestedName": "פסל החרות האוריינטלי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(הלוחמים מטרקוטה) (חיילי חרס סיניים עומדים בשורות",
+    "search_query": "פסל החרות האוריינטלי",
+    "is_basic": false,
+    "everyday_associations": [
+      "חיילים",
+      "שמירה",
+      "חימר",
+      "סין"
+    ],
+    "imageUrl": "/staged_images/pool/terracotta_army_warriors.jpg"
+  },
+  {
+    "num": 124,
+    "id": "rosetta_stone",
+    "name_he": "רוזטה",
+    "suggestedName": "רוזטה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(אבן) (לוח אבן שחור חרוט בשלוש שפות עתיקות",
+    "search_query": "רוזטה",
+    "is_basic": false,
+    "everyday_associations": [
+      "שפה",
+      "תרגום",
+      "לימוד",
+      "פענוח"
+    ],
+    "imageUrl": "/staged_images/pool/rosetta_stone_british_museum.jpg"
+  },
+  {
+    "num": 125,
+    "id": "cave_painting_bison",
+    "name_he": "ציור מערות",
+    "suggestedName": "ציור מערות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(סקיצה פרימיטיבית של שור או איל בצבע חום-אדום על סלע",
+    "search_query": "ציור מערות",
+    "is_basic": false,
+    "everyday_associations": [
+      "ציור",
+      "מערה",
+      "טבע",
+      "היסטוריה"
+    ],
+    "imageUrl": "/staged_images/pool/cave_painting_bison.jpg"
+  },
+  {
+    "num": 126,
+    "id": "egyptian_hieroglyphs",
+    "name_he": "הירוגליפים מצריים",
+    "suggestedName": "הירוגליפים מצריים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(חריטות של ציפור, עין, ונחש בתוך מסגרת אליפטית",
+    "search_query": "הירוגליפים מצריים",
+    "is_basic": false,
+    "everyday_associations": [
+      "פרס",
+      "אוסקר",
+      "קולנוע",
+      "הישג"
+    ],
+    "imageUrl": "/staged_images/pool/egyptian_hieroglyphs.jpg"
+  },
+  {
+    "num": 127,
+    "id": "balloon_dog_jeff_koons",
+    "name_he": "כלב בלון",
+    "suggestedName": "כלב בלון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ג'ף קונס - פסל מתכת מבריק בצורת כלב עשוי בלונים מפותלים",
+    "search_query": "כלב בלון",
+    "is_basic": false,
+    "everyday_associations": [
+      "בלון",
+      "כלב",
+      "מתנה",
+      "יומולדת"
+    ],
+    "imageUrl": "/staged_images/pool/balloon_dog_jeff_koons.jpg"
+  },
+  {
+    "num": 128,
+    "id": "egyptian_sarcophagus",
+    "name_he": "סרקופג",
+    "suggestedName": "סרקופג",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ארון קבורה מצרי מעוטר בדמות חנוטה בצבעי זהב",
+    "search_query": "סרקופג",
+    "is_basic": false,
+    "everyday_associations": [
+      "נבל",
+      "נגינה",
+      "קונצרט",
+      "מוזיקה"
+    ],
+    "imageUrl": "/staged_images/pool/egyptian_sarcophagus.jpg"
+  },
+  {
+    "num": 129,
+    "id": "bubble_graffiti_lettering",
+    "name_he": "גרפיטי של אותיות בלון",
+    "suggestedName": "גרפיטי של אותיות בלון",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(אותיות תפוחות צבעוניות עם קווי מתאר שחורים על קיר",
+    "search_query": "גרפיטי של אותיות בלון",
+    "is_basic": false,
+    "everyday_associations": [
+      "חרב",
+      "אבירים",
+      "אגדה",
+      "הנהגה"
+    ],
+    "imageUrl": "/staged_images/pool/bubble_graffiti_lettering.jpg"
+  },
+  {
+    "num": 130,
+    "id": "japanese_kanji_calligraphy",
+    "name_he": "קליגרפיה יפנית",
+    "suggestedName": "קליגרפיה יפנית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(משיכת מכחול שחורה ועבה של קאנג'י על נייר אורז לבן",
+    "search_query": "קליגרפיה יפנית",
+    "is_basic": false,
+    "everyday_associations": [
+      "שפע",
+      "פירות",
+      "קניות",
+      "סל"
+    ],
+    "imageUrl": "/staged_images/pool/japanese_kanji_calligraphy.jpg"
+  },
+  {
+    "num": 131,
+    "id": "capitoline_wolf",
+    "name_he": "פסל ברונזה של זאבה",
+    "suggestedName": "פסל ברונזה של זאבה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(הזאבה הקפיטולינית מניקה שני תינוקות - רומא",
+    "search_query": "פסל ברונזה של זאבה",
+    "is_basic": false,
+    "everyday_associations": [
+      "גרזן",
+      "עצים",
+      "חיתוך",
+      "עבודה"
+    ],
+    "imageUrl": "/staged_images/pool/capitoline_wolf.jpg"
+  },
+  {
+    "num": 132,
+    "id": "crucifixion_silhouette",
+    "name_he": "הצליבה",
+    "suggestedName": "הצליבה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(צללית של ישו על הצלב על רקע שמיים אדומים",
+    "search_query": "הצליבה",
+    "is_basic": false,
+    "everyday_associations": [
+      "בומרנג",
+      "חזרה",
+      "קארמה",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/crucifixion_silhouette.jpg"
+  },
+  {
+    "num": 133,
+    "id": "ten_commandments_tablets",
+    "name_he": "לוח עשרת הדיברות",
+    "suggestedName": "לוח עשרת הדיברות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(שני לוחות אבן מעוגלים למעלה עם אותיות/חריטות",
+    "search_query": "לוח עשרת הדיברות",
+    "is_basic": false,
+    "everyday_associations": [
+      "קטורת",
+      "ריח",
+      "ספא",
+      "רוגע"
+    ],
+    "imageUrl": "/staged_images/pool/ten_commandments_tablets.jpg"
+  },
+  {
+    "num": 134,
+    "id": "golden_calf_idol",
+    "name_he": "עגל הזהב",
+    "suggestedName": "עגל הזהב",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(פסל עגל מוזהב על במה, אנשים רוקדים סביבו",
+    "search_query": "עגל הזהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "טוטם",
+      "שבט",
+      "משפחה",
+      "מסורת"
+    ],
+    "imageUrl": "/staged_images/pool/golden_calf_idol.jpg"
+  },
+  {
+    "num": 135,
+    "id": "great_wave_off_kanagawa",
+    "name_he": "הגל הגדול בסמוך לקאנאגאווה",
+    "suggestedName": "הגל הגדול בסמוך לקאנאגאווה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(גל ענק עם קצף דמוי טפרים, הר פוג'י ברקע",
+    "search_query": "הגל הגדול בסמוך לקאנאגאווה",
+    "is_basic": false,
+    "everyday_associations": [
+      "צלחת",
+      "חרסינה",
+      "עריכה",
+      "ארוחה"
+    ],
+    "imageUrl": "/staged_images/pool/great_wave_off_kanagawa.jpg"
+  },
+  {
+    "num": 136,
+    "id": "native_totem_pole",
+    "name_he": "טוטם אינדיאני",
+    "suggestedName": "טוטם אינדיאני",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(עמוד עץ מגולף עם פרצופי חיות וציפורים זה על גבי זה",
+    "search_query": "טוטם אינדיאני",
+    "is_basic": false,
+    "everyday_associations": [
+      "שטיח",
+      "שאיבה",
+      "ניקוי",
+      "סלון"
+    ],
+    "imageUrl": "/staged_images/pool/native_totem_pole.jpg"
+  },
+  {
+    "num": 137,
+    "id": "flower_thrower_banksy",
+    "name_he": "מסכת הגז של בנקסי / מפגין מטיח פרחים",
+    "suggestedName": "מסכת הגז של בנקסי / מפגין מטיח פרחים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(אדם עם מטפחת על הפנים זורק זר פרחים",
+    "search_query": "מסכת הגז של בנקסי / מפגין מטיח פרחים",
+    "is_basic": false,
+    "everyday_associations": [
+      "פרחים",
+      "זר",
+      "משלוח",
+      "הפגנה"
+    ],
+    "imageUrl": "/staged_images/pool/flower_thrower_banksy.jpg"
+  },
+  {
+    "num": 138,
+    "id": "rolling_stones_tongue",
+    "name_he": "הלשון של הרולינג סטונס",
+    "suggestedName": "הלשון של הרולינג סטונס",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ציור של שפתיים אדומות פתוחות ולשון ארוכה בולטת",
+    "search_query": "הלשון של הרולינג סטונס",
+    "is_basic": false,
+    "everyday_associations": [
+      "רוק",
+      "הופעה",
+      "שפתיים",
+      "מוזיקה"
+    ],
+    "imageUrl": "/staged_images/pool/rolling_stones_tongue.jpg"
+  },
+  {
+    "num": 139,
+    "id": "portuguese_azulejos",
+    "name_he": "האריחי הכחולים פורטוגזיים",
+    "suggestedName": "האריחי הכחולים פורטוגזיים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(אזולז'וס) (קיר מלא אריחי קרמיקה מצוירים בכחול-לבן",
+    "search_query": "האריחי הכחולים פורטוגזיים",
+    "is_basic": false,
+    "everyday_associations": [
+      "קרמיקה",
+      "שיפוץ",
+      "אריחים",
+      "קיר"
+    ],
+    "imageUrl": "/staged_images/pool/portuguese_azulejos.jpg"
+  },
+  {
+    "num": 140,
+    "id": "classic_snowman",
+    "name_he": "איש השלג",
+    "suggestedName": "איש השלג",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(ציור קלאסי) (שלושה כדורי שלג, גזר כאף, כובע צילינדר וידי ענפים",
+    "search_query": "איש השלג",
+    "is_basic": false,
+    "everyday_associations": [
+      "שלג",
+      "גזר",
+      "כפתורים",
+      "חורף"
+    ],
+    "imageUrl": "/staged_images/pool/classic_snowman.jpg"
+  },
+  {
+    "num": 141,
+    "id": "russian_matryoshka",
+    "name_he": "בבושקה / מטריושקה",
+    "suggestedName": "בבושקה / מטריושקה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(בובת עץ רוסית מצוירת שנפתחת לבובה קטנה יותר",
+    "search_query": "בבושקה / מטריושקה",
+    "is_basic": false,
+    "everyday_associations": [
+      "בובה",
+      "משפחה",
+      "עץ",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/matryoshka_nesting_dolls.jpg"
+  },
+  {
+    "num": 142,
+    "id": "japanese_folding_fan",
+    "name_he": "מניפה יפנית",
+    "suggestedName": "מניפה יפנית",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מניפת נייר חצי עגולה פרוסה עם ציור של פריחת דובדבן",
+    "search_query": "מניפה יפנית",
+    "is_basic": false,
+    "everyday_associations": [
+      "חום",
+      "מניפה",
+      "קיץ",
+      "רוח"
+    ],
+    "imageUrl": "/staged_images/pool/japanese_folding_fan.jpg"
+  },
+  {
+    "num": 143,
+    "id": "native_dreamcatcher",
+    "name_he": "לוכד חלומות",
+    "suggestedName": "לוכד חלומות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(רשת חוטים בתוך עיגול עץ ממנו תלויות נוצות וחרוזים",
+    "search_query": "לוכד חלומות",
+    "is_basic": false,
+    "everyday_associations": [
+      "שינה",
+      "חלומות",
+      "לילה",
+      "מיטה"
+    ],
+    "imageUrl": "/staged_images/pool/native_dreamcatcher.jpg"
+  },
+  {
+    "num": 144,
+    "id": "gargoyle_stone_statue",
+    "name_he": "גרגויל",
+    "suggestedName": "גרגויל",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(פסל מפלצת אבן מכונפת יושבת שפופה על קצה גג",
+    "search_query": "גרגויל",
+    "is_basic": false,
+    "everyday_associations": [
+      "מרזב",
+      "גג",
+      "פסל",
+      "מפלצת"
+    ],
+    "imageUrl": "/staged_images/pool/gargoyle_stone_statue.jpg"
+  },
+  {
+    "num": 145,
+    "id": "chess_knight_piece",
+    "name_he": "חייל שחמט",
+    "suggestedName": "חייל שחמט",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(פרש) (פסל עץ או פלסטיק בצורת ראש סוס",
+    "search_query": "חייל שחמט",
+    "is_basic": false,
+    "everyday_associations": [
+      "שחמט",
+      "סוס",
+      "חשיבה",
+      "אסטרטגיה"
+    ],
+    "imageUrl": "/staged_images/pool/chess_knight_piece.jpg"
+  },
+  {
+    "num": 146,
+    "id": "golden_menorah_seven",
+    "name_he": "מנורת שבעת הקנים",
+    "suggestedName": "מנורת שבעת הקנים",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מנורת זהב עתיקה בעלת שבעה ענפים",
+    "search_query": "מנורת שבעת הקנים",
+    "is_basic": false,
+    "everyday_associations": [
+      "מנורה",
+      "חנוכה",
+      "זהב",
+      "אור"
+    ],
+    "imageUrl": "/staged_images/pool/golden_menorah_seven.jpg"
+  },
+  {
+    "num": 147,
+    "id": "egyptian_mummy_wraps",
+    "name_he": "תחבושת חניטה",
+    "suggestedName": "תחבושת חניטה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(מומיה) (דמות אדם עטופה לחלוטין ברצועות בד לבן-מלוכלך",
+    "search_query": "תחבושת חניטה",
+    "is_basic": false,
+    "everyday_associations": [
+      "תחבושת",
+      "רופא",
+      "קבר",
+      "מומיה"
+    ],
+    "imageUrl": "/staged_images/pool/egyptian_mummy_wraps.jpg"
+  },
+  {
+    "num": 148,
+    "id": "hamsa_hand_amulet",
+    "name_he": "קמע חמסה",
+    "suggestedName": "קמע חמסה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(איור יד בעלת חמש אצבעות סימטריות עם עין במרכז",
+    "search_query": "קמע חמסה",
+    "is_basic": false,
+    "everyday_associations": [
+      "עין",
+      "מזל",
+      "קמע",
+      "ברכה"
+    ],
+    "imageUrl": "/staged_images/pool/hamsa_hand_amulet.jpg"
+  },
+  {
+    "num": 149,
+    "id": "star_of_david",
+    "name_he": "מגן דוד",
+    "suggestedName": "מגן דוד",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(כוכב משושה העשוי משני משולשים שלובים",
+    "search_query": "מגן דוד",
+    "is_basic": true,
+    "everyday_associations": [
+      "ישראל",
+      "סמל",
+      "דגל",
+      "יהדות"
+    ],
+    "imageUrl": "/staged_images/pool/star_of_david.jpg"
+  },
+  {
+    "num": 150,
+    "id": "christian_holy_cross",
+    "name_he": "צלב קלאסי",
+    "suggestedName": "צלב קלאסי",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "subCategory": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "theme": "art_archeology",
+    "theme_he": "יצירות אמנות וארכיאולוגיה",
+    "desc_he": "(שני מוטות מצטלבים, אנכי ארוך ואופקי קצר",
+    "search_query": "צלב קלאסי",
+    "is_basic": true,
+    "everyday_associations": [
+      "צלב",
+      "כנסייה",
+      "תפילה",
+      "נצרות"
+    ],
+    "imageUrl": "/staged_images/pool/christian_holy_cross.jpg"
+  },
+  {
+    "num": 151,
+    "id": "item_151_נורה_דולקת__מסמלת",
+    "name_he": "נורה דולקת",
+    "suggestedName": "נורה דולקת",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "רעיון, הברקה, גאונות",
+    "search_query": "נורה דולקת",
+    "is_basic": false,
+    "everyday_associations": [
+      "רעיון",
+      "הברקה",
+      "חשמל",
+      "נורה"
+    ],
+    "imageUrl": "/staged_images/pool/item_151_נורה_דולקת__מסמלת.jpg"
+  },
+  {
+    "num": 152,
+    "id": "item_152_תיבת_אוצר__מסמלת",
+    "name_he": "תיבת אוצר",
+    "suggestedName": "תיבת אוצר",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "הרפתקה, עושר, פרס, סוד",
+    "search_query": "תיבת אוצר",
+    "is_basic": false,
+    "everyday_associations": [
+      "בונוס",
+      "פרס",
+      "משכורת",
+      "אוצר"
+    ],
+    "imageUrl": "/staged_images/pool/item_152_תיבת_אוצר__מסמלת.jpg"
+  },
+  {
+    "num": 153,
+    "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
+    "name_he": "פצצה שחורה עם פתיל בוער",
+    "suggestedName": "פצצה שחורה עם פתיל בוער",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "סכנה מיידית, פתיל קצר, פיצוץ",
+    "search_query": "פצצה שחורה עם פתיל בוער",
+    "is_basic": false,
+    "everyday_associations": [
+      "דחוף",
+      "דדליין",
+      "פיצוץ",
+      "משבר"
+    ],
+    "imageUrl": "/staged_images/pool/item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg"
+  },
+  {
+    "num": 154,
+    "id": "item_154_דיסקט_3_5_אינץ___מסמל",
+    "name_he": "דיסקט 3.5 אינץ'",
+    "suggestedName": "דיסקט 3.5 אינץ'",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "שמירת קובץ מחשב, נוסטלגיה",
+    "search_query": "דיסקט 3.5 אינץ'",
+    "is_basic": false,
+    "everyday_associations": [
+      "שמירה",
+      "גיבוי",
+      "קובץ",
+      "מחשב"
+    ],
+    "imageUrl": "/staged_images/pool/item_154_דיסקט_3_5_אינץ___מסמל.jpg"
+  },
+  {
+    "num": 155,
+    "id": "item_155_זכוכית_מגדלת__מסמלת",
+    "name_he": "זכוכית מגדלת",
+    "suggestedName": "זכוכית מגדלת",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "חיפוש, חקירה, בילוש, הגדלה",
+    "search_query": "זכוכית מגדלת",
+    "is_basic": false,
+    "everyday_associations": [
+      "חיפוש",
+      "בדיקה",
+      "קריאה",
+      "חוזה"
+    ],
+    "imageUrl": "/staged_images/pool/item_155_זכוכית_מגדלת__מסמלת.jpg"
+  },
+  {
+    "num": 156,
+    "id": "item_156_מפתח_מכני_גדול__מסמל",
+    "name_he": "מפתח מכני גדול",
+    "suggestedName": "מפתח מכני גדול",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "הגדרות מערכת, תיקון, מכונאות",
+    "search_query": "מפתח מכני גדול",
+    "is_basic": false,
+    "everyday_associations": [
+      "תיקון",
+      "מוסך",
+      "בורג",
+      "התקנה"
+    ],
+    "imageUrl": "/staged_images/pool/item_156_מפתח_מכני_גדול__מסמל.jpg"
+  },
+  {
+    "num": 157,
+    "id": "item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל",
+    "name_he": "שק כסף",
+    "suggestedName": "שק כסף",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "עושר, שוד, שוחד, הון",
+    "search_query": "שק כסף",
+    "is_basic": false,
+    "everyday_associations": [
+      "כסף",
+      "חשבון",
+      "בנק",
+      "תשלום"
+    ],
+    "imageUrl": "/staged_images/pool/item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל.jpg"
+  },
+  {
+    "num": 158,
+    "id": "item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות",
+    "name_he": "מסיכות תיאטרון",
+    "suggestedName": "מסיכות תיאטרון",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "דרמה, משחק, אמנות, צחוק ובכי",
+    "search_query": "מסיכות תיאטרון",
+    "is_basic": false,
+    "everyday_associations": [
+      "הצגה",
+      "כרטיסים",
+      "תיאטרון",
+      "תרבות"
+    ],
+    "imageUrl": "/staged_images/pool/item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות.jpg"
+  },
+  {
+    "num": 159,
+    "id": "item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת",
+    "name_he": "ענן מילים / בועת מחשבה",
+    "suggestedName": "ענן מילים / בועת מחשבה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מחשבה, חלום, דיבור, קומיקס",
+    "search_query": "ענן מילים / בועת מחשבה",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחשבה",
+      "רעיון",
+      "קומיקס",
+      "בועה"
+    ],
+    "imageUrl": "/staged_images/pool/item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת.jpg"
+  },
+  {
+    "num": 160,
+    "id": "item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל",
+    "name_he": "לב אדום שבור",
+    "suggestedName": "לב אדום שבור",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "אהבה נכזבת, שברון לב, רומנטיקה",
+    "search_query": "לב אדום שבור",
+    "is_basic": false,
+    "everyday_associations": [
+      "פרידה",
+      "שיחה",
+      "חבר",
+      "עידוד"
+    ],
+    "imageUrl": "/staged_images/pool/item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל.jpg"
+  },
+  {
+    "num": 161,
+    "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
+    "name_he": "גלגל שיניים",
+    "suggestedName": "גלגל שיניים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "עבודה, תעשייה, חשיבה מכנית",
+    "search_query": "גלגל שיניים",
+    "is_basic": false,
+    "everyday_associations": [
+      "עבודה",
+      "מפעל",
+      "שעון",
+      "מנוע"
+    ],
+    "imageUrl": "/staged_images/pool/item_161_גלגל_שיניים__או_שניים_שלובים___מסמל.jpg"
+  },
+  {
+    "num": 162,
+    "id": "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל",
+    "name_he": "כובע בוגר אוניברסיטה",
+    "suggestedName": "כובע בוגר אוניברסיטה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "סיום לימודים, השכלה, תואר",
+    "search_query": "כובע בוגר אוניברסיטה",
+    "is_basic": false,
+    "everyday_associations": [
+      "מבחן",
+      "תואר",
+      "לימודים",
+      "הרשמה"
+    ],
+    "imageUrl": "/staged_images/pool/item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל.jpg"
+  },
+  {
+    "num": 163,
+    "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
+    "name_he": "מאזני צדק",
+    "suggestedName": "מאזני צדק",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "משפט, חוק, צדק, שקילת החלטות",
+    "search_query": "מאזני צדק",
+    "is_basic": false,
+    "everyday_associations": [
+      "משפט",
+      "עורך-דין",
+      "חוזה",
+      "דילמה"
+    ],
+    "imageUrl": "/staged_images/pool/item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות.jpg"
+  },
+  {
+    "num": 164,
+    "id": "item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל",
+    "name_he": "חץ במרכז המטרה",
+    "suggestedName": "חץ במרכז המטרה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "הצלחה, השגת יעד, דיוק מרבי",
+    "search_query": "חץ במרכז המטרה",
+    "is_basic": false,
+    "everyday_associations": [
+      "יעד",
+      "מטרה",
+      "מכירות",
+      "בונוס"
+    ],
+    "imageUrl": "/staged_images/pool/item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל.jpg"
+  },
+  {
+    "num": 165,
+    "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
+    "name_he": "מד חום כספית",
+    "suggestedName": "מד חום כספית",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "חום גוף גבוה, כעס, מזג אוויר לוהט",
+    "search_query": "מד חום כספית",
+    "is_basic": false,
+    "everyday_associations": [
+      "חום",
+      "מרפאה",
+      "רופא",
+      "תרופה"
+    ],
+    "imageUrl": "/staged_images/pool/item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg"
+  },
+  {
+    "num": 166,
+    "id": "item_166_שעון_חול__חצי_מלא___מסמל",
+    "name_he": "שעון חול",
+    "suggestedName": "שעון חול",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "זמן אוזל, דדליין, עבר ועתיד",
+    "search_query": "שעון חול",
+    "is_basic": false,
+    "everyday_associations": [
+      "דדליין",
+      "איחור",
+      "פגישה",
+      "שעון"
+    ],
+    "imageUrl": "/staged_images/pool/item_166_שעון_חול__חצי_מלא___מסמל.jpg"
+  },
+  {
+    "num": 167,
+    "id": "item_167_שטיח_אדום_ארוך__מסמל",
+    "name_he": "שטיח אדום",
+    "suggestedName": "שטיח אדום",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "יוקרה, כבוד, אירוע סלבריטאים, טקס",
+    "search_query": "שטיח אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "אירוע",
+      "אורחים",
+      "חגיגה",
+      "טקס"
+    ],
+    "imageUrl": "/staged_images/pool/item_167_שטיח_אדום_ארוך__מסמל.jpg"
+  },
+  {
+    "num": 168,
+    "id": "item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות",
+    "name_he": "קוביות משחק",
+    "suggestedName": "קוביות משחק",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "הימורים, מזל, משחקי לוח",
+    "search_query": "קוביות משחק",
+    "is_basic": false,
+    "everyday_associations": [
+      "משחק",
+      "הימורים",
+      "מזל",
+      "ערב"
+    ],
+    "imageUrl": "/staged_images/pool/item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות.jpg"
+  },
+  {
+    "num": 169,
+    "id": "item_169_גביע_זהב_עם_ידיות__מסמל",
+    "name_he": "גביע זהב",
+    "suggestedName": "גביע זהב",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "ניצחון, מקום ראשון, אליפות",
+    "search_query": "גביע זהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "תחרות",
+      "אליפות",
+      "פרס",
+      "הישג"
+    ],
+    "imageUrl": "/staged_images/pool/item_169_גביע_זהב_עם_ידיות__מסמל.jpg"
+  },
+  {
+    "num": 170,
+    "id": "item_170_עוגן_ברזל_שחור__מסמל",
+    "name_he": "עוגן ברזל שחור",
+    "suggestedName": "עוגן ברזל שחור",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "יציבות, ים, עגינה, ביטחון",
+    "search_query": "עוגן ברזל שחור",
+    "is_basic": false,
+    "everyday_associations": [
+      "ביטחון",
+      "יציבות",
+      "עגינה",
+      "חוזה"
+    ],
+    "imageUrl": "/staged_images/pool/item_170_עוגן_ברזל_שחור__מסמל.jpg"
+  },
+  {
+    "num": 171,
+    "id": "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל",
+    "name_he": "שריר זרוע",
+    "suggestedName": "שריר זרוע",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כוח, מאמץ, כושר, נחישות",
+    "search_query": "שריר זרוע",
+    "is_basic": false,
+    "everyday_associations": [
+      "אימון",
+      "כושר",
+      "סבלות",
+      "הרמה"
+    ],
+    "imageUrl": "/staged_images/pool/item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל.jpg"
+  },
+  {
+    "num": 172,
+    "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
+    "name_he": "מנעול סגור ומפתח",
+    "suggestedName": "מנעול סגור ומפתח",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "אבטחה, פרטיות, סודיות",
+    "search_query": "מנעול סגור ומפתח",
+    "is_basic": false,
+    "everyday_associations": [
+      "מנעולן",
+      "מפתח",
+      "נעילה",
+      "ביטחון"
+    ],
+    "imageUrl": "/staged_images/pool/item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg"
+  },
+  {
+    "num": 173,
+    "id": "item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת",
+    "name_he": "גלולת תרופה",
+    "suggestedName": "גלולת תרופה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "רפואה, מחלה, מדע, בריאות",
+    "search_query": "גלולת תרופה",
+    "is_basic": false,
+    "everyday_associations": [
+      "תרופה",
+      "מרשם",
+      "בית-מרקחת",
+      "כדור"
+    ],
+    "imageUrl": "/staged_images/pool/item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת.jpg"
+  },
+  {
+    "num": 174,
+    "id": "item_174_שלט_עצור__מתומן_אדום___מסמל",
+    "name_he": "שלט עצור",
+    "suggestedName": "שלט עצור",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "עצירה, סכנה, איסור חוקי, תנועה",
+    "search_query": "שלט עצור",
+    "is_basic": false,
+    "everyday_associations": [
+      "עצור",
+      "ביטול",
+      "סיום",
+      "כביש"
+    ],
+    "imageUrl": "/staged_images/pool/item_174_שלט_עצור__מתומן_אדום___מסמל.jpg"
+  },
+  {
+    "num": 175,
+    "id": "item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת",
+    "name_he": "יונה לבנה עם ענף זית",
+    "suggestedName": "יונה לבנה עם ענף זית",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "שלום, תקווה, סיום מלחמה",
+    "search_query": "יונה לבנה עם ענף זית",
+    "is_basic": false,
+    "everyday_associations": [
+      "סולחה",
+      "שלום",
+      "התנצלות",
+      "משפחה"
+    ],
+    "imageUrl": "/staged_images/pool/item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת.jpg"
+  },
+  {
+    "num": 176,
+    "id": "item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל",
+    "name_he": "סימן שאלה",
+    "suggestedName": "סימן שאלה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "בלבול, חוסר ידיעה, תעלומה, ספק",
+    "search_query": "סימן שאלה",
+    "is_basic": false,
+    "everyday_associations": [
+      "שאלה",
+      "בירור",
+      "בדיקה",
+      "ספק"
+    ],
+    "imageUrl": "/staged_images/pool/item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל.jpg"
+  },
+  {
+    "num": 177,
+    "id": "item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל",
+    "name_he": "סימן קריאה באזהרה",
+    "suggestedName": "סימן קריאה באזהרה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "אזהרה, תשומת לב, תקלה, זהירות",
+    "search_query": "סימן קריאה באזהרה",
+    "is_basic": false,
+    "everyday_associations": [
+      "אזהרה",
+      "תקלה",
+      "זהירות",
+      "בדיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל.jpg"
+  },
+  {
+    "num": 178,
+    "id": "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת",
+    "name_he": "גולגולת ועצמות מוצלבות",
+    "suggestedName": "גולגולת ועצמות מוצלבות",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "רעל, מוות, פיראטים, סכנת חיים",
+    "search_query": "גולגולת ועצמות מוצלבות",
+    "is_basic": false,
+    "everyday_associations": [
+      "רעל",
+      "הדברה",
+      "סכנה",
+      "תוקף"
+    ],
+    "imageUrl": "/staged_images/pool/item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת.jpg"
+  },
+  {
+    "num": 179,
+    "id": "item_179_מטוס_נייר_מקופל__מסמל",
+    "name_he": "מטוס נייר מקופל",
+    "suggestedName": "מטוס נייר מקופל",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "יצירתיות, דמיון, שליחת הודעה, ילדות",
+    "search_query": "מטוס נייר מקופל",
+    "is_basic": false,
+    "everyday_associations": [
+      "הודעה",
+      "מכתב",
+      "משלוח",
+      "דואר"
+    ],
+    "imageUrl": "/staged_images/pool/item_179_מטוס_נייר_מקופל__מסמל.jpg"
+  },
+  {
+    "num": 180,
+    "id": "item_180_כתר_זהב_עם_יהלומים__מסמל",
+    "name_he": "כתר זהב עם יהלומים",
+    "suggestedName": "כתר זהב עם יהלומים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מלוכה, כוח, שלטון, יוקרה",
+    "search_query": "כתר זהב עם יהלומים",
+    "is_basic": false,
+    "everyday_associations": [
+      "בוס",
+      "הנהלה",
+      "ראיון",
+      "קידום"
+    ],
+    "imageUrl": "/staged_images/pool/item_180_כתר_זהב_עם_יהלומים__מסמל.jpg"
+  },
+  {
+    "num": 181,
+    "id": "item_181_עניבת_פרפר_שחורה__פפיון___מסמלת",
+    "name_he": "עניבת פרפר (פפיון)",
+    "suggestedName": "עניבת פרפר (פפיון)",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "אירוע רשמי, אלגנטיות, מלצרות",
+    "search_query": "עניבת פרפר (פפיון)",
+    "is_basic": false,
+    "everyday_associations": [
+      "אירוע",
+      "חתונה",
+      "מלצר",
+      "הופעה"
+    ],
+    "imageUrl": "/staged_images/pool/item_181_עניבת_פרפר_שחורה__פפיון___מסמלת.jpg"
+  },
+  {
+    "num": 182,
+    "id": "item_182_פרסה_של_סוס__מסמלת",
+    "name_he": "פרסת סוס",
+    "suggestedName": "פרסת סוס",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מזל טוב, הגנה, כפר, חווה",
+    "search_query": "פרסת סוס",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזל",
+      "הגרלה",
+      "ברכה",
+      "פתיחה"
+    ],
+    "imageUrl": "/staged_images/pool/item_182_פרסה_של_סוס__מסמלת.jpg"
+  },
+  {
+    "num": 183,
+    "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
+    "name_he": "תלתן ארבעה עלים",
+    "suggestedName": "תלתן ארבעה עלים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מזל נדיר, אירלנד, ברכה",
+    "search_query": "תלתן ארבעה עלים",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזל",
+      "הזדמנות",
+      "ראיון",
+      "מבחן"
+    ],
+    "imageUrl": "/staged_images/pool/item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg"
+  },
+  {
+    "num": 184,
+    "id": "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל",
+    "name_he": "קופידון",
+    "suggestedName": "קופידון",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "התאהבות, רומנטיקה, וולנטיין, חיצים",
+    "search_query": "קופידון",
+    "is_basic": false,
+    "everyday_associations": [
+      "דייט",
+      "וולנטיין",
+      "פרחים",
+      "רומנטיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל.jpg"
+  },
+  {
+    "num": 185,
+    "id": "item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל",
+    "name_he": "מלאך ושטן על הכתף",
+    "suggestedName": "מלאך ושטן על הכתף",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "פיתוי, מצפון, החלטה מוסרית",
+    "search_query": "מלאך ושטן על הכתף",
+    "is_basic": false,
+    "everyday_associations": [
+      "מצפון",
+      "דיאטה",
+      "החלטה",
+      "קנייה"
+    ],
+    "imageUrl": "/staged_images/pool/item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל.jpg"
+  },
+  {
+    "num": 186,
+    "id": "item_186_טביעת_אצבע_שחורה__דיו___מסמלת",
+    "name_he": "טביעת אצבע שחורה",
+    "suggestedName": "טביעת אצבע שחורה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "זהות, פשע, בילוש, ייחודיות",
+    "search_query": "טביעת אצבע שחורה",
+    "is_basic": false,
+    "everyday_associations": [
+      "דרכון",
+      "ביומטרי",
+      "משרד-הפנים",
+      "זיהוי"
+    ],
+    "imageUrl": "/staged_images/pool/item_186_טביעת_אצבע_שחורה__דיו___מסמלת.jpg"
+  },
+  {
+    "num": 187,
+    "id": "item_187_עקבות_רגליים_בחול__מסמלות",
+    "name_he": "עקבות בחול",
+    "suggestedName": "עקבות בחול",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מסע, בדידות, עבר, הליכה בחוף",
+    "search_query": "עקבות בחול",
+    "is_basic": false,
+    "everyday_associations": [
+      "הליכה",
+      "טיול",
+      "חוף",
+      "כושר"
+    ],
+    "imageUrl": "/staged_images/pool/item_187_עקבות_רגליים_בחול__מסמלות.jpg"
+  },
+  {
+    "num": 188,
+    "id": "item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל",
+    "name_he": "שבב אלקטרוני (צ'יפ)",
+    "suggestedName": "שבב אלקטרוני (צ'יפ)",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "טכנולוגיה, הייטק, בינה מלאכותית",
+    "search_query": "שבב אלקטרוני (צ'יפ)",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחשב",
+      "מעבדה",
+      "הייטק",
+      "שדרוג"
+    ],
+    "imageUrl": "/staged_images/pool/item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל.jpg"
+  },
+  {
+    "num": 189,
+    "id": "item_189_פאזל__חתיכה_אחת_חסרה___מסמלת",
+    "name_he": "פאזל (חתיכה חסרה)",
+    "suggestedName": "פאזל (חתיכה חסרה)",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "פתרון בעיות, משהו לא שלם, חשיבה",
+    "search_query": "פאזל (חתיכה חסרה)",
+    "is_basic": false,
+    "everyday_associations": [
+      "פתרון",
+      "בעיה",
+      "משחק",
+      "הרכבה"
+    ],
+    "imageUrl": "/staged_images/pool/item_189_פאזל__חתיכה_אחת_חסרה___מסמלת.jpg"
+  },
+  {
+    "num": 190,
+    "id": "item_190_סיכת_נעץ_משרדית__אדומה___מסמלת",
+    "name_he": "נעץ משרדי אדום",
+    "suggestedName": "נעץ משרדי אדום",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מיקום על מפה, תזכורת, נעילת פריט",
+    "search_query": "נעץ משרדי אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "נעיצה",
+      "תזכורת",
+      "לוח",
+      "מפה"
+    ],
+    "imageUrl": "/staged_images/pool/item_190_סיכת_נעץ_משרדית__אדומה___מסמלת.jpg"
+  },
+  {
+    "num": 191,
+    "id": "item_191_עגלת_קניות_מסורתית__מסמלת",
+    "name_he": "עגלת קניות",
+    "suggestedName": "עגלת קניות",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "קניות, צרכנות, סופרמרקט",
+    "search_query": "עגלת קניות",
+    "is_basic": false,
+    "everyday_associations": [
+      "סופר",
+      "קניות",
+      "מצרכים",
+      "רשימה"
+    ],
+    "imageUrl": "/staged_images/pool/item_191_עגלת_קניות_מסורתית__מסמלת.jpg"
+  },
+  {
+    "num": 192,
+    "id": "item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל",
+    "name_he": "פח אשפה",
+    "suggestedName": "פח אשפה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "זריקה, מחיקה, לכלוך, ניקיון",
+    "search_query": "פח אשפה",
+    "is_basic": false,
+    "everyday_associations": [
+      "זבל",
+      "פינוי",
+      "מחזור",
+      "סדר"
+    ],
+    "imageUrl": "/staged_images/pool/item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל.jpg"
+  },
+  {
+    "num": 193,
+    "id": "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל",
+    "name_he": "סרט מודעות",
+    "suggestedName": "סרט מודעות",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מאבק במחלות, תמיכה, סולידריות",
+    "search_query": "סרט מודעות",
+    "is_basic": false,
+    "everyday_associations": [
+      "תרומה",
+      "עמותה",
+      "התנדבות",
+      "בדיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל.jpg"
+  },
+  {
+    "num": 194,
+    "id": "item_194_כדור_בדולח_על_מפה_כהה__מסמל",
+    "name_he": "כדור בדולח",
+    "suggestedName": "כדור בדולח",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "עתידנות, קסם, ניבוי, מיסטיקה",
+    "search_query": "כדור בדולח",
+    "is_basic": false,
+    "everyday_associations": [
+      "תכנון",
+      "עתיד",
+      "תקציב",
+      "ייעוץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_194_כדור_בדולח_על_מפה_כהה__מסמל.jpg"
+  },
+  {
+    "num": 195,
+    "id": "item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת",
+    "name_he": "מזוודת עור וינטג'",
+    "suggestedName": "מזוודת עור וינטג'",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "נסיעות, טיולים בעולם, מזכרות",
+    "search_query": "מזוודת עור וינטג'",
+    "is_basic": false,
+    "everyday_associations": [
+      "אריזה",
+      "חופשה",
+      "טיסה",
+      "מלון"
+    ],
+    "imageUrl": "/staged_images/pool/item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת.jpg"
+  },
+  {
+    "num": 196,
+    "id": "item_196_מטאטא_זרדים_ישן__מסמל",
+    "name_he": "מטאטא זרדים",
+    "suggestedName": "מטאטא זרדים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "ניקיון, מכשפות, מסורת",
+    "search_query": "מטאטא זרדים",
+    "is_basic": false,
+    "everyday_associations": [
+      "חצר",
+      "טאטוא",
+      "עלווה",
+      "ניקיון"
+    ],
+    "imageUrl": "/staged_images/pool/item_196_מטאטא_זרדים_ישן__מסמל.jpg"
+  },
+  {
+    "num": 197,
+    "id": "item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל",
+    "name_he": "כובע קוסמים ושפן",
+    "suggestedName": "כובע קוסמים ושפן",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "קסם, אשליה, הפתעה, מופע",
+    "search_query": "כובע קוסמים ושפן",
+    "is_basic": false,
+    "everyday_associations": [
+      "הופעה",
+      "יום-הולדת",
+      "קוסם",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל.jpg"
+  },
+  {
+    "num": 198,
+    "id": "item_198_נוצה_טבולה_בקסת_דיו__מסמלת",
+    "name_he": "נוצה וקסת דיו",
+    "suggestedName": "נוצה וקסת דיו",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כתיבה עתיקה, היסטוריה, חתימה",
+    "search_query": "נוצה וקסת דיו",
+    "is_basic": false,
+    "everyday_associations": [
+      "חוזה",
+      "חתימה",
+      "מכתב",
+      "עורך-דין"
+    ],
+    "imageUrl": "/staged_images/pool/item_198_נוצה_טבולה_בקסת_דיו__מסמלת.jpg"
+  },
+  {
+    "num": 199,
+    "id": "item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל",
+    "name_he": "ספר עתיק פתוח",
+    "suggestedName": "ספר עתיק פתוח",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "ידע, חוכמה, לימוד, סיפור",
+    "search_query": "ספר עתיק פתוח",
+    "is_basic": false,
+    "everyday_associations": [
+      "לימודים",
+      "מבחן",
+      "ספריה",
+      "מחקר"
+    ],
+    "imageUrl": "/staged_images/pool/item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל.jpg"
+  },
+  {
+    "num": 200,
+    "id": "item_200_קולב_בגדים_ממתכת__מסמל",
+    "name_he": "קולב בגדים",
+    "suggestedName": "קולב בגדים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "subCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "אופנה, ארון בגדים, חנות",
+    "search_query": "קולב בגדים",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארון",
+      "בגדים",
+      "סדר",
+      "תלייה"
+    ],
+    "imageUrl": "/staged_images/pool/item_200_קולב_בגדים_ממתכת__מסמל.jpg"
+  },
+  {
+    "num": 201,
+    "id": "item_201_לימוזינה_שחורה_ארוכה",
+    "name_he": "לימוזינה שחורה ארוכה",
+    "suggestedName": "לימוזינה שחורה ארוכה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(עושר, סלבריטאים",
+    "search_query": "לימוזינה שחורה ארוכה",
+    "is_basic": false,
+    "everyday_associations": [
+      "אירוע",
+      "חתונה",
+      "שמפניה",
+      "נשף"
+    ],
+    "imageUrl": "/staged_images/pool/item_201_לימוזינה_שחורה_ארוכה.jpg"
+  },
+  {
+    "num": 202,
+    "id": "item_202_מונית_צהובה_ניו_יורקית",
+    "name_he": "מונית צהובה ניו",
+    "suggestedName": "מונית צהובה ניו",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(עירוניות, ניו יורק",
+    "search_query": "מונית צהובה ניו",
+    "is_basic": false,
+    "everyday_associations": [
+      "מונית",
+      "נסיעה",
+      "רכבת",
+      "פקק"
+    ],
+    "imageUrl": "/staged_images/pool/item_202_מונית_צהובה_ניו_יורקית.jpg"
+  },
+  {
+    "num": 203,
+    "id": "item_203_אוטובוס_קומותיים_אדום",
+    "name_he": "אוטובוס קומותיים אדום",
+    "suggestedName": "אוטובוס קומותיים אדום",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(לונדון",
+    "search_query": "אוטובוס קומותיים אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "אוטובוס",
+      "נסיעה",
+      "כרטיס",
+      "תחבורה"
+    ],
+    "imageUrl": "/staged_images/pool/item_203_אוטובוס_קומותיים_אדום.jpg"
+  },
+  {
+    "num": 204,
+    "id": "item_204_רכבת_קיטור_ישנה",
+    "name_he": "רכבת קיטור ישנה",
+    "suggestedName": "רכבת קיטור ישנה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(המהפכה התעשייתית, המערב הפרוע",
+    "search_query": "רכבת קיטור ישנה",
+    "is_basic": false,
+    "everyday_associations": [
+      "רכבת",
+      "כרטיס",
+      "נסיעה",
+      "תחנה"
+    ],
+    "imageUrl": "/staged_images/pool/item_204_רכבת_קיטור_ישנה.jpg"
+  },
+  {
+    "num": 205,
+    "id": "item_205_אופנוע_הארלי_דיווידסון",
+    "name_he": "אופנוע הארלי דיווידסון",
+    "suggestedName": "אופנוע הארלי דיווידסון",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(חופש, גנגסטרים, רוקנרול",
+    "search_query": "אופנוע הארלי דיווידסון",
+    "is_basic": false,
+    "everyday_associations": [
+      "אופנוע",
+      "מוסך",
+      "קסדה",
+      "טסט"
+    ],
+    "imageUrl": "/staged_images/pool/item_205_אופנוע_הארלי_דיווידסון.jpg"
+  },
+  {
+    "num": 206,
+    "id": "item_206_ספינת_פיראטים",
+    "name_he": "ספינת פיראטים",
+    "suggestedName": "ספינת פיראטים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(מפרשים שחורים, גולגולת, תרנים",
+    "search_query": "ספינת פיראטים",
+    "is_basic": false,
+    "everyday_associations": [
+      "חופשה",
+      "הפלגה",
+      "שיט",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/item_206_ספינת_פיראטים.jpg"
+  },
+  {
+    "num": 207,
+    "id": "item_207_מעבורת_חלל",
+    "name_he": "מעבורת חלל",
+    "suggestedName": "מעבורת חלל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(NASA) (לבנה, כנפיים משולשות, מחוברת לטיל כתום",
+    "search_query": "מעבורת חלל",
+    "is_basic": false,
+    "everyday_associations": [
+      "מדע",
+      "שיגור",
+      "עתיד",
+      "חלל"
+    ],
+    "imageUrl": "/staged_images/pool/item_207_מעבורת_חלל.jpg"
+  },
+  {
+    "num": 208,
+    "id": "item_208_מטוס_ג_מבו",
+    "name_he": "מטוס ג'מבו",
+    "suggestedName": "מטוס ג'מבו",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(בואינג 747) (גיבנת מקדימה, טיסה ארוכה",
+    "search_query": "מטוס ג'מבו",
+    "is_basic": false,
+    "everyday_associations": [
+      "טיסה",
+      "נתב\"ג",
+      "כרטיס",
+      "דרכון"
+    ],
+    "imageUrl": "/staged_images/pool/item_208_מטוס_ג_מבו.jpg"
+  },
+  {
+    "num": 209,
+    "id": "item_209_גונדולה_ונציאנית",
+    "name_he": "גונדולה ונציאנית",
+    "suggestedName": "גונדולה ונציאנית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(סירה שחורה צרה ומעוקלת, חותר עם חולצת פסים",
+    "search_query": "גונדולה ונציאנית",
+    "is_basic": false,
+    "everyday_associations": [
+      "חופשה",
+      "רומנטיקה",
+      "שיט",
+      "איטליה"
+    ],
+    "imageUrl": "/staged_images/pool/item_209_גונדולה_ונציאנית.jpg"
+  },
+  {
+    "num": 210,
+    "id": "item_210_צפלין",
+    "name_he": "צפלין",
+    "suggestedName": "צפלין",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(כדור פורח קשיח מאורך) (אסון הינדנבורג, טכנולוגיה ישנה",
+    "search_query": "צפלין",
+    "is_basic": false,
+    "everyday_associations": [
+      "פרסום",
+      "שמיים",
+      "תצפית",
+      "אירוע"
+    ],
+    "imageUrl": "/staged_images/pool/item_210_צפלין.jpg"
+  },
+  {
+    "num": 211,
+    "id": "item_211_כדור_פורח_צבעוני",
+    "name_he": "כדור פורח צבעוני",
+    "suggestedName": "כדור פורח צבעוני",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(רומנטיקה, טיול בשמיים",
+    "search_query": "כדור פורח צבעוני",
+    "is_basic": false,
+    "everyday_associations": [
+      "יומולדת",
+      "הפתעה",
+      "טיול",
+      "זריחה"
+    ],
+    "imageUrl": "/staged_images/pool/item_211_כדור_פורח_צבעוני.jpg"
+  },
+  {
+    "num": 212,
+    "id": "item_212_צוללת_צהובה",
+    "name_he": "צוללת צהובה",
+    "suggestedName": "צוללת צהובה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(הביטלס, מעמקי הים",
+    "search_query": "צוללת צהובה",
+    "is_basic": false,
+    "everyday_associations": [
+      "צלילה",
+      "אקווריום",
+      "מצולות",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/item_212_צוללת_צהובה.jpg"
+  },
+  {
+    "num": 213,
+    "id": "item_213_טרקטור_חקלאי_ירוק",
+    "name_he": "טרקטור חקלאי ירוק",
+    "suggestedName": "טרקטור חקלאי ירוק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(ג'ון דיר) (חוה, שדה, חקלאות",
+    "search_query": "טרקטור חקלאי ירוק",
+    "is_basic": false,
+    "everyday_associations": [
+      "חווה",
+      "קטיף",
+      "שדה",
+      "חקלאות"
+    ],
+    "imageUrl": "/staged_images/pool/item_213_טרקטור_חקלאי_ירוק.jpg"
+  },
+  {
+    "num": 214,
+    "id": "item_214_ניידת_משטרה_קלאסית",
+    "name_he": "ניידת משטרה קלאסית",
+    "suggestedName": "ניידת משטרה קלאסית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(אורות מהבהבים כחול-אדום, צבעי שחור-לבן",
+    "search_query": "ניידת משטרה קלאסית",
+    "is_basic": false,
+    "everyday_associations": [
+      "משטרה",
+      "דו\"ח",
+      "תלונה",
+      "עבירה"
+    ],
+    "imageUrl": "/staged_images/pool/item_214_ניידת_משטרה_קלאסית.jpg"
+  },
+  {
+    "num": 215,
+    "id": "item_215_כבאית_אדומה",
+    "name_he": "כבאית אדומה",
+    "suggestedName": "כבאית אדומה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(מנוף ארוך, סולמות בצדדים",
+    "search_query": "כבאית אדומה",
+    "is_basic": false,
+    "everyday_associations": [
+      "שריפה",
+      "מטף",
+      "חירום",
+      "גלאי"
+    ],
+    "imageUrl": "/staged_images/pool/item_215_כבאית_אדומה.jpg"
+  },
+  {
+    "num": 216,
+    "id": "item_216_אמבולנס_לבן",
+    "name_he": "אמבולנס לבן",
+    "suggestedName": "אמבולנס לבן",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(פס אדום, סמל כוכב החיים",
+    "search_query": "אמבולנס לבן",
+    "is_basic": false,
+    "everyday_associations": [
+      "מד\"א",
+      "מיון",
+      "מרפאה",
+      "חירום"
+    ],
+    "imageUrl": "/staged_images/pool/item_216_אמבולנס_לבן.jpg"
+  },
+  {
+    "num": 217,
+    "id": "item_217_כרכרת_סוסים_מלכותית",
+    "name_he": "כרכרת סוסים מלכותית",
+    "suggestedName": "כרכרת סוסים מלכותית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(זהב, גלגלי ענק, סינדרלה/מלכים",
+    "search_query": "כרכרת סוסים מלכותית",
+    "is_basic": false,
+    "everyday_associations": [
+      "חתונה",
+      "אירוע",
+      "צילומים",
+      "כרכרה"
+    ],
+    "imageUrl": "/staged_images/pool/item_217_כרכרת_סוסים_מלכותית.jpg"
+  },
+  {
+    "num": 218,
+    "id": "item_218_ג_יפ_צבאי_פתוח",
+    "name_he": "ג'יפ צבאי פתוח",
+    "suggestedName": "ג'יפ צבאי פתוח",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(Willys) (מלחמת העולם השנייה, צבע ירוק זית",
+    "search_query": "ג'יפ צבאי פתוח",
+    "is_basic": false,
+    "everyday_associations": [
+      "מילואים",
+      "צו",
+      "שטח",
+      "טיול"
+    ],
+    "imageUrl": "/staged_images/pool/item_218_ג_יפ_צבאי_פתוח.jpg"
+  },
+  {
+    "num": 219,
+    "id": "item_219_קטנוע_וספה_איטלקי",
+    "name_he": "קטנוע וספה איטלקי",
+    "suggestedName": "קטנוע וספה איטלקי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(רומא, וינטג', נסיעה עירונית קלה",
+    "search_query": "קטנוע וספה איטלקי",
+    "is_basic": false,
+    "everyday_associations": [
+      "קטנוע",
+      "שליחויות",
+      "קסדה",
+      "עיר"
+    ],
+    "imageUrl": "/staged_images/pool/item_219_קטנוע_וספה_איטלקי.jpg"
+  },
+  {
+    "num": 220,
+    "id": "item_220_ספינת_טיטאניק",
+    "name_he": "ספינת טיטאניק",
+    "suggestedName": "ספינת טיטאניק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(ארבעה ארובות שחורות-אדומות, חרטום ענק",
+    "search_query": "ספינת טיטאניק",
+    "is_basic": false,
+    "everyday_associations": [
+      "ספינה",
+      "ביטוח",
+      "טביעה",
+      "הפלגה"
+    ],
+    "imageUrl": "/staged_images/pool/item_220_ספינת_טיטאניק.jpg"
+  },
+  {
+    "num": 221,
+    "id": "item_221_משאית_זבל",
+    "name_he": "משאית זבל",
+    "suggestedName": "משאית זבל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(זרועות ברזל מרימות פח מאחור",
+    "search_query": "משאית זבל",
+    "is_basic": false,
+    "everyday_associations": [
+      "זבל",
+      "פינוי",
+      "מחזור",
+      "עירייה"
+    ],
+    "imageUrl": "/staged_images/pool/item_221_משאית_זבל.jpg"
+  },
+  {
+    "num": 222,
+    "id": "item_222_רכבל",
+    "name_he": "רכבל",
+    "suggestedName": "רכבל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(קרון זכוכית קטן תלוי על כבל מתכת בין הרים",
+    "search_query": "רכבל",
+    "is_basic": false,
+    "everyday_associations": [
+      "חרמון",
+      "סקי",
+      "רכבל",
+      "נוף"
+    ],
+    "imageUrl": "/staged_images/pool/item_222_רכבל.jpg"
+  },
+  {
+    "num": 223,
+    "id": "item_223_קורקינט_פשוט_לילדים",
+    "name_he": "קורקינט פשוט לילדים",
+    "suggestedName": "קורקינט פשוט לילדים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(שני גלגלים, כידון T",
+    "search_query": "קורקינט פשוט לילדים",
+    "is_basic": false,
+    "everyday_associations": [
+      "קורקינט",
+      "קסדה",
+      "ילדים",
+      "פארק"
+    ],
+    "imageUrl": "/staged_images/pool/item_223_קורקינט_פשוט_לילדים.jpg"
+  },
+  {
+    "num": 224,
+    "id": "item_224_מכונית_מרוץ_פורמולה_1",
+    "name_he": "מכונית מרוץ פורמולה 1",
+    "suggestedName": "מכונית מרוץ פורמולה 1",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(נמוכה, צמיגים רחבים חשופים, כנף אחורית ענקית",
+    "search_query": "מכונית מרוץ פורמולה 1",
+    "is_basic": false,
+    "everyday_associations": [
+      "מהירות",
+      "מירוץ",
+      "מסלול",
+      "כרטיס"
+    ],
+    "imageUrl": "/staged_images/pool/item_224_מכונית_מרוץ_פורמולה_1.jpg"
+  },
+  {
+    "num": 225,
+    "id": "item_225_רכבת_קליע_יפנית",
+    "name_he": "רכבת קליע יפנית",
+    "suggestedName": "רכבת קליע יפנית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(שינקנסן) (חרטום ארוך כמו אף של ציפור, לבן-כחול",
+    "search_query": "רכבת קליע יפנית",
+    "is_basic": false,
+    "everyday_associations": [
+      "רכבת",
+      "מהירות",
+      "נסיעה",
+      "תחנה"
+    ],
+    "imageUrl": "/staged_images/pool/item_225_רכבת_קליע_יפנית.jpg"
+  },
+  {
+    "num": 226,
+    "id": "item_226_הליקופטר_צבאי",
+    "name_he": "הליקופטר צבאי",
+    "suggestedName": "הליקופטר צבאי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(אפאצ'י) (פרופלור ענק, טילים בצדדים, גוף צר",
+    "search_query": "הליקופטר צבאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "מילואים",
+      "טייס",
+      "ביטחון",
+      "צבא"
+    ],
+    "imageUrl": "/staged_images/pool/item_226_הליקופטר_צבאי.jpg"
+  },
+  {
+    "num": 227,
+    "id": "item_227_רכב_שטח_מפלצתי",
+    "name_he": "רכב שטח מפלצתי",
+    "suggestedName": "רכב שטח מפלצתי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(Monster Truck) (גלגלי ענק גבוהים יותר מאדם",
+    "search_query": "רכב שטח מפלצתי",
+    "is_basic": false,
+    "everyday_associations": [
+      "הופעה",
+      "כרטיסים",
+      "ילדים",
+      "פעלולים"
+    ],
+    "imageUrl": "/staged_images/pool/item_227_רכב_שטח_מפלצתי.jpg"
+  },
+  {
+    "num": 228,
+    "id": "item_228_סקייטבורד",
+    "name_he": "סקייטבורד",
+    "suggestedName": "סקייטבורד",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(קרש עץ מעוקל, ארבעה גלגלים קטנים",
+    "search_query": "סקייטבורד",
+    "is_basic": false,
+    "everyday_associations": [
+      "סקייטבורד",
+      "מגינים",
+      "פארק",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_228_סקייטבורד.jpg"
+  },
+  {
+    "num": 229,
+    "id": "item_229_רולרבליידס",
+    "name_he": "רולרבליידס",
+    "suggestedName": "רולרבליידס",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(נעליים עם ארבעה גלגלים בשורה אחת",
+    "search_query": "רולרבליידס",
+    "is_basic": false,
+    "everyday_associations": [
+      "רולרבליידס",
+      "החלקה",
+      "ספורט",
+      "טיילת"
+    ],
+    "imageUrl": "/staged_images/pool/item_229_רולרבליידס.jpg"
+  },
+  {
+    "num": 230,
+    "id": "item_230_רכב_שלג",
+    "name_he": "רכב שלג",
+    "suggestedName": "רכב שלג",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(חתול שלג / אופנוע שלג) (זחלים מאחור ומגלשים מקדימה",
+    "search_query": "רכב שלג",
+    "is_basic": false,
+    "everyday_associations": [
+      "סקי",
+      "חופשה",
+      "שלג",
+      "חורף"
+    ],
+    "imageUrl": "/staged_images/pool/item_230_רכב_שלג.jpg"
+  },
+  {
+    "num": 231,
+    "id": "item_231_מפרשית___יאכטה_לבנה",
+    "name_he": "מפרשית / יאכטה לבנה",
+    "suggestedName": "מפרשית / יאכטה לבנה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(מפרש משולש לבן מתוח ברוח",
+    "search_query": "מפרשית / יאכטה לבנה",
+    "is_basic": false,
+    "everyday_associations": [
+      "הפלגה",
+      "חופשה",
+      "סקיפר",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/item_231_מפרשית___יאכטה_לבנה.jpg"
+  },
+  {
+    "num": 232,
+    "id": "item_232_רכב_גולף_קטן",
+    "name_he": "רכב גולף קטן",
+    "suggestedName": "רכב גולף קטן",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(פתוח, גג פלסטיק לבן, מקום לתיקי מחבטים מאחור",
+    "search_query": "רכב גולף קטן",
+    "is_basic": false,
+    "everyday_associations": [
+      "גולף",
+      "מלון",
+      "ריזורט",
+      "הסעה"
+    ],
+    "imageUrl": "/staged_images/pool/item_232_רכב_גולף_קטן.jpg"
+  },
+  {
+    "num": 233,
+    "id": "item_233_דחפור",
+    "name_he": "דחפור",
+    "suggestedName": "דחפור",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(שופל / D9) (כף מתכת ענקית מקדימה, זחלי ברזל",
+    "search_query": "דחפור",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחסן",
+      "משטחים",
+      "הובלה",
+      "סחורה"
+    ],
+    "imageUrl": "/staged_images/pool/item_233_דחפור.jpg"
+  },
+  {
+    "num": 234,
+    "id": "item_234_מנוף_בנייה_ענק",
+    "name_he": "מנוף בנייה ענק",
+    "suggestedName": "מנוף בנייה ענק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(עגורן) (מבנה מסבך מתכת גבוה בצורת T באתרי בנייה",
+    "search_query": "מנוף בנייה ענק",
+    "is_basic": false,
+    "everyday_associations": [
+      "בטון",
+      "יציקה",
+      "בנייה",
+      "שיפוץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_234_מנוף_בנייה_ענק.jpg"
+  },
+  {
+    "num": 235,
+    "id": "item_235_טנק_מרכבה___פנצר",
+    "name_he": "טנק מרכבה / פנצר",
+    "suggestedName": "טנק מרכבה / פנצר",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(קנה ארוך, צריח מסתובב, זחלים",
+    "search_query": "טנק מרכבה / פנצר",
+    "is_basic": false,
+    "everyday_associations": [
+      "עבודות",
+      "הריסה",
+      "חפירה",
+      "עפר"
+    ],
+    "imageUrl": "/staged_images/pool/item_235_טנק_מרכבה___פנצר.jpg"
+  },
+  {
+    "num": 236,
+    "id": "item_236_רכב_סגוויי",
+    "name_he": "רכב סגוויי",
+    "suggestedName": "רכב סגוויי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(Segway) (שני גלגלים גדולים בצדדים, משטח עמידה וכידון",
+    "search_query": "רכב סגוויי",
+    "is_basic": false,
+    "everyday_associations": [
+      "גרר",
+      "מוסך",
+      "תקלה",
+      "פנצ'ר"
+    ],
+    "imageUrl": "/staged_images/pool/item_236_רכב_סגוויי.jpg"
+  },
+  {
+    "num": 237,
+    "id": "item_237_ריקשה_ממונעת",
+    "name_he": "ריקשה ממונעת",
+    "suggestedName": "ריקשה ממונעת",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(טוק-טוק) (תלת גלגל פתוח, אסיה/הודו",
+    "search_query": "ריקשה ממונעת",
+    "is_basic": false,
+    "everyday_associations": [
+      "חופשה",
+      "תאילנד",
+      "טיול",
+      "מזרח"
+    ],
+    "imageUrl": "/staged_images/pool/item_237_ריקשה_ממונעת.jpg"
+  },
+  {
+    "num": 238,
+    "id": "item_238_קייאק",
+    "name_he": "קייאק",
+    "suggestedName": "קייאק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(סירה צרה מאוד, חותר עם משוט בעל שתי כפות",
+    "search_query": "קייאק",
+    "is_basic": false,
+    "everyday_associations": [
+      "ביצות",
+      "חילוץ",
+      "שטח",
+      "מים"
+    ],
+    "imageUrl": "/staged_images/pool/item_238_קייאק.jpg"
+  },
+  {
+    "num": 239,
+    "id": "item_239_רחפת",
+    "name_he": "רחפת",
+    "suggestedName": "רחפת",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(סירה עם כרית אוויר גומי ענקית מסביב ופרופלור ענק מאחור",
+    "search_query": "רחפת",
+    "is_basic": false,
+    "everyday_associations": [
+      "קיאק",
+      "ירדן",
+      "משוט",
+      "שייט"
+    ],
+    "imageUrl": "/staged_images/pool/item_239_רחפת.jpg"
+  },
+  {
+    "num": 240,
+    "id": "item_240_ג_ט_סקי",
+    "name_he": "ג'ט סקי",
+    "suggestedName": "ג'ט סקי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(אופנוע ים) (אופנוע על המים שמשאיר שובל שפריץ גבוה",
+    "search_query": "ג'ט סקי",
+    "is_basic": false,
+    "everyday_associations": [
+      "אופנוע-ים",
+      "אילת",
+      "חופשה",
+      "ספורט"
+    ],
+    "imageUrl": "/staged_images/pool/item_240_ג_ט_סקי.jpg"
+  },
+  {
+    "num": 241,
+    "id": "item_241_אופני_פני_פארת_ינג",
+    "name_he": "אופני פני",
+    "suggestedName": "אופני פני",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(וינטג') (גלגל קדמי ענק, גלגל אחורי פיצי",
+    "search_query": "אופני פני",
+    "is_basic": false,
+    "everyday_associations": [
+      "וינטג'",
+      "אופניים",
+      "מוזיאון",
+      "אספנות"
+    ],
+    "imageUrl": "/staged_images/pool/item_241_אופני_פני_פארת_ינג.jpg"
+  },
+  {
+    "num": 242,
+    "id": "item_242_מכונית_חיפושית",
+    "name_he": "מכונית חיפושית",
+    "suggestedName": "מכונית חיפושית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(פולקסווגן) (מראה מעוגל דמוי חרק, קטן ונוסטלגי",
+    "search_query": "מכונית חיפושית",
+    "is_basic": false,
+    "everyday_associations": [
+      "טסט",
+      "רכב",
+      "מוסך",
+      "שמן"
+    ],
+    "imageUrl": "/staged_images/pool/item_242_מכונית_חיפושית.jpg"
+  },
+  {
+    "num": 243,
+    "id": "item_243_קלנועית",
+    "name_he": "קלנועית",
+    "suggestedName": "קלנועית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(רכב חשמלי קטן ואיטי לקשישים, סלסלה מקדימה",
+    "search_query": "קלנועית",
+    "is_basic": false,
+    "everyday_associations": [
+      "משלוח",
+      "חבילה",
+      "שליח",
+      "דואר"
+    ],
+    "imageUrl": "/staged_images/pool/item_243_קלנועית.jpg"
+  },
+  {
+    "num": 244,
+    "id": "item_244_רכבת_הרים_לונה_פארק",
+    "name_he": "רכבת הרים לונה פארק",
+    "suggestedName": "רכבת הרים לונה פארק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(קרונות פתוחים על מסילת מתכת מפותלת בלופ",
+    "search_query": "רכבת הרים לונה פארק",
+    "is_basic": false,
+    "everyday_associations": [
+      "סיור",
+      "עיר",
+      "קסדה",
+      "טיול"
+    ],
+    "imageUrl": "/staged_images/pool/item_244_רכבת_הרים_לונה_פארק.jpg"
+  },
+  {
+    "num": 245,
+    "id": "item_245_רכב_פורד_מודל_t",
+    "name_he": "רכב פורד מודל T",
+    "suggestedName": "רכב פורד מודל T",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(המכונית השחורה הראשונה, גלגלי שרשורי עץ, פנסי נפט",
+    "search_query": "רכב פורד מודל T",
+    "is_basic": false,
+    "everyday_associations": [
+      "חופשה",
+      "קוטב",
+      "כלבים",
+      "שלג"
+    ],
+    "imageUrl": "/staged_images/pool/item_245_רכב_פורד_מודל_t.jpg"
+  },
+  {
+    "num": 246,
+    "id": "item_246_ספינת_משא___מכולות",
+    "name_he": "ספינת משא / מכולות",
+    "suggestedName": "ספינת משא / מכולות",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(ספינת ענק שטוחה עמוסה במאות קוביות מתכת צבעוניות",
+    "search_query": "ספינת משא / מכולות",
+    "is_basic": false,
+    "everyday_associations": [
+      "הטענה",
+      "סוללה",
+      "מתנה",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_246_ספינת_משא___מכולות.jpg"
+  },
+  {
+    "num": 247,
+    "id": "item_247_משאית_סמי_טריילר_אמריקאית",
+    "name_he": "משאית סמי",
+    "suggestedName": "משאית סמי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(חרטום מרובע גדול, ארובות כרום, 18 גלגלים",
+    "search_query": "משאית סמי",
+    "is_basic": false,
+    "everyday_associations": [
+      "מסע",
+      "חוקר",
+      "קור",
+      "קרח"
+    ],
+    "imageUrl": "/staged_images/pool/item_247_משאית_סמי_טריילר_אמריקאית.jpg"
+  },
+  {
+    "num": 248,
+    "id": "item_248_רכב_קמפינג",
+    "name_he": "רכב קמפינג",
+    "suggestedName": "רכב קמפינג",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(קרוואן RV) (בית על גלגלים, חלונות קטנים, ציליה נפתחת בצד",
+    "search_query": "רכב קמפינג",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחקר",
+      "ים",
+      "צלילה",
+      "מעמקים"
+    ],
+    "imageUrl": "/staged_images/pool/item_248_רכב_קמפינג.jpg"
+  },
+  {
+    "num": 249,
+    "id": "item_249_רכב_גופה",
+    "name_he": "רכב גופה",
+    "suggestedName": "רכב גופה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(חברה קדישא/לוויות) (סטיישן שחור ארוך, חלונות אחוריים כהים או וילונות",
+    "search_query": "רכב גופה",
+    "is_basic": false,
+    "everyday_associations": [
+      "רכבת-קלה",
+      "כרטיס",
+      "נסיעה",
+      "עיר"
+    ],
+    "imageUrl": "/staged_images/pool/item_249_רכב_גופה.jpg"
+  },
+  {
+    "num": 250,
+    "id": "item_250_עגלת_תינוק_קלאסית",
+    "name_he": "עגלת תינוק קלאסית",
+    "suggestedName": "עגלת תינוק קלאסית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "subCategory": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "theme": "vehicles",
+    "theme_he": "כלי תחבורה מכל הזמנים",
+    "desc_he": "(אמבטיית בד/פלסטיק, גגון מתקפל, גלגלים גדולים",
+    "search_query": "עגלת תינוק קלאסית",
+    "is_basic": false,
+    "everyday_associations": [
+      "תינוק",
+      "טיול",
+      "עגלה",
+      "פארק"
+    ],
+    "imageUrl": "/staged_images/pool/item_250_עגלת_תינוק_קלאסית.jpg"
+  },
+  {
+    "num": 251,
+    "id": "item_251_קקטוס_סאגוארו",
+    "name_he": "קקטוס סאגוארו",
+    "suggestedName": "קקטוס סאגוארו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(קקטוס עם שתי \"זרועות\" במדבר",
+    "search_query": "קקטוס סאגוארו",
+    "is_basic": false,
+    "everyday_associations": [
+      "מדבר",
+      "קקטוס",
+      "חום",
+      "קוצים"
+    ],
+    "imageUrl": "/staged_images/pool/item_251_קקטוס_סאגוארו.jpg"
+  },
+  {
+    "num": 252,
+    "id": "item_252_עץ_דקל_על_אי_בודד",
+    "name_he": "עץ דקל על אי בודד",
+    "suggestedName": "עץ דקל על אי בודד",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(אי חול קטן בלב אוקיינוס כחול",
+    "search_query": "עץ דקל על אי בודד",
+    "is_basic": false,
+    "everyday_associations": [
+      "אי",
+      "חופשה",
+      "בדידות",
+      "דקל"
+    ],
+    "imageUrl": "/staged_images/pool/item_252_עץ_דקל_על_אי_בודד.jpg"
+  },
+  {
+    "num": 253,
+    "id": "item_253_כריש_לבן",
+    "name_he": "כריש לבן",
+    "suggestedName": "כריש לבן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(סנפיר משולש חותך את המים או פה פתוח מלא שיניים",
+    "search_query": "כריש לבן",
+    "is_basic": false,
+    "everyday_associations": [
+      "מפל",
+      "טיול",
+      "מסלול",
+      "מים"
+    ],
+    "imageUrl": "/staged_images/pool/item_253_כריש_לבן.jpg"
+  },
+  {
+    "num": 254,
+    "id": "item_254_דוב_פנדה",
+    "name_he": "דוב פנדה",
+    "suggestedName": "דוב פנדה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(שחור-לבן, אוכל ענף במבוק",
+    "search_query": "דוב פנדה",
+    "is_basic": false,
+    "everyday_associations": [
+      "הר",
+      "טיפוס",
+      "פסגה",
+      "טרק"
+    ],
+    "imageUrl": "/staged_images/pool/item_254_דוב_פנדה.jpg"
+  },
+  {
+    "num": 255,
+    "id": "item_255_אריה",
+    "name_he": "אריה",
+    "suggestedName": "אריה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(רעמת ענק, שואג על צוק בסוואנה",
+    "search_query": "אריה",
+    "is_basic": false,
+    "everyday_associations": [
+      "מערה",
+      "פנס",
+      "נטיפים",
+      "סיור"
+    ],
+    "imageUrl": "/staged_images/pool/item_255_אריה.jpg"
+  },
+  {
+    "num": 256,
+    "id": "item_256_פיל_אפריקאי",
+    "name_he": "פיל אפריקאי",
+    "suggestedName": "פיל אפריקאי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(חדק מורם, אוזני ענק",
+    "search_query": "פיל אפריקאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "שונית",
+      "שנירקול",
+      "צלילה",
+      "דגים"
+    ],
+    "imageUrl": "/staged_images/pool/item_256_פיל_אפריקאי.jpg"
+  },
+  {
+    "num": 257,
+    "id": "item_257_ג_ירפה",
+    "name_he": "ג'ירפה",
+    "suggestedName": "ג'ירפה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(צוואר ארוך במיוחד אוכלת מעלה של עץ",
+    "search_query": "ג'ירפה",
+    "is_basic": false,
+    "everyday_associations": [
+      "יער",
+      "פיקניק",
+      "עצים",
+      "צל"
+    ],
+    "imageUrl": "/staged_images/pool/item_257_ג_ירפה.jpg"
+  },
+  {
+    "num": 258,
+    "id": "item_258_פטריית_זבובנית",
+    "name_he": "פטריית זבובנית",
+    "suggestedName": "פטריית זבובנית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(אדומה עם נקודות לבנות) (רעילה, עולם האגדות",
+    "search_query": "פטריית זבובנית",
+    "is_basic": false,
+    "everyday_associations": [
+      "קניון",
+      "מדבר",
+      "מסלול",
+      "מצוק"
+    ],
+    "imageUrl": "/staged_images/pool/item_258_פטריית_זבובנית.jpg"
+  },
+  {
+    "num": 259,
+    "id": "item_259_הר_געש_מתפרץ",
+    "name_he": "הר געש מתפרץ",
+    "suggestedName": "הר געש מתפרץ",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(לבה אדומה זורמת, ענן עשן שחור למעלה",
+    "search_query": "הר געש מתפרץ",
+    "is_basic": false,
+    "everyday_associations": [
+      "גייזר",
+      "מעיינות",
+      "חום",
+      "טבע"
+    ],
+    "imageUrl": "/staged_images/pool/item_259_הר_געש_מתפרץ.jpg"
+  },
+  {
+    "num": 260,
+    "id": "item_260_קרחון_בלב_ים",
+    "name_he": "קרחון בלב ים",
+    "suggestedName": "קרחון בלב ים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(אייסברג) (חלק קטן בולט, חלק ענק מתחת למים",
+    "search_query": "קרחון בלב ים",
+    "is_basic": false,
+    "everyday_associations": [
+      "אגם",
+      "ברווזים",
+      "סירה",
+      "פארק"
+    ],
+    "imageUrl": "/staged_images/pool/item_260_קרחון_בלב_ים.jpg"
+  },
+  {
+    "num": 261,
+    "id": "item_261_טבעת_שבתאי",
+    "name_he": "טבעת שבתאי",
+    "suggestedName": "טבעת שבתאי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(כוכב לכת עם מערכת טבעות היקפיות שטוחות",
+    "search_query": "טבעת שבתאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "אוקיינוס",
+      "גלים",
+      "סערה",
+      "עומק"
+    ],
+    "imageUrl": "/staged_images/pool/item_261_טבעת_שבתאי.jpg"
+  },
+  {
+    "num": 262,
+    "id": "item_262_מכתש_ברק___פגיעת_ברק",
+    "name_he": "מכתש ברק / פגיעת ברק",
+    "suggestedName": "מכתש ברק / פגיעת ברק",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(קו זיגזג צהוב/לבן חותך שמיים שחורים",
+    "search_query": "מכתש ברק / פגיעת ברק",
+    "is_basic": false,
+    "everyday_associations": [
+      "דיונות",
+      "ג'יפים",
+      "חול",
+      "שקיעה"
+    ],
+    "imageUrl": "/staged_images/pool/item_262_מכתש_ברק___פגיעת_ברק.jpg"
+  },
+  {
+    "num": 263,
+    "id": "item_263_פינגווין_קיסרי",
+    "name_he": "פינגווין קיסרי",
+    "suggestedName": "פינגווין קיסרי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(עומד זקוף על שלג, חליפת \"טוקסידו\" טבעית",
+    "search_query": "פינגווין קיסרי",
+    "is_basic": false,
+    "everyday_associations": [
+      "קשת",
+      "גשם",
+      "שמש",
+      "ענן"
+    ],
+    "imageUrl": "/staged_images/pool/item_263_פינגווין_קיסרי.jpg"
+  },
+  {
+    "num": 264,
+    "id": "item_264_קורי_עכביש",
+    "name_he": "קורי עכביש",
+    "suggestedName": "קורי עכביש",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(רשת חוטים מעגלית וסימטרית עם טיפות טל",
+    "search_query": "קורי עכביש",
+    "is_basic": false,
+    "everyday_associations": [
+      "כוכב",
+      "מטר",
+      "משאלה",
+      "לילה"
+    ],
+    "imageUrl": "/staged_images/pool/item_264_קורי_עכביש.jpg"
+  },
+  {
+    "num": 265,
+    "id": "item_265_טווס_פרוס_זנב",
+    "name_he": "טווס פרוס זנב",
+    "suggestedName": "טווס פרוס זנב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(מניפת נוצות ענקית בצבעי כחול-ירוק עם \"עיניים\"",
+    "search_query": "טווס פרוס זנב",
+    "is_basic": false,
+    "everyday_associations": [
+      "ליקוי",
+      "משקפיים",
+      "שמש",
+      "ירח"
+    ],
+    "imageUrl": "/staged_images/pool/item_265_טווס_פרוס_זנב.jpg"
+  },
+  {
+    "num": 266,
+    "id": "item_266_סוס_דוהרת_ברוח",
+    "name_he": "סוס דוהרת ברוח",
+    "suggestedName": "סוס דוהרת ברוח",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(סוס פרא, רעמה מתנופפת",
+    "search_query": "סוס דוהרת ברוח",
+    "is_basic": false,
+    "everyday_associations": [
+      "זוהר",
+      "צפון",
+      "חורף",
+      "טיול"
+    ],
+    "imageUrl": "/staged_images/pool/item_266_סוס_דוהרת_ברוח.jpg"
+  },
+  {
+    "num": 267,
+    "id": "item_267_כלב_דלמטי",
+    "name_he": "כלב דלמטי",
+    "suggestedName": "כלב דלמטי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(כלב לבן מכוסה נקודות שחורות",
+    "search_query": "כלב דלמטי",
+    "is_basic": false,
+    "everyday_associations": [
+      "עננים",
+      "גשם",
+      "סערה",
+      "מזג-אוויר"
+    ],
+    "imageUrl": "/staged_images/pool/item_267_כלב_דלמטי.jpg"
+  },
+  {
+    "num": 268,
+    "id": "item_268_ינשוף_על_ענף",
+    "name_he": "ינשוף על ענף",
+    "suggestedName": "ינשוף על ענף",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(עיני ענק עגולות, מביט ישירות קדימה בלילה",
+    "search_query": "ינשוף על ענף",
+    "is_basic": false,
+    "everyday_associations": [
+      "שלג",
+      "סקי",
+      "קור",
+      "מעיל"
+    ],
+    "imageUrl": "/staged_images/pool/item_268_ינשוף_על_ענף.jpg"
+  },
+  {
+    "num": 269,
+    "id": "item_269_נשר_דואה",
+    "name_he": "נשר דואה",
+    "suggestedName": "נשר דואה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(כנפיים פרוסות לרווחה, קצוות נוצות כמו אצבעות",
+    "search_query": "נשר דואה",
+    "is_basic": false,
+    "everyday_associations": [
+      "גשם",
+      "מטרייה",
+      "מגפיים",
+      "שלולית"
+    ],
+    "imageUrl": "/staged_images/pool/item_269_נשר_דואה.jpg"
+  },
+  {
+    "num": 270,
+    "id": "item_270_קנגורו",
+    "name_he": "קנגורו",
+    "suggestedName": "קנגורו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(חיה קופצת, ראש של גור מציץ מכיס בבטן",
+    "search_query": "קנגורו",
+    "is_basic": false,
+    "everyday_associations": [
+      "רוח",
+      "סערה",
+      "עפיפון",
+      "סתיו"
+    ],
+    "imageUrl": "/staged_images/pool/item_270_קנגורו.jpg"
+  },
+  {
+    "num": 271,
+    "id": "item_271_גמל_דו_דבשתי",
+    "name_he": "גמל דו",
+    "suggestedName": "גמל דו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(חיה עם שתי גבעות על הגב בחולות המדבר",
+    "search_query": "גמל דו",
+    "is_basic": false,
+    "everyday_associations": [
+      "אורן",
+      "איצטרובל",
+      "חורש",
+      "ריח"
+    ],
+    "imageUrl": "/staged_images/pool/item_271_גמל_דו_דבשתי.jpg"
+  },
+  {
+    "num": 272,
+    "id": "item_272_דולפין_קופץ_מהמים",
+    "name_he": "דולפין קופץ מהמים",
+    "suggestedName": "דולפין קופץ מהמים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(קשת מושלמת מעל פני הים",
+    "search_query": "דולפין קופץ מהמים",
+    "is_basic": false,
+    "everyday_associations": [
+      "במבוק",
+      "גינה",
+      "גדר",
+      "מזרח"
+    ],
+    "imageUrl": "/staged_images/pool/item_272_דולפין_קופץ_מהמים.jpg"
+  },
+  {
+    "num": 273,
+    "id": "item_273_לווייתן_קטלן",
+    "name_he": "לווייתן קטלן",
+    "suggestedName": "לווייתן קטלן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(אורקה) (לווייתן שחור-לבן חלקק מגיח מהמים",
+    "search_query": "לווייתן קטלן",
+    "is_basic": false,
+    "everyday_associations": [
+      "לוטוס",
+      "ספא",
+      "בריכה",
+      "שלווה"
+    ],
+    "imageUrl": "/staged_images/pool/item_273_לווייתן_קטלן.jpg"
+  },
+  {
+    "num": 274,
+    "id": "item_274_צב_יבשה_ענק",
+    "name_he": "צב יבשה ענק",
+    "suggestedName": "צב יבשה ענק",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(שריון משובץ כבד, צוואר מקומט יוצא לאט",
+    "search_query": "צב יבשה ענק",
+    "is_basic": false,
+    "everyday_associations": [
+      "סחלב",
+      "משתלה",
+      "מתנה",
+      "עציץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_274_צב_יבשה_ענק.jpg"
+  },
+  {
+    "num": 275,
+    "id": "item_275_פרת_משה_רבנו",
+    "name_he": "פרת משה רבנו",
+    "suggestedName": "פרת משה רבנו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(חיפושית חצי-כדור אדומה עם נקודות שחורות",
+    "search_query": "פרת משה רבנו",
+    "is_basic": false,
+    "everyday_associations": [
+      "פטריה",
+      "יער",
+      "בישול",
+      "מרק"
+    ],
+    "imageUrl": "/staged_images/pool/item_275_פרת_משה_רבנו.jpg"
+  },
+  {
+    "num": 276,
+    "id": "item_276_דבורה",
+    "name_he": "דבורה",
+    "suggestedName": "דבורה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(פסי צהוב-שחור, כנפיים שקופות, עוקץ מאחור",
+    "search_query": "דבורה",
+    "is_basic": false,
+    "everyday_associations": [
+      "דבורה",
+      "דבש",
+      "עקיצה",
+      "פרח"
+    ],
+    "imageUrl": "/staged_images/pool/item_276_דבורה.jpg"
+  },
+  {
+    "num": 277,
+    "id": "item_277_עץ_אלון_עתיק_בשלכת",
+    "name_he": "עץ אלון עתיק בשלכת",
+    "suggestedName": "עץ אלון עתיק בשלכת",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(גזע ענק מפותל, ללא עלים, צללית שחורה מול שקיעה",
+    "search_query": "עץ אלון עתיק בשלכת",
+    "is_basic": false,
+    "everyday_associations": [
+      "פרפר",
+      "אביב",
+      "כנפיים",
+      "טבע"
+    ],
+    "imageUrl": "/staged_images/pool/item_277_עץ_אלון_עתיק_בשלכת.jpg"
+  },
+  {
+    "num": 278,
+    "id": "item_278_פרח_חמנייה",
+    "name_he": "פרח חמנייה",
+    "suggestedName": "פרח חמנייה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(מרכז חום גדול, עלי כותרת צהובים קורנים",
+    "search_query": "פרח חמנייה",
+    "is_basic": false,
+    "everyday_associations": [
+      "נמלה",
+      "סדר",
+      "עבודה",
+      "מחסן"
+    ],
+    "imageUrl": "/staged_images/pool/item_278_פרח_חמנייה.jpg"
+  },
+  {
+    "num": 279,
+    "id": "item_279_ורד_אדום",
+    "name_he": "ורד אדום",
+    "suggestedName": "ורד אדום",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(עלי כותרת צפופים ומפותלים, גבעול עם קוצים חדים",
+    "search_query": "ורד אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "ורד",
+      "זר",
+      "רומנטיקה",
+      "מתנה"
+    ],
+    "imageUrl": "/staged_images/pool/item_279_ורד_אדום.jpg"
+  },
+  {
+    "num": 280,
+    "id": "item_280_עלה_מייפל",
+    "name_he": "עלה מייפל",
+    "suggestedName": "עלה מייפל",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(קנדה) (עלה בעל חמש אונות מחודדות, צבע אדום/כתום",
+    "search_query": "עלה מייפל",
+    "is_basic": false,
+    "everyday_associations": [
+      "מייפל",
+      "סירופ",
+      "סתיו",
+      "קנדה"
+    ],
+    "imageUrl": "/staged_images/pool/item_280_עלה_מייפל.jpg"
+  },
+  {
+    "num": 281,
+    "id": "item_281_חצי_סהר_וכוכב",
+    "name_he": "חצי סהר וכוכב",
+    "suggestedName": "חצי סהר וכוכב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(בשמי הלילה או על דגל",
+    "search_query": "חצי סהר וכוכב",
+    "is_basic": false,
+    "everyday_associations": [
+      "דולפין",
+      "שחייה",
+      "ים",
+      "חיוך"
+    ],
+    "imageUrl": "/staged_images/pool/item_281_חצי_סהר_וכוכב.jpg"
+  },
+  {
+    "num": 282,
+    "id": "item_282_שונית_אלמוגים_צבעונית",
+    "name_he": "שונית אלמוגים צבעונית",
+    "suggestedName": "שונית אלמוגים צבעונית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(דגים קטנים שוחים בין מבני אבן ימיים ורודים וצהובים",
+    "search_query": "שונית אלמוגים צבעונית",
+    "is_basic": false,
+    "everyday_associations": [
+      "לוויתן",
+      "שיט",
+      "תצפית",
+      "ענק"
+    ],
+    "imageUrl": "/staged_images/pool/item_282_שונית_אלמוגים_צבעונית.jpg"
+  },
+  {
+    "num": 283,
+    "id": "item_283_מפלי_ניאגרה",
+    "name_he": "מפלי ניאגרה",
+    "suggestedName": "מפלי ניאגרה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(מסך מים רחב ועצום, קצף לבן בתחתית",
+    "search_query": "מפלי ניאגרה",
+    "is_basic": false,
+    "everyday_associations": [
+      "כריש",
+      "סכנה",
+      "צלילה",
+      "שיניים"
+    ],
+    "imageUrl": "/staged_images/pool/item_283_מפלי_ניאגרה.jpg"
+  },
+  {
+    "num": 284,
+    "id": "item_284_הגרנד_קניון",
+    "name_he": "הגרנד קניון",
+    "suggestedName": "הגרנד קניון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(שכבות סלע אדומות וארוכות, נהר קטן זורם עמוק למטה",
+    "search_query": "הגרנד קניון",
+    "is_basic": false,
+    "everyday_associations": [
+      "צב",
+      "איטיות",
+      "סבלנות",
+      "שריון"
+    ],
+    "imageUrl": "/staged_images/pool/item_284_הגרנד_קניון.jpg"
+  },
+  {
+    "num": 285,
+    "id": "item_285_הר_פוג_י",
+    "name_he": "הר פוג'י",
+    "suggestedName": "הר פוג'י",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(חרוט געשי מושלם, פסגה מושלגת בלבן, סימטרי",
+    "search_query": "הר פוג'י",
+    "is_basic": false,
+    "everyday_associations": [
+      "מדוזה",
+      "חוף",
+      "עקיצה",
+      "קיץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_285_הר_פוג_י.jpg"
+  },
+  {
+    "num": 286,
+    "id": "item_286_סופת_טורנדו",
+    "name_he": "סופת טורנדו",
+    "suggestedName": "סופת טורנדו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(משפך) (עמוד ענן מסתובב המחבר בין שמיים לאדמה",
+    "search_query": "סופת טורנדו",
+    "is_basic": false,
+    "everyday_associations": [
+      "זאב",
+      "להקה",
+      "לילה",
+      "ירח"
+    ],
+    "imageUrl": "/staged_images/pool/item_286_סופת_טורנדו.jpg"
+  },
+  {
+    "num": 287,
+    "id": "item_287_צונאמי",
+    "name_he": "צונאמי",
+    "suggestedName": "צונאמי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(גל ענק) (קיר מים מאיים להתמוטט על קו חוף/עיר",
+    "search_query": "צונאמי",
+    "is_basic": false,
+    "everyday_associations": [
+      "דוב",
+      "שינה",
+      "חורף",
+      "יער"
+    ],
+    "imageUrl": "/staged_images/pool/item_287_צונאמי.jpg"
+  },
+  {
+    "num": 288,
+    "id": "item_288_מדבר_חול",
+    "name_he": "מדבר חול",
+    "suggestedName": "מדבר חול",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(דיונות) (גלי חול זהובים מושלמים ללא שום צמחייה",
+    "search_query": "מדבר חול",
+    "is_basic": false,
+    "everyday_associations": [
+      "שועל",
+      "ערמומיות",
+      "זנב",
+      "טבע"
+    ],
+    "imageUrl": "/staged_images/pool/item_288_מדבר_חול.jpg"
+  },
+  {
+    "num": 289,
+    "id": "item_289_יער_גשם_טרופי",
+    "name_he": "יער גשם טרופי",
+    "suggestedName": "יער גשם טרופי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(צמחייה ירוקה סבוכה, ערפל, שרכים ענקיים",
+    "search_query": "יער גשם טרופי",
+    "is_basic": false,
+    "everyday_associations": [
+      "פיל",
+      "זיכרון",
+      "חדק",
+      "ספארי"
+    ],
+    "imageUrl": "/staged_images/pool/item_289_יער_גשם_טרופי.jpg"
+  },
+  {
+    "num": 290,
+    "id": "item_290_ביצה",
+    "name_he": "ביצה",
+    "suggestedName": "ביצה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(טבע) (מים עומדים ירוקים, קני סוף, עיני תנין מציצות",
+    "search_query": "ביצה",
+    "is_basic": false,
+    "everyday_associations": [
+      "ג'ירפה",
+      "גובה",
+      "צוואר",
+      "ספארי"
+    ],
+    "imageUrl": "/staged_images/pool/item_290_ביצה.jpg"
+  },
+  {
+    "num": 291,
+    "id": "item_291_קשת_בענן",
+    "name_he": "קשת בענן",
+    "suggestedName": "קשת בענן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(שבעה פסי צבע מקושתים בשמיים לאחר הגשם",
+    "search_query": "קשת בענן",
+    "is_basic": false,
+    "everyday_associations": [
+      "קנגורו",
+      "קפיצה",
+      "כיס",
+      "אוסטרליה"
+    ],
+    "imageUrl": "/staged_images/pool/item_291_קשת_בענן.jpg"
+  },
+  {
+    "num": 292,
+    "id": "item_292_כוכב_ים",
+    "name_he": "כוכב ים",
+    "suggestedName": "כוכב ים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(חמש זרועות סימטריות שוכב על חול הים",
+    "search_query": "כוכב ים",
+    "is_basic": false,
+    "everyday_associations": [
+      "פינגווין",
+      "קור",
+      "הליכה",
+      "קרח"
+    ],
+    "imageUrl": "/staged_images/pool/item_292_כוכב_ים.jpg"
+  },
+  {
+    "num": 293,
+    "id": "item_293_סרטן",
+    "name_he": "סרטן",
+    "suggestedName": "סרטן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(בעל חיים) (שתי צבתות גדולות מורמות, הליכה הצידה",
+    "search_query": "סרטן",
+    "is_basic": false,
+    "everyday_associations": [
+      "סרטן",
+      "חוף",
+      "צבתות",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/item_293_סרטן.jpg"
+  },
+  {
+    "num": 294,
+    "id": "item_294_תמנון",
+    "name_he": "תמנון",
+    "suggestedName": "תמנון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(שמונה זרועות מלאות כפתורי הצמדה, ראש גדול",
+    "search_query": "תמנון",
+    "is_basic": false,
+    "everyday_associations": [
+      "תמנון",
+      "זרועות",
+      "דיו",
+      "מעמקים"
+    ],
+    "imageUrl": "/staged_images/pool/item_294_תמנון.jpg"
+  },
+  {
+    "num": 295,
+    "id": "item_295_זיקית_על_ענף",
+    "name_he": "זיקית על ענף",
+    "suggestedName": "זיקית על ענף",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(עיניים מסתובבות בנפרד, זנב מגולגל, לשון ארוכה נשלחת",
+    "search_query": "זיקית על ענף",
+    "is_basic": false,
+    "everyday_associations": [
+      "זברה",
+      "פסים",
+      "מעבר-חציה",
+      "ספארי"
+    ],
+    "imageUrl": "/staged_images/pool/item_295_זיקית_על_ענף.jpg"
+  },
+  {
+    "num": 296,
+    "id": "item_296_נחש_קוברה",
+    "name_he": "נחש קוברה",
+    "suggestedName": "נחש קוברה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(צוואר פרוס ורחב, לשון מפוצלת, עמידה מאיימת",
+    "search_query": "נחש קוברה",
+    "is_basic": false,
+    "everyday_associations": [
+      "פנדה",
+      "במבוק",
+      "חמידות",
+      "גן-חיות"
+    ],
+    "imageUrl": "/staged_images/pool/item_296_נחש_קוברה.jpg"
+  },
+  {
+    "num": 297,
+    "id": "item_297_עקרב",
+    "name_he": "עקרב",
+    "suggestedName": "עקרב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(זנב מורם קדימה עם עוקץ מושחז בקצה",
+    "search_query": "עקרב",
+    "is_basic": false,
+    "everyday_associations": [
+      "קוואלה",
+      "אקליפטוס",
+      "שינה",
+      "אוסטרליה"
+    ],
+    "imageUrl": "/staged_images/pool/item_297_עקרב.jpg"
+  },
+  {
+    "num": 298,
+    "id": "item_298_צפרדע_ירוקה",
+    "name_he": "צפרדע ירוקה",
+    "suggestedName": "צפרדע ירוקה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(יושבת על עלה נימפאה במים",
+    "search_query": "צפרדע ירוקה",
+    "is_basic": false,
+    "everyday_associations": [
+      "צפרדע",
+      "ביצה",
+      "קפיצה",
+      "גשם"
+    ],
+    "imageUrl": "/staged_images/pool/item_298_צפרדע_ירוקה.jpg"
+  },
+  {
+    "num": 299,
+    "id": "item_299_פרפר_מונרך",
+    "name_he": "פרפר מונרך",
+    "suggestedName": "פרפר מונרך",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(כנפיים כתומות עם עורקים שחורים ונקודות לבנות",
+    "search_query": "פרפר מונרך",
+    "is_basic": false,
+    "everyday_associations": [
+      "סליל",
+      "חלזון",
+      "חורף",
+      "איטיות"
+    ],
+    "imageUrl": "/staged_images/pool/item_299_פרפר_מונרך.jpg"
+  },
+  {
+    "num": 300,
+    "id": "item_300_שפירית",
+    "name_he": "שפירית",
+    "suggestedName": "שפירית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "subCategory": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "(גוף ארוך ודק, שתי זרועות כנפיים כפולות ושקופות",
+    "search_query": "שפירית",
+    "is_basic": false,
+    "everyday_associations": [
+      "שפירית",
+      "בריכה",
+      "כנפיים",
+      "קיץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_300_שפירית.jpg"
+  },
+  {
+    "num": 301,
+    "id": "item_301_כדורגל_קלאסי",
+    "name_he": "כדורגל קלאסי",
+    "suggestedName": "כדורגל קלאסי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מתומנים ומשושים בצבעי שחור-לבן",
+    "search_query": "כדורגל קלאסי",
+    "is_basic": false,
+    "everyday_associations": [
+      "כדורגל",
+      "משחק",
+      "גול",
+      "אימון"
+    ],
+    "imageUrl": "/staged_images/pool/item_301_כדורגל_קלאסי.jpg"
+  },
+  {
+    "num": 302,
+    "id": "item_302_כדורסל",
+    "name_he": "כדורסל",
+    "suggestedName": "כדורסל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(כדור כתום עם חריצים שחורים בולטים",
+    "search_query": "כדורסל",
+    "is_basic": false,
+    "everyday_associations": [
+      "כדורסל",
+      "סל",
+      "קליעה",
+      "מגרש"
+    ],
+    "imageUrl": "/staged_images/pool/item_302_כדורסל.jpg"
+  },
+  {
+    "num": 303,
+    "id": "item_303_כדור_טניס",
+    "name_he": "כדור טניס",
+    "suggestedName": "כדור טניס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(כדור ניאון צהוב-ירוק שעיר עם קו מפותל לבן",
+    "search_query": "כדור טניס",
+    "is_basic": false,
+    "everyday_associations": [
+      "טניס",
+      "מחבט",
+      "משחק",
+      "רשת"
+    ],
+    "imageUrl": "/staged_images/pool/item_303_כדור_טניס.jpg"
+  },
+  {
+    "num": 304,
+    "id": "item_304_מחבט_טניס",
+    "name_he": "מחבט טניס",
+    "suggestedName": "מחבט טניס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(רשת חוטים מתוחה במסגרת אליפטית, ידית ארוכה",
+    "search_query": "מחבט טניס",
+    "is_basic": false,
+    "everyday_associations": [
+      "בייסבול",
+      "כפפה",
+      "חבטה",
+      "כדור"
+    ],
+    "imageUrl": "/staged_images/pool/item_304_מחבט_טניס.jpg"
+  },
+  {
+    "num": 305,
+    "id": "item_305_כדור_פוטבול_אמריקאי",
+    "name_he": "כדור פוטבול אמריקאי",
+    "suggestedName": "כדור פוטבול אמריקאי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(אליפטי, חום, עור עם שרוכים לבנים באמצע",
+    "search_query": "כדור פוטבול אמריקאי",
+    "is_basic": false,
+    "everyday_associations": [
+      "גולף",
+      "מועדון",
+      "דשא",
+      "חבטה"
+    ],
+    "imageUrl": "/staged_images/pool/item_305_כדור_פוטבול_אמריקאי.jpg"
+  },
+  {
+    "num": 306,
+    "id": "item_306_כדור_באולינג_ופינים",
+    "name_he": "כדור באולינג ופינים",
+    "suggestedName": "כדור באולינג ופינים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(כדור שחור עם שלושה חורים, פינים לבנים עם פס אדום",
+    "search_query": "כדור באולינג ופינים",
+    "is_basic": false,
+    "everyday_associations": [
+      "באולינג",
+      "פינים",
+      "כדור",
+      "ערב"
+    ],
+    "imageUrl": "/staged_images/pool/item_306_כדור_באולינג_ופינים.jpg"
+  },
+  {
+    "num": 307,
+    "id": "item_307_כדור_ביליארד",
+    "name_he": "כדור ביליארד",
+    "suggestedName": "כדור ביליארד",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מספר 8) (כדור שחור מבריק עם עיגול לבן והספרה 8",
+    "search_query": "כדור ביליארד",
+    "is_basic": false,
+    "everyday_associations": [
+      "ביליארד",
+      "מקל",
+      "כדורים",
+      "פאב"
+    ],
+    "imageUrl": "/staged_images/pool/item_307_כדור_ביליארד.jpg"
+  },
+  {
+    "num": 308,
+    "id": "item_308_מחבט_בייסבול",
+    "name_he": "מחבט בייסבול",
+    "suggestedName": "מחבט בייסבול",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(אלת עץ חלקה שהולכת ומתרחבת לקראת הקצה",
+    "search_query": "מחבט בייסבול",
+    "is_basic": false,
+    "everyday_associations": [
+      "שולחן",
+      "פינגפונג",
+      "מטקות",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/item_308_מחבט_בייסבול.jpg"
+  },
+  {
+    "num": 309,
+    "id": "item_309_כדור_נוצה",
+    "name_he": "כדור נוצה",
+    "suggestedName": "כדור נוצה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(בדמינטון) (חצי כדור גומי מחובר לחרוט נוצות לבנות",
+    "search_query": "כדור נוצה",
+    "is_basic": false,
+    "everyday_associations": [
+      "בדמינטון",
+      "נוצה",
+      "רשת",
+      "חצר"
+    ],
+    "imageUrl": "/staged_images/pool/item_309_כדור_נוצה.jpg"
+  },
+  {
+    "num": 310,
+    "id": "item_310_זוג_כפפות_אגרוף",
+    "name_he": "זוג כפפות אגרוף",
+    "suggestedName": "זוג כפפות אגרוף",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(כפפות עור אדומות נפוחות",
+    "search_query": "זוג כפפות אגרוף",
+    "is_basic": false,
+    "everyday_associations": [
+      "אגרוף",
+      "זירה",
+      "כפפות",
+      "קרב"
+    ],
+    "imageUrl": "/staged_images/pool/item_310_זוג_כפפות_אגרוף.jpg"
+  },
+  {
+    "num": 311,
+    "id": "item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות",
+    "name_he": "טבעות אולימפיות",
+    "suggestedName": "טבעות אולימפיות",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "חמש טבעות צבעוניות שלובות, ספורט",
+    "search_query": "טבעות אולימפיות",
+    "is_basic": false,
+    "everyday_associations": [
+      "אולימפיאדה",
+      "ספורט",
+      "מדליה",
+      "טבעות"
+    ],
+    "imageUrl": "/staged_images/pool/item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות.jpg"
+  },
+  {
+    "num": 312,
+    "id": "item_312_שולחן_פינג_פונג",
+    "name_he": "שולחן פינג פונג",
+    "suggestedName": "שולחן פינג פונג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(שולחן ירוק/כחול, קו לבן באמצע ורשת נמוכה",
+    "search_query": "שולחן פינג פונג",
+    "is_basic": false,
+    "everyday_associations": [
+      "גלשן",
+      "גלים",
+      "ים",
+      "קיץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_312_שולחן_פינג_פונג.jpg"
+  },
+  {
+    "num": 313,
+    "id": "item_313_סנובורד___מגלשי_סקי",
+    "name_he": "סנובורד / מגלשי סקי",
+    "suggestedName": "סנובורד / מגלשי סקי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(קרשים ארוכים בשלג, מקלות סקי",
+    "search_query": "סנובורד / מגלשי סקי",
+    "is_basic": false,
+    "everyday_associations": [
+      "סנובורד",
+      "סקי",
+      "שלג",
+      "חורף"
+    ],
+    "imageUrl": "/staged_images/pool/item_313_סנובורד___מגלשי_סקי.jpg"
+  },
+  {
+    "num": 314,
+    "id": "item_314_גלשן_גלים",
+    "name_he": "גלשן גלים",
+    "suggestedName": "גלשן גלים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(קרש ארוך ומחודד עם סנפיר תחתון על הגל",
+    "search_query": "גלשן גלים",
+    "is_basic": false,
+    "everyday_associations": [
+      "סנפירים",
+      "שנירקול",
+      "צלילה",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/item_314_גלשן_גלים.jpg"
+  },
+  {
+    "num": 315,
+    "id": "item_315_משקולת_ברזל_קלאסית",
+    "name_he": "משקולת ברזל קלאסית",
+    "suggestedName": "משקולת ברזל קלאסית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(דאמבל) (מוט קצר ושתי קוביות/עיגולי מתכת שחורים בצדדים",
+    "search_query": "משקולת ברזל קלאסית",
+    "is_basic": false,
+    "everyday_associations": [
+      "משקפת",
+      "שחייה",
+      "בריכה",
+      "אימון"
+    ],
+    "imageUrl": "/staged_images/pool/item_315_משקולת_ברזל_קלאסית.jpg"
+  },
+  {
+    "num": 316,
+    "id": "item_316_חץ_ולוח_מטרה",
+    "name_he": "חץ ולוח מטרה",
+    "suggestedName": "חץ ולוח מטרה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(דארטס) (לוח מעגלים שחור-ירוק-אדום, חץ נעוץ במרכז",
+    "search_query": "חץ ולוח מטרה",
+    "is_basic": false,
+    "everyday_associations": [
+      "אופניים",
+      "רכיבה",
+      "קסדה",
+      "פנצ'ר"
+    ],
+    "imageUrl": "/staged_images/pool/item_316_חץ_ולוח_מטרה.jpg"
+  },
+  {
+    "num": 317,
+    "id": "item_317_משרוקית_שופט",
+    "name_he": "משרוקית שופט",
+    "suggestedName": "משרוקית שופט",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(משרוקית מתכת כסופה על שרוך שחור",
+    "search_query": "משרוקית שופט",
+    "is_basic": false,
+    "everyday_associations": [
+      "משקולות",
+      "אימון",
+      "חדר-כושר",
+      "שרירים"
+    ],
+    "imageUrl": "/staged_images/pool/item_317_משרוקית_שופט.jpg"
+  },
+  {
+    "num": 318,
+    "id": "item_318_כרטיס_אדום_וצהוב",
+    "name_he": "כרטיס אדום וצהוב",
+    "suggestedName": "כרטיס אדום וצהוב",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(שני כרטיסי פלסטיק מורמים ביד",
+    "search_query": "כרטיס אדום וצהוב",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזרן",
+      "יוגה",
+      "מתיחות",
+      "רוגע"
+    ],
+    "imageUrl": "/staged_images/pool/item_318_כרטיס_אדום_וצהוב.jpg"
+  },
+  {
+    "num": 319,
+    "id": "item_319_חליפת_קראטה_ג_ודו",
+    "name_he": "חליפת קראטה/ג'ודו",
+    "suggestedName": "חליפת קראטה/ג'ודו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(קימונו) (חליפה לבנה קשורה בחגורה שחורה",
+    "search_query": "חליפת קראטה/ג'ודו",
+    "is_basic": false,
+    "everyday_associations": [
+      "חגורה",
+      "קראטה",
+      "ג'ודו",
+      "אימון"
+    ],
+    "imageUrl": "/staged_images/pool/item_319_חליפת_קראטה_ג_ודו.jpg"
+  },
+  {
+    "num": 320,
+    "id": "item_320_נעלי_פקקים",
+    "name_he": "נעלי פקקים",
+    "suggestedName": "נעלי פקקים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(נעלי ספורט עם בליטות פלסטיק/מתכת בתחתית הסוליה",
+    "search_query": "נעלי פקקים",
+    "is_basic": false,
+    "everyday_associations": [
+      "חץ",
+      "קשת",
+      "מטרה",
+      "דיוק"
+    ],
+    "imageUrl": "/staged_images/pool/item_320_נעלי_פקקים.jpg"
+  },
+  {
+    "num": 321,
+    "id": "item_321_קלפי_משחק",
+    "name_he": "קלפי משחק",
+    "suggestedName": "קלפי משחק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(אס עלה) (קלף לבן, ציור לב שחור הפוך עם בסיס",
+    "search_query": "קלפי משחק",
+    "is_basic": false,
+    "everyday_associations": [
+      "שחמט",
+      "לוח",
+      "מלך",
+      "אסטרטגיה"
+    ],
+    "imageUrl": "/staged_images/pool/item_321_קלפי_משחק.jpg"
+  },
+  {
+    "num": 322,
+    "id": "item_322_רולטה_קזינו",
+    "name_he": "רולטה קזינו",
+    "suggestedName": "רולטה קזינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(גלגל עץ גדול עם משבצות אדום-שחור ומספרים, כדור קטן",
+    "search_query": "רולטה קזינו",
+    "is_basic": false,
+    "everyday_associations": [
+      "שש-בש",
+      "קוביות",
+      "קפה",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/item_322_רולטה_קזינו.jpg"
+  },
+  {
+    "num": 323,
+    "id": "item_323_מכונת_מזל",
+    "name_he": "מכונת מזל",
+    "suggestedName": "מכונת מזל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(סלוט משין) (ידית בצד, שלושה חלונות המציגים \"777\" או שלושה דובדבנים",
+    "search_query": "מכונת מזל",
+    "is_basic": false,
+    "everyday_associations": [
+      "קלפים",
+      "פוקר",
+      "ערב",
+      "חברים"
+    ],
+    "imageUrl": "/staged_images/pool/item_323_מכונת_מזל.jpg"
+  },
+  {
+    "num": 324,
+    "id": "item_324_ז_יטונים_של_קזינו",
+    "name_he": "ז'יטונים של קזינו",
+    "suggestedName": "ז'יטונים של קזינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מטבעות פלסטיק צבעוניים עם חריצים בהיקף, ערומים במגדל",
+    "search_query": "ז'יטונים של קזינו",
+    "is_basic": false,
+    "everyday_associations": [
+      "מונופול",
+      "משחק",
+      "כסף",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_324_ז_יטונים_של_קזינו.jpg"
+  },
+  {
+    "num": 325,
+    "id": "item_325_קובייה_הונגרית",
+    "name_he": "קובייה הונגרית",
+    "suggestedName": "קובייה הונגרית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(קוביה תלת-ממדית, 6 פאות צבעוניות מבולגנות",
+    "search_query": "קובייה הונגרית",
+    "is_basic": false,
+    "everyday_associations": [
+      "פאזל",
+      "הרכבה",
+      "סבלנות",
+      "תמונה"
+    ],
+    "imageUrl": "/staged_images/pool/item_325_קובייה_הונגרית.jpg"
+  },
+  {
+    "num": 326,
+    "id": "item_326_חייל_שחמט",
+    "name_he": "חייל שחמט",
+    "suggestedName": "חייל שחמט",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מלך/מלכה) (חייל עץ גבוה עם כתר או צלב בראשו",
+    "search_query": "חייל שחמט",
+    "is_basic": false,
+    "everyday_associations": [
+      "רוביק",
+      "קובייה",
+      "חידה",
+      "מוח"
+    ],
+    "imageUrl": "/staged_images/pool/item_326_חייל_שחמט.jpg"
+  },
+  {
+    "num": 327,
+    "id": "item_327_לבני_דומינו",
+    "name_he": "לבני דומינו",
+    "suggestedName": "לבני דומינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מלבנים שחורים מחולקים לשניים עם נקודות לבנות",
+    "search_query": "לבני דומינו",
+    "is_basic": false,
+    "everyday_associations": [
+      "דומינו",
+      "אבנים",
+      "שרשרת",
+      "נפילה"
+    ],
+    "imageUrl": "/staged_images/pool/item_327_לבני_דומינו.jpg"
+  },
+  {
+    "num": 328,
+    "id": "item_328_חתיכת_פאזל_קלאסית",
+    "name_he": "חתיכת פאזל קלאסית",
+    "suggestedName": "חתיכת פאזל קלאסית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(חלק קרטון עם שתי בליטות ושני שקעים",
+    "search_query": "חתיכת פאזל קלאסית",
+    "is_basic": false,
+    "everyday_associations": [
+      "לגו",
+      "בנייה",
+      "חלקים",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_328_חתיכת_פאזל_קלאסית.jpg"
+  },
+  {
+    "num": 329,
+    "id": "item_329_יו_יו",
+    "name_he": "יו-יו",
+    "suggestedName": "יו-יו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(שני דיסקים מחוברים בחוט שעולה ויורד מהיד",
+    "search_query": "יו-יו",
+    "is_basic": false,
+    "everyday_associations": [
+      "חרסינה",
+      "מהג'ונג",
+      "משחק",
+      "סין"
+    ],
+    "imageUrl": "/staged_images/pool/item_329_יו_יו.jpg"
+  },
+  {
+    "num": 330,
+    "id": "item_330_משחק_הטוויסטר",
+    "name_he": "משחק הטוויסטר",
+    "suggestedName": "משחק הטוויסטר",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(לוח) (יריעת פלסטיק על הרצפה עם עיגולים גדולים באדום, צהוב, ירוק, כחול",
+    "search_query": "משחק הטוויסטר",
+    "is_basic": false,
+    "everyday_associations": [
+      "טוויסטר",
+      "מסיבה",
+      "גמישות",
+      "צבעים"
+    ],
+    "imageUrl": "/staged_images/pool/item_330_משחק_הטוויסטר.jpg"
+  },
+  {
+    "num": 331,
+    "id": "item_331_משקפת_שחייה_ומצוף_זרוע",
+    "name_he": "משקפת שחייה ומצוף זרוע",
+    "suggestedName": "משקפת שחייה ומצוף זרוע",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(ציוד בריכה קלאסי לילדים בשילוב צבעים זוהרים",
+    "search_query": "משקפת שחייה ומצוף זרוע",
+    "is_basic": false,
+    "everyday_associations": [
+      "יו-יו",
+      "חוט",
+      "פעלולים",
+      "צעצוע"
+    ],
+    "imageUrl": "/staged_images/pool/item_331_משקפת_שחייה_ומצוף_זרוע.jpg"
+  },
+  {
+    "num": 332,
+    "id": "item_332_גלגל_ענק",
+    "name_he": "גלגל ענק",
+    "suggestedName": "גלגל ענק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(לונה פארק) (גלגל מתכת עצום עם קרונות נוסעים תלויים מסביב",
+    "search_query": "גלגל ענק",
+    "is_basic": false,
+    "everyday_associations": [
+      "סביבון",
+      "חנוכה",
+      "משחק",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_332_גלגל_ענק.jpg"
+  },
+  {
+    "num": 333,
+    "id": "item_333_רשת_כדורגל_נטויה",
+    "name_he": "רשת כדורגל נטויה",
+    "suggestedName": "רשת כדורגל נטויה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מתכת בצורת שער, רשת חוטים לבנה מאחור",
+    "search_query": "רשת כדורגל נטויה",
+    "is_basic": false,
+    "everyday_associations": [
+      "עפיפון",
+      "רוח",
+      "חוף",
+      "שמיים"
+    ],
+    "imageUrl": "/staged_images/pool/item_333_רשת_כדורגל_נטויה.jpg"
+  },
+  {
+    "num": 334,
+    "id": "item_334_פודטראק",
+    "name_he": "פודטראק",
+    "suggestedName": "פודטראק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(משאית אוכל) (ואן וינטג' עם חלון ראווה פתוח, שלט המבורגר/נקניקייה",
+    "search_query": "פודטראק",
+    "is_basic": false,
+    "everyday_associations": [
+      "בועות",
+      "סבון",
+      "פארק",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_334_פודטראק.jpg"
+  },
+  {
+    "num": 335,
+    "id": "item_335_חכה_ודלי_דגים",
+    "name_he": "חכה ודלי דגים",
+    "suggestedName": "חכה ודלי דגים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(מוט גמיש ארוך, חוט ניילון דק יורד למים",
+    "search_query": "חכה ודלי דגים",
+    "is_basic": false,
+    "everyday_associations": [
+      "בלון",
+      "מסיבה",
+      "יומולדת",
+      "קישוט"
+    ],
+    "imageUrl": "/staged_images/pool/item_335_חכה_ודלי_דגים.jpg"
+  },
+  {
+    "num": 336,
+    "id": "item_336_משקפת_שדה",
+    "name_he": "משקפת שדה",
+    "suggestedName": "משקפת שדה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(שתי עיניות מחוברות ברצועת עור סביב צוואר",
+    "search_query": "משקפת שדה",
+    "is_basic": false,
+    "everyday_associations": [
+      "חבל",
+      "קפיצה",
+      "כושר",
+      "ילדות"
+    ],
+    "imageUrl": "/staged_images/pool/item_336_משקפת_שדה.jpg"
+  },
+  {
+    "num": 337,
+    "id": "item_337_ערסל_קשור_בין_שני_עצים",
+    "name_he": "ערסל קשור בין שני עצים",
+    "suggestedName": "ערסל קשור בין שני עצים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(רשת חוטים או בד מתוח, אדם נח בפנים",
+    "search_query": "ערסל קשור בין שני עצים",
+    "is_basic": false,
+    "everyday_associations": [
+      "קלאס",
+      "גיר",
+      "מדרכה",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/item_337_ערסל_קשור_בין_שני_עצים.jpg"
+  },
+  {
+    "num": 338,
+    "id": "item_338_מדורה_עם_שיפודי_מרשמלו",
+    "name_he": "מדורה עם שיפודי מרשמלו",
+    "suggestedName": "מדורה עם שיפודי מרשמלו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(ענפי עץ בוערים, קצף לבן נמס על מקל",
+    "search_query": "מדורה עם שיפודי מרשמלו",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחבואים",
+      "פארק",
+      "חברים",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_338_מדורה_עם_שיפודי_מרשמלו.jpg"
+  },
+  {
+    "num": 339,
+    "id": "item_339_מצנח_רחיפה",
+    "name_he": "מצנח רחיפה",
+    "suggestedName": "מצנח רחיפה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(חופה מלבנית צבעונית ארוכה, אדם תלוי ברתמה מתחתיה",
+    "search_query": "מצנח רחיפה",
+    "is_basic": false,
+    "everyday_associations": [
+      "רוגטקה",
+      "אבן",
+      "מטרה",
+      "עץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_339_מצנח_רחיפה.jpg"
+  },
+  {
+    "num": 340,
+    "id": "item_340_מסיכת_צלילה_ושנורקל",
+    "name_he": "מסיכת צלילה ושנורקל",
+    "suggestedName": "מסיכת צלילה ושנורקל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(משקפת זכוכית גדולה וצינור פלסטיק מעוקל",
+    "search_query": "מסיכת צלילה ושנורקל",
+    "is_basic": false,
+    "everyday_associations": [
+      "מטקות",
+      "ים",
+      "חוף",
+      "קיץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_340_מסיכת_צלילה_ושנורקל.jpg"
+  },
+  {
+    "num": 341,
+    "id": "item_341_בומרנג",
+    "name_he": "בומרנג",
+    "suggestedName": "בומרנג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(חתיכת עץ מעוקלת בצורת V עמוקה",
+    "search_query": "בומרנג",
+    "is_basic": false,
+    "everyday_associations": [
+      "כדור-מים",
+      "בריכה",
+      "שמש",
+      "קיץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_341_בומרנג.jpg"
+  },
+  {
+    "num": 342,
+    "id": "item_342_פריזבי",
+    "name_he": "פריזבי",
+    "suggestedName": "פריזבי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(צלחת מעופפת) (צלחת פלסטיק שטוחה וצבעונית באוויר",
+    "search_query": "פריזבי",
+    "is_basic": false,
+    "everyday_associations": [
+      "פריזבי",
+      "פארק",
+      "כלב",
+      "דשא"
+    ],
+    "imageUrl": "/staged_images/pool/item_342_פריזבי.jpg"
+  },
+  {
+    "num": 343,
+    "id": "item_343_חליפת_חלל",
+    "name_he": "חליפת חלל",
+    "suggestedName": "חליפת חלל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(קסדה עגולה גדולה, חליפה לבנה נפוחה מאוד",
+    "search_query": "חליפת חלל",
+    "is_basic": false,
+    "everyday_associations": [
+      "רכבת-הרים",
+      "לונה-פארק",
+      "פחד",
+      "כרטיסים"
+    ],
+    "imageUrl": "/staged_images/pool/item_343_חליפת_חלל.jpg"
+  },
+  {
+    "num": 344,
+    "id": "item_344_דוכן_פופקורן_קולנוע",
+    "name_he": "דוכן פופקורן קולנוע",
+    "suggestedName": "דוכן פופקורן קולנוע",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(קופסת זכוכית, בסיס אדום, גרגרים צהובים קופצים בפנים",
+    "search_query": "דוכן פופקורן קולנוע",
+    "is_basic": false,
+    "everyday_associations": [
+      "פופקורן",
+      "קולנוע",
+      "סרט",
+      "נשנוש"
+    ],
+    "imageUrl": "/staged_images/pool/item_344_דוכן_פופקורן_קולנוע.jpg"
+  },
+  {
+    "num": 345,
+    "id": "item_345_כרטיס_קולנוע_נוסטלגי",
+    "name_he": "כרטיס קולנוע נוסטלגי",
+    "suggestedName": "כרטיס קולנוע נוסטלגי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(כרטיס קרטון אדום/צהוב עם כיתוב \"ADMIT ONE\" וניקוב בחצי",
+    "search_query": "כרטיס קולנוע נוסטלגי",
+    "is_basic": false,
+    "everyday_associations": [
+      "כרטיס",
+      "קולנוע",
+      "סרט",
+      "אולם"
+    ],
+    "imageUrl": "/staged_images/pool/item_345_כרטיס_קולנוע_נוסטלגי.jpg"
+  },
+  {
+    "num": 346,
+    "id": "item_346_מכונת_ארקייד",
+    "name_he": "מכונת ארקייד",
+    "suggestedName": "מכונת ארקייד",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(משחקי וידאו של פעם) (ארון עץ גבוה, מסך קמור, ג'ויסטיק ושני כפתורים",
+    "search_query": "מכונת ארקייד",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארקייד",
+      "מטבעות",
+      "משחקים",
+      "נוסטלגיה"
+    ],
+    "imageUrl": "/staged_images/pool/item_346_מכונת_ארקייד.jpg"
+  },
+  {
+    "num": 347,
+    "id": "item_347_ג_ויסטיק",
+    "name_he": "ג'ויסטיק",
+    "suggestedName": "ג'ויסטיק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(שלט פלייסטיישן/אקסבוקס) (שלט שחור/לבן עם שני סטיקים אנלוגיים ו-4 כפתורי ימין",
+    "search_query": "ג'ויסטיק",
+    "is_basic": false,
+    "everyday_associations": [
+      "ג'ויסטיק",
+      "פלייסטיישן",
+      "משחק",
+      "שלט"
+    ],
+    "imageUrl": "/staged_images/pool/item_347_ג_ויסטיק.jpg"
+  },
+  {
+    "num": 348,
+    "id": "item_348_משחק_טטריס",
+    "name_he": "משחק טטריס",
+    "suggestedName": "משחק טטריס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(הלבנים) (צורות גיאומטריות של 4 ריבועים הנופלות מלמעלה",
+    "search_query": "משחק טטריס",
+    "is_basic": false,
+    "everyday_associations": [
+      "אוזניות",
+      "גיימינג",
+      "מחשב",
+      "דיבור"
+    ],
+    "imageUrl": "/staged_images/pool/item_348_משחק_טטריס.jpg"
+  },
+  {
+    "num": 349,
+    "id": "item_349_מגלשת_מים_ענקית",
+    "name_he": "מגלשת מים ענקית",
+    "suggestedName": "מגלשת מים ענקית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(צינור פלסטיק צבעוני פתוח ומפותל, מים משפריצים בקצה",
+    "search_query": "מגלשת מים ענקית",
+    "is_basic": false,
+    "everyday_associations": [
+      "מציאות",
+      "משקפיים",
+      "עולם",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/item_349_מגלשת_מים_ענקית.jpg"
+  },
+  {
+    "num": 350,
+    "id": "item_350_מצנח_פתוח_בשמיים",
+    "name_he": "מצנח פתוח בשמיים",
+    "suggestedName": "מצנח פתוח בשמיים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "subCategory": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "(חצי כדור בד ענק, חוטים רבים מתכנסים לאדם קטן",
+    "search_query": "מצנח פתוח בשמיים",
+    "is_basic": false,
+    "everyday_associations": [
+      "צניחה",
+      "מצנח",
+      "אדרנלין",
+      "שמיים"
+    ],
+    "imageUrl": "/staged_images/pool/item_350_מצנח_פתוח_בשמיים.jpg"
+  },
+  {
+    "num": 351,
+    "id": "item_351_פטיש_מסמרים_קלאסי",
+    "name_he": "פטיש מסמרים קלאסי",
+    "suggestedName": "פטיש מסמרים קלאסי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(ראש פלסטיק/מתכת עם תופסן מסמרים אחורי, ידית עץ",
+    "search_query": "פטיש מסמרים קלאסי",
+    "is_basic": false,
+    "everyday_associations": [
+      "מסמר",
+      "תלייה",
+      "תמונה",
+      "פטיש"
+    ],
+    "imageUrl": "/staged_images/pool/item_351_פטיש_מסמרים_קלאסי.jpg"
+  },
+  {
+    "num": 352,
+    "id": "item_352_מברג_פיליפס",
+    "name_he": "מברג פיליפס",
+    "suggestedName": "מברג פיליפס",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(ידית פלסטיק, מוט מתכת עם קצה בצורת כוכב/פלוס",
+    "search_query": "מברג פיליפס",
+    "is_basic": false,
+    "everyday_associations": [
+      "בורג",
+      "הרכבה",
+      "איקאה",
+      "מברג"
+    ],
+    "imageUrl": "/staged_images/pool/item_352_מברג_פיליפס.jpg"
+  },
+  {
+    "num": 353,
+    "id": "item_353_מספריים",
+    "name_he": "מספריים",
+    "suggestedName": "מספריים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(שתי לולאות אצבע, שני להבי מתכת גוזרים",
+    "search_query": "מספריים",
+    "is_basic": false,
+    "everyday_associations": [
+      "גזירה",
+      "אריזה",
+      "חבילה",
+      "מספריים"
+    ],
+    "imageUrl": "/staged_images/pool/item_353_מספריים.jpg"
+  },
+  {
+    "num": 354,
+    "id": "item_354_סיכת_ביטחון",
+    "name_he": "סיכת ביטחון",
+    "suggestedName": "סיכת ביטחון",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(סיכת מתכת מפותלת שננעלת לתוך ראש מגן",
+    "search_query": "סיכת ביטחון",
+    "is_basic": false,
+    "everyday_associations": [
+      "תפירה",
+      "מכנס",
+      "בגד",
+      "סיכה"
+    ],
+    "imageUrl": "/staged_images/pool/item_354_סיכת_ביטחון.jpg"
+  },
+  {
+    "num": 355,
+    "id": "item_355_מטרייה_שחורה_פתוחה",
+    "name_he": "מטרייה שחורה פתוחה",
+    "suggestedName": "מטרייה שחורה פתוחה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(בד מתוח על צלעות מתכת, ידית מעוקלת כמו J",
+    "search_query": "מטרייה שחורה פתוחה",
+    "is_basic": false,
+    "everyday_associations": [
+      "גשם",
+      "חורף",
+      "סערה",
+      "מטרייה"
+    ],
+    "imageUrl": "/staged_images/pool/item_355_מטרייה_שחורה_פתוחה.jpg"
+  },
+  {
+    "num": 356,
+    "id": "item_356_מפתח_שוודי",
+    "name_he": "מפתח שוודי",
+    "suggestedName": "מפתח שוודי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(מפתח ברגים שניתן להרחיב ולהצר באמצעות גלגל שיניים קטן",
+    "search_query": "מפתח שוודי",
+    "is_basic": false,
+    "everyday_associations": [
+      "אינסטלטור",
+      "סתימה",
+      "נזילה",
+      "ברז"
+    ],
+    "imageUrl": "/staged_images/pool/item_356_מפתח_שוודי.jpg"
+  },
+  {
+    "num": 357,
+    "id": "item_357_מסור_ידני",
+    "name_he": "מסור ידני",
+    "suggestedName": "מסור ידני",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(ידית עץ או פלסטיק, להב מתכת ארוך ומשונן",
+    "search_query": "מסור ידני",
+    "is_basic": false,
+    "everyday_associations": [
+      "נגר",
+      "עצים",
+      "גיזום",
+      "מסור"
+    ],
+    "imageUrl": "/staged_images/pool/item_357_מסור_ידני.jpg"
+  },
+  {
+    "num": 358,
+    "id": "item_358_מטאטא_ומגרוד",
+    "name_he": "מטאטא ומגרוד",
+    "suggestedName": "מטאטא ומגרוד",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(מטאטא שיער ארוך ויריעת פלסטיק לאיסוף לכלוך",
+    "search_query": "מטאטא ומגרוד",
+    "is_basic": false,
+    "everyday_associations": [
+      "טאטוא",
+      "ספונג'ה",
+      "ניקיון",
+      "מטאטא"
+    ],
+    "imageUrl": "/staged_images/pool/item_358_מטאטא_ומגרוד.jpg"
+  },
+  {
+    "num": 359,
+    "id": "item_359_סולם_מתקפל",
+    "name_he": "סולם מתקפל",
+    "suggestedName": "סולם מתקפל",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(A) (סולם אלומיניום שנפתח לצורת האות A",
+    "search_query": "סולם מתקפל",
+    "is_basic": false,
+    "everyday_associations": [
+      "נורה",
+      "צביעה",
+      "מדף",
+      "סולם"
+    ],
+    "imageUrl": "/staged_images/pool/item_359_סולם_מתקפל.jpg"
+  },
+  {
+    "num": 360,
+    "id": "item_360_מזלג__סכין_וכף",
+    "name_he": "מזלג, סכין וכף",
+    "suggestedName": "מזלג, סכין וכף",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(שלישיית סכו\"ם מתכת קלאסית מונחת זה לצד זה",
+    "search_query": "מזלג, סכין וכף",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארוחה",
+      "שולחן",
+      "מדיח",
+      "סכו\"ם"
+    ],
+    "imageUrl": "/staged_images/pool/item_360_מזלג__סכין_וכף.jpg"
+  },
+  {
+    "num": 361,
+    "id": "item_361_פותחן_קופסאות_שימורים",
+    "name_he": "פותחן קופסאות שימורים",
+    "suggestedName": "פותחן קופסאות שימורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(כלי מתכת קטן עם גלגל שיניים קטן וידית מסתובבת",
+    "search_query": "פותחן קופסאות שימורים",
+    "is_basic": false,
+    "everyday_associations": [
+      "שימורים",
+      "טונה",
+      "מזווה",
+      "פותחן"
+    ],
+    "imageUrl": "/staged_images/pool/item_361_פותחן_קופסאות_שימורים.jpg"
+  },
+  {
+    "num": 362,
+    "id": "item_362_פחית_שימורים_חצי_פתוחה",
+    "name_he": "פחית שימורים חצי פתוחה",
+    "suggestedName": "פחית שימורים חצי פתוחה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(מכסה מתכת מורם כלפי מעלה",
+    "search_query": "פחית שימורים חצי פתוחה",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזווה",
+      "מרק",
+      "תוקף",
+      "פחית"
+    ],
+    "imageUrl": "/staged_images/pool/item_362_פחית_שימורים_חצי_פתוחה.jpg"
+  },
+  {
+    "num": 363,
+    "id": "item_363_בקבוק_ייין_ופותחן_חולץ_פקקים",
+    "name_he": "בקבוק ייין ופותחן חולץ פקקים",
+    "suggestedName": "בקבוק ייין ופותחן חולץ פקקים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(חולץ פקקים בצורת אדם עם זרועות מורמות",
+    "search_query": "בקבוק ייין ופותחן חולץ פקקים",
+    "is_basic": false,
+    "everyday_associations": [
+      "יין",
+      "קידוש",
+      "אירוח",
+      "פותחן"
+    ],
+    "imageUrl": "/staged_images/pool/item_363_בקבוק_ייין_ופותחן_חולץ_פקקים.jpg"
+  },
+  {
+    "num": 364,
+    "id": "item_364_נר_דולק_נוטף_שעווה",
+    "name_he": "נר דולק נוטף שעווה",
+    "suggestedName": "נר דולק נוטף שעווה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(גליל שעווה לבן, להבה קטנה, טיפות קפואות בצדדים",
+    "search_query": "נר דולק נוטף שעווה",
+    "is_basic": false,
+    "everyday_associations": [
+      "הפסקת-חשמל",
+      "שבת",
+      "נרות",
+      "שעווה"
+    ],
+    "imageUrl": "/staged_images/pool/item_364_נר_דולק_נוטף_שעווה.jpg"
+  },
+  {
+    "num": 365,
+    "id": "item_365_פנס_כיס_דולק",
+    "name_he": "פנס כיס דולק",
+    "suggestedName": "פנס כיס דולק",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(גליל פלסטיק שחור המוציא אלומת אור משולשת",
+    "search_query": "פנס כיס דולק",
+    "is_basic": false,
+    "everyday_associations": [
+      "חשכה",
+      "סוללות",
+      "חירום",
+      "פנס"
+    ],
+    "imageUrl": "/staged_images/pool/item_365_פנס_כיס_דולק.jpg"
+  },
+  {
+    "num": 366,
+    "id": "item_366_קופסת_גפרורים",
+    "name_he": "קופסת גפרורים",
+    "suggestedName": "קופסת גפרורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(וגפרור ניצת) (גפרור עץ עם ראש אדום שמוצת ומוציא אש",
+    "search_query": "קופסת גפרורים",
+    "is_basic": false,
+    "everyday_associations": [
+      "גז",
+      "כיריים",
+      "הדלקה",
+      "גפרור"
+    ],
+    "imageUrl": "/staged_images/pool/item_366_קופסת_גפרורים.jpg"
+  },
+  {
+    "num": 367,
+    "id": "item_367_מצית_זיפו",
+    "name_he": "מצית זיפו",
+    "suggestedName": "מצית זיפו",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(Zippo) (מצית מלבני ממתכת כסופה, מכסה פתוח הצידה, להבה דולקת",
+    "search_query": "מצית זיפו",
+    "is_basic": false,
+    "everyday_associations": [
+      "מנגל",
+      "מדורה",
+      "אש",
+      "מצית"
+    ],
+    "imageUrl": "/staged_images/pool/item_367_מצית_זיפו.jpg"
+  },
+  {
+    "num": 368,
+    "id": "item_368_מברשת_שיניים_ומשחה",
+    "name_he": "מברשת שיניים ומשחה",
+    "suggestedName": "מברשת שיניים ומשחה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(פס משחה כחול-לבן על סיבי מברשת פלסטיק",
+    "search_query": "מברשת שיניים ומשחה",
+    "is_basic": false,
+    "everyday_associations": [
+      "צחצוח",
+      "שיניים",
+      "משחה",
+      "מברשת"
+    ],
+    "imageUrl": "/staged_images/pool/item_368_מברשת_שיניים_ומשחה.jpg"
+  },
+  {
+    "num": 369,
+    "id": "item_369_סבון_מוצק_בתוך_קצף",
+    "name_he": "סבון מוצק בתוך קצף",
+    "suggestedName": "סבון מוצק בתוך קצף",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(מלבן ורוד/לבן מוקף בועות סבון קטנות",
+    "search_query": "סבון מוצק בתוך קצף",
+    "is_basic": false,
+    "everyday_associations": [
+      "מקלחת",
+      "רחצה",
+      "שמפו",
+      "סבון"
+    ],
+    "imageUrl": "/staged_images/pool/item_369_סבון_מוצק_בתוך_קצף.jpg"
+  },
+  {
+    "num": 370,
+    "id": "item_370_נייר_טואלט",
+    "name_he": "נייר טואלט",
+    "suggestedName": "נייר טואלט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(גליל) (גליל קרטון חום, נייר לבן רך משתלשל ממנו",
+    "search_query": "נייר טואלט",
+    "is_basic": false,
+    "everyday_associations": [
+      "סופר",
+      "שירותים",
+      "קניות",
+      "נייר"
+    ],
+    "imageUrl": "/staged_images/pool/item_370_נייר_טואלט.jpg"
+  },
+  {
+    "num": 371,
+    "id": "item_371_מסרק_שיער_קלאסי",
+    "name_he": "מסרק שיער קלאסי",
+    "suggestedName": "מסרק שיער קלאסי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(חתיכת פלסטיק שטוחה עם שורת שיניים ישרות וצפופות",
+    "search_query": "מסרק שיער קלאסי",
+    "is_basic": false,
+    "everyday_associations": [
+      "סירוק",
+      "כינים",
+      "שיער",
+      "מסרק"
+    ],
+    "imageUrl": "/staged_images/pool/item_371_מסרק_שיער_קלאסי.jpg"
+  },
+  {
+    "num": 372,
+    "id": "item_372_מראת_יד_עגולה",
+    "name_he": "מראת יד עגולה",
+    "suggestedName": "מראת יד עגולה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(משטח זכוכית מחזיר אור במסגרת וידית אחיזה",
+    "search_query": "מראת יד עגולה",
+    "is_basic": false,
+    "everyday_associations": [
+      "איפור",
+      "גילוח",
+      "שיער",
+      "מראה"
+    ],
+    "imageUrl": "/staged_images/pool/item_372_מראת_יד_עגולה.jpg"
+  },
+  {
+    "num": 373,
+    "id": "item_373_משקפי_קריאה",
+    "name_he": "משקפי קריאה",
+    "suggestedName": "משקפי קריאה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(מסגרת שחורה, שתי עדשות זכוכית עגולות",
+    "search_query": "משקפי קריאה",
+    "is_basic": false,
+    "everyday_associations": [
+      "קריאה",
+      "אופטומטריסט",
+      "ספר",
+      "משקפיים"
+    ],
+    "imageUrl": "/staged_images/pool/item_373_משקפי_קריאה.jpg"
+  },
+  {
+    "num": 374,
+    "id": "item_374_שעון_מעורר_קלאסי",
+    "name_he": "שעון מעורר קלאסי",
+    "suggestedName": "שעון מעורר קלאסי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(עם פעמונים) (שעון עגול עם שני חצאי כדורי מתכת למעלה ופטיש קטן ביניהם",
+    "search_query": "שעון מעורר קלאסי",
+    "is_basic": false,
+    "everyday_associations": [
+      "השכמה",
+      "בוקר",
+      "פגישה",
+      "שעון"
+    ],
+    "imageUrl": "/staged_images/pool/item_374_שעון_מעורר_קלאסי.jpg"
+  },
+  {
+    "num": 375,
+    "id": "item_375_קולב_בגדים",
+    "name_he": "קולב בגדים",
+    "suggestedName": "קולב בגדים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(משולש עץ או מתכת עם וו תלייה בראשו",
+    "search_query": "קולב בגדים",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארון",
+      "בגדים",
+      "סדר",
+      "קולב"
+    ],
+    "imageUrl": "/staged_images/pool/item_375_קולב_בגדים.jpg"
+  },
+  {
+    "num": 376,
+    "id": "item_376_מגהץ_אדים",
+    "name_he": "מגהץ אדים",
+    "suggestedName": "מגהץ אדים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(כלי פלסטיק עם תחתית מתכת חלקה וישרה, אדים יוצאים מהחורים",
+    "search_query": "מגהץ אדים",
+    "is_basic": false,
+    "everyday_associations": [
+      "גיהוץ",
+      "חולצה",
+      "אירוע",
+      "מגהץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_376_מגהץ_אדים.jpg"
+  },
+  {
+    "num": 377,
+    "id": "item_377_מכונת_תפירה_ישנה",
+    "name_he": "מכונת תפירה ישנה",
+    "suggestedName": "מכונת תפירה ישנה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(Singer) (מכונת ברזל שחורה כבדה עם גלגל יד גדול בצד",
+    "search_query": "מכונת תפירה ישנה",
+    "is_basic": false,
+    "everyday_associations": [
+      "תפירה",
+      "מכפלת",
+      "וילונות",
+      "מכונה"
+    ],
+    "imageUrl": "/staged_images/pool/item_377_מכונת_תפירה_ישנה.jpg"
+  },
+  {
+    "num": 378,
+    "id": "item_378_מחט_וחוט",
+    "name_he": "מחט וחוט",
+    "suggestedName": "מחט וחוט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(חוט אדום עובר דרך קוף המחט הדקה",
+    "search_query": "מחט וחוט",
+    "is_basic": false,
+    "everyday_associations": [
+      "תפירה",
+      "כפתור",
+      "קרע",
+      "מחט"
+    ],
+    "imageUrl": "/staged_images/pool/item_378_מחט_וחוט.jpg"
+  },
+  {
+    "num": 379,
+    "id": "item_379_כפתור_בגדים",
+    "name_he": "כפתור בגדים",
+    "suggestedName": "כפתור בגדים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(4 חורים) (עיגול פלסטיק שטוח עם 4 חורים קטנים במרכזו",
+    "search_query": "כפתור בגדים",
+    "is_basic": false,
+    "everyday_associations": [
+      "חולצה",
+      "כפתור",
+      "חייט",
+      "סגירה"
+    ],
+    "imageUrl": "/staged_images/pool/item_379_כפתור_בגדים.jpg"
+  },
+  {
+    "num": 380,
+    "id": "item_380_רוכסן",
+    "name_he": "רוכסן",
+    "suggestedName": "רוכסן",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(ריצ'רץ') חצי פתוח (שיני מתכת נפרדות משני הצדדים, ראש רוכסן באמצע",
+    "search_query": "רוכסן",
+    "is_basic": false,
+    "everyday_associations": [
+      "ריצ'רץ'",
+      "מעיל",
+      "סנדלר",
+      "רוכסן"
+    ],
+    "imageUrl": "/staged_images/pool/item_380_רוכסן.jpg"
+  },
+  {
+    "num": 381,
+    "id": "item_381_סרט_מדידה_צהוב",
+    "name_he": "סרט מדידה צהוב",
+    "suggestedName": "סרט מדידה צהוב",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(גליל) (קופסת פלסטיק ממנה יוצא סרט מתכת צהוב עם שנתות",
+    "search_query": "סרט מדידה צהוב",
+    "is_basic": false,
+    "everyday_associations": [
+      "מדידה",
+      "איקאה",
+      "שטיח",
+      "סרט"
+    ],
+    "imageUrl": "/staged_images/pool/item_381_סרט_מדידה_צהוב.jpg"
+  },
+  {
+    "num": 382,
+    "id": "item_382_פנקס_רשימות_ספירלה",
+    "name_he": "פנקס רשימות ספירלה",
+    "suggestedName": "פנקס רשימות ספירלה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(דפי שורות מחוברים בסליל מתכת בצד או למעלה",
+    "search_query": "פנקס רשימות ספירלה",
+    "is_basic": false,
+    "everyday_associations": [
+      "משימות",
+      "רשימה",
+      "קניות",
+      "פנקס"
+    ],
+    "imageUrl": "/staged_images/pool/item_382_פנקס_רשימות_ספירלה.jpg"
+  },
+  {
+    "num": 383,
+    "id": "item_383_עט_כדורי_פשוט",
+    "name_he": "עט כדורי פשוט",
+    "suggestedName": "עט כדורי פשוט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(BIC) (עט פלסטיק שקוף, פקק כחול עם צ'ופצ'יק קטן",
+    "search_query": "עט כדורי פשוט",
+    "is_basic": false,
+    "everyday_associations": [
+      "חתימה",
+      "טפסים",
+      "צ'ק",
+      "עט"
+    ],
+    "imageUrl": "/staged_images/pool/item_383_עט_כדורי_פשוט.jpg"
+  },
+  {
+    "num": 384,
+    "id": "item_384_עיפרון_צהוב_עם_מחק_אדום",
+    "name_he": "עיפרון צהוב עם מחק אדום",
+    "suggestedName": "עיפרון צהוב עם מחק אדום",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(עיפרון עץ קלאסי, מחק מחובר בטבעת מתכת כסופה",
+    "search_query": "עיפרון צהוב עם מחק אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "סקיצה",
+      "מבחן",
+      "ציור",
+      "עיפרון"
+    ],
+    "imageUrl": "/staged_images/pool/item_384_עיפרון_צהוב_עם_מחק_אדום.jpg"
+  },
+  {
+    "num": 385,
+    "id": "item_385_מחדד_מתכת_קטן",
+    "name_he": "מחדד מתכת קטן",
+    "suggestedName": "מחדד מתכת קטן",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קוביות מתכת קטנה עם להב קטן מוברג ובורג במרכז",
+    "search_query": "מחדד מתכת קטן",
+    "is_basic": false,
+    "everyday_associations": [
+      "חידוד",
+      "קלמר",
+      "ציוד",
+      "מחדד"
+    ],
+    "imageUrl": "/staged_images/pool/item_385_מחדד_מתכת_קטן.jpg"
+  },
+  {
+    "num": 386,
+    "id": "item_386_מהדק_סיכות_משרדי",
+    "name_he": "מהדק סיכות משרדי",
+    "suggestedName": "מהדק סיכות משרדי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(שדכן) (כלי פלסטיק/מתכת מוארך, לחיצה למטה",
+    "search_query": "מהדק סיכות משרדי",
+    "is_basic": false,
+    "everyday_associations": [
+      "משרד",
+      "תיוק",
+      "קבלות",
+      "שדכן"
+    ],
+    "imageUrl": "/staged_images/pool/item_386_מהדק_סיכות_משרדי.jpg"
+  },
+  {
+    "num": 387,
+    "id": "item_387_אטב_נייר",
+    "name_he": "אטב נייר",
+    "suggestedName": "אטב נייר",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קליפס משרדי) (חוט מתכת אחד מפותל בצורת אליפסה כפולה",
+    "search_query": "אטב נייר",
+    "is_basic": false,
+    "everyday_associations": [
+      "מסמכים",
+      "תיוק",
+      "משרד",
+      "אטב"
+    ],
+    "imageUrl": "/staged_images/pool/item_387_אטב_נייר.jpg"
+  },
+  {
+    "num": 388,
+    "id": "item_388_אטב_כביסה_מעץ",
+    "name_he": "אטב כביסה מעץ",
+    "suggestedName": "אטב כביסה מעץ",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(שני חלקי עץ מחוברים בקפיץ מתכת קטן",
+    "search_query": "אטב כביסה מעץ",
+    "is_basic": false,
+    "everyday_associations": [
+      "כביסה",
+      "חבל",
+      "ייבוש",
+      "אטב"
+    ],
+    "imageUrl": "/staged_images/pool/item_388_אטב_כביסה_מעץ.jpg"
+  },
+  {
+    "num": 389,
+    "id": "item_389_סל_כביסה_פלסטיק",
+    "name_he": "סל כביסה פלסטיק",
+    "suggestedName": "סל כביסה פלסטיק",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(סל מחורר מלא בבגדים צבעוניים",
+    "search_query": "סל כביסה פלסטיק",
+    "is_basic": false,
+    "everyday_associations": [
+      "כביסה",
+      "מכונה",
+      "בגדים",
+      "סל"
+    ],
+    "imageUrl": "/staged_images/pool/item_389_סל_כביסה_פלסטיק.jpg"
+  },
+  {
+    "num": 390,
+    "id": "item_390_צינור_גינה_ירוק_מפותל",
+    "name_he": "צינור גינה ירוק מפותל",
+    "suggestedName": "צינור גינה ירוק מפותל",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(צינור גומי ארוך מונח בעיגולים על הדשא",
+    "search_query": "צינור גינה ירוק מפותל",
+    "is_basic": false,
+    "everyday_associations": [
+      "השקיה",
+      "דשא",
+      "שטיפה",
+      "צינור"
+    ],
+    "imageUrl": "/staged_images/pool/item_390_צינור_גינה_ירוק_מפותל.jpg"
+  },
+  {
+    "num": 391,
+    "id": "item_391_מזלג_גינה",
+    "name_he": "מזלג גינה",
+    "suggestedName": "מזלג גינה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קלשון) (ידית עץ ארוכה, ראש מתכת עם 3-4 שיניים ארוכות וחדות",
+    "search_query": "מזלג גינה",
+    "is_basic": false,
+    "everyday_associations": [
+      "עשבים",
+      "חצר",
+      "חציר",
+      "קלשון"
+    ],
+    "imageUrl": "/staged_images/pool/item_391_מזלג_גינה.jpg"
+  },
+  {
+    "num": 392,
+    "id": "item_392_מגרפה_לגינה",
+    "name_he": "מגרפה לגינה",
+    "suggestedName": "מגרפה לגינה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(ראש מתכת רחב עם שיניים רבות המגרפות עלים יבשים",
+    "search_query": "מגרפה לגינה",
+    "is_basic": false,
+    "everyday_associations": [
+      "עלים",
+      "שלכת",
+      "גינון",
+      "מגרפה"
+    ],
+    "imageUrl": "/staged_images/pool/item_392_מגרפה_לגינה.jpg"
+  },
+  {
+    "num": 393,
+    "id": "item_393_מריצה",
+    "name_he": "מריצה",
+    "suggestedName": "מריצה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(גינון/בנייה) (גלגל אחד מקדימה, גיגית מתכת, שתי ידיות אחיזה מאחור",
+    "search_query": "מריצה",
+    "is_basic": false,
+    "everyday_associations": [
+      "אדמה",
+      "דשן",
+      "שיפוץ",
+      "מריצה"
+    ],
+    "imageUrl": "/staged_images/pool/item_393_מריצה.jpg"
+  },
+  {
+    "num": 394,
+    "id": "item_394_עציץ_חרס_חום",
+    "name_he": "עציץ חרס חום",
+    "suggestedName": "עציץ חרס חום",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(ריק) (כד חרס פשוט בצבע כתום-חום, רחב למעלה וצר למטה",
+    "search_query": "עציץ חרס חום",
+    "is_basic": false,
+    "everyday_associations": [
+      "שתילה",
+      "צמחים",
+      "משתלה",
+      "עציץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_394_עציץ_חרס_חום.jpg"
+  },
+  {
+    "num": 395,
+    "id": "item_395_מזלף_מים_לפרחים",
+    "name_he": "מזלף מים לפרחים",
+    "suggestedName": "מזלף מים לפרחים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קנקן פלסטיק/מתכת עם ידית גדולה וצינור ארוך שבקצהו מסננת חורים",
+    "search_query": "מזלף מים לפרחים",
+    "is_basic": false,
+    "everyday_associations": [
+      "השקיה",
+      "עציצים",
+      "פרחים",
+      "משפך"
+    ],
+    "imageUrl": "/staged_images/pool/item_395_מזלף_מים_לפרחים.jpg"
+  },
+  {
+    "num": 396,
+    "id": "item_396_ארגז_כלים_אדום",
+    "name_he": "ארגז כלים אדום",
+    "suggestedName": "ארגז כלים אדום",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קופסת מתכת ארוכה עם ידית עליונה ונעלת קליפסים",
+    "search_query": "ארגז כלים אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "תיקונים",
+      "מוסך",
+      "שיפוץ",
+      "ארגז"
+    ],
+    "imageUrl": "/staged_images/pool/item_396_ארגז_כלים_אדום.jpg"
+  },
+  {
+    "num": 397,
+    "id": "item_397_סרט_הדבקה",
+    "name_he": "סרט הדבקה",
+    "suggestedName": "סרט הדבקה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(סלוטייפ חום) (גליל קרטון עבה עטוף בניילון דביק חום רחב",
+    "search_query": "סרט הדבקה",
+    "is_basic": false,
+    "everyday_associations": [
+      "אריזה",
+      "הובלה",
+      "קרטון",
+      "דבק"
+    ],
+    "imageUrl": "/staged_images/pool/item_397_סרט_הדבקה.jpg"
+  },
+  {
+    "num": 398,
+    "id": "item_398_בקבוק_תרמוס_כסוף",
+    "name_he": "בקבוק תרמוס כסוף",
+    "suggestedName": "בקבוק תרמוס כסוף",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(מכל מתכת מוארך, פקק כוס הברגה עליון",
+    "search_query": "בקבוק תרמוס כסוף",
+    "is_basic": false,
+    "everyday_associations": [
+      "קפה",
+      "נסיעה",
+      "חם",
+      "תרמוס"
+    ],
+    "imageUrl": "/staged_images/pool/item_398_בקבוק_תרמוס_כסוף.jpg"
+  },
+  {
+    "num": 399,
+    "id": "item_399_צידנית_פלסטיק_כחולה",
+    "name_he": "צידנית פלסטיק כחולה",
+    "suggestedName": "צידנית פלסטיק כחולה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קופסה גדולה מבודדת, מכסה לבן, ידית פלסטיק לבנה ארוכה",
+    "search_query": "צידנית פלסטיק כחולה",
+    "is_basic": false,
+    "everyday_associations": [
+      "פיקניק",
+      "ים",
+      "קרח",
+      "צידנית"
+    ],
+    "imageUrl": "/staged_images/pool/item_399_צידנית_פלסטיק_כחולה.jpg"
+  },
+  {
+    "num": 400,
+    "id": "item_400_מזוודת_עזרה_ראשונה_לבנה",
+    "name_he": "מזוודת עזרה ראשונה לבנה",
+    "suggestedName": "מזוודת עזרה ראשונה לבנה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "subCategory": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "theme": "tools_objects",
+    "theme_he": "חפצים יומיומיים וכלים",
+    "desc_he": "(קופסת פלסטיק לבנה עם צלב אדום במרכז",
+    "search_query": "מזוודת עזרה ראשונה לבנה",
+    "is_basic": false,
+    "everyday_associations": [
+      "פלסטר",
+      "חבישה",
+      "חיטוי",
+      "עזרה"
+    ],
+    "imageUrl": "/staged_images/pool/item_400_מזוודת_עזרה_ראשונה_לבנה.jpg"
+  },
+  {
+    "num": 401,
+    "id": "item_401_דארת__ויידר",
+    "name_he": "דארת' ויידר",
+    "suggestedName": "דארת' ויידר",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "קסדה שחורה ונשימות מכונה",
+    "search_query": "דארת' ויידר",
+    "is_basic": false,
+    "everyday_associations": [
+      "נשימה",
+      "קסדה",
+      "רוע",
+      "קולנוע"
+    ],
+    "imageUrl": "/staged_images/pool/item_401_דארת__ויידר.jpg"
+  },
+  {
+    "num": 402,
+    "id": "item_402_באטמן",
+    "name_he": "באטמן",
+    "suggestedName": "באטמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "צללית העטלף בשמיים, לילה ונקמה",
+    "search_query": "באטמן",
+    "is_basic": false,
+    "everyday_associations": [
+      "לילה",
+      "עטלף",
+      "משטרה",
+      "אזעקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_402_באטמן.jpg"
+  },
+  {
+    "num": 403,
+    "id": "item_403_סופרמן",
+    "name_he": "סופרמן",
+    "suggestedName": "סופרמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "אות S אדומה על רקע צהוב",
+    "search_query": "סופרמן",
+    "is_basic": false,
+    "everyday_associations": [
+      "שרירים",
+      "חזק",
+      "הצלה",
+      "גיבור"
+    ],
+    "imageUrl": "/staged_images/pool/item_403_סופרמן.jpg"
+  },
+  {
+    "num": 404,
+    "id": "item_404_פאקמן",
+    "name_he": "פאקמן",
+    "suggestedName": "פאקמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "עיגול צהוב שאוכל נקודות, גיימינג",
+    "search_query": "פאקמן",
+    "is_basic": false,
+    "everyday_associations": [
+      "רטרו",
+      "משחק",
+      "גיימינג",
+      "פיצה"
+    ],
+    "imageUrl": "/staged_images/pool/item_404_פאקמן.jpg"
+  },
+  {
+    "num": 405,
+    "id": "item_405_שרק",
+    "name_he": "שרק",
+    "suggestedName": "שרק",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "אוזניים ירוקות חצוצרות, עולם האגדות",
+    "search_query": "שרק",
+    "is_basic": false,
+    "everyday_associations": [
+      "ירוק",
+      "אגדה",
+      "ביצה",
+      "הומור"
+    ],
+    "imageUrl": "/staged_images/pool/item_405_שרק.jpg"
+  },
+  {
+    "num": 406,
+    "id": "item_406_הלו_קיטי",
+    "name_he": "הלו קיטי",
+    "suggestedName": "הלו קיטי",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "חתולה לבנה עם סרט אדום",
+    "search_query": "הלו קיטי",
+    "is_basic": false,
+    "everyday_associations": [
+      "ורוד",
+      "סרט",
+      "בובה",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_406_הלו_קיטי.jpg"
+  },
+  {
+    "num": 407,
+    "id": "item_407_שפם_הליצן_של_רונלד_מקדונלד",
+    "name_he": "רונלד מקדונלד",
+    "suggestedName": "רונלד מקדונלד",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "ליצן המבורגרים ופאסט פוד",
+    "search_query": "רונלד מקדונלד",
+    "is_basic": false,
+    "everyday_associations": [
+      "ליצן",
+      "המבורגר",
+      "פאסטפוד",
+      "מסיבה"
+    ],
+    "imageUrl": "/staged_images/pool/item_407_שפם_הליצן_של_רונלד_מקדונלד.jpg"
+  },
+  {
+    "num": 408,
+    "id": "item_408_הלוגו_של_נייק__swoosh_",
+    "name_he": "לוגו נייקי",
+    "suggestedName": "לוגו נייקי",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "וי פשוט שמסמל ספורט וריצה",
+    "search_query": "לוגו נייקי",
+    "is_basic": false,
+    "everyday_associations": [
+      "נעליים",
+      "ריצה",
+      "ספורט",
+      "כושר"
+    ],
+    "imageUrl": "/staged_images/pool/item_408_הלוגו_של_נייק__swoosh_.jpg"
+  },
+  {
+    "num": 409,
+    "id": "item_409_הפחיות_של_קוקה_קולה",
+    "name_he": "קוקה קולה",
+    "suggestedName": "קוקה קולה",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "בקבוק זכוכית ופחית אדומה",
+    "search_query": "קוקה קולה",
+    "is_basic": false,
+    "everyday_associations": [
+      "שתייה",
+      "פחית",
+      "קולה",
+      "מסיבה"
+    ],
+    "imageUrl": "/staged_images/pool/item_409_הפחיות_של_קוקה_קולה.jpg"
+  },
+  {
+    "num": 410,
+    "id": "item_410_מרלין_מונרו",
+    "name_he": "מרלין מונרו",
+    "suggestedName": "מרלין מונרו",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "שמלה לבנה מתעופפת, זוהר הוליוודי",
+    "search_query": "מרלין מונרו",
+    "is_basic": false,
+    "everyday_associations": [
+      "שמלה",
+      "איפור",
+      "זוהר",
+      "סרטים"
+    ],
+    "imageUrl": "/staged_images/pool/item_410_מרלין_מונרו.jpg"
+  },
+  {
+    "num": 411,
+    "id": "item_411_הארי_פוטר",
+    "name_he": "הארי פוטר",
+    "suggestedName": "הארי פוטר",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "משקפיים עגולים וצלקת ברק",
+    "search_query": "הארי פוטר",
+    "is_basic": false,
+    "everyday_associations": [
+      "קסם",
+      "שרביט",
+      "צלקת",
+      "משקפיים"
+    ],
+    "imageUrl": "/staged_images/pool/item_411_הארי_פוטר.jpg"
+  },
+  {
+    "num": 412,
+    "id": "item_412_שרלוק_הולמס",
+    "name_he": "שרלוק הולמס",
+    "suggestedName": "שרלוק הולמס",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "כובע בילוש וזכוכית מגדלת",
+    "search_query": "שרלוק הולמס",
+    "is_basic": false,
+    "everyday_associations": [
+      "בילוש",
+      "חקירה",
+      "זכוכית",
+      "מנעול"
+    ],
+    "imageUrl": "/staged_images/pool/item_412_שרלוק_הולמס.jpg"
+  },
+  {
+    "num": 413,
+    "id": "item_413_קינג_קונג",
+    "name_he": "קינג קונג",
+    "suggestedName": "קינג קונג",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "גורילת ענק מטפסת על גורד שחקים",
+    "search_query": "קינג קונג",
+    "is_basic": false,
+    "everyday_associations": [
+      "גורילה",
+      "מגדל",
+      "מעלית",
+      "טיפוס"
+    ],
+    "imageUrl": "/staged_images/pool/item_413_קינג_קונג.jpg"
+  },
+  {
+    "num": 414,
+    "id": "item_414_לגו",
+    "name_he": "לגו",
+    "suggestedName": "לגו",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "קוביית פלסטיק צבעונית לבנייה",
+    "search_query": "לגו",
+    "is_basic": false,
+    "everyday_associations": [
+      "בנייה",
+      "הרכבה",
+      "יצירה",
+      "ילדים"
+    ],
+    "imageUrl": "/staged_images/pool/item_414_לגו.jpg"
+  },
+  {
+    "num": 415,
+    "id": "item_415_הסימפסונים",
+    "name_he": "משפחת סימפסון",
+    "suggestedName": "משפחת סימפסון",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "subCategory": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "עור צהוב, טלוויזיה וסאטירה",
+    "search_query": "משפחת סימפסון",
+    "is_basic": false,
+    "everyday_associations": [
+      "סאטירה",
+      "טלוויזיה",
+      "ספה",
+      "בירה"
+    ],
+    "imageUrl": "/staged_images/pool/item_415_הסימפסונים.jpg"
+  },
+  {
+    "num": 416,
+    "id": "item_416_פטיש_שופטים",
+    "name_he": "פטיש שופטים",
+    "suggestedName": "פטיש שופטים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "פטיש עץ קטן המכה על תושבת, משפט",
+    "search_query": "פטיש שופטים",
+    "is_basic": false,
+    "everyday_associations": [
+      "פטיש",
+      "שופט",
+      "משפט",
+      "פסיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_416_פטיש_שופטים.jpg"
+  },
+  {
+    "num": 417,
+    "id": "item_417_מזוודת_כסף",
+    "name_he": "מזוודת כסף",
+    "suggestedName": "מזוודת כסף",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מזוודה שחורה מלאה שטרות קשורים",
+    "search_query": "מזוודת כסף",
+    "is_basic": false,
+    "everyday_associations": [
+      "מזוודה",
+      "כסף",
+      "מזומן",
+      "שוחד"
+    ],
+    "imageUrl": "/staged_images/pool/item_417_מזוודת_כסף.jpg"
+  },
+  {
+    "num": 418,
+    "id": "item_418_כדור_בדולח",
+    "name_he": "כדור בדולח זוהר",
+    "suggestedName": "כדור בדולח זוהר",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כדור זכוכית זוהר, ניבוי עתידות",
+    "search_query": "כדור בדולח זוהר",
+    "is_basic": false,
+    "everyday_associations": [
+      "עתיד",
+      "קסם",
+      "ניבוי",
+      "בדולח"
+    ],
+    "imageUrl": "/staged_images/pool/item_418_כדור_בדולח.jpg"
+  },
+  {
+    "num": 419,
+    "id": "item_419_מפתח_שוודי___מפתח_ברגים",
+    "name_he": "מפתח שוודי",
+    "suggestedName": "מפתח שוודי",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כלי עבודה לתיקונים ומכונאות",
+    "search_query": "מפתח שוודי",
+    "is_basic": false,
+    "everyday_associations": [
+      "מוסך",
+      "אינסטלציה",
+      "צינור",
+      "מפתח"
+    ],
+    "imageUrl": "/staged_images/pool/item_419_מפתח_שוודי___מפתח_ברגים.jpg"
+  },
+  {
+    "num": 420,
+    "id": "item_420_סטטוסקופ",
+    "name_he": "סטטוסקופ",
+    "suggestedName": "סטטוסקופ",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מכשיר שמיעה רפואי, רופאים ובריאות",
+    "search_query": "סטטוסקופ",
+    "is_basic": false,
+    "everyday_associations": [
+      "רופא",
+      "מרפאה",
+      "בית חולים",
+      "בדיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_420_סטטוסקופ.jpg"
+  },
+  {
+    "num": 421,
+    "id": "item_421_עגלת_קניות",
+    "name_he": "עגלת סופרמרקט",
+    "suggestedName": "עגלת סופרמרקט",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "עגלת מתכת, מסחר וקניות",
+    "search_query": "עגלת סופרמרקט",
+    "is_basic": false,
+    "everyday_associations": [
+      "סופר",
+      "קניות",
+      "עגלה",
+      "מצרכים"
+    ],
+    "imageUrl": "/staged_images/pool/item_421_עגלת_קניות.jpg"
+  },
+  {
+    "num": 422,
+    "id": "item_422_כרטיס_אדום",
+    "name_he": "כרטיס אדום",
+    "suggestedName": "כרטיס אדום",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כרטיס הרחקה בכדורגל, סוף המשחק",
+    "search_query": "כרטיס אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "הרחקה",
+      "עבירה",
+      "שופט",
+      "כדורגל"
+    ],
+    "imageUrl": "/staged_images/pool/item_422_כרטיס_אדום.jpg"
+  },
+  {
+    "num": 423,
+    "id": "item_423_משקולת_ברזל__dumbbell_",
+    "name_he": "משקולת ברזל",
+    "suggestedName": "משקולת ברזל",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "משקולת שחורה לכושר ואימון",
+    "search_query": "משקולת ברזל",
+    "is_basic": false,
+    "everyday_associations": [
+      "משקולת",
+      "כושר",
+      "אימון",
+      "חדר-כושר"
+    ],
+    "imageUrl": "/staged_images/pool/item_423_משקולת_ברזל__dumbbell_.jpg"
+  },
+  {
+    "num": 424,
+    "id": "item_424_שעון_חול",
+    "name_he": "שעון חול עתיק",
+    "suggestedName": "שעון חול עתיק",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כלי זכוכית עם חול זורם, זמן אוזל",
+    "search_query": "שעון חול עתיק",
+    "is_basic": false,
+    "everyday_associations": [
+      "זמן",
+      "דדליין",
+      "שעון",
+      "איחור"
+    ],
+    "imageUrl": "/staged_images/pool/item_424_שעון_חול.jpg"
+  },
+  {
+    "num": 425,
+    "id": "item_425_קופת_חיסכון_בצורת_חזיר",
+    "name_he": "קופת חיסכון חזיר",
+    "suggestedName": "קופת חיסכון חזיר",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "קופת חרסינה ורודה לחיסכון מעות",
+    "search_query": "קופת חיסכון חזיר",
+    "is_basic": false,
+    "everyday_associations": [
+      "חיסכון",
+      "קופה",
+      "מעות",
+      "מטבע"
+    ],
+    "imageUrl": "/staged_images/pool/item_425_קופת_חיסכון_בצורת_חזיר.jpg"
+  },
+  {
+    "num": 426,
+    "id": "item_426_חבל_תלייה",
+    "name_he": "חבל תלייה",
+    "suggestedName": "חבל תלייה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "חבל עם לולאה קשורה",
+    "search_query": "חבל תלייה",
+    "is_basic": false,
+    "everyday_associations": [
+      "הוצאה",
+      "חבל",
+      "לולאה",
+      "ייאוש"
+    ],
+    "imageUrl": "/staged_images/pool/item_426_חבל_תלייה.jpg"
+  },
+  {
+    "num": 427,
+    "id": "item_427_רסיבר___טלפון_חוגה_ישן",
+    "name_he": "טלפון חוגה ישן",
+    "suggestedName": "טלפון חוגה ישן",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "שפופרת טלפון קלאסית",
+    "search_query": "טלפון חוגה ישן",
+    "is_basic": false,
+    "everyday_associations": [
+      "טלפון",
+      "שפופרת",
+      "שיחה",
+      "מענה"
+    ],
+    "imageUrl": "/staged_images/pool/item_427_רסיבר___טלפון_חוגה_ישן.jpg"
+  },
+  {
+    "num": 428,
+    "id": "item_428_קביים",
+    "name_he": "קביים",
+    "suggestedName": "קביים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "מוטות תמיכה לפציעה והחלמה",
+    "search_query": "קביים",
+    "is_basic": false,
+    "everyday_associations": [
+      "קביים",
+      "אורתופד",
+      "שבר",
+      "החלמה"
+    ],
+    "imageUrl": "/staged_images/pool/item_428_קביים.jpg"
+  },
+  {
+    "num": 429,
+    "id": "item_429_מספריים_חותכים_סרט_אדום",
+    "name_he": "מספריים וסרט אדום",
+    "suggestedName": "מספריים וסרט אדום",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "טקס פתיחה חגיגי",
+    "search_query": "מספריים וסרט אדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "מספריים",
+      "סרט",
+      "פתיחה",
+      "טקס"
+    ],
+    "imageUrl": "/staged_images/pool/item_429_מספריים_חותכים_סרט_אדום.jpg"
+  },
+  {
+    "num": 430,
+    "id": "item_430_סיכת_ביטחון",
+    "name_he": "סיכת ביטחון מתכת",
+    "suggestedName": "סיכת ביטחון מתכת",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "פתרון זמני ותפירה",
+    "search_query": "סיכת ביטחון מתכת",
+    "is_basic": false,
+    "everyday_associations": [
+      "סיכה",
+      "בגד",
+      "תפירה",
+      "מתכת"
+    ],
+    "imageUrl": "/staged_images/pool/item_430_סיכת_ביטחון.jpg"
+  },
+  {
+    "num": 431,
+    "id": "item_431_זכוכית_מגדלת",
+    "name_he": "זכוכית מגדלת עגולה",
+    "suggestedName": "זכוכית מגדלת עגולה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "חקירה, חיפוש וסקרנות",
+    "search_query": "זכוכית מגדלת עגולה",
+    "is_basic": false,
+    "everyday_associations": [
+      "חקירה",
+      "חיפוש",
+      "זכוכית",
+      "בדיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_431_זכוכית_מגדלת.jpg"
+  },
+  {
+    "num": 432,
+    "id": "item_432_מזרק_רפואי",
+    "name_he": "מזרק רפואי",
+    "suggestedName": "מזרק רפואי",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "חיסון, תרופה ובריאות",
+    "search_query": "מזרק רפואי",
+    "is_basic": false,
+    "everyday_associations": [
+      "חיסון",
+      "זריקה",
+      "מרפאה",
+      "אחות"
+    ],
+    "imageUrl": "/staged_images/pool/item_432_מזרק_רפואי.jpg"
+  },
+  {
+    "num": 433,
+    "id": "item_433_כתר_זהב",
+    "name_he": "כתר מלוכה מזהב",
+    "suggestedName": "כתר מלוכה מזהב",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כובע מלכים עם יהלומים",
+    "search_query": "כתר מלוכה מזהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "כתר",
+      "מלך",
+      "שלטון",
+      "זהב"
+    ],
+    "imageUrl": "/staged_images/pool/item_433_כתר_זהב.jpg"
+  },
+  {
+    "num": 434,
+    "id": "item_434_תיק_עזרה_ראשונה",
+    "name_he": "תיק עזרה ראשונה",
+    "suggestedName": "תיק עזרה ראשונה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "תיק רפואי עם צלב למצב חירום",
+    "search_query": "תיק עזרה ראשונה",
+    "is_basic": false,
+    "everyday_associations": [
+      "עזרה",
+      "תחבושת",
+      "חירום",
+      "תיק"
+    ],
+    "imageUrl": "/staged_images/pool/item_434_תיק_עזרה_ראשונה.jpg"
+  },
+  {
+    "num": 435,
+    "id": "item_435_חליפת_חלל",
+    "name_he": "חליפת חלל",
+    "suggestedName": "חליפת חלל",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "קסדה עגולה וחליפת אסטרונאוט לבנה",
+    "search_query": "חליפת חלל",
+    "is_basic": false,
+    "everyday_associations": [
+      "חלל",
+      "חליפה",
+      "ירח",
+      "אסטרונאוט"
+    ],
+    "imageUrl": "/staged_images/pool/item_435_חליפת_חלל.jpg"
+  },
+  {
+    "num": 436,
+    "id": "item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_",
+    "name_he": "כובע בוגרים",
+    "suggestedName": "כובע בוגרים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כובע מרובע לטקסי סיום לימודים",
+    "search_query": "כובע בוגרים",
+    "is_basic": false,
+    "everyday_associations": [
+      "טקס",
+      "תואר",
+      "סיום",
+      "כובע"
+    ],
+    "imageUrl": "/staged_images/pool/item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_.jpg"
+  },
+  {
+    "num": 437,
+    "id": "item_437_כרטיס_קולנוע_מנייר",
+    "name_he": "כרטיס קולנוע מנייר",
+    "suggestedName": "כרטיס קולנוע מנייר",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "כרטיס קרוע נוסטלגי",
+    "search_query": "כרטיס קולנוע מנייר",
+    "is_basic": false,
+    "everyday_associations": [
+      "כרטיס",
+      "קולנוע",
+      "סרט",
+      "נוסטלגיה"
+    ],
+    "imageUrl": "/staged_images/pool/item_437_כרטיס_קולנוע_מנייר.jpg"
+  },
+  {
+    "num": 438,
+    "id": "item_438_קוביית_משחק__עם_נקודות_",
+    "name_he": "קוביית משחק",
+    "suggestedName": "קוביית משחק",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "subCategory": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "theme": "concepts_cliches",
+    "theme_he": "קלישאות ויזואליות ומושגים",
+    "desc_he": "קובייה לבנה עם נקודות שחורות",
+    "search_query": "קוביית משחק",
+    "is_basic": false,
+    "everyday_associations": [
+      "קובייה",
+      "מזל",
+      "משחק",
+      "נקודות"
+    ],
+    "imageUrl": "/staged_images/pool/item_438_קוביית_משחק__עם_נקודות_.jpg"
+  },
+  {
+    "num": 439,
+    "id": "item_439_הביג_בן",
+    "name_he": "הביג בן",
+    "suggestedName": "הביג בן",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "מגדל השעון הלונדוני – מסמל את בריטניה, דייקנות ותרבות אירופאית.",
+    "search_query": "הביג בן",
+    "is_basic": false,
+    "everyday_associations": [
+      "לונדון",
+      "שעון",
+      "דייקנות",
+      "מגדל"
+    ],
+    "imageUrl": "/staged_images/pool/item_439_הביג_בן.jpg"
+  },
+  {
+    "num": 440,
+    "id": "item_440_טאג__מהאל",
+    "name_he": "טאג' מהאל",
+    "suggestedName": "טאג' מהאל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "המבנה השישי הלבן בהודו – מסמל אהבה נצחית, פאר והודו.",
+    "search_query": "טאג' מהאל",
+    "is_basic": false,
+    "everyday_associations": [
+      "ארמון",
+      "הודו",
+      "אהבה",
+      "שיש"
+    ],
+    "imageUrl": "/staged_images/pool/item_440_טאג__מהאל.jpg"
+  },
+  {
+    "num": 441,
+    "id": "item_441_פסל_החושב__רודן_",
+    "name_he": "פסל החושב",
+    "suggestedName": "פסל החושב",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "פסל רודן, פילוסופיה ומחשבה עמוקה",
+    "search_query": "פסל החושב",
+    "is_basic": false,
+    "everyday_associations": [
+      "מחשבה",
+      "דילמה",
+      "פילוסופיה",
+      "פסל"
+    ],
+    "imageUrl": "/staged_images/pool/item_441_פסל_החושב__רודן_.jpg"
+  },
+  {
+    "num": 442,
+    "id": "item_442_פסל_דוד__מיכלאנג_לו_",
+    "name_he": "פסל דוד",
+    "suggestedName": "פסל דוד",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "פסל השיש של מיכלאנג'לו, אמנות קלאסית",
+    "search_query": "פסל דוד",
+    "is_basic": false,
+    "everyday_associations": [
+      "שיש",
+      "יופי",
+      "אמנות",
+      "פסל"
+    ],
+    "imageUrl": "/staged_images/pool/item_442_פסל_דוד__מיכלאנג_לו_.jpg"
+  },
+  {
+    "num": 443,
+    "id": "item_443_הקוליסאום",
+    "name_he": "הקוליסאום",
+    "suggestedName": "הקוליסאום",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "האמפיתיאטרון הרומי החצי הרוס – מסמל את האימפריה הרומית, גלדיאטורים והיסטוריה.",
+    "search_query": "הקוליסאום",
+    "is_basic": false,
+    "everyday_associations": [
+      "רומא",
+      "היסטוריה",
+      "אבן",
+      "סיור"
+    ],
+    "imageUrl": "/staged_images/pool/item_443_הקוליסאום.jpg"
+  },
+  {
+    "num": 444,
+    "id": "item_444_החומה_הסינית",
+    "name_he": "החומה הסינית",
+    "suggestedName": "החומה הסינית",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "חומת אבן מתפתלת על פני הרים – מסמלת עוצמה, בידוד והנדסה עתיקה.",
+    "search_query": "החומה הסינית",
+    "is_basic": false,
+    "everyday_associations": [
+      "חומה",
+      "מדרגות",
+      "הליכה",
+      "סין"
+    ],
+    "imageUrl": "/staged_images/pool/item_444_החומה_הסינית.jpg"
+  },
+  {
+    "num": 445,
+    "id": "item_445_הבית_הלבן",
+    "name_he": "הבית הלבן",
+    "suggestedName": "הבית הלבן",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "המבנה עם העמודים בוושינגטון – מסמל את המעצמה האמריקאית והנהגה עולמית.",
+    "search_query": "הבית הלבן",
+    "is_basic": false,
+    "everyday_associations": [
+      "נשיא",
+      "ממשל",
+      "בית",
+      "לבן"
+    ],
+    "imageUrl": "/staged_images/pool/item_445_הבית_הלבן.jpg"
+  },
+  {
+    "num": 446,
+    "id": "item_446_מגדל_פיזה_הנוטה",
+    "name_he": "מגדל פיזה הנוטה",
+    "suggestedName": "מגדל פיזה הנוטה",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "המגדל העקום באיטליה – מסמל טעויות הנדסיות, תיירות ואיזון שברירי.",
+    "search_query": "מגדל פיזה הנוטה",
+    "is_basic": false,
+    "everyday_associations": [
+      "מגדל",
+      "נטייה",
+      "תיקון",
+      "איטליה"
+    ],
+    "imageUrl": "/staged_images/pool/item_446_מגדל_פיזה_הנוטה.jpg"
+  },
+  {
+    "num": 447,
+    "id": "item_447_פסל_ישו_הגואל_בריו",
+    "name_he": "פסל ישו הגואל בריו",
+    "suggestedName": "פסל ישו הגואל בריו",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "פסל הענק עם הידיים הפרושות לצדדים – מסמל את ברזיל ונצרות.",
+    "search_query": "פסל ישו הגואל בריו",
+    "is_basic": false,
+    "everyday_associations": [
+      "פסל",
+      "ברזיל",
+      "תפילה",
+      "הרים"
+    ],
+    "imageUrl": "/staged_images/pool/item_447_פסל_ישו_הגואל_בריו.jpg"
+  },
+  {
+    "num": 448,
+    "id": "item_448_גשר_שער_הזהב",
+    "name_he": "גשר שער הזהב",
+    "suggestedName": "גשר שער הזהב",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "הגשר התלוי האדום בסן פרנסיסקו – מסמל קידמה, ארכיטקטורה מודרנית ואת קליפורניה.",
+    "search_query": "גשר שער הזהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "גשר",
+      "סן-פרנסיסקו",
+      "אדום",
+      "כבלים"
+    ],
+    "imageUrl": "/staged_images/pool/item_448_גשר_שער_הזהב.jpg"
+  },
+  {
+    "num": 449,
+    "id": "item_449_הצלב_האדום",
+    "name_he": "הצלב האדום",
+    "suggestedName": "הצלב האדום",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "סמל הומניטרי והצלת חיים",
+    "search_query": "הצלב האדום",
+    "is_basic": false,
+    "everyday_associations": [
+      "הצלה",
+      "עזרה",
+      "אמבולנס",
+      "תרומה"
+    ],
+    "imageUrl": "/staged_images/pool/item_449_הצלב_האדום.jpg"
+  },
+  {
+    "num": 450,
+    "id": "item_450_סימן_היין_והיאנג",
+    "name_he": "יין ויאנג",
+    "suggestedName": "יין ויאנג",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "עיגול שחור-לבן, איזון ורוחניות",
+    "search_query": "יין ויאנג",
+    "is_basic": false,
+    "everyday_associations": [
+      "איזון",
+      "שלווה",
+      "רוחניות",
+      "יוגה"
+    ],
+    "imageUrl": "/staged_images/pool/item_450_סימן_היין_והיאנג.jpg"
+  },
+  {
+    "num": 451,
+    "id": "item_451_הפטיש_והמגל",
+    "name_he": "פטיש ומגל",
+    "suggestedName": "פטיש ומגל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "סמל הפועלים והסוציאליזם",
+    "search_query": "פטיש ומגל",
+    "is_basic": false,
+    "everyday_associations": [
+      "פועלים",
+      "ברית-המועצות",
+      "סוציאליזם",
+      "פטיש"
+    ],
+    "imageUrl": "/staged_images/pool/item_451_הפטיש_והמגל.jpg"
+  },
+  {
+    "num": 452,
+    "id": "item_452_צלב_הקרס__swastika_",
+    "name_he": "צלב קרס",
+    "suggestedName": "צלב קרס",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "subCategory": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "theme": "landmarks",
+    "theme_he": "מבנים, אתרים וציוני דרך",
+    "desc_he": "סמל הנאציזם והרוע",
+    "search_query": "צלב קרס",
+    "is_basic": false,
+    "everyday_associations": [
+      "נאציזם",
+      "רוע",
+      "מלחמה",
+      "היסטוריה"
+    ],
+    "imageUrl": "/staged_images/pool/item_452_צלב_הקרס__swastika_.jpg"
+  },
+  {
+    "num": 453,
+    "id": "item_453_ברק_בשמיים",
+    "name_he": "ברק בשמיים",
+    "suggestedName": "ברק בשמיים",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "קו שבור זוהר, מהירות ואנרגיה",
+    "search_query": "ברק בשמיים",
+    "is_basic": false,
+    "everyday_associations": [
+      "ברק",
+      "סערה",
+      "חשמל",
+      "שמיים"
+    ],
+    "imageUrl": "/staged_images/pool/item_453_ברק_בשמיים.jpg"
+  },
+  {
+    "num": 454,
+    "id": "item_454_טורנדו___מערבולת",
+    "name_he": "טורנדו / מערבולת",
+    "suggestedName": "טורנדו / מערבולת",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "משפך רוח ענק, חורבן וכאוס",
+    "search_query": "טורנדו / מערבולת",
+    "is_basic": false,
+    "everyday_associations": [
+      "טורנדו",
+      "סערה",
+      "רוח",
+      "הרס"
+    ],
+    "imageUrl": "/staged_images/pool/item_454_טורנדו___מערבולת.jpg"
+  },
+  {
+    "num": 455,
+    "id": "item_455_הר_געש_מתפרץ",
+    "name_he": "הר געש מתפרץ",
+    "suggestedName": "הר געש מתפרץ",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "לבה אדומה רותחת ועשן",
+    "search_query": "הר געש מתפרץ",
+    "is_basic": false,
+    "everyday_associations": [
+      "הר-געש",
+      "לבה",
+      "אש",
+      "התפרצות"
+    ],
+    "imageUrl": "/staged_images/pool/item_455_הר_געש_מתפרץ.jpg"
+  },
+  {
+    "num": 456,
+    "id": "item_456_זיקית",
+    "name_he": "זיקית",
+    "suggestedName": "זיקית",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "לטאה המשנה צבעיה, הסוואה",
+    "search_query": "זיקית",
+    "is_basic": false,
+    "everyday_associations": [
+      "זיקית",
+      "הסוואה",
+      "צבעים",
+      "לטאה"
+    ],
+    "imageUrl": "/staged_images/pool/item_456_זיקית.jpg"
+  },
+  {
+    "num": 457,
+    "id": "item_457_עקרב",
+    "name_he": "עקרב",
+    "suggestedName": "עקרב",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "זנב מורם ועוקץ, סכנה ורעל",
+    "search_query": "עקרב",
+    "is_basic": false,
+    "everyday_associations": [
+      "עקרב",
+      "רעל",
+      "עקיצה",
+      "מדבר"
+    ],
+    "imageUrl": "/staged_images/pool/item_457_עקרב.jpg"
+  },
+  {
+    "num": 458,
+    "id": "item_458_אריה",
+    "name_he": "אריה שואג",
+    "suggestedName": "אריה שואג",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "רעמת ענק, מלוכה וכוח",
+    "search_query": "אריה שואג",
+    "is_basic": false,
+    "everyday_associations": [
+      "אריה",
+      "מלוכה",
+      "שאגה",
+      "אומץ"
+    ],
+    "imageUrl": "/staged_images/pool/item_458_אריה.jpg"
+  },
+  {
+    "num": 459,
+    "id": "item_459_יונה_לבנה_עם_עלה_זית",
+    "name_he": "יונה עם עלה זית",
+    "suggestedName": "יונה עם עלה זית",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "שלום עולמי ותקווה",
+    "search_query": "יונה עם עלה זית",
+    "is_basic": false,
+    "everyday_associations": [
+      "יונה",
+      "זית",
+      "שלום",
+      "תקווה"
+    ],
+    "imageUrl": "/staged_images/pool/item_459_יונה_לבנה_עם_עלה_זית.jpg"
+  },
+  {
+    "num": 460,
+    "id": "item_460_ינשוף",
+    "name_he": "ינשוף",
+    "suggestedName": "ינשוף",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "עיניים גדולות בלילה, חוכמה",
+    "search_query": "ינשוף",
+    "is_basic": false,
+    "everyday_associations": [
+      "ינשוף",
+      "לילה",
+      "חוכמה",
+      "לימוד"
+    ],
+    "imageUrl": "/staged_images/pool/item_460_ינשוף.jpg"
+  },
+  {
+    "num": 461,
+    "id": "item_461_נשר",
+    "name_he": "נשר דואה",
+    "suggestedName": "נשר דואה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "כנפיים פרושות בשמיים, חופש",
+    "search_query": "נשר דואה",
+    "is_basic": false,
+    "everyday_associations": [
+      "נשר",
+      "דאייה",
+      "חופש",
+      "ראייה"
+    ],
+    "imageUrl": "/staged_images/pool/item_461_נשר.jpg"
+  },
+  {
+    "num": 462,
+    "id": "item_462_כלב_נחייה",
+    "name_he": "כלב נחייה",
+    "suggestedName": "כלב נחייה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "לברדור ברתמה מיוחדת, נאמנות ועזרה",
+    "search_query": "כלב נחייה",
+    "is_basic": false,
+    "everyday_associations": [
+      "כלב-נחייה",
+      "עזרה",
+      "נגישות",
+      "נאמנות"
+    ],
+    "imageUrl": "/staged_images/pool/item_462_כלב_נחייה.jpg"
+  },
+  {
+    "num": 463,
+    "id": "item_463_קורי_עכביש",
+    "name_he": "קורי עכביש",
+    "suggestedName": "קורי עכביש",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "רשת חוטים דקה",
+    "search_query": "קורי עכביש",
+    "is_basic": false,
+    "everyday_associations": [
+      "קורים",
+      "עכביש",
+      "הזנחה",
+      "ניקיון"
+    ],
+    "imageUrl": "/staged_images/pool/item_463_קורי_עכביש.jpg"
+  },
+  {
+    "num": 464,
+    "id": "item_464_שקיעה_בים",
+    "name_he": "שקיעה בים",
+    "suggestedName": "שקיעה בים",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "שמש כתומה שוקעת במים, רומנטיקה",
+    "search_query": "שקיעה בים",
+    "is_basic": false,
+    "everyday_associations": [
+      "שקיעה",
+      "ים",
+      "רוגע",
+      "רומנטיקה"
+    ],
+    "imageUrl": "/staged_images/pool/item_464_שקיעה_בים.jpg"
+  },
+  {
+    "num": 465,
+    "id": "item_465_קרחון__iceberg_",
+    "name_he": "קרחון (Iceberg)",
+    "suggestedName": "קרחון (Iceberg)",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "גוש קרח שרובו מתחת למים",
+    "search_query": "קרחון (Iceberg)",
+    "is_basic": false,
+    "everyday_associations": [
+      "קרחון",
+      "סכנה",
+      "טיטאניק",
+      "ים"
+    ],
+    "imageUrl": "/staged_images/pool/item_465_קרחון__iceberg_.jpg"
+  },
+  {
+    "num": 466,
+    "id": "item_466_עץ_שלכת_עירום",
+    "name_he": "עץ שלכת עירום",
+    "suggestedName": "עץ שלכת עירום",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "עץ ללא עלים, חורף ובדידות",
+    "search_query": "עץ שלכת עירום",
+    "is_basic": false,
+    "everyday_associations": [
+      "שלכת",
+      "עץ",
+      "חורף",
+      "בדידות"
+    ],
+    "imageUrl": "/staged_images/pool/item_466_עץ_שלכת_עירום.jpg"
+  },
+  {
+    "num": 467,
+    "id": "item_467_שדה_חמניות",
+    "name_he": "שדה חמניות",
+    "suggestedName": "שדה חמניות",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "subCategory": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "theme": "nature_animals",
+    "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
+    "desc_he": "פרחים צהובים ענקיים מול השמש",
+    "search_query": "שדה חמניות",
+    "is_basic": false,
+    "everyday_associations": [
+      "חמניות",
+      "שמש",
+      "קיץ",
+      "שדה"
+    ],
+    "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg"
+  },
+  {
+    "num": 468,
+    "id": "item_468_מייקל_ג_ורדן__צללית_ה_jumpman_",
+    "name_he": "מייקל ג'ורדן",
+    "suggestedName": "מייקל ג'ורדן",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "צללית הקפיצה לסל, כדורסל",
+    "search_query": "מייקל ג'ורדן",
+    "is_basic": false,
+    "everyday_associations": [
+      "כדור",
+      "אדום",
+      "אימון"
+    ],
+    "imageUrl": "/staged_images/pool/item_468_מייקל_ג_ורדן__צללית_ה_jumpman_.jpg"
+  },
+  {
+    "num": 469,
+    "id": "item_469_גביע_זהב__מונף_בשתי_ידיים_",
+    "name_he": "גביע ניצחון מזהב",
+    "suggestedName": "גביע ניצחון מזהב",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "מונף בשתי ידיים, הישג שיא",
+    "search_query": "גביע ניצחון מזהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "גביע",
+      "ניצחון",
+      "אליפות",
+      "פרס"
+    ],
+    "imageUrl": "/staged_images/pool/item_469_גביע_זהב__מונף_בשתי_ידיים_.jpg"
+  },
+  {
+    "num": 470,
+    "id": "item_470_מדליית_זהב",
+    "name_he": "מדליית זהב",
+    "suggestedName": "מדליית זהב",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "מדליה על סרט סביב הצוואר",
+    "search_query": "מדליית זהב",
+    "is_basic": false,
+    "everyday_associations": [
+      "מדליה",
+      "מקום-ראשון",
+      "הישג",
+      "תעודה"
+    ],
+    "imageUrl": "/staged_images/pool/item_470_מדליית_זהב.jpg"
+  },
+  {
+    "num": 471,
+    "id": "item_471_לוח_מטרה_וחיצי_דארטס",
+    "name_he": "לוח מטרה וחיצים",
+    "suggestedName": "לוח מטרה וחיצים",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "חץ תקוע בול במרכז, דיוק",
+    "search_query": "לוח מטרה וחיצים",
+    "is_basic": false,
+    "everyday_associations": [
+      "חץ",
+      "מטרה",
+      "דיוק",
+      "פגיעה"
+    ],
+    "imageUrl": "/staged_images/pool/item_471_לוח_מטרה_וחיצי_דארטס.jpg"
+  },
+  {
+    "num": 472,
+    "id": "item_472_מכונית_פורמולה_1",
+    "name_he": "מכונית פורמולה 1",
+    "suggestedName": "מכונית פורמולה 1",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "מרוץ מהיר, אדרנלין וטכנולוגיה",
+    "search_query": "מכונית פורמולה 1",
+    "is_basic": false,
+    "everyday_associations": [
+      "מירוץ",
+      "מהירות",
+      "רכב",
+      "מסלול"
+    ],
+    "imageUrl": "/staged_images/pool/item_472_מכונית_פורמולה_1.jpg"
+  },
+  {
+    "num": 473,
+    "id": "item_473_כדור_טניס_ירוק_זוהר",
+    "name_he": "כדור טניס זוהר",
+    "suggestedName": "כדור טניס זוהר",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "כדור ירוק-צהוב, ספורט ואלגנטיות",
+    "search_query": "כדור טניס זוהר",
+    "is_basic": false,
+    "everyday_associations": [
+      "טניס",
+      "מחבט",
+      "משחק",
+      "מגרש"
+    ],
+    "imageUrl": "/staged_images/pool/item_473_כדור_טניס_ירוק_זוהר.jpg"
+  },
+  {
+    "num": 474,
+    "id": "item_474_כדור_באולינג_מפיל_פינים",
+    "name_he": "כדור באולינג ופינים",
+    "suggestedName": "כדור באולינג ופינים",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "כדור כבד מפיל פינים, פנאי",
+    "search_query": "כדור באולינג ופינים",
+    "is_basic": false,
+    "everyday_associations": [
+      "באולינג",
+      "פינים",
+      "כדור",
+      "משחק"
+    ],
+    "imageUrl": "/staged_images/pool/item_474_כדור_באולינג_מפיל_פינים.jpg"
+  },
+  {
+    "num": 475,
+    "id": "item_475_חגורה_שחורה_באומנויות_לחימה",
+    "name_he": "חגורה שחורה",
+    "suggestedName": "חגורה שחורה",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "אמנויות לחימה, מומחיות ומשמעת",
+    "search_query": "חגורה שחורה",
+    "is_basic": false,
+    "everyday_associations": [
+      "חגורה",
+      "קראטה",
+      "משמעת",
+      "אימון"
+    ],
+    "imageUrl": "/staged_images/pool/item_475_חגורה_שחורה_באומנויות_לחימה.jpg"
+  },
+  {
+    "num": 476,
+    "id": "item_476_שחמט__כלי_המלך_או_הרץ_",
+    "name_he": "שחמט (מלך)",
+    "suggestedName": "שחמט (מלך)",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "subCategory": "⚽ ספורט, משחקים ואישים",
+    "theme": "sports_games",
+    "theme_he": "ספורט, משחקים ופנאי",
+    "desc_he": "אסטרטגיה וחשיבה קדימה",
+    "search_query": "שחמט (מלך)",
+    "is_basic": false,
+    "everyday_associations": [
+      "שחמט",
+      "מלך",
+      "אסטרטגיה",
+      "חשיבה"
+    ],
+    "imageUrl": "/staged_images/pool/item_476_שחמט__כלי_המלך_או_הרץ_.jpg"
+  },
+  {
+    "num": 477,
+    "id": "item_477_מלאך",
+    "name_he": "מלאך",
+    "suggestedName": "מלאך",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "דמות בלבן עם כנפי נוצה והילה",
+    "search_query": "מלאך",
+    "is_basic": false,
+    "everyday_associations": [
+      "מלאך",
+      "שמירה",
+      "טוב",
+      "כנפיים"
+    ],
+    "imageUrl": "/staged_images/pool/item_477_מלאך.jpg"
+  },
+  {
+    "num": 478,
+    "id": "item_478_שטן___דרקון",
+    "name_he": "שטן וקלשון",
+    "suggestedName": "שטן וקלשון",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "דמות אדומה עם קרניים וזנב",
+    "search_query": "שטן וקלשון",
+    "is_basic": false,
+    "everyday_associations": [
+      "שטן",
+      "פיתוי",
+      "אש",
+      "רוע"
+    ],
+    "imageUrl": "/staged_images/pool/item_478_שטן___דרקון.jpg"
+  },
+  {
+    "num": 479,
+    "id": "item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_",
+    "name_he": "מטה הרפואה",
+    "suggestedName": "מטה הרפואה",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "נחש כרוך סביב מוט, רפואה עולמית",
+    "search_query": "מטה הרפואה",
+    "is_basic": false,
+    "everyday_associations": [
+      "רפואה",
+      "נחש",
+      "מוט",
+      "בריאות"
+    ],
+    "imageUrl": "/staged_images/pool/item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_.jpg"
+  },
+  {
+    "num": 480,
+    "id": "item_480_פרש_הברונזה___אביר_על_סוס_לבן",
+    "name_he": "אביר על סוס לבן",
+    "suggestedName": "אביר על סוס לבן",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "הצלה, גבורה ואגדות",
+    "search_query": "אביר על סוס לבן",
+    "is_basic": false,
+    "everyday_associations": [
+      "אביר",
+      "סוס",
+      "הצלה",
+      "גבורה"
+    ],
+    "imageUrl": "/staged_images/pool/item_480_פרש_הברונזה___אביר_על_סוס_לבן.jpg"
+  },
+  {
+    "num": 481,
+    "id": "item_481_הצלב_הנוצרי",
+    "name_he": "הצלב הנוצרי",
+    "suggestedName": "הצלב הנוצרי",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "שני מוטות מצטלבים, סמל דתי",
+    "search_query": "הצלב הנוצרי",
+    "is_basic": false,
+    "everyday_associations": [
+      "צלב",
+      "נצרות",
+      "תפילה",
+      "כנסייה"
+    ],
+    "imageUrl": "/staged_images/pool/item_481_הצלב_הנוצרי.jpg"
+  },
+  {
+    "num": 482,
+    "id": "item_482_סהר_וכוכב",
+    "name_he": "סהר וכוכב",
+    "suggestedName": "סהר וכוכב",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "סמל האסלאם והמזרח",
+    "search_query": "סהר וכוכב",
+    "is_basic": false,
+    "everyday_associations": [
+      "סהר",
+      "כוכב",
+      "אסלאם",
+      "מסגד"
+    ],
+    "imageUrl": "/staged_images/pool/item_482_סהר_וכוכב.jpg"
+  },
+  {
+    "num": 483,
+    "id": "item_483_מגן_דוד",
+    "name_he": "מגן דוד",
+    "suggestedName": "מגן דוד",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "כוכב משושה, סמל העם היהודי",
+    "search_query": "מגן דוד",
+    "is_basic": false,
+    "everyday_associations": [
+      "מגן-דוד",
+      "יהדות",
+      "ישראל",
+      "דגל"
+    ],
+    "imageUrl": "/staged_images/pool/item_483_מגן_דוד.jpg"
+  },
+  {
+    "num": 484,
+    "id": "item_484_בודהה_מחייך",
+    "name_he": "בודהה מחייך",
+    "suggestedName": "בודהה מחייך",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "פסל אדם יושב במדיטציה, שלווה",
+    "search_query": "בודהה מחייך",
+    "is_basic": false,
+    "everyday_associations": [
+      "בודהה",
+      "מדיטציה",
+      "שלווה",
+      "רוגע"
+    ],
+    "imageUrl": "/staged_images/pool/item_484_בודהה_מחייך.jpg"
+  },
+  {
+    "num": 485,
+    "id": "item_485_מלאך_המוות__grim_reaper_",
+    "name_he": "מלאך המוות",
+    "suggestedName": "מלאך המוות",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "subCategory": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "theme": "religion_spirituality",
+    "theme_he": "סמלים דתיים ורוחניים",
+    "desc_he": "גלימה שחורה, שלד וחרמש ענק",
+    "search_query": "מלאך המוות",
+    "is_basic": false,
+    "everyday_associations": [
+      "מוות",
+      "חרמש",
+      "גלימה",
+      "סוף"
+    ],
+    "imageUrl": "/staged_images/pool/item_485_מלאך_המוות__grim_reaper_.jpg"
+  },
+  {
+    "num": 486,
+    "id": "item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_",
+    "name_he": "מודל האטום",
+    "suggestedName": "מודל האטום",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "גרעין ומסלולי אלקטרונים, פיזיקה ומדע",
+    "search_query": "מודל האטום",
+    "is_basic": false,
+    "everyday_associations": [
+      "אטום",
+      "מדע",
+      "פיזיקה",
+      "מחקר"
+    ],
+    "imageUrl": "/staged_images/pool/item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_.jpg"
+  },
+  {
+    "num": 487,
+    "id": "item_487_מבחנה_עם_נוזל_מבעבע",
+    "name_he": "מבחנה מבעבעת",
+    "suggestedName": "מבחנה מבעבעת",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "כימיה, ניסויים ומעבדה",
+    "search_query": "מבחנה מבעבעת",
+    "is_basic": false,
+    "everyday_associations": [
+      "מבחנה",
+      "כימיה",
+      "מעבדה",
+      "ניסוי"
+    ],
+    "imageUrl": "/staged_images/pool/item_487_מבחנה_עם_נוזל_מבעבע.jpg"
+  },
+  {
+    "num": 488,
+    "id": "item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_",
+    "name_he": "סמל קרינה רדיואקטיבית",
+    "suggestedName": "סמל קרינה רדיואקטיבית",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "שלוש מניפות שחורות על צהוב",
+    "search_query": "סמל קרינה רדיואקטיבית",
+    "is_basic": false,
+    "everyday_associations": [
+      "קרינה",
+      "סכנה",
+      "גרעין",
+      "אזהרה"
+    ],
+    "imageUrl": "/staged_images/pool/item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_.jpg"
+  },
+  {
+    "num": 489,
+    "id": "item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_",
+    "name_he": "קוד בינארי ירוק",
+    "suggestedName": "קוד בינארי ירוק",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "מסכי 0 ו-1 זורמים, מחשבים",
+    "search_query": "קוד בינארי ירוק",
+    "is_basic": false,
+    "everyday_associations": [
+      "קוד",
+      "תכנות",
+      "האקר",
+      "מחשבים"
+    ],
+    "imageUrl": "/staged_images/pool/item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_.jpg"
+  },
+  {
+    "num": 490,
+    "id": "item_490_טביעת_אצבע_שחורה",
+    "name_he": "טביעת אצבע פלילית",
+    "suggestedName": "טביעת אצבע פלילית",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "ביומטריה וזיהוי פלילי",
+    "search_query": "טביעת אצבע פלילית",
+    "is_basic": false,
+    "everyday_associations": [
+      "טביעת-אצבע",
+      "זיהוי",
+      "ביומטרי",
+      "משטרה"
+    ],
+    "imageUrl": "/staged_images/pool/item_490_טביעת_אצבע_שחורה.jpg"
+  },
+  {
+    "num": 491,
+    "id": "item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_",
+    "name_he": "רובוט מתכתי",
+    "suggestedName": "רובוט מתכתי",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "עיניים מאירות ואוטומציה",
+    "search_query": "רובוט מתכתי",
+    "is_basic": false,
+    "everyday_associations": [
+      "רובוט",
+      "אוטומציה",
+      "עתיד",
+      "בינה"
+    ],
+    "imageUrl": "/staged_images/pool/item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_.jpg"
+  },
+  {
+    "num": 492,
+    "id": "item_492_צלחת_לוויין",
+    "name_he": "צלחת לוויין",
+    "suggestedName": "צלחת לוויין",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "subCategory": "🧪 מדע, טכנולוגיה וחלל",
+    "theme": "science_tech",
+    "theme_he": "מדע, טכנולוגיה וחלל",
+    "desc_he": "אנטנה פונה לשמיים, תקשורת",
+    "search_query": "צלחת לוויין",
+    "is_basic": false,
+    "everyday_associations": [
+      "צלחת",
+      "לוויין",
+      "תקשורת",
+      "קליטה"
+    ],
+    "imageUrl": "/staged_images/pool/item_492_צלחת_לוויין.jpg"
+  },
+  {
+    "num": 493,
+    "id": "item_493_גולגולת_ושתי_עצמות_מוצלבות",
+    "name_he": "גולגולת ועצמות",
+    "suggestedName": "גולגולת ועצמות",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "רעל וסכנת חיים",
+    "search_query": "גולגולת ועצמות",
+    "is_basic": false,
+    "everyday_associations": [
+      "גולגולת",
+      "עצמות",
+      "רעל",
+      "סכנה"
+    ],
+    "imageUrl": "/staged_images/pool/item_493_גולגולת_ושתי_עצמות_מוצלבות.jpg"
+  },
+  {
+    "num": 494,
+    "id": "item_494_תמרור_עצור__משושה_אדום_",
+    "name_he": "תמרור עצור",
+    "suggestedName": "תמרור עצור",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "משושה אדום, עצירה מיידית",
+    "search_query": "תמרור עצור",
+    "is_basic": false,
+    "everyday_associations": [
+      "עצור",
+      "תמרור",
+      "כביש",
+      "בלימה"
+    ],
+    "imageUrl": "/staged_images/pool/item_494_תמרור_עצור__משושה_אדום_.jpg"
+  },
+  {
+    "num": 495,
+    "id": "item_495_איש_קו_על_כיסא_גלגלים",
+    "name_he": "כיסא גלגלים",
+    "suggestedName": "כיסא גלגלים",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "נגישות בינלאומית ונכים",
+    "search_query": "כיסא גלגלים",
+    "is_basic": false,
+    "everyday_associations": [
+      "נכים",
+      "נגישות",
+      "כיסא",
+      "חניה"
+    ],
+    "imageUrl": "/staged_images/pool/item_495_איש_קו_על_כיסא_גלגלים.jpg"
+  },
+  {
+    "num": 496,
+    "id": "item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_",
+    "name_he": "סמל המיחזור",
+    "suggestedName": "סמל המיחזור",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "שלושה חצים ירוקים בלולאה",
+    "search_query": "סמל המיחזור",
+    "is_basic": false,
+    "everyday_associations": [
+      "מיחזור",
+      "אקולוגיה",
+      "סביבה",
+      "פח"
+    ],
+    "imageUrl": "/staged_images/pool/item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_.jpg"
+  },
+  {
+    "num": 497,
+    "id": "item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_",
+    "name_he": "שירותי נשים וגברים",
+    "suggestedName": "שירותי נשים וגברים",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "דמות שמלה ודמות מכנסיים",
+    "search_query": "שירותי נשים וגברים",
+    "is_basic": false,
+    "everyday_associations": [
+      "שירותים",
+      "נשים",
+      "גברים",
+      "דלת"
+    ],
+    "imageUrl": "/staged_images/pool/item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_.jpg"
+  },
+  {
+    "num": 498,
+    "id": "item_498_סמל_ה_wi_fi__קשתות_מתרחבות_",
+    "name_he": "סמל Wi-Fi",
+    "suggestedName": "סמל Wi-Fi",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "קשתות אינטרנט אלחוטי",
+    "search_query": "סמל Wi-Fi",
+    "is_basic": false,
+    "everyday_associations": [
+      "אינטרנט",
+      "קליטה",
+      "אלחוטי",
+      "חיבור"
+    ],
+    "imageUrl": "/staged_images/pool/item_498_סמל_ה_wi_fi__קשתות_מתרחבות_.jpg"
+  },
+  {
+    "num": 499,
+    "id": "item_499_סמל_הבלוטות___bluetooth_",
+    "name_he": "סמל בלוטות'",
+    "suggestedName": "סמל בלוטות'",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "אות רונית כחולה, חיבור מכשירים",
+    "search_query": "סמל בלוטות'",
+    "is_basic": false,
+    "everyday_associations": [
+      "בלוטות'",
+      "חיבור",
+      "אוזניות",
+      "טלפון"
+    ],
+    "imageUrl": "/staged_images/pool/item_499_סמל_הבלוטות___bluetooth_.jpg"
+  },
+  {
+    "num": 500,
+    "id": "item_500_שלדג",
+    "name_he": "איש רץ ליציאת חירום",
+    "suggestedName": "איש רץ ליציאת חירום",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "subCategory": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "theme": "signs_icons",
+    "theme_he": "שלטים ואייקונים בינלאומיים",
+    "desc_he": "שלט ירוק מואר לבטיחות ומילוט",
+    "search_query": "איש רץ ליציאת חירום",
+    "is_basic": false,
+    "everyday_associations": [
+      "חירום",
+      "יציאה",
+      "מילוט",
+      "דלת"
+    ],
+    "imageUrl": "/staged_images/pool/item_500_שלדג.jpg"
+  },
+  {
+    "num": 991,
+    "id": "handshake_deal",
+    "name_he": "לחיצת ידיים",
+    "suggestedName": "לחיצת ידיים",
+    "category": "🤝 10. אינטראקציות חברתיות ומפגשים",
+    "subCategory": "🤝 10. אינטראקציות חברתיות ומפגשים",
+    "theme": "social_interactions",
+    "theme_he": "אינטראקציות ומפגשים",
+    "desc_he": "לחיצת ידיים חמה ועסקית בין שני אנשים",
+    "search_query": "לחיצת ידיים",
+    "is_basic": true,
+    "everyday_associations": [
+      "פגישה",
+      "לחיצת ידיים",
+      "מפגש",
+      "הסכם",
+      "חוזה"
+    ],
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Kamal_Nath%2C_Union_Cabinet_Minister_of_Urban_Development%2C_India%2C_arriving_in_Ras_Al_Khaimah_for_the_2011_Horasis_Global_Arab_Business_Meeting_-_Flickr_-_Horasis.jpg/960px-thumbnail.jpg"
+  },
+  {
+    "num": 992,
+    "id": "alexander_graham_bell",
+    "name_he": "אלכסנדר גרהם בל",
+    "suggestedName": "אלכסנדר גרהם בל (טלפון)",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "celebrities",
+    "theme_he": "אישים והיסטוריה",
+    "desc_he": "ממציא הטלפון ומבצע שיחת הטלפון הראשונה בהיסטוריה",
+    "search_query": "אלכסנדר גרהם בל",
+    "is_basic": true,
+    "everyday_associations": [
+      "שיחה",
+      "טלפון",
+      "להתקשר",
+      "צלצול",
+      "שיחת טלפון"
+    ],
+    "imageUrl": "/staged_images/pool/alexander_graham_bell.jpg"
+  },
+  {
+    "num": 993,
+    "id": "nerd_geek_glasses",
+    "name_he": "חנון עם משקפיים",
+    "suggestedName": "חנון עם משקפיים",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "subCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "theme": "fictional_pop",
+    "theme_he": "דמויות בדיוניות ותרבות פופ",
+    "desc_he": "דמות חנון חייכני עם משקפי ראייה עבים",
+    "search_query": "חנון עם משקפיים",
+    "is_basic": true,
+    "everyday_associations": [
+      "משקפיים",
+      "חנון",
+      "משקפי ראייה",
+      "ראייה"
+    ],
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/RCHorn.jpg/960px-RCHorn.jpg"
+  }
+];
+
+export default MASTER_MNEMONIC_ARSENAL;

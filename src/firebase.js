@@ -1,0 +1,34 @@
+import { initializeApp, getApps, getApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
+// Firebase credentials loaded safely from environment variables (gitignored)
+const env = (typeof import.meta !== 'undefined' && import.meta.env) ? import.meta.env : (typeof process !== 'undefined' ? process.env : {});
+const firebaseConfig = {
+  apiKey: env.VITE_FIREBASE_API_KEY || "",
+  authDomain: env.VITE_FIREBASE_AUTH_DOMAIN || "",
+  projectId: env.VITE_FIREBASE_PROJECT_ID || "",
+  storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET || "",
+  messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
+  appId: env.VITE_FIREBASE_APP_ID || ""
+};
+
+export const isFirebaseConfigured = Boolean(
+  firebaseConfig.apiKey && 
+  firebaseConfig.projectId
+);
+
+let app = null;
+let db = null;
+
+if (isFirebaseConfigured) {
+  try {
+    app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    db = getFirestore(app);
+  } catch (err) {
+    console.warn("Firebase initialization error:", err);
+  }
+} else {
+  console.info("Firebase is running in local-fallback mode (environment variables not provided).");
+}
+
+export { app, db };

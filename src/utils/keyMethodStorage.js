@@ -91,31 +91,31 @@ export const HOUSE_CHAMBERS = [
 // Fixed furniture positions for memory locus discovery (Stardew Valley strategy)
 export const LOCKER_POSITIONS = {
   entry_foyer: { x: 505, y: 490, name: 'חדר כניסה (מבואה נייטרלית)' },
-  left_store: { x: 195, y: 190, name: 'חדר דחוף (אגף שמאל)' },
+  left_store: { x: 195, y: 290, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 595, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
   right_sanctuary: { x: 960, y: 260, name: 'חדר שגרה (היכל השלווה)' },
   right_south: { x: 940, y: 490, name: 'חדר שלווה דרומי' }
 };
 
 export const WALL_PHOTO_POSITIONS = {
-  left_store: { x: 272, y: 122, name: 'חדר דחוף (אגף שמאל)' },
+  left_store: { x: 265, y: 182, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 532, y: 80, name: 'חדר בטיפול (האולם המרכזי)' },
-  entry_foyer: { x: 686, y: 392, name: 'חדר כניסה (מבואה נייטרלית)' },
+  entry_foyer: { x: 600, y: 362, name: 'חדר כניסה (מבואה נייטרלית)' },
   right_sanctuary: { x: 995, y: 142, name: 'חדר שגרה (היכל השלווה)' },
   right_south: { x: 1080, y: 392, name: 'חדר השלווה הדרומי' }
 };
 
 export const CHEST_POSITIONS = {
-  entry_foyer: { x: 675, y: 495, name: 'חדר כניסה (מבואה נייטרלית)' },
-  left_store: { x: 300, y: 240, name: 'חדר דחוף (אגף שמאל)' },
+  entry_foyer: { x: 635, y: 495, name: 'חדר כניסה (מבואה נייטרלית)' },
+  left_store: { x: 210, y: 360, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 495, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
   right_sanctuary: { x: 1040, y: 260, name: 'חדר שגרה (היכל השלווה)' },
   right_south: { x: 1040, y: 480, name: 'חדר שלווה דרומי (כספת האמן)' }
 };
 
 export const RADIO_POSITIONS = {
-  entry_foyer: { x: 440, y: 535, name: 'חדר כניסה (מבואה נייטרלית)' },
-  left_store: { x: 100, y: 240, name: 'חדר דחוף (אגף שמאל)' },
+  entry_foyer: { x: 470, y: 535, name: 'חדר כניסה (מבואה נייטרלית)' },
+  left_store: { x: 130, y: 260, name: 'חדר דחוף (אגף שמאל)' },
   main_hall: { x: 730, y: 220, name: 'חדר בטיפול (האולם המרכזי)' },
   right_sanctuary: { x: 860, y: 390, name: 'חדר שגרה (היכל השלווה)' }
 };

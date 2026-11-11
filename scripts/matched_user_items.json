@@ -1,0 +1,826 @@
+[
+  {
+    "num": 2,
+    "requestedName": "סופר מריו",
+    "matchedArsenalId": "super_mario_wonder",
+    "matchedArsenalName": "סופר מריו",
+    "imageUrl": "/staged_images/pool/super_mario_wonder.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 3,
+    "requestedName": "פיקאצ'ו",
+    "matchedArsenalId": "pikachu_electric_mouse",
+    "matchedArsenalName": "פיקאצ'ו",
+    "imageUrl": "/staged_images/pool/pikachu_electric_mouse.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 4,
+    "requestedName": "סוניק הקיפוד",
+    "matchedArsenalId": "sonic_the_hedgehog",
+    "matchedArsenalName": "סוניק הקיפוד",
+    "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 8,
+    "requestedName": "ברבי",
+    "matchedArsenalId": "steven_spielberg_director",
+    "matchedArsenalName": "סטיבן ספילברג",
+    "imageUrl": "/staged_images/pool/steven_spielberg_director.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 9,
+    "requestedName": "דארת' ויידר",
+    "matchedArsenalId": "darth_vader_mask",
+    "matchedArsenalName": "דארת' ויידר",
+    "imageUrl": "/staged_images/pool/darth_vader_mask.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 11,
+    "requestedName": "שרק",
+    "matchedArsenalId": "shrek_ogre_swamp",
+    "matchedArsenalName": "שרק (ענק ירוק)",
+    "imageUrl": "/staged_images/pool/shrek_ogre_swamp.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 12,
+    "requestedName": "פאק-מן",
+    "matchedArsenalId": "pac_man_arcade",
+    "matchedArsenalName": "פאק-מן",
+    "imageUrl": "/staged_images/pool/pac_man_arcade.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 13,
+    "requestedName": "רובוט R2-D2",
+    "matchedArsenalId": "r2_d2_droid",
+    "matchedArsenalName": "אר-2 די-2 (R2-D2)",
+    "imageUrl": "/staged_images/pool/r2_d2_droid.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 14,
+    "requestedName": "באגס באני",
+    "matchedArsenalId": "bugs_bunny_carrot",
+    "matchedArsenalName": "באגס באני",
+    "imageUrl": "/staged_images/pool/bugs_bunny_carrot.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 20,
+    "requestedName": "דרקולה",
+    "matchedArsenalId": "bela_lugosi_dracula",
+    "matchedArsenalName": "בלה לוגוסי (דרקולה)",
+    "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 21,
+    "requestedName": "האלק",
+    "matchedArsenalId": "hulk_bruce_banner",
+    "matchedArsenalName": "הענק הירוק (האלק)",
+    "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 22,
+    "requestedName": "איירון מן",
+    "matchedArsenalId": "iron_man_tony",
+    "matchedArsenalName": "איירון מן (טוני סטארק)",
+    "imageUrl": "/staged_images/pool/iron_man_tony.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 23,
+    "requestedName": "ג'יימס בונד",
+    "matchedArsenalId": "james_bond_007",
+    "matchedArsenalName": "ג'יימס בונד 007",
+    "imageUrl": "/staged_images/pool/james_bond_007.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 27,
+    "requestedName": "טרזן",
+    "matchedArsenalId": "tarzan_vine_swing",
+    "matchedArsenalName": "טרזן",
+    "imageUrl": "/staged_images/pool/tarzan_vine_swing.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 32,
+    "requestedName": "הארי פוטר",
+    "matchedArsenalId": "harry_potter_hero",
+    "matchedArsenalName": "הארי פוטר",
+    "imageUrl": "/staged_images/pool/harry_potter_hero.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 33,
+    "requestedName": "דונלד דאק",
+    "matchedArsenalId": "donald_duck_sailor",
+    "matchedArsenalName": "דונלד דאק",
+    "imageUrl": "/staged_images/pool/donald_duck_sailor.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 37,
+    "requestedName": "טרמינטור",
+    "matchedArsenalId": "arnold_terminator",
+    "matchedArsenalName": "המחסל (טרמינטור)",
+    "imageUrl": "/staged_images/pool/arnold_terminator.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 38,
+    "requestedName": "קפטן אמריקה",
+    "matchedArsenalId": "captain_america_steve",
+    "matchedArsenalName": "קפטן אמריקה",
+    "imageUrl": "/staged_images/pool/captain_america_steve.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 39,
+    "requestedName": "וולברין",
+    "matchedArsenalId": "wolverine_logan",
+    "matchedArsenalName": "וולברין (לוגאן)",
+    "imageUrl": "/staged_images/pool/wolverine_logan.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 40,
+    "requestedName": "גנדלף",
+    "matchedArsenalId": "gandalf_the_grey",
+    "matchedArsenalName": "גנדלף האפור",
+    "imageUrl": "/staged_images/pool/gandalf_the_grey.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 41,
+    "requestedName": "גולום",
+    "matchedArsenalId": "gollum_smeagol",
+    "matchedArsenalName": "גולום (סמיגול)",
+    "imageUrl": "/staged_images/pool/gollum_smeagol.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 46,
+    "requestedName": "בילבו בגינס",
+    "matchedArsenalId": "bilbo_baggins_ring",
+    "matchedArsenalName": "בילבו באגינס",
+    "imageUrl": "/staged_images/pool/bilbo_baggins_ring.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 48,
+    "requestedName": "אלף",
+    "matchedArsenalId": "draco_malfoy",
+    "matchedArsenalName": "דראקו מאלפוי",
+    "imageUrl": "/staged_images/pool/draco_malfoy.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 49,
+    "requestedName": "הטורף",
+    "matchedArsenalId": "predator_hunter_mask",
+    "matchedArsenalName": "הטורף (פרדטור)",
+    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 50,
+    "requestedName": "מפלצת פרנקנשטיין",
+    "matchedArsenalId": "boris_karloff_frankenstein",
+    "matchedArsenalName": "בוריס קרלוף (פרנקנשטיין)",
+    "imageUrl": "/staged_images/pool/boris_karloff_frankenstein.jpg",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)"
+  },
+  {
+    "num": 51,
+    "requestedName": "מגדל אייפל",
+    "matchedArsenalId": "eiffel_tower_paris",
+    "matchedArsenalName": "מגדל אייפל",
+    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 52,
+    "requestedName": "פסל החירות",
+    "matchedArsenalId": "statue_of_liberty_ny",
+    "matchedArsenalName": "פסל החירות",
+    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 53,
+    "requestedName": "הפירמידות בגיזה",
+    "matchedArsenalId": "louvre_pyramid_paris",
+    "matchedArsenalName": "פירמידת הזכוכית בלובר",
+    "imageUrl": "/staged_images/pool/louvre_pyramid_paris.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 54,
+    "requestedName": "הספינקס",
+    "matchedArsenalId": "sphinx_giza_sand",
+    "matchedArsenalName": "הספינקס (פותר החידות)",
+    "imageUrl": "/staged_images/pool/sphinx_giza_sand.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 55,
+    "requestedName": "הטאג' מהאל",
+    "matchedArsenalId": "moroccan_tagine_pot",
+    "matchedArsenalName": "סיר טאג'ין מרוקאי מחרס",
+    "imageUrl": "/staged_images/pool/moroccan_tagine_pot.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 56,
+    "requestedName": "הקוליסאום",
+    "matchedArsenalId": "colosseum_rome_italy",
+    "matchedArsenalName": "הקולוסיאום ברומא",
+    "imageUrl": "/staged_images/pool/colosseum_rome_italy.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 57,
+    "requestedName": "החומה הסינית",
+    "matchedArsenalId": "great_wall_of_china_mutianyu",
+    "matchedArsenalName": "החומה הגדולה של סין",
+    "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 58,
+    "requestedName": "מגדל פיזה הנוטה",
+    "matchedArsenalId": "leaning_tower_of_pisa",
+    "matchedArsenalName": "המגדל הנטוי בפיזה",
+    "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 59,
+    "requestedName": "ביג בן",
+    "matchedArsenalId": "big_ben_london",
+    "matchedArsenalName": "ביג בן (מגדל אליזבת)",
+    "imageUrl": "/staged_images/pool/big_ben_london.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 60,
+    "requestedName": "בית האופרה של סידני",
+    "matchedArsenalId": "sydney_opera_house_sails",
+    "matchedArsenalName": "בית האופרה של סידני",
+    "imageUrl": "/staged_images/pool/sydney_opera_house_sails.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 61,
+    "requestedName": "פסל ישו הגואל",
+    "matchedArsenalId": "christ_the_redeemer_rio",
+    "matchedArsenalName": "פסל ישו הגואל (ריו)",
+    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 62,
+    "requestedName": "גשר שער הזהב",
+    "matchedArsenalId": "golden_gate_bridge_fog",
+    "matchedArsenalName": "גשר שער הזהב",
+    "imageUrl": "/staged_images/pool/golden_gate_bridge_fog.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 65,
+    "requestedName": "הקרמלין / כנסיית ואסילי הקדוש",
+    "matchedArsenalId": "kremlin_red_square_moscow",
+    "matchedArsenalName": "הכיכר האדומה והקרמלין",
+    "imageUrl": "/staged_images/pool/kremlin_red_square_moscow.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 67,
+    "requestedName": "האמפייר סטייט בילדינג",
+    "matchedArsenalId": "empire_state_building_ny",
+    "matchedArsenalName": "בניין האמפייר סטייט",
+    "imageUrl": "/staged_images/pool/empire_state_building_ny.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 69,
+    "requestedName": "סטונהנג'",
+    "matchedArsenalId": "stonehenge_england",
+    "matchedArsenalName": "סטונהנג'",
+    "imageUrl": "/staged_images/pool/stonehenge_england.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 71,
+    "requestedName": "הפרתנון / האקרופוליס",
+    "matchedArsenalId": "acropolis_parthenon_athens",
+    "matchedArsenalName": "הפרתנון באקרופוליס",
+    "imageUrl": "/staged_images/pool/acropolis_parthenon_athens.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 72,
+    "requestedName": "בורג' ח'ליפה",
+    "matchedArsenalId": "burj_khalifa_dubai",
+    "matchedArsenalName": "בורג' ח'ליפה (דובאי)",
+    "imageUrl": "/staged_images/pool/burj_khalifa_dubai.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 77,
+    "requestedName": "טירת דיסני / נוישוונשטיין",
+    "matchedArsenalId": "hercules_hero_cape",
+    "matchedArsenalName": "הרקולס (דיסני)",
+    "imageUrl": "/staged_images/pool/hercules_hero_cape.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 79,
+    "requestedName": "מקדש המאיה",
+    "matchedArsenalId": "chichen_itza_pyramid",
+    "matchedArsenalName": "צ'יצ'ן איצה (פירמידת המאיה)",
+    "imageUrl": "/staged_images/pool/chichen_itza_pyramid.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 80,
+    "requestedName": "הכותל המערבי",
+    "matchedArsenalId": "western_wall_jerusalem",
+    "matchedArsenalName": "הכותל המערבי",
+    "imageUrl": "/staged_images/pool/western_wall_jerusalem.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 81,
+    "requestedName": "כנסיית סגרדה פמיליה",
+    "matchedArsenalId": "sagrada_familia_barcelona",
+    "matchedArsenalName": "סגרדה פמיליה (ברצלונה)",
+    "imageUrl": "/staged_images/pool/sagrada_familia_barcelona.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 82,
+    "requestedName": "גשר מצודת לונדון",
+    "matchedArsenalId": "tower_bridge_london",
+    "matchedArsenalName": "גשר מצודת לונדון",
+    "imageUrl": "/staged_images/pool/tower_bridge_london.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 90,
+    "requestedName": "מגדלור",
+    "matchedArsenalId": "lighthouse_of_alexandria_pharos",
+    "matchedArsenalName": "המגדלור של אלכסנדריה (פארוס)",
+    "imageUrl": "/staged_images/pool/lighthouse_of_alexandria_pharos.jpg",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)"
+  },
+  {
+    "num": 101,
+    "requestedName": "המונה ליזה",
+    "matchedArsenalId": "mona_lisa_louvre",
+    "matchedArsenalName": "ציור המונה ליזה",
+    "imageUrl": "/staged_images/pool/mona_lisa_louvre.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 103,
+    "requestedName": "האדם החושב",
+    "matchedArsenalId": "the_thinker_rodin_statue",
+    "matchedArsenalName": "האדם החושב (רודן)",
+    "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 104,
+    "requestedName": "פסל דוד",
+    "matchedArsenalId": "david_michelangelo_marble",
+    "matchedArsenalName": "פסל דוד (מיכלאנג'לו)",
+    "imageUrl": "/staged_images/pool/david_michelangelo_marble.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 110,
+    "requestedName": "מסכת הזהב של תות ענח' אמון",
+    "matchedArsenalId": "tutankhamun",
+    "matchedArsenalName": "תות ענח' אמון",
+    "imageUrl": "/staged_images/pool/tutankhamun.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 123,
+    "requestedName": "פסל החרות האוריינטלי",
+    "matchedArsenalId": "terracotta_army_xian",
+    "matchedArsenalName": "צבא הטרקוטה של שי-אן",
+    "imageUrl": "/staged_images/pool/terracotta_army_xian.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 124,
+    "requestedName": "רוזטה",
+    "matchedArsenalId": "rosetta_stone_british_museum",
+    "matchedArsenalName": "אבן רוזטה",
+    "imageUrl": "/staged_images/pool/rosetta_stone_british_museum.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 140,
+    "requestedName": "איש השלג",
+    "matchedArsenalId": "olaf_snowman_warm",
+    "matchedArsenalName": "אולף (איש השלג)",
+    "imageUrl": "/staged_images/pool/olaf_snowman_warm.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 141,
+    "requestedName": "בבושקה / מטריושקה",
+    "matchedArsenalId": "matryoshka_nesting_dolls",
+    "matchedArsenalName": "בובות מטריושקה (בבושקה) מעץ",
+    "imageUrl": "/staged_images/pool/matryoshka_nesting_dolls.jpg",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)"
+  },
+  {
+    "num": 156,
+    "requestedName": "מפתח מכני גדול (מסמל",
+    "matchedArsenalId": "morse_telegraph_key",
+    "matchedArsenalName": "מפתח טלגרף מורס",
+    "imageUrl": "/staged_images/pool/morse_telegraph_key.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 166,
+    "requestedName": "שעון חול (חצי מלא) (מסמל",
+    "matchedArsenalId": "hourglass_golden_sand",
+    "matchedArsenalName": "שעון חול עתיק",
+    "imageUrl": "/staged_images/pool/hourglass_golden_sand.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 178,
+    "requestedName": "גולגולת עם שתי עצמות מוצלבות (מסמלת",
+    "matchedArsenalId": "legolas_elf",
+    "matchedArsenalName": "לגולאס",
+    "imageUrl": "/staged_images/pool/legolas_elf.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 183,
+    "requestedName": "עלה תלתן בעל ארבעה עלים (מסמל",
+    "matchedArsenalId": "irish_shamrock_clover",
+    "matchedArsenalName": "תלתן אירי ירוק (שמרוק)",
+    "imageUrl": "/staged_images/pool/irish_shamrock_clover.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 184,
+    "requestedName": "מלאך קטן עם חץ וקשת (קופידון) (מסמל",
+    "matchedArsenalId": "sephiroth_one_winged",
+    "matchedArsenalName": "ספירות' (המלאך בעל כנף אחת)",
+    "imageUrl": "/staged_images/pool/sephiroth_one_winged.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 185,
+    "requestedName": "מלאך שטן קטן על הכתף (עם קלשון) (מסמל",
+    "matchedArsenalId": "tasmanian_devil_yawn",
+    "matchedArsenalName": "שד טסמני",
+    "imageUrl": "/staged_images/pool/tasmanian_devil_yawn.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 194,
+    "requestedName": "כדור בדולח על מפה כהה (מסמל",
+    "matchedArsenalId": "crystal_ball_fortune",
+    "matchedArsenalName": "כדור בדולח של מגדת עתידות",
+    "imageUrl": "/staged_images/pool/crystal_ball_fortune.jpg",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)"
+  },
+  {
+    "num": 206,
+    "requestedName": "ספינת פיראטים",
+    "matchedArsenalId": "lego_yellow_minifigure",
+    "matchedArsenalName": "איש לגו קלאסי",
+    "imageUrl": "/staged_images/pool/lego_yellow_minifigure.jpg",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)"
+  },
+  {
+    "num": 208,
+    "requestedName": "מטוס ג'מבו",
+    "matchedArsenalId": "boeing_747_jumbo_jet",
+    "matchedArsenalName": "בואינג 747 (ג'מבו ג'ט)",
+    "imageUrl": "/staged_images/pool/boeing_747_jumbo_jet.jpg",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)"
+  },
+  {
+    "num": 210,
+    "requestedName": "צפלין",
+    "matchedArsenalId": "zeppelin_hindenburg_airship",
+    "matchedArsenalName": "ספינת אוויר (צפלין)",
+    "imageUrl": "/staged_images/pool/zeppelin_hindenburg_airship.jpg",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)"
+  },
+  {
+    "num": 212,
+    "requestedName": "צוללת צהובה",
+    "matchedArsenalId": "yellow_submarine_beatles",
+    "matchedArsenalName": "צוללת צהובה (הביטלס)",
+    "imageUrl": "/staged_images/pool/yellow_submarine_beatles.jpg",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)"
+  },
+  {
+    "num": 220,
+    "requestedName": "ספינת טיטאניק",
+    "matchedArsenalId": "titanic_ship_ocean",
+    "matchedArsenalName": "אוניית הטיטאניק",
+    "imageUrl": "/staged_images/pool/titanic_ship_ocean.jpg",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)"
+  },
+  {
+    "num": 242,
+    "requestedName": "מכונית חיפושית",
+    "matchedArsenalId": "volkswagen_beetle_yellow",
+    "matchedArsenalName": "פולקסווגן חיפושית צהובה",
+    "imageUrl": "/staged_images/pool/volkswagen_beetle_yellow.jpg",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)"
+  },
+  {
+    "num": 253,
+    "requestedName": "כריש לבן",
+    "matchedArsenalId": "great_white_shark_jaws",
+    "matchedArsenalName": "עמלץ לבן (כריש לבן)",
+    "imageUrl": "/staged_images/pool/great_white_shark_jaws.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 254,
+    "requestedName": "דוב פנדה",
+    "matchedArsenalId": "red_panda_bamboo_tail",
+    "matchedArsenalName": "פנדה אדומה",
+    "imageUrl": "/staged_images/pool/red_panda_bamboo_tail.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 255,
+    "requestedName": "אריה",
+    "matchedArsenalId": "griffin_lion_eagle",
+    "matchedArsenalName": "גריפין (חצי אריה חצי עיט)",
+    "imageUrl": "/staged_images/pool/griffin_lion_eagle.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 256,
+    "requestedName": "פיל אפריקאי",
+    "matchedArsenalId": "jules_winnfield_pulp",
+    "matchedArsenalName": "ג'ולס וינפילד (ספרות זולה)",
+    "imageUrl": "/staged_images/pool/jules_winnfield_pulp.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 257,
+    "requestedName": "ג'ירפה",
+    "matchedArsenalId": "giraffe_tall_neck_trees",
+    "matchedArsenalName": "ג'ירפה",
+    "imageUrl": "/staged_images/pool/giraffe_tall_neck_trees.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 261,
+    "requestedName": "טבעת שבתאי",
+    "matchedArsenalId": "apollo_11_saturn_v",
+    "matchedArsenalName": "טיל סטורן 5 (אפולו 11)",
+    "imageUrl": "/staged_images/pool/apollo_11_saturn_v.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 263,
+    "requestedName": "פינגווין קיסרי",
+    "matchedArsenalId": "penguin_oswald_cobblepot",
+    "matchedArsenalName": "הפינגווין (אוסוולד קובלפוט)",
+    "imageUrl": "/staged_images/pool/penguin_oswald_cobblepot.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 265,
+    "requestedName": "טווס פרוס זנב",
+    "matchedArsenalId": "peacock_feather_fan",
+    "matchedArsenalName": "טווס (פריסת נוצות)",
+    "imageUrl": "/staged_images/pool/peacock_feather_fan.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 268,
+    "requestedName": "ינשוף על ענף",
+    "matchedArsenalId": "grey_wolf_howling_moon",
+    "matchedArsenalName": "זאב אפור",
+    "imageUrl": "/staged_images/pool/grey_wolf_howling_moon.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 269,
+    "requestedName": "נשר דואה",
+    "matchedArsenalId": "khabib_nurmagomedov_eagle",
+    "matchedArsenalName": "חביב נורמגומדוב",
+    "imageUrl": "/staged_images/pool/khabib_nurmagomedov_eagle.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 270,
+    "requestedName": "קנגורו",
+    "matchedArsenalId": "red_kangaroo_australia",
+    "matchedArsenalName": "קנגורו אדום",
+    "imageUrl": "/staged_images/pool/red_kangaroo_australia.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 273,
+    "requestedName": "לווייתן קטלן",
+    "matchedArsenalId": "humpback_whale_breaching",
+    "matchedArsenalName": "לווייתן גדול-סנפיר",
+    "imageUrl": "/staged_images/pool/humpback_whale_breaching.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 284,
+    "requestedName": "הגרנד קניון",
+    "matchedArsenalId": "grand_canyon_arizona",
+    "matchedArsenalName": "הגרנד קניון",
+    "imageUrl": "/staged_images/pool/grand_canyon_arizona.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 285,
+    "requestedName": "הר פוג'י",
+    "matchedArsenalId": "mount_fuji_snow_peak",
+    "matchedArsenalName": "הר פוג'י (יפן)",
+    "imageUrl": "/staged_images/pool/mount_fuji_snow_peak.jpg",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)"
+  },
+  {
+    "num": 301,
+    "requestedName": "כדורגל קלאסי",
+    "matchedArsenalId": "pele_king_football",
+    "matchedArsenalName": "פלה (מלך הכדורגל)",
+    "imageUrl": "/staged_images/pool/pele_king_football.jpg",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)"
+  },
+  {
+    "num": 351,
+    "requestedName": "פטיש מסמרים קלאסי",
+    "matchedArsenalId": "hammerhead_shark_head",
+    "matchedArsenalName": "פטישן (כריש פטיש)",
+    "imageUrl": "/staged_images/pool/hammerhead_shark_head.jpg",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)"
+  },
+  {
+    "num": 352,
+    "requestedName": "מברג פיליפס",
+    "matchedArsenalId": "african_elephant_tusks",
+    "matchedArsenalName": "פיל אפריקאי",
+    "imageUrl": "/staged_images/pool/african_elephant_tusks.jpg",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)"
+  },
+  {
+    "num": 353,
+    "requestedName": "מספריים",
+    "matchedArsenalId": "edward_scissorhands_hands",
+    "matchedArsenalName": "המספריים של אדוארד",
+    "imageUrl": "/staged_images/pool/edward_scissorhands_hands.jpg",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)"
+  },
+  {
+    "num": 355,
+    "requestedName": "מטרייה שחורה פתוחה",
+    "matchedArsenalId": "mary_poppins_umbrella",
+    "matchedArsenalName": "מרי פופינס",
+    "imageUrl": "/staged_images/pool/mary_poppins_umbrella.jpg",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)"
+  },
+  {
+    "num": 367,
+    "requestedName": "מצית זיפו",
+    "matchedArsenalId": "zippo_lighter_chrome",
+    "matchedArsenalName": "מצית זיפו ממתכת",
+    "imageUrl": "/staged_images/pool/zippo_lighter_chrome.jpg",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)"
+  },
+  {
+    "num": 374,
+    "requestedName": "שעון מעורר קלאסי",
+    "matchedArsenalId": "mjolnir_thor_hammer_replica",
+    "matchedArsenalName": "פטיש מיולניר (הפטיש הקדוש)",
+    "imageUrl": "/staged_images/pool/mjolnir_thor_hammer_replica.jpg",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)"
+  },
+  {
+    "num": 405,
+    "requestedName": "שרק",
+    "matchedArsenalId": "donkey_shrek_waffles",
+    "matchedArsenalName": "חמור (שרק)",
+    "imageUrl": "/staged_images/pool/donkey_shrek_waffles.jpg",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות"
+  },
+  {
+    "num": 410,
+    "requestedName": "מרלין מונרו",
+    "matchedArsenalId": "marlin_clownfish_dad",
+    "matchedArsenalName": "מרלין",
+    "imageUrl": "/staged_images/pool/marlin_clownfish_dad.jpg",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות"
+  },
+  {
+    "num": 414,
+    "requestedName": "לגו",
+    "matchedArsenalId": "artem_dolgopyat_floor",
+    "matchedArsenalName": "ארטם דולגופיאט",
+    "imageUrl": "/staged_images/pool/artem_dolgopyat_floor.jpg",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות"
+  },
+  {
+    "num": 416,
+    "requestedName": "פטיש שופטים",
+    "matchedArsenalId": "thor_norse_hammer",
+    "matchedArsenalName": "תור (במיתולוגיה הנורדית)",
+    "imageUrl": "/staged_images/pool/thor_norse_hammer.jpg",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים"
+  },
+  {
+    "num": 417,
+    "requestedName": "מזוודת כסף",
+    "matchedArsenalId": "aston_martin_db5_silver",
+    "matchedArsenalName": "אסטון מרטין DB5 (ג'יימס בונד)",
+    "imageUrl": "/staged_images/pool/aston_martin_db5_silver.jpg",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים"
+  },
+  {
+    "num": 420,
+    "requestedName": "סטטוסקופ",
+    "matchedArsenalId": "stethoscope_doctor_tool",
+    "matchedArsenalName": "סטטוסקופ רפואי",
+    "imageUrl": "/staged_images/pool/stethoscope_doctor_tool.jpg",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים"
+  },
+  {
+    "num": 440,
+    "requestedName": "טאג' מהאל",
+    "matchedArsenalId": "taj_mahal_agra",
+    "matchedArsenalName": "הטאג' מאהל",
+    "imageUrl": "/staged_images/pool/taj_mahal_agra.jpg",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות"
+  },
+  {
+    "num": 456,
+    "requestedName": "זיקית",
+    "matchedArsenalId": "chameleon_color_change",
+    "matchedArsenalName": "זיקית (משנה צבעים)",
+    "imageUrl": "/staged_images/pool/chameleon_color_change.jpg",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים"
+  },
+  {
+    "num": 458,
+    "requestedName": "אריה",
+    "matchedArsenalId": "simba_lion_king",
+    "matchedArsenalName": "סימבה (מלך האריות)",
+    "imageUrl": "/staged_images/pool/simba_lion_king.jpg",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים"
+  },
+  {
+    "num": 460,
+    "requestedName": "ינשוף",
+    "matchedArsenalId": "barn_owl_white_heart",
+    "matchedArsenalName": "תנשמת (פרצוף לב בצורת לב)",
+    "imageUrl": "/staged_images/pool/barn_owl_white_heart.jpg",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים"
+  },
+  {
+    "num": 461,
+    "requestedName": "נשר",
+    "matchedArsenalId": "bald_eagle_flight",
+    "matchedArsenalName": "עיטם לבן-ראש (עיטם אמריקאי)",
+    "imageUrl": "/staged_images/pool/bald_eagle_flight.jpg",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים"
+  },
+  {
+    "num": 468,
+    "requestedName": "מייקל ג'ורדן (צללית ה-Jumpman)",
+    "matchedArsenalId": "michael_jordan_slam_dunk",
+    "matchedArsenalName": "מייקל ג'ורדן (אייר ג'ורדן)",
+    "imageUrl": "/staged_images/pool/michael_jordan_slam_dunk.jpg",
+    "category": "⚽ ספורט, משחקים ואישים"
+  },
+  {
+    "num": 484,
+    "requestedName": "בודהה מחייך",
+    "matchedArsenalId": "borobudur_buddha_stupas",
+    "matchedArsenalName": "מקדש בורובודור (אינדונזיה)",
+    "imageUrl": "/staged_images/pool/borobudur_buddha_stupas.jpg",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים"
+  }
+]

@@ -47,39 +47,35 @@ export function isTileWalkable(gx, gy, { checkClearing, placedObjects = [], plac
   // Fast O(1) lookup if map provided, fallback to find
   const obj = placedMap ? placedMap.get((gx << 8) | gy) : placedObjects.find(o => o.gx === gx && o.gy === gy);
 
-  if (hasPaths) {
-    // If character is currently on this tile (e.g. initial spawn position before stepping on a path), allow stepping off
+    // If character is currently on this tile, allow stepping off
     if (startPos && gx === startPos.gx && gy === startPos.gy) {
       return true;
     }
 
+    // Empty meadow / grass tile: completely walkable!
     if (!obj) {
-      // STRICT CONSTRAINT: Character cannot deviate from the path! Grass is non-walkable.
-      return false;
+      return true;
     }
 
-    // Only paths, roads, bridges, and trails are walkable
-    return (
+    // Paths, roads, bridges, and trails are walkable
+    if (
       WALKABLE_SURFACES.has(obj.type) ||
       obj.type?.includes('path') ||
       obj.type?.includes('road') ||
       obj.type?.includes('bridge') ||
-      obj.type?.includes('trail')
-    );
-  }
+      obj.type?.includes('trail') ||
+      obj.type?.includes('flower')
+    ) {
+      return true;
+    }
 
-  // Fallback for empty villages with 0 paths:
-  if (!obj) {
-    return true;
-  }
+    // Non-solid decorations (like small wildflowers, flat rugs) are walkable
+    if (obj.isPassable || obj.type === 'flower_carpet' || obj.type === 'wildflowers') {
+      return true;
+    }
 
-  return (
-    WALKABLE_SURFACES.has(obj.type) ||
-    obj.type?.includes('path') ||
-    obj.type?.includes('road') ||
-    obj.type?.includes('bridge') ||
-    obj.type?.includes('trail')
-  );
+    // Solid objects (buildings, trees, fences, rocks) block movement
+    return false;
 }
 
 

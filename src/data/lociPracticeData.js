@@ -181,11 +181,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     memoryAnchor: 'עוגן 1: משקפי שמש בכניסה',
     hint: 'בכניסה לבית, מה שמנו על המעמד כדי שלא נסתנוור מהשמש כשנצא?',
     imageUrl: SUNGLASSES_DATA_URL,
-    celebrationTitle: '☀️ בום! שמש לוהטת ומסנוורת!',
-    celebrationSubtitle: 'מזל ענק שזכרת לקחת משקפי שמש בכניסה! 😎',
-    celebrationImage: './sun_sunglasses.jpg',
+    celebrationTitle: '☀️ משקפי שמש בכניסה!',
+    celebrationSubtitle: 'זכרת לקחת משקפי שמש בכניסה להגנה מושלמת מהשמש! 😎',
+    celebrationImage: SUNGLASSES_DATA_URL,
     objectPosition: 'center center',
-    quote: '"אבא, השמש מסנוורת בטירוף! טוב שהרכבת את משקפי השמש בכניסה!" 🕶️☀️'
+    quote: '"עוגן 1 נעול: משקפי שמש מונחים על המעמד בכניסה!" 🕶️☀️'
   },
   {
     id: 'loci-work-2',
@@ -200,11 +200,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     memoryAnchor: 'עוגן 2: טלפון נייד באולם',
     hint: 'על השולחן במרכז האולם, איזה מכשיר זוהר ורוטט כדי לתקשר עם כולם?',
     imageUrl: PHONE_DATA_URL,
-    celebrationTitle: '🍏 סטיב ג׳ובס מתקשר לאולם המרכזי!',
-    celebrationSubtitle: '"אבא, One More Thing... איפה שמת את האייפון?!" 📱',
-    celebrationImage: './steve_jobs_iphone.jpg',
+    celebrationTitle: '📱 טלפון נייד באולם המרכזי!',
+    celebrationSubtitle: 'הטלפון על השולחן באולם זוהר ומוכן לכל משימה!',
+    celebrationImage: PHONE_DATA_URL,
     objectPosition: 'center center',
-    quote: '"Stay hungry, stay foolish... ואל תשכח את הטלפון שלך על השולחן באולם!" — סטיב ג׳ובס 📱'
+    quote: '"עוגן 2 נעול: הטלפון הנייד במרכז האולם!" 📱'
   },
   {
     id: 'loci-work-3',
@@ -219,11 +219,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     memoryAnchor: 'עוגן 3: חולצה להחלפה באגף שמאל',
     hint: 'באגף שמאל, מה תלוי על הקולב מוכן כדי להתרענן ולהחליף בגדים?',
     imageUrl: SHIRT_DATA_URL,
-    celebrationTitle: '⚽ SIIIUUU! רונאלדו מניף חולצה להחלפה!',
-    celebrationSubtitle: 'חולצה נקייה ורעננה נזרקת אליך באגף שמאל! 👕',
-    celebrationImage: './ronaldo_shirt.jpg',
+    celebrationTitle: '👕 חולצה נקייה להחלפה!',
+    celebrationSubtitle: 'חולצה רעננה ונקייה תלויה על הקולב באגף שמאל!',
+    celebrationImage: SHIRT_DATA_URL,
     objectPosition: 'center center',
-    quote: '"אחרי אימון קשה מגיע הרגע הכי טוב: חולצה נקייה להחלפה! SIIIUUU!" — כריסטיאנו רונאלדו 👕⚽'
+    quote: '"עוגן 3 נעול: חולצה נקייה להחלפה באגף שמאל!" 👕'
   },
   {
     id: 'loci-work-4',
@@ -238,11 +238,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     memoryAnchor: 'עוגן 4: בקבוק מים בהיכל השלווה',
     hint: 'בהיכל השלווה, מה עומד קריר וצלול כדי להרוות את הצמא?',
     imageUrl: WATER_DATA_URL,
-    celebrationTitle: '🌊 מפלי הניאגרה השוצפים בהיכל השלווה!',
-    celebrationSubtitle: 'שפכנו את כל מי הניאגרה היישר לתוך בקבוק המים שלך! 💧',
-    celebrationImage: './niagara_falls.jpg',
+    celebrationTitle: '💧 בקבוק מים צלולים וקרים!',
+    celebrationSubtitle: 'בקבוק מים מרענן בהיכל השלווה!',
+    celebrationImage: WATER_DATA_URL,
     objectPosition: 'center center',
-    quote: '"מיליוני ליטרים של מים קרירים ומרעננים כדי שתמיד תזכור לשתות מים!" 💧🌊'
+    quote: '"עוגן 4 נעול: בקבוק מים קרירים וצלולים בהיכל השלווה!" 💧'
   },
   {
     id: 'loci-work-5',
@@ -257,11 +257,11 @@ export const LOCI_WORK_PRACTICE_ITEMS = [
     memoryAnchor: 'עוגן 5: מפתחות לאוטו בחדר הדרומי',
     hint: 'בחדר הדרומי, מה תלוי על הוו ופותח את האוטו כשחוזרים הביתה?',
     imageUrl: CAR_KEYS_DATA_URL,
-    celebrationTitle: '🏎️ רונאלדו וסטיב ג׳ובס נהגו בפרארי עם משקפי שמש ושתו בקבוק מים! 🕶️💧',
-    celebrationSubtitle: 'סיפור העל שמחבר את כל 5 תחנות הזיכרון בתמונה אחת אגדית!',
-    celebrationImage: './ronaldo_jobs_ferrari.jpg',
+    celebrationTitle: '🔑 מפתחות לרכב בחדר הדרומי!',
+    celebrationSubtitle: 'הצרור שפותח את הרכב ומחזיר אותנו בבטחה הביתה!',
+    celebrationImage: CAR_KEYS_DATA_URL,
     objectPosition: 'center center',
-    quote: '"רונאלדו וסטיב ג׳ובס נהגו בפרארי עם משקפי שמש ושתו בקבוק מים!" — כל הארמון נעול לך בזיכרון לנצח! 🏆👑'
+    quote: '"כל 5 התחנות בארמון נעולות לך בזיכרון לנצח!" 🏆🔑'
   }
 ];
 

@@ -20,7 +20,8 @@ export function LociCumulativeQuizModal({
   isOpen,
   door,
   onClose,
-  onUnlockDoor
+  onUnlockDoor,
+  practiceItems = LOCI_WORK_PRACTICE_ITEMS
 }) {
   const [selectedChain, setSelectedChain] = useState([]);
   const [errorFeedback, setErrorFeedback] = useState(null);
@@ -42,13 +43,23 @@ export function LociCumulativeQuizModal({
   const currentSlotIndex = selectedChain.length;
   const isComplete = selectedChain.length === requiredOrders.length;
 
+  // Shuffle the practice items pool when opening so items are not in trivial order
+  const [shuffledPool, setShuffledPool] = useState([]);
+
   // Reset modal state on door open
   useEffect(() => {
     setSelectedChain([]);
     setErrorFeedback(null);
     setShowHint(false);
     setIsPassed(false);
-  }, [door, isOpen]);
+    // Shuffle the items for active recall challenge
+    const copy = [...practiceItems];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    setShuffledPool(copy);
+  }, [door, isOpen, practiceItems]);
 
   if (!isOpen || !door) return null;
 
@@ -80,7 +91,7 @@ export function LociCumulativeQuizModal({
     } else {
       // Mistake: gentle feedback without shaming
       sounds.playBlip?.();
-      const currentTargetStation = LOCI_WORK_PRACTICE_ITEMS.find(i => i.order === expectedOrder);
+      const currentTargetStation = practiceItems.find(i => i.order === expectedOrder);
       setErrorFeedback({
         message: `לא מדויק עבור תחנה ${currentSlotIndex + 1} (${currentTargetStation?.roomShortName || 'בחדר'}). נסה שוב או לחץ על רמז!`,
         hint: currentTargetStation?.hint
@@ -434,7 +445,7 @@ export function LociCumulativeQuizModal({
               gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
               gap: '12px'
             }}>
-              {LOCI_WORK_PRACTICE_ITEMS.map((item) => {
+              {shuffledPool.map((item) => {
                 const isAlreadyPlaced = selectedChain.some(c => c.order === item.order);
 
                 return (

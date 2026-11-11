@@ -1,0 +1,2326 @@
+[
+  {
+    "idx": 1,
+    "id": "vintage_ringing_phone",
+    "name": "טלפון חוגה אדום מצלצל",
+    "category": "☎️ תקשורת",
+    "imageUrl": "/staged_images/pool/vintage_ringing_phone.jpg"
+  },
+  {
+    "idx": 2,
+    "id": "mickey_mouse",
+    "name": "מיקי מאוס",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/mickey_mouse.jpg"
+  },
+  {
+    "idx": 3,
+    "id": "pikachu",
+    "name": "פיקאצ'ו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/pikachu_electric_mouse.jpg"
+  },
+  {
+    "idx": 4,
+    "id": "spider_man",
+    "name": "ספיידרמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/spider_man.jpg"
+  },
+  {
+    "idx": 5,
+    "id": "batman",
+    "name": "באטמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/batman.jpg"
+  },
+  {
+    "idx": 6,
+    "id": "superman",
+    "name": "סופרמן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/superman.jpg"
+  },
+  {
+    "idx": 7,
+    "id": "iron_man",
+    "name": "איירון מן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/iron_man_tony.jpg"
+  },
+  {
+    "idx": 8,
+    "id": "the_joker",
+    "name": "הג'וקר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/the_joker.jpg"
+  },
+  {
+    "idx": 9,
+    "id": "robin_hood",
+    "name": "רובין הוד",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/robin_hood_bow_arrow.jpg"
+  },
+  {
+    "idx": 10,
+    "id": "cinderella",
+    "name": "סינדרלה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/cinderella.jpg"
+  },
+  {
+    "idx": 11,
+    "id": "harry_potter",
+    "name": "הארי פוטר",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/harry_potter_hero.jpg"
+  },
+  {
+    "idx": 12,
+    "id": "terminator",
+    "name": "טרמינטור",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/arnold_terminator.jpg"
+  },
+  {
+    "idx": 13,
+    "id": "gandalf",
+    "name": "גנדלף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/gandalf_the_grey.jpg"
+  },
+  {
+    "idx": 14,
+    "id": "robocop",
+    "name": "רובוקופ",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/robocop.jpg"
+  },
+  {
+    "idx": 15,
+    "id": "predator",
+    "name": "הטורף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg"
+  },
+  {
+    "idx": 16,
+    "id": "eiffel_tower",
+    "name": "מגדל אייפל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg"
+  },
+  {
+    "idx": 17,
+    "id": "statue_of_liberty",
+    "name": "פסל החירות",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg"
+  },
+  {
+    "idx": 18,
+    "id": "degas_little_ballerina",
+    "name": "רקדנית בלט",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/degas_little_ballerina.jpg"
+  },
+  {
+    "idx": 19,
+    "id": "cave_painting_bison",
+    "name": "ציור מערות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/cave_painting_bison.jpg"
+  },
+  {
+    "idx": 20,
+    "id": "native_dreamcatcher",
+    "name": "לוכד חלומות",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/native_dreamcatcher.jpg"
+  },
+  {
+    "idx": 21,
+    "id": "star_of_david",
+    "name": "מגן דוד",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "imageUrl": "/staged_images/pool/star_of_david.jpg"
+  },
+  {
+    "idx": 22,
+    "id": "item_151_נורה_דולקת__מסמלת",
+    "name": "נורה דולקת",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_151_נורה_דולקת__מסמלת.jpg"
+  },
+  {
+    "idx": 23,
+    "id": "item_152_תיבת_אוצר__מסמלת",
+    "name": "תיבת אוצר",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_152_תיבת_אוצר__מסמלת.jpg"
+  },
+  {
+    "idx": 24,
+    "id": "item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל",
+    "name": "שק כסף",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל.jpg"
+  },
+  {
+    "idx": 25,
+    "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
+    "name": "גלגל שיניים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_161_גלגל_שיניים__או_שניים_שלובים___מסמל.jpg"
+  },
+  {
+    "idx": 26,
+    "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
+    "name": "מאזני צדק",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות.jpg"
+  },
+  {
+    "idx": 27,
+    "id": "item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת",
+    "name": "גלולת תרופה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת.jpg"
+  },
+  {
+    "idx": 28,
+    "id": "item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל",
+    "name": "ספר עתיק פתוח",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל.jpg"
+  },
+  {
+    "idx": 29,
+    "id": "item_200_קולב_בגדים_ממתכת__מסמל",
+    "name": "קולב בגדים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "imageUrl": "/staged_images/pool/item_200_קולב_בגדים_ממתכת__מסמל.jpg"
+  },
+  {
+    "idx": 30,
+    "id": "item_201_לימוזינה_שחורה_ארוכה",
+    "name": "לימוזינה שחורה ארוכה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_201_לימוזינה_שחורה_ארוכה.jpg"
+  },
+  {
+    "idx": 31,
+    "id": "item_202_מונית_צהובה_ניו_יורקית",
+    "name": "מונית צהובה ניו",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_202_מונית_צהובה_ניו_יורקית.jpg"
+  },
+  {
+    "idx": 32,
+    "id": "item_203_אוטובוס_קומותיים_אדום",
+    "name": "אוטובוס קומותיים אדום",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_203_אוטובוס_קומותיים_אדום.jpg"
+  },
+  {
+    "idx": 33,
+    "id": "item_204_רכבת_קיטור_ישנה",
+    "name": "רכבת קיטור ישנה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_204_רכבת_קיטור_ישנה.jpg"
+  },
+  {
+    "idx": 34,
+    "id": "item_205_אופנוע_הארלי_דיווידסון",
+    "name": "אופנוע הארלי דיווידסון",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_205_אופנוע_הארלי_דיווידסון.jpg"
+  },
+  {
+    "idx": 35,
+    "id": "item_206_ספינת_פיראטים",
+    "name": "ספינת פיראטים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_206_ספינת_פיראטים.jpg"
+  },
+  {
+    "idx": 36,
+    "id": "item_207_מעבורת_חלל",
+    "name": "מעבורת חלל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_207_מעבורת_חלל.jpg"
+  },
+  {
+    "idx": 37,
+    "id": "item_208_מטוס_ג_מבו",
+    "name": "מטוס ג'מבו",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_208_מטוס_ג_מבו.jpg"
+  },
+  {
+    "idx": 38,
+    "id": "item_209_גונדולה_ונציאנית",
+    "name": "גונדולה ונציאנית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_209_גונדולה_ונציאנית.jpg"
+  },
+  {
+    "idx": 39,
+    "id": "item_210_צפלין",
+    "name": "צפלין",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_210_צפלין.jpg"
+  },
+  {
+    "idx": 40,
+    "id": "item_211_כדור_פורח_צבעוני",
+    "name": "כדור פורח צבעוני",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_211_כדור_פורח_צבעוני.jpg"
+  },
+  {
+    "idx": 41,
+    "id": "item_212_צוללת_צהובה",
+    "name": "צוללת צהובה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_212_צוללת_צהובה.jpg"
+  },
+  {
+    "idx": 42,
+    "id": "item_213_טרקטור_חקלאי_ירוק",
+    "name": "טרקטור חקלאי ירוק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_213_טרקטור_חקלאי_ירוק.jpg"
+  },
+  {
+    "idx": 43,
+    "id": "item_214_ניידת_משטרה_קלאסית",
+    "name": "ניידת משטרה קלאסית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_214_ניידת_משטרה_קלאסית.jpg"
+  },
+  {
+    "idx": 44,
+    "id": "item_215_כבאית_אדומה",
+    "name": "כבאית אדומה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_215_כבאית_אדומה.jpg"
+  },
+  {
+    "idx": 45,
+    "id": "item_216_אמבולנס_לבן",
+    "name": "אמבולנס לבן",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_216_אמבולנס_לבן.jpg"
+  },
+  {
+    "idx": 46,
+    "id": "item_217_כרכרת_סוסים_מלכותית",
+    "name": "כרכרת סוסים מלכותית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_217_כרכרת_סוסים_מלכותית.jpg"
+  },
+  {
+    "idx": 47,
+    "id": "item_218_ג_יפ_צבאי_פתוח",
+    "name": "ג'יפ צבאי פתוח",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_218_ג_יפ_צבאי_פתוח.jpg"
+  },
+  {
+    "idx": 48,
+    "id": "item_219_קטנוע_וספה_איטלקי",
+    "name": "קטנוע וספה איטלקי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_219_קטנוע_וספה_איטלקי.jpg"
+  },
+  {
+    "idx": 49,
+    "id": "item_220_ספינת_טיטאניק",
+    "name": "ספינת טיטאניק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_220_ספינת_טיטאניק.jpg"
+  },
+  {
+    "idx": 50,
+    "id": "item_221_משאית_זבל",
+    "name": "משאית זבל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_221_משאית_זבל.jpg"
+  },
+  {
+    "idx": 51,
+    "id": "item_222_רכבל",
+    "name": "רכבל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_222_רכבל.jpg"
+  },
+  {
+    "idx": 52,
+    "id": "item_223_קורקינט_פשוט_לילדים",
+    "name": "קורקינט פשוט לילדים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_223_קורקינט_פשוט_לילדים.jpg"
+  },
+  {
+    "idx": 53,
+    "id": "item_224_מכונית_מרוץ_פורמולה_1",
+    "name": "מכונית מרוץ פורמולה 1",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_224_מכונית_מרוץ_פורמולה_1.jpg"
+  },
+  {
+    "idx": 54,
+    "id": "item_225_רכבת_קליע_יפנית",
+    "name": "רכבת קליע יפנית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_225_רכבת_קליע_יפנית.jpg"
+  },
+  {
+    "idx": 55,
+    "id": "item_226_הליקופטר_צבאי",
+    "name": "הליקופטר צבאי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_226_הליקופטר_צבאי.jpg"
+  },
+  {
+    "idx": 56,
+    "id": "item_227_רכב_שטח_מפלצתי",
+    "name": "רכב שטח מפלצתי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_227_רכב_שטח_מפלצתי.jpg"
+  },
+  {
+    "idx": 57,
+    "id": "item_228_סקייטבורד",
+    "name": "סקייטבורד",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_228_סקייטבורד.jpg"
+  },
+  {
+    "idx": 58,
+    "id": "item_229_רולרבליידס",
+    "name": "רולרבליידס",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_229_רולרבליידס.jpg"
+  },
+  {
+    "idx": 59,
+    "id": "item_230_רכב_שלג",
+    "name": "רכב שלג",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_230_רכב_שלג.jpg"
+  },
+  {
+    "idx": 60,
+    "id": "item_231_מפרשית___יאכטה_לבנה",
+    "name": "מפרשית / יאכטה לבנה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_231_מפרשית___יאכטה_לבנה.jpg"
+  },
+  {
+    "idx": 61,
+    "id": "item_232_רכב_גולף_קטן",
+    "name": "רכב גולף קטן",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_232_רכב_גולף_קטן.jpg"
+  },
+  {
+    "idx": 62,
+    "id": "item_233_דחפור",
+    "name": "דחפור",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_233_דחפור.jpg"
+  },
+  {
+    "idx": 63,
+    "id": "item_234_מנוף_בנייה_ענק",
+    "name": "מנוף בנייה ענק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_234_מנוף_בנייה_ענק.jpg"
+  },
+  {
+    "idx": 64,
+    "id": "item_235_טנק_מרכבה___פנצר",
+    "name": "טנק מרכבה / פנצר",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_235_טנק_מרכבה___פנצר.jpg"
+  },
+  {
+    "idx": 65,
+    "id": "item_236_רכב_סגוויי",
+    "name": "רכב סגוויי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_236_רכב_סגוויי.jpg"
+  },
+  {
+    "idx": 66,
+    "id": "item_237_ריקשה_ממונעת",
+    "name": "ריקשה ממונעת",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_237_ריקשה_ממונעת.jpg"
+  },
+  {
+    "idx": 67,
+    "id": "item_238_קייאק",
+    "name": "קייאק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_238_קייאק.jpg"
+  },
+  {
+    "idx": 68,
+    "id": "item_239_רחפת",
+    "name": "רחפת",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_239_רחפת.jpg"
+  },
+  {
+    "idx": 69,
+    "id": "item_240_ג_ט_סקי",
+    "name": "ג'ט סקי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_240_ג_ט_סקי.jpg"
+  },
+  {
+    "idx": 70,
+    "id": "item_241_אופני_פני_פארת_ינג",
+    "name": "אופני פני",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_241_אופני_פני_פארת_ינג.jpg"
+  },
+  {
+    "idx": 71,
+    "id": "item_242_מכונית_חיפושית",
+    "name": "מכונית חיפושית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_242_מכונית_חיפושית.jpg"
+  },
+  {
+    "idx": 72,
+    "id": "item_243_קלנועית",
+    "name": "קלנועית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_243_קלנועית.jpg"
+  },
+  {
+    "idx": 73,
+    "id": "item_244_רכבת_הרים_לונה_פארק",
+    "name": "רכבת הרים לונה פארק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_244_רכבת_הרים_לונה_פארק.jpg"
+  },
+  {
+    "idx": 74,
+    "id": "item_245_רכב_פורד_מודל_t",
+    "name": "רכב פורד מודל T",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_245_רכב_פורד_מודל_t.jpg"
+  },
+  {
+    "idx": 75,
+    "id": "item_246_ספינת_משא___מכולות",
+    "name": "ספינת משא / מכולות",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_246_ספינת_משא___מכולות.jpg"
+  },
+  {
+    "idx": 76,
+    "id": "item_247_משאית_סמי_טריילר_אמריקאית",
+    "name": "משאית סמי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_247_משאית_סמי_טריילר_אמריקאית.jpg"
+  },
+  {
+    "idx": 77,
+    "id": "item_248_רכב_קמפינג",
+    "name": "רכב קמפינג",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_248_רכב_קמפינג.jpg"
+  },
+  {
+    "idx": 78,
+    "id": "item_249_רכב_גופה",
+    "name": "רכב גופה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_249_רכב_גופה.jpg"
+  },
+  {
+    "idx": 79,
+    "id": "item_250_עגלת_תינוק_קלאסית",
+    "name": "עגלת תינוק קלאסית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "imageUrl": "/staged_images/pool/item_250_עגלת_תינוק_קלאסית.jpg"
+  },
+  {
+    "idx": 80,
+    "id": "item_251_קקטוס_סאגוארו",
+    "name": "קקטוס סאגוארו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_251_קקטוס_סאגוארו.jpg"
+  },
+  {
+    "idx": 81,
+    "id": "item_252_עץ_דקל_על_אי_בודד",
+    "name": "עץ דקל על אי בודד",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_252_עץ_דקל_על_אי_בודד.jpg"
+  },
+  {
+    "idx": 82,
+    "id": "item_253_כריש_לבן",
+    "name": "כריש לבן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_253_כריש_לבן.jpg"
+  },
+  {
+    "idx": 83,
+    "id": "item_254_דוב_פנדה",
+    "name": "דוב פנדה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_254_דוב_פנדה.jpg"
+  },
+  {
+    "idx": 84,
+    "id": "item_255_אריה",
+    "name": "אריה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_255_אריה.jpg"
+  },
+  {
+    "idx": 85,
+    "id": "item_256_פיל_אפריקאי",
+    "name": "פיל אפריקאי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_256_פיל_אפריקאי.jpg"
+  },
+  {
+    "idx": 86,
+    "id": "item_257_ג_ירפה",
+    "name": "ג'ירפה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_257_ג_ירפה.jpg"
+  },
+  {
+    "idx": 87,
+    "id": "item_258_פטריית_זבובנית",
+    "name": "פטריית זבובנית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_258_פטריית_זבובנית.jpg"
+  },
+  {
+    "idx": 88,
+    "id": "item_259_הר_געש_מתפרץ",
+    "name": "הר געש מתפרץ",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_259_הר_געש_מתפרץ.jpg"
+  },
+  {
+    "idx": 89,
+    "id": "item_260_קרחון_בלב_ים",
+    "name": "קרחון בלב ים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_260_קרחון_בלב_ים.jpg"
+  },
+  {
+    "idx": 90,
+    "id": "item_261_טבעת_שבתאי",
+    "name": "טבעת שבתאי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_261_טבעת_שבתאי.jpg"
+  },
+  {
+    "idx": 91,
+    "id": "item_262_מכתש_ברק___פגיעת_ברק",
+    "name": "מכתש ברק / פגיעת ברק",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_262_מכתש_ברק___פגיעת_ברק.jpg"
+  },
+  {
+    "idx": 92,
+    "id": "item_263_פינגווין_קיסרי",
+    "name": "פינגווין קיסרי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_263_פינגווין_קיסרי.jpg"
+  },
+  {
+    "idx": 93,
+    "id": "item_264_קורי_עכביש",
+    "name": "קורי עכביש",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_264_קורי_עכביש.jpg"
+  },
+  {
+    "idx": 94,
+    "id": "item_265_טווס_פרוס_זנב",
+    "name": "טווס פרוס זנב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_265_טווס_פרוס_זנב.jpg"
+  },
+  {
+    "idx": 95,
+    "id": "item_266_סוס_דוהרת_ברוח",
+    "name": "סוס דוהרת ברוח",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_266_סוס_דוהרת_ברוח.jpg"
+  },
+  {
+    "idx": 96,
+    "id": "item_267_כלב_דלמטי",
+    "name": "כלב דלמטי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_267_כלב_דלמטי.jpg"
+  },
+  {
+    "idx": 97,
+    "id": "item_268_ינשוף_על_ענף",
+    "name": "ינשוף על ענף",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_268_ינשוף_על_ענף.jpg"
+  },
+  {
+    "idx": 98,
+    "id": "item_269_נשר_דואה",
+    "name": "נשר דואה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_269_נשר_דואה.jpg"
+  },
+  {
+    "idx": 99,
+    "id": "item_270_קנגורו",
+    "name": "קנגורו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_270_קנגורו.jpg"
+  },
+  {
+    "idx": 100,
+    "id": "item_271_גמל_דו_דבשתי",
+    "name": "גמל דו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_271_גמל_דו_דבשתי.jpg"
+  },
+  {
+    "idx": 101,
+    "id": "item_272_דולפין_קופץ_מהמים",
+    "name": "דולפין קופץ מהמים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_272_דולפין_קופץ_מהמים.jpg"
+  },
+  {
+    "idx": 102,
+    "id": "item_273_לווייתן_קטלן",
+    "name": "לווייתן קטלן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_273_לווייתן_קטלן.jpg"
+  },
+  {
+    "idx": 103,
+    "id": "item_274_צב_יבשה_ענק",
+    "name": "צב יבשה ענק",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_274_צב_יבשה_ענק.jpg"
+  },
+  {
+    "idx": 104,
+    "id": "item_275_פרת_משה_רבנו",
+    "name": "פרת משה רבנו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_275_פרת_משה_רבנו.jpg"
+  },
+  {
+    "idx": 105,
+    "id": "item_276_דבורה",
+    "name": "דבורה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_276_דבורה.jpg"
+  },
+  {
+    "idx": 106,
+    "id": "item_277_עץ_אלון_עתיק_בשלכת",
+    "name": "עץ אלון עתיק בשלכת",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_277_עץ_אלון_עתיק_בשלכת.jpg"
+  },
+  {
+    "idx": 107,
+    "id": "item_278_פרח_חמנייה",
+    "name": "פרח חמנייה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_278_פרח_חמנייה.jpg"
+  },
+  {
+    "idx": 108,
+    "id": "item_279_ורד_אדום",
+    "name": "ורד אדום",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_279_ורד_אדום.jpg"
+  },
+  {
+    "idx": 109,
+    "id": "item_280_עלה_מייפל",
+    "name": "עלה מייפל",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_280_עלה_מייפל.jpg"
+  },
+  {
+    "idx": 110,
+    "id": "item_281_חצי_סהר_וכוכב",
+    "name": "חצי סהר וכוכב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_281_חצי_סהר_וכוכב.jpg"
+  },
+  {
+    "idx": 111,
+    "id": "item_282_שונית_אלמוגים_צבעונית",
+    "name": "שונית אלמוגים צבעונית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_282_שונית_אלמוגים_צבעונית.jpg"
+  },
+  {
+    "idx": 112,
+    "id": "item_283_מפלי_ניאגרה",
+    "name": "מפלי ניאגרה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_283_מפלי_ניאגרה.jpg"
+  },
+  {
+    "idx": 113,
+    "id": "item_284_הגרנד_קניון",
+    "name": "הגרנד קניון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_284_הגרנד_קניון.jpg"
+  },
+  {
+    "idx": 114,
+    "id": "item_285_הר_פוג_י",
+    "name": "הר פוג'י",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_285_הר_פוג_י.jpg"
+  },
+  {
+    "idx": 115,
+    "id": "item_286_סופת_טורנדו",
+    "name": "סופת טורנדו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_286_סופת_טורנדו.jpg"
+  },
+  {
+    "idx": 116,
+    "id": "item_287_צונאמי",
+    "name": "צונאמי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_287_צונאמי.jpg"
+  },
+  {
+    "idx": 117,
+    "id": "item_288_מדבר_חול",
+    "name": "מדבר חול",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_288_מדבר_חול.jpg"
+  },
+  {
+    "idx": 118,
+    "id": "item_289_יער_גשם_טרופי",
+    "name": "יער גשם טרופי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_289_יער_גשם_טרופי.jpg"
+  },
+  {
+    "idx": 119,
+    "id": "item_290_ביצה",
+    "name": "ביצה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_290_ביצה.jpg"
+  },
+  {
+    "idx": 120,
+    "id": "item_291_קשת_בענן",
+    "name": "קשת בענן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_291_קשת_בענן.jpg"
+  },
+  {
+    "idx": 121,
+    "id": "item_292_כוכב_ים",
+    "name": "כוכב ים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_292_כוכב_ים.jpg"
+  },
+  {
+    "idx": 122,
+    "id": "item_293_סרטן",
+    "name": "סרטן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_293_סרטן.jpg"
+  },
+  {
+    "idx": 123,
+    "id": "item_294_תמנון",
+    "name": "תמנון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_294_תמנון.jpg"
+  },
+  {
+    "idx": 124,
+    "id": "item_295_זיקית_על_ענף",
+    "name": "זיקית על ענף",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_295_זיקית_על_ענף.jpg"
+  },
+  {
+    "idx": 125,
+    "id": "item_296_נחש_קוברה",
+    "name": "נחש קוברה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_296_נחש_קוברה.jpg"
+  },
+  {
+    "idx": 126,
+    "id": "item_297_עקרב",
+    "name": "עקרב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_297_עקרב.jpg"
+  },
+  {
+    "idx": 127,
+    "id": "item_298_צפרדע_ירוקה",
+    "name": "צפרדע ירוקה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_298_צפרדע_ירוקה.jpg"
+  },
+  {
+    "idx": 128,
+    "id": "item_299_פרפר_מונרך",
+    "name": "פרפר מונרך",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_299_פרפר_מונרך.jpg"
+  },
+  {
+    "idx": 129,
+    "id": "item_300_שפירית",
+    "name": "שפירית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "imageUrl": "/staged_images/pool/item_300_שפירית.jpg"
+  },
+  {
+    "idx": 130,
+    "id": "item_301_כדורגל_קלאסי",
+    "name": "כדורגל קלאסי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_301_כדורגל_קלאסי.jpg"
+  },
+  {
+    "idx": 131,
+    "id": "item_302_כדורסל",
+    "name": "כדורסל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_302_כדורסל.jpg"
+  },
+  {
+    "idx": 132,
+    "id": "item_303_כדור_טניס",
+    "name": "כדור טניס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_303_כדור_טניס.jpg"
+  },
+  {
+    "idx": 133,
+    "id": "item_304_מחבט_טניס",
+    "name": "מחבט טניס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_304_מחבט_טניס.jpg"
+  },
+  {
+    "idx": 134,
+    "id": "item_305_כדור_פוטבול_אמריקאי",
+    "name": "כדור פוטבול אמריקאי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_305_כדור_פוטבול_אמריקאי.jpg"
+  },
+  {
+    "idx": 135,
+    "id": "item_306_כדור_באולינג_ופינים",
+    "name": "כדור באולינג ופינים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_306_כדור_באולינג_ופינים.jpg"
+  },
+  {
+    "idx": 136,
+    "id": "item_307_כדור_ביליארד",
+    "name": "כדור ביליארד",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_307_כדור_ביליארד.jpg"
+  },
+  {
+    "idx": 137,
+    "id": "item_308_מחבט_בייסבול",
+    "name": "מחבט בייסבול",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_308_מחבט_בייסבול.jpg"
+  },
+  {
+    "idx": 138,
+    "id": "item_309_כדור_נוצה",
+    "name": "כדור נוצה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_309_כדור_נוצה.jpg"
+  },
+  {
+    "idx": 139,
+    "id": "item_310_זוג_כפפות_אגרוף",
+    "name": "זוג כפפות אגרוף",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_310_זוג_כפפות_אגרוף.jpg"
+  },
+  {
+    "idx": 140,
+    "id": "item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות",
+    "name": "טבעות אולימפיות",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות.jpg"
+  },
+  {
+    "idx": 141,
+    "id": "item_312_שולחן_פינג_פונג",
+    "name": "שולחן פינג פונג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_312_שולחן_פינג_פונג.jpg"
+  },
+  {
+    "idx": 142,
+    "id": "item_313_סנובורד___מגלשי_סקי",
+    "name": "סנובורד / מגלשי סקי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_313_סנובורד___מגלשי_סקי.jpg"
+  },
+  {
+    "idx": 143,
+    "id": "item_314_גלשן_גלים",
+    "name": "גלשן גלים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_314_גלשן_גלים.jpg"
+  },
+  {
+    "idx": 144,
+    "id": "item_315_משקולת_ברזל_קלאסית",
+    "name": "משקולת ברזל קלאסית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_315_משקולת_ברזל_קלאסית.jpg"
+  },
+  {
+    "idx": 145,
+    "id": "item_316_חץ_ולוח_מטרה",
+    "name": "חץ ולוח מטרה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_316_חץ_ולוח_מטרה.jpg"
+  },
+  {
+    "idx": 146,
+    "id": "item_317_משרוקית_שופט",
+    "name": "משרוקית שופט",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_317_משרוקית_שופט.jpg"
+  },
+  {
+    "idx": 147,
+    "id": "item_318_כרטיס_אדום_וצהוב",
+    "name": "כרטיס אדום וצהוב",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_318_כרטיס_אדום_וצהוב.jpg"
+  },
+  {
+    "idx": 148,
+    "id": "item_319_חליפת_קראטה_ג_ודו",
+    "name": "חליפת קראטה/ג'ודו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_319_חליפת_קראטה_ג_ודו.jpg"
+  },
+  {
+    "idx": 149,
+    "id": "item_320_נעלי_פקקים",
+    "name": "נעלי פקקים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_320_נעלי_פקקים.jpg"
+  },
+  {
+    "idx": 150,
+    "id": "item_321_קלפי_משחק",
+    "name": "קלפי משחק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_321_קלפי_משחק.jpg"
+  },
+  {
+    "idx": 151,
+    "id": "item_322_רולטה_קזינו",
+    "name": "רולטה קזינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_322_רולטה_קזינו.jpg"
+  },
+  {
+    "idx": 152,
+    "id": "item_323_מכונת_מזל",
+    "name": "מכונת מזל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_323_מכונת_מזל.jpg"
+  },
+  {
+    "idx": 153,
+    "id": "item_324_ז_יטונים_של_קזינו",
+    "name": "ז'יטונים של קזינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_324_ז_יטונים_של_קזינו.jpg"
+  },
+  {
+    "idx": 154,
+    "id": "item_325_קובייה_הונגרית",
+    "name": "קובייה הונגרית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_325_קובייה_הונגרית.jpg"
+  },
+  {
+    "idx": 155,
+    "id": "item_326_חייל_שחמט",
+    "name": "חייל שחמט",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_326_חייל_שחמט.jpg"
+  },
+  {
+    "idx": 156,
+    "id": "item_327_לבני_דומינו",
+    "name": "לבני דומינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_327_לבני_דומינו.jpg"
+  },
+  {
+    "idx": 157,
+    "id": "item_328_חתיכת_פאזל_קלאסית",
+    "name": "חתיכת פאזל קלאסית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_328_חתיכת_פאזל_קלאסית.jpg"
+  },
+  {
+    "idx": 158,
+    "id": "item_329_יו_יו",
+    "name": "יו-יו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_329_יו_יו.jpg"
+  },
+  {
+    "idx": 159,
+    "id": "item_330_משחק_הטוויסטר",
+    "name": "משחק הטוויסטר",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_330_משחק_הטוויסטר.jpg"
+  },
+  {
+    "idx": 160,
+    "id": "item_331_משקפת_שחייה_ומצוף_זרוע",
+    "name": "משקפת שחייה ומצוף זרוע",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_331_משקפת_שחייה_ומצוף_זרוע.jpg"
+  },
+  {
+    "idx": 161,
+    "id": "item_332_גלגל_ענק",
+    "name": "גלגל ענק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_332_גלגל_ענק.jpg"
+  },
+  {
+    "idx": 162,
+    "id": "item_333_רשת_כדורגל_נטויה",
+    "name": "רשת כדורגל נטויה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_333_רשת_כדורגל_נטויה.jpg"
+  },
+  {
+    "idx": 163,
+    "id": "item_334_פודטראק",
+    "name": "פודטראק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_334_פודטראק.jpg"
+  },
+  {
+    "idx": 164,
+    "id": "item_335_חכה_ודלי_דגים",
+    "name": "חכה ודלי דגים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_335_חכה_ודלי_דגים.jpg"
+  },
+  {
+    "idx": 165,
+    "id": "item_336_משקפת_שדה",
+    "name": "משקפת שדה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_336_משקפת_שדה.jpg"
+  },
+  {
+    "idx": 166,
+    "id": "item_337_ערסל_קשור_בין_שני_עצים",
+    "name": "ערסל קשור בין שני עצים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_337_ערסל_קשור_בין_שני_עצים.jpg"
+  },
+  {
+    "idx": 167,
+    "id": "item_338_מדורה_עם_שיפודי_מרשמלו",
+    "name": "מדורה עם שיפודי מרשמלו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_338_מדורה_עם_שיפודי_מרשמלו.jpg"
+  },
+  {
+    "idx": 168,
+    "id": "item_339_מצנח_רחיפה",
+    "name": "מצנח רחיפה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_339_מצנח_רחיפה.jpg"
+  },
+  {
+    "idx": 169,
+    "id": "item_340_מסיכת_צלילה_ושנורקל",
+    "name": "מסיכת צלילה ושנורקל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_340_מסיכת_צלילה_ושנורקל.jpg"
+  },
+  {
+    "idx": 170,
+    "id": "item_341_בומרנג",
+    "name": "בומרנג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_341_בומרנג.jpg"
+  },
+  {
+    "idx": 171,
+    "id": "item_342_פריזבי",
+    "name": "פריזבי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_342_פריזבי.jpg"
+  },
+  {
+    "idx": 172,
+    "id": "item_343_חליפת_חלל",
+    "name": "חליפת חלל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_343_חליפת_חלל.jpg"
+  },
+  {
+    "idx": 173,
+    "id": "item_344_דוכן_פופקורן_קולנוע",
+    "name": "דוכן פופקורן קולנוע",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_344_דוכן_פופקורן_קולנוע.jpg"
+  },
+  {
+    "idx": 174,
+    "id": "item_345_כרטיס_קולנוע_נוסטלגי",
+    "name": "כרטיס קולנוע נוסטלגי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_345_כרטיס_קולנוע_נוסטלגי.jpg"
+  },
+  {
+    "idx": 175,
+    "id": "item_346_מכונת_ארקייד",
+    "name": "מכונת ארקייד",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_346_מכונת_ארקייד.jpg"
+  },
+  {
+    "idx": 176,
+    "id": "item_347_ג_ויסטיק",
+    "name": "ג'ויסטיק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_347_ג_ויסטיק.jpg"
+  },
+  {
+    "idx": 177,
+    "id": "item_348_משחק_טטריס",
+    "name": "משחק טטריס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_348_משחק_טטריס.jpg"
+  },
+  {
+    "idx": 178,
+    "id": "item_349_מגלשת_מים_ענקית",
+    "name": "מגלשת מים ענקית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_349_מגלשת_מים_ענקית.jpg"
+  },
+  {
+    "idx": 179,
+    "id": "item_350_מצנח_פתוח_בשמיים",
+    "name": "מצנח פתוח בשמיים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "imageUrl": "/staged_images/pool/item_350_מצנח_פתוח_בשמיים.jpg"
+  },
+  {
+    "idx": 180,
+    "id": "item_351_פטיש_מסמרים_קלאסי",
+    "name": "פטיש מסמרים קלאסי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_351_פטיש_מסמרים_קלאסי.jpg"
+  },
+  {
+    "idx": 181,
+    "id": "item_352_מברג_פיליפס",
+    "name": "מברג פיליפס",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_352_מברג_פיליפס.jpg"
+  },
+  {
+    "idx": 182,
+    "id": "item_353_מספריים",
+    "name": "מספריים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_353_מספריים.jpg"
+  },
+  {
+    "idx": 183,
+    "id": "item_354_סיכת_ביטחון",
+    "name": "סיכת ביטחון",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_354_סיכת_ביטחון.jpg"
+  },
+  {
+    "idx": 184,
+    "id": "item_355_מטרייה_שחורה_פתוחה",
+    "name": "מטרייה שחורה פתוחה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_355_מטרייה_שחורה_פתוחה.jpg"
+  },
+  {
+    "idx": 185,
+    "id": "item_356_מפתח_שוודי",
+    "name": "מפתח שוודי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_356_מפתח_שוודי.jpg"
+  },
+  {
+    "idx": 186,
+    "id": "item_357_מסור_ידני",
+    "name": "מסור ידני",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_357_מסור_ידני.jpg"
+  },
+  {
+    "idx": 187,
+    "id": "item_358_מטאטא_ומגרוד",
+    "name": "מטאטא ומגרוד",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_358_מטאטא_ומגרוד.jpg"
+  },
+  {
+    "idx": 188,
+    "id": "item_359_סולם_מתקפל",
+    "name": "סולם מתקפל",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_359_סולם_מתקפל.jpg"
+  },
+  {
+    "idx": 189,
+    "id": "item_360_מזלג__סכין_וכף",
+    "name": "מזלג, סכין וכף",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_360_מזלג__סכין_וכף.jpg"
+  },
+  {
+    "idx": 190,
+    "id": "item_361_פותחן_קופסאות_שימורים",
+    "name": "פותחן קופסאות שימורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_361_פותחן_קופסאות_שימורים.jpg"
+  },
+  {
+    "idx": 191,
+    "id": "item_362_פחית_שימורים_חצי_פתוחה",
+    "name": "פחית שימורים חצי פתוחה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_362_פחית_שימורים_חצי_פתוחה.jpg"
+  },
+  {
+    "idx": 192,
+    "id": "item_363_בקבוק_ייין_ופותחן_חולץ_פקקים",
+    "name": "בקבוק ייין ופותחן חולץ פקקים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_363_בקבוק_ייין_ופותחן_חולץ_פקקים.jpg"
+  },
+  {
+    "idx": 193,
+    "id": "item_364_נר_דולק_נוטף_שעווה",
+    "name": "נר דולק נוטף שעווה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_364_נר_דולק_נוטף_שעווה.jpg"
+  },
+  {
+    "idx": 194,
+    "id": "item_365_פנס_כיס_דולק",
+    "name": "פנס כיס דולק",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_365_פנס_כיס_דולק.jpg"
+  },
+  {
+    "idx": 195,
+    "id": "item_366_קופסת_גפרורים",
+    "name": "קופסת גפרורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_366_קופסת_גפרורים.jpg"
+  },
+  {
+    "idx": 196,
+    "id": "item_367_מצית_זיפו",
+    "name": "מצית זיפו",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_367_מצית_זיפו.jpg"
+  },
+  {
+    "idx": 197,
+    "id": "item_368_מברשת_שיניים_ומשחה",
+    "name": "מברשת שיניים ומשחה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_368_מברשת_שיניים_ומשחה.jpg"
+  },
+  {
+    "idx": 198,
+    "id": "item_369_סבון_מוצק_בתוך_קצף",
+    "name": "סבון מוצק בתוך קצף",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_369_סבון_מוצק_בתוך_קצף.jpg"
+  },
+  {
+    "idx": 199,
+    "id": "item_370_נייר_טואלט",
+    "name": "נייר טואלט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_370_נייר_טואלט.jpg"
+  },
+  {
+    "idx": 200,
+    "id": "item_371_מסרק_שיער_קלאסי",
+    "name": "מסרק שיער קלאסי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_371_מסרק_שיער_קלאסי.jpg"
+  },
+  {
+    "idx": 201,
+    "id": "item_372_מראת_יד_עגולה",
+    "name": "מראת יד עגולה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_372_מראת_יד_עגולה.jpg"
+  },
+  {
+    "idx": 202,
+    "id": "item_373_משקפי_קריאה",
+    "name": "משקפי קריאה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_373_משקפי_קריאה.jpg"
+  },
+  {
+    "idx": 203,
+    "id": "item_374_שעון_מעורר_קלאסי",
+    "name": "שעון מעורר קלאסי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_374_שעון_מעורר_קלאסי.jpg"
+  },
+  {
+    "idx": 204,
+    "id": "item_375_קולב_בגדים",
+    "name": "קולב בגדים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_375_קולב_בגדים.jpg"
+  },
+  {
+    "idx": 205,
+    "id": "item_376_מגהץ_אדים",
+    "name": "מגהץ אדים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_376_מגהץ_אדים.jpg"
+  },
+  {
+    "idx": 206,
+    "id": "item_377_מכונת_תפירה_ישנה",
+    "name": "מכונת תפירה ישנה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_377_מכונת_תפירה_ישנה.jpg"
+  },
+  {
+    "idx": 207,
+    "id": "item_378_מחט_וחוט",
+    "name": "מחט וחוט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_378_מחט_וחוט.jpg"
+  },
+  {
+    "idx": 208,
+    "id": "item_379_כפתור_בגדים",
+    "name": "כפתור בגדים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_379_כפתור_בגדים.jpg"
+  },
+  {
+    "idx": 209,
+    "id": "item_380_רוכסן",
+    "name": "רוכסן",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_380_רוכסן.jpg"
+  },
+  {
+    "idx": 210,
+    "id": "item_381_סרט_מדידה_צהוב",
+    "name": "סרט מדידה צהוב",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_381_סרט_מדידה_צהוב.jpg"
+  },
+  {
+    "idx": 211,
+    "id": "item_382_פנקס_רשימות_ספירלה",
+    "name": "פנקס רשימות ספירלה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_382_פנקס_רשימות_ספירלה.jpg"
+  },
+  {
+    "idx": 212,
+    "id": "item_383_עט_כדורי_פשוט",
+    "name": "עט כדורי פשוט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_383_עט_כדורי_פשוט.jpg"
+  },
+  {
+    "idx": 213,
+    "id": "item_384_עיפרון_צהוב_עם_מחק_אדום",
+    "name": "עיפרון צהוב עם מחק אדום",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_384_עיפרון_צהוב_עם_מחק_אדום.jpg"
+  },
+  {
+    "idx": 214,
+    "id": "item_385_מחדד_מתכת_קטן",
+    "name": "מחדד מתכת קטן",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_385_מחדד_מתכת_קטן.jpg"
+  },
+  {
+    "idx": 215,
+    "id": "item_386_מהדק_סיכות_משרדי",
+    "name": "מהדק סיכות משרדי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_386_מהדק_סיכות_משרדי.jpg"
+  },
+  {
+    "idx": 216,
+    "id": "item_387_אטב_נייר",
+    "name": "אטב נייר",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_387_אטב_נייר.jpg"
+  },
+  {
+    "idx": 217,
+    "id": "item_388_אטב_כביסה_מעץ",
+    "name": "אטב כביסה מעץ",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_388_אטב_כביסה_מעץ.jpg"
+  },
+  {
+    "idx": 218,
+    "id": "item_389_סל_כביסה_פלסטיק",
+    "name": "סל כביסה פלסטיק",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_389_סל_כביסה_פלסטיק.jpg"
+  },
+  {
+    "idx": 219,
+    "id": "item_390_צינור_גינה_ירוק_מפותל",
+    "name": "צינור גינה ירוק מפותל",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_390_צינור_גינה_ירוק_מפותל.jpg"
+  },
+  {
+    "idx": 220,
+    "id": "item_391_מזלג_גינה",
+    "name": "מזלג גינה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_391_מזלג_גינה.jpg"
+  },
+  {
+    "idx": 221,
+    "id": "item_392_מגרפה_לגינה",
+    "name": "מגרפה לגינה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_392_מגרפה_לגינה.jpg"
+  },
+  {
+    "idx": 222,
+    "id": "item_393_מריצה",
+    "name": "מריצה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_393_מריצה.jpg"
+  },
+  {
+    "idx": 223,
+    "id": "item_394_עציץ_חרס_חום",
+    "name": "עציץ חרס חום",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_394_עציץ_חרס_חום.jpg"
+  },
+  {
+    "idx": 224,
+    "id": "item_395_מזלף_מים_לפרחים",
+    "name": "מזלף מים לפרחים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_395_מזלף_מים_לפרחים.jpg"
+  },
+  {
+    "idx": 225,
+    "id": "item_396_ארגז_כלים_אדום",
+    "name": "ארגז כלים אדום",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_396_ארגז_כלים_אדום.jpg"
+  },
+  {
+    "idx": 226,
+    "id": "item_397_סרט_הדבקה",
+    "name": "סרט הדבקה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_397_סרט_הדבקה.jpg"
+  },
+  {
+    "idx": 227,
+    "id": "item_398_בקבוק_תרמוס_כסוף",
+    "name": "בקבוק תרמוס כסוף",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_398_בקבוק_תרמוס_כסוף.jpg"
+  },
+  {
+    "idx": 228,
+    "id": "item_399_צידנית_פלסטיק_כחולה",
+    "name": "צידנית פלסטיק כחולה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_399_צידנית_פלסטיק_כחולה.jpg"
+  },
+  {
+    "idx": 229,
+    "id": "item_400_מזוודת_עזרה_ראשונה_לבנה",
+    "name": "מזוודת עזרה ראשונה לבנה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "imageUrl": "/staged_images/pool/item_400_מזוודת_עזרה_ראשונה_לבנה.jpg"
+  },
+  {
+    "idx": 230,
+    "id": "item_401_דארת__ויידר",
+    "name": "דארת' ויידר",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_401_דארת__ויידר.jpg"
+  },
+  {
+    "idx": 231,
+    "id": "item_402_באטמן",
+    "name": "באטמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_402_באטמן.jpg"
+  },
+  {
+    "idx": 232,
+    "id": "item_403_סופרמן",
+    "name": "סופרמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_403_סופרמן.jpg"
+  },
+  {
+    "idx": 233,
+    "id": "item_404_פאקמן",
+    "name": "פאקמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_404_פאקמן.jpg"
+  },
+  {
+    "idx": 234,
+    "id": "item_405_שרק",
+    "name": "שרק",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_405_שרק.jpg"
+  },
+  {
+    "idx": 235,
+    "id": "item_406_הלו_קיטי",
+    "name": "הלו קיטי",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_406_הלו_קיטי.jpg"
+  },
+  {
+    "idx": 236,
+    "id": "item_407_שפם_הליצן_של_רונלד_מקדונלד",
+    "name": "רונלד מקדונלד",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_407_שפם_הליצן_של_רונלד_מקדונלד.jpg"
+  },
+  {
+    "idx": 237,
+    "id": "item_408_הלוגו_של_נייק__swoosh_",
+    "name": "לוגו נייקי",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_408_הלוגו_של_נייק__swoosh_.jpg"
+  },
+  {
+    "idx": 238,
+    "id": "item_409_הפחיות_של_קוקה_קולה",
+    "name": "קוקה קולה",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_409_הפחיות_של_קוקה_קולה.jpg"
+  },
+  {
+    "idx": 239,
+    "id": "item_410_מרלין_מונרו",
+    "name": "מרלין מונרו",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_410_מרלין_מונרו.jpg"
+  },
+  {
+    "idx": 240,
+    "id": "item_411_הארי_פוטר",
+    "name": "הארי פוטר",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_411_הארי_פוטר.jpg"
+  },
+  {
+    "idx": 241,
+    "id": "item_412_שרלוק_הולמס",
+    "name": "שרלוק הולמס",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_412_שרלוק_הולמס.jpg"
+  },
+  {
+    "idx": 242,
+    "id": "item_413_קינג_קונג",
+    "name": "קינג קונג",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_413_קינג_קונג.jpg"
+  },
+  {
+    "idx": 243,
+    "id": "item_414_לגו",
+    "name": "לגו",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_414_לגו.jpg"
+  },
+  {
+    "idx": 244,
+    "id": "item_415_הסימפסונים",
+    "name": "משפחת סימפסון",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "imageUrl": "/staged_images/pool/item_415_הסימפסונים.jpg"
+  },
+  {
+    "idx": 245,
+    "id": "item_416_פטיש_שופטים",
+    "name": "פטיש שופטים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_416_פטיש_שופטים.jpg"
+  },
+  {
+    "idx": 246,
+    "id": "item_417_מזוודת_כסף",
+    "name": "מזוודת כסף",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_417_מזוודת_כסף.jpg"
+  },
+  {
+    "idx": 247,
+    "id": "item_418_כדור_בדולח",
+    "name": "כדור בדולח זוהר",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_418_כדור_בדולח.jpg"
+  },
+  {
+    "idx": 248,
+    "id": "item_419_מפתח_שוודי___מפתח_ברגים",
+    "name": "מפתח שוודי",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_419_מפתח_שוודי___מפתח_ברגים.jpg"
+  },
+  {
+    "idx": 249,
+    "id": "item_420_סטטוסקופ",
+    "name": "סטטוסקופ",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_420_סטטוסקופ.jpg"
+  },
+  {
+    "idx": 250,
+    "id": "item_421_עגלת_קניות",
+    "name": "עגלת סופרמרקט",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_421_עגלת_קניות.jpg"
+  },
+  {
+    "idx": 251,
+    "id": "item_422_כרטיס_אדום",
+    "name": "כרטיס אדום",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_422_כרטיס_אדום.jpg"
+  },
+  {
+    "idx": 252,
+    "id": "item_423_משקולת_ברזל__dumbbell_",
+    "name": "משקולת ברזל",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_423_משקולת_ברזל__dumbbell_.jpg"
+  },
+  {
+    "idx": 253,
+    "id": "item_424_שעון_חול",
+    "name": "שעון חול עתיק",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_424_שעון_חול.jpg"
+  },
+  {
+    "idx": 254,
+    "id": "item_425_קופת_חיסכון_בצורת_חזיר",
+    "name": "קופת חיסכון חזיר",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_425_קופת_חיסכון_בצורת_חזיר.jpg"
+  },
+  {
+    "idx": 255,
+    "id": "item_426_חבל_תלייה",
+    "name": "חבל תלייה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_426_חבל_תלייה.jpg"
+  },
+  {
+    "idx": 256,
+    "id": "item_427_רסיבר___טלפון_חוגה_ישן",
+    "name": "טלפון חוגה ישן",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_427_רסיבר___טלפון_חוגה_ישן.jpg"
+  },
+  {
+    "idx": 257,
+    "id": "item_428_קביים",
+    "name": "קביים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_428_קביים.jpg"
+  },
+  {
+    "idx": 258,
+    "id": "item_429_מספריים_חותכים_סרט_אדום",
+    "name": "מספריים וסרט אדום",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_429_מספריים_חותכים_סרט_אדום.jpg"
+  },
+  {
+    "idx": 259,
+    "id": "item_430_סיכת_ביטחון",
+    "name": "סיכת ביטחון מתכת",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_430_סיכת_ביטחון.jpg"
+  },
+  {
+    "idx": 260,
+    "id": "item_431_זכוכית_מגדלת",
+    "name": "זכוכית מגדלת עגולה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_431_זכוכית_מגדלת.jpg"
+  },
+  {
+    "idx": 261,
+    "id": "item_432_מזרק_רפואי",
+    "name": "מזרק רפואי",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_432_מזרק_רפואי.jpg"
+  },
+  {
+    "idx": 262,
+    "id": "item_433_כתר_זהב",
+    "name": "כתר מלוכה מזהב",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_433_כתר_זהב.jpg"
+  },
+  {
+    "idx": 263,
+    "id": "item_434_תיק_עזרה_ראשונה",
+    "name": "תיק עזרה ראשונה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_434_תיק_עזרה_ראשונה.jpg"
+  },
+  {
+    "idx": 264,
+    "id": "item_435_חליפת_חלל",
+    "name": "חליפת חלל",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_435_חליפת_חלל.jpg"
+  },
+  {
+    "idx": 265,
+    "id": "item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_",
+    "name": "כובע בוגרים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_.jpg"
+  },
+  {
+    "idx": 266,
+    "id": "item_437_כרטיס_קולנוע_מנייר",
+    "name": "כרטיס קולנוע מנייר",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_437_כרטיס_קולנוע_מנייר.jpg"
+  },
+  {
+    "idx": 267,
+    "id": "item_438_קוביית_משחק__עם_נקודות_",
+    "name": "קוביית משחק",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "imageUrl": "/staged_images/pool/item_438_קוביית_משחק__עם_נקודות_.jpg"
+  },
+  {
+    "idx": 268,
+    "id": "item_439_הביג_בן",
+    "name": "הביג בן",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_439_הביג_בן.jpg"
+  },
+  {
+    "idx": 269,
+    "id": "item_440_טאג__מהאל",
+    "name": "טאג' מהאל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_440_טאג__מהאל.jpg"
+  },
+  {
+    "idx": 270,
+    "id": "item_441_פסל_החושב__רודן_",
+    "name": "פסל החושב",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_441_פסל_החושב__רודן_.jpg"
+  },
+  {
+    "idx": 271,
+    "id": "item_442_פסל_דוד__מיכלאנג_לו_",
+    "name": "פסל דוד",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_442_פסל_דוד__מיכלאנג_לו_.jpg"
+  },
+  {
+    "idx": 272,
+    "id": "item_443_הקוליסאום",
+    "name": "הקוליסאום",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_443_הקוליסאום.jpg"
+  },
+  {
+    "idx": 273,
+    "id": "item_444_החומה_הסינית",
+    "name": "החומה הסינית",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_444_החומה_הסינית.jpg"
+  },
+  {
+    "idx": 274,
+    "id": "item_445_הבית_הלבן",
+    "name": "הבית הלבן",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_445_הבית_הלבן.jpg"
+  },
+  {
+    "idx": 275,
+    "id": "item_446_מגדל_פיזה_הנוטה",
+    "name": "מגדל פיזה הנוטה",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_446_מגדל_פיזה_הנוטה.jpg"
+  },
+  {
+    "idx": 276,
+    "id": "item_447_פסל_ישו_הגואל_בריו",
+    "name": "פסל ישו הגואל בריו",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_447_פסל_ישו_הגואל_בריו.jpg"
+  },
+  {
+    "idx": 277,
+    "id": "item_448_גשר_שער_הזהב",
+    "name": "גשר שער הזהב",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_448_גשר_שער_הזהב.jpg"
+  },
+  {
+    "idx": 278,
+    "id": "item_449_הצלב_האדום",
+    "name": "הצלב האדום",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_449_הצלב_האדום.jpg"
+  },
+  {
+    "idx": 279,
+    "id": "item_450_סימן_היין_והיאנג",
+    "name": "יין ויאנג",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_450_סימן_היין_והיאנג.jpg"
+  },
+  {
+    "idx": 280,
+    "id": "item_451_הפטיש_והמגל",
+    "name": "פטיש ומגל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_451_הפטיש_והמגל.jpg"
+  },
+  {
+    "idx": 281,
+    "id": "item_452_צלב_הקרס__swastika_",
+    "name": "צלב קרס",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "imageUrl": "/staged_images/pool/item_452_צלב_הקרס__swastika_.jpg"
+  },
+  {
+    "idx": 282,
+    "id": "item_453_ברק_בשמיים",
+    "name": "ברק בשמיים",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_453_ברק_בשמיים.jpg"
+  },
+  {
+    "idx": 283,
+    "id": "item_454_טורנדו___מערבולת",
+    "name": "טורנדו / מערבולת",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_454_טורנדו___מערבולת.jpg"
+  },
+  {
+    "idx": 284,
+    "id": "item_455_הר_געש_מתפרץ",
+    "name": "הר געש מתפרץ",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_455_הר_געש_מתפרץ.jpg"
+  },
+  {
+    "idx": 285,
+    "id": "item_456_זיקית",
+    "name": "זיקית",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_456_זיקית.jpg"
+  },
+  {
+    "idx": 286,
+    "id": "item_457_עקרב",
+    "name": "עקרב",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_457_עקרב.jpg"
+  },
+  {
+    "idx": 287,
+    "id": "item_458_אריה",
+    "name": "אריה שואג",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_458_אריה.jpg"
+  },
+  {
+    "idx": 288,
+    "id": "item_459_יונה_לבנה_עם_עלה_זית",
+    "name": "יונה עם עלה זית",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_459_יונה_לבנה_עם_עלה_זית.jpg"
+  },
+  {
+    "idx": 289,
+    "id": "item_460_ינשוף",
+    "name": "ינשוף",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_460_ינשוף.jpg"
+  },
+  {
+    "idx": 290,
+    "id": "item_461_נשר",
+    "name": "נשר דואה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_461_נשר.jpg"
+  },
+  {
+    "idx": 291,
+    "id": "item_462_כלב_נחייה",
+    "name": "כלב נחייה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_462_כלב_נחייה.jpg"
+  },
+  {
+    "idx": 292,
+    "id": "item_463_קורי_עכביש",
+    "name": "קורי עכביש",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_463_קורי_עכביש.jpg"
+  },
+  {
+    "idx": 293,
+    "id": "item_464_שקיעה_בים",
+    "name": "שקיעה בים",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_464_שקיעה_בים.jpg"
+  },
+  {
+    "idx": 294,
+    "id": "item_465_קרחון__iceberg_",
+    "name": "קרחון (Iceberg)",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_465_קרחון__iceberg_.jpg"
+  },
+  {
+    "idx": 295,
+    "id": "item_466_עץ_שלכת_עירום",
+    "name": "עץ שלכת עירום",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_466_עץ_שלכת_עירום.jpg"
+  },
+  {
+    "idx": 296,
+    "id": "item_467_שדה_חמניות",
+    "name": "שדה חמניות",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg"
+  },
+  {
+    "idx": 297,
+    "id": "item_468_מייקל_ג_ורדן__צללית_ה_jumpman_",
+    "name": "מייקל ג'ורדן",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_468_מייקל_ג_ורדן__צללית_ה_jumpman_.jpg"
+  },
+  {
+    "idx": 298,
+    "id": "item_469_גביע_זהב__מונף_בשתי_ידיים_",
+    "name": "גביע ניצחון מזהב",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_469_גביע_זהב__מונף_בשתי_ידיים_.jpg"
+  },
+  {
+    "idx": 299,
+    "id": "item_470_מדליית_זהב",
+    "name": "מדליית זהב",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_470_מדליית_זהב.jpg"
+  },
+  {
+    "idx": 300,
+    "id": "item_471_לוח_מטרה_וחיצי_דארטס",
+    "name": "לוח מטרה וחיצים",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_471_לוח_מטרה_וחיצי_דארטס.jpg"
+  },
+  {
+    "idx": 301,
+    "id": "item_472_מכונית_פורמולה_1",
+    "name": "מכונית פורמולה 1",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_472_מכונית_פורמולה_1.jpg"
+  },
+  {
+    "idx": 302,
+    "id": "item_473_כדור_טניס_ירוק_זוהר",
+    "name": "כדור טניס זוהר",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_473_כדור_טניס_ירוק_זוהר.jpg"
+  },
+  {
+    "idx": 303,
+    "id": "item_474_כדור_באולינג_מפיל_פינים",
+    "name": "כדור באולינג ופינים",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_474_כדור_באולינג_מפיל_פינים.jpg"
+  },
+  {
+    "idx": 304,
+    "id": "item_475_חגורה_שחורה_באומנויות_לחימה",
+    "name": "חגורה שחורה",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_475_חגורה_שחורה_באומנויות_לחימה.jpg"
+  },
+  {
+    "idx": 305,
+    "id": "item_476_שחמט__כלי_המלך_או_הרץ_",
+    "name": "שחמט (מלך)",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "imageUrl": "/staged_images/pool/item_476_שחמט__כלי_המלך_או_הרץ_.jpg"
+  },
+  {
+    "idx": 306,
+    "id": "item_477_מלאך",
+    "name": "מלאך",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_477_מלאך.jpg"
+  },
+  {
+    "idx": 307,
+    "id": "item_478_שטן___דרקון",
+    "name": "שטן וקלשון",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_478_שטן___דרקון.jpg"
+  },
+  {
+    "idx": 308,
+    "id": "item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_",
+    "name": "מטה הרפואה",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_.jpg"
+  },
+  {
+    "idx": 309,
+    "id": "item_480_פרש_הברונזה___אביר_על_סוס_לבן",
+    "name": "אביר על סוס לבן",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_480_פרש_הברונזה___אביר_על_סוס_לבן.jpg"
+  },
+  {
+    "idx": 310,
+    "id": "item_481_הצלב_הנוצרי",
+    "name": "הצלב הנוצרי",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_481_הצלב_הנוצרי.jpg"
+  },
+  {
+    "idx": 311,
+    "id": "item_482_סהר_וכוכב",
+    "name": "סהר וכוכב",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_482_סהר_וכוכב.jpg"
+  },
+  {
+    "idx": 312,
+    "id": "item_483_מגן_דוד",
+    "name": "מגן דוד",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_483_מגן_דוד.jpg"
+  },
+  {
+    "idx": 313,
+    "id": "item_484_בודהה_מחייך",
+    "name": "בודהה מחייך",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_484_בודהה_מחייך.jpg"
+  },
+  {
+    "idx": 314,
+    "id": "item_485_מלאך_המוות__grim_reaper_",
+    "name": "מלאך המוות",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "imageUrl": "/staged_images/pool/item_485_מלאך_המוות__grim_reaper_.jpg"
+  },
+  {
+    "idx": 315,
+    "id": "item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_",
+    "name": "מודל האטום",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_.jpg"
+  },
+  {
+    "idx": 316,
+    "id": "item_487_מבחנה_עם_נוזל_מבעבע",
+    "name": "מבחנה מבעבעת",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_487_מבחנה_עם_נוזל_מבעבע.jpg"
+  },
+  {
+    "idx": 317,
+    "id": "item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_",
+    "name": "סמל קרינה רדיואקטיבית",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_.jpg"
+  },
+  {
+    "idx": 318,
+    "id": "item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_",
+    "name": "קוד בינארי ירוק",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_.jpg"
+  },
+  {
+    "idx": 319,
+    "id": "item_490_טביעת_אצבע_שחורה",
+    "name": "טביעת אצבע פלילית",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_490_טביעת_אצבע_שחורה.jpg"
+  },
+  {
+    "idx": 320,
+    "id": "item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_",
+    "name": "רובוט מתכתי",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_.jpg"
+  },
+  {
+    "idx": 321,
+    "id": "item_492_צלחת_לוויין",
+    "name": "צלחת לוויין",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "imageUrl": "/staged_images/pool/item_492_צלחת_לוויין.jpg"
+  },
+  {
+    "idx": 322,
+    "id": "item_493_גולגולת_ושתי_עצמות_מוצלבות",
+    "name": "גולגולת ועצמות",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_493_גולגולת_ושתי_עצמות_מוצלבות.jpg"
+  },
+  {
+    "idx": 323,
+    "id": "item_494_תמרור_עצור__משושה_אדום_",
+    "name": "תמרור עצור",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_494_תמרור_עצור__משושה_אדום_.jpg"
+  },
+  {
+    "idx": 324,
+    "id": "item_495_איש_קו_על_כיסא_גלגלים",
+    "name": "כיסא גלגלים",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_495_איש_קו_על_כיסא_גלגלים.jpg"
+  },
+  {
+    "idx": 325,
+    "id": "item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_",
+    "name": "סמל המיחזור",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_.jpg"
+  },
+  {
+    "idx": 326,
+    "id": "item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_",
+    "name": "שירותי נשים וגברים",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_.jpg"
+  },
+  {
+    "idx": 327,
+    "id": "item_498_סמל_ה_wi_fi__קשתות_מתרחבות_",
+    "name": "סמל Wi-Fi",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_498_סמל_ה_wi_fi__קשתות_מתרחבות_.jpg"
+  },
+  {
+    "idx": 328,
+    "id": "item_499_סמל_הבלוטות___bluetooth_",
+    "name": "סמל בלוטות'",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_499_סמל_הבלוטות___bluetooth_.jpg"
+  },
+  {
+    "idx": 329,
+    "id": "item_500_שלדג",
+    "name": "איש רץ ליציאת חירום",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "imageUrl": "/staged_images/pool/item_500_שלדג.jpg"
+  },
+  {
+    "idx": 330,
+    "id": "handshake_deal",
+    "name": "לחיצת ידיים",
+    "category": "🤝 10. אינטראקציות חברתיות ומפגשים",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Kamal_Nath%2C_Union_Cabinet_Minister_of_Urban_Development%2C_India%2C_arriving_in_Ras_Al_Khaimah_for_the_2011_Horasis_Global_Arab_Business_Meeting_-_Flickr_-_Horasis.jpg/960px-thumbnail.jpg"
+  },
+  {
+    "idx": 331,
+    "id": "alexander_graham_bell",
+    "name": "אלכסנדר גרהם בל",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "/staged_images/pool/alexander_graham_bell.jpg"
+  },
+  {
+    "idx": 332,
+    "id": "nerd_geek_glasses",
+    "name": "חנון עם משקפיים",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/RCHorn.jpg/960px-RCHorn.jpg"
+  }
+]

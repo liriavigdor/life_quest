@@ -43,7 +43,9 @@ import {
   GitBranch,
   Zap,
   Lock,
-  Unlock
+  Unlock,
+  Camera,
+  Image as ImageIcon
 } from 'lucide-react';
 import { EXPANSION_TIERS, PLOT_CULTIVATION_COST, CULTIVATION_QUOTES } from './data/expansion';
 import {
@@ -63,6 +65,7 @@ import { CognitiveSurveyModal } from './components/CognitiveSurveyModal';
 import { StoryToMonumentModal } from './components/StoryToMonumentModal';
 import { MemoryHierarchyTreeModal } from './components/MemoryHierarchyTreeModal';
 import { VillageGuideModal } from './components/VillageGuideModal';
+import { MnemonicStudioModal } from './components/MnemonicStudioModal';
 import { drawStoryDiorama } from './utils/storyDioramaRenderer';
 import './App.css';
 
@@ -578,6 +581,9 @@ export default function App() {
 
   // Multi-dimensional Interior Building State
   const [interiorBuilding, setInteriorBuilding] = useState(null);
+
+  // Mnemonic Image & Association Studio Modal
+  const [showImageStudioModal, setShowImageStudioModal] = useState(false);
 
   // Gentle Daily Village Care Ritual State (מים לצמחים ואוכל לחיות)
   const todayStrDate = useMemo(() => new Date().toLocaleDateString('he-IL', { day: 'numeric', month: 'numeric', year: 'numeric' }), []);
@@ -8874,6 +8880,41 @@ export default function App() {
         <Compass size={14} className="realm-hud-compass" />
       </button>
 
+      {/* 📸 Top Unmissable Quick-Launcher for Image & Association Studio */}
+      <button
+        type="button"
+        onClick={() => {
+          sounds.playTap();
+          setShowImageStudioModal(true);
+        }}
+        style={{
+          position: 'fixed',
+          top: '16px',
+          left: '260px',
+          zIndex: 1000,
+          backgroundColor: '#10b981',
+          border: '2px solid #059669',
+          color: '#ffffff',
+          fontWeight: 800,
+          fontSize: '0.9rem',
+          padding: '8px 16px',
+          borderRadius: '999px',
+          boxShadow: '0 4px 15px rgba(16, 185, 129, 0.45)',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          fontFamily: 'Rubik, sans-serif',
+          transition: 'all 0.15s ease'
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#059669'}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#10b981'}
+        title="פתח את מאגר התמונות והאסוציאציות האישי שלך 📸"
+      >
+        <Camera size={18} />
+        <span>📸 מאגר תמונות ואסוציאציות</span>
+      </button>
+
       {/* Top Cognitive Village Mastery & Micro-Quiz HUD Pill */}
       <div className="village-progression-hud-pill glass-card" aria-label="התקדמות קוגניטיבית">
         <div className="progression-pill-content">
@@ -9072,6 +9113,19 @@ export default function App() {
         >
           <Palette size={19} className="text-amber" />
           <span className="dock-btn-label">עיצוב</span>
+        </button>
+
+        {/* 7. Mnemonic User Image & Associations Studio */}
+        <button
+          className={`dock-btn image-studio-dock-btn ${showImageStudioModal ? 'active' : ''}`}
+          onClick={() => {
+            sounds.playTap();
+            setShowImageStudioModal(true);
+          }}
+          title="מאגר תמונות ואסוציאציות (העלאה וניהול אישי) 📸🧠"
+        >
+          <Camera size={19} className="text-emerald" />
+          <span className="dock-btn-label">תמונות</span>
         </button>
       </aside>
 
@@ -9975,6 +10029,12 @@ export default function App() {
         onClose={() => setShowGuideModal(false)}
       />
 
+      {/* Mnemonic User Image & Associations Studio Modal */}
+      <MnemonicStudioModal
+        isOpen={showImageStudioModal}
+        onClose={() => setShowImageStudioModal(false)}
+      />
+
       {/* Global Black Version Tag for Dad & User Verification */}
       <div 
         title="מספר גרסה לתיאום בין מחשבים"
@@ -9995,7 +10055,7 @@ export default function App() {
           pointerEvents: 'none'
         }}
       >
-        גרסה: 5.5
+        גרסה: 7.0
       </div>
     </div>
   );
