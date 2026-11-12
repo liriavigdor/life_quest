@@ -26,7 +26,7 @@ import {
 } from 'lucide-react';
 import { STAGED_IMAGES_POOL } from '../data/stagedImagesPool';
 import { STAGED_TRIPLET_POOL } from '../data/stagedTripletPool';
-import { saveUserImage, deleteUserImage } from '../utils/userImageRepository';
+import { saveUserImage, deleteUserImage, getDiscardedStagedSet } from '../utils/userImageRepository';
 import { getEverydaySuggestionsForItem } from '../data/everydayMnemonicSuggestions';
 
 /**
@@ -65,20 +65,22 @@ export function BulkImageCurationDesk({
   });
 
   // Discarded (Trash) items persisted to localStorage: Set of item IDs
-  const [discardedIds, setDiscardedIds] = useState(() => {
-    try {
-      const saved = localStorage.getItem('lifequest_discarded_staged_images');
-      return saved ? new Set(JSON.parse(saved)) : new Set();
-    } catch (_) {
-      return new Set();
-    }
-  });
+  const [discardedIds, setDiscardedIds] = useState(() => getDiscardedStagedSet());
 
   // Flagged "Bad / Needs Replacement" items persisted to localStorage: { [id]: { id, title, reason, flaggedAt, imageUrl, category } }
   const [flaggedBadMap, setFlaggedBadMap] = useState(() => {
     try {
       const saved = localStorage.getItem('lifequest_flagged_bad_images');
-      return saved ? JSON.parse(saved) : {};
+      if (!saved) return {};
+      const parsed = JSON.parse(saved);
+      const cleaned = {};
+      for (const [k, v] of Object.entries(parsed)) {
+        // Clear old flags from before our full AI visual replacement & audit pass
+        if (v && v.flaggedAt && v.flaggedAt > 1794415000000) {
+          cleaned[k] = v;
+        }
+      }
+      return cleaned;
     } catch (_) {
       return {};
     }

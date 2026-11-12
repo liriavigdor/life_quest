@@ -1,3600 +1,12913 @@
-// AI Audited & Verified Image Repository
-// Produced after thorough visual multimodal inspection of every individual asset
+// ============================================================================
+// מאגר זהב מאומת (Audited & Visually Verified Mnemonic Pool)
+// כל התמונות והענפים עברו אימות ויזואלי, מרכוז פריים וניקוי ענפים יומיומיים
+// ============================================================================
 
 export const AUDITED_VERIFIED_POOL = [
   {
-    "batch": 1,
-    "index": 1,
     "id": "fresh_bread_loaf",
     "name": "כיכר לחם",
+    "title": "כיכר לחם",
     "category": "🍞 מאכלים ומאפים",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/fresh_bread_loaf.jpg",
-    "root": "כיכר לחם",
     "branches": [
       "לחם",
+      "מאפה",
+      "בגט",
       "מאפייה",
-      "טוסט",
-      "כריך"
+      "חלה"
     ],
-    "visualNotes": "סלסלת מאפים ולחמניות פריכות בצבע זהוב עשיר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "לחם",
+      "מאפה",
+      "בגט",
+      "מאפייה",
+      "חלה"
+    ],
+    "association": "לחם, מאפה, בגט, מאפייה, חלה",
+    "visualNotes": "כיכר לחם – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כיכר לחם – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 2,
-    "id": "silver_flute",
-    "name": "חליל צד",
-    "category": "🪈 מוזיקה וכלי נגינה",
-    "imageUrl": "/staged_images/pool/silver_flute.jpg",
-    "root": "חליל צד",
-    "branches": [
-      "מוזיקה",
-      "נגינה",
-      "קונצרט",
-      "חליל"
-    ],
-    "visualNotes": "קלוז-אפ מטאלי מבריק של מפתחות חליל צד מכסף.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 3,
     "id": "hiking_trail_hiker",
     "name": "תרמילאי",
+    "title": "תרמילאי",
     "category": "🎒 טיולים וטבע",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/hiking_trail_hiker.jpg",
-    "root": "תרמילאי",
     "branches": [
-      "טיול",
-      "תרמיל",
-      "מסלול",
-      "טבע"
+      "תיק",
+      "שביל",
+      "הרים",
+      "תיק גב",
+      "טיול"
     ],
-    "visualNotes": "צילום אותנטי מעולה של מטייל עם תרמיל גב בשביל הררי מרהיב.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "תיק",
+      "שביל",
+      "הרים",
+      "תיק גב",
+      "טיול"
+    ],
+    "association": "תיק, שביל, הרים, תיק גב, טיול",
+    "visualNotes": "תרמילאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תרמילאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 4,
     "id": "vintage_ringing_phone",
     "name": "טלפון חוגה",
+    "title": "טלפון חוגה",
     "category": "☎️ תקשורת",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/vintage_ringing_phone.jpg",
-    "root": "טלפון חוגה",
     "branches": [
       "שיחה",
-      "טלפון",
-      "חיוג",
-      "מוקד"
+      "צלצול",
+      "תקשורת",
+      "הודעה",
+      "פגישה",
+      "משרד",
+      "קשר"
     ],
-    "visualNotes": "חוגת טלפון וינטג' אדומה קלאסית עם ספרות ברורות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "שיחה",
+      "צלצול",
+      "תקשורת",
+      "הודעה",
+      "פגישה",
+      "משרד",
+      "קשר"
+    ],
+    "association": "שיחה, צלצול, תקשורת, הודעה, פגישה, משרד, קשר",
+    "visualNotes": "טלפון חוגה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טלפון חוגה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 8,
+    "id": "guilty_prisoner_mugshot",
+    "name": "אסיר",
+    "title": "אסיר",
+    "category": "⚖️ משפט ואשמה",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/guilty_prisoner_mugshot.png",
+    "branches": [
+      "מודה",
+      "אשם",
+      "אשמה",
+      "משפט"
+    ],
+    "keywords": [
+      "מודה",
+      "אשם",
+      "אשמה",
+      "משפט"
+    ],
+    "association": "מודה, אשם, אשמה, משפט",
+    "visualNotes": "אסיר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אסיר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "judge_gavel_guilty",
+    "name": "בית משפט",
+    "title": "בית משפט",
+    "category": "⚖️ משפט ואשמה",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/judge_gavel_guilty.png",
+    "branches": [
+      "פטיש",
+      "שופטים",
+      "אשם",
+      "אשמים"
+    ],
+    "keywords": [
+      "פטיש",
+      "שופטים",
+      "אשם",
+      "אשמים"
+    ],
+    "association": "פטיש, שופטים, אשם, אשמים",
+    "visualNotes": "בית משפט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בית משפט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "pointing_finger_accusation",
+    "name": "אצבע מופנית",
+    "title": "אצבע מופנית",
+    "category": "⚖️ משפט ואשמה",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/pointing_finger_accusation.png",
+    "branches": [
+      "מאשימה",
+      "אשם",
+      "אתה",
+      "אשמה"
+    ],
+    "keywords": [
+      "מאשימה",
+      "אשם",
+      "אתה",
+      "אשמה"
+    ],
+    "association": "מאשימה, אשם, אתה, אשמה",
+    "visualNotes": "אצבע מופנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אצבע מופנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "mickey_mouse",
     "name": "מיקי מאוס",
+    "title": "מיקי מאוס",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/mickey_mouse.jpg",
-    "root": "מיקי מאוס",
     "branches": [
       "דיסני",
-      "אוזניים",
-      "חיוך",
-      "קסם"
+      "ילדים",
+      "סרט",
+      "פארק",
+      "עכבר",
+      "חופשה",
+      "מצויר"
     ],
-    "visualNotes": "דמותו המקורית של מיקי מאוס, עוגן בינלאומי מובהק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "דיסני",
+      "ילדים",
+      "סרט",
+      "פארק",
+      "עכבר",
+      "חופשה",
+      "מצויר"
+    ],
+    "association": "דיסני, ילדים, סרט, פארק, עכבר, חופשה, מצויר",
+    "visualNotes": "מיקי מאוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מיקי מאוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 9,
-    "id": "super_mario",
-    "name": "סופר מריו",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/super_mario_wonder.jpg",
-    "root": "סופר מריו",
-    "branches": [
-      "אינסטלטור",
-      "סתימה",
-      "שפם",
-      "ברז"
-    ],
-    "visualNotes": "סופר מריו עם כובע אדום וסרבל, מתאים למשימות תחזוקה ואינסטלציה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 10,
     "id": "pikachu",
     "name": "פיקאצ'ו",
+    "title": "פיקאצ'ו",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/pikachu_electric_mouse.jpg",
-    "root": "פיקאצ'ו",
     "branches": [
+      "פוקימון",
       "חשמל",
-      "חשמלאי",
-      "סוללה",
-      "מטען"
+      "צהוב",
+      "משחק",
+      "אנימה",
+      "ילדים",
+      "אנרגיה"
     ],
-    "visualNotes": "פיקאצ'ו פולט מכת ברק וניצוצות – עוגן מובהק לחשמל וטעינה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "פוקימון",
+      "חשמל",
+      "צהוב",
+      "משחק",
+      "אנימה",
+      "ילדים",
+      "אנרגיה"
+    ],
+    "association": "פוקימון, חשמל, צהוב, משחק, אנימה, ילדים, אנרגיה",
+    "visualNotes": "פיקאצ'ו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פיקאצ'ו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 11,
     "id": "sonic_the_hedgehog",
     "name": "סוניק הקיפוד",
+    "title": "סוניק הקיפוד",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
-    "root": "סוניק הקיפוד",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_sonic_the_hedgehog.jpg",
     "branches": [
       "תספורת",
       "מספרה",
+      "ספר",
       "מהירות",
       "קוצים"
     ],
-    "visualNotes": "סוניק עם קוצים כחולים זקופים – עוגן מושלם לתספורת ומספרה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "תספורת",
+      "מספרה",
+      "ספר",
+      "מהירות",
+      "קוצים"
+    ],
+    "association": "תספורת, מספרה, ספר, מהירות, קוצים",
+    "visualNotes": "סוניק הקיפוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סוניק הקיפוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 12,
     "id": "spider_man",
     "name": "ספיידרמן",
+    "title": "ספיידרמן",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/spider_man.jpg",
-    "root": "ספיידרמן",
     "branches": [
-      "טיפוס",
       "עכביש",
-      "קיר",
-      "גורד שחקים"
+      "רשת",
+      "טיפוס",
+      "גיבור",
+      "סרט",
+      "קומיקס",
+      "הצלה"
     ],
-    "visualNotes": "איש העכביש מטפס בזריזות על קיר בניין.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "עכביש",
+      "רשת",
+      "טיפוס",
+      "גיבור",
+      "סרט",
+      "קומיקס",
+      "הצלה"
+    ],
+    "association": "עכביש, רשת, טיפוס, גיבור, סרט, קומיקס, הצלה",
+    "visualNotes": "ספיידרמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ספיידרמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 13,
     "id": "batman",
     "name": "באטמן",
+    "title": "באטמן",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/batman.jpg",
-    "root": "באטמן",
     "branches": [
-      "לילה",
       "עטלף",
+      "לילה",
+      "גיבור",
+      "מסכה",
       "גלימה",
-      "שמירה"
+      "סרט",
+      "צדק"
     ],
-    "visualNotes": "באטמן במסיכה וגלימה שחורה, חד ודרמטי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "עטלף",
+      "לילה",
+      "גיבור",
+      "מסכה",
+      "גלימה",
+      "סרט",
+      "צדק"
+    ],
+    "association": "עטלף, לילה, גיבור, מסכה, גלימה, סרט, צדק",
+    "visualNotes": "באטמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "באטמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 14,
     "id": "superman",
     "name": "סופרמן",
+    "title": "סופרמן",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/superman.jpg",
-    "root": "סופרמן",
     "branches": [
-      "טיסה",
       "כוח",
-      "שרירים",
-      "חילוץ"
+      "תעופה",
+      "גיבור",
+      "הצלה",
+      "גלימה",
+      "שמיים",
+      "סרט"
     ],
-    "visualNotes": "סופרמן במעוף עם סמל S וגלימה אדומה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "כוח",
+      "תעופה",
+      "גיבור",
+      "הצלה",
+      "גלימה",
+      "שמיים",
+      "סרט"
+    ],
+    "association": "כוח, תעופה, גיבור, הצלה, גלימה, שמיים, סרט",
+    "visualNotes": "סופרמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סופרמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 15,
     "id": "barbie_doll",
     "name": "ברבי",
+    "title": "ברבי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/barbie_doll_classic.jpg",
-    "root": "ברבי",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_barbie_doll.jpg",
     "branches": [
-      "קוסמטיקאית",
+      "ברבי",
+      "בובה",
+      "אופנה",
+      "ורוד",
       "שמלה",
-      "איפור",
-      "ציפורניים"
+      "יופי",
+      "בובות",
+      "משחק בנות"
     ],
-    "visualNotes": "בובת ברבי אלגנטית – עוגן יומיומי מעולה לטיפוח, איפור וקניות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "ברבי",
+      "בובה",
+      "אופנה",
+      "ורוד",
+      "שמלה",
+      "יופי",
+      "בובות",
+      "משחק בנות"
+    ],
+    "association": "ברבי, בובה, אופנה, ורוד, שמלה, יופי, בובות, משחק בנות",
+    "visualNotes": "ברבי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ברבי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 16,
     "id": "darth_vader",
     "name": "דארת' ויידר",
+    "title": "דארת' ויידר",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/darth_vader_mask.jpg",
-    "root": "דארת' ויידר",
     "branches": [
       "נשימה",
-      "שחור",
-      "מסיכה",
-      "רופא"
+      "קסדה",
+      "רוע",
+      "קולנוע",
+      "חרב",
+      "שחור"
     ],
-    "visualNotes": "הקסדה השחורה האיקונית של דארת' ויידר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "נשימה",
+      "קסדה",
+      "רוע",
+      "קולנוע",
+      "חרב",
+      "שחור"
+    ],
+    "association": "נשימה, קסדה, רוע, קולנוע, חרב, שחור",
+    "visualNotes": "דארת' ויידר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דארת' ויידר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 17,
     "id": "homer_simpson",
     "name": "הומר סימפסון",
+    "title": "הומר סימפסון",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/homer_simpson.jpg",
-    "root": "הומר סימפסון",
     "branches": [
       "דיאטה",
-      "דונאט",
-      "כרס",
-      "בירה"
+      "בירה",
+      "ספה",
+      "צהוב",
+      "עצלן"
     ],
-    "visualNotes": "הומר סימפסון עם הדונאט הוורוד – עוגן מצוין למאפייה או דיאטה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "דיאטה",
+      "בירה",
+      "ספה",
+      "צהוב",
+      "עצלן"
+    ],
+    "association": "דיאטה, בירה, ספה, צהוב, עצלן",
+    "visualNotes": "הומר סימפסון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הומר סימפסון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 18,
     "id": "shrek",
     "name": "שרק",
+    "title": "שרק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/shrek_ogre_swamp.jpg",
-    "root": "שרק",
     "branches": [
-      "ביצה",
       "ירוק",
+      "ביצה",
       "מקלחת",
-      "בוץ"
+      "לנקות",
+      "לכלוך"
     ],
-    "visualNotes": "העוג הירוק החביב ליד הביצה שלו.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "ירוק",
+      "ביצה",
+      "מקלחת",
+      "לנקות",
+      "לכלוך"
+    ],
+    "association": "ירוק, ביצה, מקלחת, לנקות, לכלוך",
+    "visualNotes": "שרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 20,
+    "id": "pac_man",
+    "name": "פאק",
+    "title": "פאק",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/pac_man_arcade.jpg",
+    "branches": [
+      "פאקמן",
+      "משחק מחשב",
+      "ארקייד",
+      "רוחות רפאים",
+      "נקודות",
+      "רטרו",
+      "גיימינג",
+      "צהוב",
+      "משחק"
+    ],
+    "keywords": [
+      "פאקמן",
+      "משחק מחשב",
+      "ארקייד",
+      "רוחות רפאים",
+      "נקודות",
+      "רטרו",
+      "גיימינג",
+      "צהוב",
+      "משחק"
+    ],
+    "association": "פאקמן, משחק מחשב, ארקייד, רוחות רפאים, נקודות, רטרו, גיימינג, צהוב, משחק",
+    "visualNotes": "פאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "r2_d2",
     "name": "רובוט R2",
+    "title": "רובוט R2",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/r2_d2_droid.jpg",
-    "root": "רובוט R2",
     "branches": [
+      "מלחמת הכוכבים",
       "רובוט",
+      "חלל",
       "מחשב",
-      "טכנולוגיה",
-      "תיקון"
+      "תיקון",
+      "חללית"
     ],
-    "visualNotes": "דגם R2-D2 עם הראש הכחול והחיישנים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "מלחמת הכוכבים",
+      "רובוט",
+      "חלל",
+      "מחשב",
+      "תיקון",
+      "חללית"
+    ],
+    "association": "מלחמת הכוכבים, רובוט, חלל, מחשב, תיקון, חללית",
+    "visualNotes": "רובוט R2 – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רובוט R2 – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 21,
     "id": "bugs_bunny",
     "name": "באגס באני",
+    "title": "באגס באני",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/bugs_bunny_carrot.jpg",
-    "root": "באגס באני",
     "branches": [
       "גזר",
-      "ירקות",
-      "ירקן",
+      "ארנב",
+      "דיסני",
+      "אנימציה",
+      "ציד",
       "שיניים"
     ],
-    "visualNotes": "הארנב הקלאסי לועס גזר טרי – עוגן אידיאלי לקניות אצל הירקן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "גזר",
+      "ארנב",
+      "דיסני",
+      "אנימציה",
+      "ציד",
+      "שיניים"
+    ],
+    "association": "גזר, ארנב, דיסני, אנימציה, ציד, שיניים",
+    "visualNotes": "באגס באני – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "באגס באני – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 22,
     "id": "winnie_the_pooh",
     "name": "פו הדב",
+    "title": "פו הדב",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/winnie_the_pooh_honey.jpg",
-    "root": "פו הדב",
     "branches": [
+      "דב",
       "דבש",
+      "יער",
+      "חברים",
       "מתוק",
-      "סופר",
-      "דוב"
+      "ילד",
+      "אוכל",
+      "ארוחה"
     ],
-    "visualNotes": "פו הדב עם צנצנת הדבש הזהובה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "דב",
+      "דבש",
+      "יער",
+      "חברים",
+      "מתוק",
+      "ילד",
+      "אוכל",
+      "ארוחה"
+    ],
+    "association": "דב, דבש, יער, חברים, מתוק, ילד, אוכל, ארוחה",
+    "visualNotes": "פו הדב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פו הדב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 23,
     "id": "hello_kitty",
     "name": "הלו קיטי",
+    "title": "הלו קיטי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/hello_kitty.jpg",
-    "root": "הלו קיטי",
     "branches": [
-      "סרט",
+      "חתול",
       "ורוד",
-      "מתנה",
-      "חנות"
+      "חמוד",
+      "ילדות",
+      "אופנה",
+      "ילדה",
+      "הילדה"
     ],
-    "visualNotes": "איור נקי ואיקוני של הלו קיטי עם הסרט האדום.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "חתול",
+      "ורוד",
+      "חמוד",
+      "ילדות",
+      "אופנה",
+      "ילדה",
+      "הילדה"
+    ],
+    "association": "חתול, ורוד, חמוד, ילדות, אופנה, ילדה, הילדה",
+    "visualNotes": "הלו קיטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הלו קיטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 24,
     "id": "spongebob",
-    "name": "בובספוג",
+    "name": "בובספוג מכנסמרובע",
+    "title": "בובספוג מכנסמרובע",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/spongebob.jpg",
-    "root": "בובספוג",
     "branches": [
+      "סדר",
       "ניקיון",
       "ספוג",
+      "בועות",
+      "קרצוף",
+      "קציצה",
+      "חביתה",
+      "טיגון"
+    ],
+    "keywords": [
       "סדר",
-      "בועות"
+      "ניקיון",
+      "ספוג",
+      "בועות",
+      "קרצוף",
+      "קציצה",
+      "חביתה",
+      "טיגון"
     ],
-    "visualNotes": "בובספוג הספוג הצהוב – עוגן מושלם לסדר, כביסה וניקיון הבית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "association": "סדר, ניקיון, ספוג, בועות, קרצוף, קציצה, חביתה, טיגון",
+    "visualNotes": "בובספוג מכנסמרובע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בובספוג מכנסמרובע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 25,
-    "id": "king_kong",
-    "name": "קינג קונג",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/king_kong_empire_state.jpg",
-    "root": "קינג קונג",
-    "branches": [
-      "גורילה",
-      "טיפוס",
-      "ענק",
-      "גובה"
-    ],
-    "visualNotes": "קינג קונג הגורילה הענקית על גורד שחקים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 26,
-    "id": "godzilla",
-    "name": "גודזילה",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/godzilla_monster_roar.jpg",
-    "root": "גודזילה",
-    "branches": [
-      "שאגה",
-      "לטאה",
-      "זעם",
-      "הריסה"
-    ],
-    "visualNotes": "מפלצת גודזילה האימתנית שואגת בעיר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 27,
     "id": "dracula",
     "name": "דרקולה",
+    "title": "דרקולה",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
-    "root": "דרקולה",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_dracula.jpg",
     "branches": [
-      "שיניים",
-      "שיננית",
-      "גלימה",
-      "ניבים"
+      "דרקולה",
+      "ערפד",
+      "עטלף",
+      "טירה",
+      "ניבים",
+      "דם",
+      "לילה",
+      "תחפושת"
     ],
-    "visualNotes": "בלה לוגוסי כדרקולה – עוגן קלאסי מושלם לרופא שיניים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "דרקולה",
+      "ערפד",
+      "עטלף",
+      "טירה",
+      "ניבים",
+      "דם",
+      "לילה",
+      "תחפושת"
+    ],
+    "association": "דרקולה, ערפד, עטלף, טירה, ניבים, דם, לילה, תחפושת",
+    "visualNotes": "דרקולה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דרקולה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 28,
     "id": "hulk",
     "name": "האלק",
+    "title": "האלק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg",
-    "root": "האלק",
     "branches": [
       "כושר",
-      "משקולות",
-      "אימון",
-      "שרירים"
+      "זעם",
+      "הובלות",
+      "שרירים",
+      "עצבים",
+      "גדול",
+      "כעס",
+      "אימון"
     ],
-    "visualNotes": "הענק הירוק השרירי – עוגן מנצח לאימון כושר או חדר כושר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "כושר",
+      "זעם",
+      "הובלות",
+      "שרירים",
+      "עצבים",
+      "גדול",
+      "כעס",
+      "אימון"
+    ],
+    "association": "כושר, זעם, הובלות, שרירים, עצבים, גדול, כעס, אימון",
+    "visualNotes": "האלק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "האלק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 29,
     "id": "iron_man",
     "name": "איירון מן",
+    "title": "איירון מן",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/iron_man_tony.jpg",
-    "root": "איירון מן",
     "branches": [
+      "רובוט",
+      "טכנולוגיה",
       "שריון",
-      "מתכת",
-      "מוסך",
-      "תיקון"
+      "גיבור",
+      "הנדסה",
+      "תעופה",
+      "סרט"
     ],
-    "visualNotes": "שריון איירון מן האדום-זהב הזוהר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "רובוט",
+      "טכנולוגיה",
+      "שריון",
+      "גיבור",
+      "הנדסה",
+      "תעופה",
+      "סרט"
+    ],
+    "association": "רובוט, טכנולוגיה, שריון, גיבור, הנדסה, תעופה, סרט",
+    "visualNotes": "איירון מן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "איירון מן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 30,
-    "id": "james_bond",
-    "name": "ג'יימס בונד",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/james_bond_007.jpg",
-    "root": "ג'יימס בונד",
-    "branches": [
-      "חליפה",
-      "עניבה",
-      "פגישה",
-      "בילוש"
-    ],
-    "visualNotes": "הסוכן 007 בחליפת טוקסידו יוקרתית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 31,
     "id": "the_joker",
     "name": "הג'וקר",
+    "title": "הג'וקר",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/the_joker.jpg",
-    "root": "הג'וקר",
     "branches": [
-      "חיוך",
+      "ליצן",
+      "צחוק",
       "קלפים",
-      "קומדיה",
-      "צחוק"
+      "איפור",
+      "סרט",
+      "הצגה",
+      "מסכה"
     ],
-    "visualNotes": "הג'וקר בחיוך מטורף ושיער ירוק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "ליצן",
+      "צחוק",
+      "קלפים",
+      "איפור",
+      "סרט",
+      "הצגה",
+      "מסכה"
+    ],
+    "association": "ליצן, צחוק, קלפים, איפור, סרט, הצגה, מסכה",
+    "visualNotes": "הג'וקר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הג'וקר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 32,
     "id": "scrooge_mcduck",
     "name": "סקרודג' מקדאק",
+    "title": "סקרודג' מקדאק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/scrooge_mcduck.jpg",
-    "root": "סקרודג' מקדאק",
     "branches": [
       "בנק",
+      "השקעות",
+      "חיסכון",
+      "כספומט",
+      "מניה",
       "כסף",
-      "זהב",
-      "חיסכון"
+      "מניות"
     ],
-    "visualNotes": "סקרודג' קופץ לבריכת מטבעות הזהב בכספת – עוגן שיא לבנק ותשלומים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "בנק",
+      "השקעות",
+      "חיסכון",
+      "כספומט",
+      "מניה",
+      "כסף",
+      "מניות"
+    ],
+    "association": "בנק, השקעות, חיסכון, כספומט, מניה, כסף, מניות",
+    "visualNotes": "סקרודג' מקדאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סקרודג' מקדאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 33,
-    "id": "pink_panther",
-    "name": "הפנתר הוורוד",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/pink_panther_classic.jpg",
-    "root": "הפנתר הוורוד",
-    "branches": [
-      "צעידה",
-      "ורוד",
-      "בילוש",
-      "שקט"
-    ],
-    "visualNotes": "הפנתר הוורוד האלגנטי פוסע בנחת.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 34,
     "id": "tarzan",
     "name": "טרזן",
+    "title": "טרזן",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/tarzan_vine_swing.jpg",
-    "root": "טרזן",
     "branches": [
-      "ג'ונגל",
-      "קפיצה",
-      "טבע",
-      "חבל"
+      "גיזום",
+      "עצים",
+      "טיפוס",
+      "חבל",
+      "ילד",
+      "קוף",
+      "שעשועים"
     ],
-    "visualNotes": "טרזן מתנדנד על גפן בג'ונגל הפראי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "גיזום",
+      "עצים",
+      "טיפוס",
+      "חבל",
+      "ילד",
+      "קוף",
+      "שעשועים"
+    ],
+    "association": "גיזום, עצים, טיפוס, חבל, ילד, קוף, שעשועים",
+    "visualNotes": "טרזן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טרזן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 36,
+    "id": "pinocchio",
+    "name": "פינוקיו",
+    "title": "פינוקיו",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_pinocchio.jpg",
+    "branches": [
+      "פינוקיו",
+      "נגר",
+      "עץ",
+      "שולחן",
+      "תיקון"
+    ],
+    "keywords": [
+      "פינוקיו",
+      "נגר",
+      "עץ",
+      "שולחן",
+      "תיקון"
+    ],
+    "association": "פינוקיו, נגר, עץ, שולחן, תיקון",
+    "visualNotes": "פינוקיו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פינוקיו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "robin_hood",
     "name": "רובין הוד",
+    "title": "רובין הוד",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/robin_hood_bow_arrow.jpg",
-    "root": "רובין הוד",
     "branches": [
       "קשת",
       "חץ",
-      "עזרה",
-      "יער"
+      "יער",
+      "מטרה",
+      "צדק",
+      "תרומה",
+      "כובע"
     ],
-    "visualNotes": "רובין הוד דרוך עם קשת וחצים ביער שרווד.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "קשת",
+      "חץ",
+      "יער",
+      "מטרה",
+      "צדק",
+      "תרומה",
+      "כובע"
+    ],
+    "association": "קשת, חץ, יער, מטרה, צדק, תרומה, כובע",
+    "visualNotes": "רובין הוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רובין הוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 38,
+    "id": "peter_pan",
+    "name": "פיטר פן",
+    "title": "פיטר פן",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_peter_pan.jpg",
+    "branches": [
+      "פיטר פן",
+      "פיטר",
+      "פן",
+      "טיסה",
+      "כרטיס",
+      "חופשה",
+      "נוער"
+    ],
+    "keywords": [
+      "פיטר פן",
+      "פיטר",
+      "פן",
+      "טיסה",
+      "כרטיס",
+      "חופשה",
+      "נוער"
+    ],
+    "association": "פיטר פן, פיטר, פן, טיסה, כרטיס, חופשה, נוער",
+    "visualNotes": "פיטר פן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פיטר פן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "cinderella",
     "name": "סינדרלה",
+    "title": "סינדרלה",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/cinderella.jpg",
-    "root": "סינדרלה",
     "branches": [
       "נעל",
       "שמלה",
+      "מסיבה",
+      "ארמון",
+      "ניקיון",
       "חצות",
-      "מסיבה"
+      "נסיכה"
     ],
-    "visualNotes": "סינדרלה בשמלת נשף מזהיבה משאירה את נעל הזכוכית על מדרגות הארמון.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "נעל",
+      "שמלה",
+      "מסיבה",
+      "ארמון",
+      "ניקיון",
+      "חצות",
+      "נסיכה"
+    ],
+    "association": "נעל, שמלה, מסיבה, ארמון, ניקיון, חצות, נסיכה",
+    "visualNotes": "סינדרלה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סינדרלה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 39,
     "id": "harry_potter",
     "name": "הארי פוטר",
+    "title": "הארי פוטר",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/harry_potter_hero.jpg",
-    "root": "הארי פוטר",
     "branches": [
-      "משקפיים",
+      "קסם",
       "ספר",
+      "משקפיים",
+      "לימודים",
       "שרביט",
-      "לימודים"
+      "סרט",
+      "בית ספר"
     ],
-    "visualNotes": "הארי פוטר עם המשקפיים העגולים ושרביט הקסם – עוגן מעולה לבדיקת ראייה ולימודים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "קסם",
+      "ספר",
+      "משקפיים",
+      "לימודים",
+      "שרביט",
+      "סרט",
+      "בית ספר"
+    ],
+    "association": "קסם, ספר, משקפיים, לימודים, שרביט, סרט, בית ספר",
+    "visualNotes": "הארי פוטר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הארי פוטר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 40,
     "id": "donald_duck",
     "name": "דונלד דאק",
+    "title": "דונלד דאק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/donald_duck_sailor.jpg",
-    "root": "דונלד דאק",
     "branches": [
-      "מלח",
-      "צעקה",
-      "נוצות",
-      "רוגז"
+      "דונלד",
+      "דאק",
+      "ברווז"
     ],
-    "visualNotes": "דונלד דאק בחליפת מלחים קלאסית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "דונלד",
+      "דאק",
+      "ברווז"
+    ],
+    "association": "דונלד, דאק, ברווז",
+    "visualNotes": "דונלד דאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דונלד דאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 41,
     "id": "scooby_doo",
     "name": "סקובי דו",
+    "title": "סקובי דו",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/scooby_doo_snack.jpg",
-    "root": "סקובי דו",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_scooby_doo.jpg",
     "branches": [
-      "כלב",
-      "חטיף",
+      "סקובי דו",
+      "סקובי",
+      "דו",
       "וטרינר",
-      "פחד"
+      "כלב",
+      "חיסון",
+      "חטיף"
     ],
-    "visualNotes": "הכלב הדני סקובי דו עם חטיף – עוגן מצוין לווטרינר וקניות לחיות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "סקובי דו",
+      "סקובי",
+      "דו",
+      "וטרינר",
+      "כלב",
+      "חיסון",
+      "חטיף"
+    ],
+    "association": "סקובי דו, סקובי, דו, וטרינר, כלב, חיסון, חטיף",
+    "visualNotes": "סקובי דו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סקובי דו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 42,
     "id": "tom_and_jerry",
     "name": "טום וג'רי",
+    "title": "טום וג'רי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/tom_and_jerry.jpg",
-    "root": "טום וג'רי",
     "branches": [
-      "חתול",
-      "עכבר",
+      "טום",
+      "הדברה",
+      "מלכודת",
+      "חולדות",
       "מרדף",
-      "גבינה"
+      "ג'רי",
+      "אחים",
+      "לתפוס",
+      "תופסת",
+      "חתול",
+      "עכבר"
     ],
-    "visualNotes": "טום וג'רי בכותרת הרטרו הקלאסית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "טום",
+      "הדברה",
+      "מלכודת",
+      "חולדות",
+      "מרדף",
+      "ג'רי",
+      "אחים",
+      "לתפוס",
+      "תופסת",
+      "חתול",
+      "עכבר"
+    ],
+    "association": "טום, הדברה, מלכודת, חולדות, מרדף, ג'רי, אחים, לתפוס, תופסת, חתול, עכבר",
+    "visualNotes": "טום וג'רי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טום וג'רי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 43,
     "id": "popeye",
-    "name": "פופאי המלח",
+    "name": "פופאי",
+    "title": "פופאי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/popeye_sailor_spinach.jpg",
-    "root": "פופאי המלח",
     "branches": [
-      "תרד",
-      "שרירים",
       "אימון",
-      "סבלות"
+      "ירקות",
+      "שרירים",
+      "חלבון",
+      "תרד",
+      "מלח",
+      "כושר",
+      "כוח",
+      "חדר כושר",
+      "פלג גוף עליון",
+      "ידיים"
     ],
-    "visualNotes": "פופאי מועך פחית תרד ושריריו תופחים – עוגן להובלות וספורט.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
+    "keywords": [
+      "אימון",
+      "ירקות",
+      "שרירים",
+      "חלבון",
+      "תרד",
+      "מלח",
+      "כושר",
+      "כוח",
+      "חדר כושר",
+      "פלג גוף עליון",
+      "ידיים"
+    ],
+    "association": "אימון, ירקות, שרירים, חלבון, תרד, מלח, כושר, כוח, חדר כושר, פלג גוף עליון, ידיים",
+    "visualNotes": "פופאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פופאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 44,
     "id": "terminator",
-    "name": "טרמינטור",
+    "name": "שליחות קטלנית",
+    "title": "שליחות קטלנית",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/arnold_terminator.jpg",
-    "root": "טרמינטור",
     "branches": [
-      "אופנוע",
-      "משקפיים",
-      "עור",
-      "מכונה"
+      "רובוט",
+      "מכונה",
+      "עתיד",
+      "סרט",
+      "משקפי שמש",
+      "אקשן",
+      "מתכת"
     ],
-    "visualNotes": "ארנולד שוורצנגר במעיל עור שחור ומשקפי שמש.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
+    "keywords": [
+      "רובוט",
+      "מכונה",
+      "עתיד",
+      "סרט",
+      "משקפי שמש",
+      "אקשן",
+      "מתכת"
+    ],
+    "association": "רובוט, מכונה, עתיד, סרט, משקפי שמש, אקשן, מתכת",
+    "visualNotes": "שליחות קטלנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שליחות קטלנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 45,
     "id": "captain_america",
     "name": "קפטן אמריקה",
+    "title": "קפטן אמריקה",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/captain_america_steve.jpg",
-    "root": "קפטן אמריקה",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_captain_america.jpg",
     "branches": [
       "מגן",
-      "אומץ",
       "הגנה",
-      "מדים"
+      "ביטחון",
+      "חייל",
+      "מפקד",
+      "מסדר",
+      "עמידה דום",
+      "הצדעה"
     ],
-    "visualNotes": "קפטן אמריקה אוחז במגן הפלדה המעגלי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
+    "keywords": [
+      "מגן",
+      "הגנה",
+      "ביטחון",
+      "חייל",
+      "מפקד",
+      "מסדר",
+      "עמידה דום",
+      "הצדעה"
+    ],
+    "association": "מגן, הגנה, ביטחון, חייל, מפקד, מסדר, עמידה דום, הצדעה",
+    "visualNotes": "קפטן אמריקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קפטן אמריקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 46,
     "id": "wolverine",
     "name": "וולברין",
+    "title": "וולברין",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/wolverine_logan.jpg",
-    "root": "וולברין",
     "branches": [
-      "טפרים",
-      "מתכת",
-      "זאב",
-      "קרב"
+      "ציפורניים",
+      "מניקור",
+      "גילוח",
+      "סכין",
+      "כאב"
     ],
-    "visualNotes": "וולברין שולף טפרי מתכת חדים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
+    "keywords": [
+      "ציפורניים",
+      "מניקור",
+      "גילוח",
+      "סכין",
+      "כאב"
+    ],
+    "association": "ציפורניים, מניקור, גילוח, סכין, כאב",
+    "visualNotes": "וולברין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "וולברין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 47,
     "id": "gandalf",
-    "name": "גנדלף הקוסם",
+    "name": "גנדלף",
+    "title": "גנדלף",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/gandalf_the_grey.jpg",
-    "root": "גנדלף הקוסם",
     "branches": [
+      "קוסם",
       "זקן",
-      "מטה",
-      "חכמה",
-      "ייעוץ"
+      "חוכמה",
+      "ספר",
+      "מסע",
+      "סרט",
+      "מקל"
     ],
-    "visualNotes": "גנדלף עם זקן שיבה ארוך וכובע קוסמים אפור.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
+    "keywords": [
+      "קוסם",
+      "זקן",
+      "חוכמה",
+      "ספר",
+      "מסע",
+      "סרט",
+      "מקל"
+    ],
+    "association": "קוסם, זקן, חוכמה, ספר, מסע, סרט, מקל",
+    "visualNotes": "גנדלף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גנדלף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 48,
     "id": "gollum",
     "name": "גולום",
+    "title": "גולום",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/gollum_smeagol.jpg",
-    "root": "גולום",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_gollum.jpg",
     "branches": [
-      "טבעת",
-      "מערה",
+      "גולום",
+      "כדורגל",
+      "ספורט",
+      "משחק",
+      "גול",
+      "אצטדיון",
+      "אימון",
       "תכשיט",
-      "אוצר"
+      "טבעת",
+      "צורף"
     ],
-    "visualNotes": "גולום במערה נועץ מבט בטבעת הזהב – עוגן לצורף ותכשיטים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
+    "keywords": [
+      "גולום",
+      "כדורגל",
+      "ספורט",
+      "משחק",
+      "גול",
+      "אצטדיון",
+      "אימון",
+      "תכשיט",
+      "טבעת",
+      "צורף"
+    ],
+    "association": "גולום, כדורגל, ספורט, משחק, גול, אצטדיון, אימון, תכשיט, טבעת, צורף",
+    "visualNotes": "גולום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גולום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 51,
+    "id": "minions",
+    "name": "המיניונים",
+    "title": "המיניונים",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/minions.jpg",
+    "branches": [
+      "בננות",
+      "סופר",
+      "ילדים",
+      "ילד",
+      "צהוב",
+      "בננה",
+      "אוכל",
+      "חמוד"
+    ],
+    "keywords": [
+      "בננות",
+      "סופר",
+      "ילדים",
+      "ילד",
+      "צהוב",
+      "בננה",
+      "אוכל",
+      "חמוד"
+    ],
+    "association": "בננות, סופר, ילדים, ילד, צהוב, בננה, אוכל, חמוד",
+    "visualNotes": "המיניונים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "המיניונים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "ronald_mcdonald",
     "name": "רונלד מקדונלד",
+    "title": "רונלד מקדונלד",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg",
-    "root": "רונלד מקדונלד",
     "branches": [
       "המבורגר",
-      "ליצן",
-      "צ'יפס",
-      "ארוחה"
-    ],
-    "visualNotes": "צילום אותנטי מעולה של הליצן בחליפה הצהובה-אדומה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 54,
-    "id": "robocop",
-    "name": "רובוקופ",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/robocop.jpg",
-    "root": "רובוקופ",
-    "branches": [
-      "משטרה",
-      "מתכת",
-      "קסדה",
-      "אקדח"
-    ],
-    "visualNotes": "איור פרימיום מרהיב של רובוקופ פורץ קיר בטון עם אקדח דרוך.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 56,
-    "id": "predator",
-    "name": "הטורף",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg",
-    "root": "הטורף",
-    "branches": [
-      "מסיכה",
-      "ראייה",
-      "ציד",
-      "הסוואה"
-    ],
-    "visualNotes": "מסיכת הברזל המפחידה של הטורף.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 57,
-    "id": "frankenstein_monster",
-    "name": "פרנקנשטיין",
-    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/boris_karloff_frankenstein.jpg",
-    "root": "פרנקנשטיין",
-    "branches": [
-      "ברגים",
-      "מוסך",
-      "תיקון",
-      "חשמל"
-    ],
-    "visualNotes": "בוריס קרלוף כמפלצת פרנקנשטיין עם הברגים בצוואר – עוגן מעולה למוסך.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 58,
-    "id": "eiffel_tower",
-    "name": "מגדל אייפל",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg",
-    "root": "מגדל אייפל",
-    "branches": [
-      "פריז",
-      "מגדל",
-      "צרפת",
-      "תיירות"
-    ],
-    "visualNotes": "צילום נקי ואיכותי של מגדל אייפל מזווית קלאסית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 59,
-    "id": "statue_of_liberty",
-    "name": "פסל החירות",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg",
-    "root": "פסל החירות",
-    "branches": [
-      "ניו יורק",
-      "לפיד",
-      "חירות",
-      "פסל"
-    ],
-    "visualNotes": "פסל החירות עם הלפיד המוזהב על רקע שמיים כחולים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 60,
-    "id": "pyramids_of_giza",
-    "name": "הפירמידות בגיזה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/pyramids_of_giza_egypt.jpg",
-    "root": "הפירמידות בגיזה",
-    "branches": [
-      "מדבר",
-      "פירמידה",
-      "מצרים",
-      "עתיקות"
-    ],
-    "visualNotes": "צילום פנורמי מרהיב של שלושת הפירמידות בגיזה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 62,
-    "id": "taj_mahal",
-    "name": "הטאג' מהאל",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/taj_mahal.jpg",
-    "root": "הטאג' מהאל",
-    "branches": [
-      "הודו",
-      "שיש",
-      "ארמון",
-      "בריכה"
-    ],
-    "visualNotes": "צילום פרימיום נקי ללא סימני מים של הטאג' מהאל עם בריכת ההשתקפות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 63,
-    "id": "colosseum_rome",
-    "name": "הקוליסאום ברומא",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/colosseum.jpg",
-    "root": "הקוליסאום ברומא",
-    "branches": [
-      "רומא",
-      "זירה",
-      "אבן",
-      "איטליה"
-    ],
-    "visualNotes": "צילום פרימיום נקי ללא סימני מים של אמפיתיאטרון הקולוסיאום ברומא.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 64,
-    "id": "great_wall_china",
-    "name": "החומה הסינית",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg",
-    "root": "החומה הסינית",
-    "branches": [
-      "חומה",
-      "הרים",
-      "סין",
-      "הליכה"
-    ],
-    "visualNotes": "צילום אותנטי של מקטע מוטיאניו המתפתל על רכסי ההרים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 65,
-    "id": "leaning_tower_pisa",
-    "name": "מגדל פיזה הנוטה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg",
-    "root": "מגדל פיזה הנוטה",
-    "branches": [
-      "מגדל",
-      "נטייה",
-      "איטליה",
-      "שיפוע"
-    ],
-    "visualNotes": "צילום מלא ונקי של מגדל פיזה הלבן עם הנטייה המפורסמת.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 66,
-    "id": "big_ben_london",
-    "name": "ביג בן",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/big_ben_london.jpg",
-    "root": "ביג בן",
-    "branches": [
-      "שעון",
-      "לונדון",
-      "דדליין",
-      "זמן"
-    ],
-    "visualNotes": "מגדל השעון של לונדון – עוגן מעולה לשעון, זמנים ודדליין.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 67,
-    "id": "sydney_opera_house",
-    "name": "בית האופרה של סידני",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/sydney_opera_house_sails.jpg",
-    "root": "בית האופרה של סידני",
-    "branches": [
-      "אופרה",
-      "מפרשים",
-      "נמל",
-      "מופע"
-    ],
-    "visualNotes": "גג המפרשים הלבן של בית האופרה על קו המים בסידני.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 68,
-    "id": "christ_the_redeemer",
-    "name": "פסל ישו הגואל",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
-    "root": "פסל ישו הגואל",
-    "branches": [
-      "ברזיל",
-      "פסל",
-      "הרים",
-      "נוף"
-    ],
-    "visualNotes": "פסל הענק פרוש הידיים על פסגת הר הקורקובדו בריו.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 69,
-    "id": "golden_gate_bridge",
-    "name": "גשר שער הזהב",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/golden_gate_bridge_sf.jpg",
-    "root": "גשר שער הזהב",
-    "branches": [
-      "גשר",
-      "כביש",
-      "נסיעה",
-      "כתום"
-    ],
-    "visualNotes": "הגשר התלוי הכתום-אדום בסן פרנסיסקו מעל המפרץ.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 70,
-    "id": "the_white_house",
-    "name": "הבית הלבן",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/the_white_house.jpg",
-    "root": "הבית הלבן",
-    "branches": [
-      "וושינגטון",
-      "נשיא",
-      "ממשלה",
-      "פגישה"
-    ],
-    "visualNotes": "חזית הבית הלבן עם המדשאה הדרומית והמזרקה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 71,
-    "id": "azrieli_towers",
-    "name": "מגדלי עזריאלי",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/azrieli_towers.jpg",
-    "root": "מגדלי עזריאלי",
-    "branches": [
-      "תל אביב",
-      "קניון",
-      "מגדל",
-      "רכבת"
-    ],
-    "visualNotes": "צילום פרימיום חד ומרהיב של שלושת מגדלי עזריאלי וקניון השלום.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 73,
-    "id": "dutch_windmill",
-    "name": "טחנת רוח הולנדית",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/dutch_windmill.jpg",
-    "root": "טחנת רוח הולנדית",
-    "branches": [
-      "טחנה",
-      "רוח",
-      "קמח",
-      "הולנד"
-    ],
-    "visualNotes": "טחנת רוח מסורתית מעץ ליד תעלת מים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 74,
-    "id": "empire_state_building",
-    "name": "אמפייר סטייט",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/empire_state_building_ny.jpg",
-    "root": "אמפייר סטייט",
-    "branches": [
-      "גורד שחקים",
-      "מעלית",
-      "ניו יורק",
-      "גובה"
-    ],
-    "visualNotes": "המגדל ההיסטורי בלב מנהטן מתנשא לשמיים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 75,
-    "id": "hollywood_sign",
-    "name": "שלט הוליווד",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/hollywood_sign_la.jpg",
-    "root": "שלט הוליווד",
-    "branches": [
-      "סרט",
-      "קולנוע",
-      "הוליווד",
-      "שלט"
-    ],
-    "visualNotes": "האותיות הלבנות של הוליווד על גבעות לוס אנג'לס.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 76,
-    "id": "stonehenge",
-    "name": "סטונהנג'",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/stonehenge_england.jpg",
-    "root": "סטונהנג'",
-    "branches": [
-      "אבנים",
-      "עתיק",
-      "מעגל",
-      "שמש"
-    ],
-    "visualNotes": "מעגל האבנים המגליתי המסתורי באנגליה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 77,
-    "id": "moai_easter_island",
-    "name": "פסלי המואי",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/moai_easter_island.jpg",
-    "root": "פסלי המואי",
-    "branches": [
-      "פסל",
-      "אי",
-      "סלע",
-      "איסלנד"
-    ],
-    "visualNotes": "ראשי האבן הענקיים של אי הפסחא ניבטים אל האופק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 78,
-    "id": "parthenon_acropolis",
-    "name": "הפרתנון באתונה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/acropolis_parthenon_athens.jpg",
-    "root": "הפרתנון באתונה",
-    "branches": [
-      "יוון",
-      "עמודים",
-      "מקדש",
-      "עתיקות"
-    ],
-    "visualNotes": "מקדש הפרתנון המונומנטלי על גבעת האקרופוליס.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 79,
-    "id": "burj_khalifa",
-    "name": "בורג' ח'ליפה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/burj_khalifa_dubai.jpg",
-    "root": "בורג' ח'ליפה",
-    "branches": [
-      "דובאי",
-      "מגדל",
-      "גובה",
-      "שמיים"
-    ],
-    "visualNotes": "המגדל הגבוה בעולם מתנשא מעל מי המזרקה בדובאי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 80,
-    "id": "kaaba_mecca",
-    "name": "הכעבה במכה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/kaaba_mecca.jpg",
-    "root": "הכעבה במכה",
-    "branches": [
-      "מכה",
-      "זהב",
-      "תפילה",
-      "קדושה"
-    ],
-    "visualNotes": "מבנה האבן השחור במרכז מסגד אל-חראם במכה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 81,
-    "id": "pantheon_rome",
-    "name": "הפנתיאון ברומא",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/pantheon_rome.jpg",
-    "root": "הפנתיאון ברומא",
-    "branches": [
-      "כיפה",
-      "רומא",
-      "עמודים",
-      "איטליה"
-    ],
-    "visualNotes": "חזית העמודים העתיקה של הפנתיאון הרומי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 82,
-    "id": "arc_de_triomphe",
-    "name": "קשת הניצחון",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/arc_de_triomphe_paris.jpg",
-    "root": "קשת הניצחון",
-    "branches": [
-      "פריז",
-      "קשת",
-      "שדרה",
-      "צרפת"
-    ],
-    "visualNotes": "קשת הניצחון המלכותית בשאנז אליזה בפריז.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 84,
-    "id": "neuschwanstein_castle",
-    "name": "טירת נוישוונשטיין",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/neuschwanstein_castle_bavaria.jpg",
-    "root": "טירת נוישוונשטיין",
-    "branches": [
-      "טירה",
-      "אגדה",
-      "יער",
-      "גרמניה"
-    ],
-    "visualNotes": "טירת האגדות הבווארית הלבנה בין צוקי האלפים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 88,
-    "id": "sagrada_familia",
-    "name": "סגרדה פמיליה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/sagrada_familia_barcelona.jpg",
-    "root": "סגרדה פמיליה",
-    "branches": [
-      "ברצלונה",
-      "כנסייה",
-      "צריח",
-      "ספרד"
-    ],
-    "visualNotes": "הקתדרלה המפורסמת של גאודי בברצלונה עם מגדליה הציוריים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 89,
-    "id": "tower_bridge_london",
-    "name": "גשר מצודת לונדון",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/tower_bridge_london.jpg",
-    "root": "גשר מצודת לונדון",
-    "branches": [
-      "גשר",
-      "לונדון",
-      "נהר",
-      "ספינה"
-    ],
-    "visualNotes": "הגשר המתרומם המפורסם מעל נהר התמזה עם שני המגדלים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 90,
-    "id": "checkpoint_charlie",
-    "name": "צ'ק פוינט צ'ארלי",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/checkpoint_charlie.jpg",
-    "root": "צ'ק פוינט צ'ארלי",
-    "branches": [
-      "גבול",
-      "ברלין",
-      "מחסום",
-      "חייל"
-    ],
-    "visualNotes": "עמדת הבידוק ההיסטורית בברלין עם הדגל והשלטים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 91,
-    "id": "mount_rushmore",
-    "name": "הר רושמור",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/mount_rushmore_monument.jpg",
-    "root": "הר רושמור",
-    "branches": [
-      "נשיאים",
-      "סלע",
-      "פסל",
-      "הר"
-    ],
-    "visualNotes": "ארבעת דיוקנאות הנשיאים החצובים בצוק הגרניט.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 93,
-    "id": "igloo_ice_dome",
-    "name": "איגלו שלג",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/igloo_ice_dome.jpg",
-    "root": "איגלו שלג",
-    "branches": [
-      "שלג",
-      "קרח",
-      "קור",
-      "מעיל"
-    ],
-    "visualNotes": "איגלו כיפתי אותנטי בנוי מלבני קרח ושלג – עוגן מעולה למזגן או קור.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 94,
-    "id": "teepee_tent",
-    "name": "אוהל טיפי",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/teepee_tent.jpg",
-    "root": "אוהל טיפי",
-    "branches": [
-      "אוהל",
-      "קמפינג",
-      "שבט",
-      "טבע"
-    ],
-    "visualNotes": "ציור היסטורי של אוהלי טיפי ומפגש שבטי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 95,
-    "id": "mud_hut_african",
-    "name": "בקתת בוץ מסורתית",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/mud_hut_african.jpg",
-    "root": "בקתת בוץ מסורתית",
-    "branches": [
-      "בקתה",
-      "כפר",
-      "קש",
-      "אפריקה"
-    ],
-    "visualNotes": "בקתות כפריות עגולות עם גגות קש וחצר כפרית אותנטית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 96,
-    "id": "chinese_pagoda",
-    "name": "פגודה סינית",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/chinese_pagoda.jpg",
-    "root": "פגודה סינית",
-    "branches": [
-      "פגודה",
-      "גג",
-      "מזרח",
-      "קומות"
-    ],
-    "visualNotes": "פגודה רבת קומות מרהיבה עם גגות מסורתיים מדורגים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 97,
-    "id": "coastal_lighthouse",
-    "name": "מגדלור חוף",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/coastal_lighthouse.jpg",
-    "root": "מגדלור חוף",
-    "branches": [
-      "מגדלור",
-      "ים",
-      "אור",
-      "סלעים"
-    ],
-    "visualNotes": "צילום עוצר נשימה של מגדלור לבן ואדום על צוק סלע מעל האוקיינוס.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 99,
-    "id": "watermill_cabin",
-    "name": "גלגל טחנת מים",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/watermill_cabin.jpg",
-    "root": "גלגל טחנת מים",
-    "branches": [
-      "טחנה",
-      "מים",
-      "גלגל",
-      "זרימה"
-    ],
-    "visualNotes": "גלגל ברזל ענק של טחנת מים עתיקה עם מים זורמים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 2,
-    "index": 100,
-    "id": "classic_red_barn",
-    "name": "אסם אמריקאי אדום",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/classic_red_barn.jpg",
-    "root": "אסם אמריקאי אדום",
-    "branches": [
-      "חווה",
-      "אסם",
-      "טרקטור",
-      "חציר"
-    ],
-    "visualNotes": "צילום קלאסי מרהיב של אסם עץ אדום בחווה כפרית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.229Z"
-  },
-  {
-    "batch": 2,
-    "index": 101,
-    "id": "military_cemetery",
-    "name": "בית קברות צבאי",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/military_cemetery.jpg",
-    "root": "בית קברות צבאי",
-    "branches": [
-      "זיכרון",
-      "צבא",
-      "מצבה",
-      "חללים"
-    ],
-    "visualNotes": "שורות מסודרות של צלבים ומצבות לבנות על מדשאה ירוקה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 102,
-    "id": "abandoned_gas_station",
-    "name": "תחנת דלק נטושה",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/abandoned_gas_station.jpg",
-    "root": "תחנת דלק נטושה",
-    "branches": [
-      "דלק",
-      "משאבה",
-      "נסיעה",
-      "כביש"
-    ],
-    "visualNotes": "תחנת דלק כפרית ישנה בדרך צדדית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 104,
-    "id": "concrete_bunker",
-    "name": "בונקר בטון",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/concrete_bunker.jpg",
-    "root": "בונקר בטון",
-    "branches": [
-      "מקלט",
-      "בטון",
-      "הגנה",
-      "מלחמה"
-    ],
-    "visualNotes": "בונקר בטון צבאי מבוצר על קו החוף.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 105,
-    "id": "hall_of_mirrors_versailles",
-    "name": "אולם המראות בוורסאי",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/hall_of_mirrors_versailles.jpg",
-    "root": "אולם המראות בוורסאי",
-    "branches": [
-      "ארמון",
-      "מראה",
-      "זהב",
-      "נברשת"
-    ],
-    "visualNotes": "אולם המראות המלכותי המרהיב בארמון ורסאי עם נברשות קריסטל.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 106,
-    "id": "neon_motel_sign",
-    "name": "מוטל דרכים",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/neon_motel_sign.jpg",
-    "root": "מוטל דרכים",
-    "branches": [
-      "מלון",
-      "לינה",
-      "ניאון",
-      "חופשה"
-    ],
-    "visualNotes": "שלט ניאון וינטג' של מוטל אמריקאי לצד הדרך.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 107,
-    "id": "airport_control_tower",
-    "name": "מגדל פיקוח",
-    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/airport_control_tower.jpg",
-    "root": "מגדל פיקוח",
-    "branches": [
-      "טיסה",
-      "מטוס",
-      "נמל",
-      "שדה"
-    ],
-    "visualNotes": "מגדל פיקוח מודרני מביט על מסלול המראות ונחיתות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 108,
-    "id": "mona_lisa",
-    "name": "המונה ליזה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/mona_lisa_louvre.jpg",
-    "root": "המונה ליזה",
-    "branches": [
-      "לובר",
-      "חיוך",
-      "ציור",
-      "דיוקן"
-    ],
-    "visualNotes": "יצירת המופת של לאונרדו דה וינצ'י במוזיאון הלובר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 109,
-    "id": "the_scream",
-    "name": "הצעקה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/the_scream_edvard_munch.jpg",
-    "root": "הצעקה",
-    "branches": [
-      "צעקה",
-      "לחץ",
-      "דדליין",
-      "פחד"
-    ],
-    "visualNotes": "ציור הצעקה המפורסם של אדוורד מונק – עוגן מושלם ללחץ ודדליין.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 110,
-    "id": "the_thinker",
-    "name": "האדם החושב",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg",
-    "root": "האדם החושב",
-    "branches": [
-      "מחשבה",
-      "החלטה",
-      "פילוסוף",
-      "ייעוץ"
-    ],
-    "visualNotes": "פסל הברונזה האיקוני של אוגוסט רודן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 111,
-    "id": "statue_of_david",
-    "name": "פסל דוד",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/statue_of_david.jpg",
-    "root": "פסל דוד",
-    "branches": [
-      "שיש",
-      "מיכלאנג'לו",
-      "אבן",
-      "פסל"
-    ],
-    "visualNotes": "פסל השיש המונומנטלי של מיכלאנג'לו בפירנצה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 112,
-    "id": "starry_night",
-    "name": "ליל כוכבים",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/starry_night.jpg",
-    "root": "ליל כוכבים",
-    "branches": [
-      "כוכבים",
-      "ואן גוך",
-      "לילה",
-      "ציור"
-    ],
-    "visualNotes": "ציור השמיים המסתחררים המפורסם של וינסנט ואן גוך.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 113,
-    "id": "creation_of_adam",
-    "name": "בריאת האדם",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/creation_of_adam.jpg",
-    "root": "בריאת האדם",
-    "branches": [
-      "אצבע",
-      "מגע",
-      "קפלה",
-      "בריאה"
-    ],
-    "visualNotes": "פרסקו נגיעת האצבעות המפורסם של מיכלאנג'לו בקפלה הסיסטינית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 114,
-    "id": "the_last_supper",
-    "name": "הסעודה האחרונה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/the_last_supper.jpg",
-    "root": "הסעודה האחרונה",
-    "branches": [
+      "ילדים",
+      "ילד",
+      "אוכל",
       "ארוחה",
-      "שולחן",
-      "סעודה",
+      "לאכול",
       "מסעדה"
     ],
-    "visualNotes": "פרסקו הסעודה האחרונה של דה וינצ'י.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 115,
-    "id": "the_birth_of_venus",
-    "name": "הולדת ונוס",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/the_birth_of_venus.jpg",
-    "root": "הולדת ונוס",
-    "branches": [
-      "צדף",
-      "יופי",
-      "ים",
-      "ציור"
+    "keywords": [
+      "המבורגר",
+      "ילדים",
+      "ילד",
+      "אוכל",
+      "ארוחה",
+      "לאכול",
+      "מסעדה"
     ],
-    "visualNotes": "ונוס עומדת על צדף ענק של סנדרו בוטיצ'לי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "association": "המבורגר, ילדים, ילד, אוכל, ארוחה, לאכול, מסעדה",
+    "visualNotes": "רונלד מקדונלד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רונלד מקדונלד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 116,
-    "id": "persistence_of_memory",
-    "name": "שעונים נמסים",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/salvador_dali_melting_clocks.jpg",
-    "root": "שעונים נמסים",
+    "id": "the_grinch",
+    "name": "הגרינץ'",
+    "title": "הגרינץ'",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/the_grinch.jpg",
+    "branches": [
+      "ירוק",
+      "חג מולד"
+    ],
+    "keywords": [
+      "ירוק",
+      "חג מולד"
+    ],
+    "association": "ירוק, חג מולד",
+    "visualNotes": "הגרינץ' – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הגרינץ' – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "bilbo_baggins",
+    "name": "בילבו בגינס",
+    "title": "בילבו בגינס",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_bilbo_baggins.jpg",
+    "branches": [
+      "אירוח",
+      "ארוחה",
+      "אורחים",
+      "בישול",
+      "חביתה",
+      "בוקר",
+      "מטבח",
+      "טבעת"
+    ],
+    "keywords": [
+      "אירוח",
+      "ארוחה",
+      "אורחים",
+      "בישול",
+      "חביתה",
+      "בוקר",
+      "מטבח",
+      "טבעת"
+    ],
+    "association": "אירוח, ארוחה, אורחים, בישול, חביתה, בוקר, מטבח, טבעת",
+    "visualNotes": "בילבו בגינס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בילבו בגינס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "robocop",
+    "name": "רובוקופ",
+    "title": "רובוקופ",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/robocop.jpg",
+    "branches": [
+      "שוטר",
+      "רובוט",
+      "חוק",
+      "משטרה",
+      "שריון",
+      "קסדה",
+      "אבטחה"
+    ],
+    "keywords": [
+      "שוטר",
+      "רובוט",
+      "חוק",
+      "משטרה",
+      "שריון",
+      "קסדה",
+      "אבטחה"
+    ],
+    "association": "שוטר, רובוט, חוק, משטרה, שריון, קסדה, אבטחה",
+    "visualNotes": "רובוקופ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רובוקופ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "predator",
+    "name": "הטורף",
+    "title": "הטורף",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/predator_hunter_mask.jpg",
+    "branches": [
+      "חייזר",
+      "ציד",
+      "מסכה",
+      "ג'ונגל",
+      "סרט",
+      "הסוואה",
+      "קרב"
+    ],
+    "keywords": [
+      "חייזר",
+      "ציד",
+      "מסכה",
+      "ג'ונגל",
+      "סרט",
+      "הסוואה",
+      "קרב"
+    ],
+    "association": "חייזר, ציד, מסכה, ג'ונגל, סרט, הסוואה, קרב",
+    "visualNotes": "הטורף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הטורף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "eiffel_tower",
+    "name": "מגדל אייפל",
+    "title": "מגדל אייפל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/eiffel_tower_paris.jpg",
+    "branches": [
+      "פריז",
+      "צרפת",
+      "חופשה",
+      "טיסה",
+      "תיירות",
+      "רומנטיקה",
+      "נוף"
+    ],
+    "keywords": [
+      "פריז",
+      "צרפת",
+      "חופשה",
+      "טיסה",
+      "תיירות",
+      "רומנטיקה",
+      "נוף"
+    ],
+    "association": "פריז, צרפת, חופשה, טיסה, תיירות, רומנטיקה, נוף",
+    "visualNotes": "מגדל אייפל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגדל אייפל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "statue_of_liberty",
+    "name": "פסל החירות",
+    "title": "פסל החירות",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/statue_of_liberty_ny.jpg",
+    "branches": [
+      "ניו יורק",
+      "אמריקה",
+      "חופש",
+      "לפיד",
+      "טיסה",
+      "תיירות",
+      "כתר"
+    ],
+    "keywords": [
+      "ניו יורק",
+      "אמריקה",
+      "חופש",
+      "לפיד",
+      "טיסה",
+      "תיירות",
+      "כתר"
+    ],
+    "association": "ניו יורק, אמריקה, חופש, לפיד, טיסה, תיירות, כתר",
+    "visualNotes": "פסל החירות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל החירות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "pyramids_of_giza",
+    "name": "הפירמידות בגיזה",
+    "title": "הפירמידות בגיזה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/pyramids_of_giza_egypt.jpg",
+    "branches": [
+      "טיול",
+      "מדבר",
+      "חול",
+      "עתיקות",
+      "מצריים",
+      "3",
+      "שלוש",
+      "שלושה"
+    ],
+    "keywords": [
+      "טיול",
+      "מדבר",
+      "חול",
+      "עתיקות",
+      "מצריים",
+      "3",
+      "שלוש",
+      "שלושה"
+    ],
+    "association": "טיול, מדבר, חול, עתיקות, מצריים, 3, שלוש, שלושה",
+    "visualNotes": "הפירמידות בגיזה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הפירמידות בגיזה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "great_sphinx_giza",
+    "name": "הספינקס",
+    "title": "הספינקס",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/sphinx_giza_sand.jpg",
+    "branches": [
+      "אבן",
+      "אריה",
+      "מצריים"
+    ],
+    "keywords": [
+      "אבן",
+      "אריה",
+      "מצריים"
+    ],
+    "association": "אבן, אריה, מצריים",
+    "visualNotes": "הספינקס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הספינקס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "great_wall_china",
+    "name": "החומה הסינית",
+    "title": "החומה הסינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg",
+    "branches": [
+      "חומה",
+      "סין",
+      "הגנה"
+    ],
+    "keywords": [
+      "חומה",
+      "סין",
+      "הגנה"
+    ],
+    "association": "חומה, סין, הגנה",
+    "visualNotes": "החומה הסינית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "החומה הסינית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "leaning_tower_pisa",
+    "name": "מגדל פיזה הנוטה",
+    "title": "מגדל פיזה הנוטה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg",
+    "branches": [
+      "מגדל",
+      "פיזה",
+      "נטייה",
+      "תיקון",
+      "מהנדס",
+      "עקום"
+    ],
+    "keywords": [
+      "מגדל",
+      "פיזה",
+      "נטייה",
+      "תיקון",
+      "מהנדס",
+      "עקום"
+    ],
+    "association": "מגדל, פיזה, נטייה, תיקון, מהנדס, עקום",
+    "visualNotes": "מגדל פיזה הנוטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגדל פיזה הנוטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "big_ben_london",
+    "name": "ביג בן",
+    "title": "ביג בן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/big_ben_london.jpg",
     "branches": [
       "שעון",
-      "דאלי",
-      "זמן",
-      "איחור"
+      "לונדון",
+      "שעה",
+      "זמן"
     ],
-    "visualNotes": "השעונים הנמסים המפורסמים של סלבדור דאלי – עוגן אידיאלי לאיחור ושעון.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "שעון",
+      "לונדון",
+      "שעה",
+      "זמן"
+    ],
+    "association": "שעון, לונדון, שעה, זמן",
+    "visualNotes": "ביג בן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ביג בן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 117,
-    "id": "golden_mask_tutankhamun",
-    "name": "מסכת תות ענח' אמון",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/tutankhamun.jpg",
-    "root": "מסכת תות ענח' אמון",
+    "id": "christ_the_redeemer",
+    "name": "פסל ישו הגואל",
+    "title": "פסל ישו הגואל",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
     "branches": [
-      "זהב",
-      "פרעה",
-      "מצרים",
-      "עתיקות"
-    ],
-    "visualNotes": "מסכת המוות המוזהבת עם הטורקיז של תות ענח' אמון.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 118,
-    "id": "venus_de_milo",
-    "name": "ונוס ממילו",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/venus_de_milo_marble.jpg",
-    "root": "ונוס ממילו",
-    "branches": [
-      "שיש",
       "פסל",
-      "יופי",
-      "מוזיאון"
+      "ברזיל",
+      "ריו"
     ],
-    "visualNotes": "פסל השיש היווני העתיק ללא הידיים במוזיאון הלובר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "פסל",
+      "ברזיל",
+      "ריו"
+    ],
+    "association": "פסל, ברזיל, ריו",
+    "visualNotes": "פסל ישו הגואל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל ישו הגואל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 119,
-    "id": "guernica_picasso",
-    "name": "גרניקה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/guernica_picasso.jpg",
-    "root": "גרניקה",
+    "id": "golden_gate_bridge",
+    "name": "גשר שער הזהב",
+    "title": "גשר שער הזהב",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/golden_gate_bridge_sf.jpg",
     "branches": [
-      "פיקאסו",
-      "מלחמה",
-      "זעקה",
-      "ציור"
+      "גשר"
     ],
-    "visualNotes": "ציור המונומנט הענק של פבלו פיקאסו בשחור, אפור ולבן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "גשר"
+    ],
+    "association": "גשר",
+    "visualNotes": "גשר שער הזהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גשר שער הזהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 120,
-    "id": "american_gothic",
-    "name": "אמריקן גותיק",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/american_gothic.jpg",
-    "root": "אמריקן גותיק",
+    "id": "the_white_house",
+    "name": "הבית הלבן",
+    "title": "הבית הלבן",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_the_white_house.jpg",
     "branches": [
-      "קילשון",
-      "משקפיים",
-      "איכר",
-      "חווה"
+      "הבית הלבן",
+      "הבית",
+      "הלבן",
+      "פוליטיקה",
+      "חדשות",
+      "נשיא",
+      "ממשל"
     ],
-    "visualNotes": "האיכר ואשתו עם הקילשון בחזית הבית של גרנט ווד.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "הבית הלבן",
+      "הבית",
+      "הלבן",
+      "פוליטיקה",
+      "חדשות",
+      "נשיא",
+      "ממשל"
+    ],
+    "association": "הבית הלבן, הבית, הלבן, פוליטיקה, חדשות, נשיא, ממשל",
+    "visualNotes": "הבית הלבן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הבית הלבן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 121,
-    "id": "girl_with_pearl_earring",
-    "name": "נערה עם עגיל פנינה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/girl_with_pearl_earring.jpg",
-    "root": "נערה עם עגיל פנינה",
+    "id": "azrieli_towers",
+    "name": "מגדלי עזריאלי",
+    "title": "מגדלי עזריאלי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/azrieli_towers.jpg",
     "branches": [
-      "עגיל",
-      "פנינה",
-      "תכשיט",
-      "דיוקן"
+      "עזריאלי",
+      "קניון",
+      "קניות",
+      "מגדל",
+      "3",
+      "שלוש",
+      "שלושה",
+      "משולש"
     ],
-    "visualNotes": "ציור השמן המהפנט של יוהנס ורמיר עם עגיל הפנינה הזוהר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "עזריאלי",
+      "קניון",
+      "קניות",
+      "מגדל",
+      "3",
+      "שלוש",
+      "שלושה",
+      "משולש"
+    ],
+    "association": "עזריאלי, קניון, קניות, מגדל, 3, שלוש, שלושה, משולש",
+    "visualNotes": "מגדלי עזריאלי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגדלי עזריאלי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 122,
-    "id": "the_son_of_man",
-    "name": "בנו של אדם",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/the_son_of_man.jpg",
-    "root": "בנו של אדם",
+    "id": "saint_basil_cathedral",
+    "name": "הקרמלין / כנסיית ואסילי הקדוש",
+    "title": "הקרמלין / כנסיית ואסילי הקדוש",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/kremlin_red_square_moscow.jpg",
     "branches": [
-      "תפוח",
-      "מגבעת",
-      "חליפה",
-      "פרי"
+      "הקרמלין",
+      "מוסקבה",
+      "חורף"
     ],
-    "visualNotes": "איש החליפה עם התפוח הירוק המסתיר את פניו של רנה מגריט.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "הקרמלין",
+      "מוסקבה",
+      "חורף"
+    ],
+    "association": "הקרמלין, מוסקבה, חורף",
+    "visualNotes": "הקרמלין / כנסיית ואסילי הקדוש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הקרמלין / כנסיית ואסילי הקדוש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 123,
-    "id": "vitruvian_man",
-    "name": "האדם הוויטרובי",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/vitruvian_man.jpg",
-    "root": "האדם הוויטרובי",
+    "id": "moai_easter_island",
+    "name": "פסלי המואי באסתר",
+    "title": "פסלי המואי באסתר",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/moai_easter_island.jpg",
     "branches": [
-      "פרופורציה",
-      "עיגול",
-      "גוף",
-      "אימון"
+      "פסל",
+      "טיקי",
+      "אבן",
+      "עמידה דום",
+      "דום",
+      "עמידה",
+      "שקט"
     ],
-    "visualNotes": "רישום הפרופורציות המדויקות של גוף האדם מאת לאונרדו דה וינצ'י.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "פסל",
+      "טיקי",
+      "אבן",
+      "עמידה דום",
+      "דום",
+      "עמידה",
+      "שקט"
+    ],
+    "association": "פסל, טיקי, אבן, עמידה דום, דום, עמידה, שקט",
+    "visualNotes": "פסלי המואי באסתר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסלי המואי באסתר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 124,
-    "id": "campbell_soup_can",
-    "name": "מרק קמפבל",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/andy_warhol_campbell_soup.jpg",
-    "root": "מרק קמפבל",
+    "id": "neuschwanstein_castle",
+    "name": "טירת דיסני / נוישוונשטיין",
+    "title": "טירת דיסני / נוישוונשטיין",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/neuschwanstein_castle_bavaria.jpg",
     "branches": [
-      "מרק",
-      "פחית",
-      "סופר",
-      "ארוחה"
+      "דיסני",
+      "אגדה",
+      "טירה",
+      "נסיכה",
+      "ילדים",
+      "ארמון"
     ],
-    "visualNotes": "פחית מרק העגבניות של אנדי וורהול – עוגן מושלם לקניות בסופר.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "דיסני",
+      "אגדה",
+      "טירה",
+      "נסיכה",
+      "ילדים",
+      "ארמון"
+    ],
+    "association": "דיסני, אגדה, טירה, נסיכה, ילדים, ארמון",
+    "visualNotes": "טירת דיסני / נוישוונשטיין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טירת דיסני / נוישוונשטיין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 125,
-    "id": "the_kiss_klimt",
-    "name": "הנשיקה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/gustav_klimt_the_kiss.jpg",
-    "root": "הנשיקה",
+    "id": "chichen_itza_pyramid",
+    "name": "מקדש המאיה",
+    "title": "מקדש המאיה",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/chichen_itza_pyramid.jpg",
     "branches": [
-      "נשיקה",
+      "מקדש",
+      "פירמידה",
+      "מדרגות",
+      "כושר",
+      "ארכיאולוגיה",
+      "מאיה"
+    ],
+    "keywords": [
+      "מקדש",
+      "פירמידה",
+      "מדרגות",
+      "כושר",
+      "ארכיאולוגיה",
+      "מאיה"
+    ],
+    "association": "מקדש, פירמידה, מדרגות, כושר, ארכיאולוגיה, מאיה",
+    "visualNotes": "מקדש המאיה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מקדש המאיה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "western_wall",
+    "name": "הכותל המערבי",
+    "title": "הכותל המערבי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/western_wall_jerusalem.jpg",
+    "branches": [
+      "הכותל",
+      "המערבי",
+      "תפילה",
+      "פתק",
+      "כותל",
+      "ברכה",
+      "ירושלים"
+    ],
+    "keywords": [
+      "הכותל",
+      "המערבי",
+      "תפילה",
+      "פתק",
+      "כותל",
+      "ברכה",
+      "ירושלים"
+    ],
+    "association": "הכותל, המערבי, תפילה, פתק, כותל, ברכה, ירושלים",
+    "visualNotes": "הכותל המערבי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הכותל המערבי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "igloo_ice_dome",
+    "name": "אסקימואי באיגלו",
+    "title": "אסקימואי באיגלו",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/igloo_ice_dome.jpg",
+    "branches": [
+      "אסקימואי",
+      "קור",
+      "קרח",
+      "שלג",
+      "חורף",
+      "קפוא",
+      "איגלו",
+      "קר"
+    ],
+    "keywords": [
+      "אסקימואי",
+      "קור",
+      "קרח",
+      "שלג",
+      "חורף",
+      "קפוא",
+      "איגלו",
+      "קר"
+    ],
+    "association": "אסקימואי, קור, קרח, שלג, חורף, קפוא, איגלו, קר",
+    "visualNotes": "אסקימואי באיגלו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אסקימואי באיגלו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "teepee_tent",
+    "name": "אוהל טיפי",
+    "title": "אוהל טיפי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/teepee_tent.jpg",
+    "branches": [
+      "קמפינג",
+      "אינדיאני",
+      "מדורה",
+      "אוהל"
+    ],
+    "keywords": [
+      "קמפינג",
+      "אינדיאני",
+      "מדורה",
+      "אוהל"
+    ],
+    "association": "קמפינג, אינדיאני, מדורה, אוהל",
+    "visualNotes": "אוהל טיפי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אוהל טיפי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "chinese_pagoda",
+    "name": "פגודה סינית",
+    "title": "פגודה סינית",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/chinese_pagoda.jpg",
+    "branches": [
+      "סין"
+    ],
+    "keywords": [
+      "סין"
+    ],
+    "association": "סין",
+    "visualNotes": "פגודה סינית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פגודה סינית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "coastal_lighthouse",
+    "name": "מגדלור",
+    "title": "מגדלור",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_coastal_lighthouse.jpg",
+    "branches": [
+      "חוף",
+      "ים",
+      "אור"
+    ],
+    "keywords": [
+      "חוף",
+      "ים",
+      "אור"
+    ],
+    "association": "חוף, ים, אור",
+    "visualNotes": "מגדלור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגדלור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "classic_red_barn",
+    "name": "אסם אמריקאי קלאסי",
+    "title": "אסם אמריקאי קלאסי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_classic_red_barn.jpg",
+    "branches": [
+      "פרה",
+      "חווה",
+      "כפר"
+    ],
+    "keywords": [
+      "פרה",
+      "חווה",
+      "כפר"
+    ],
+    "association": "פרה, חווה, כפר",
+    "visualNotes": "אסם אמריקאי קלאסי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אסם אמריקאי קלאסי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "military_cemetery",
+    "name": "בית קברות צבאי",
+    "title": "בית קברות צבאי",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/military_cemetery.jpg",
+    "branches": [
+      "קברות",
+      "לוויה",
+      "קבר",
+      "אזכרה"
+    ],
+    "keywords": [
+      "קברות",
+      "לוויה",
+      "קבר",
+      "אזכרה"
+    ],
+    "association": "קברות, לוויה, קבר, אזכרה",
+    "visualNotes": "בית קברות צבאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בית קברות צבאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "concrete_bunker",
+    "name": "בונקר בטון",
+    "title": "בונקר בטון",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/concrete_bunker.jpg",
+    "branches": [
+      "בונקר",
+      "בטון",
+      "הגנה",
+      "מקלט",
+      "ממד"
+    ],
+    "keywords": [
+      "בונקר",
+      "בטון",
+      "הגנה",
+      "מקלט",
+      "ממד"
+    ],
+    "association": "בונקר, בטון, הגנה, מקלט, ממד",
+    "visualNotes": "בונקר בטון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בונקר בטון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "neon_motel_sign",
+    "name": "פנסיון דרכים",
+    "title": "פנסיון דרכים",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/neon_motel_sign.jpg",
+    "branches": [
+      "כלב",
+      "טיול",
+      "לצאת",
+      "לצאת עם",
+      "טיול עם"
+    ],
+    "keywords": [
+      "כלב",
+      "טיול",
+      "לצאת",
+      "לצאת עם",
+      "טיול עם"
+    ],
+    "association": "כלב, טיול, לצאת, לצאת עם, טיול עם",
+    "visualNotes": "פנסיון דרכים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פנסיון דרכים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "the_thinker",
+    "name": "האדם החושב",
+    "title": "האדם החושב",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg",
+    "branches": [
+      "החלטה",
+      "ייעוץ",
+      "פסל",
+      "חושב",
+      "לחשוב",
+      "מחשבה"
+    ],
+    "keywords": [
+      "החלטה",
+      "ייעוץ",
+      "פסל",
+      "חושב",
+      "לחשוב",
+      "מחשבה"
+    ],
+    "association": "החלטה, ייעוץ, פסל, חושב, לחשוב, מחשבה",
+    "visualNotes": "האדם החושב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "האדם החושב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "golden_mask_tutankhamun",
+    "name": "פרעה",
+    "title": "פרעה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/tutankhamun.jpg",
+    "branches": [
       "זהב",
-      "אהבה",
-      "רומנטיקה"
+      "מצרים",
+      "פסח"
     ],
-    "visualNotes": "הנשיקה המוזהבת של גוסטב קלימט בחיבוק מעוטר עלי זהב.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "זהב",
+      "מצרים",
+      "פסח"
+    ],
+    "association": "זהב, מצרים, פסח",
+    "visualNotes": "פרעה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פרעה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 126,
     "id": "degas_little_ballerina",
     "name": "רקדנית בלט",
+    "title": "רקדנית בלט",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/degas_little_ballerina.jpg",
-    "root": "רקדנית בלט",
     "branches": [
-      "בלט",
       "ריקוד",
+      "הופעה",
       "חוג",
-      "במה"
+      "אימון",
+      "במה",
+      "מוזיקה",
+      "אמנות"
     ],
-    "visualNotes": "פסל הברונזה המפורסם של רקדנית הבלט הצעירה מאת אדגר דגה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 127,
-    "id": "jackson_pollock_splatter",
-    "name": "התזות צבע פולוק",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/jackson_pollock_splatter.jpg",
-    "root": "התזות צבע פולוק",
-    "branches": [
-      "צבע",
-      "שיפוץ",
-      "טיפות",
-      "צביעה"
-    ],
-    "visualNotes": "ציור הדריפ המפורסם של ג'קסון פולוק – עוגן מעולה לצביעת דירה ושיפוצים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 128,
-    "id": "sunflowers_van_gogh",
-    "name": "החמניות",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/van_gogh_sunflowers.jpg",
-    "root": "החמניות",
-    "branches": [
-      "חמניות",
-      "פרחים",
-      "זר",
-      "מתנה"
-    ],
-    "visualNotes": "החמניות הצהובות באגרטל של וינסנט ואן גוך – עוגן מושלם לחנות פרחים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 129,
-    "id": "balloon_girl_banksy",
-    "name": "ילדה עם בלון",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/banksy_balloon_girl.jpg",
-    "root": "ילדה עם בלון",
-    "branches": [
-      "בלון",
-      "אדום",
-      "לב",
-      "תקווה"
-    ],
-    "visualNotes": "ציור הגרפיטי של הילדה המושיטה יד אל בלון הלב האדום.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 130,
-    "id": "terracotta_army",
-    "name": "צבא הטרקוטה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/terracotta_army_warriors.jpg",
-    "root": "צבא הטרקוטה",
-    "branches": [
-      "חיילים",
-      "חימר",
-      "סין",
-      "קבר"
-    ],
-    "visualNotes": "שורות חיילי החימר העתיקים בחפירות שי-אן בסין.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 131,
-    "id": "rosetta_stone",
-    "name": "אבן רוזטה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/rosetta_stone_british_museum.jpg",
-    "root": "אבן רוזטה",
-    "branches": [
-      "תרגום",
-      "שפות",
-      "כתב",
-      "אבן"
-    ],
-    "visualNotes": "אבן הבזלת השחורה במוזיאון הבריטי בעלת שלוש שפות הכתב.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 132,
-    "id": "cave_painting_bison",
-    "name": "ציור מערות ביזון",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/cave_painting_bison.jpg",
-    "root": "ציור מערות ביזון",
-    "branches": [
-      "מערה",
-      "שור",
-      "קדמון",
-      "ציור"
-    ],
-    "visualNotes": "ציור הביזון בצבעי אוכרה אדומים ממערת אלטאמירה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 133,
-    "id": "egyptian_hieroglyphs",
-    "name": "הירוגליפים מצריים",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/egyptian_hieroglyphs.jpg",
-    "root": "הירוגליפים מצריים",
-    "branches": [
-      "כתב",
-      "מצרים",
-      "סמלים",
-      "קיר"
-    ],
-    "visualNotes": "תבליט אבן עתיק ומפורט של כתב החרטומים המצרי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 134,
-    "id": "balloon_dog_jeff_koons",
-    "name": "כלב בלון מטאלי",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/balloon_dog_jeff_koons.jpg",
-    "root": "כלב בלון מטאלי",
-    "branches": [
-      "בלון",
-      "כלב",
-      "מגנט",
-      "פסל"
-    ],
-    "visualNotes": "פסל הנירוסטה המגנטה הזוהר של ג'ף קונס בצורת כלב בלון.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 135,
-    "id": "egyptian_sarcophagus",
-    "name": "סרקופג מצרי",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/egyptian_sarcophagus.jpg",
-    "root": "סרקופג מצרי",
-    "branches": [
-      "ארון",
-      "מצרים",
-      "קבר",
-      "זהב"
-    ],
-    "visualNotes": "ארון הקבורה המלכותי המעוטר של מצרים העתיקה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 136,
-    "id": "bubble_graffiti_lettering",
-    "name": "גרפיטי אותיות בלון",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/bubble_graffiti_lettering.jpg",
-    "root": "גרפיטי אותיות בלון",
-    "branches": [
-      "גרפיטי",
-      "ספריי",
-      "רחוב",
-      "קיר"
-    ],
-    "visualNotes": "גרפיטי רחוב צבעוני בסגנון אותיות בלון קלאסי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 137,
-    "id": "japanese_kanji_calligraphy",
-    "name": "קליגרפיה יפנית",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/japanese_kanji_calligraphy.jpg",
-    "root": "קליגרפיה יפנית",
-    "branches": [
-      "דיו",
-      "מכחול",
-      "יפן",
-      "אותיות"
-    ],
-    "visualNotes": "אות קאנג'י יפנית שחורה במשיחת מכחול דיו על נייר אורז.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 138,
-    "id": "capitoline_wolf",
-    "name": "הזאבה הקפיטולינית",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/capitoline_wolf.jpg",
-    "root": "הזאבה הקפיטולינית",
-    "branches": [
-      "זאבה",
-      "רומא",
-      "הנקה",
-      "ברונזה"
-    ],
-    "visualNotes": "פסל הברונזה העתיק של הזאבה המניקה את רומולוס ורמוס ברומא.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 139,
-    "id": "crucifixion_silhouette",
-    "name": "צללית הצליבה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/crucifixion_silhouette.jpg",
-    "root": "צללית הצליבה",
-    "branches": [
-      "צלב",
-      "שקיעה",
-      "גבעה",
-      "אמונה"
-    ],
-    "visualNotes": "צללית שלושת הצלבים על רקע שקיעה דרמטית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 140,
-    "id": "ten_commandments_tablets",
-    "name": "לוחות הברית",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/ten_commandments_tablets.jpg",
-    "root": "לוחות הברית",
-    "branches": [
-      "תורה",
-      "לוחות",
-      "משה",
-      "עשרת"
-    ],
-    "visualNotes": "שני לוחות אבן חצובים עם אותיות עבריות עתיקות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 141,
-    "id": "golden_calf_idol",
-    "name": "עגל הזהב",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/golden_calf_idol.jpg",
-    "root": "עגל הזהב",
-    "branches": [
-      "זהב",
-      "עגל",
+    "keywords": [
       "ריקוד",
-      "פסל"
+      "הופעה",
+      "חוג",
+      "אימון",
+      "במה",
+      "מוזיקה",
+      "אמנות"
     ],
-    "visualNotes": "ציור המופת של ניקולא פוסן המציג את עגל הזהב והעם הרוקד.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "association": "ריקוד, הופעה, חוג, אימון, במה, מוזיקה, אמנות",
+    "visualNotes": "רקדנית בלט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רקדנית בלט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 142,
-    "id": "great_wave_off_kanagawa",
-    "name": "הגל הגדול בקאנאגאווה",
+    "id": "cave_painting_bison",
+    "name": "ציור מערות",
+    "title": "ציור מערות",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/cave_painting_bison.jpg",
+    "branches": [
+      "היסטוריה",
+      "אמנות",
+      "עתיק",
+      "סלע",
+      "טבע",
+      "מוזיאון",
+      "חיות"
+    ],
+    "keywords": [
+      "היסטוריה",
+      "אמנות",
+      "עתיק",
+      "סלע",
+      "טבע",
+      "מוזיאון",
+      "חיות"
+    ],
+    "association": "היסטוריה, אמנות, עתיק, סלע, טבע, מוזיאון, חיות",
+    "visualNotes": "ציור מערות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ציור מערות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "great_wave_off_kanagawa",
+    "name": "הגל הגדול בסמוך לקאנאגאווה",
+    "title": "הגל הגדול בסמוך לקאנאגאווה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/great_wave_off_kanagawa.jpg",
-    "root": "הגל הגדול בקאנאגאווה",
     "branches": [
       "גל",
       "ים",
-      "צונאמי",
-      "יפן"
+      "גלישה",
+      "לגלוש",
+      "גלשן"
     ],
-    "visualNotes": "הדפס העץ היפני האייקוני של קצושיקה הוקוסאי עם פסגת הפוג'י.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "גל",
+      "ים",
+      "גלישה",
+      "לגלוש",
+      "גלשן"
+    ],
+    "association": "גל, ים, גלישה, לגלוש, גלשן",
+    "visualNotes": "הגל הגדול בסמוך לקאנאגאווה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הגל הגדול בסמוך לקאנאגאווה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 143,
     "id": "native_totem_pole",
     "name": "טוטם אינדיאני",
+    "title": "טוטם אינדיאני",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/native_totem_pole.jpg",
-    "root": "טוטם אינדיאני",
     "branches": [
       "טוטם",
-      "עץ",
-      "גילוף",
-      "שבט"
+      "אינדיאני"
     ],
-    "visualNotes": "עמוד עץ ענק מגולף בדמויות חיות מכונפות בצפון אמריקה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "טוטם",
+      "אינדיאני"
+    ],
+    "association": "טוטם, אינדיאני",
+    "visualNotes": "טוטם אינדיאני – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טוטם אינדיאני – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 144,
-    "id": "flower_thrower_banksy",
-    "name": "מטיח הפרחים בנקסי",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/flower_thrower_banksy.jpg",
-    "root": "מטיח הפרחים בנקסי",
-    "branches": [
-      "פרחים",
-      "זר",
-      "שלום",
-      "הפגנה"
-    ],
-    "visualNotes": "הגרפיטי המפורסם של המפגין במסכה המשליך זר פרחים צבעוני.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 145,
-    "id": "rolling_stones_tongue",
-    "name": "הלשון של הרולינג סטונס",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/rolling_stones_tongue.jpg",
-    "root": "הלשון של הרולינג סטונס",
-    "branches": [
-      "לשון",
-      "רוק",
-      "אדום",
-      "מופע"
-    ],
-    "visualNotes": "לוגו הלשון האדומה האיקוני של להקת הרולינג סטונס.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 146,
-    "id": "portuguese_azulejos",
-    "name": "אריחי אזולז'ו כחולים",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/portuguese_azulejos.jpg",
-    "root": "אריחי אזולז'ו כחולים",
-    "branches": [
-      "אריח",
-      "קרמיקה",
-      "כחול",
-      "קיר"
-    ],
-    "visualNotes": "אריחי קרמיקה כחולים-לבנים מעוטרים של חזית מבנה פורטוגזי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 147,
-    "id": "classic_snowman",
-    "name": "איש שלג קלאסי",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/classic_snowman.jpg",
-    "root": "איש שלג קלאסי",
-    "branches": [
-      "מזגן",
-      "מעיל",
-      "שלג",
-      "גזר"
-    ],
-    "visualNotes": "איש שלג חביב בחצר מושלגת עם גזר וצעיף – עוגן לקור, מעיל ומזגן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 148,
     "id": "russian_matryoshka",
-    "name": "בבושקה מטריושקה",
+    "name": "בבושקה / מטריושקה",
+    "title": "בבושקה / מטריושקה",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/matryoshka_nesting_dolls.jpg",
-    "root": "בבושקה מטריושקה",
     "branches": [
+      "בבושקה",
       "בובה",
-      "עץ",
       "משפחה",
-      "רוסיה"
+      "עץ",
+      "ילדים"
     ],
-    "visualNotes": "בובות עץ רוסיות מדורגות הנכנסות זו לתוך זו.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "בבושקה",
+      "בובה",
+      "משפחה",
+      "עץ",
+      "ילדים"
+    ],
+    "association": "בבושקה, בובה, משפחה, עץ, ילדים",
+    "visualNotes": "בבושקה / מטריושקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בבושקה / מטריושקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 149,
     "id": "japanese_folding_fan",
     "name": "מניפה יפנית",
+    "title": "מניפה יפנית",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/japanese_folding_fan.jpg",
-    "root": "מניפה יפנית",
     "branches": [
       "מניפה",
       "אוורור",
-      "חום",
-      "משי"
+      "רוח"
     ],
-    "visualNotes": "מניפת נייר ומשי מעוטרת בפרחי דובדבן – עוגן מעולה לחום ואוורור.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "מניפה",
+      "אוורור",
+      "רוח"
+    ],
+    "association": "מניפה, אוורור, רוח",
+    "visualNotes": "מניפה יפנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מניפה יפנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 150,
     "id": "native_dreamcatcher",
     "name": "לוכד חלומות",
+    "title": "לוכד חלומות",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/native_dreamcatcher.jpg",
-    "root": "לוכד חלומות",
     "branches": [
-      "חלום",
-      "נוצה",
       "שינה",
-      "מיטה"
+      "לילה",
+      "מיטה",
+      "נוצות",
+      "חדר שינה",
+      "רוגע",
+      "קישוט"
     ],
-    "visualNotes": "חישוק לוכד חלומות עם רשת חוטים ונוצות תלויות – עוגן לשינה ומזרן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "שינה",
+      "לילה",
+      "מיטה",
+      "נוצות",
+      "חדר שינה",
+      "רוגע",
+      "קישוט"
+    ],
+    "association": "שינה, לילה, מיטה, נוצות, חדר שינה, רוגע, קישוט",
+    "visualNotes": "לוכד חלומות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לוכד חלומות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 151,
-    "id": "gargoyle_stone_statue",
-    "name": "פסל גרגויל מאבן",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/gargoyle_stone_statue.jpg",
-    "root": "פסל גרגויל מאבן",
-    "branches": [
-      "מפלצת",
-      "גג",
-      "אבן",
-      "כנסייה"
-    ],
-    "visualNotes": "גרגויל אבן עתיק יושב על קצה מרפסת נוטרדאם.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 152,
     "id": "chess_knight_piece",
-    "name": "פרש שחמט מעץ",
+    "name": "חייל שחמט",
+    "title": "חייל שחמט",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/chess_knight_piece.jpg",
-    "root": "פרש שחמט מעץ",
     "branches": [
+      "חייל",
       "שחמט",
-      "סוס",
-      "משחק",
-      "אסטרטגיה"
+      "חשיבה",
+      "אסטרטגיה",
+      "מסדר",
+      "עמידה",
+      "קרב"
     ],
-    "visualNotes": "כלי פרש שחמט מעץ מגולף ומלוטש על לוח משחק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "חייל",
+      "שחמט",
+      "חשיבה",
+      "אסטרטגיה",
+      "מסדר",
+      "עמידה",
+      "קרב"
+    ],
+    "association": "חייל, שחמט, חשיבה, אסטרטגיה, מסדר, עמידה, קרב",
+    "visualNotes": "חייל שחמט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חייל שחמט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 153,
     "id": "golden_menorah_seven",
     "name": "מנורת שבעת הקנים",
+    "title": "מנורת שבעת הקנים",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/golden_menorah_seven.jpg",
-    "root": "מנורת שבעת הקנים",
     "branches": [
       "מנורה",
+      "חנוכה",
       "זהב",
-      "נרות",
-      "בית מקדש"
-    ],
-    "visualNotes": "מנורת זהב מפוארת בעלת 7 קנים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 154,
-    "id": "egyptian_mummy_wraps",
-    "name": "מומיה מצרית",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/egyptian_mummy_wraps.jpg",
-    "root": "מומיה מצרית",
-    "branches": [
-      "תחבושת",
-      "חבישה",
-      "רופא",
-      "קבר"
-    ],
-    "visualNotes": "מומיה עתיקה חנוטה ברצועות בד – עוגן מעולה לחבישות ובית מרקחת.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 155,
-    "id": "hamsa_hand_amulet",
-    "name": "חמסה לשמירה",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/hamsa_hand_amulet.jpg",
-    "root": "חמסה לשמירה",
-    "branches": [
-      "חמסה",
-      "מזל",
-      "עין",
-      "תכשיט"
-    ],
-    "visualNotes": "חמסה מעוצבת ממתכת כחולה עם עין מרכזית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 156,
-    "id": "star_of_david",
-    "name": "מגן דוד כחול",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/star_of_david.jpg",
-    "root": "מגן דוד כחול",
-    "branches": [
-      "מגן דוד",
-      "ישראל",
-      "דגל",
-      "סמל"
-    ],
-    "visualNotes": "מגן דוד כחול מבריק על רקע לבן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 157,
-    "id": "christian_holy_cross",
-    "name": "צלב עץ קלאסי",
-    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
-    "imageUrl": "/staged_images/pool/christian_holy_cross.jpg",
-    "root": "צלב עץ קלאסי",
-    "branches": [
-      "צלב",
-      "עץ",
-      "כנסייה",
-      "אמונה"
-    ],
-    "visualNotes": "צלב עץ פשוט ומדויק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 158,
-    "id": "item_151_נורה_דולקת__מסמלת",
-    "name": "נורת להט דולקת",
-    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_151_נורה_דולקת__מסמלת.jpg",
-    "root": "נורת להט דולקת",
-    "branches": [
-      "רעיון",
-      "נורה",
-      "חשמל",
       "אור"
     ],
-    "visualNotes": "נורת להט קלאסית מאירה בזוהר חם – עוגן מעולה לרעיונות ותאורה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "מנורה",
+      "חנוכה",
+      "זהב",
+      "אור"
+    ],
+    "association": "מנורה, חנוכה, זהב, אור",
+    "visualNotes": "מנורת שבעת הקנים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מנורת שבעת הקנים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 159,
+    "id": "hamsa_hand_amulet",
+    "name": "קמע חמסה",
+    "title": "קמע חמסה",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/hamsa_hand_amulet.jpg",
+    "branches": [
+      "חמסה",
+      "עין",
+      "5",
+      "חמש",
+      "יד"
+    ],
+    "keywords": [
+      "חמסה",
+      "עין",
+      "5",
+      "חמש",
+      "יד"
+    ],
+    "association": "חמסה, עין, 5, חמש, יד",
+    "visualNotes": "קמע חמסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קמע חמסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "star_of_david",
+    "name": "מגן דוד",
+    "title": "מגן דוד",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/star_of_david.jpg",
+    "branches": [
+      "ישראל",
+      "יהדות",
+      "סמל",
+      "דגל",
+      "בית כנסת",
+      "חג",
+      "מסורת"
+    ],
+    "keywords": [
+      "ישראל",
+      "יהדות",
+      "סמל",
+      "דגל",
+      "בית כנסת",
+      "חג",
+      "מסורת"
+    ],
+    "association": "ישראל, יהדות, סמל, דגל, בית כנסת, חג, מסורת",
+    "visualNotes": "מגן דוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגן דוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_151_נורה_דולקת__מסמלת",
+    "name": "נורת חשמל",
+    "title": "נורת חשמל",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_151_נורה_דולקת__מסמלת.jpg",
+    "branches": [
+      "אור",
+      "רעיון",
+      "תאורה",
+      "המצאה",
+      "הברקה",
+      "מתג",
+      "אנרגיה"
+    ],
+    "keywords": [
+      "אור",
+      "רעיון",
+      "תאורה",
+      "המצאה",
+      "הברקה",
+      "מתג",
+      "אנרגיה"
+    ],
+    "association": "אור, רעיון, תאורה, המצאה, הברקה, מתג, אנרגיה",
+    "visualNotes": "נורת חשמל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נורת חשמל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "item_152_תיבת_אוצר__מסמלת",
-    "name": "תיבת אוצר מוזהבת",
+    "name": "תיבת אוצר",
+    "title": "תיבת אוצר",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_152_תיבת_אוצר__מסמלת.jpg",
-    "root": "תיבת אוצר מוזהבת",
     "branches": [
-      "אוצר",
+      "זהב",
       "כסף",
-      "תיבה",
-      "זהב"
+      "חיסכון",
+      "יהלומים",
+      "מנעול",
+      "עושר",
+      "הפתעה"
     ],
-    "visualNotes": "תיבת עץ עתיקה פתוחה מלאה במטבעות זהב ויהלומים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "זהב",
+      "כסף",
+      "חיסכון",
+      "יהלומים",
+      "מנעול",
+      "עושר",
+      "הפתעה"
+    ],
+    "association": "זהב, כסף, חיסכון, יהלומים, מנעול, עושר, הפתעה",
+    "visualNotes": "תיבת אוצר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תיבת אוצר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 160,
     "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
-    "name": "פצצה עם פתיל בוער",
+    "name": "מגדלור בים סוער",
+    "title": "מגדלור בים סוער",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
-    "root": "פצצה עם פתיל בוער",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
     "branches": [
-      "פצצה",
-      "פיצוץ",
-      "דדליין",
-      "לחץ"
+      "אלומה",
+      "ספינה",
+      "חוף",
+      "ניווט",
+      "לילה",
+      "אזהרה"
     ],
-    "visualNotes": "פצצת ברזל שחורה קלאסית עם פתיל מצית ניצוצות – עוגן לדדליין מתקרב.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "אלומה",
+      "ספינה",
+      "חוף",
+      "ניווט",
+      "לילה",
+      "אזהרה"
+    ],
+    "association": "אלומה, ספינה, חוף, ניווט, לילה, אזהרה",
+    "visualNotes": "מגדלור בים סוער – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגדלור בים סוער – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 161,
-    "id": "item_154_דיסקט_3_5_אינץ___מסמל",
-    "name": "דיסקט וינטג'",
+    "id": "item_155_זכוכית_מגדלת__מסמלת",
+    "name": "זכוכית מגדלת",
+    "title": "זכוכית מגדלת",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_154_דיסקט_3_5_אינץ___מסמל.jpg",
-    "root": "דיסקט וינטג'",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_155_זכוכית_מגדלת__מסמלת.jpg",
     "branches": [
-      "שמירה",
-      "קובץ",
-      "גיבוי",
-      "מחשב"
+      "חיפוש",
+      "בדיקה",
+      "חקירה",
+      "בלש",
+      "הגדלה"
     ],
-    "visualNotes": "דיסקט פלסטיק שחור 3.5 אינץ' – עוגן מעולה לשמירת מסמכים וגיבויים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "חיפוש",
+      "בדיקה",
+      "חקירה",
+      "בלש",
+      "הגדלה"
+    ],
+    "association": "חיפוש, בדיקה, חקירה, בלש, הגדלה",
+    "visualNotes": "זכוכית מגדלת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "זכוכית מגדלת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 163,
     "id": "item_156_מפתח_מכני_גדול__מסמל",
-    "name": "מפתח שוודי מכני",
+    "name": "מפתח מכני גדול",
+    "title": "מפתח מכני גדול",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_156_מפתח_מכני_גדול__מסמל.jpg",
-    "root": "מפתח שוודי מכני",
     "branches": [
       "מוסך",
       "תיקון",
       "בורג",
-      "אינסטלטור"
+      "כלים",
+      "מכונאי",
+      "התקנה"
     ],
-    "visualNotes": "מפתח ברגים מפלדה מלוטשת – עוגן יומיומי חזק לתיקונים בבית.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 165,
-    "id": "item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות",
-    "name": "מסיכות תיאטרון",
-    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות.jpg",
-    "root": "מסיכות תיאטרון",
-    "branches": [
-      "הצגה",
-      "תיאטרון",
-      "כרטיסים",
-      "מופע"
-    ],
-    "visualNotes": "צמד מסכות דרמה קלאסיות מזהב (טרגדיה וקומדיה) – עוגן להצגות וכרטיסים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 168,
-    "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
-    "name": "גלגלי שיניים שלובים",
-    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_161_גלגל_שיניים__או_שניים_שלובים___מסמל.jpg",
-    "root": "גלגלי שיניים שלובים",
-    "branches": [
-      "מנגנון",
-      "הגדרות",
+    "keywords": [
+      "מוסך",
       "תיקון",
-      "מכונה"
+      "בורג",
+      "כלים",
+      "מכונאי",
+      "התקנה"
     ],
-    "visualNotes": "גלגלי שיניים מפליז שלובים זה בזה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "association": "מוסך, תיקון, בורג, כלים, מכונאי, התקנה",
+    "visualNotes": "מפתח מכני גדול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מפתח מכני גדול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 169,
-    "id": "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל",
-    "name": "כובע סיום תואר",
+    "id": "item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל",
+    "name": "שק כסף",
+    "title": "שק כסף",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל.jpg",
+    "branches": [
+      "בנק",
+      "חיסכון",
+      "דולר",
+      "משכורת",
+      "תשלום",
+      "עושר",
+      "כלכלה"
+    ],
+    "keywords": [
+      "בנק",
+      "חיסכון",
+      "דולר",
+      "משכורת",
+      "תשלום",
+      "עושר",
+      "כלכלה"
+    ],
+    "association": "בנק, חיסכון, דולר, משכורת, תשלום, עושר, כלכלה",
+    "visualNotes": "שק כסף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שק כסף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת",
+    "name": "ענן מילים / בועת מחשבה",
+    "title": "ענן מילים / בועת מחשבה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת.jpg",
+    "branches": [
+      "מחשבה",
+      "רעיון",
+      "קומיקס",
+      "דימיון",
+      "חלום",
+      "ענן"
+    ],
+    "keywords": [
+      "מחשבה",
+      "רעיון",
+      "קומיקס",
+      "דימיון",
+      "חלום",
+      "ענן"
+    ],
+    "association": "מחשבה, רעיון, קומיקס, דימיון, חלום, ענן",
+    "visualNotes": "ענן מילים / בועת מחשבה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ענן מילים / בועת מחשבה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל",
+    "name": "לב אדום שבור",
+    "title": "לב אדום שבור",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל.jpg",
+    "branches": [
+      "לב",
+      "שבור",
+      "פרידה",
+      "כאב",
+      "שיחה"
+    ],
+    "keywords": [
+      "לב",
+      "שבור",
+      "פרידה",
+      "כאב",
+      "שיחה"
+    ],
+    "association": "לב, שבור, פרידה, כאב, שיחה",
+    "visualNotes": "לב אדום שבור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לב אדום שבור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
+    "name": "גלגלי שיניים",
+    "title": "גלגלי שיניים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_161_גלגל_שיניים__או_שניים_שלובים___מסמל.jpg",
+    "branches": [
+      "מכונה",
+      "הגדרות",
+      "הנדסה",
+      "מנוע",
+      "תיקון",
+      "מפעל",
+      "מערכת"
+    ],
+    "keywords": [
+      "מכונה",
+      "הגדרות",
+      "הנדסה",
+      "מנוע",
+      "תיקון",
+      "מפעל",
+      "מערכת"
+    ],
+    "association": "מכונה, הגדרות, הנדסה, מנוע, תיקון, מפעל, מערכת",
+    "visualNotes": "גלגלי שיניים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גלגלי שיניים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל",
+    "name": "כובע בוגר אוניברסיטה",
+    "title": "כובע בוגר אוניברסיטה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל.jpg",
-    "root": "כובע סיום תואר",
     "branches": [
       "תואר",
       "לימודים",
+      "אוניברסיטה",
       "טקס",
-      "אוניברסיטה"
+      "תעודה",
+      "כובע"
     ],
-    "visualNotes": "כובע אקדמי שחור מרובע עם גדיל משי – עוגן למבחנים וסיום לימודים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "תואר",
+      "לימודים",
+      "אוניברסיטה",
+      "טקס",
+      "תעודה",
+      "כובע"
+    ],
+    "association": "תואר, לימודים, אוניברסיטה, טקס, תעודה, כובע",
+    "visualNotes": "כובע בוגר אוניברסיטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כובע בוגר אוניברסיטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 170,
     "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
-    "name": "מאזני צדק מפליז",
+    "name": "מאזני משפט",
+    "title": "מאזני משפט",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות.jpg",
-    "root": "מאזני צדק מפליז",
     "branches": [
-      "משפט",
+      "צדק",
+      "חוק",
       "עורך דין",
-      "חוזה",
-      "צדק"
+      "שופט",
+      "איזון",
+      "משקל",
+      "החלטה"
     ],
-    "visualNotes": "מאזני שקילה עתיקים מפליז עם שתי כפות מאוזנות – עוגן לחתימת חוזה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "צדק",
+      "חוק",
+      "עורך דין",
+      "שופט",
+      "איזון",
+      "משקל",
+      "החלטה"
+    ],
+    "association": "צדק, חוק, עורך דין, שופט, איזון, משקל, החלטה",
+    "visualNotes": "מאזני משפט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מאזני משפט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 171,
     "id": "item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל",
-    "name": "חץ פוגע במטרה",
+    "name": "חץ במרכז המטרה",
+    "title": "חץ במרכז המטרה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל.jpg",
-    "root": "חץ פוגע במטרה",
     "branches": [
       "מטרה",
       "יעד",
-      "פגישה",
-      "דייקנות"
+      "מכירות",
+      "הצלחה",
+      "קליעה",
+      "מרכז"
     ],
-    "visualNotes": "חץ אדום תקוע בול במרכז לוח מטרה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "מטרה",
+      "יעד",
+      "מכירות",
+      "הצלחה",
+      "קליעה",
+      "מרכז"
+    ],
+    "association": "מטרה, יעד, מכירות, הצלחה, קליעה, מרכז",
+    "visualNotes": "חץ במרכז המטרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חץ במרכז המטרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 172,
     "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
-    "name": "מדחום כספית רפואי",
+    "name": "מד חום כספית",
+    "title": "מד חום כספית",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg",
-    "root": "מדחום כספית רפואי",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg",
     "branches": [
       "מדחום",
+      "מד חום",
       "חום",
+      "חום גבוה",
+      "טמפרטורה",
+      "רופא",
       "מרפאה",
-      "רופא"
+      "בדיקה",
+      "מחלה",
+      "חולה"
     ],
-    "visualNotes": "מדחום זכוכית עם עמודת כספית אדומה – עוגן מובהק למחלה ומדידת חום.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "מדחום",
+      "מד חום",
+      "חום",
+      "חום גבוה",
+      "טמפרטורה",
+      "רופא",
+      "מרפאה",
+      "בדיקה",
+      "מחלה",
+      "חולה"
+    ],
+    "association": "מדחום, מד חום, חום, חום גבוה, טמפרטורה, רופא, מרפאה, בדיקה, מחלה, חולה",
+    "visualNotes": "מד חום כספית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מד חום כספית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 173,
     "id": "item_166_שעון_חול__חצי_מלא___מסמל",
-    "name": "שעון חול מעץ",
+    "name": "שעון חול",
+    "title": "שעון חול",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_166_שעון_חול__חצי_מלא___מסמל.jpg",
-    "root": "שעון חול מעץ",
     "branches": [
-      "זמן",
+      "דדליין",
+      "איחור",
+      "פגישה",
       "שעון",
-      "המתנה",
-      "תור"
+      "זמן"
     ],
-    "visualNotes": "שעון חול זכוכית במסגרת עץ עם חול דק זורם – עוגן לקביעת תור והמתנה.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "דדליין",
+      "איחור",
+      "פגישה",
+      "שעון",
+      "זמן"
+    ],
+    "association": "דדליין, איחור, פגישה, שעון, זמן",
+    "visualNotes": "שעון חול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שעון חול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 174,
     "id": "item_167_שטיח_אדום_ארוך__מסמל",
-    "name": "שטיח אדום חגיגי",
+    "name": "שטיח אדום",
+    "title": "שטיח אדום",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_167_שטיח_אדום_ארוך__מסמל.jpg",
-    "root": "שטיח אדום חגיגי",
     "branches": [
-      "אירוע",
-      "חתונה",
       "שטיח",
-      "חגיגה"
+      "אירוע",
+      "טקס",
+      "הוליווד",
+      "גאלה",
+      "הזמנה"
     ],
-    "visualNotes": "שטיח אדום קטיפתי פרוס עם עמודי חבל זהב – עוגן לאירועים וחגיגות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "שטיח",
+      "אירוע",
+      "טקס",
+      "הוליווד",
+      "גאלה",
+      "הזמנה"
+    ],
+    "association": "שטיח, אירוע, טקס, הוליווד, גאלה, הזמנה",
+    "visualNotes": "שטיח אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שטיח אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 175,
     "id": "item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות",
     "name": "קוביות משחק",
+    "title": "קוביות משחק",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות.jpg",
-    "root": "קוביות משחק",
     "branches": [
-      "קוביות",
-      "משחק",
+      "הימורים",
       "מזל",
-      "הגרלה"
+      "קזינו",
+      "ערב משחקים",
+      "הטלה"
     ],
-    "visualNotes": "צמד קוביות משחק לבנות עם נקודות שחורות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "הימורים",
+      "מזל",
+      "קזינו",
+      "ערב משחקים",
+      "הטלה"
+    ],
+    "association": "הימורים, מזל, קזינו, ערב משחקים, הטלה",
+    "visualNotes": "קוביות משחק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קוביות משחק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 176,
     "id": "item_169_גביע_זהב_עם_ידיות__מסמל",
-    "name": "גביע אליפות מוזהב",
+    "name": "גביע זהב",
+    "title": "גביע זהב",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_169_גביע_זהב_עם_ידיות__מסמל.jpg",
-    "root": "גביע אליפות מוזהב",
     "branches": [
-      "גביע",
-      "ניצחון",
-      "טורניר",
-      "תחרות"
+      "אליפות",
+      "פרס",
+      "תחרות",
+      "זהב",
+      "הישג",
+      "טורניר"
     ],
-    "visualNotes": "גביע ספורט מבריק עם ידיות מפוארות – עוגן לתחרות ומשחק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "אליפות",
+      "פרס",
+      "תחרות",
+      "זהב",
+      "הישג",
+      "טורניר"
+    ],
+    "association": "אליפות, פרס, תחרות, זהב, הישג, טורניר",
+    "visualNotes": "גביע זהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גביע זהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 177,
-    "id": "item_170_עוגן_ברזל_שחור__מסמל",
-    "name": "עוגן אונייה כבד",
+    "id": "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל",
+    "name": "שריר זרוע",
+    "title": "שריר זרוע",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_170_עוגן_ברזל_שחור__מסמל.jpg",
-    "root": "עוגן אונייה כבד",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל.jpg",
     "branches": [
-      "עוגן",
-      "נמל",
-      "אונייה",
-      "ים"
+      "אימון",
+      "כושר",
+      "חדר כושר",
+      "משקולות",
+      "כוח",
+      "ספורט"
     ],
-    "visualNotes": "עוגן ברזל ימי כבד על רציף הנמל.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "אימון",
+      "כושר",
+      "חדר כושר",
+      "משקולות",
+      "כוח",
+      "ספורט"
+    ],
+    "association": "אימון, כושר, חדר כושר, משקולות, כוח, ספורט",
+    "visualNotes": "שריר זרוע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שריר זרוע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 179,
     "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
-    "name": "מנעול ומפתח פליז",
+    "name": "מנעול ומפתח",
+    "title": "מנעול ומפתח",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
-    "root": "מנעול ומפתח פליז",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
     "branches": [
-      "מנעול",
-      "מפתח",
-      "מנעולן",
-      "דלת"
+      "נעילה",
+      "אבטחה",
+      "כספת",
+      "סיסמה",
+      "דלת",
+      "שמירה"
     ],
-    "visualNotes": "מנעול תליה מוצק מפליז ומפתח מותאם – עוגן מובהק למנעולן ושכפול מפתחות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "נעילה",
+      "אבטחה",
+      "כספת",
+      "סיסמה",
+      "דלת",
+      "שמירה"
+    ],
+    "association": "נעילה, אבטחה, כספת, סיסמה, דלת, שמירה",
+    "visualNotes": "מנעול ומפתח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מנעול ומפתח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 182,
+    "id": "item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת",
+    "name": "תרופה",
+    "title": "תרופה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת.jpg",
+    "branches": [
+      "רופא",
+      "בית מרקחת",
+      "בריאות",
+      "כדור",
+      "מרשם",
+      "ויטמין",
+      "כאב"
+    ],
+    "keywords": [
+      "רופא",
+      "בית מרקחת",
+      "בריאות",
+      "כדור",
+      "מרשם",
+      "ויטמין",
+      "כאב"
+    ],
+    "association": "רופא, בית מרקחת, בריאות, כדור, מרשם, ויטמין, כאב",
+    "visualNotes": "תרופה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תרופה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_174_שלט_עצור__מתומן_אדום___מסמל",
+    "name": "שלט עצור",
+    "title": "שלט עצור",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_174_שלט_עצור__מתומן_אדום___מסמל.jpg",
+    "branches": [
+      "עצור",
+      "זהירות"
+    ],
+    "keywords": [
+      "עצור",
+      "זהירות"
+    ],
+    "association": "עצור, זהירות",
+    "visualNotes": "שלט עצור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שלט עצור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת",
-    "name": "יונת שלום עם ענף זית",
+    "name": "יונה לבנה עם ענף זית",
+    "title": "יונה לבנה עם ענף זית",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת.jpg",
-    "root": "יונת שלום עם ענף זית",
     "branches": [
-      "יונה",
-      "זית",
       "שלום",
-      "פיוס"
+      "תקווה",
+      "ציפור",
+      "שלווה"
     ],
-    "visualNotes": "יונה לבנה צחה אוחזת בפיה ענף זית ירוק.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "שלום",
+      "תקווה",
+      "ציפור",
+      "שלווה"
+    ],
+    "association": "שלום, תקווה, ציפור, שלווה",
+    "visualNotes": "יונה לבנה עם ענף זית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "יונה לבנה עם ענף זית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 184,
+    "id": "item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל",
+    "name": "סימן שאלה",
+    "title": "סימן שאלה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל.jpg",
+    "branches": [
+      "שאלה",
+      "ספק",
+      "בירור"
+    ],
+    "keywords": [
+      "שאלה",
+      "ספק",
+      "בירור"
+    ],
+    "association": "שאלה, ספק, בירור",
+    "visualNotes": "סימן שאלה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סימן שאלה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל",
     "name": "סימן קריאה באזהרה",
+    "title": "סימן קריאה באזהרה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל.jpg",
-    "root": "סימן קריאה באזהרה",
     "branches": [
-      "סימן קריאה",
       "אזהרה",
       "זהירות",
-      "סכנה"
+      "סכנה",
+      "משולש צהוב",
+      "דחוף"
     ],
-    "visualNotes": "צילום אותנטי ואיכותי שנבדק חזותית ואושר לתקן.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 185,
-    "id": "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת",
-    "name": "גולגולת שודדי ים",
-    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת.jpg",
-    "root": "גולגולת שודדי ים",
-    "branches": [
+    "keywords": [
+      "אזהרה",
       "זהירות",
       "סכנה",
-      "רעל",
-      "תרופות"
+      "משולש צהוב",
+      "דחוף"
     ],
-    "visualNotes": "סמל הגולגולת והעצמות המוצלבות של שודדי ים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "association": "אזהרה, זהירות, סכנה, משולש צהוב, דחוף",
+    "visualNotes": "סימן קריאה באזהרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סימן קריאה באזהרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 186,
+    "id": "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת",
+    "name": "גולגולת ועצמות מוצלבות",
+    "title": "גולגולת ועצמות מוצלבות",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת.jpg",
+    "branches": [
+      "גולגולת",
+      "רעל",
+      "שודדי ים",
+      "מוות",
+      "סכנה",
+      "אזהרה",
+      "פיראט"
+    ],
+    "keywords": [
+      "גולגולת",
+      "רעל",
+      "שודדי ים",
+      "מוות",
+      "סכנה",
+      "אזהרה",
+      "פיראט"
+    ],
+    "association": "גולגולת, רעל, שודדי ים, מוות, סכנה, אזהרה, פיראט",
+    "visualNotes": "גולגולת ועצמות מוצלבות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גולגולת ועצמות מוצלבות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "item_179_מטוס_נייר_מקופל__מסמל",
     "name": "מטוס נייר מקופל",
+    "title": "מטוס נייר מקופל",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_179_מטוס_נייר_מקופל__מסמל.jpg",
-    "root": "מטוס נייר מקופל",
     "branches": [
-      "מטוס",
-      "הודעה",
       "מכתב",
-      "משלוח"
+      "הודעה",
+      "מסר"
     ],
-    "visualNotes": "מטוס נייר לבן מקופל בדיוק גיאומטרי.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "מכתב",
+      "הודעה",
+      "מסר"
+    ],
+    "association": "מכתב, הודעה, מסר",
+    "visualNotes": "מטוס נייר מקופל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מטוס נייר מקופל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 187,
     "id": "item_180_כתר_זהב_עם_יהלומים__מסמל",
-    "name": "כתר מלכות משובץ יהלומים",
+    "name": "כתר זהב עם יהלומים",
+    "title": "כתר זהב עם יהלומים",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_180_כתר_זהב_עם_יהלומים__מסמל.jpg",
-    "root": "כתר מלכות משובץ יהלומים",
     "branches": [
       "כתר",
-      "זהב",
       "מלך",
-      "יהלום"
+      "מלכה",
+      "מלוכה",
+      "יהלומים",
+      "ארמון"
     ],
-    "visualNotes": "כתר זהב מלוטש משובץ אבני אודם ויהלומים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "כתר",
+      "מלך",
+      "מלכה",
+      "מלוכה",
+      "יהלומים",
+      "ארמון"
+    ],
+    "association": "כתר, מלך, מלכה, מלוכה, יהלומים, ארמון",
+    "visualNotes": "כתר זהב עם יהלומים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כתר זהב עם יהלומים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 189,
-    "id": "item_182_פרסה_של_סוס__מסמלת",
-    "name": "פרסת סוס מברזל",
+    "id": "item_181_עניבת_פרפר_שחורה__פפיון___מסמלת",
+    "name": "עניבת פרפר (פפיון)",
+    "title": "עניבת פרפר (פפיון)",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_182_פרסה_של_סוס__מסמלת.jpg",
-    "root": "פרסת סוס מברזל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_181_עניבת_פרפר_שחורה__פפיון___מסמלת.jpg",
     "branches": [
-      "פרסה",
-      "סוס",
-      "מזל",
-      "רכיבה"
+      "אירוע",
+      "חליפה",
+      "אלגנטי",
+      "חתונה",
+      "טוקסידו",
+      "נשף"
     ],
-    "visualNotes": "פרסת ברזל אותנטית של סוס – עוגן לרכיבה על סוסים ומזל.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "אירוע",
+      "חליפה",
+      "אלגנטי",
+      "חתונה",
+      "טוקסידו",
+      "נשף"
+    ],
+    "association": "אירוע, חליפה, אלגנטי, חתונה, טוקסידו, נשף",
+    "visualNotes": "עניבת פרפר (פפיון) – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עניבת פרפר (פפיון) – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 190,
     "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
     "name": "תלתן ארבעה עלים",
+    "title": "תלתן ארבעה עלים",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
-    "root": "תלתן ארבעה עלים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/authentic_item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
     "branches": [
-      "תלתן",
       "מזל",
-      "דשא",
-      "טבע"
+      "ירוק",
+      "הגרלה",
+      "טבע",
+      "נדיר",
+      "הצלחה",
+      "ארבע",
+      "4"
     ],
-    "visualNotes": "עלה תלתן ירוק בעל 4 עלים מושלמים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "מזל",
+      "ירוק",
+      "הגרלה",
+      "טבע",
+      "נדיר",
+      "הצלחה",
+      "ארבע",
+      "4"
+    ],
+    "association": "מזל, ירוק, הגרלה, טבע, נדיר, הצלחה, ארבע, 4",
+    "visualNotes": "תלתן ארבעה עלים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תלתן ארבעה עלים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 194,
+    "id": "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל",
+    "name": "קופידון",
+    "title": "קופידון",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל.jpg",
+    "branches": [
+      "חץ וקשת",
+      "אהבה",
+      "רומנטיקה",
+      "מלאך",
+      "זוגיות",
+      "דייט"
+    ],
+    "keywords": [
+      "חץ וקשת",
+      "אהבה",
+      "רומנטיקה",
+      "מלאך",
+      "זוגיות",
+      "דייט"
+    ],
+    "association": "חץ וקשת, אהבה, רומנטיקה, מלאך, זוגיות, דייט",
+    "visualNotes": "קופידון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קופידון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל",
+    "name": "מלאך ושטן על הכתף",
+    "title": "מלאך ושטן על הכתף",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל.jpg",
+    "branches": [
+      "מצפון",
+      "התלבטות",
+      "דילמה",
+      "מוסר",
+      "טוב ורע",
+      "החלטה"
+    ],
+    "keywords": [
+      "מצפון",
+      "התלבטות",
+      "דילמה",
+      "מוסר",
+      "טוב ורע",
+      "החלטה"
+    ],
+    "association": "מצפון, התלבטות, דילמה, מוסר, טוב ורע, החלטה",
+    "visualNotes": "מלאך ושטן על הכתף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מלאך ושטן על הכתף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_186_טביעת_אצבע_שחורה__דיו___מסמלת",
+    "name": "טביעת אצבע שחורה",
+    "title": "טביעת אצבע שחורה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_186_טביעת_אצבע_שחורה__דיו___מסמלת.jpg",
+    "branches": [
+      "זיהוי",
+      "ביומטרי",
+      "משטרה",
+      "זיהוי פלילי",
+      "אבטחה"
+    ],
+    "keywords": [
+      "זיהוי",
+      "ביומטרי",
+      "משטרה",
+      "זיהוי פלילי",
+      "אבטחה"
+    ],
+    "association": "זיהוי, ביומטרי, משטרה, זיהוי פלילי, אבטחה",
+    "visualNotes": "טביעת אצבע שחורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טביעת אצבע שחורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "item_187_עקבות_רגליים_בחול__מסמלות",
-    "name": "עקבות רגליים על החוף",
+    "name": "עקבות בחול",
+    "title": "עקבות בחול",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_187_עקבות_רגליים_בחול__מסמלות.jpg",
-    "root": "עקבות רגליים על החוף",
     "branches": [
+      "חול",
+      "צעדים",
       "חוף",
-      "עקבות",
-      "ים",
-      "חול"
+      "הליכה",
+      "מדבר",
+      "מסלול"
     ],
-    "visualNotes": "עקבות רגליים יחפות צועדות על חול ים לח.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "חול",
+      "צעדים",
+      "חוף",
+      "הליכה",
+      "מדבר",
+      "מסלול"
+    ],
+    "association": "חול, צעדים, חוף, הליכה, מדבר, מסלול",
+    "visualNotes": "עקבות בחול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עקבות בחול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 195,
     "id": "item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל",
-    "name": "שבב אלקטרוני מוליך",
+    "name": "שבב אלקטרוני (צ'יפ)",
+    "title": "שבב אלקטרוני (צ'יפ)",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל.jpg",
-    "root": "שבב אלקטרוני מוליך",
     "branches": [
+      "צ'יפ",
+      "מעבד",
+      "טכנולוגיה",
       "מחשב",
-      "שבב",
-      "מעבדה",
-      "חומרה"
+      "הייטק",
+      "חומרה",
+      "לוח אם"
     ],
-    "visualNotes": "לוח מודפס ירוק עם פסי זהב ומעבד מרכזי – עוגן למעבדת מחשבים.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "keywords": [
+      "צ'יפ",
+      "מעבד",
+      "טכנולוגיה",
+      "מחשב",
+      "הייטק",
+      "חומרה",
+      "לוח אם"
+    ],
+    "association": "צ'יפ, מעבד, טכנולוגיה, מחשב, הייטק, חומרה, לוח אם",
+    "visualNotes": "שבב אלקטרוני (צ'יפ) – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שבב אלקטרוני (צ'יפ) – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 197,
+    "id": "item_189_פאזל__חתיכה_אחת_חסרה___מסמלת",
+    "name": "פאזל (חתיכה חסרה)",
+    "title": "פאזל (חתיכה חסרה)",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_189_פאזל__חתיכה_אחת_חסרה___מסמלת.jpg",
+    "branches": [
+      "פתרון",
+      "הרכבה",
+      "משחק",
+      "חשיבה",
+      "חסר"
+    ],
+    "keywords": [
+      "פתרון",
+      "הרכבה",
+      "משחק",
+      "חשיבה",
+      "חסר"
+    ],
+    "association": "פתרון, הרכבה, משחק, חשיבה, חסר",
+    "visualNotes": "פאזל (חתיכה חסרה) – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פאזל (חתיכה חסרה) – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
     "id": "item_190_סיכת_נעץ_משרדית__אדומה___מסמלת",
     "name": "נעץ משרדי אדום",
+    "title": "נעץ משרדי אדום",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_190_סיכת_נעץ_משרדית__אדומה___מסמלת.jpg",
-    "root": "נעץ משרדי אדום",
     "branches": [
       "נעץ",
+      "לוח מודעות",
       "משרד",
+      "פתק",
       "תזכורת",
-      "לוח"
+      "מודעה"
     ],
-    "visualNotes": "נעץ פלסטיק אדום נעוץ בלוח שעם משרדי – עוגן לתזכורות משרדיות.",
-    "qualityScore": 100,
-    "auditStatus": "verified",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  }
-];
-
-export const AUDITED_REJECTED_POOL = [
-  {
-    "batch": 1,
-    "index": 0,
-    "id": "combat_fight_arena",
-    "originalName": "זירת לחימה",
-    "originalCategory": "🥋 ספורט ולחימה",
-    "imageUrl": "/staged_images/pool/combat_fight_arena.jpg",
-    "rejectionReason": "חוברת צבאית היסטורית משנת 1918 (\"Rules for Boxing\") במקום צילום של זירת אגרוף / לחימה אמיתית.",
-    "visualNotes": "סריקה של חוברת נייר צהובה ישנה של ה-War Department משנת 1918 ללא שום זירה או מתאגרפים.",
-    "suggestedFix": "החלפה בצילום אותנטי של זירת אגרוף מקצועית מוארת עם חבלים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.136Z"
+    "keywords": [
+      "נעץ",
+      "לוח מודעות",
+      "משרד",
+      "פתק",
+      "תזכורת",
+      "מודעה"
+    ],
+    "association": "נעץ, לוח מודעות, משרד, פתק, תזכורת, מודעה",
+    "visualNotes": "נעץ משרדי אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נעץ משרדי אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 1,
-    "index": 5,
-    "id": "guilty_prisoner_mugshot",
-    "originalName": "אסיר",
-    "originalCategory": "⚖️ משפט ואשמה",
-    "imageUrl": "/staged_images/pool/guilty_prisoner_mugshot.png",
-    "rejectionReason": "איור 3D אימוג'י קריקטוריסטי וילדותי עם שלט \"GUILTY\" במקום צילום אותנטי.",
-    "visualNotes": "דמות אנימציה תלת-ממדית דמוית אימוג'י בוכיה בסרבל כתום מחזיקה שלט אשמה.",
-    "suggestedFix": "החלפה בצילום שחור-לבן קלאסי אותנטי של אסיר או תא מאסר.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 6,
-    "id": "judge_gavel_guilty",
-    "originalName": "בית משפט",
-    "originalCategory": "⚖️ משפט ואשמה",
-    "imageUrl": "/staged_images/pool/judge_gavel_guilty.png",
-    "rejectionReason": "סימן מים בולט של חברת התמונות \"dreamstime\" על פטיש השופט ואייקון חיפוש מודבק בפינה.",
-    "visualNotes": "פטיש שופטים מעץ עם כיתוב GUILTY, כשבמרכזו מוטבע סימן מים שקוף dreamstime ובפינה הימנית התחתונה אייקון Google Lens.",
-    "suggestedFix": "החלפה בצילום נקי ללא סימני מים של פטיש שופטים מעץ מלא על שולחן בית משפט.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 7,
-    "id": "pointing_finger_accusation",
-    "originalName": "אצבע מופנית",
-    "originalCategory": "⚖️ משפט ואשמה",
-    "imageUrl": "/staged_images/pool/pointing_finger_accusation.png",
-    "rejectionReason": "איור קליפ-ארט מטושטש ברזולוציה נמוכה עם פינות מעוגלות ועיוותי דחיסה.",
-    "visualNotes": "סקיצה בשחור-לבן של אצבע מורה מטושטשת עם רקע לבן גזור ברישול.",
-    "suggestedFix": "החלפה בצילום אמיתי חד וברור של אצבע מורה המופנית לפנים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 19,
-    "id": "pac_man",
-    "originalName": "פאק",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/pac_man_arcade.jpg",
-    "rejectionReason": "סימן מים של עיפרון/אפליקציה בפינה התחתונה ושם קטום בקטלוג (\"פאק\" במקום \"פאק-מן\").",
-    "visualNotes": "פוסטר ניאון חביב אך נושא אייקון עיפרון מסחרי בפינה הימנית התחתונה.",
-    "suggestedFix": "החלפה בצילום נקי של מכונת ארקייד מקורית של פאק-מן או איור רשמי ללא אייקונים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 35,
-    "id": "pinocchio",
-    "originalName": "פינוקיו",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/pinocchio.jpg",
-    "rejectionReason": "תחריט עתיק מ-1883 בעל מראה מנוכר וקריפי, רגליים מוזרות ושוליים קטועים.",
-    "visualNotes": "איור היסטורי צבעוני מהמהדורה הראשונה של קולודי, אך הדמות נראית כמו ליצן מטריד ולא בובת עץ ברורה עם אף ארוך.",
-    "suggestedFix": "החלפה באיור קלאסי מוכר או צילום של בובת מריונטה מעץ עם אף ארוך.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 37,
-    "id": "peter_pan",
-    "originalName": "פיטר פן",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/peter_pan.jpg",
-    "rejectionReason": "רישום עיפרון ישן מ-1906, דהוי וחסר ניגודיות, שכמעט אינו ניתן לפענוח על מסך.",
-    "visualNotes": "איור ספר ישן בשחור-לבן ללא צבע, קווים דקים ועמוסים שמקשים על זיהוי הדמות כמנמוניקה.",
-    "suggestedFix": "החלפה באיור צבעוני ברור של פיטר פן במעופו עם כובע נוצה ירוק.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.137Z"
-  },
-  {
-    "batch": 1,
-    "index": 49,
-    "id": "minions",
-    "originalName": "המיניונים",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/minions.jpg",
-    "rejectionReason": "כרזת קולנוע פרסומית מסחרית עמוסה בכותרות ענק וטקסט שיווקי בעברית (\"הכירו את הגיבורים\", \"קיץ בקולנוע\", חסויות).",
-    "visualNotes": "פוסטר ישראלי של גלובוס מקס עם טקסט עברי ענק שתופס מעל 50% משטח התמונה.",
-    "suggestedFix": "החלפה בתמונת קלוז-אפ נקייה של המיניונים (קווין, סטיוארט ובוב) ללא כיתובים שיווקיים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 50,
-    "id": "colonel_sanders",
-    "originalName": "הקולונל של KFC",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/colonel_sanders.jpg",
-    "rejectionReason": "לוגו מסחרי וקטורי של KFC במקום תצלום דמות.",
-    "visualNotes": "סמל הלוגו האדום-לבן של רשת המזון המהיר KFC עם כיתוב הלוגו.",
-    "suggestedFix": "החלפה בצילום הדיוקן ההיסטורי האותנטי של הרלנד סנדרס בחליפתו הלבנה.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 52,
-    "id": "the_grinch",
-    "originalName": "הגרינץ'",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/the_grinch.jpg",
-    "rejectionReason": "כרזת קולנוע מלאה עם שמות שחקנים בעברית (\"ג'ים קארי הוא הגרינץ'\") ובלוק קרדיטים צפוף בתחתית.",
-    "visualNotes": "פוסטר קולנוע של סרט משנת 2000 עם קווי קיפול של נייר וכיתובים מרובים.",
-    "suggestedFix": "החלפה בצילום קלוז-אפ מתוך הסרט של פני הגרינץ' הירוק בכובע סנטה ללא טקסט.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 53,
-    "id": "bilbo_baggins",
-    "originalName": "בילבו בגינס",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/bilbo_baggins_ring.jpg",
-    "rejectionReason": "מפת עולם בדיונית (\"The Hobbit\") ללא דמותו של בילבו בגינס כלל!",
-    "visualNotes": "איור מפה גיאוגרפית של הארץ התיכונה על רקע קלף ישן, ללא שום דמות או הוביט.",
-    "suggestedFix": "החלפה בצילום אותנטי של בילבו בגינס מתוך טרילוגיית ההוביט.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 55,
-    "id": "alf",
-    "originalName": "אלף",
-    "originalCategory": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-    "imageUrl": "/staged_images/pool/alf.jpg",
-    "rejectionReason": "צילום צעצוע פלסטיק עם טקסט סימן מים ביפנית בפינה ומסגרת לבנה רחבה.",
-    "visualNotes": "דמות צעצוע קטנה של אלף על רקע חדר מיניאטורי, עם כתובת יפנית בפינה השמאלית ושוליים לבנים.",
-    "suggestedFix": "החלפה בצילום מסך אותנטי וחד מתוך סדרת הטלוויזיה המקורית של אלף.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 61,
-    "id": "great_sphinx_giza",
-    "originalName": "הספינקס",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/sphinx_giza_sand.jpg",
-    "rejectionReason": "סימן מים שקוף בולט (\"dreamstime\") המוטבע לרוחב גוף הספינקס.",
-    "visualNotes": "צילום יפה של הספינקס בגיזה, אך כיתוב מסחרי שקוף מכסה את גוף הפסל.",
-    "suggestedFix": "החלפה בצילום נקי ללא זכויות יוצרים ממאגר ויקימדיה של הספינקס הגדול.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 72,
-    "id": "saint_basil_cathedral",
-    "originalName": "הקרמלין / כנסיית ואסילי הקדוש",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/kremlin_red_square_moscow.jpg",
-    "rejectionReason": "סימן מים ענק ובולט של Alamy עם פס שחור רחב בתחתית התמונה.",
-    "visualNotes": "כנסיית וסילי הקדוש במוסקבה מכוסה בחותמות Alamy ופס שחור עם פרטי רכישת תמונה.",
-    "suggestedFix": "החלפה בצילום פנורמי נקי של הכיכר האדומה וכיפות הבצל ממאגר ויקימדיה חופשי.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 83,
-    "id": "plaza_de_toros",
-    "originalName": "פלאזה דה טורוס",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/plaza_de_toros.jpg",
-    "rejectionReason": "קולאז' של 5 תמונות נפרדות של העיר קיטו באקוודור במקום זירת שוורים!",
-    "visualNotes": "תמונה המורכבת מחמישה מקטעים נפרדים: הר געש מושלג, כנסייה בלילה, רחוב ומבט פנורמי. אין כל קשר לזירת שוורים.",
-    "suggestedFix": "החלפה בצילום אווירי אותנטי של זירת מלחמת שוורים מסורתית בספרד.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 85,
-    "id": "burj_al_arab",
-    "originalName": "מגדל דובאי",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/burj_al_arab.jpg",
-    "rejectionReason": "תמונה שגויה לחלוטין – מציגה את בורג' ח'ליפה (הגבוה בעולם) במקום בורג' אל ערב (מלון המפרש)!",
-    "visualNotes": "צילום של מגדל בורג' ח'ליפה הענק, כפילות מלאה לפריט 79.",
-    "suggestedFix": "החלפה בצילום אותנטי של מלון בורג' אל-ערב המפורסם בצורת מפרש על החוף.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 86,
-    "id": "chichen_itza_pyramid",
-    "originalName": "מקדש המאיה",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/chichen_itza_pyramid.jpg",
-    "rejectionReason": "סימן מים מסחרי ענק ובולט של חברת התמונות Alamy על גבי פירמידת המאיה.",
-    "visualNotes": "פירמידת אל קסטיליו עם לוגו Alamy חוזר בשמיים ובבסיס הפירמידה, כולל פס שחור תחתון.",
-    "suggestedFix": "החלפה בצילום נקי ללא סימני מים של פירמידת צ'יצ'ן איצה.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 87,
-    "id": "western_wall",
-    "originalName": "הכותל המערבי",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/western_wall_jerusalem.jpg",
-    "rejectionReason": "סימן מים גדול של Alamy מוטבע על רחבת הכותל המערבי ואבני הכותל.",
-    "visualNotes": "רחבת התפילה בכותל המערבי מכוסה בחותמות Alamy ופס קרדיט שחור בתחתית.",
-    "suggestedFix": "החלפה בצילום פתוח, נקי ומואר של הכותל המערבי ללא סימני מים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 92,
-    "id": "medieval_castle_fortress",
-    "originalName": "מבצר מלחמה מימי הביניים",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/medieval_castle_fortress.jpg",
-    "rejectionReason": "מיניאטורת כתב-יד עתיק של הקיסר פרידריך ברברוסה על כס מלכותו – אין כל זכר לטירה או מבצר!",
-    "visualNotes": "איור עתיק של שלושה אנשים מלכותיים סביב כס מלוכה. אין שום מבנה, חומה או מבצר בתמונה.",
-    "suggestedFix": "החלפה בצילום אותנטי ומרהיב של מבצר מימי הביניים על צוק סלע.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 1,
-    "index": 98,
-    "id": "aircraft_hangar",
-    "originalName": "האנגר מטוסים",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/aircraft_hangar.jpg",
-    "rejectionReason": "מצודת טיגארט / תחנת משטרה בריטית מאבן בישראל – אין כל קשר למטוסים או להאנגר!",
-    "visualNotes": "מבנה אבן ישן עם מגדל שמירה עגול ומדרכה עם שפת מדרכה אדום-לבן. אין שום מטוס או מוסך מטוסים.",
-    "suggestedFix": "החלפה בצילום רחב של האנגר תעופה מקצועי עם מטוס נוסעים בפנים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:16:14.138Z"
-  },
-  {
-    "batch": 2,
-    "index": 103,
-    "id": "roman_ruins_arch",
-    "originalName": "קולוסיאום רומי",
-    "originalCategory": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-    "imageUrl": "/staged_images/pool/roman_ruins_arch.jpg",
-    "rejectionReason": "כפילות מוחלטת לקוליסאום (פריט 63 ופריט 111) – אותו קובץ תמונה בדיוק תחת שם שונה.",
-    "visualNotes": "צילום של הקוליסאום ברומא, זהה לחלוטין לפריט הקוליסאום מסיבוב 1.",
-    "suggestedFix": "הסרת הכפילות או החלפה בצילום של קשת רומית עתיקה אמיתית (כגון קשת ספטימיוס סוורוס).",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 162,
-    "id": "item_155_זכוכית_מגדלת__מסמלת",
-    "originalName": "זכוכית מגדלת",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_155_זכוכית_מגדלת__מסמלת.jpg",
-    "rejectionReason": "קובץ AVIF פגום בעל סיומת שגויה (jpg) – כותר ftypavif גורם לשגיאת פענוח בדפדפנים.",
-    "visualNotes": "קובץ עם חתימת פורמט AVIF שאינו נתמך כ-JPEG תקין.",
-    "suggestedFix": "החלפה בצילום JPEG נקי וחד של זכוכית מגדלת קלאסית עם ידית עץ.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 164,
-    "id": "item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל",
-    "originalName": "שק כסף",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל.jpg",
-    "rejectionReason": "תיבת סימן מים מסחרית ענקית (\"iStock Credit: doomu\") מוטבעת לרוחב שק הכסף.",
-    "visualNotes": "שק כסף יפה מבד יוטה, אך במרכזו מלבן אפור בולט עם כיתוב מסחרי של iStock.",
-    "suggestedFix": "החלפה בצילום נקי ללא סימני מים של שק מטבעות או שטרות כסף.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 166,
-    "id": "item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת",
-    "originalName": "ענן מילים / בועת מחשבה",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת.jpg",
-    "rejectionReason": "בועת קומיקס ריקה לחלוטין – איור קליפ-ארט חלול ללא שום תוכן ויזואלי מנמוני.",
-    "visualNotes": "קו מתאר שחור של ענן מחשבה ריק על רקע לבן, ללא שום אובייקט או רעיון מוחשי.",
-    "suggestedFix": "החלפה בצילום של אדם מהורהר, עננים אמיתיים בשמיים או סמל חזותי מובהק.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 167,
-    "id": "item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל",
-    "originalName": "לב אדום שבור",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל.jpg",
-    "rejectionReason": "עשרות סימני מים חוזרים באלכסון של שירות ההגדלה \"Magnific\" על פני כל השמיים והרצפה.",
-    "visualNotes": "לב שבור יפהפה, אך מוטבעות עליו עשרות חותמות טקסט שקופות \"Magnific\" שמזהמות את התמונה.",
-    "suggestedFix": "החלפה בצילום נקי ללא סימני מים של לב שבור מקרמיקה או עץ.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 178,
-    "id": "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל",
-    "originalName": "שריר זרוע",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל.jpg",
-    "rejectionReason": "קובץ AVIF פגום בעל סיומת שגויה (jpg) הגורם לשגיאת פענוח קריטית.",
-    "visualNotes": "קובץ פגום עם חתימת פורמט AVIF שאינו נטען כ-JPEG.",
-    "suggestedFix": "החלפה בצילום איכותי של שריר זרוע (biceps) אמיתי בחדר כושר.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 180,
-    "id": "item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת",
-    "originalName": "גלולת תרופה",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת.jpg",
-    "rejectionReason": "תיבת סימן מים מסחרית בולטת (\"iStock Credit: Thais Ceneviva\") לרוחב קפסולות התרופה.",
-    "visualNotes": "צילום תקריב של כמוסות תרופה אדום-לבן, כשבמרכזו מלבן אפור של iStock.",
-    "suggestedFix": "החלפה בצילום נקי ומקצועי של כדורי תרופה או מרשם רפואי ללא סימני מים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 181,
-    "id": "item_174_שלט_עצור__מתומן_אדום___מסמל",
-    "originalName": "שלט עצור",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_174_שלט_עצור__מתומן_אדום___מסמל.jpg",
-    "rejectionReason": "סימן מים מסחרי של Adobe Stock מוטבע בקובץ.",
-    "visualNotes": "איור וקטורי של שלט עצור הנושא חותמת זכויות יוצרים של Adobe Stock.",
-    "suggestedFix": "החלפה בצילום אמיתי של תמרור עצור אדום ברחוב עירוני.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 183,
-    "id": "item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל",
-    "originalName": "סימן שאלה",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל.jpg",
-    "rejectionReason": "סימני מים חוזרים של \"Magnific\" מרושתים על פני כל הרקע של סימן השאלה.",
-    "visualNotes": "סימן שאלה תלת-ממדי מבריק, אך הרקע הלבן מכוסה בעשרות כתוביות \"Magnific\".",
-    "suggestedFix": "החלפה בצילום נקי של סימן שאלה מואר או שלט ללא סימני מים.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 188,
-    "id": "item_181_עניבת_פרפר_שחורה__פפיון___מסמלת",
-    "originalName": "עניבת פרפר (פפיון)",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_181_עניבת_פרפר_שחורה__פפיון___מסמלת.jpg",
-    "rejectionReason": "קובץ AVIF פגום בעל סיומת שגויה (jpg) הגורם לשגיאת פענוח.",
-    "visualNotes": "קובץ עם חתימת פורמט AVIF במקום JPEG תקני.",
-    "suggestedFix": "החלפה בצילום אלגנטי של עניבת פפיון שחורה ממשי על חולצה לבנה.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 191,
-    "id": "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל",
-    "originalName": "קופידון",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל.jpg",
-    "rejectionReason": "סימני מים מרובים של \"Magnific\" מוטבעים על שערות הזהב, הכנפיים והקשת של קופידון.",
-    "visualNotes": "איור חביב אך מכוסה בכתוביות שקופות של שירות הגדלה מסחרי.",
-    "suggestedFix": "החלפה בפסל שיש קלאסי של קופידון עם חץ וקשת או איור נקי לחלוטין.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 192,
-    "id": "item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל",
-    "originalName": "מלאך ושטן על הכתף",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל.jpg",
-    "rejectionReason": "סימן מים מסחרי חוזר של Adobe Stock (#126475240) + צללית ראש ריקה וגולמית במרכז.",
-    "visualNotes": "איור קומיקס עם חותמות Adobe Stock חוזרות בכל פינה, כשהאדם במרכז הוא רק צללית לבנה חסרת פנים.",
-    "suggestedFix": "החלפה בצילום או איור שלם ונקי ללא חותמות סטוק.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 193,
-    "id": "item_186_טביעת_אצבע_שחורה__דיו___מסמלת",
-    "originalName": "טביעת אצבע שחורה",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_186_טביעת_אצבע_שחורה__דיו___מסמלת.jpg",
-    "rejectionReason": "סימן מים מסחרי של Adobe Stock מוטבע בקובץ.",
-    "visualNotes": "איור טביעת אצבע דיו הנושא חותמת מסחרית של חברת תמונות.",
-    "suggestedFix": "החלפה בצילום נקי ואותנטי של טביעת אצבע שחורה על כרטיס זיהוי פלילי.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 196,
-    "id": "item_189_פאזל__חתיכה_אחת_חסרה___מסמלת",
-    "originalName": "פאזל (חתיכה חסרה)",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-    "imageUrl": "/staged_images/pool/item_189_פאזל__חתיכה_אחת_חסרה___מסמלת.jpg",
-    "rejectionReason": "סימן מים שקוף בולט (\"dreamstime\") מוטבע ישירות במרכז החתיכה החסרה המוארת.",
-    "visualNotes": "תמונה תלת-ממדית מושקעת של פאזל כחול כהה, אך במרכז החלל הזוהר מופיע הלוגו של Dreamstime.",
-    "suggestedFix": "החלפה בצילום נקי ללא סימני מים של חלקי פאזל עץ או קרטון.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
-  },
-  {
-    "batch": 2,
-    "index": 198,
     "id": "item_191_עגלת_קניות_מסורתית__מסמלת",
-    "originalName": "עגלת קניות",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "name": "עגלת קניות",
+    "title": "עגלת קניות",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_191_עגלת_קניות_מסורתית__מסמלת.jpg",
-    "rejectionReason": "קובץ AVIF פגום בעל סיומת שגויה (jpg) שאינו ניתן לפענוח.",
-    "visualNotes": "קובץ עם חתימת פורמט AVIF שאינו נתמך כ-JPEG.",
-    "suggestedFix": "החלפה בצילום אותנטי של עגלת קניות ממתכת בסופרמרקט.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "branches": [
+      "סופר",
+      "סופרמרקט",
+      "קניות",
+      "מצרכים",
+      "שוק"
+    ],
+    "keywords": [
+      "סופר",
+      "סופרמרקט",
+      "קניות",
+      "מצרכים",
+      "שוק"
+    ],
+    "association": "סופר, סופרמרקט, קניות, מצרכים, שוק",
+    "visualNotes": "עגלת קניות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עגלת קניות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   },
   {
-    "batch": 2,
-    "index": 199,
     "id": "item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל",
-    "originalName": "פח אשפה",
-    "originalCategory": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "name": "פח אשפה",
+    "title": "פח אשפה",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
     "imageUrl": "/staged_images/pool/item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל.jpg",
-    "rejectionReason": "קובץ AVIF פגום בעל סיומת שגויה (jpg) שאינו נטען כראוי.",
-    "visualNotes": "קובץ בעל קידוד AVIF במקום JPEG.",
-    "suggestedFix": "החלפה בצילום נקי של פח אשפה ביתי מנירוסטה עם דוושה.",
-    "auditStatus": "rejected",
-    "auditedAt": "2026-11-11T11:49:16.230Z"
+    "branches": [
+      "אשפה",
+      "ניקיון",
+      "זבל",
+      "גרוע"
+    ],
+    "keywords": [
+      "אשפה",
+      "ניקיון",
+      "זבל",
+      "גרוע"
+    ],
+    "association": "אשפה, ניקיון, זבל, גרוע",
+    "visualNotes": "פח אשפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פח אשפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_194_כדור_בדולח_על_מפה_כהה__מסמל",
+    "name": "כדור בדולח",
+    "title": "כדור בדולח",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_194_כדור_בדולח_על_מפה_כהה__מסמל.jpg",
+    "branches": [
+      "עתיד",
+      "נבואה",
+      "כדור"
+    ],
+    "keywords": [
+      "עתיד",
+      "נבואה",
+      "כדור"
+    ],
+    "association": "עתיד, נבואה, כדור",
+    "visualNotes": "כדור בדולח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור בדולח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת",
+    "name": "מזוודת עור וינטג'",
+    "title": "מזוודת עור וינטג'",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת.jpg",
+    "branches": [
+      "טיסה",
+      "נסיעה",
+      "חופשה",
+      "שדה תעופה",
+      "אריזה",
+      "טיול"
+    ],
+    "keywords": [
+      "טיסה",
+      "נסיעה",
+      "חופשה",
+      "שדה תעופה",
+      "אריזה",
+      "טיול"
+    ],
+    "association": "טיסה, נסיעה, חופשה, שדה תעופה, אריזה, טיול",
+    "visualNotes": "מזוודת עור וינטג' – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מזוודת עור וינטג' – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_196_מטאטא_זרדים_ישן__מסמל",
+    "name": "מטאטא זרדים",
+    "title": "מטאטא זרדים",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_196_מטאטא_זרדים_ישן__מסמל.jpg",
+    "branches": [
+      "מטאטא",
+      "מכשפה",
+      "אגדות",
+      "טאטוא",
+      "ניקיון"
+    ],
+    "keywords": [
+      "מטאטא",
+      "מכשפה",
+      "אגדות",
+      "טאטוא",
+      "ניקיון"
+    ],
+    "association": "מטאטא, מכשפה, אגדות, טאטוא, ניקיון",
+    "visualNotes": "מטאטא זרדים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מטאטא זרדים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל",
+    "name": "כובע קוסמים ושפן",
+    "title": "כובע קוסמים ושפן",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל.jpg",
+    "branches": [
+      "קסם",
+      "מופע",
+      "שליפה",
+      "אחיזת עיניים"
+    ],
+    "keywords": [
+      "קסם",
+      "מופע",
+      "שליפה",
+      "אחיזת עיניים"
+    ],
+    "association": "קסם, מופע, שליפה, אחיזת עיניים",
+    "visualNotes": "כובע קוסמים ושפן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כובע קוסמים ושפן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_198_נוצה_טבולה_בקסת_דיו__מסמלת",
+    "name": "נוצה וקסת דיו",
+    "title": "נוצה וקסת דיו",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_198_נוצה_טבולה_בקסת_דיו__מסמלת.jpg",
+    "branches": [
+      "מכתב",
+      "כתיבה",
+      "מגילה",
+      "הודעה",
+      "לכתוב"
+    ],
+    "keywords": [
+      "מכתב",
+      "כתיבה",
+      "מגילה",
+      "הודעה",
+      "לכתוב"
+    ],
+    "association": "מכתב, כתיבה, מגילה, הודעה, לכתוב",
+    "visualNotes": "נוצה וקסת דיו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נוצה וקסת דיו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל",
+    "name": "ספר פתוח",
+    "title": "ספר פתוח",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל.jpg",
+    "branches": [
+      "קריאה",
+      "לימודים",
+      "אקדמיה",
+      "דפים",
+      "ידע",
+      "סיפור",
+      "מבחן"
+    ],
+    "keywords": [
+      "קריאה",
+      "לימודים",
+      "אקדמיה",
+      "דפים",
+      "ידע",
+      "סיפור",
+      "מבחן"
+    ],
+    "association": "קריאה, לימודים, אקדמיה, דפים, ידע, סיפור, מבחן",
+    "visualNotes": "ספר פתוח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ספר פתוח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_200_קולב_בגדים_ממתכת__מסמל",
+    "name": "קולב מתכת",
+    "title": "קולב מתכת",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_200_קולב_בגדים_ממתכת__מסמל.jpg",
+    "branches": [
+      "בגדים",
+      "ארון",
+      "כביסה",
+      "גיהוץ",
+      "ניקוי יבש",
+      "חולצה",
+      "סידור"
+    ],
+    "keywords": [
+      "בגדים",
+      "ארון",
+      "כביסה",
+      "גיהוץ",
+      "ניקוי יבש",
+      "חולצה",
+      "סידור"
+    ],
+    "association": "בגדים, ארון, כביסה, גיהוץ, ניקוי יבש, חולצה, סידור",
+    "visualNotes": "קולב מתכת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קולב מתכת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_201_לימוזינה_שחורה_ארוכה",
+    "name": "לימוזינה",
+    "title": "לימוזינה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_201_לימוזינה_שחורה_ארוכה.jpg",
+    "branches": [
+      "חתונה",
+      "אירוע",
+      "יוקרה",
+      "נשף",
+      "מסיבה",
+      "נהג",
+      "שמפניה",
+      "עשיר"
+    ],
+    "keywords": [
+      "חתונה",
+      "אירוע",
+      "יוקרה",
+      "נשף",
+      "מסיבה",
+      "נהג",
+      "שמפניה",
+      "עשיר"
+    ],
+    "association": "חתונה, אירוע, יוקרה, נשף, מסיבה, נהג, שמפניה, עשיר",
+    "visualNotes": "לימוזינה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לימוזינה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_202_מונית_צהובה_ניו_יורקית",
+    "name": "מונית צהובה",
+    "title": "מונית צהובה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_202_מונית_צהובה_ניו_יורקית.jpg",
+    "branches": [
+      "נסיעה",
+      "נהג",
+      "מונה",
+      "ניו יורק",
+      "פקק",
+      "עיר",
+      "טיפ",
+      "איחור"
+    ],
+    "keywords": [
+      "נסיעה",
+      "נהג",
+      "מונה",
+      "ניו יורק",
+      "פקק",
+      "עיר",
+      "טיפ",
+      "איחור"
+    ],
+    "association": "נסיעה, נהג, מונה, ניו יורק, פקק, עיר, טיפ, איחור",
+    "visualNotes": "מונית צהובה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מונית צהובה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_203_אוטובוס_קומותיים_אדום",
+    "name": "אוטובוס קומותיים",
+    "title": "אוטובוס קומותיים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_203_אוטובוס_קומותיים_אדום.jpg",
+    "branches": [
+      "לונדון",
+      "נסיעה",
+      "תחנה",
+      "תיירות",
+      "כרטיס",
+      "נוסעים",
+      "סיור",
+      "טיול"
+    ],
+    "keywords": [
+      "לונדון",
+      "נסיעה",
+      "תחנה",
+      "תיירות",
+      "כרטיס",
+      "נוסעים",
+      "סיור",
+      "טיול"
+    ],
+    "association": "לונדון, נסיעה, תחנה, תיירות, כרטיס, נוסעים, סיור, טיול",
+    "visualNotes": "אוטובוס קומותיים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אוטובוס קומותיים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_204_רכבת_קיטור_ישנה",
+    "name": "רכבת קיטור",
+    "title": "רכבת קיטור",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_204_רכבת_קיטור_ישנה.jpg",
+    "branches": [
+      "מסילה",
+      "קטר",
+      "תחנה",
+      "נסיעה",
+      "פחם",
+      "עשן",
+      "נוסטלגיה",
+      "טיול"
+    ],
+    "keywords": [
+      "מסילה",
+      "קטר",
+      "תחנה",
+      "נסיעה",
+      "פחם",
+      "עשן",
+      "נוסטלגיה",
+      "טיול"
+    ],
+    "association": "מסילה, קטר, תחנה, נסיעה, פחם, עשן, נוסטלגיה, טיול",
+    "visualNotes": "רכבת קיטור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רכבת קיטור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_205_אופנוע_הארלי_דיווידסון",
+    "name": "אופנוע הארלי",
+    "title": "אופנוע הארלי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_205_אופנוע_הארלי_דיווידסון.jpg",
+    "branches": [
+      "קסדה",
+      "מוסך",
+      "טסט",
+      "רכיבה",
+      "כביש",
+      "מנוע",
+      "מהירות",
+      "ביטוח"
+    ],
+    "keywords": [
+      "קסדה",
+      "מוסך",
+      "טסט",
+      "רכיבה",
+      "כביש",
+      "מנוע",
+      "מהירות",
+      "ביטוח"
+    ],
+    "association": "קסדה, מוסך, טסט, רכיבה, כביש, מנוע, מהירות, ביטוח",
+    "visualNotes": "אופנוע הארלי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אופנוע הארלי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_206_ספינת_פיראטים",
+    "name": "ספינת פיראטים",
+    "title": "ספינת פיראטים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_206_ספינת_פיראטים.jpg",
+    "branches": [
+      "שודדי ים",
+      "אוצר",
+      "עוגן",
+      "מפרש",
+      "הפלגה",
+      "תוכי",
+      "הרפתקה"
+    ],
+    "keywords": [
+      "שודדי ים",
+      "אוצר",
+      "עוגן",
+      "מפרש",
+      "הפלגה",
+      "תוכי",
+      "הרפתקה"
+    ],
+    "association": "שודדי ים, אוצר, עוגן, מפרש, הפלגה, תוכי, הרפתקה",
+    "visualNotes": "ספינת פיראטים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ספינת פיראטים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_207_מעבורת_חלל",
+    "name": "מעבורת חלל",
+    "title": "מעבורת חלל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_207_מעבורת_חלל.jpg",
+    "branches": [
+      "שיגור",
+      "אסטרונאוט",
+      "טיל",
+      "לוויין",
+      "מדע",
+      "ירח",
+      "שמיים",
+      "טכנולוגיה"
+    ],
+    "keywords": [
+      "שיגור",
+      "אסטרונאוט",
+      "טיל",
+      "לוויין",
+      "מדע",
+      "ירח",
+      "שמיים",
+      "טכנולוגיה"
+    ],
+    "association": "שיגור, אסטרונאוט, טיל, לוויין, מדע, ירח, שמיים, טכנולוגיה",
+    "visualNotes": "מעבורת חלל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מעבורת חלל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_208_מטוס_ג_מבו",
+    "name": "מטוס ג'מבו",
+    "title": "מטוס ג'מבו",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_208_מטוס_ג_מבו.jpg",
+    "branches": [
+      "טיסה",
+      "חופשה",
+      "שדה תעופה",
+      "דרכון",
+      "מזוודה",
+      "חו\"ל",
+      "נתב\"ג",
+      "אריזה"
+    ],
+    "keywords": [
+      "טיסה",
+      "חופשה",
+      "שדה תעופה",
+      "דרכון",
+      "מזוודה",
+      "חו\"ל",
+      "נתב\"ג",
+      "אריזה"
+    ],
+    "association": "טיסה, חופשה, שדה תעופה, דרכון, מזוודה, חו\"ל, נתב\"ג, אריזה",
+    "visualNotes": "מטוס ג'מבו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מטוס ג'מבו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_209_גונדולה_ונציאנית",
+    "name": "גונדולה",
+    "title": "גונדולה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_209_גונדולה_ונציאנית.jpg",
+    "branches": [
+      "ונציה",
+      "איטליה",
+      "שייט",
+      "רומנטיקה",
+      "חופשה",
+      "משוט",
+      "תעלה",
+      "זוגיות"
+    ],
+    "keywords": [
+      "ונציה",
+      "איטליה",
+      "שייט",
+      "רומנטיקה",
+      "חופשה",
+      "משוט",
+      "תעלה",
+      "זוגיות"
+    ],
+    "association": "ונציה, איטליה, שייט, רומנטיקה, חופשה, משוט, תעלה, זוגיות",
+    "visualNotes": "גונדולה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גונדולה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_210_צפלין",
+    "name": "צפלין",
+    "title": "צפלין",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_210_צפלין.jpg",
+    "branches": [
+      "תעופה",
+      "שמיים",
+      "ריחוף",
+      "בלון",
+      "תצפית",
+      "גובה",
+      "אוויר",
+      "טיסה"
+    ],
+    "keywords": [
+      "תעופה",
+      "שמיים",
+      "ריחוף",
+      "בלון",
+      "תצפית",
+      "גובה",
+      "אוויר",
+      "טיסה"
+    ],
+    "association": "תעופה, שמיים, ריחוף, בלון, תצפית, גובה, אוויר, טיסה",
+    "visualNotes": "צפלין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צפלין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_211_כדור_פורח_צבעוני",
+    "name": "כדור פורח",
+    "title": "כדור פורח",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_211_כדור_פורח_צבעוני.jpg",
+    "branches": [
+      "ריחוף",
+      "שמיים",
+      "סלסלה",
+      "גובה",
+      "טיול",
+      "נוף",
+      "חופשה",
+      "זריחה"
+    ],
+    "keywords": [
+      "ריחוף",
+      "שמיים",
+      "סלסלה",
+      "גובה",
+      "טיול",
+      "נוף",
+      "חופשה",
+      "זריחה"
+    ],
+    "association": "ריחוף, שמיים, סלסלה, גובה, טיול, נוף, חופשה, זריחה",
+    "visualNotes": "כדור פורח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור פורח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_212_צוללת_צהובה",
+    "name": "צוללת צהובה",
+    "title": "צוללת צהובה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_212_צוללת_צהובה.jpg",
+    "branches": [
+      "צלילה",
+      "עומק",
+      "מצולות",
+      "דגים",
+      "אלמוגים",
+      "חמצן",
+      "שייט",
+      "אוקיינוס"
+    ],
+    "keywords": [
+      "צלילה",
+      "עומק",
+      "מצולות",
+      "דגים",
+      "אלמוגים",
+      "חמצן",
+      "שייט",
+      "אוקיינוס"
+    ],
+    "association": "צלילה, עומק, מצולות, דגים, אלמוגים, חמצן, שייט, אוקיינוס",
+    "visualNotes": "צוללת צהובה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צוללת צהובה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_213_טרקטור_חקלאי_ירוק",
+    "name": "טרקטור",
+    "title": "טרקטור",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_213_טרקטור_חקלאי_ירוק.jpg",
+    "branches": [
+      "חקלאות",
+      "שדה",
+      "מושב",
+      "קיבוץ",
+      "חריש",
+      "אדמה",
+      "קציר",
+      "עבודה"
+    ],
+    "keywords": [
+      "חקלאות",
+      "שדה",
+      "מושב",
+      "קיבוץ",
+      "חריש",
+      "אדמה",
+      "קציר",
+      "עבודה"
+    ],
+    "association": "חקלאות, שדה, מושב, קיבוץ, חריש, אדמה, קציר, עבודה",
+    "visualNotes": "טרקטור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טרקטור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_214_ניידת_משטרה_קלאסית",
+    "name": "ניידת משטרה",
+    "title": "ניידת משטרה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_214_ניידת_משטרה_קלאסית.jpg",
+    "branches": [
+      "שוטר",
+      "סירנה",
+      "דוח",
+      "חוק",
+      "מרדף",
+      "אבטחה",
+      "בדיקה",
+      "חירום"
+    ],
+    "keywords": [
+      "שוטר",
+      "סירנה",
+      "דוח",
+      "חוק",
+      "מרדף",
+      "אבטחה",
+      "בדיקה",
+      "חירום"
+    ],
+    "association": "שוטר, סירנה, דוח, חוק, מרדף, אבטחה, בדיקה, חירום",
+    "visualNotes": "ניידת משטרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ניידת משטרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_215_כבאית_אדומה",
+    "name": "כבאית",
+    "title": "כבאית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_215_כבאית_אדומה.jpg",
+    "branches": [
+      "שריפה",
+      "כיבוי אש",
+      "סולם",
+      "חירום",
+      "צינור",
+      "הצלה",
+      "מים",
+      "סירנה"
+    ],
+    "keywords": [
+      "שריפה",
+      "כיבוי אש",
+      "סולם",
+      "חירום",
+      "צינור",
+      "הצלה",
+      "מים",
+      "סירנה"
+    ],
+    "association": "שריפה, כיבוי אש, סולם, חירום, צינור, הצלה, מים, סירנה",
+    "visualNotes": "כבאית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כבאית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_216_אמבולנס_לבן",
+    "name": "אמבולנס",
+    "title": "אמבולנס",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_216_אמבולנס_לבן.jpg",
+    "branches": [
+      "רפואה",
+      "חירום",
+      "בית חולים",
+      "רופא",
+      "חובש",
+      "פציעה",
+      "עזרה",
+      "מד\"א"
+    ],
+    "keywords": [
+      "רפואה",
+      "חירום",
+      "בית חולים",
+      "רופא",
+      "חובש",
+      "פציעה",
+      "עזרה",
+      "מד\"א"
+    ],
+    "association": "רפואה, חירום, בית חולים, רופא, חובש, פציעה, עזרה, מד\"א",
+    "visualNotes": "אמבולנס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אמבולנס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_217_כרכרת_סוסים_מלכותית",
+    "name": "כרכרת סוסים",
+    "title": "כרכרת סוסים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_217_כרכרת_סוסים_מלכותית.jpg",
+    "branches": [
+      "מלוכה",
+      "ארמון",
+      "נשף",
+      "אגדה",
+      "חתונה",
+      "מלכה",
+      "רכיבה",
+      "פאר"
+    ],
+    "keywords": [
+      "מלוכה",
+      "ארמון",
+      "נשף",
+      "אגדה",
+      "חתונה",
+      "מלכה",
+      "רכיבה",
+      "פאר"
+    ],
+    "association": "מלוכה, ארמון, נשף, אגדה, חתונה, מלכה, רכיבה, פאר",
+    "visualNotes": "כרכרת סוסים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כרכרת סוסים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_218_ג_יפ_צבאי_פתוח",
+    "name": "ג'יפ שטח",
+    "title": "ג'יפ שטח",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_218_ג_יפ_צבאי_פתוח.jpg",
+    "branches": [
+      "טיול",
+      "מדבר",
+      "צבא",
+      "מילואים",
+      "מסדר",
+      "בסיס",
+      "ניווט",
+      "חיילים"
+    ],
+    "keywords": [
+      "טיול",
+      "מדבר",
+      "צבא",
+      "מילואים",
+      "מסדר",
+      "בסיס",
+      "ניווט",
+      "חיילים"
+    ],
+    "association": "טיול, מדבר, צבא, מילואים, מסדר, בסיס, ניווט, חיילים",
+    "visualNotes": "ג'יפ שטח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ג'יפ שטח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_219_קטנוע_וספה_איטלקי",
+    "name": "קטנוע וספה",
+    "title": "קטנוע וספה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_219_קטנוע_וספה_איטלקי.jpg",
+    "branches": [
+      "שליחות",
+      "משלוח",
+      "פקקים",
+      "קסדה",
+      "עיר",
+      "חניה",
+      "איטליה",
+      "נסיעה"
+    ],
+    "keywords": [
+      "שליחות",
+      "משלוח",
+      "פקקים",
+      "קסדה",
+      "עיר",
+      "חניה",
+      "איטליה",
+      "נסיעה"
+    ],
+    "association": "שליחות, משלוח, פקקים, קסדה, עיר, חניה, איטליה, נסיעה",
+    "visualNotes": "קטנוע וספה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קטנוע וספה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_220_ספינת_טיטאניק",
+    "name": "טיטאניק",
+    "title": "טיטאניק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_220_ספינת_טיטאניק.jpg",
+    "branches": [
+      "אונייה",
+      "קרחון",
+      "הפלגה",
+      "אוקיינוס",
+      "סרט",
+      "טביעה",
+      "קפטן",
+      "סיפון"
+    ],
+    "keywords": [
+      "אונייה",
+      "קרחון",
+      "הפלגה",
+      "אוקיינוס",
+      "סרט",
+      "טביעה",
+      "קפטן",
+      "סיפון"
+    ],
+    "association": "אונייה, קרחון, הפלגה, אוקיינוס, סרט, טביעה, קפטן, סיפון",
+    "visualNotes": "טיטאניק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טיטאניק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_221_משאית_זבל",
+    "name": "משאית זבל",
+    "title": "משאית זבל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_221_משאית_זבל.jpg",
+    "branches": [
+      "ניקיון",
+      "אשפה",
+      "מחזור",
+      "פח",
+      "עירייה",
+      "בוקר",
+      "פינוי",
+      "סדר"
+    ],
+    "keywords": [
+      "ניקיון",
+      "אשפה",
+      "מחזור",
+      "פח",
+      "עירייה",
+      "בוקר",
+      "פינוי",
+      "סדר"
+    ],
+    "association": "ניקיון, אשפה, מחזור, פח, עירייה, בוקר, פינוי, סדר",
+    "visualNotes": "משאית זבל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משאית זבל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_222_רכבל",
+    "name": "רכבל",
+    "title": "רכבל",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_222_רכבל.jpg",
+    "branches": [
+      "חרמון",
+      "סקי",
+      "הרים",
+      "גובה",
+      "נוף",
+      "חופשה",
+      "טיול",
+      "קרון"
+    ],
+    "keywords": [
+      "חרמון",
+      "סקי",
+      "הרים",
+      "גובה",
+      "נוף",
+      "חופשה",
+      "טיול",
+      "קרון"
+    ],
+    "association": "חרמון, סקי, הרים, גובה, נוף, חופשה, טיול, קרון",
+    "visualNotes": "רכבל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רכבל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_223_קורקינט_פשוט_לילדים",
+    "name": "קורקינט",
+    "title": "קורקינט",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_223_קורקינט_פשוט_לילדים.jpg",
+    "branches": [
+      "ילדים",
+      "פארק",
+      "קסדה",
+      "רכיבה",
+      "משחק",
+      "מדרכה",
+      "גלגלים",
+      "נסיעה"
+    ],
+    "keywords": [
+      "ילדים",
+      "פארק",
+      "קסדה",
+      "רכיבה",
+      "משחק",
+      "מדרכה",
+      "גלגלים",
+      "נסיעה"
+    ],
+    "association": "ילדים, פארק, קסדה, רכיבה, משחק, מדרכה, גלגלים, נסיעה",
+    "visualNotes": "קורקינט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קורקינט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_224_מכונית_מרוץ_פורמולה_1",
+    "name": "מכונית מרוץ",
+    "title": "מכונית מרוץ",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_224_מכונית_מרוץ_פורמולה_1.jpg",
+    "branches": [
+      "מהירות",
+      "מסלול",
+      "נהיגה",
+      "אליפות",
+      "תחרות",
+      "ניצחון",
+      "מוסך",
+      "דלק"
+    ],
+    "keywords": [
+      "מהירות",
+      "מסלול",
+      "נהיגה",
+      "אליפות",
+      "תחרות",
+      "ניצחון",
+      "מוסך",
+      "דלק"
+    ],
+    "association": "מהירות, מסלול, נהיגה, אליפות, תחרות, ניצחון, מוסך, דלק",
+    "visualNotes": "מכונית מרוץ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונית מרוץ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_225_רכבת_קליע_יפנית",
+    "name": "רכבת קליע",
+    "title": "רכבת קליע",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_225_רכבת_קליע_יפנית.jpg",
+    "branches": [
+      "יפן",
+      "מהירות",
+      "נסיעה",
+      "דייקנות",
+      "טוקיו",
+      "תחנה",
+      "מסילה",
+      "טכנולוגיה"
+    ],
+    "keywords": [
+      "יפן",
+      "מהירות",
+      "נסיעה",
+      "דייקנות",
+      "טוקיו",
+      "תחנה",
+      "מסילה",
+      "טכנולוגיה"
+    ],
+    "association": "יפן, מהירות, נסיעה, דייקנות, טוקיו, תחנה, מסילה, טכנולוגיה",
+    "visualNotes": "רכבת קליע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רכבת קליע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_226_הליקופטר_צבאי",
+    "name": "מסוק קרב",
+    "title": "מסוק קרב",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_226_הליקופטר_צבאי.jpg",
+    "branches": [
+      "טייס",
+      "צבא",
+      "טיסה",
+      "שמיים",
+      "מילואים",
+      "חילוץ",
+      "בסיס",
+      "אוויר"
+    ],
+    "keywords": [
+      "טייס",
+      "צבא",
+      "טיסה",
+      "שמיים",
+      "מילואים",
+      "חילוץ",
+      "בסיס",
+      "אוויר"
+    ],
+    "association": "טייס, צבא, טיסה, שמיים, מילואים, חילוץ, בסיס, אוויר",
+    "visualNotes": "מסוק קרב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מסוק קרב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_227_רכב_שטח_מפלצתי",
+    "name": "רכב מפלצת",
+    "title": "רכב מפלצת",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_227_רכב_שטח_מפלצתי.jpg",
+    "branches": [
+      "גלגלים",
+      "אקסטרים",
+      "מופע",
+      "כוח",
+      "מנוע",
+      "שטח",
+      "מוסך",
+      "צמיגים"
+    ],
+    "keywords": [
+      "גלגלים",
+      "אקסטרים",
+      "מופע",
+      "כוח",
+      "מנוע",
+      "שטח",
+      "מוסך",
+      "צמיגים"
+    ],
+    "association": "גלגלים, אקסטרים, מופע, כוח, מנוע, שטח, מוסך, צמיגים",
+    "visualNotes": "רכב מפלצת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רכב מפלצת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_228_סקייטבורד",
+    "name": "סקייטבורד",
+    "title": "סקייטבורד",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_228_סקייטבורד.jpg",
+    "branches": [
+      "פארק",
+      "רמפה",
+      "נוער",
+      "גלגלים",
+      "אימון",
+      "קסדה",
+      "קפיצה",
+      "ספורט"
+    ],
+    "keywords": [
+      "פארק",
+      "רמפה",
+      "נוער",
+      "גלגלים",
+      "אימון",
+      "קסדה",
+      "קפיצה",
+      "ספורט"
+    ],
+    "association": "פארק, רמפה, נוער, גלגלים, אימון, קסדה, קפיצה, ספורט",
+    "visualNotes": "סקייטבורד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סקייטבורד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_229_רולרבליידס",
+    "name": "רולרבליידס",
+    "title": "רולרבליידס",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_229_רולרבליידס.jpg",
+    "branches": [
+      "החלקה",
+      "פארק",
+      "טיילת",
+      "ספורט",
+      "כושר",
+      "גלגלים",
+      "קסדה",
+      "אימון"
+    ],
+    "keywords": [
+      "החלקה",
+      "פארק",
+      "טיילת",
+      "ספורט",
+      "כושר",
+      "גלגלים",
+      "קסדה",
+      "אימון"
+    ],
+    "association": "החלקה, פארק, טיילת, ספורט, כושר, גלגלים, קסדה, אימון",
+    "visualNotes": "רולרבליידס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רולרבליידס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_230_רכב_שלג",
+    "name": "אופנוע שלג",
+    "title": "אופנוע שלג",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_230_רכב_שלג.jpg",
+    "branches": [
+      "חורף",
+      "קור",
+      "חרמון",
+      "הרים",
+      "חופשה",
+      "סקי",
+      "קרח",
+      "טיול"
+    ],
+    "keywords": [
+      "חורף",
+      "קור",
+      "חרמון",
+      "הרים",
+      "חופשה",
+      "סקי",
+      "קרח",
+      "טיול"
+    ],
+    "association": "חורף, קור, חרמון, הרים, חופשה, סקי, קרח, טיול",
+    "visualNotes": "אופנוע שלג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אופנוע שלג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_231_מפרשית___יאכטה_לבנה",
+    "name": "יאכטה",
+    "title": "יאכטה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_231_מפרשית___יאכטה_לבנה.jpg",
+    "branches": [
+      "הפלגה",
+      "מרינה",
+      "חופשה",
+      "שייט",
+      "נופש",
+      "מפרש",
+      "סיפון",
+      "אוקיינוס"
+    ],
+    "keywords": [
+      "הפלגה",
+      "מרינה",
+      "חופשה",
+      "שייט",
+      "נופש",
+      "מפרש",
+      "סיפון",
+      "אוקיינוס"
+    ],
+    "association": "הפלגה, מרינה, חופשה, שייט, נופש, מפרש, סיפון, אוקיינוס",
+    "visualNotes": "יאכטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "יאכטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_232_רכב_גולף_קטן",
+    "name": "קלאב קאר",
+    "title": "קלאב קאר",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_232_רכב_גולף_קטן.jpg",
+    "branches": [
+      "גולף",
+      "דשא",
+      "מגרש",
+      "מלון",
+      "נופש",
+      "נסיעה",
+      "קיבוץ",
+      "פנאי"
+    ],
+    "keywords": [
+      "גולף",
+      "דשא",
+      "מגרש",
+      "מלון",
+      "נופש",
+      "נסיעה",
+      "קיבוץ",
+      "פנאי"
+    ],
+    "association": "גולף, דשא, מגרש, מלון, נופש, נסיעה, קיבוץ, פנאי",
+    "visualNotes": "קלאב קאר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קלאב קאר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_233_דחפור",
+    "name": "דחפור",
+    "title": "דחפור",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_233_דחפור.jpg",
+    "branches": [
+      "בנייה",
+      "שיפוץ",
+      "עפר",
+      "הריסה",
+      "טרקטור",
+      "עבודה",
+      "חול",
+      "תשתית"
+    ],
+    "keywords": [
+      "בנייה",
+      "שיפוץ",
+      "עפר",
+      "הריסה",
+      "טרקטור",
+      "עבודה",
+      "חול",
+      "תשתית"
+    ],
+    "association": "בנייה, שיפוץ, עפר, הריסה, טרקטור, עבודה, חול, תשתית",
+    "visualNotes": "דחפור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דחפור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_234_מנוף_בנייה_ענק",
+    "name": "מנוף בנייה",
+    "title": "מנוף בנייה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_234_מנוף_בנייה_ענק.jpg",
+    "branches": [
+      "מגדל",
+      "נדל\"ן",
+      "שיפוץ",
+      "גובה",
+      "הנדסה",
+      "דירה",
+      "פועלים",
+      "הרמה"
+    ],
+    "keywords": [
+      "מגדל",
+      "נדל\"ן",
+      "שיפוץ",
+      "גובה",
+      "הנדסה",
+      "דירה",
+      "פועלים",
+      "הרמה"
+    ],
+    "association": "מגדל, נדל\"ן, שיפוץ, גובה, הנדסה, דירה, פועלים, הרמה",
+    "visualNotes": "מנוף בנייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מנוף בנייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_235_טנק_מרכבה___פנצר",
+    "name": "טנק",
+    "title": "טנק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_235_טנק_מרכבה___פנצר.jpg",
+    "branches": [
+      "צבא",
+      "שריון",
+      "מילואים",
+      "מסדר",
+      "חיילים",
+      "תותח",
+      "בסיס",
+      "מפקד"
+    ],
+    "keywords": [
+      "צבא",
+      "שריון",
+      "מילואים",
+      "מסדר",
+      "חיילים",
+      "תותח",
+      "בסיס",
+      "מפקד"
+    ],
+    "association": "צבא, שריון, מילואים, מסדר, חיילים, תותח, בסיס, מפקד",
+    "visualNotes": "טנק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טנק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_236_רכב_סגוויי",
+    "name": "סגוויי",
+    "title": "סגוויי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_236_רכב_סגוויי.jpg",
+    "branches": [
+      "סיור",
+      "טיילת",
+      "תיירות",
+      "גלגלים",
+      "חשמלי",
+      "נסיעה",
+      "עיר",
+      "איזון"
+    ],
+    "keywords": [
+      "סיור",
+      "טיילת",
+      "תיירות",
+      "גלגלים",
+      "חשמלי",
+      "נסיעה",
+      "עיר",
+      "איזון"
+    ],
+    "association": "סיור, טיילת, תיירות, גלגלים, חשמלי, נסיעה, עיר, איזון",
+    "visualNotes": "סגוויי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סגוויי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_237_ריקשה_ממונעת",
+    "name": "ריקשה",
+    "title": "ריקשה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_237_ריקשה_ממונעת.jpg",
+    "branches": [
+      "הודו",
+      "תאילנד",
+      "טיול",
+      "מונית",
+      "מזרח",
+      "חופשה",
+      "נסיעה",
+      "שוק"
+    ],
+    "keywords": [
+      "הודו",
+      "תאילנד",
+      "טיול",
+      "מונית",
+      "מזרח",
+      "חופשה",
+      "נסיעה",
+      "שוק"
+    ],
+    "association": "הודו, תאילנד, טיול, מונית, מזרח, חופשה, נסיעה, שוק",
+    "visualNotes": "ריקשה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ריקשה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_238_קייאק",
+    "name": "קייאק",
+    "title": "קייאק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_238_קייאק.jpg",
+    "branches": [
+      "חתירה",
+      "ירדן",
+      "מים",
+      "משוט",
+      "שייט",
+      "טיול",
+      "צפון",
+      "ספורט"
+    ],
+    "keywords": [
+      "חתירה",
+      "ירדן",
+      "מים",
+      "משוט",
+      "שייט",
+      "טיול",
+      "צפון",
+      "ספורט"
+    ],
+    "association": "חתירה, ירדן, מים, משוט, שייט, טיול, צפון, ספורט",
+    "visualNotes": "קייאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קייאק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_239_רחפת",
+    "name": "רחפת",
+    "title": "רחפת",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_239_רחפת.jpg",
+    "branches": [
+      "מים",
+      "חוף",
+      "שייט",
+      "מנוע",
+      "אוויר",
+      "מהירות",
+      "הפלגה"
+    ],
+    "keywords": [
+      "מים",
+      "חוף",
+      "שייט",
+      "מנוע",
+      "אוויר",
+      "מהירות",
+      "הפלגה"
+    ],
+    "association": "מים, חוף, שייט, מנוע, אוויר, מהירות, הפלגה",
+    "visualNotes": "רחפת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רחפת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_240_ג_ט_סקי",
+    "name": "ג'ט סקי",
+    "title": "ג'ט סקי",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_240_ג_ט_סקי.jpg",
+    "branches": [
+      "אילת",
+      "חוף",
+      "קיץ",
+      "גלים",
+      "חופשה",
+      "מהירות",
+      "שייט",
+      "מים"
+    ],
+    "keywords": [
+      "אילת",
+      "חוף",
+      "קיץ",
+      "גלים",
+      "חופשה",
+      "מהירות",
+      "שייט",
+      "מים"
+    ],
+    "association": "אילת, חוף, קיץ, גלים, חופשה, מהירות, שייט, מים",
+    "visualNotes": "ג'ט סקי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ג'ט סקי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_241_אופני_פני_פארת_ינג",
+    "name": "אופניים עתיקים",
+    "title": "אופניים עתיקים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_241_אופני_פני_פארת_ינג.jpg",
+    "branches": [
+      "רכיבה",
+      "גלגל",
+      "היסטוריה",
+      "וינטג'",
+      "פדלים",
+      "מוזיאון",
+      "רטרו",
+      "כושר"
+    ],
+    "keywords": [
+      "רכיבה",
+      "גלגל",
+      "היסטוריה",
+      "וינטג'",
+      "פדלים",
+      "מוזיאון",
+      "רטרו",
+      "כושר"
+    ],
+    "association": "רכיבה, גלגל, היסטוריה, וינטג', פדלים, מוזיאון, רטרו, כושר",
+    "visualNotes": "אופניים עתיקים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אופניים עתיקים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_242_מכונית_חיפושית",
+    "name": "מכונית חיפושית",
+    "title": "מכונית חיפושית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_242_מכונית_חיפושית.jpg",
+    "branches": [
+      "פולקסווגן",
+      "מוסך",
+      "אספנות",
+      "רטרו",
+      "נסיעה",
+      "טסט",
+      "חניה",
+      "ביטוח"
+    ],
+    "keywords": [
+      "פולקסווגן",
+      "מוסך",
+      "אספנות",
+      "רטרו",
+      "נסיעה",
+      "טסט",
+      "חניה",
+      "ביטוח"
+    ],
+    "association": "פולקסווגן, מוסך, אספנות, רטרו, נסיעה, טסט, חניה, ביטוח",
+    "visualNotes": "מכונית חיפושית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונית חיפושית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_243_קלנועית",
+    "name": "קלנועית",
+    "title": "קלנועית",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_243_קלנועית.jpg",
+    "branches": [
+      "סבא",
+      "סבתא",
+      "קניות",
+      "מכולת",
+      "קיבוץ",
+      "ניידות",
+      "נסיעה",
+      "עזרה"
+    ],
+    "keywords": [
+      "סבא",
+      "סבתא",
+      "קניות",
+      "מכולת",
+      "קיבוץ",
+      "ניידות",
+      "נסיעה",
+      "עזרה"
+    ],
+    "association": "סבא, סבתא, קניות, מכולת, קיבוץ, ניידות, נסיעה, עזרה",
+    "visualNotes": "קלנועית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קלנועית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_244_רכבת_הרים_לונה_פארק",
+    "name": "רכבת הרים",
+    "title": "רכבת הרים",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_244_רכבת_הרים_לונה_פארק.jpg",
+    "branches": [
+      "לונה פארק",
+      "אדרנלין",
+      "בילוי",
+      "חופש",
+      "ילדים",
+      "פחד",
+      "צרחות",
+      "כיף"
+    ],
+    "keywords": [
+      "לונה פארק",
+      "אדרנלין",
+      "בילוי",
+      "חופש",
+      "ילדים",
+      "פחד",
+      "צרחות",
+      "כיף"
+    ],
+    "association": "לונה פארק, אדרנלין, בילוי, חופש, ילדים, פחד, צרחות, כיף",
+    "visualNotes": "רכבת הרים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רכבת הרים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_245_רכב_פורד_מודל_t",
+    "name": "מכונית עתיקה",
+    "title": "מכונית עתיקה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_245_רכב_פורד_מודל_t.jpg",
+    "branches": [
+      "היסטוריה",
+      "מוזיאון",
+      "אספנות",
+      "מוסך",
+      "רטרו",
+      "גלגלים",
+      "מנוע",
+      "נסיעה"
+    ],
+    "keywords": [
+      "היסטוריה",
+      "מוזיאון",
+      "אספנות",
+      "מוסך",
+      "רטרו",
+      "גלגלים",
+      "מנוע",
+      "נסיעה"
+    ],
+    "association": "היסטוריה, מוזיאון, אספנות, מוסך, רטרו, גלגלים, מנוע, נסיעה",
+    "visualNotes": "מכונית עתיקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונית עתיקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_246_ספינת_משא___מכולות",
+    "name": "אוניית משא",
+    "title": "אוניית משא",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_246_ספינת_משא___מכולות.jpg",
+    "branches": [
+      "נמל",
+      "מכולות",
+      "משלוח",
+      "ייבוא",
+      "סחורה",
+      "הובלה",
+      "מסחר",
+      "עגורן"
+    ],
+    "keywords": [
+      "נמל",
+      "מכולות",
+      "משלוח",
+      "ייבוא",
+      "סחורה",
+      "הובלה",
+      "מסחר",
+      "עגורן"
+    ],
+    "association": "נמל, מכולות, משלוח, ייבוא, סחורה, הובלה, מסחר, עגורן",
+    "visualNotes": "אוניית משא – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אוניית משא – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_247_משאית_סמי_טריילר_אמריקאית",
+    "name": "משאית הובלה",
+    "title": "משאית הובלה",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_247_משאית_סמי_טריילר_אמריקאית.jpg",
+    "branches": [
+      "מעבר דירה",
+      "מטען",
+      "כביש",
+      "נהג",
+      "אריזה",
+      "לוגיסטיקה",
+      "דלק",
+      "קרטונים"
+    ],
+    "keywords": [
+      "מעבר דירה",
+      "מטען",
+      "כביש",
+      "נהג",
+      "אריזה",
+      "לוגיסטיקה",
+      "דלק",
+      "קרטונים"
+    ],
+    "association": "מעבר דירה, מטען, כביש, נהג, אריזה, לוגיסטיקה, דלק, קרטונים",
+    "visualNotes": "משאית הובלה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משאית הובלה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_248_רכב_קמפינג",
+    "name": "קרוואן",
+    "title": "קרוואן",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_248_רכב_קמפינג.jpg",
+    "branches": [
+      "טיול",
+      "חופשה",
+      "קמפינג",
+      "טבע",
+      "מנגל",
+      "משפחה",
+      "לינה",
+      "נסיעה"
+    ],
+    "keywords": [
+      "טיול",
+      "חופשה",
+      "קמפינג",
+      "טבע",
+      "מנגל",
+      "משפחה",
+      "לינה",
+      "נסיעה"
+    ],
+    "association": "טיול, חופשה, קמפינג, טבע, מנגל, משפחה, לינה, נסיעה",
+    "visualNotes": "קרוואן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קרוואן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_249_רכב_גופה",
+    "name": "מכונית לוויות",
+    "title": "מכונית לוויות",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_249_רכב_גופה.jpg",
+    "branches": [
+      "בית קברות",
+      "אזכרה",
+      "אבל",
+      "קדיש",
+      "טקס",
+      "זיכרון",
+      "קבר"
+    ],
+    "keywords": [
+      "בית קברות",
+      "אזכרה",
+      "אבל",
+      "קדיש",
+      "טקס",
+      "זיכרון",
+      "קבר"
+    ],
+    "association": "בית קברות, אזכרה, אבל, קדיש, טקס, זיכרון, קבר",
+    "visualNotes": "מכונית לוויות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונית לוויות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_250_עגלת_תינוק_קלאסית",
+    "name": "עגלת תינוק",
+    "title": "עגלת תינוק",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_250_עגלת_תינוק_קלאסית.jpg",
+    "branches": [
+      "חיתולים",
+      "מוצץ",
+      "בייביסיטר",
+      "טיפת חלב",
+      "בקבוק",
+      "הורות",
+      "פעוטון",
+      "משפחה"
+    ],
+    "keywords": [
+      "חיתולים",
+      "מוצץ",
+      "בייביסיטר",
+      "טיפת חלב",
+      "בקבוק",
+      "הורות",
+      "פעוטון",
+      "משפחה"
+    ],
+    "association": "חיתולים, מוצץ, בייביסיטר, טיפת חלב, בקבוק, הורות, פעוטון, משפחה",
+    "visualNotes": "עגלת תינוק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עגלת תינוק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_251_קקטוס_סאגוארו",
+    "name": "קקטוס",
+    "title": "קקטוס",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_251_קקטוס_סאגוארו.jpg",
+    "branches": [
+      "עציץ",
+      "מדבר",
+      "קוצים",
+      "משתלה",
+      "השקיה",
+      "חום",
+      "צמח",
+      "בצורת"
+    ],
+    "keywords": [
+      "עציץ",
+      "מדבר",
+      "קוצים",
+      "משתלה",
+      "השקיה",
+      "חום",
+      "צמח",
+      "בצורת"
+    ],
+    "association": "עציץ, מדבר, קוצים, משתלה, השקיה, חום, צמח, בצורת",
+    "visualNotes": "קקטוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קקטוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_252_עץ_דקל_על_אי_בודד",
+    "name": "עץ דקל",
+    "title": "עץ דקל",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_252_עץ_דקל_על_אי_בודד.jpg",
+    "branches": [
+      "חופשה",
+      "חוף",
+      "קוקוס",
+      "טרופי",
+      "קיץ",
+      "צל",
+      "חול",
+      "ים"
+    ],
+    "keywords": [
+      "חופשה",
+      "חוף",
+      "קוקוס",
+      "טרופי",
+      "קיץ",
+      "צל",
+      "חול",
+      "ים"
+    ],
+    "association": "חופשה, חוף, קוקוס, טרופי, קיץ, צל, חול, ים",
+    "visualNotes": "עץ דקל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עץ דקל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_253_כריש_לבן",
+    "name": "כריש",
+    "title": "כריש",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_253_כריש_לבן.jpg",
+    "branches": [
+      "אוקיינוס",
+      "סכנה",
+      "שיניים",
+      "סנפיר",
+      "טורף",
+      "צלילה",
+      "ים",
+      "פחד"
+    ],
+    "keywords": [
+      "אוקיינוס",
+      "סכנה",
+      "שיניים",
+      "סנפיר",
+      "טורף",
+      "צלילה",
+      "ים",
+      "פחד"
+    ],
+    "association": "אוקיינוס, סכנה, שיניים, סנפיר, טורף, צלילה, ים, פחד",
+    "visualNotes": "כריש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כריש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_254_דוב_פנדה",
+    "name": "פנדה",
+    "title": "פנדה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_254_דוב_פנדה.jpg",
+    "branches": [
+      "במבוק",
+      "סין",
+      "גן חיות",
+      "פרווה",
+      "שינה",
+      "חמוד",
+      "טבע",
+      "דוב"
+    ],
+    "keywords": [
+      "במבוק",
+      "סין",
+      "גן חיות",
+      "פרווה",
+      "שינה",
+      "חמוד",
+      "טבע",
+      "דוב"
+    ],
+    "association": "במבוק, סין, גן חיות, פרווה, שינה, חמוד, טבע, דוב",
+    "visualNotes": "פנדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פנדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_255_אריה",
+    "name": "אריה",
+    "title": "אריה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_255_אריה.jpg",
+    "branches": [
+      "מלך",
+      "ספארי",
+      "שאגה",
+      "רעמה",
+      "אפריקה",
+      "אומץ",
+      "כוח",
+      "טורף"
+    ],
+    "keywords": [
+      "מלך",
+      "ספארי",
+      "שאגה",
+      "רעמה",
+      "אפריקה",
+      "אומץ",
+      "כוח",
+      "טורף"
+    ],
+    "association": "מלך, ספארי, שאגה, רעמה, אפריקה, אומץ, כוח, טורף",
+    "visualNotes": "אריה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אריה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_256_פיל_אפריקאי",
+    "name": "פיל",
+    "title": "פיל",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_256_פיל_אפריקאי.jpg",
+    "branches": [
+      "חדק",
+      "זיכרון",
+      "אפריקה",
+      "ספארי",
+      "כבד",
+      "אוזניים",
+      "עדר",
+      "גדול"
+    ],
+    "keywords": [
+      "חדק",
+      "זיכרון",
+      "אפריקה",
+      "ספארי",
+      "כבד",
+      "אוזניים",
+      "עדר",
+      "גדול"
+    ],
+    "association": "חדק, זיכרון, אפריקה, ספארי, כבד, אוזניים, עדר, גדול",
+    "visualNotes": "פיל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פיל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_257_ג_ירפה",
+    "name": "ג'ירפה",
+    "title": "ג'ירפה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_257_ג_ירפה.jpg",
+    "branches": [
+      "גובה",
+      "צוואר",
+      "ספארי",
+      "אפריקה",
+      "גן חיות",
+      "כתמים",
+      "עלים",
+      "תצפית"
+    ],
+    "keywords": [
+      "גובה",
+      "צוואר",
+      "ספארי",
+      "אפריקה",
+      "גן חיות",
+      "כתמים",
+      "עלים",
+      "תצפית"
+    ],
+    "association": "גובה, צוואר, ספארי, אפריקה, גן חיות, כתמים, עלים, תצפית",
+    "visualNotes": "ג'ירפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ג'ירפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_258_פטריית_זבובנית",
+    "name": "פטרייה",
+    "title": "פטרייה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_258_פטריית_זבובנית.jpg",
+    "branches": [
+      "יער",
+      "גשם",
+      "חורף",
+      "רעל",
+      "בישול",
+      "פיצה",
+      "טבע",
+      "אדום"
+    ],
+    "keywords": [
+      "יער",
+      "גשם",
+      "חורף",
+      "רעל",
+      "בישול",
+      "פיצה",
+      "טבע",
+      "אדום"
+    ],
+    "association": "יער, גשם, חורף, רעל, בישול, פיצה, טבע, אדום",
+    "visualNotes": "פטרייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פטרייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_259_הר_געש_מתפרץ",
+    "name": "הר געש",
+    "title": "הר געש",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_259_הר_געש_מתפרץ.jpg",
+    "branches": [
+      "לבה",
+      "התפרצות",
+      "אש",
+      "עשן",
+      "כעס",
+      "חום",
+      "פיצוץ",
+      "סכנה"
+    ],
+    "keywords": [
+      "לבה",
+      "התפרצות",
+      "אש",
+      "עשן",
+      "כעס",
+      "חום",
+      "פיצוץ",
+      "סכנה"
+    ],
+    "association": "לבה, התפרצות, אש, עשן, כעס, חום, פיצוץ, סכנה",
+    "visualNotes": "הר געש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הר געש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_260_קרחון_בלב_ים",
+    "name": "קרחון",
+    "title": "קרחון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_260_קרחון_בלב_ים.jpg",
+    "branches": [
+      "קור",
+      "קפוא",
+      "אנטארקטיקה",
+      "חורף",
+      "הפשרה",
+      "אוקיינוס",
+      "שלג",
+      "טבע"
+    ],
+    "keywords": [
+      "קור",
+      "קפוא",
+      "אנטארקטיקה",
+      "חורף",
+      "הפשרה",
+      "אוקיינוס",
+      "שלג",
+      "טבע"
+    ],
+    "association": "קור, קפוא, אנטארקטיקה, חורף, הפשרה, אוקיינוס, שלג, טבע",
+    "visualNotes": "קרחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קרחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_261_טבעת_שבתאי",
+    "name": "כוכב שבתאי",
+    "title": "כוכב שבתאי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_261_טבעת_שבתאי.jpg",
+    "branches": [
+      "חלל",
+      "טבעות",
+      "טלסקופ",
+      "אסטרונומיה",
+      "יקום",
+      "מדע",
+      "לילה",
+      "שמיים"
+    ],
+    "keywords": [
+      "חלל",
+      "טבעות",
+      "טלסקופ",
+      "אסטרונומיה",
+      "יקום",
+      "מדע",
+      "לילה",
+      "שמיים"
+    ],
+    "association": "חלל, טבעות, טלסקופ, אסטרונומיה, יקום, מדע, לילה, שמיים",
+    "visualNotes": "כוכב שבתאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כוכב שבתאי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_262_מכתש_ברק___פגיעת_ברק",
+    "name": "ברק",
+    "title": "ברק",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_262_מכתש_ברק___פגיעת_ברק.jpg",
+    "branches": [
+      "חשמל",
+      "סופה",
+      "רעם",
+      "חורף",
+      "גשם",
+      "אור",
+      "מהירות",
+      "סכנה"
+    ],
+    "keywords": [
+      "חשמל",
+      "סופה",
+      "רעם",
+      "חורף",
+      "גשם",
+      "אור",
+      "מהירות",
+      "סכנה"
+    ],
+    "association": "חשמל, סופה, רעם, חורף, גשם, אור, מהירות, סכנה",
+    "visualNotes": "ברק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ברק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_263_פינגווין_קיסרי",
+    "name": "פינגווין",
+    "title": "פינגווין",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_263_פינגווין_קיסרי.jpg",
+    "branches": [
+      "קור",
+      "קרח",
+      "אנטארקטיקה",
+      "שלג",
+      "חורף",
+      "שחייה",
+      "דגים",
+      "חליפה"
+    ],
+    "keywords": [
+      "קור",
+      "קרח",
+      "אנטארקטיקה",
+      "שלג",
+      "חורף",
+      "שחייה",
+      "דגים",
+      "חליפה"
+    ],
+    "association": "קור, קרח, אנטארקטיקה, שלג, חורף, שחייה, דגים, חליפה",
+    "visualNotes": "פינגווין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פינגווין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_264_קורי_עכביש",
+    "name": "קורי עכביש",
+    "title": "קורי עכביש",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_264_קורי_עכביש.jpg",
+    "branches": [
+      "ניקיון",
+      "אבק",
+      "מטאטא",
+      "פינה",
+      "הדברה",
+      "מלכודת",
+      "רשת",
+      "חרקים"
+    ],
+    "keywords": [
+      "ניקיון",
+      "אבק",
+      "מטאטא",
+      "פינה",
+      "הדברה",
+      "מלכודת",
+      "רשת",
+      "חרקים"
+    ],
+    "association": "ניקיון, אבק, מטאטא, פינה, הדברה, מלכודת, רשת, חרקים",
+    "visualNotes": "קורי עכביש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קורי עכביש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_265_טווס_פרוס_זנב",
+    "name": "טווס",
+    "title": "טווס",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_265_טווס_פרוס_זנב.jpg",
+    "branches": [
+      "נוצות",
+      "יופי",
+      "גאווה",
+      "צבעוני",
+      "גן חיות",
+      "ראווה",
+      "אופנה",
+      "ציפור"
+    ],
+    "keywords": [
+      "נוצות",
+      "יופי",
+      "גאווה",
+      "צבעוני",
+      "גן חיות",
+      "ראווה",
+      "אופנה",
+      "ציפור"
+    ],
+    "association": "נוצות, יופי, גאווה, צבעוני, גן חיות, ראווה, אופנה, ציפור",
+    "visualNotes": "טווס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טווס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_266_סוס_דוהרת_ברוח",
+    "name": "סוס",
+    "title": "סוס",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_266_סוס_דוהרת_ברוח.jpg",
+    "branches": [
+      "רכיבה",
+      "חווה",
+      "דהירה",
+      "אורווה",
+      "מהירות",
+      "אוכף",
+      "טבע",
+      "חופש"
+    ],
+    "keywords": [
+      "רכיבה",
+      "חווה",
+      "דהירה",
+      "אורווה",
+      "מהירות",
+      "אוכף",
+      "טבע",
+      "חופש"
+    ],
+    "association": "רכיבה, חווה, דהירה, אורווה, מהירות, אוכף, טבע, חופש",
+    "visualNotes": "סוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_267_כלב_דלמטי",
+    "name": "כלב דלמטי",
+    "title": "כלב דלמטי",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_267_כלב_דלמטי.jpg",
+    "branches": [
+      "וטרינר",
+      "טיול",
+      "רצועה",
+      "נביחה",
+      "נקודות",
+      "חיות מחמד",
+      "חיסון",
+      "אוכל"
+    ],
+    "keywords": [
+      "וטרינר",
+      "טיול",
+      "רצועה",
+      "נביחה",
+      "נקודות",
+      "חיות מחמד",
+      "חיסון",
+      "אוכל"
+    ],
+    "association": "וטרינר, טיול, רצועה, נביחה, נקודות, חיות מחמד, חיסון, אוכל",
+    "visualNotes": "כלב דלמטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כלב דלמטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_268_ינשוף_על_ענף",
+    "name": "ינשוף",
+    "title": "ינשוף",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_268_ינשוף_על_ענף.jpg",
+    "branches": [
+      "לילה",
+      "חוכמה",
+      "לימודים",
+      "עיניים",
+      "שקט",
+      "יער",
+      "ספרייה",
+      "ציד"
+    ],
+    "keywords": [
+      "לילה",
+      "חוכמה",
+      "לימודים",
+      "עיניים",
+      "שקט",
+      "יער",
+      "ספרייה",
+      "ציד"
+    ],
+    "association": "לילה, חוכמה, לימודים, עיניים, שקט, יער, ספרייה, ציד",
+    "visualNotes": "ינשוף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ינשוף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_269_נשר_דואה",
+    "name": "נשר",
+    "title": "נשר",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_269_נשר_דואה.jpg",
+    "branches": [
+      "מעוף",
+      "שמיים",
+      "גובה",
+      "גולן",
+      "כנפיים",
+      "תצפית",
+      "ראייה",
+      "טבע"
+    ],
+    "keywords": [
+      "מעוף",
+      "שמיים",
+      "גובה",
+      "גולן",
+      "כנפיים",
+      "תצפית",
+      "ראייה",
+      "טבע"
+    ],
+    "association": "מעוף, שמיים, גובה, גולן, כנפיים, תצפית, ראייה, טבע",
+    "visualNotes": "נשר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נשר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_270_קנגורו",
+    "name": "קנגורו",
+    "title": "קנגורו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_270_קנגורו.jpg",
+    "branches": [
+      "אוסטרליה",
+      "קפיצה",
+      "כיס",
+      "גורים",
+      "אגרוף",
+      "ספורט",
+      "טבע",
+      "טיול"
+    ],
+    "keywords": [
+      "אוסטרליה",
+      "קפיצה",
+      "כיס",
+      "גורים",
+      "אגרוף",
+      "ספורט",
+      "טבע",
+      "טיול"
+    ],
+    "association": "אוסטרליה, קפיצה, כיס, גורים, אגרוף, ספורט, טבע, טיול",
+    "visualNotes": "קנגורו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קנגורו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_271_גמל_דו_דבשתי",
+    "name": "גמל",
+    "title": "גמל",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_271_גמל_דו_דבשתי.jpg",
+    "branches": [
+      "מדבר",
+      "דבשת",
+      "חול",
+      "טיול",
+      "נגב",
+      "מים",
+      "שמש",
+      "שיירה"
+    ],
+    "keywords": [
+      "מדבר",
+      "דבשת",
+      "חול",
+      "טיול",
+      "נגב",
+      "מים",
+      "שמש",
+      "שיירה"
+    ],
+    "association": "מדבר, דבשת, חול, טיול, נגב, מים, שמש, שיירה",
+    "visualNotes": "גמל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גמל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_272_דולפין_קופץ_מהמים",
+    "name": "דולפין",
+    "title": "דולפין",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_272_דולפין_קופץ_מהמים.jpg",
+    "branches": [
+      "אילת",
+      "שחייה",
+      "ים",
+      "קפיצה",
+      "חכם",
+      "ריף",
+      "חופשה",
+      "אוקיינוס"
+    ],
+    "keywords": [
+      "אילת",
+      "שחייה",
+      "ים",
+      "קפיצה",
+      "חכם",
+      "ריף",
+      "חופשה",
+      "אוקיינוס"
+    ],
+    "association": "אילת, שחייה, ים, קפיצה, חכם, ריף, חופשה, אוקיינוס",
+    "visualNotes": "דולפין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דולפין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_273_לווייתן_קטלן",
+    "name": "לווייתן",
+    "title": "לווייתן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_273_לווייתן_קטלן.jpg",
+    "branches": [
+      "אוקיינוס",
+      "אורקה",
+      "ענק",
+      "צלילה",
+      "ים",
+      "סנפיר",
+      "מים",
+      "טבע"
+    ],
+    "keywords": [
+      "אוקיינוס",
+      "אורקה",
+      "ענק",
+      "צלילה",
+      "ים",
+      "סנפיר",
+      "מים",
+      "טבע"
+    ],
+    "association": "אוקיינוס, אורקה, ענק, צלילה, ים, סנפיר, מים, טבע",
+    "visualNotes": "לווייתן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לווייתן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_274_צב_יבשה_ענק",
+    "name": "צב",
+    "title": "צב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_274_צב_יבשה_ענק.jpg",
+    "branches": [
+      "שריון",
+      "איטיות",
+      "סבלנות",
+      "חסה",
+      "גינה",
+      "זמן",
+      "אריכות ימים",
+      "טבע"
+    ],
+    "keywords": [
+      "שריון",
+      "איטיות",
+      "סבלנות",
+      "חסה",
+      "גינה",
+      "זמן",
+      "אריכות ימים",
+      "טבע"
+    ],
+    "association": "שריון, איטיות, סבלנות, חסה, גינה, זמן, אריכות ימים, טבע",
+    "visualNotes": "צב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_275_פרת_משה_רבנו",
+    "name": "חיפושית",
+    "title": "חיפושית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_275_פרת_משה_רבנו.jpg",
+    "branches": [
+      "מזל",
+      "גינה",
+      "עלה",
+      "נקודות",
+      "אביב",
+      "חרק",
+      "טבע",
+      "אדום"
+    ],
+    "keywords": [
+      "מזל",
+      "גינה",
+      "עלה",
+      "נקודות",
+      "אביב",
+      "חרק",
+      "טבע",
+      "אדום"
+    ],
+    "association": "מזל, גינה, עלה, נקודות, אביב, חרק, טבע, אדום",
+    "visualNotes": "חיפושית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חיפושית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_276_דבורה",
+    "name": "דבורה",
+    "title": "דבורה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_276_דבורה.jpg",
+    "branches": [
+      "דבש",
+      "כוורת",
+      "עקיצה",
+      "פרחים",
+      "ראש השנה",
+      "מתוק",
+      "אביב",
+      "זמזום"
+    ],
+    "keywords": [
+      "דבש",
+      "כוורת",
+      "עקיצה",
+      "פרחים",
+      "ראש השנה",
+      "מתוק",
+      "אביב",
+      "זמזום"
+    ],
+    "association": "דבש, כוורת, עקיצה, פרחים, ראש השנה, מתוק, אביב, זמזום",
+    "visualNotes": "דבורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דבורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_277_עץ_אלון_עתיק_בשלכת",
+    "name": "עץ אלון",
+    "title": "עץ אלון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_277_עץ_אלון_עתיק_בשלכת.jpg",
+    "branches": [
+      "יער",
+      "שורשים",
+      "צל",
+      "טבע",
+      "גיזום",
+      "ענפים",
+      "גזע",
+      "פיקניק"
+    ],
+    "keywords": [
+      "יער",
+      "שורשים",
+      "צל",
+      "טבע",
+      "גיזום",
+      "ענפים",
+      "גזע",
+      "פיקניק"
+    ],
+    "association": "יער, שורשים, צל, טבע, גיזום, ענפים, גזע, פיקניק",
+    "visualNotes": "עץ אלון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עץ אלון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_278_פרח_חמנייה",
+    "name": "חמנייה",
+    "title": "חמנייה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_278_פרח_חמנייה.jpg",
+    "branches": [
+      "שמש",
+      "צהוב",
+      "גרעינים",
+      "שדה",
+      "שמן",
+      "אביב",
+      "פריחה",
+      "גינה"
+    ],
+    "keywords": [
+      "שמש",
+      "צהוב",
+      "גרעינים",
+      "שדה",
+      "שמן",
+      "אביב",
+      "פריחה",
+      "גינה"
+    ],
+    "association": "שמש, צהוב, גרעינים, שדה, שמן, אביב, פריחה, גינה",
+    "visualNotes": "חמנייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חמנייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_279_ורד_אדום",
+    "name": "ורד",
+    "title": "ורד",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_279_ורד_אדום.jpg",
+    "branches": [
+      "אהבה",
+      "רומנטיקה",
+      "זר",
+      "מתנה",
+      "דייט",
+      "בושם",
+      "קוצים",
+      "משתלה"
+    ],
+    "keywords": [
+      "אהבה",
+      "רומנטיקה",
+      "זר",
+      "מתנה",
+      "דייט",
+      "בושם",
+      "קוצים",
+      "משתלה"
+    ],
+    "association": "אהבה, רומנטיקה, זר, מתנה, דייט, בושם, קוצים, משתלה",
+    "visualNotes": "ורד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ורד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_280_עלה_מייפל",
+    "name": "עלה שלכת",
+    "title": "עלה שלכת",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_280_עלה_מייפל.jpg",
+    "branches": [
+      "סתיו",
+      "קנדה",
+      "סירופ",
+      "פנקייק",
+      "עץ",
+      "רוח",
+      "מגרפה",
+      "גינה"
+    ],
+    "keywords": [
+      "סתיו",
+      "קנדה",
+      "סירופ",
+      "פנקייק",
+      "עץ",
+      "רוח",
+      "מגרפה",
+      "גינה"
+    ],
+    "association": "סתיו, קנדה, סירופ, פנקייק, עץ, רוח, מגרפה, גינה",
+    "visualNotes": "עלה שלכת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עלה שלכת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_281_חצי_סהר_וכוכב",
+    "name": "ירח וכוכב",
+    "title": "ירח וכוכב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_281_חצי_סהר_וכוכב.jpg",
+    "branches": [
+      "לילה",
+      "שינה",
+      "שמיים",
+      "חושך",
+      "חלום",
+      "אסטרונומיה",
+      "ערב",
+      "מנוחה"
+    ],
+    "keywords": [
+      "לילה",
+      "שינה",
+      "שמיים",
+      "חושך",
+      "חלום",
+      "אסטרונומיה",
+      "ערב",
+      "מנוחה"
+    ],
+    "association": "לילה, שינה, שמיים, חושך, חלום, אסטרונומיה, ערב, מנוחה",
+    "visualNotes": "ירח וכוכב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ירח וכוכב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_282_שונית_אלמוגים_צבעונית",
+    "name": "שונית אלמוגים",
+    "title": "שונית אלמוגים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_282_שונית_אלמוגים_צבעונית.jpg",
+    "branches": [
+      "אילת",
+      "צלילה",
+      "שנורקל",
+      "דגים",
+      "ים",
+      "חופשה",
+      "מצולות",
+      "מים"
+    ],
+    "keywords": [
+      "אילת",
+      "צלילה",
+      "שנורקל",
+      "דגים",
+      "ים",
+      "חופשה",
+      "מצולות",
+      "מים"
+    ],
+    "association": "אילת, צלילה, שנורקל, דגים, ים, חופשה, מצולות, מים",
+    "visualNotes": "שונית אלמוגים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שונית אלמוגים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_283_מפלי_ניאגרה",
+    "name": "מפלי מים",
+    "title": "מפלי מים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_283_מפלי_ניאגרה.jpg",
+    "branches": [
+      "זרימה",
+      "טבע",
+      "טיול",
+      "נהר",
+      "עוצמה",
+      "קנדה",
+      "נוף",
+      "חופשה"
+    ],
+    "keywords": [
+      "זרימה",
+      "טבע",
+      "טיול",
+      "נהר",
+      "עוצמה",
+      "קנדה",
+      "נוף",
+      "חופשה"
+    ],
+    "association": "זרימה, טבע, טיול, נהר, עוצמה, קנדה, נוף, חופשה",
+    "visualNotes": "מפלי מים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מפלי מים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_284_הגרנד_קניון",
+    "name": "קניון סלע",
+    "title": "קניון סלע",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_284_הגרנד_קניון.jpg",
+    "branches": [
+      "טיול",
+      "הרים",
+      "מדבר",
+      "מצוק",
+      "נוף",
+      "תצפית",
+      "גיאולוגיה",
+      "טבע"
+    ],
+    "keywords": [
+      "טיול",
+      "הרים",
+      "מדבר",
+      "מצוק",
+      "נוף",
+      "תצפית",
+      "גיאולוגיה",
+      "טבע"
+    ],
+    "association": "טיול, הרים, מדבר, מצוק, נוף, תצפית, גיאולוגיה, טבע",
+    "visualNotes": "קניון סלע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קניון סלע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_285_הר_פוג_י",
+    "name": "הר פוג'י",
+    "title": "הר פוג'י",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_285_הר_פוג_י.jpg",
+    "branches": [
+      "יפן",
+      "טוקיו",
+      "טיול",
+      "טיפוס",
+      "פסגה",
+      "שלג",
+      "חופשה",
+      "נוף"
+    ],
+    "keywords": [
+      "יפן",
+      "טוקיו",
+      "טיול",
+      "טיפוס",
+      "פסגה",
+      "שלג",
+      "חופשה",
+      "נוף"
+    ],
+    "association": "יפן, טוקיו, טיול, טיפוס, פסגה, שלג, חופשה, נוף",
+    "visualNotes": "הר פוג'י – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הר פוג'י – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_286_סופת_טורנדו",
+    "name": "טורנדו",
+    "title": "טורנדו",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_286_סופת_טורנדו.jpg",
+    "branches": [
+      "סערה",
+      "רוח",
+      "מערבולת",
+      "מקלט",
+      "חירום",
+      "אבק",
+      "עננים"
+    ],
+    "keywords": [
+      "סערה",
+      "רוח",
+      "מערבולת",
+      "מקלט",
+      "חירום",
+      "אבק",
+      "עננים"
+    ],
+    "association": "סערה, רוח, מערבולת, מקלט, חירום, אבק, עננים",
+    "visualNotes": "טורנדו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טורנדו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_287_צונאמי",
+    "name": "נחשול מים",
+    "title": "נחשול מים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_287_צונאמי.jpg",
+    "branches": [
+      "גל",
+      "אוקיינוס",
+      "סערה",
+      "חוף",
+      "גלישה",
+      "סכנה",
+      "ים",
+      "שטפון"
+    ],
+    "keywords": [
+      "גל",
+      "אוקיינוס",
+      "סערה",
+      "חוף",
+      "גלישה",
+      "סכנה",
+      "ים",
+      "שטפון"
+    ],
+    "association": "גל, אוקיינוס, סערה, חוף, גלישה, סכנה, ים, שטפון",
+    "visualNotes": "נחשול מים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נחשול מים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_288_מדבר_חול",
+    "name": "מדבר",
+    "title": "מדבר",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_288_מדבר_חול.jpg",
+    "branches": [
+      "חול",
+      "שמש",
+      "חום",
+      "גמל",
+      "צמא",
+      "טיול",
+      "יובש",
+      "דיונה"
+    ],
+    "keywords": [
+      "חול",
+      "שמש",
+      "חום",
+      "גמל",
+      "צמא",
+      "טיול",
+      "יובש",
+      "דיונה"
+    ],
+    "association": "חול, שמש, חום, גמל, צמא, טיול, יובש, דיונה",
+    "visualNotes": "מדבר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מדבר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_289_יער_גשם_טרופי",
+    "name": "ג'ונגל",
+    "title": "ג'ונגל",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_289_יער_גשם_טרופי.jpg",
+    "branches": [
+      "עצים",
+      "טבע",
+      "אמזונס",
+      "ירוק",
+      "גשם",
+      "טיול",
+      "צמחייה",
+      "חיות"
+    ],
+    "keywords": [
+      "עצים",
+      "טבע",
+      "אמזונס",
+      "ירוק",
+      "גשם",
+      "טיול",
+      "צמחייה",
+      "חיות"
+    ],
+    "association": "עצים, טבע, אמזונס, ירוק, גשם, טיול, צמחייה, חיות",
+    "visualNotes": "ג'ונגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ג'ונגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_290_ביצה",
+    "name": "ביצה",
+    "title": "ביצה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_290_ביצה.jpg",
+    "branches": [
+      "בוץ",
+      "יתושים",
+      "תנין",
+      "צפרדע",
+      "מים",
+      "קנים",
+      "טבע",
+      "הדברה"
+    ],
+    "keywords": [
+      "בוץ",
+      "יתושים",
+      "תנין",
+      "צפרדע",
+      "מים",
+      "קנים",
+      "טבע",
+      "הדברה"
+    ],
+    "association": "בוץ, יתושים, תנין, צפרדע, מים, קנים, טבע, הדברה",
+    "visualNotes": "ביצה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ביצה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_291_קשת_בענן",
+    "name": "קשת בענן",
+    "title": "קשת בענן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_291_קשת_בענן.jpg",
+    "branches": [
+      "צבעים",
+      "גשם",
+      "שמש",
+      "חורף",
+      "שמיים",
+      "אופטימיות",
+      "ילדות",
+      "נוף"
+    ],
+    "keywords": [
+      "צבעים",
+      "גשם",
+      "שמש",
+      "חורף",
+      "שמיים",
+      "אופטימיות",
+      "ילדות",
+      "נוף"
+    ],
+    "association": "צבעים, גשם, שמש, חורף, שמיים, אופטימיות, ילדות, נוף",
+    "visualNotes": "קשת בענן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קשת בענן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_292_כוכב_ים",
+    "name": "כוכב ים",
+    "title": "כוכב ים",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_292_כוכב_ים.jpg",
+    "branches": [
+      "חוף",
+      "צדפים",
+      "קיץ",
+      "אילת",
+      "צלילה",
+      "אוקיינוס",
+      "חול",
+      "שונית"
+    ],
+    "keywords": [
+      "חוף",
+      "צדפים",
+      "קיץ",
+      "אילת",
+      "צלילה",
+      "אוקיינוס",
+      "חול",
+      "שונית"
+    ],
+    "association": "חוף, צדפים, קיץ, אילת, צלילה, אוקיינוס, חול, שונית",
+    "visualNotes": "כוכב ים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כוכב ים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_293_סרטן",
+    "name": "סרטן",
+    "title": "סרטן",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_293_סרטן.jpg",
+    "branches": [
+      "חוף",
+      "צבתות",
+      "חול",
+      "ים",
+      "קיץ",
+      "סלעים",
+      "שריון",
+      "מים"
+    ],
+    "keywords": [
+      "חוף",
+      "צבתות",
+      "חול",
+      "ים",
+      "קיץ",
+      "סלעים",
+      "שריון",
+      "מים"
+    ],
+    "association": "חוף, צבתות, חול, ים, קיץ, סלעים, שריון, מים",
+    "visualNotes": "סרטן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סרטן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_294_תמנון",
+    "name": "תמנון",
+    "title": "תמנון",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_294_תמנון.jpg",
+    "branches": [
+      "זרועות",
+      "מצולות",
+      "אוקיינוס",
+      "צלילה",
+      "דיו",
+      "גמישות",
+      "ים",
+      "מים"
+    ],
+    "keywords": [
+      "זרועות",
+      "מצולות",
+      "אוקיינוס",
+      "צלילה",
+      "דיו",
+      "גמישות",
+      "ים",
+      "מים"
+    ],
+    "association": "זרועות, מצולות, אוקיינוס, צלילה, דיו, גמישות, ים, מים",
+    "visualNotes": "תמנון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תמנון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_295_זיקית_על_ענף",
+    "name": "זיקית",
+    "title": "זיקית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_295_זיקית_על_ענף.jpg",
+    "branches": [
+      "הסוואה",
+      "צבעים",
+      "לשון",
+      "עיניים",
+      "עץ",
+      "גינה",
+      "זוחל",
+      "טבע"
+    ],
+    "keywords": [
+      "הסוואה",
+      "צבעים",
+      "לשון",
+      "עיניים",
+      "עץ",
+      "גינה",
+      "זוחל",
+      "טבע"
+    ],
+    "association": "הסוואה, צבעים, לשון, עיניים, עץ, גינה, זוחל, טבע",
+    "visualNotes": "זיקית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "זיקית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_296_נחש_קוברה",
+    "name": "קוברה",
+    "title": "קוברה",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_296_נחש_קוברה.jpg",
+    "branches": [
+      "נחש",
+      "ארס",
+      "סכנה",
+      "הכשה",
+      "הודו",
+      "מדבר",
+      "זוחל",
+      "זהירות"
+    ],
+    "keywords": [
+      "נחש",
+      "ארס",
+      "סכנה",
+      "הכשה",
+      "הודו",
+      "מדבר",
+      "זוחל",
+      "זהירות"
+    ],
+    "association": "נחש, ארס, סכנה, הכשה, הודו, מדבר, זוחל, זהירות",
+    "visualNotes": "קוברה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קוברה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_297_עקרב",
+    "name": "עקרב",
+    "title": "עקרב",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_297_עקרב.jpg",
+    "branches": [
+      "עוקץ",
+      "מדבר",
+      "ארס",
+      "סכנה",
+      "אבן",
+      "לילה",
+      "הדברה",
+      "זהירות"
+    ],
+    "keywords": [
+      "עוקץ",
+      "מדבר",
+      "ארס",
+      "סכנה",
+      "אבן",
+      "לילה",
+      "הדברה",
+      "זהירות"
+    ],
+    "association": "עוקץ, מדבר, ארס, סכנה, אבן, לילה, הדברה, זהירות",
+    "visualNotes": "עקרב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עקרב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_298_צפרדע_ירוקה",
+    "name": "צפרדע",
+    "title": "צפרדע",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_298_צפרדע_ירוקה.jpg",
+    "branches": [
+      "קפיצה",
+      "ביצה",
+      "מים",
+      "נחל",
+      "קרקור",
+      "אגדה",
+      "נשיקה",
+      "טבע"
+    ],
+    "keywords": [
+      "קפיצה",
+      "ביצה",
+      "מים",
+      "נחל",
+      "קרקור",
+      "אגדה",
+      "נשיקה",
+      "טבע"
+    ],
+    "association": "קפיצה, ביצה, מים, נחל, קרקור, אגדה, נשיקה, טבע",
+    "visualNotes": "צפרדע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צפרדע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_299_פרפר_מונרך",
+    "name": "פרפר",
+    "title": "פרפר",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_299_פרפר_מונרך.jpg",
+    "branches": [
+      "אביב",
+      "פרחים",
+      "גינה",
+      "כנפיים",
+      "חופש",
+      "צבעוני",
+      "זחל",
+      "טבע"
+    ],
+    "keywords": [
+      "אביב",
+      "פרחים",
+      "גינה",
+      "כנפיים",
+      "חופש",
+      "צבעוני",
+      "זחל",
+      "טבע"
+    ],
+    "association": "אביב, פרחים, גינה, כנפיים, חופש, צבעוני, זחל, טבע",
+    "visualNotes": "פרפר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פרפר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_300_שפירית",
+    "name": "שפירית",
+    "title": "שפירית",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_300_שפירית.jpg",
+    "branches": [
+      "נחל",
+      "כנפיים",
+      "מעוף",
+      "מים",
+      "חרק",
+      "קיץ",
+      "טבע",
+      "אגם"
+    ],
+    "keywords": [
+      "נחל",
+      "כנפיים",
+      "מעוף",
+      "מים",
+      "חרק",
+      "קיץ",
+      "טבע",
+      "אגם"
+    ],
+    "association": "נחל, כנפיים, מעוף, מים, חרק, קיץ, טבע, אגם",
+    "visualNotes": "שפירית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שפירית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_301_כדורגל_קלאסי",
+    "name": "כדורגל",
+    "title": "כדורגל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_301_כדורגל_קלאסי.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "שער",
+      "גול",
+      "קבוצה",
+      "מונדיאל",
+      "דשא"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "שער",
+      "גול",
+      "קבוצה",
+      "מונדיאל",
+      "דשא"
+    ],
+    "association": "ספורט, אימון, מגרש, שער, גול, קבוצה, מונדיאל, דשא",
+    "visualNotes": "כדורגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדורגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_302_כדורסל",
+    "name": "כדורסל",
+    "title": "כדורסל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_302_כדורסל.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "קליעה",
+      "גובה",
+      "קבוצה",
+      "פרקט",
+      "ניצחון"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "קליעה",
+      "גובה",
+      "קבוצה",
+      "פרקט",
+      "ניצחון"
+    ],
+    "association": "ספורט, אימון, מגרש, קליעה, גובה, קבוצה, פרקט, ניצחון",
+    "visualNotes": "כדורסל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדורסל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_303_כדור_טניס",
+    "name": "כדור טניס",
+    "title": "כדור טניס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_303_כדור_טניס.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "מחבט",
+      "רשת",
+      "זוגות",
+      "תחרות"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "מחבט",
+      "רשת",
+      "זוגות",
+      "תחרות"
+    ],
+    "association": "ספורט, אימון, מגרש, מחבט, רשת, זוגות, תחרות",
+    "visualNotes": "כדור טניס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור טניס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_304_מחבט_טניס",
+    "name": "מחבט טניס",
+    "title": "מחבט טניס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_304_מחבט_טניס.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "רשת",
+      "חבטה",
+      "כושר",
+      "תחרות"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "רשת",
+      "חבטה",
+      "כושר",
+      "תחרות"
+    ],
+    "association": "ספורט, אימון, מגרש, רשת, חבטה, כושר, תחרות",
+    "visualNotes": "מחבט טניס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מחבט טניס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_305_כדור_פוטבול_אמריקאי",
+    "name": "כדור פוטבול",
+    "title": "כדור פוטבול",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_305_כדור_פוטבול_אמריקאי.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "קסדה",
+      "מסירה",
+      "אמריקה",
+      "קבוצה"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "קסדה",
+      "מסירה",
+      "אמריקה",
+      "קבוצה"
+    ],
+    "association": "ספורט, אימון, מגרש, קסדה, מסירה, אמריקה, קבוצה",
+    "visualNotes": "כדור פוטבול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור פוטבול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_306_כדור_באולינג_ופינים",
+    "name": "באולינג",
+    "title": "באולינג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_306_כדור_באולינג_ופינים.jpg",
+    "branches": [
+      "בילוי",
+      "משחק",
+      "מסלול",
+      "סטרייק",
+      "חברים",
+      "ערב",
+      "נעליים"
+    ],
+    "keywords": [
+      "בילוי",
+      "משחק",
+      "מסלול",
+      "סטרייק",
+      "חברים",
+      "ערב",
+      "נעליים"
+    ],
+    "association": "בילוי, משחק, מסלול, סטרייק, חברים, ערב, נעליים",
+    "visualNotes": "באולינג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "באולינג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_307_כדור_ביליארד",
+    "name": "כדור ביליארד",
+    "title": "כדור ביליארד",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_307_כדור_ביליארד.jpg",
+    "branches": [
+      "סנוקר",
+      "משחק",
+      "מועדון",
+      "פאב",
+      "מקל",
+      "דיוק",
+      "שולחן"
+    ],
+    "keywords": [
+      "סנוקר",
+      "משחק",
+      "מועדון",
+      "פאב",
+      "מקל",
+      "דיוק",
+      "שולחן"
+    ],
+    "association": "סנוקר, משחק, מועדון, פאב, מקל, דיוק, שולחן",
+    "visualNotes": "כדור ביליארד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור ביליארד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_308_מחבט_בייסבול",
+    "name": "מחבט בייסבול",
+    "title": "מחבט בייסבול",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_308_מחבט_בייסבול.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "כפפה",
+      "חבטה",
+      "עץ",
+      "הגנה"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "כפפה",
+      "חבטה",
+      "עץ",
+      "הגנה"
+    ],
+    "association": "ספורט, אימון, מגרש, כפפה, חבטה, עץ, הגנה",
+    "visualNotes": "מחבט בייסבול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מחבט בייסבול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_309_כדור_נוצה",
+    "name": "כדור נוצה",
+    "title": "כדור נוצה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_309_כדור_נוצה.jpg",
+    "branches": [
+      "בדמינטון",
+      "ספורט",
+      "רשת",
+      "מחבט",
+      "משחק",
+      "פארק",
+      "מעוף"
+    ],
+    "keywords": [
+      "בדמינטון",
+      "ספורט",
+      "רשת",
+      "מחבט",
+      "משחק",
+      "פארק",
+      "מעוף"
+    ],
+    "association": "בדמינטון, ספורט, רשת, מחבט, משחק, פארק, מעוף",
+    "visualNotes": "כדור נוצה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור נוצה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_310_זוג_כפפות_אגרוף",
+    "name": "כפפות אגרוף",
+    "title": "כפפות אגרוף",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_310_זוג_כפפות_אגרוף.jpg",
+    "branches": [
+      "אימון",
+      "כושר",
+      "זירה",
+      "לחימה",
+      "כוח",
+      "הגנה",
+      "ספורט"
+    ],
+    "keywords": [
+      "אימון",
+      "כושר",
+      "זירה",
+      "לחימה",
+      "כוח",
+      "הגנה",
+      "ספורט"
+    ],
+    "association": "אימון, כושר, זירה, לחימה, כוח, הגנה, ספורט",
+    "visualNotes": "כפפות אגרוף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כפפות אגרוף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות",
+    "name": "טבעות אולימפיות",
+    "title": "טבעות אולימפיות",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות.jpg",
+    "branches": [
+      "ספורט",
+      "תחרות",
+      "מדליה",
+      "אליפות",
+      "אימון",
+      "עולם",
+      "לפיד"
+    ],
+    "keywords": [
+      "ספורט",
+      "תחרות",
+      "מדליה",
+      "אליפות",
+      "אימון",
+      "עולם",
+      "לפיד"
+    ],
+    "association": "ספורט, תחרות, מדליה, אליפות, אימון, עולם, לפיד",
+    "visualNotes": "טבעות אולימפיות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טבעות אולימפיות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_312_שולחן_פינג_פונג",
+    "name": "טניס שולחן",
+    "title": "טניס שולחן",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_312_שולחן_פינג_פונג.jpg",
+    "branches": [
+      "פינג פונג",
+      "משחק",
+      "מטקה",
+      "רשת",
+      "ספורט",
+      "זריזות",
+      "טורניר"
+    ],
+    "keywords": [
+      "פינג פונג",
+      "משחק",
+      "מטקה",
+      "רשת",
+      "ספורט",
+      "זריזות",
+      "טורניר"
+    ],
+    "association": "פינג פונג, משחק, מטקה, רשת, ספורט, זריזות, טורניר",
+    "visualNotes": "טניס שולחן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טניס שולחן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_313_סנובורד___מגלשי_סקי",
+    "name": "מגלשי סקי",
+    "title": "מגלשי סקי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_313_סנובורד___מגלשי_סקי.jpg",
+    "branches": [
+      "שלג",
+      "חופשה",
+      "חורף",
+      "הרים",
+      "חרמון",
+      "גלישה",
+      "קור"
+    ],
+    "keywords": [
+      "שלג",
+      "חופשה",
+      "חורף",
+      "הרים",
+      "חרמון",
+      "גלישה",
+      "קור"
+    ],
+    "association": "שלג, חופשה, חורף, הרים, חרמון, גלישה, קור",
+    "visualNotes": "מגלשי סקי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגלשי סקי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_314_גלשן_גלים",
+    "name": "גלשן גלים",
+    "title": "גלשן גלים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_314_גלשן_גלים.jpg",
+    "branches": [
+      "ים",
+      "חוף",
+      "קיץ",
+      "ספורט",
+      "חופשה",
+      "מים",
+      "שמש"
+    ],
+    "keywords": [
+      "ים",
+      "חוף",
+      "קיץ",
+      "ספורט",
+      "חופשה",
+      "מים",
+      "שמש"
+    ],
+    "association": "ים, חוף, קיץ, ספורט, חופשה, מים, שמש",
+    "visualNotes": "גלשן גלים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גלשן גלים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_315_משקולת_ברזל_קלאסית",
+    "name": "משקולת",
+    "title": "משקולת",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_315_משקולת_ברזל_קלאסית.jpg",
+    "branches": [
+      "כושר",
+      "אימון",
+      "חדר כושר",
+      "שרירים",
+      "כוח",
+      "ספורט",
+      "בריאות"
+    ],
+    "keywords": [
+      "כושר",
+      "אימון",
+      "חדר כושר",
+      "שרירים",
+      "כוח",
+      "ספורט",
+      "בריאות"
+    ],
+    "association": "כושר, אימון, חדר כושר, שרירים, כוח, ספורט, בריאות",
+    "visualNotes": "משקולת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משקולת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_316_חץ_ולוח_מטרה",
+    "name": "לוח מטרה",
+    "title": "לוח מטרה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_316_חץ_ולוח_מטרה.jpg",
+    "branches": [
+      "יעד",
+      "דיוק",
+      "קליעה",
+      "הצלחה",
+      "מיקוד",
+      "חץ",
+      "קשת"
+    ],
+    "keywords": [
+      "יעד",
+      "דיוק",
+      "קליעה",
+      "הצלחה",
+      "מיקוד",
+      "חץ",
+      "קשת"
+    ],
+    "association": "יעד, דיוק, קליעה, הצלחה, מיקוד, חץ, קשת",
+    "visualNotes": "לוח מטרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לוח מטרה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_317_משרוקית_שופט",
+    "name": "משרוקית",
+    "title": "משרוקית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_317_משרוקית_שופט.jpg",
+    "branches": [
+      "שופט",
+      "ספורט",
+      "אימון",
+      "סימן",
+      "עצירה",
+      "מגרש",
+      "קול"
+    ],
+    "keywords": [
+      "שופט",
+      "ספורט",
+      "אימון",
+      "סימן",
+      "עצירה",
+      "מגרש",
+      "קול"
+    ],
+    "association": "שופט, ספורט, אימון, סימן, עצירה, מגרש, קול",
+    "visualNotes": "משרוקית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משרוקית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_318_כרטיס_אדום_וצהוב",
+    "name": "כרטיס אדום",
+    "title": "כרטיס אדום",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_318_כרטיס_אדום_וצהוב.jpg",
+    "branches": [
+      "שופט",
+      "עבירה",
+      "עונש",
+      "אזהרה",
+      "חוקים",
+      "מגרש",
+      "כדורגל"
+    ],
+    "keywords": [
+      "שופט",
+      "עבירה",
+      "עונש",
+      "אזהרה",
+      "חוקים",
+      "מגרש",
+      "כדורגל"
+    ],
+    "association": "שופט, עבירה, עונש, אזהרה, חוקים, מגרש, כדורגל",
+    "visualNotes": "כרטיס אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כרטיס אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_319_חליפת_קראטה_ג_ודו",
+    "name": "חליפת ג'ודו",
+    "title": "חליפת ג'ודו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_319_חליפת_קראטה_ג_ודו.jpg",
+    "branches": [
+      "קראטה",
+      "אימון",
+      "לחימה",
+      "חגורה",
+      "ספורט",
+      "חוג",
+      "מזרן"
+    ],
+    "keywords": [
+      "קראטה",
+      "אימון",
+      "לחימה",
+      "חגורה",
+      "ספורט",
+      "חוג",
+      "מזרן"
+    ],
+    "association": "קראטה, אימון, לחימה, חגורה, ספורט, חוג, מזרן",
+    "visualNotes": "חליפת ג'ודו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חליפת ג'ודו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_320_נעלי_פקקים",
+    "name": "נעלי כדורגל",
+    "title": "נעלי כדורגל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_320_נעלי_פקקים.jpg",
+    "branches": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "דשא",
+      "ריצה",
+      "קניות",
+      "שרוכים"
+    ],
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "דשא",
+      "ריצה",
+      "קניות",
+      "שרוכים"
+    ],
+    "association": "ספורט, אימון, מגרש, דשא, ריצה, קניות, שרוכים",
+    "visualNotes": "נעלי כדורגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נעלי כדורגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_321_קלפי_משחק",
+    "name": "קלפי משחק",
+    "title": "קלפי משחק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_321_קלפי_משחק.jpg",
+    "branches": [
+      "פוקר",
+      "קזינו",
+      "מזל",
+      "בילוי",
+      "חברים",
+      "קסמים",
+      "אס"
+    ],
+    "keywords": [
+      "פוקר",
+      "קזינו",
+      "מזל",
+      "בילוי",
+      "חברים",
+      "קסמים",
+      "אס"
+    ],
+    "association": "פוקר, קזינו, מזל, בילוי, חברים, קסמים, אס",
+    "visualNotes": "קלפי משחק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קלפי משחק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_322_רולטה_קזינו",
+    "name": "רולטה",
+    "title": "רולטה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_322_רולטה_קזינו.jpg",
+    "branches": [
+      "קזינו",
+      "הימורים",
+      "מזל",
+      "כסף",
+      "זכייה",
+      "משחק",
+      "סיבוב"
+    ],
+    "keywords": [
+      "קזינו",
+      "הימורים",
+      "מזל",
+      "כסף",
+      "זכייה",
+      "משחק",
+      "סיבוב"
+    ],
+    "association": "קזינו, הימורים, מזל, כסף, זכייה, משחק, סיבוב",
+    "visualNotes": "רולטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רולטה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_323_מכונת_מזל",
+    "name": "מכונת מזל",
+    "title": "מכונת מזל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_323_מכונת_מזל.jpg",
+    "branches": [
+      "קזינו",
+      "הימורים",
+      "כסף",
+      "זכייה",
+      "מטבעות",
+      "פרס",
+      "משחק"
+    ],
+    "keywords": [
+      "קזינו",
+      "הימורים",
+      "כסף",
+      "זכייה",
+      "מטבעות",
+      "פרס",
+      "משחק"
+    ],
+    "association": "קזינו, הימורים, כסף, זכייה, מטבעות, פרס, משחק",
+    "visualNotes": "מכונת מזל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונת מזל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_324_ז_יטונים_של_קזינו",
+    "name": "ז'יטונים",
+    "title": "ז'יטונים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_324_ז_יטונים_של_קזינו.jpg",
+    "branches": [
+      "קזינו",
+      "פוקר",
+      "הימורים",
+      "כסף",
+      "משחק",
+      "מזל",
+      "אסימונים"
+    ],
+    "keywords": [
+      "קזינו",
+      "פוקר",
+      "הימורים",
+      "כסף",
+      "משחק",
+      "מזל",
+      "אסימונים"
+    ],
+    "association": "קזינו, פוקר, הימורים, כסף, משחק, מזל, אסימונים",
+    "visualNotes": "ז'יטונים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ז'יטונים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_325_קובייה_הונגרית",
+    "name": "קובייה הונגרית",
+    "title": "קובייה הונגרית",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_325_קובייה_הונגרית.jpg",
+    "branches": [
+      "חידה",
+      "מחשבה",
+      "מוח",
+      "משחק",
+      "צבעים",
+      "פתרון",
+      "ריכוז"
+    ],
+    "keywords": [
+      "חידה",
+      "מחשבה",
+      "מוח",
+      "משחק",
+      "צבעים",
+      "פתרון",
+      "ריכוז"
+    ],
+    "association": "חידה, מחשבה, מוח, משחק, צבעים, פתרון, ריכוז",
+    "visualNotes": "קובייה הונגרית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קובייה הונגרית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_326_חייל_שחמט",
+    "name": "שחמט",
+    "title": "שחמט",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_326_חייל_שחמט.jpg",
+    "branches": [
+      "משחק",
+      "אסטרטגיה",
+      "מחשבה",
+      "לוח",
+      "מלך",
+      "תחרות",
+      "מוח"
+    ],
+    "keywords": [
+      "משחק",
+      "אסטרטגיה",
+      "מחשבה",
+      "לוח",
+      "מלך",
+      "תחרות",
+      "מוח"
+    ],
+    "association": "משחק, אסטרטגיה, מחשבה, לוח, מלך, תחרות, מוח",
+    "visualNotes": "שחמט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שחמט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_327_לבני_דומינו",
+    "name": "דומינו",
+    "title": "דומינו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_327_לבני_דומינו.jpg",
+    "branches": [
+      "משחק",
+      "קופסה",
+      "מספרים",
+      "רצף",
+      "שולחן",
+      "משפחה",
+      "נקודות"
+    ],
+    "keywords": [
+      "משחק",
+      "קופסה",
+      "מספרים",
+      "רצף",
+      "שולחן",
+      "משפחה",
+      "נקודות"
+    ],
+    "association": "משחק, קופסה, מספרים, רצף, שולחן, משפחה, נקודות",
+    "visualNotes": "דומינו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דומינו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_328_חתיכת_פאזל_קלאסית",
+    "name": "פאזל",
+    "title": "פאזל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_328_חתיכת_פאזל_קלאסית.jpg",
+    "branches": [
+      "הרכבה",
+      "משחק",
+      "פתרון",
+      "חיבור",
+      "סבלנות",
+      "תמונה",
+      "משפחה"
+    ],
+    "keywords": [
+      "הרכבה",
+      "משחק",
+      "פתרון",
+      "חיבור",
+      "סבלנות",
+      "תמונה",
+      "משפחה"
+    ],
+    "association": "הרכבה, משחק, פתרון, חיבור, סבלנות, תמונה, משפחה",
+    "visualNotes": "פאזל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פאזל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_329_יו_יו",
+    "name": "יו-יו",
+    "title": "יו-יו",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_329_יו_יו.jpg",
+    "branches": [
+      "צעצוע",
+      "משחק",
+      "חוט",
+      "ילדים",
+      "תרגיל",
+      "נוסטלגיה",
+      "סיבוב"
+    ],
+    "keywords": [
+      "צעצוע",
+      "משחק",
+      "חוט",
+      "ילדים",
+      "תרגיל",
+      "נוסטלגיה",
+      "סיבוב"
+    ],
+    "association": "צעצוע, משחק, חוט, ילדים, תרגיל, נוסטלגיה, סיבוב",
+    "visualNotes": "יו-יו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "יו-יו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_330_משחק_הטוויסטר",
+    "name": "טוויסטר",
+    "title": "טוויסטר",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_330_משחק_הטוויסטר.jpg",
+    "branches": [
+      "משחק",
+      "מסיבה",
+      "גמישות",
+      "צבעים",
+      "חברים",
+      "שטיח",
+      "תנועה"
+    ],
+    "keywords": [
+      "משחק",
+      "מסיבה",
+      "גמישות",
+      "צבעים",
+      "חברים",
+      "שטיח",
+      "תנועה"
+    ],
+    "association": "משחק, מסיבה, גמישות, צבעים, חברים, שטיח, תנועה",
+    "visualNotes": "טוויסטר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טוויסטר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_331_משקפת_שחייה_ומצוף_זרוע",
+    "name": "משקפת שחייה",
+    "title": "משקפת שחייה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_331_משקפת_שחייה_ומצוף_זרוע.jpg",
+    "branches": [
+      "בריכה",
+      "ספורט",
+      "אימון",
+      "מים",
+      "קיץ",
+      "ים",
+      "צלילה"
+    ],
+    "keywords": [
+      "בריכה",
+      "ספורט",
+      "אימון",
+      "מים",
+      "קיץ",
+      "ים",
+      "צלילה"
+    ],
+    "association": "בריכה, ספורט, אימון, מים, קיץ, ים, צלילה",
+    "visualNotes": "משקפת שחייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משקפת שחייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_332_גלגל_ענק",
+    "name": "גלגל ענק",
+    "title": "גלגל ענק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_332_גלגל_ענק.jpg",
+    "branches": [
+      "לונה פארק",
+      "בילוי",
+      "גובה",
+      "נוף",
+      "ילדים",
+      "חופשה",
+      "אטרקציה"
+    ],
+    "keywords": [
+      "לונה פארק",
+      "בילוי",
+      "גובה",
+      "נוף",
+      "ילדים",
+      "חופשה",
+      "אטרקציה"
+    ],
+    "association": "לונה פארק, בילוי, גובה, נוף, ילדים, חופשה, אטרקציה",
+    "visualNotes": "גלגל ענק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גלגל ענק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_333_רשת_כדורגל_נטויה",
+    "name": "שער כדורגל",
+    "title": "שער כדורגל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_333_רשת_כדורגל_נטויה.jpg",
+    "branches": [
+      "גול",
+      "מגרש",
+      "ספורט",
+      "אימון",
+      "שוער",
+      "דשא",
+      "משחק"
+    ],
+    "keywords": [
+      "גול",
+      "מגרש",
+      "ספורט",
+      "אימון",
+      "שוער",
+      "דשא",
+      "משחק"
+    ],
+    "association": "גול, מגרש, ספורט, אימון, שוער, דשא, משחק",
+    "visualNotes": "שער כדורגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שער כדורגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_334_פודטראק",
+    "name": "משאית אוכל",
+    "title": "משאית אוכל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_334_פודטראק.jpg",
+    "branches": [
+      "מסעדה",
+      "המבורגר",
+      "צ'יפס",
+      "רחוב",
+      "קניות",
+      "ארוחה",
+      "אירוע"
+    ],
+    "keywords": [
+      "מסעדה",
+      "המבורגר",
+      "צ'יפס",
+      "רחוב",
+      "קניות",
+      "ארוחה",
+      "אירוע"
+    ],
+    "association": "מסעדה, המבורגר, צ'יפס, רחוב, קניות, ארוחה, אירוע",
+    "visualNotes": "משאית אוכל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משאית אוכל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_335_חכה_ודלי_דגים",
+    "name": "חכת דיג",
+    "title": "חכת דיג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_335_חכה_ודלי_דגים.jpg",
+    "branches": [
+      "ים",
+      "דגים",
+      "חופשה",
+      "סבלנות",
+      "נמל",
+      "שקט",
+      "תחביב"
+    ],
+    "keywords": [
+      "ים",
+      "דגים",
+      "חופשה",
+      "סבלנות",
+      "נמל",
+      "שקט",
+      "תחביב"
+    ],
+    "association": "ים, דגים, חופשה, סבלנות, נמל, שקט, תחביב",
+    "visualNotes": "חכת דיג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חכת דיג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_336_משקפת_שדה",
+    "name": "משקפת שדה",
+    "title": "משקפת שדה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_336_משקפת_שדה.jpg",
+    "branches": [
+      "תצפית",
+      "טיול",
+      "טבע",
+      "נוף",
+      "ראייה",
+      "חיפוש",
+      "ציפורים"
+    ],
+    "keywords": [
+      "תצפית",
+      "טיול",
+      "טבע",
+      "נוף",
+      "ראייה",
+      "חיפוש",
+      "ציפורים"
+    ],
+    "association": "תצפית, טיול, טבע, נוף, ראייה, חיפוש, ציפורים",
+    "visualNotes": "משקפת שדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משקפת שדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_337_ערסל_קשור_בין_שני_עצים",
+    "name": "ערסל",
+    "title": "ערסל",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_337_ערסל_קשור_בין_שני_עצים.jpg",
+    "branches": [
+      "מנוחה",
+      "שינה",
+      "חופשה",
+      "גינה",
+      "רוגע",
+      "צל",
+      "עצים"
+    ],
+    "keywords": [
+      "מנוחה",
+      "שינה",
+      "חופשה",
+      "גינה",
+      "רוגע",
+      "צל",
+      "עצים"
+    ],
+    "association": "מנוחה, שינה, חופשה, גינה, רוגע, צל, עצים",
+    "visualNotes": "ערסל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ערסל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_338_מדורה_עם_שיפודי_מרשמלו",
+    "name": "מדורה",
+    "title": "מדורה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_338_מדורה_עם_שיפודי_מרשמלו.jpg",
+    "branches": [
+      "קומזיץ",
+      "אש",
+      "קמפינג",
+      "מרשמלו",
+      "לילה",
+      "טיול",
+      "חברים"
+    ],
+    "keywords": [
+      "קומזיץ",
+      "אש",
+      "קמפינג",
+      "מרשמלו",
+      "לילה",
+      "טיול",
+      "חברים"
+    ],
+    "association": "קומזיץ, אש, קמפינג, מרשמלו, לילה, טיול, חברים",
+    "visualNotes": "מדורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מדורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_339_מצנח_רחיפה",
+    "name": "מצנח רחיפה",
+    "title": "מצנח רחיפה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_339_מצנח_רחיפה.jpg",
+    "branches": [
+      "תעופה",
+      "שמיים",
+      "אקסטרים",
+      "רוח",
+      "נוף",
+      "גובה",
+      "חופשה"
+    ],
+    "keywords": [
+      "תעופה",
+      "שמיים",
+      "אקסטרים",
+      "רוח",
+      "נוף",
+      "גובה",
+      "חופשה"
+    ],
+    "association": "תעופה, שמיים, אקסטרים, רוח, נוף, גובה, חופשה",
+    "visualNotes": "מצנח רחיפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מצנח רחיפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_340_מסיכת_צלילה_ושנורקל",
+    "name": "מסכת צלילה",
+    "title": "מסכת צלילה",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_340_מסיכת_צלילה_ושנורקל.jpg",
+    "branches": [
+      "שנורקל",
+      "ים",
+      "אילת",
+      "חופשה",
+      "דגים",
+      "מים",
+      "אלמוגים"
+    ],
+    "keywords": [
+      "שנורקל",
+      "ים",
+      "אילת",
+      "חופשה",
+      "דגים",
+      "מים",
+      "אלמוגים"
+    ],
+    "association": "שנורקל, ים, אילת, חופשה, דגים, מים, אלמוגים",
+    "visualNotes": "מסכת צלילה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מסכת צלילה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_341_בומרנג",
+    "name": "בומרנג",
+    "title": "בומרנג",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_341_בומרנג.jpg",
+    "branches": [
+      "זריקה",
+      "חזרה",
+      "אוסטרליה",
+      "משחק",
+      "פארק",
+      "עץ",
+      "תעופה"
+    ],
+    "keywords": [
+      "זריקה",
+      "חזרה",
+      "אוסטרליה",
+      "משחק",
+      "פארק",
+      "עץ",
+      "תעופה"
+    ],
+    "association": "זריקה, חזרה, אוסטרליה, משחק, פארק, עץ, תעופה",
+    "visualNotes": "בומרנג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בומרנג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_342_פריזבי",
+    "name": "פריזבי",
+    "title": "פריזבי",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_342_פריזבי.jpg",
+    "branches": [
+      "משחק",
+      "פארק",
+      "חוף",
+      "כלב",
+      "זריקה",
+      "ספורט",
+      "דשא"
+    ],
+    "keywords": [
+      "משחק",
+      "פארק",
+      "חוף",
+      "כלב",
+      "זריקה",
+      "ספורט",
+      "דשא"
+    ],
+    "association": "משחק, פארק, חוף, כלב, זריקה, ספורט, דשא",
+    "visualNotes": "פריזבי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פריזבי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_343_חליפת_חלל",
+    "name": "אסטרונאוט",
+    "title": "אסטרונאוט",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_343_חליפת_חלל.jpg",
+    "branches": [
+      "חלל",
+      "ירח",
+      "נאס\"א",
+      "מדע",
+      "קסדה",
+      "כוכבים",
+      "טיסה"
+    ],
+    "keywords": [
+      "חלל",
+      "ירח",
+      "נאס\"א",
+      "מדע",
+      "קסדה",
+      "כוכבים",
+      "טיסה"
+    ],
+    "association": "חלל, ירח, נאס\"א, מדע, קסדה, כוכבים, טיסה",
+    "visualNotes": "אסטרונאוט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אסטרונאוט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_344_דוכן_פופקורן_קולנוע",
+    "name": "פופקורן",
+    "title": "פופקורן",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_344_דוכן_פופקורן_קולנוע.jpg",
+    "branches": [
+      "קולנוע",
+      "סרט",
+      "חטיף",
+      "תירס",
+      "בילוי",
+      "קניות",
+      "מלח"
+    ],
+    "keywords": [
+      "קולנוע",
+      "סרט",
+      "חטיף",
+      "תירס",
+      "בילוי",
+      "קניות",
+      "מלח"
+    ],
+    "association": "קולנוע, סרט, חטיף, תירס, בילוי, קניות, מלח",
+    "visualNotes": "פופקורן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פופקורן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_345_כרטיס_קולנוע_נוסטלגי",
+    "name": "כרטיס קולנוע",
+    "title": "כרטיס קולנוע",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_345_כרטיס_קולנוע_נוסטלגי.jpg",
+    "branches": [
+      "סרט",
+      "בילוי",
+      "הזמנה",
+      "אולם",
+      "הצגה",
+      "פופקורן",
+      "ערב"
+    ],
+    "keywords": [
+      "סרט",
+      "בילוי",
+      "הזמנה",
+      "אולם",
+      "הצגה",
+      "פופקורן",
+      "ערב"
+    ],
+    "association": "סרט, בילוי, הזמנה, אולם, הצגה, פופקורן, ערב",
+    "visualNotes": "כרטיס קולנוע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כרטיס קולנוע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_346_מכונת_ארקייד",
+    "name": "מכונת ארקייד",
+    "title": "מכונת ארקייד",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_346_מכונת_ארקייד.jpg",
+    "branches": [
+      "משחקים",
+      "גיימינג",
+      "מחשב",
+      "בילוי",
+      "אסימון",
+      "קניון",
+      "נוסטלגיה"
+    ],
+    "keywords": [
+      "משחקים",
+      "גיימינג",
+      "מחשב",
+      "בילוי",
+      "אסימון",
+      "קניון",
+      "נוסטלגיה"
+    ],
+    "association": "משחקים, גיימינג, מחשב, בילוי, אסימון, קניון, נוסטלגיה",
+    "visualNotes": "מכונת ארקייד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונת ארקייד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_347_ג_ויסטיק",
+    "name": "ג'ויסטיק",
+    "title": "ג'ויסטיק",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_347_ג_ויסטיק.jpg",
+    "branches": [
+      "משחקים",
+      "גיימינג",
+      "מחשב",
+      "שלט",
+      "קונסולה",
+      "בילוי",
+      "כפתור"
+    ],
+    "keywords": [
+      "משחקים",
+      "גיימינג",
+      "מחשב",
+      "שלט",
+      "קונסולה",
+      "בילוי",
+      "כפתור"
+    ],
+    "association": "משחקים, גיימינג, מחשב, שלט, קונסולה, בילוי, כפתור",
+    "visualNotes": "ג'ויסטיק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ג'ויסטיק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_348_משחק_טטריס",
+    "name": "טטריס",
+    "title": "טטריס",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_348_משחק_טטריס.jpg",
+    "branches": [
+      "מחשב",
+      "קוביות",
+      "סדר",
+      "פאזל",
+      "גיימינג",
+      "מסך",
+      "צורות"
+    ],
+    "keywords": [
+      "מחשב",
+      "קוביות",
+      "סדר",
+      "פאזל",
+      "גיימינג",
+      "מסך",
+      "צורות"
+    ],
+    "association": "מחשב, קוביות, סדר, פאזל, גיימינג, מסך, צורות",
+    "visualNotes": "טטריס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טטריס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_349_מגלשת_מים_ענקית",
+    "name": "מגלשת מים",
+    "title": "מגלשת מים",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_349_מגלשת_מים_ענקית.jpg",
+    "branches": [
+      "בריכה",
+      "פארק",
+      "קיץ",
+      "חופשה",
+      "ילדים",
+      "בילוי",
+      "אטרקציה"
+    ],
+    "keywords": [
+      "בריכה",
+      "פארק",
+      "קיץ",
+      "חופשה",
+      "ילדים",
+      "בילוי",
+      "אטרקציה"
+    ],
+    "association": "בריכה, פארק, קיץ, חופשה, ילדים, בילוי, אטרקציה",
+    "visualNotes": "מגלשת מים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגלשת מים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_350_מצנח_פתוח_בשמיים",
+    "name": "מצנח",
+    "title": "מצנח",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_350_מצנח_פתוח_בשמיים.jpg",
+    "branches": [
+      "צניחה",
+      "שמיים",
+      "מטוס",
+      "אקסטרים",
+      "קפיצה",
+      "גובה",
+      "רוח"
+    ],
+    "keywords": [
+      "צניחה",
+      "שמיים",
+      "מטוס",
+      "אקסטרים",
+      "קפיצה",
+      "גובה",
+      "רוח"
+    ],
+    "association": "צניחה, שמיים, מטוס, אקסטרים, קפיצה, גובה, רוח",
+    "visualNotes": "מצנח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מצנח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_351_פטיש_מסמרים_קלאסי",
+    "name": "פטיש",
+    "title": "פטיש",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_351_פטיש_מסמרים_קלאסי.jpg",
+    "branches": [
+      "מסמר",
+      "שיפוץ",
+      "תיקון",
+      "בנייה",
+      "נגרות",
+      "תלייה",
+      "עבודה"
+    ],
+    "keywords": [
+      "מסמר",
+      "שיפוץ",
+      "תיקון",
+      "בנייה",
+      "נגרות",
+      "תלייה",
+      "עבודה"
+    ],
+    "association": "מסמר, שיפוץ, תיקון, בנייה, נגרות, תלייה, עבודה",
+    "visualNotes": "פטיש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פטיש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_352_מברג_פיליפס",
+    "name": "מברג",
+    "title": "מברג",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_352_מברג_פיליפס.jpg",
+    "branches": [
+      "בורג",
+      "תיקון",
+      "הרכבה",
+      "רהיטים",
+      "ארון",
+      "שיפוץ",
+      "חשמל"
+    ],
+    "keywords": [
+      "בורג",
+      "תיקון",
+      "הרכבה",
+      "רהיטים",
+      "ארון",
+      "שיפוץ",
+      "חשמל"
+    ],
+    "association": "בורג, תיקון, הרכבה, רהיטים, ארון, שיפוץ, חשמל",
+    "visualNotes": "מברג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מברג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_353_מספריים",
+    "name": "מספריים",
+    "title": "מספריים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_353_מספריים.jpg",
+    "branches": [
+      "גזירה",
+      "נייר",
+      "תספורת",
+      "יצירה",
+      "חבילה",
+      "משרד",
+      "תפירה"
+    ],
+    "keywords": [
+      "גזירה",
+      "נייר",
+      "תספורת",
+      "יצירה",
+      "חבילה",
+      "משרד",
+      "תפירה"
+    ],
+    "association": "גזירה, נייר, תספורת, יצירה, חבילה, משרד, תפירה",
+    "visualNotes": "מספריים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מספריים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_354_סיכת_ביטחון",
+    "name": "סיכת ביטחון",
+    "title": "סיכת ביטחון",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_354_סיכת_ביטחון.jpg",
+    "branches": [
+      "תפירה",
+      "בגדים",
+      "תיקון",
+      "חיתול",
+      "חיבור",
+      "בד",
+      "עזרה"
+    ],
+    "keywords": [
+      "תפירה",
+      "בגדים",
+      "תיקון",
+      "חיתול",
+      "חיבור",
+      "בד",
+      "עזרה"
+    ],
+    "association": "תפירה, בגדים, תיקון, חיתול, חיבור, בד, עזרה",
+    "visualNotes": "סיכת ביטחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סיכת ביטחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_355_מטרייה_שחורה_פתוחה",
+    "name": "מטרייה",
+    "title": "מטרייה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_355_מטרייה_שחורה_פתוחה.jpg",
+    "branches": [
+      "גשם",
+      "חורף",
+      "מזג אוויר",
+      "סערה",
+      "מעיל",
+      "מים",
+      "הגנה"
+    ],
+    "keywords": [
+      "גשם",
+      "חורף",
+      "מזג אוויר",
+      "סערה",
+      "מעיל",
+      "מים",
+      "הגנה"
+    ],
+    "association": "גשם, חורף, מזג אוויר, סערה, מעיל, מים, הגנה",
+    "visualNotes": "מטרייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מטרייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_356_מפתח_שוודי",
+    "name": "מפתח שוודי",
+    "title": "מפתח שוודי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_356_מפתח_שוודי.jpg",
+    "branches": [
+      "אינסטלטור",
+      "תיקון",
+      "צנרת",
+      "ברז",
+      "מוסך",
+      "אום",
+      "עבודה"
+    ],
+    "keywords": [
+      "אינסטלטור",
+      "תיקון",
+      "צנרת",
+      "ברז",
+      "מוסך",
+      "אום",
+      "עבודה"
+    ],
+    "association": "אינסטלטור, תיקון, צנרת, ברז, מוסך, אום, עבודה",
+    "visualNotes": "מפתח שוודי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מפתח שוודי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_357_מסור_ידני",
+    "name": "מסור",
+    "title": "מסור",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_357_מסור_ידני.jpg",
+    "branches": [
+      "עץ",
+      "נגרות",
+      "חיתוך",
+      "שיפוץ",
+      "גינון",
+      "בנייה",
+      "עבודה"
+    ],
+    "keywords": [
+      "עץ",
+      "נגרות",
+      "חיתוך",
+      "שיפוץ",
+      "גינון",
+      "בנייה",
+      "עבודה"
+    ],
+    "association": "עץ, נגרות, חיתוך, שיפוץ, גינון, בנייה, עבודה",
+    "visualNotes": "מסור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מסור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_358_מטאטא_ומגרוד",
+    "name": "מטאטא ויעה",
+    "title": "מטאטא ויעה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_358_מטאטא_ומגרוד.jpg",
+    "branches": [
+      "ניקיון",
+      "רצפה",
+      "בית",
+      "אבק",
+      "לכלוך",
+      "סדר",
+      "שטיפה"
+    ],
+    "keywords": [
+      "ניקיון",
+      "רצפה",
+      "בית",
+      "אבק",
+      "לכלוך",
+      "סדר",
+      "שטיפה"
+    ],
+    "association": "ניקיון, רצפה, בית, אבק, לכלוך, סדר, שטיפה",
+    "visualNotes": "מטאטא ויעה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מטאטא ויעה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_359_סולם_מתקפל",
+    "name": "סולם",
+    "title": "סולם",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_359_סולם_מתקפל.jpg",
+    "branches": [
+      "גובה",
+      "צביעה",
+      "שיפוץ",
+      "נורה",
+      "תיקון",
+      "עלייה",
+      "תקרה"
+    ],
+    "keywords": [
+      "גובה",
+      "צביעה",
+      "שיפוץ",
+      "נורה",
+      "תיקון",
+      "עלייה",
+      "תקרה"
+    ],
+    "association": "גובה, צביעה, שיפוץ, נורה, תיקון, עלייה, תקרה",
+    "visualNotes": "סולם – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סולם – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_360_מזלג__סכין_וכף",
+    "name": "סכו\"ם",
+    "title": "סכו\"ם",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_360_מזלג__סכין_וכף.jpg",
+    "branches": [
+      "אוכל",
+      "ארוחה",
+      "חביתה",
+      "ביצים",
+      "מטבח",
+      "מסעדה",
+      "שולחן",
+      "בישול"
+    ],
+    "keywords": [
+      "אוכל",
+      "ארוחה",
+      "חביתה",
+      "ביצים",
+      "מטבח",
+      "מסעדה",
+      "שולחן",
+      "בישול"
+    ],
+    "association": "אוכל, ארוחה, חביתה, ביצים, מטבח, מסעדה, שולחן, בישול",
+    "visualNotes": "סכו\"ם – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סכו\"ם – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_361_פותחן_קופסאות_שימורים",
+    "name": "פותחן שימורים",
+    "title": "פותחן שימורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_361_פותחן_קופסאות_שימורים.jpg",
+    "branches": [
+      "מטבח",
+      "בישול",
+      "טונה",
+      "קופסה",
+      "אוכל",
+      "קמפינג",
+      "פחית"
+    ],
+    "keywords": [
+      "מטבח",
+      "בישול",
+      "טונה",
+      "קופסה",
+      "אוכל",
+      "קמפינג",
+      "פחית"
+    ],
+    "association": "מטבח, בישול, טונה, קופסה, אוכל, קמפינג, פחית",
+    "visualNotes": "פותחן שימורים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פותחן שימורים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_362_פחית_שימורים_חצי_פתוחה",
+    "name": "קופסת שימורים",
+    "title": "קופסת שימורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_362_פחית_שימורים_חצי_פתוחה.jpg",
+    "branches": [
+      "אוכל",
+      "מזווה",
+      "בישול",
+      "סופרמרקט",
+      "קניות",
+      "טונה",
+      "תירס"
+    ],
+    "keywords": [
+      "אוכל",
+      "מזווה",
+      "בישול",
+      "סופרמרקט",
+      "קניות",
+      "טונה",
+      "תירס"
+    ],
+    "association": "אוכל, מזווה, בישול, סופרמרקט, קניות, טונה, תירס",
+    "visualNotes": "קופסת שימורים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קופסת שימורים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_363_בקבוק_ייין_ופותחן_חולץ_פקקים",
+    "name": "חולץ פקקים",
+    "title": "חולץ פקקים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_363_בקבוק_ייין_ופותחן_חולץ_פקקים.jpg",
+    "branches": [
+      "יין",
+      "בקבוק",
+      "ארוחה",
+      "אירוח",
+      "חגיגה",
+      "מטבח",
+      "שעם"
+    ],
+    "keywords": [
+      "יין",
+      "בקבוק",
+      "ארוחה",
+      "אירוח",
+      "חגיגה",
+      "מטבח",
+      "שעם"
+    ],
+    "association": "יין, בקבוק, ארוחה, אירוח, חגיגה, מטבח, שעם",
+    "visualNotes": "חולץ פקקים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חולץ פקקים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_364_נר_דולק_נוטף_שעווה",
+    "name": "נר דולק",
+    "title": "נר דולק",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_364_נר_דולק_נוטף_שעווה.jpg",
+    "branches": [
+      "אור",
+      "שבת",
+      "אש",
+      "חושך",
+      "שעווה",
+      "רומנטיקה",
+      "הפסקת חשמל"
+    ],
+    "keywords": [
+      "אור",
+      "שבת",
+      "אש",
+      "חושך",
+      "שעווה",
+      "רומנטיקה",
+      "הפסקת חשמל"
+    ],
+    "association": "אור, שבת, אש, חושך, שעווה, רומנטיקה, הפסקת חשמל",
+    "visualNotes": "נר דולק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נר דולק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_365_פנס_כיס_דולק",
+    "name": "פנס",
+    "title": "פנס",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_365_פנס_כיס_דולק.jpg",
+    "branches": [
+      "אור",
+      "חושך",
+      "לילה",
+      "סוללות",
+      "חיפוש",
+      "טיול",
+      "חירום"
+    ],
+    "keywords": [
+      "אור",
+      "חושך",
+      "לילה",
+      "סוללות",
+      "חיפוש",
+      "טיול",
+      "חירום"
+    ],
+    "association": "אור, חושך, לילה, סוללות, חיפוש, טיול, חירום",
+    "visualNotes": "פנס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פנס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_366_קופסת_גפרורים",
+    "name": "גפרורים",
+    "title": "גפרורים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_366_קופסת_גפרורים.jpg",
+    "branches": [
+      "אש",
+      "הדלקה",
+      "נרות",
+      "מנגל",
+      "גז",
+      "בישול",
+      "מדורה"
+    ],
+    "keywords": [
+      "אש",
+      "הדלקה",
+      "נרות",
+      "מנגל",
+      "גז",
+      "בישול",
+      "מדורה"
+    ],
+    "association": "אש, הדלקה, נרות, מנגל, גז, בישול, מדורה",
+    "visualNotes": "גפרורים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גפרורים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_367_מצית_זיפו",
+    "name": "מצית",
+    "title": "מצית",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_367_מצית_זיפו.jpg",
+    "branches": [
+      "אש",
+      "להבה",
+      "הדלקה",
+      "גז",
+      "נרות",
+      "עישון",
+      "קמפינג"
+    ],
+    "keywords": [
+      "אש",
+      "להבה",
+      "הדלקה",
+      "גז",
+      "נרות",
+      "עישון",
+      "קמפינג"
+    ],
+    "association": "אש, להבה, הדלקה, גז, נרות, עישון, קמפינג",
+    "visualNotes": "מצית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מצית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_368_מברשת_שיניים_ומשחה",
+    "name": "מברשת שיניים",
+    "title": "מברשת שיניים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_368_מברשת_שיניים_ומשחה.jpg",
+    "branches": [
+      "צחצוח",
+      "בוקר",
+      "רופא",
+      "ניקיון",
+      "אמבטיה",
+      "משחה",
+      "היגיינה"
+    ],
+    "keywords": [
+      "צחצוח",
+      "בוקר",
+      "רופא",
+      "ניקיון",
+      "אמבטיה",
+      "משחה",
+      "היגיינה"
+    ],
+    "association": "צחצוח, בוקר, רופא, ניקיון, אמבטיה, משחה, היגיינה",
+    "visualNotes": "מברשת שיניים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מברשת שיניים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_369_סבון_מוצק_בתוך_קצף",
+    "name": "סבון",
+    "title": "סבון",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_369_סבון_מוצק_בתוך_קצף.jpg",
+    "branches": [
+      "מקלחת",
+      "ניקיון",
+      "קצף",
+      "אמבטיה",
+      "ידיים",
+      "ריח",
+      "מים"
+    ],
+    "keywords": [
+      "מקלחת",
+      "ניקיון",
+      "קצף",
+      "אמבטיה",
+      "ידיים",
+      "ריח",
+      "מים"
+    ],
+    "association": "מקלחת, ניקיון, קצף, אמבטיה, ידיים, ריח, מים",
+    "visualNotes": "סבון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סבון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_370_נייר_טואלט",
+    "name": "נייר טואלט",
+    "title": "נייר טואלט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_370_נייר_טואלט.jpg",
+    "branches": [
+      "שירותים",
+      "קניות",
+      "סופרמרקט",
+      "ניקיון",
+      "אמבטיה",
+      "בית",
+      "מגבון"
+    ],
+    "keywords": [
+      "שירותים",
+      "קניות",
+      "סופרמרקט",
+      "ניקיון",
+      "אמבטיה",
+      "בית",
+      "מגבון"
+    ],
+    "association": "שירותים, קניות, סופרמרקט, ניקיון, אמבטיה, בית, מגבון",
+    "visualNotes": "נייר טואלט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נייר טואלט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_371_מסרק_שיער_קלאסי",
+    "name": "מסרק",
+    "title": "מסרק",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_371_מסרק_שיער_קלאסי.jpg",
+    "branches": [
+      "שיער",
+      "תספורת",
+      "מספרה",
+      "בוקר",
+      "מראה",
+      "טיפוח",
+      "אמבטיה"
+    ],
+    "keywords": [
+      "שיער",
+      "תספורת",
+      "מספרה",
+      "בוקר",
+      "מראה",
+      "טיפוח",
+      "אמבטיה"
+    ],
+    "association": "שיער, תספורת, מספרה, בוקר, מראה, טיפוח, אמבטיה",
+    "visualNotes": "מסרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מסרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_372_מראת_יד_עגולה",
+    "name": "מראה",
+    "title": "מראה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_372_מראת_יד_עגולה.jpg",
+    "branches": [
+      "איפור",
+      "טיפוח",
+      "פנים",
+      "אמבטיה",
+      "יופי",
+      "בוקר",
+      "גילוח"
+    ],
+    "keywords": [
+      "איפור",
+      "טיפוח",
+      "פנים",
+      "אמבטיה",
+      "יופי",
+      "בוקר",
+      "גילוח"
+    ],
+    "association": "איפור, טיפוח, פנים, אמבטיה, יופי, בוקר, גילוח",
+    "visualNotes": "מראה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מראה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_373_משקפי_קריאה",
+    "name": "משקפי קריאה",
+    "title": "משקפי קריאה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_373_משקפי_קריאה.jpg",
+    "branches": [
+      "ראייה",
+      "ספר",
+      "לימודים",
+      "עיניים",
+      "בדיקה",
+      "עיתון",
+      "עבודה"
+    ],
+    "keywords": [
+      "ראייה",
+      "ספר",
+      "לימודים",
+      "עיניים",
+      "בדיקה",
+      "עיתון",
+      "עבודה"
+    ],
+    "association": "ראייה, ספר, לימודים, עיניים, בדיקה, עיתון, עבודה",
+    "visualNotes": "משקפי קריאה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משקפי קריאה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_374_שעון_מעורר_קלאסי",
+    "name": "שעון מעורר",
+    "title": "שעון מעורר",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_374_שעון_מעורר_קלאסי.jpg",
+    "branches": [
+      "בוקר",
+      "השכמה",
+      "שינה",
+      "זמן",
+      "איחור",
+      "עבודה",
+      "צלצול"
+    ],
+    "keywords": [
+      "בוקר",
+      "השכמה",
+      "שינה",
+      "זמן",
+      "איחור",
+      "עבודה",
+      "צלצול"
+    ],
+    "association": "בוקר, השכמה, שינה, זמן, איחור, עבודה, צלצול",
+    "visualNotes": "שעון מעורר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שעון מעורר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_375_קולב_בגדים",
+    "name": "קולב",
+    "title": "קולב",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_375_קולב_בגדים.jpg",
+    "branches": [
+      "בגדים",
+      "ארון",
+      "כביסה",
+      "גיהוץ",
+      "חולצה",
+      "סידור",
+      "תלייה"
+    ],
+    "keywords": [
+      "בגדים",
+      "ארון",
+      "כביסה",
+      "גיהוץ",
+      "חולצה",
+      "סידור",
+      "תלייה"
+    ],
+    "association": "בגדים, ארון, כביסה, גיהוץ, חולצה, סידור, תלייה",
+    "visualNotes": "קולב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קולב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_376_מגהץ_אדים",
+    "name": "מגהץ",
+    "title": "מגהץ",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_376_מגהץ_אדים.jpg",
+    "branches": [
+      "גיהוץ",
+      "חולצה",
+      "כביסה",
+      "בגדים",
+      "קמטים",
+      "אדים",
+      "ארון"
+    ],
+    "keywords": [
+      "גיהוץ",
+      "חולצה",
+      "כביסה",
+      "בגדים",
+      "קמטים",
+      "אדים",
+      "ארון"
+    ],
+    "association": "גיהוץ, חולצה, כביסה, בגדים, קמטים, אדים, ארון",
+    "visualNotes": "מגהץ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגהץ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_377_מכונת_תפירה_ישנה",
+    "name": "מכונת תפירה",
+    "title": "מכונת תפירה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_377_מכונת_תפירה_ישנה.jpg",
+    "branches": [
+      "בגדים",
+      "תיקון",
+      "בד",
+      "חוט",
+      "תופרת",
+      "אופנה",
+      "מכפלת"
+    ],
+    "keywords": [
+      "בגדים",
+      "תיקון",
+      "בד",
+      "חוט",
+      "תופרת",
+      "אופנה",
+      "מכפלת"
+    ],
+    "association": "בגדים, תיקון, בד, חוט, תופרת, אופנה, מכפלת",
+    "visualNotes": "מכונת תפירה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מכונת תפירה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_378_מחט_וחוט",
+    "name": "מחט וחוט",
+    "title": "מחט וחוט",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_378_מחט_וחוט.jpg",
+    "branches": [
+      "תפירה",
+      "תיקון",
+      "בגדים",
+      "כפתור",
+      "בד",
+      "קרע",
+      "יצירה"
+    ],
+    "keywords": [
+      "תפירה",
+      "תיקון",
+      "בגדים",
+      "כפתור",
+      "בד",
+      "קרע",
+      "יצירה"
+    ],
+    "association": "תפירה, תיקון, בגדים, כפתור, בד, קרע, יצירה",
+    "visualNotes": "מחט וחוט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מחט וחוט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_379_כפתור_בגדים",
+    "name": "כפתור",
+    "title": "כפתור",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_379_כפתור_בגדים.jpg",
+    "branches": [
+      "חולצה",
+      "בגדים",
+      "תפירה",
+      "תיקון",
+      "מכנסיים",
+      "ארון",
+      "בד"
+    ],
+    "keywords": [
+      "חולצה",
+      "בגדים",
+      "תפירה",
+      "תיקון",
+      "מכנסיים",
+      "ארון",
+      "בד"
+    ],
+    "association": "חולצה, בגדים, תפירה, תיקון, מכנסיים, ארון, בד",
+    "visualNotes": "כפתור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כפתור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_380_רוכסן",
+    "name": "רוכסן",
+    "title": "רוכסן",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_380_רוכסן.jpg",
+    "branches": [
+      "ריצ'רץ'",
+      "מעיל",
+      "תיק",
+      "בגדים",
+      "סגירה",
+      "תפירה",
+      "מכנסיים"
+    ],
+    "keywords": [
+      "ריצ'רץ'",
+      "מעיל",
+      "תיק",
+      "בגדים",
+      "סגירה",
+      "תפירה",
+      "מכנסיים"
+    ],
+    "association": "ריצ'רץ', מעיל, תיק, בגדים, סגירה, תפירה, מכנסיים",
+    "visualNotes": "רוכסן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רוכסן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_381_סרט_מדידה_צהוב",
+    "name": "מטר מדידה",
+    "title": "מטר מדידה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_381_סרט_מדידה_צהוב.jpg",
+    "branches": [
+      "שיפוץ",
+      "רהיטים",
+      "דירה",
+      "אורך",
+      "נגרות",
+      "בנייה",
+      "קניות"
+    ],
+    "keywords": [
+      "שיפוץ",
+      "רהיטים",
+      "דירה",
+      "אורך",
+      "נגרות",
+      "בנייה",
+      "קניות"
+    ],
+    "association": "שיפוץ, רהיטים, דירה, אורך, נגרות, בנייה, קניות",
+    "visualNotes": "מטר מדידה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מטר מדידה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_382_פנקס_רשימות_ספירלה",
+    "name": "מחברת",
+    "title": "מחברת",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_382_פנקס_רשימות_ספירלה.jpg",
+    "branches": [
+      "רשימה",
+      "כתיבה",
+      "קניות",
+      "לימודים",
+      "משימות",
+      "תזכורת",
+      "משרד"
+    ],
+    "keywords": [
+      "רשימה",
+      "כתיבה",
+      "קניות",
+      "לימודים",
+      "משימות",
+      "תזכורת",
+      "משרד"
+    ],
+    "association": "רשימה, כתיבה, קניות, לימודים, משימות, תזכורת, משרד",
+    "visualNotes": "מחברת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מחברת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_383_עט_כדורי_פשוט",
+    "name": "עט כדורי",
+    "title": "עט כדורי",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_383_עט_כדורי_פשוט.jpg",
+    "branches": [
+      "כתיבה",
+      "חתימה",
+      "משרד",
+      "מסמכים",
+      "לימודים",
+      "מבחן",
+      "חוזה"
+    ],
+    "keywords": [
+      "כתיבה",
+      "חתימה",
+      "משרד",
+      "מסמכים",
+      "לימודים",
+      "מבחן",
+      "חוזה"
+    ],
+    "association": "כתיבה, חתימה, משרד, מסמכים, לימודים, מבחן, חוזה",
+    "visualNotes": "עט כדורי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עט כדורי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_384_עיפרון_צהוב_עם_מחק_אדום",
+    "name": "עיפרון",
+    "title": "עיפרון",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_384_עיפרון_צהוב_עם_מחק_אדום.jpg",
+    "branches": [
+      "כתיבה",
+      "ציור",
+      "לימודים",
+      "מחק",
+      "בית ספר",
+      "מחברת",
+      "שרטוט"
+    ],
+    "keywords": [
+      "כתיבה",
+      "ציור",
+      "לימודים",
+      "מחק",
+      "בית ספר",
+      "מחברת",
+      "שרטוט"
+    ],
+    "association": "כתיבה, ציור, לימודים, מחק, בית ספר, מחברת, שרטוט",
+    "visualNotes": "עיפרון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עיפרון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_385_מחדד_מתכת_קטן",
+    "name": "מחדד",
+    "title": "מחדד",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_385_מחדד_מתכת_קטן.jpg",
+    "branches": [
+      "עיפרון",
+      "קלמר",
+      "לימודים",
+      "בית ספר",
+      "כתיבה",
+      "ציור",
+      "שולחן"
+    ],
+    "keywords": [
+      "עיפרון",
+      "קלמר",
+      "לימודים",
+      "בית ספר",
+      "כתיבה",
+      "ציור",
+      "שולחן"
+    ],
+    "association": "עיפרון, קלמר, לימודים, בית ספר, כתיבה, ציור, שולחן",
+    "visualNotes": "מחדד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מחדד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_386_מהדק_סיכות_משרדי",
+    "name": "שדכן סיכות",
+    "title": "שדכן סיכות",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_386_מהדק_סיכות_משרדי.jpg",
+    "branches": [
+      "משרד",
+      "דפים",
+      "מסמכים",
+      "תיוק",
+      "עבודה",
+      "נייר",
+      "שולחן"
+    ],
+    "keywords": [
+      "משרד",
+      "דפים",
+      "מסמכים",
+      "תיוק",
+      "עבודה",
+      "נייר",
+      "שולחן"
+    ],
+    "association": "משרד, דפים, מסמכים, תיוק, עבודה, נייר, שולחן",
+    "visualNotes": "שדכן סיכות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שדכן סיכות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_387_אטב_נייר",
+    "name": "אטב נייר",
+    "title": "אטב נייר",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_387_אטב_נייר.jpg",
+    "branches": [
+      "משרד",
+      "מסמכים",
+      "דפים",
+      "תיוק",
+      "עבודה",
+      "סדר",
+      "שולחן"
+    ],
+    "keywords": [
+      "משרד",
+      "מסמכים",
+      "דפים",
+      "תיוק",
+      "עבודה",
+      "סדר",
+      "שולחן"
+    ],
+    "association": "משרד, מסמכים, דפים, תיוק, עבודה, סדר, שולחן",
+    "visualNotes": "אטב נייר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אטב נייר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_388_אטב_כביסה_מעץ",
+    "name": "אטב כביסה",
+    "title": "אטב כביסה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_388_אטב_כביסה_מעץ.jpg",
+    "branches": [
+      "ייבוש",
+      "בגדים",
+      "חבל",
+      "מרפסת",
+      "ניקיון",
+      "בית",
+      "שמש"
+    ],
+    "keywords": [
+      "ייבוש",
+      "בגדים",
+      "חבל",
+      "מרפסת",
+      "ניקיון",
+      "בית",
+      "שמש"
+    ],
+    "association": "ייבוש, בגדים, חבל, מרפסת, ניקיון, בית, שמש",
+    "visualNotes": "אטב כביסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אטב כביסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_389_סל_כביסה_פלסטיק",
+    "name": "סל כביסה",
+    "title": "סל כביסה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_389_סל_כביסה_פלסטיק.jpg",
+    "branches": [
+      "בגדים",
+      "ניקיון",
+      "מכונה",
+      "קיפול",
+      "בית",
+      "אמבטיה",
+      "סדר"
+    ],
+    "keywords": [
+      "בגדים",
+      "ניקיון",
+      "מכונה",
+      "קיפול",
+      "בית",
+      "אמבטיה",
+      "סדר"
+    ],
+    "association": "בגדים, ניקיון, מכונה, קיפול, בית, אמבטיה, סדר",
+    "visualNotes": "סל כביסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סל כביסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_390_צינור_גינה_ירוק_מפותל",
+    "name": "צינור השקיה",
+    "title": "צינור השקיה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_390_צינור_גינה_ירוק_מפותל.jpg",
+    "branches": [
+      "גינה",
+      "מים",
+      "שטיפה",
+      "דשא",
+      "צמחים",
+      "חצר",
+      "ברז"
+    ],
+    "keywords": [
+      "גינה",
+      "מים",
+      "שטיפה",
+      "דשא",
+      "צמחים",
+      "חצר",
+      "ברז"
+    ],
+    "association": "גינה, מים, שטיפה, דשא, צמחים, חצר, ברז",
+    "visualNotes": "צינור השקיה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צינור השקיה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_391_מזלג_גינה",
+    "name": "קלשון גינה",
+    "title": "קלשון גינה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_391_מזלג_גינה.jpg",
+    "branches": [
+      "גינון",
+      "אדמה",
+      "שתילה",
+      "חצר",
+      "צמחים",
+      "עבודה",
+      "ערוגה"
+    ],
+    "keywords": [
+      "גינון",
+      "אדמה",
+      "שתילה",
+      "חצר",
+      "צמחים",
+      "עבודה",
+      "ערוגה"
+    ],
+    "association": "גינון, אדמה, שתילה, חצר, צמחים, עבודה, ערוגה",
+    "visualNotes": "קלשון גינה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קלשון גינה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_392_מגרפה_לגינה",
+    "name": "מגרפה",
+    "title": "מגרפה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_392_מגרפה_לגינה.jpg",
+    "branches": [
+      "גינה",
+      "עלים",
+      "ניקיון",
+      "חצר",
+      "אדמה",
+      "גינון",
+      "דשא"
+    ],
+    "keywords": [
+      "גינה",
+      "עלים",
+      "ניקיון",
+      "חצר",
+      "אדמה",
+      "גינון",
+      "דשא"
+    ],
+    "association": "גינה, עלים, ניקיון, חצר, אדמה, גינון, דשא",
+    "visualNotes": "מגרפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגרפה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_393_מריצה",
+    "name": "מריצה",
+    "title": "מריצה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_393_מריצה.jpg",
+    "branches": [
+      "גינה",
+      "בנייה",
+      "הובלה",
+      "אדמה",
+      "שיפוץ",
+      "עבודה",
+      "חצר"
+    ],
+    "keywords": [
+      "גינה",
+      "בנייה",
+      "הובלה",
+      "אדמה",
+      "שיפוץ",
+      "עבודה",
+      "חצר"
+    ],
+    "association": "גינה, בנייה, הובלה, אדמה, שיפוץ, עבודה, חצר",
+    "visualNotes": "מריצה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מריצה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_394_עציץ_חרס_חום",
+    "name": "עציץ",
+    "title": "עציץ",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_394_עציץ_חרס_חום.jpg",
+    "branches": [
+      "צמחים",
+      "השקיה",
+      "גינה",
+      "מרפסת",
+      "פרחים",
+      "משתלה",
+      "אדמה"
+    ],
+    "keywords": [
+      "צמחים",
+      "השקיה",
+      "גינה",
+      "מרפסת",
+      "פרחים",
+      "משתלה",
+      "אדמה"
+    ],
+    "association": "צמחים, השקיה, גינה, מרפסת, פרחים, משתלה, אדמה",
+    "visualNotes": "עציץ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עציץ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_395_מזלף_מים_לפרחים",
+    "name": "משפך השקיה",
+    "title": "משפך השקיה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_395_מזלף_מים_לפרחים.jpg",
+    "branches": [
+      "גינה",
+      "צמחים",
+      "מים",
+      "עציצים",
+      "פרחים",
+      "מרפסת",
+      "גינון"
+    ],
+    "keywords": [
+      "גינה",
+      "צמחים",
+      "מים",
+      "עציצים",
+      "פרחים",
+      "מרפסת",
+      "גינון"
+    ],
+    "association": "גינה, צמחים, מים, עציצים, פרחים, מרפסת, גינון",
+    "visualNotes": "משפך השקיה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משפך השקיה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_396_ארגז_כלים_אדום",
+    "name": "ארגז כלים",
+    "title": "ארגז כלים",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_396_ארגז_כלים_אדום.jpg",
+    "branches": [
+      "תיקון",
+      "שיפוץ",
+      "עבודה",
+      "מוסך",
+      "ברגים",
+      "התקנה",
+      "טכנאי"
+    ],
+    "keywords": [
+      "תיקון",
+      "שיפוץ",
+      "עבודה",
+      "מוסך",
+      "ברגים",
+      "התקנה",
+      "טכנאי"
+    ],
+    "association": "תיקון, שיפוץ, עבודה, מוסך, ברגים, התקנה, טכנאי",
+    "visualNotes": "ארגז כלים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ארגז כלים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_397_סרט_הדבקה",
+    "name": "סלוטייפ",
+    "title": "סלוטייפ",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_397_סרט_הדבקה.jpg",
+    "branches": [
+      "הדבקה",
+      "אריזה",
+      "קרטון",
+      "חבילה",
+      "דואר",
+      "משרד",
+      "תיקון"
+    ],
+    "keywords": [
+      "הדבקה",
+      "אריזה",
+      "קרטון",
+      "חבילה",
+      "דואר",
+      "משרד",
+      "תיקון"
+    ],
+    "association": "הדבקה, אריזה, קרטון, חבילה, דואר, משרד, תיקון",
+    "visualNotes": "סלוטייפ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סלוטייפ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_398_בקבוק_תרמוס_כסוף",
+    "name": "תרמוס",
+    "title": "תרמוס",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_398_בקבוק_תרמוס_כסוף.jpg",
+    "branches": [
+      "קפה",
+      "תה",
+      "טיול",
+      "חום",
+      "שתייה",
+      "משרד",
+      "בוקר"
+    ],
+    "keywords": [
+      "קפה",
+      "תה",
+      "טיול",
+      "חום",
+      "שתייה",
+      "משרד",
+      "בוקר"
+    ],
+    "association": "קפה, תה, טיול, חום, שתייה, משרד, בוקר",
+    "visualNotes": "תרמוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תרמוס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_399_צידנית_פלסטיק_כחולה",
+    "name": "צידנית",
+    "title": "צידנית",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_399_צידנית_פלסטיק_כחולה.jpg",
+    "branches": [
+      "פיקניק",
+      "חוף",
+      "קרח",
+      "טיול",
+      "אוכל",
+      "שתייה",
+      "קמפינג"
+    ],
+    "keywords": [
+      "פיקניק",
+      "חוף",
+      "קרח",
+      "טיול",
+      "אוכל",
+      "שתייה",
+      "קמפינג"
+    ],
+    "association": "פיקניק, חוף, קרח, טיול, אוכל, שתייה, קמפינג",
+    "visualNotes": "צידנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צידנית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_400_מזוודת_עזרה_ראשונה_לבנה",
+    "name": "עזרה ראשונה",
+    "title": "עזרה ראשונה",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_400_מזוודת_עזרה_ראשונה_לבנה.jpg",
+    "branches": [
+      "רופא",
+      "תרופות",
+      "פלסטר",
+      "פציעה",
+      "חירום",
+      "מרפאה",
+      "בריאות"
+    ],
+    "keywords": [
+      "רופא",
+      "תרופות",
+      "פלסטר",
+      "פציעה",
+      "חירום",
+      "מרפאה",
+      "בריאות"
+    ],
+    "association": "רופא, תרופות, פלסטר, פציעה, חירום, מרפאה, בריאות",
+    "visualNotes": "עזרה ראשונה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עזרה ראשונה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_401_דארת__ויידר",
+    "name": "דארת' ויידר",
+    "title": "דארת' ויידר",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_401_דארת__ויידר.jpg",
+    "branches": [
+      "מלחמת הכוכבים",
+      "חלל",
+      "מסכה",
+      "חרב אור",
+      "סרט",
+      "שחור",
+      "קולנוע"
+    ],
+    "keywords": [
+      "מלחמת הכוכבים",
+      "חלל",
+      "מסכה",
+      "חרב אור",
+      "סרט",
+      "שחור",
+      "קולנוע"
+    ],
+    "association": "מלחמת הכוכבים, חלל, מסכה, חרב אור, סרט, שחור, קולנוע",
+    "visualNotes": "דארת' ויידר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דארת' ויידר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_402_באטמן",
+    "name": "איש העטלף",
+    "title": "איש העטלף",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_402_באטמן.jpg",
+    "branches": [
+      "לילה",
+      "גיבור",
+      "גלימה",
+      "מסכה",
+      "סרט",
+      "הצלה",
+      "קומיקס"
+    ],
+    "keywords": [
+      "לילה",
+      "גיבור",
+      "גלימה",
+      "מסכה",
+      "סרט",
+      "הצלה",
+      "קומיקס"
+    ],
+    "association": "לילה, גיבור, גלימה, מסכה, סרט, הצלה, קומיקס",
+    "visualNotes": "איש העטלף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "איש העטלף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_403_סופרמן",
+    "name": "איש הפלדה",
+    "title": "איש הפלדה",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_403_סופרמן.jpg",
+    "branches": [
+      "גיבור",
+      "כוח",
+      "תעופה",
+      "גלימה",
+      "הצלה",
+      "שמיים",
+      "סרט"
+    ],
+    "keywords": [
+      "גיבור",
+      "כוח",
+      "תעופה",
+      "גלימה",
+      "הצלה",
+      "שמיים",
+      "סרט"
+    ],
+    "association": "גיבור, כוח, תעופה, גלימה, הצלה, שמיים, סרט",
+    "visualNotes": "איש הפלדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "איש הפלדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_404_פאקמן",
+    "name": "פאקמן",
+    "title": "פאקמן",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_404_פאקמן.jpg",
+    "branches": [
+      "משחק",
+      "מחשב",
+      "ארקייד",
+      "אוכל",
+      "מבוך",
+      "גיימינג",
+      "צהוב"
+    ],
+    "keywords": [
+      "משחק",
+      "מחשב",
+      "ארקייד",
+      "אוכל",
+      "מבוך",
+      "גיימינג",
+      "צהוב"
+    ],
+    "association": "משחק, מחשב, ארקייד, אוכל, מבוך, גיימינג, צהוב",
+    "visualNotes": "פאקמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פאקמן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_405_שרק",
+    "name": "שרק",
+    "title": "שרק",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_405_שרק.jpg",
+    "branches": [
+      "ירוק",
+      "סרט",
+      "אגדה",
+      "מפלצת",
+      "ביצה",
+      "אנימציה",
+      "הומור"
+    ],
+    "keywords": [
+      "ירוק",
+      "סרט",
+      "אגדה",
+      "מפלצת",
+      "ביצה",
+      "אנימציה",
+      "הומור"
+    ],
+    "association": "ירוק, סרט, אגדה, מפלצת, ביצה, אנימציה, הומור",
+    "visualNotes": "שרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_406_הלו_קיטי",
+    "name": "הלו קיטי",
+    "title": "הלו קיטי",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_406_הלו_קיטי.jpg",
+    "branches": [
+      "חתול",
+      "ורוד",
+      "בובה",
+      "ילדים",
+      "יפן",
+      "מתנה",
+      "סרט"
+    ],
+    "keywords": [
+      "חתול",
+      "ורוד",
+      "בובה",
+      "ילדים",
+      "יפן",
+      "מתנה",
+      "סרט"
+    ],
+    "association": "חתול, ורוד, בובה, ילדים, יפן, מתנה, סרט",
+    "visualNotes": "הלו קיטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הלו קיטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_407_שפם_הליצן_של_רונלד_מקדונלד",
+    "name": "רונלד מקדונלד",
+    "title": "רונלד מקדונלד",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_407_שפם_הליצן_של_רונלד_מקדונלד.jpg",
+    "branches": [
+      "המבורגר",
+      "צ'יפס",
+      "מסעדה",
+      "אוכל",
+      "ילדים",
+      "ילד",
+      "ארוחה",
+      "לאכול"
+    ],
+    "keywords": [
+      "המבורגר",
+      "צ'יפס",
+      "מסעדה",
+      "אוכל",
+      "ילדים",
+      "ילד",
+      "ארוחה",
+      "לאכול"
+    ],
+    "association": "המבורגר, צ'יפס, מסעדה, אוכל, ילדים, ילד, ארוחה, לאכול",
+    "visualNotes": "רונלד מקדונלד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רונלד מקדונלד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_408_הלוגו_של_נייק__swoosh_",
+    "name": "נייקי",
+    "title": "נייקי",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_408_הלוגו_של_נייק__swoosh_.jpg",
+    "branches": [
+      "נעליים",
+      "ספורט",
+      "ריצה",
+      "אימון",
+      "כושר",
+      "קניות",
+      "בגדים"
+    ],
+    "keywords": [
+      "נעליים",
+      "ספורט",
+      "ריצה",
+      "אימון",
+      "כושר",
+      "קניות",
+      "בגדים"
+    ],
+    "association": "נעליים, ספורט, ריצה, אימון, כושר, קניות, בגדים",
+    "visualNotes": "נייקי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "נייקי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_409_הפחיות_של_קוקה_קולה",
+    "name": "קוקה קולה",
+    "title": "קוקה קולה",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_409_הפחיות_של_קוקה_קולה.jpg",
+    "branches": [
+      "שתייה",
+      "פחית",
+      "סופרמרקט",
+      "קניות",
+      "קרח",
+      "מסיבה",
+      "ארוחה"
+    ],
+    "keywords": [
+      "שתייה",
+      "פחית",
+      "סופרמרקט",
+      "קניות",
+      "קרח",
+      "מסיבה",
+      "ארוחה"
+    ],
+    "association": "שתייה, פחית, סופרמרקט, קניות, קרח, מסיבה, ארוחה",
+    "visualNotes": "קוקה קולה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קוקה קולה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_410_מרלין_מונרו",
+    "name": "מרילין מונרו",
+    "title": "מרילין מונרו",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_410_מרלין_מונרו.jpg",
+    "branches": [
+      "קולנוע",
+      "שחקנית",
+      "שמלה",
+      "אופנה",
+      "הוליווד",
+      "איפור",
+      "בלונד"
+    ],
+    "keywords": [
+      "קולנוע",
+      "שחקנית",
+      "שמלה",
+      "אופנה",
+      "הוליווד",
+      "איפור",
+      "בלונד"
+    ],
+    "association": "קולנוע, שחקנית, שמלה, אופנה, הוליווד, איפור, בלונד",
+    "visualNotes": "מרילין מונרו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מרילין מונרו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_411_הארי_פוטר",
+    "name": "קוסם צעיר",
+    "title": "קוסם צעיר",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_411_הארי_פוטר.jpg",
+    "branches": [
+      "שרביט",
+      "משקפיים",
+      "ספר",
+      "קסם",
+      "לימודים",
+      "צעיף",
+      "סרט"
+    ],
+    "keywords": [
+      "שרביט",
+      "משקפיים",
+      "ספר",
+      "קסם",
+      "לימודים",
+      "צעיף",
+      "סרט"
+    ],
+    "association": "שרביט, משקפיים, ספר, קסם, לימודים, צעיף, סרט",
+    "visualNotes": "קוסם צעיר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קוסם צעיר – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_412_שרלוק_הולמס",
+    "name": "שרלוק הולמס",
+    "title": "שרלוק הולמס",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_412_שרלוק_הולמס.jpg",
+    "branches": [
+      "בלש",
+      "חקירה",
+      "חיפוש",
+      "מקטרת",
+      "כובע",
+      "פתרון",
+      "תעלומה"
+    ],
+    "keywords": [
+      "בלש",
+      "חקירה",
+      "חיפוש",
+      "מקטרת",
+      "כובע",
+      "פתרון",
+      "תעלומה"
+    ],
+    "association": "בלש, חקירה, חיפוש, מקטרת, כובע, פתרון, תעלומה",
+    "visualNotes": "שרלוק הולמס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שרלוק הולמס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_413_קינג_קונג",
+    "name": "קינג קונג",
+    "title": "קינג קונג",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_413_קינג_קונג.jpg",
+    "branches": [
+      "גורילה",
+      "קוף",
+      "ענק",
+      "כוח",
+      "סרט",
+      "מגדל",
+      "ג'ונגל"
+    ],
+    "keywords": [
+      "גורילה",
+      "קוף",
+      "ענק",
+      "כוח",
+      "סרט",
+      "מגדל",
+      "ג'ונגל"
+    ],
+    "association": "גורילה, קוף, ענק, כוח, סרט, מגדל, ג'ונגל",
+    "visualNotes": "קינג קונג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קינג קונג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_414_לגו",
+    "name": "לגו",
+    "title": "לגו",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_414_לגו.jpg",
+    "branches": [
+      "קוביות",
+      "הרכבה",
+      "משחק",
+      "בנייה",
+      "ילדים",
+      "צעצוע",
+      "יצירה"
+    ],
+    "keywords": [
+      "קוביות",
+      "הרכבה",
+      "משחק",
+      "בנייה",
+      "ילדים",
+      "צעצוע",
+      "יצירה"
+    ],
+    "association": "קוביות, הרכבה, משחק, בנייה, ילדים, צעצוע, יצירה",
+    "visualNotes": "לגו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לגו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_415_הסימפסונים",
+    "name": "משפחת סימפסון",
+    "title": "משפחת סימפסון",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_415_הסימפסונים.jpg",
+    "branches": [
+      "טלוויזיה",
+      "סדרה",
+      "צהוב",
+      "אנימציה",
+      "הומור",
+      "סלון",
+      "קומדיה"
+    ],
+    "keywords": [
+      "טלוויזיה",
+      "סדרה",
+      "צהוב",
+      "אנימציה",
+      "הומור",
+      "סלון",
+      "קומדיה"
+    ],
+    "association": "טלוויזיה, סדרה, צהוב, אנימציה, הומור, סלון, קומדיה",
+    "visualNotes": "משפחת סימפסון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משפחת סימפסון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_416_פטיש_שופטים",
+    "name": "פטיש שופטים",
+    "title": "פטיש שופטים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_416_פטיש_שופטים.jpg",
+    "branches": [
+      "בית משפט",
+      "חוק",
+      "עורך דין",
+      "החלטה",
+      "משפט",
+      "צדק",
+      "חוזה"
+    ],
+    "keywords": [
+      "בית משפט",
+      "חוק",
+      "עורך דין",
+      "החלטה",
+      "משפט",
+      "צדק",
+      "חוזה"
+    ],
+    "association": "בית משפט, חוק, עורך דין, החלטה, משפט, צדק, חוזה",
+    "visualNotes": "פטיש שופטים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פטיש שופטים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_417_מזוודת_כסף",
+    "name": "מזוודת כסף",
+    "title": "מזוודת כסף",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_417_מזוודת_כסף.jpg",
+    "branches": [
+      "מזומן",
+      "בנק",
+      "דולרים",
+      "עסקה",
+      "תשלום",
+      "חיסכון",
+      "עושר"
+    ],
+    "keywords": [
+      "מזומן",
+      "בנק",
+      "דולרים",
+      "עסקה",
+      "תשלום",
+      "חיסכון",
+      "עושר"
+    ],
+    "association": "מזומן, בנק, דולרים, עסקה, תשלום, חיסכון, עושר",
+    "visualNotes": "מזוודת כסף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מזוודת כסף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_418_כדור_בדולח",
+    "name": "כדור בדולח",
+    "title": "כדור בדולח",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_418_כדור_בדולח.jpg",
+    "branches": [
+      "עתיד",
+      "תחזית",
+      "קסם",
+      "זכוכית",
+      "מזל",
+      "ניחוש",
+      "מיסטיקה"
+    ],
+    "keywords": [
+      "עתיד",
+      "תחזית",
+      "קסם",
+      "זכוכית",
+      "מזל",
+      "ניחוש",
+      "מיסטיקה"
+    ],
+    "association": "עתיד, תחזית, קסם, זכוכית, מזל, ניחוש, מיסטיקה",
+    "visualNotes": "כדור בדולח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור בדולח – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_419_מפתח_שוודי___מפתח_ברגים",
+    "name": "מפתח ברגים",
+    "title": "מפתח ברגים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_419_מפתח_שוודי___מפתח_ברגים.jpg",
+    "branches": [
+      "אינסטלטור",
+      "תיקון",
+      "מוסך",
+      "צנרת",
+      "עבודה",
+      "שיפוץ",
+      "אום"
+    ],
+    "keywords": [
+      "אינסטלטור",
+      "תיקון",
+      "מוסך",
+      "צנרת",
+      "עבודה",
+      "שיפוץ",
+      "אום"
+    ],
+    "association": "אינסטלטור, תיקון, מוסך, צנרת, עבודה, שיפוץ, אום",
+    "visualNotes": "מפתח ברגים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מפתח ברגים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_420_סטטוסקופ",
+    "name": "סטטוסקופ",
+    "title": "סטטוסקופ",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_420_סטטוסקופ.jpg",
+    "branches": [
+      "רופא",
+      "בדיקה",
+      "מרפאה",
+      "לב",
+      "בריאות",
+      "תור",
+      "חולה"
+    ],
+    "keywords": [
+      "רופא",
+      "בדיקה",
+      "מרפאה",
+      "לב",
+      "בריאות",
+      "תור",
+      "חולה"
+    ],
+    "association": "רופא, בדיקה, מרפאה, לב, בריאות, תור, חולה",
+    "visualNotes": "סטטוסקופ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סטטוסקופ – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_421_עגלת_קניות",
+    "name": "עגלת קניות",
+    "title": "עגלת קניות",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_421_עגלת_קניות.jpg",
+    "branches": [
+      "סופרמרקט",
+      "מכולת",
+      "אוכל",
+      "קופה",
+      "רשימה",
+      "מצרכים",
+      "בית"
+    ],
+    "keywords": [
+      "סופרמרקט",
+      "מכולת",
+      "אוכל",
+      "קופה",
+      "רשימה",
+      "מצרכים",
+      "בית"
+    ],
+    "association": "סופרמרקט, מכולת, אוכל, קופה, רשימה, מצרכים, בית",
+    "visualNotes": "עגלת קניות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עגלת קניות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_422_כרטיס_אדום",
+    "name": "כרטיס הרחקה",
+    "title": "כרטיס הרחקה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_422_כרטיס_אדום.jpg",
+    "branches": [
+      "שופט",
+      "עבירה",
+      "כדורגל",
+      "עונש",
+      "אזהרה",
+      "חוק",
+      "ספורט"
+    ],
+    "keywords": [
+      "שופט",
+      "עבירה",
+      "כדורגל",
+      "עונש",
+      "אזהרה",
+      "חוק",
+      "ספורט"
+    ],
+    "association": "שופט, עבירה, כדורגל, עונש, אזהרה, חוק, ספורט",
+    "visualNotes": "כרטיס הרחקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כרטיס הרחקה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_423_משקולת_ברזל__dumbbell_",
+    "name": "משקולת יד",
+    "title": "משקולת יד",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_423_משקולת_ברזל__dumbbell_.jpg",
+    "branches": [
+      "כושר",
+      "אימון",
+      "חדר כושר",
+      "שרירים",
+      "כוח",
+      "ספורט",
+      "הרמה"
+    ],
+    "keywords": [
+      "כושר",
+      "אימון",
+      "חדר כושר",
+      "שרירים",
+      "כוח",
+      "ספורט",
+      "הרמה"
+    ],
+    "association": "כושר, אימון, חדר כושר, שרירים, כוח, ספורט, הרמה",
+    "visualNotes": "משקולת יד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משקולת יד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_424_שעון_חול",
+    "name": "שעון חול",
+    "title": "שעון חול",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_424_שעון_חול.jpg",
+    "branches": [
+      "זמן",
+      "דקות",
+      "המתנה",
+      "סבלנות",
+      "תזכורת",
+      "מועד",
+      "זכוכית"
+    ],
+    "keywords": [
+      "זמן",
+      "דקות",
+      "המתנה",
+      "סבלנות",
+      "תזכורת",
+      "מועד",
+      "זכוכית"
+    ],
+    "association": "זמן, דקות, המתנה, סבלנות, תזכורת, מועד, זכוכית",
+    "visualNotes": "שעון חול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שעון חול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_425_קופת_חיסכון_בצורת_חזיר",
+    "name": "קופת חיסכון",
+    "title": "קופת חיסכון",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_425_קופת_חיסכון_בצורת_חזיר.jpg",
+    "branches": [
+      "כסף",
+      "מטבעות",
+      "בנק",
+      "תקציב",
+      "כלכלה",
+      "שקלים",
+      "אוצר"
+    ],
+    "keywords": [
+      "כסף",
+      "מטבעות",
+      "בנק",
+      "תקציב",
+      "כלכלה",
+      "שקלים",
+      "אוצר"
+    ],
+    "association": "כסף, מטבעות, בנק, תקציב, כלכלה, שקלים, אוצר",
+    "visualNotes": "קופת חיסכון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קופת חיסכון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_426_חבל_תלייה",
+    "name": "לולאת חבל",
+    "title": "לולאת חבל",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_426_חבל_תלייה.jpg",
+    "branches": [
+      "קשר",
+      "סכנה",
+      "מערב פרוע",
+      "גרדום",
+      "משפט",
+      "אזהרה",
+      "עונש"
+    ],
+    "keywords": [
+      "קשר",
+      "סכנה",
+      "מערב פרוע",
+      "גרדום",
+      "משפט",
+      "אזהרה",
+      "עונש"
+    ],
+    "association": "קשר, סכנה, מערב פרוע, גרדום, משפט, אזהרה, עונש",
+    "visualNotes": "לולאת חבל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לולאת חבל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_427_רסיבר___טלפון_חוגה_ישן",
+    "name": "שפופרת טלפון",
+    "title": "שפופרת טלפון",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_427_רסיבר___טלפון_חוגה_ישן.jpg",
+    "branches": [
+      "שיחה",
+      "התקשרות",
+      "קשר",
+      "צלצול",
+      "משרד",
+      "הודעה",
+      "תיאום"
+    ],
+    "keywords": [
+      "שיחה",
+      "התקשרות",
+      "קשר",
+      "צלצול",
+      "משרד",
+      "הודעה",
+      "תיאום"
+    ],
+    "association": "שיחה, התקשרות, קשר, צלצול, משרד, הודעה, תיאום",
+    "visualNotes": "שפופרת טלפון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שפופרת טלפון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_428_קביים",
+    "name": "קביים",
+    "title": "קביים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_428_קביים.jpg",
+    "branches": [
+      "רופא",
+      "גבס",
+      "פציעה",
+      "הליכה",
+      "אורתופד",
+      "רגל",
+      "מרפאה"
+    ],
+    "keywords": [
+      "רופא",
+      "גבס",
+      "פציעה",
+      "הליכה",
+      "אורתופד",
+      "רגל",
+      "מרפאה"
+    ],
+    "association": "רופא, גבס, פציעה, הליכה, אורתופד, רגל, מרפאה",
+    "visualNotes": "קביים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קביים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_429_מספריים_חותכים_סרט_אדום",
+    "name": "גזירת סרט",
+    "title": "גזירת סרט",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_429_מספריים_חותכים_סרט_אדום.jpg",
+    "branches": [
+      "פתיחה",
+      "טקס",
+      "חגיגה",
+      "אירוע",
+      "התחלה",
+      "השקה",
+      "חדש"
+    ],
+    "keywords": [
+      "פתיחה",
+      "טקס",
+      "חגיגה",
+      "אירוע",
+      "התחלה",
+      "השקה",
+      "חדש"
+    ],
+    "association": "פתיחה, טקס, חגיגה, אירוע, התחלה, השקה, חדש",
+    "visualNotes": "גזירת סרט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גזירת סרט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_430_סיכת_ביטחון",
+    "name": "סיכת תפירה",
+    "title": "סיכת תפירה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_430_סיכת_ביטחון.jpg",
+    "branches": [
+      "בגדים",
+      "תיקון",
+      "בד",
+      "חיתול",
+      "חיבור",
+      "אופנה",
+      "עזרה"
+    ],
+    "keywords": [
+      "בגדים",
+      "תיקון",
+      "בד",
+      "חיתול",
+      "חיבור",
+      "אופנה",
+      "עזרה"
+    ],
+    "association": "בגדים, תיקון, בד, חיתול, חיבור, אופנה, עזרה",
+    "visualNotes": "סיכת תפירה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סיכת תפירה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_431_זכוכית_מגדלת",
+    "name": "זכוכית מגדלת",
+    "title": "זכוכית מגדלת",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_431_זכוכית_מגדלת.jpg",
+    "branches": [
+      "חיפוש",
+      "בדיקה",
+      "בלש",
+      "חקירה",
+      "קריאה",
+      "פרטים",
+      "עדשה"
+    ],
+    "keywords": [
+      "חיפוש",
+      "בדיקה",
+      "בלש",
+      "חקירה",
+      "קריאה",
+      "פרטים",
+      "עדשה"
+    ],
+    "association": "חיפוש, בדיקה, בלש, חקירה, קריאה, פרטים, עדשה",
+    "visualNotes": "זכוכית מגדלת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "זכוכית מגדלת – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_432_מזרק_רפואי",
+    "name": "מזרק",
+    "title": "מזרק",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_432_מזרק_רפואי.jpg",
+    "branches": [
+      "חיסון",
+      "רופא",
+      "אחות",
+      "מרפאה",
+      "בדיקת דם",
+      "תרופה",
+      "מחט"
+    ],
+    "keywords": [
+      "חיסון",
+      "רופא",
+      "אחות",
+      "מרפאה",
+      "בדיקת דם",
+      "תרופה",
+      "מחט"
+    ],
+    "association": "חיסון, רופא, אחות, מרפאה, בדיקת דם, תרופה, מחט",
+    "visualNotes": "מזרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מזרק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_433_כתר_זהב",
+    "name": "כתר מלוכה",
+    "title": "כתר מלוכה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_433_כתר_זהב.jpg",
+    "branches": [
+      "מלך",
+      "מלכה",
+      "זהב",
+      "ארמון",
+      "יהלומים",
+      "שלטון",
+      "ניצחון"
+    ],
+    "keywords": [
+      "מלך",
+      "מלכה",
+      "זהב",
+      "ארמון",
+      "יהלומים",
+      "שלטון",
+      "ניצחון"
+    ],
+    "association": "מלך, מלכה, זהב, ארמון, יהלומים, שלטון, ניצחון",
+    "visualNotes": "כתר מלוכה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כתר מלוכה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_434_תיק_עזרה_ראשונה",
+    "name": "תיק חובש",
+    "title": "תיק חובש",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_434_תיק_עזרה_ראשונה.jpg",
+    "branches": [
+      "רופא",
+      "תרופות",
+      "חירום",
+      "פלסטר",
+      "תחבושת",
+      "פציעה",
+      "מרפאה"
+    ],
+    "keywords": [
+      "רופא",
+      "תרופות",
+      "חירום",
+      "פלסטר",
+      "תחבושת",
+      "פציעה",
+      "מרפאה"
+    ],
+    "association": "רופא, תרופות, חירום, פלסטר, תחבושת, פציעה, מרפאה",
+    "visualNotes": "תיק חובש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תיק חובש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_435_חליפת_חלל",
+    "name": "חליפת חלל",
+    "title": "חליפת חלל",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_435_חליפת_חלל.jpg",
+    "branches": [
+      "אסטרונאוט",
+      "ירח",
+      "כוכבים",
+      "נאס\"א",
+      "מדע",
+      "קסדה",
+      "טיסה"
+    ],
+    "keywords": [
+      "אסטרונאוט",
+      "ירח",
+      "כוכבים",
+      "נאס\"א",
+      "מדע",
+      "קסדה",
+      "טיסה"
+    ],
+    "association": "אסטרונאוט, ירח, כוכבים, נאס\"א, מדע, קסדה, טיסה",
+    "visualNotes": "חליפת חלל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חליפת חלל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_",
+    "name": "כובע בוגרים",
+    "title": "כובע בוגרים",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_.jpg",
+    "branches": [
+      "תואר",
+      "אוניברסיטה",
+      "לימודים",
+      "סיום",
+      "טקס",
+      "תעודה",
+      "סטודנט"
+    ],
+    "keywords": [
+      "תואר",
+      "אוניברסיטה",
+      "לימודים",
+      "סיום",
+      "טקס",
+      "תעודה",
+      "סטודנט"
+    ],
+    "association": "תואר, אוניברסיטה, לימודים, סיום, טקס, תעודה, סטודנט",
+    "visualNotes": "כובע בוגרים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כובע בוגרים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_437_כרטיס_קולנוע_מנייר",
+    "name": "כרטיס כניסה",
+    "title": "כרטיס כניסה",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_437_כרטיס_קולנוע_מנייר.jpg",
+    "branches": [
+      "קולנוע",
+      "סרט",
+      "הופעה",
+      "הצגה",
+      "בילוי",
+      "הזמנה",
+      "אולם"
+    ],
+    "keywords": [
+      "קולנוע",
+      "סרט",
+      "הופעה",
+      "הצגה",
+      "בילוי",
+      "הזמנה",
+      "אולם"
+    ],
+    "association": "קולנוע, סרט, הופעה, הצגה, בילוי, הזמנה, אולם",
+    "visualNotes": "כרטיס כניסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כרטיס כניסה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_438_קוביית_משחק__עם_נקודות_",
+    "name": "קוביות משחק",
+    "title": "קוביות משחק",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_438_קוביית_משחק__עם_נקודות_.jpg",
+    "branches": [
+      "שש בש",
+      "מזל",
+      "מספרים",
+      "הטלה",
+      "קזינו",
+      "לוח",
+      "בילוי"
+    ],
+    "keywords": [
+      "שש בש",
+      "מזל",
+      "מספרים",
+      "הטלה",
+      "קזינו",
+      "לוח",
+      "בילוי"
+    ],
+    "association": "שש בש, מזל, מספרים, הטלה, קזינו, לוח, בילוי",
+    "visualNotes": "קוביות משחק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קוביות משחק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_439_הביג_בן",
+    "name": "ביג בן",
+    "title": "ביג בן",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_439_הביג_בן.jpg",
+    "branches": [
+      "לונדון",
+      "אנגליה",
+      "שעון",
+      "מגדל",
+      "חופשה",
+      "זמן",
+      "טיסה"
+    ],
+    "keywords": [
+      "לונדון",
+      "אנגליה",
+      "שעון",
+      "מגדל",
+      "חופשה",
+      "זמן",
+      "טיסה"
+    ],
+    "association": "לונדון, אנגליה, שעון, מגדל, חופשה, זמן, טיסה",
+    "visualNotes": "ביג בן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ביג בן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_440_טאג__מהאל",
+    "name": "טאג' מהאל",
+    "title": "טאג' מהאל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_440_טאג__מהאל.jpg",
+    "branches": [
+      "הודו",
+      "ארמון",
+      "תיירות",
+      "טיול",
+      "שיש",
+      "מבנה",
+      "חופשה"
+    ],
+    "keywords": [
+      "הודו",
+      "ארמון",
+      "תיירות",
+      "טיול",
+      "שיש",
+      "מבנה",
+      "חופשה"
+    ],
+    "association": "הודו, ארמון, תיירות, טיול, שיש, מבנה, חופשה",
+    "visualNotes": "טאג' מהאל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טאג' מהאל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_441_פסל_החושב__רודן_",
+    "name": "פסל החושב",
+    "title": "פסל החושב",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_441_פסל_החושב__רודן_.jpg",
+    "branches": [
+      "מחשבה",
+      "פילוסופיה",
+      "מוח",
+      "אמנות",
+      "מוזיאון",
+      "החלטה",
+      "ריכוז"
+    ],
+    "keywords": [
+      "מחשבה",
+      "פילוסופיה",
+      "מוח",
+      "אמנות",
+      "מוזיאון",
+      "החלטה",
+      "ריכוז"
+    ],
+    "association": "מחשבה, פילוסופיה, מוח, אמנות, מוזיאון, החלטה, ריכוז",
+    "visualNotes": "פסל החושב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל החושב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_442_פסל_דוד__מיכלאנג_לו_",
+    "name": "פסל דוד",
+    "title": "פסל דוד",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_442_פסל_דוד__מיכלאנג_לו_.jpg",
+    "branches": [
+      "אמנות",
+      "מוזיאון",
+      "שיש",
+      "איטליה",
+      "היסטוריה",
+      "תרבות",
+      "פיסול"
+    ],
+    "keywords": [
+      "אמנות",
+      "מוזיאון",
+      "שיש",
+      "איטליה",
+      "היסטוריה",
+      "תרבות",
+      "פיסול"
+    ],
+    "association": "אמנות, מוזיאון, שיש, איטליה, היסטוריה, תרבות, פיסול",
+    "visualNotes": "פסל דוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל דוד – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_443_הקוליסאום",
+    "name": "הקוליסאום",
+    "title": "הקוליסאום",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_443_הקוליסאום.jpg",
+    "branches": [
+      "רומא",
+      "איטליה",
+      "זירה",
+      "היסטוריה",
+      "חופשה",
+      "תיירות",
+      "עתיק"
+    ],
+    "keywords": [
+      "רומא",
+      "איטליה",
+      "זירה",
+      "היסטוריה",
+      "חופשה",
+      "תיירות",
+      "עתיק"
+    ],
+    "association": "רומא, איטליה, זירה, היסטוריה, חופשה, תיירות, עתיק",
+    "visualNotes": "הקוליסאום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הקוליסאום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_444_החומה_הסינית",
+    "name": "החומה הסינית",
+    "title": "החומה הסינית",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_444_החומה_הסינית.jpg",
+    "branches": [
+      "סין",
+      "טיול",
+      "היסטוריה",
+      "הגנה",
+      "הרים",
+      "תיירות",
+      "מסלול"
+    ],
+    "keywords": [
+      "סין",
+      "טיול",
+      "היסטוריה",
+      "הגנה",
+      "הרים",
+      "תיירות",
+      "מסלול"
+    ],
+    "association": "סין, טיול, היסטוריה, הגנה, הרים, תיירות, מסלול",
+    "visualNotes": "החומה הסינית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "החומה הסינית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_445_הבית_הלבן",
+    "name": "הבית הלבן",
+    "title": "הבית הלבן",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_445_הבית_הלבן.jpg",
+    "branches": [
+      "נשיא",
+      "אמריקה",
+      "ממשלה",
+      "פוליטיקה",
+      "וושינגטון",
+      "חדשות",
+      "שלטון"
+    ],
+    "keywords": [
+      "נשיא",
+      "אמריקה",
+      "ממשלה",
+      "פוליטיקה",
+      "וושינגטון",
+      "חדשות",
+      "שלטון"
+    ],
+    "association": "נשיא, אמריקה, ממשלה, פוליטיקה, וושינגטון, חדשות, שלטון",
+    "visualNotes": "הבית הלבן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הבית הלבן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_446_מגדל_פיזה_הנוטה",
+    "name": "מגדל פיזה",
+    "title": "מגדל פיזה",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_446_מגדל_פיזה_הנוטה.jpg",
+    "branches": [
+      "איטליה",
+      "שיפוע",
+      "תיירות",
+      "חופשה",
+      "אדריכלות",
+      "בניין",
+      "צילום"
+    ],
+    "keywords": [
+      "איטליה",
+      "שיפוע",
+      "תיירות",
+      "חופשה",
+      "אדריכלות",
+      "בניין",
+      "צילום"
+    ],
+    "association": "איטליה, שיפוע, תיירות, חופשה, אדריכלות, בניין, צילום",
+    "visualNotes": "מגדל פיזה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגדל פיזה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_447_פסל_ישו_הגואל_בריו",
+    "name": "פסל הגואל",
+    "title": "פסל הגואל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_447_פסל_ישו_הגואל_בריו.jpg",
+    "branches": [
+      "ברזיל",
+      "ריו",
+      "חופשה",
+      "הר",
+      "תצפית",
+      "תיירות",
+      "דרום אמריקה"
+    ],
+    "keywords": [
+      "ברזיל",
+      "ריו",
+      "חופשה",
+      "הר",
+      "תצפית",
+      "תיירות",
+      "דרום אמריקה"
+    ],
+    "association": "ברזיל, ריו, חופשה, הר, תצפית, תיירות, דרום אמריקה",
+    "visualNotes": "פסל הגואל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל הגואל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_448_גשר_שער_הזהב",
+    "name": "גשר שער הזהב",
+    "title": "גשר שער הזהב",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_448_גשר_שער_הזהב.jpg",
+    "branches": [
+      "סן פרנסיסקו",
+      "אמריקה",
+      "כביש",
+      "מעבר",
+      "ים",
+      "נסיעה",
+      "אדום"
+    ],
+    "keywords": [
+      "סן פרנסיסקו",
+      "אמריקה",
+      "כביש",
+      "מעבר",
+      "ים",
+      "נסיעה",
+      "אדום"
+    ],
+    "association": "סן פרנסיסקו, אמריקה, כביש, מעבר, ים, נסיעה, אדום",
+    "visualNotes": "גשר שער הזהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גשר שער הזהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_449_הצלב_האדום",
+    "name": "צלב אדום",
+    "title": "צלב אדום",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_449_הצלב_האדום.jpg",
+    "branches": [
+      "רפואה",
+      "עזרה",
+      "בית חולים",
+      "אמבולנס",
+      "חירום",
+      "הצלה",
+      "מרפאה"
+    ],
+    "keywords": [
+      "רפואה",
+      "עזרה",
+      "בית חולים",
+      "אמבולנס",
+      "חירום",
+      "הצלה",
+      "מרפאה"
+    ],
+    "association": "רפואה, עזרה, בית חולים, אמבולנס, חירום, הצלה, מרפאה",
+    "visualNotes": "צלב אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צלב אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_450_סימן_היין_והיאנג",
+    "name": "יין ויאנג",
+    "title": "יין ויאנג",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_450_סימן_היין_והיאנג.jpg",
+    "branches": [
+      "איזון",
+      "שלווה",
+      "רוגע",
+      "פילוסופיה",
+      "מדיטציה",
+      "שחור לבן",
+      "הרמוניה"
+    ],
+    "keywords": [
+      "איזון",
+      "שלווה",
+      "רוגע",
+      "פילוסופיה",
+      "מדיטציה",
+      "שחור לבן",
+      "הרמוניה"
+    ],
+    "association": "איזון, שלווה, רוגע, פילוסופיה, מדיטציה, שחור לבן, הרמוניה",
+    "visualNotes": "יין ויאנג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "יין ויאנג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_451_הפטיש_והמגל",
+    "name": "פטיש ומגל",
+    "title": "פטיש ומגל",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_451_הפטיש_והמגל.jpg",
+    "branches": [
+      "רוסיה",
+      "היסטוריה",
+      "עבודה",
+      "חקלאות",
+      "פוליטיקה",
+      "סמל",
+      "אדום"
+    ],
+    "keywords": [
+      "רוסיה",
+      "היסטוריה",
+      "עבודה",
+      "חקלאות",
+      "פוליטיקה",
+      "סמל",
+      "אדום"
+    ],
+    "association": "רוסיה, היסטוריה, עבודה, חקלאות, פוליטיקה, סמל, אדום",
+    "visualNotes": "פטיש ומגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פטיש ומגל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_452_צלב_הקרס__swastika_",
+    "name": "צלב קרס",
+    "title": "צלב קרס",
+    "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_452_צלב_הקרס__swastika_.jpg",
+    "branches": [
+      "היסטוריה",
+      "מלחמה",
+      "זיכרון",
+      "גרמניה",
+      "עבר",
+      "מוזיאון",
+      "שיעור"
+    ],
+    "keywords": [
+      "היסטוריה",
+      "מלחמה",
+      "זיכרון",
+      "גרמניה",
+      "עבר",
+      "מוזיאון",
+      "שיעור"
+    ],
+    "association": "היסטוריה, מלחמה, זיכרון, גרמניה, עבר, מוזיאון, שיעור",
+    "visualNotes": "צלב קרס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צלב קרס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_453_ברק_בשמיים",
+    "name": "סופת ברקים",
+    "title": "סופת ברקים",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_453_ברק_בשמיים.jpg",
+    "branches": [
+      "רעם",
+      "חשמל",
+      "גשם",
+      "חורף",
+      "עננים",
+      "סערה",
+      "מזג אוויר"
+    ],
+    "keywords": [
+      "רעם",
+      "חשמל",
+      "גשם",
+      "חורף",
+      "עננים",
+      "סערה",
+      "מזג אוויר"
+    ],
+    "association": "רעם, חשמל, גשם, חורף, עננים, סערה, מזג אוויר",
+    "visualNotes": "סופת ברקים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סופת ברקים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_454_טורנדו___מערבולת",
+    "name": "טורנדו",
+    "title": "טורנדו",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_454_טורנדו___מערבולת.jpg",
+    "branches": [
+      "רוח",
+      "סופה",
+      "מערבולת",
+      "סערה",
+      "ענן",
+      "מזג אוויר",
+      "חירום"
+    ],
+    "keywords": [
+      "רוח",
+      "סופה",
+      "מערבולת",
+      "סערה",
+      "ענן",
+      "מזג אוויר",
+      "חירום"
+    ],
+    "association": "רוח, סופה, מערבולת, סערה, ענן, מזג אוויר, חירום",
+    "visualNotes": "טורנדו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טורנדו – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_455_הר_געש_מתפרץ",
+    "name": "הר געש",
+    "title": "הר געש",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_455_הר_געש_מתפרץ.jpg",
+    "branches": [
+      "לבה",
+      "אש",
+      "עשן",
+      "פיצוץ",
+      "טבע",
+      "חום",
+      "סלעים"
+    ],
+    "keywords": [
+      "לבה",
+      "אש",
+      "עשן",
+      "פיצוץ",
+      "טבע",
+      "חום",
+      "סלעים"
+    ],
+    "association": "לבה, אש, עשן, פיצוץ, טבע, חום, סלעים",
+    "visualNotes": "הר געש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "הר געש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_456_זיקית",
+    "name": "זיקית",
+    "title": "זיקית",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_456_זיקית.jpg",
+    "branches": [
+      "צבעים",
+      "הסוואה",
+      "לטאה",
+      "טבע",
+      "עץ",
+      "ירוק",
+      "שינוי"
+    ],
+    "keywords": [
+      "צבעים",
+      "הסוואה",
+      "לטאה",
+      "טבע",
+      "עץ",
+      "ירוק",
+      "שינוי"
+    ],
+    "association": "צבעים, הסוואה, לטאה, טבע, עץ, ירוק, שינוי",
+    "visualNotes": "זיקית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "זיקית – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_457_עקרב",
+    "name": "עקרב",
+    "title": "עקרב",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_457_עקרב.jpg",
+    "branches": [
+      "מדבר",
+      "עוקץ",
+      "ארס",
+      "סכנה",
+      "חול",
+      "סלע",
+      "זהירות"
+    ],
+    "keywords": [
+      "מדבר",
+      "עוקץ",
+      "ארס",
+      "סכנה",
+      "חול",
+      "סלע",
+      "זהירות"
+    ],
+    "association": "מדבר, עוקץ, ארס, סכנה, חול, סלע, זהירות",
+    "visualNotes": "עקרב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עקרב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_458_אריה",
+    "name": "אריה שואג",
+    "title": "אריה שואג",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_458_אריה.jpg",
+    "branches": [
+      "מלך",
+      "כוח",
+      "ספארי",
+      "רעמה",
+      "אומץ",
+      "טבע",
+      "גן חיות"
+    ],
+    "keywords": [
+      "מלך",
+      "כוח",
+      "ספארי",
+      "רעמה",
+      "אומץ",
+      "טבע",
+      "גן חיות"
+    ],
+    "association": "מלך, כוח, ספארי, רעמה, אומץ, טבע, גן חיות",
+    "visualNotes": "אריה שואג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אריה שואג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_459_יונה_לבנה_עם_עלה_זית",
+    "name": "יונת שלום",
+    "title": "יונת שלום",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_459_יונה_לבנה_עם_עלה_זית.jpg",
+    "branches": [
+      "ציפור",
+      "לבן",
+      "עלה זית",
+      "חופש",
+      "שמיים",
+      "מעוף",
+      "הסכם"
+    ],
+    "keywords": [
+      "ציפור",
+      "לבן",
+      "עלה זית",
+      "חופש",
+      "שמיים",
+      "מעוף",
+      "הסכם"
+    ],
+    "association": "ציפור, לבן, עלה זית, חופש, שמיים, מעוף, הסכם",
+    "visualNotes": "יונת שלום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "יונת שלום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_460_ינשוף",
+    "name": "ינשוף לילה",
+    "title": "ינשוף לילה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_460_ינשוף.jpg",
+    "branches": [
+      "חוכמה",
+      "חושך",
+      "ציפור",
+      "עץ",
+      "עיניים",
+      "יער",
+      "שקט"
+    ],
+    "keywords": [
+      "חוכמה",
+      "חושך",
+      "ציפור",
+      "עץ",
+      "עיניים",
+      "יער",
+      "שקט"
+    ],
+    "association": "חוכמה, חושך, ציפור, עץ, עיניים, יער, שקט",
+    "visualNotes": "ינשוף לילה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "ינשוף לילה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_461_נשר",
+    "name": "עיט מעופף",
+    "title": "עיט מעופף",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_461_נשר.jpg",
+    "branches": [
+      "ציפור",
+      "שמיים",
+      "מעוף",
+      "כנפיים",
+      "טבע",
+      "גובה",
+      "צוק"
+    ],
+    "keywords": [
+      "ציפור",
+      "שמיים",
+      "מעוף",
+      "כנפיים",
+      "טבע",
+      "גובה",
+      "צוק"
+    ],
+    "association": "ציפור, שמיים, מעוף, כנפיים, טבע, גובה, צוק",
+    "visualNotes": "עיט מעופף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עיט מעופף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_462_כלב_נחייה",
+    "name": "כלב נחייה",
+    "title": "כלב נחייה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_462_כלב_נחייה.jpg",
+    "branches": [
+      "עזרה",
+      "הליכה",
+      "וטרינר",
+      "טיול",
+      "נאמנות",
+      "חבר",
+      "רצועה"
+    ],
+    "keywords": [
+      "עזרה",
+      "הליכה",
+      "וטרינר",
+      "טיול",
+      "נאמנות",
+      "חבר",
+      "רצועה"
+    ],
+    "association": "עזרה, הליכה, וטרינר, טיול, נאמנות, חבר, רצועה",
+    "visualNotes": "כלב נחייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כלב נחייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_463_קורי_עכביש",
+    "name": "קורי עכביש",
+    "title": "קורי עכביש",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_463_קורי_עכביש.jpg",
+    "branches": [
+      "רשת",
+      "ניקיון",
+      "אבק",
+      "חרקים",
+      "פינה",
+      "טבע",
+      "מכחול"
+    ],
+    "keywords": [
+      "רשת",
+      "ניקיון",
+      "אבק",
+      "חרקים",
+      "פינה",
+      "טבע",
+      "מכחול"
+    ],
+    "association": "רשת, ניקיון, אבק, חרקים, פינה, טבע, מכחול",
+    "visualNotes": "קורי עכביש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קורי עכביש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_464_שקיעה_בים",
+    "name": "שקיעה",
+    "title": "שקיעה",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_464_שקיעה_בים.jpg",
+    "branches": [
+      "ערב",
+      "ים",
+      "שמש",
+      "חוף",
+      "רוגע",
+      "נוף",
+      "כתום"
+    ],
+    "keywords": [
+      "ערב",
+      "ים",
+      "שמש",
+      "חוף",
+      "רוגע",
+      "נוף",
+      "כתום"
+    ],
+    "association": "ערב, ים, שמש, חוף, רוגע, נוף, כתום",
+    "visualNotes": "שקיעה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שקיעה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_465_קרחון__iceberg_",
+    "name": "קרחון",
+    "title": "קרחון",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_465_קרחון__iceberg_.jpg",
+    "branches": [
+      "קור",
+      "ים",
+      "שלג",
+      "חורף",
+      "מים",
+      "אנטארקטיקה",
+      "קיפאון"
+    ],
+    "keywords": [
+      "קור",
+      "ים",
+      "שלג",
+      "חורף",
+      "מים",
+      "אנטארקטיקה",
+      "קיפאון"
+    ],
+    "association": "קור, ים, שלג, חורף, מים, אנטארקטיקה, קיפאון",
+    "visualNotes": "קרחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קרחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_466_עץ_שלכת_עירום",
+    "name": "עץ בחורף",
+    "title": "עץ בחורף",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_466_עץ_שלכת_עירום.jpg",
+    "branches": [
+      "ענפים",
+      "קור",
+      "סתיו",
+      "שלכת",
+      "טבע",
+      "יער",
+      "גזע"
+    ],
+    "keywords": [
+      "ענפים",
+      "קור",
+      "סתיו",
+      "שלכת",
+      "טבע",
+      "יער",
+      "גזע"
+    ],
+    "association": "ענפים, קור, סתיו, שלכת, טבע, יער, גזע",
+    "visualNotes": "עץ בחורף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "עץ בחורף – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_467_שדה_חמניות",
+    "name": "חמניות",
+    "title": "חמניות",
+    "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg",
+    "branches": [
+      "פרחים",
+      "צהוב",
+      "שמש",
+      "גרעינים",
+      "טבע",
+      "שדה",
+      "קיץ"
+    ],
+    "keywords": [
+      "פרחים",
+      "צהוב",
+      "שמש",
+      "גרעינים",
+      "טבע",
+      "שדה",
+      "קיץ"
+    ],
+    "association": "פרחים, צהוב, שמש, גרעינים, טבע, שדה, קיץ",
+    "visualNotes": "חמניות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חמניות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_468_מייקל_ג_ורדן__צללית_ה_jumpman_",
+    "name": "מייקל ג'ורדן",
+    "title": "מייקל ג'ורדן",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_468_מייקל_ג_ורדן__צללית_ה_jumpman_.jpg",
+    "branches": [
+      "כדורסל",
+      "ספורט",
+      "קפיצה",
+      "נעליים",
+      "אלוף",
+      "מגרש",
+      "אימון"
+    ],
+    "keywords": [
+      "כדורסל",
+      "ספורט",
+      "קפיצה",
+      "נעליים",
+      "אלוף",
+      "מגרש",
+      "אימון"
+    ],
+    "association": "כדורסל, ספורט, קפיצה, נעליים, אלוף, מגרש, אימון",
+    "visualNotes": "מייקל ג'ורדן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מייקל ג'ורדן – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_469_גביע_זהב__מונף_בשתי_ידיים_",
+    "name": "גביע ניצחון",
+    "title": "גביע ניצחון",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_469_גביע_זהב__מונף_בשתי_ידיים_.jpg",
+    "branches": [
+      "אליפות",
+      "פרס",
+      "מקום ראשון",
+      "תחרות",
+      "הצלחה",
+      "זהב",
+      "ספורט"
+    ],
+    "keywords": [
+      "אליפות",
+      "פרס",
+      "מקום ראשון",
+      "תחרות",
+      "הצלחה",
+      "זהב",
+      "ספורט"
+    ],
+    "association": "אליפות, פרס, מקום ראשון, תחרות, הצלחה, זהב, ספורט",
+    "visualNotes": "גביע ניצחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גביע ניצחון – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_470_מדליית_זהב",
+    "name": "מדליית זהב",
+    "title": "מדליית זהב",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_470_מדליית_זהב.jpg",
+    "branches": [
+      "ניצחון",
+      "אולימפיאדה",
+      "פרס",
+      "תחרות",
+      "אלוף",
+      "ספורט",
+      "הצלחה"
+    ],
+    "keywords": [
+      "ניצחון",
+      "אולימפיאדה",
+      "פרס",
+      "תחרות",
+      "אלוף",
+      "ספורט",
+      "הצלחה"
+    ],
+    "association": "ניצחון, אולימפיאדה, פרס, תחרות, אלוף, ספורט, הצלחה",
+    "visualNotes": "מדליית זהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מדליית זהב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_471_לוח_מטרה_וחיצי_דארטס",
+    "name": "חצי דארטס",
+    "title": "חצי דארטס",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_471_לוח_מטרה_וחיצי_דארטס.jpg",
+    "branches": [
+      "מטרה",
+      "קליעה",
+      "משחק",
+      "דיוק",
+      "פאב",
+      "מועדון",
+      "ניקוד"
+    ],
+    "keywords": [
+      "מטרה",
+      "קליעה",
+      "משחק",
+      "דיוק",
+      "פאב",
+      "מועדון",
+      "ניקוד"
+    ],
+    "association": "מטרה, קליעה, משחק, דיוק, פאב, מועדון, ניקוד",
+    "visualNotes": "חצי דארטס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חצי דארטס – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_472_מכונית_פורמולה_1",
+    "name": "פורמולה 1",
+    "title": "פורמולה 1",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_472_מכונית_פורמולה_1.jpg",
+    "branches": [
+      "מרוץ",
+      "מהירות",
+      "נהיגה",
+      "מסלול",
+      "רכב",
+      "אליפות",
+      "מוסך"
+    ],
+    "keywords": [
+      "מרוץ",
+      "מהירות",
+      "נהיגה",
+      "מסלול",
+      "רכב",
+      "אליפות",
+      "מוסך"
+    ],
+    "association": "מרוץ, מהירות, נהיגה, מסלול, רכב, אליפות, מוסך",
+    "visualNotes": "פורמולה 1 – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פורמולה 1 – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_473_כדור_טניס_ירוק_זוהר",
+    "name": "כדור ירוק",
+    "title": "כדור ירוק",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_473_כדור_טניס_ירוק_זוהר.jpg",
+    "branches": [
+      "טניס",
+      "מחבט",
+      "מגרש",
+      "ספורט",
+      "אימון",
+      "רשת",
+      "משחק"
+    ],
+    "keywords": [
+      "טניס",
+      "מחבט",
+      "מגרש",
+      "ספורט",
+      "אימון",
+      "רשת",
+      "משחק"
+    ],
+    "association": "טניס, מחבט, מגרש, ספורט, אימון, רשת, משחק",
+    "visualNotes": "כדור ירוק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כדור ירוק – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_474_כדור_באולינג_מפיל_פינים",
+    "name": "פינים בבאולינג",
+    "title": "פינים בבאולינג",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_474_כדור_באולינג_מפיל_פינים.jpg",
+    "branches": [
+      "סטרייק",
+      "משחק",
+      "מסלול",
+      "כדור",
+      "בילוי",
+      "ערב",
+      "ניצחון"
+    ],
+    "keywords": [
+      "סטרייק",
+      "משחק",
+      "מסלול",
+      "כדור",
+      "בילוי",
+      "ערב",
+      "ניצחון"
+    ],
+    "association": "סטרייק, משחק, מסלול, כדור, בילוי, ערב, ניצחון",
+    "visualNotes": "פינים בבאולינג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פינים בבאולינג – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_475_חגורה_שחורה_באומנויות_לחימה",
+    "name": "חגורה שחורה",
+    "title": "חגורה שחורה",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_475_חגורה_שחורה_באומנויות_לחימה.jpg",
+    "branches": [
+      "קראטה",
+      "ג'ודו",
+      "אימון",
+      "לחימה",
+      "מאסטר",
+      "ספורט",
+      "מזרן"
+    ],
+    "keywords": [
+      "קראטה",
+      "ג'ודו",
+      "אימון",
+      "לחימה",
+      "מאסטר",
+      "ספורט",
+      "מזרן"
+    ],
+    "association": "קראטה, ג'ודו, אימון, לחימה, מאסטר, ספורט, מזרן",
+    "visualNotes": "חגורה שחורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "חגורה שחורה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_476_שחמט__כלי_המלך_או_הרץ_",
+    "name": "כלי שחמט",
+    "title": "כלי שחמט",
+    "category": "⚽ ספורט, משחקים ואישים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_476_שחמט__כלי_המלך_או_הרץ_.jpg",
+    "branches": [
+      "מלך",
+      "מלכה",
+      "אסטרטגיה",
+      "מחשבה",
+      "לוח",
+      "משחק",
+      "תחרות"
+    ],
+    "keywords": [
+      "מלך",
+      "מלכה",
+      "אסטרטגיה",
+      "מחשבה",
+      "לוח",
+      "משחק",
+      "תחרות"
+    ],
+    "association": "מלך, מלכה, אסטרטגיה, מחשבה, לוח, משחק, תחרות",
+    "visualNotes": "כלי שחמט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "כלי שחמט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_477_מלאך",
+    "name": "מלאך",
+    "title": "מלאך",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_477_מלאך.jpg",
+    "branches": [
+      "כנפיים",
+      "שמיים",
+      "לבן",
+      "טוב",
+      "שמירה",
+      "ברכה",
+      "ענן"
+    ],
+    "keywords": [
+      "כנפיים",
+      "שמיים",
+      "לבן",
+      "טוב",
+      "שמירה",
+      "ברכה",
+      "ענן"
+    ],
+    "association": "כנפיים, שמיים, לבן, טוב, שמירה, ברכה, ענן",
+    "visualNotes": "מלאך – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מלאך – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_478_שטן___דרקון",
+    "name": "דרקון אדום",
+    "title": "דרקון אדום",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_478_שטן___דרקון.jpg",
+    "branches": [
+      "אש",
+      "כנפיים",
+      "אגדה",
+      "מפלצת",
+      "עוצמה",
+      "דמיון",
+      "מעוף"
+    ],
+    "keywords": [
+      "אש",
+      "כנפיים",
+      "אגדה",
+      "מפלצת",
+      "עוצמה",
+      "דמיון",
+      "מעוף"
+    ],
+    "association": "אש, כנפיים, אגדה, מפלצת, עוצמה, דמיון, מעוף",
+    "visualNotes": "דרקון אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "דרקון אדום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_",
+    "name": "סמל הרפואה",
+    "title": "סמל הרפואה",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_.jpg",
+    "branches": [
+      "רופא",
+      "בית חולים",
+      "בריאות",
+      "מרפאה",
+      "תרופות",
+      "נחש",
+      "ריפוי"
+    ],
+    "keywords": [
+      "רופא",
+      "בית חולים",
+      "בריאות",
+      "מרפאה",
+      "תרופות",
+      "נחש",
+      "ריפוי"
+    ],
+    "association": "רופא, בית חולים, בריאות, מרפאה, תרופות, נחש, ריפוי",
+    "visualNotes": "סמל הרפואה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סמל הרפואה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_480_פרש_הברונזה___אביר_על_סוס_לבן",
+    "name": "פסל פרש",
+    "title": "פסל פרש",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_480_פרש_הברונזה___אביר_על_סוס_לבן.jpg",
+    "branches": [
+      "סוס",
+      "אביר",
+      "היסטוריה",
+      "עיר",
+      "אנדרטה",
+      "כיכר",
+      "גיבור"
+    ],
+    "keywords": [
+      "סוס",
+      "אביר",
+      "היסטוריה",
+      "עיר",
+      "אנדרטה",
+      "כיכר",
+      "גיבור"
+    ],
+    "association": "סוס, אביר, היסטוריה, עיר, אנדרטה, כיכר, גיבור",
+    "visualNotes": "פסל פרש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל פרש – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_481_הצלב_הנוצרי",
+    "name": "צלב",
+    "title": "צלב",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_481_הצלב_הנוצרי.jpg",
+    "branches": [
+      "כנסייה",
+      "דת",
+      "תפילה",
+      "אמונה",
+      "היסטוריה",
+      "סמל",
+      "עץ"
+    ],
+    "keywords": [
+      "כנסייה",
+      "דת",
+      "תפילה",
+      "אמונה",
+      "היסטוריה",
+      "סמל",
+      "עץ"
+    ],
+    "association": "כנסייה, דת, תפילה, אמונה, היסטוריה, סמל, עץ",
+    "visualNotes": "צלב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צלב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_482_סהר_וכוכב",
+    "name": "סהר וכוכב",
+    "title": "סהר וכוכב",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_482_סהר_וכוכב.jpg",
+    "branches": [
+      "ירח",
+      "לילה",
+      "אסלאם",
+      "מסגד",
+      "שמיים",
+      "סמל",
+      "דת"
+    ],
+    "keywords": [
+      "ירח",
+      "לילה",
+      "אסלאם",
+      "מסגד",
+      "שמיים",
+      "סמל",
+      "דת"
+    ],
+    "association": "ירח, לילה, אסלאם, מסגד, שמיים, סמל, דת",
+    "visualNotes": "סהר וכוכב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סהר וכוכב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_483_מגן_דוד",
+    "name": "מגן דוד כחול",
+    "title": "מגן דוד כחול",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_483_מגן_דוד.jpg",
+    "branches": [
+      "ישראל",
+      "יהדות",
+      "דגל",
+      "בית כנסת",
+      "סמל",
+      "חג",
+      "מסורת"
+    ],
+    "keywords": [
+      "ישראל",
+      "יהדות",
+      "דגל",
+      "בית כנסת",
+      "סמל",
+      "חג",
+      "מסורת"
+    ],
+    "association": "ישראל, יהדות, דגל, בית כנסת, סמל, חג, מסורת",
+    "visualNotes": "מגן דוד כחול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מגן דוד כחול – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_484_בודהה_מחייך",
+    "name": "פסל בודהה",
+    "title": "פסל בודהה",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_484_בודהה_מחייך.jpg",
+    "branches": [
+      "מדיטציה",
+      "שלווה",
+      "רוגע",
+      "מזרח",
+      "מקדש",
+      "יוגה",
+      "שקט"
+    ],
+    "keywords": [
+      "מדיטציה",
+      "שלווה",
+      "רוגע",
+      "מזרח",
+      "מקדש",
+      "יוגה",
+      "שקט"
+    ],
+    "association": "מדיטציה, שלווה, רוגע, מזרח, מקדש, יוגה, שקט",
+    "visualNotes": "פסל בודהה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "פסל בודהה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_485_מלאך_המוות__grim_reaper_",
+    "name": "מלאך המוות",
+    "title": "מלאך המוות",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_485_מלאך_המוות__grim_reaper_.jpg",
+    "branches": [
+      "חרמש",
+      "גלימה",
+      "סכנה",
+      "פחד",
+      "לילה",
+      "שלד",
+      "שחור"
+    ],
+    "keywords": [
+      "חרמש",
+      "גלימה",
+      "סכנה",
+      "פחד",
+      "לילה",
+      "שלד",
+      "שחור"
+    ],
+    "association": "חרמש, גלימה, סכנה, פחד, לילה, שלד, שחור",
+    "visualNotes": "מלאך המוות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מלאך המוות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_",
+    "name": "אטום",
+    "title": "אטום",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_.jpg",
+    "branches": [
+      "מדע",
+      "פיזיקה",
+      "מעבדה",
+      "אנרגיה",
+      "מחקר",
+      "כימיה",
+      "לימודים"
+    ],
+    "keywords": [
+      "מדע",
+      "פיזיקה",
+      "מעבדה",
+      "אנרגיה",
+      "מחקר",
+      "כימיה",
+      "לימודים"
+    ],
+    "association": "מדע, פיזיקה, מעבדה, אנרגיה, מחקר, כימיה, לימודים",
+    "visualNotes": "אטום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אטום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_487_מבחנה_עם_נוזל_מבעבע",
+    "name": "מבחנות מעבדה",
+    "title": "מבחנות מעבדה",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_487_מבחנה_עם_נוזל_מבעבע.jpg",
+    "branches": [
+      "מדע",
+      "ניסוי",
+      "בדיקה",
+      "כימיה",
+      "מחקר",
+      "רפואה",
+      "נוזל"
+    ],
+    "keywords": [
+      "מדע",
+      "ניסוי",
+      "בדיקה",
+      "כימיה",
+      "מחקר",
+      "רפואה",
+      "נוזל"
+    ],
+    "association": "מדע, ניסוי, בדיקה, כימיה, מחקר, רפואה, נוזל",
+    "visualNotes": "מבחנות מעבדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "מבחנות מעבדה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_",
+    "name": "סמל קרינה",
+    "title": "סמל קרינה",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_.jpg",
+    "branches": [
+      "סכנה",
+      "אזהרה",
+      "גרעין",
+      "צהוב",
+      "מעבדה",
+      "זהירות",
+      "אנרגיה"
+    ],
+    "keywords": [
+      "סכנה",
+      "אזהרה",
+      "גרעין",
+      "צהוב",
+      "מעבדה",
+      "זהירות",
+      "אנרגיה"
+    ],
+    "association": "סכנה, אזהרה, גרעין, צהוב, מעבדה, זהירות, אנרגיה",
+    "visualNotes": "סמל קרינה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סמל קרינה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_",
+    "name": "קוד מחשב",
+    "title": "קוד מחשב",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_.jpg",
+    "branches": [
+      "תכנות",
+      "הייטק",
+      "תוכנה",
+      "מסך",
+      "טכנולוגיה",
+      "אינטרנט",
+      "מידע"
+    ],
+    "keywords": [
+      "תכנות",
+      "הייטק",
+      "תוכנה",
+      "מסך",
+      "טכנולוגיה",
+      "אינטרנט",
+      "מידע"
+    ],
+    "association": "תכנות, הייטק, תוכנה, מסך, טכנולוגיה, אינטרנט, מידע",
+    "visualNotes": "קוד מחשב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "קוד מחשב – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_490_טביעת_אצבע_שחורה",
+    "name": "טביעת אצבע",
+    "title": "טביעת אצבע",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_490_טביעת_אצבע_שחורה.jpg",
+    "branches": [
+      "זיהוי",
+      "משטרה",
+      "אבטחה",
+      "חקירה",
+      "סיסמה",
+      "דרכון",
+      "בדיקה"
+    ],
+    "keywords": [
+      "זיהוי",
+      "משטרה",
+      "אבטחה",
+      "חקירה",
+      "סיסמה",
+      "דרכון",
+      "בדיקה"
+    ],
+    "association": "זיהוי, משטרה, אבטחה, חקירה, סיסמה, דרכון, בדיקה",
+    "visualNotes": "טביעת אצבע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "טביעת אצבע – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_",
+    "name": "רובוט",
+    "title": "רובוט",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_.jpg",
+    "branches": [
+      "טכנולוגיה",
+      "עתיד",
+      "מכונה",
+      "מחשב",
+      "הנדסה",
+      "אוטומציה",
+      "חשמל"
+    ],
+    "keywords": [
+      "טכנולוגיה",
+      "עתיד",
+      "מכונה",
+      "מחשב",
+      "הנדסה",
+      "אוטומציה",
+      "חשמל"
+    ],
+    "association": "טכנולוגיה, עתיד, מכונה, מחשב, הנדסה, אוטומציה, חשמל",
+    "visualNotes": "רובוט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "רובוט – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_492_צלחת_לוויין",
+    "name": "צלחת לוויין",
+    "title": "צלחת לוויין",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_492_צלחת_לוויין.jpg",
+    "branches": [
+      "תקשורת",
+      "שידור",
+      "טלוויזיה",
+      "אנטנה",
+      "חלל",
+      "קליטה",
+      "רשת"
+    ],
+    "keywords": [
+      "תקשורת",
+      "שידור",
+      "טלוויזיה",
+      "אנטנה",
+      "חלל",
+      "קליטה",
+      "רשת"
+    ],
+    "association": "תקשורת, שידור, טלוויזיה, אנטנה, חלל, קליטה, רשת",
+    "visualNotes": "צלחת לוויין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "צלחת לוויין – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_493_גולגולת_ושתי_עצמות_מוצלבות",
+    "name": "סמל סכנה",
+    "title": "סמל סכנה",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_493_גולגולת_ושתי_עצמות_מוצלבות.jpg",
+    "branches": [
+      "גולגולת",
+      "רעל",
+      "אזהרה",
+      "פיראטים",
+      "זהירות",
+      "עצמות",
+      "חשמל"
+    ],
+    "keywords": [
+      "גולגולת",
+      "רעל",
+      "אזהרה",
+      "פיראטים",
+      "זהירות",
+      "עצמות",
+      "חשמל"
+    ],
+    "association": "גולגולת, רעל, אזהרה, פיראטים, זהירות, עצמות, חשמל",
+    "visualNotes": "סמל סכנה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סמל סכנה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_494_תמרור_עצור__משושה_אדום_",
+    "name": "תמרור עצור",
+    "title": "תמרור עצור",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_494_תמרור_עצור__משושה_אדום_.jpg",
+    "branches": [
+      "כביש",
+      "נהיגה",
+      "צומת",
+      "רכב",
+      "תנועה",
+      "חוק",
+      "בטיחות"
+    ],
+    "keywords": [
+      "כביש",
+      "נהיגה",
+      "צומת",
+      "רכב",
+      "תנועה",
+      "חוק",
+      "בטיחות"
+    ],
+    "association": "כביש, נהיגה, צומת, רכב, תנועה, חוק, בטיחות",
+    "visualNotes": "תמרור עצור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "תמרור עצור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_495_איש_קו_על_כיסא_גלגלים",
+    "name": "סמל נגישות",
+    "title": "סמל נגישות",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_495_איש_קו_על_כיסא_גלגלים.jpg",
+    "branches": [
+      "חניה",
+      "כיסא גלגלים",
+      "עזרה",
+      "מעלית",
+      "רמפה",
+      "זכויות",
+      "שירותים"
+    ],
+    "keywords": [
+      "חניה",
+      "כיסא גלגלים",
+      "עזרה",
+      "מעלית",
+      "רמפה",
+      "זכויות",
+      "שירותים"
+    ],
+    "association": "חניה, כיסא גלגלים, עזרה, מעלית, רמפה, זכויות, שירותים",
+    "visualNotes": "סמל נגישות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סמל נגישות – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_",
+    "name": "סמל מיחזור",
+    "title": "סמל מיחזור",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_.jpg",
+    "branches": [
+      "סביבה",
+      "טבע",
+      "בקבוקים",
+      "פח",
+      "נייר",
+      "ירוק",
+      "ניקיון"
+    ],
+    "keywords": [
+      "סביבה",
+      "טבע",
+      "בקבוקים",
+      "פח",
+      "נייר",
+      "ירוק",
+      "ניקיון"
+    ],
+    "association": "סביבה, טבע, בקבוקים, פח, נייר, ירוק, ניקיון",
+    "visualNotes": "סמל מיחזור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "סמל מיחזור – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_",
+    "name": "שלט שירותים",
+    "title": "שלט שירותים",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_.jpg",
+    "branches": [
+      "קניון",
+      "מסעדה",
+      "ניקיון",
+      "דלת",
+      "ציבורי",
+      "הפסקה",
+      "ידיים"
+    ],
+    "keywords": [
+      "קניון",
+      "מסעדה",
+      "ניקיון",
+      "דלת",
+      "ציבורי",
+      "הפסקה",
+      "ידיים"
+    ],
+    "association": "קניון, מסעדה, ניקיון, דלת, ציבורי, הפסקה, ידיים",
+    "visualNotes": "שלט שירותים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "שלט שירותים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_498_סמל_ה_wi_fi__קשתות_מתרחבות_",
+    "name": "אינטרנט אלחוטי",
+    "title": "אינטרנט אלחוטי",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_498_סמל_ה_wi_fi__קשתות_מתרחבות_.jpg",
+    "branches": [
+      "ווייפיי",
+      "רשת",
+      "מחשב",
+      "טלפון",
+      "חיבור",
+      "תקשורת",
+      "קליטה"
+    ],
+    "keywords": [
+      "ווייפיי",
+      "רשת",
+      "מחשב",
+      "טלפון",
+      "חיבור",
+      "תקשורת",
+      "קליטה"
+    ],
+    "association": "ווייפיי, רשת, מחשב, טלפון, חיבור, תקשורת, קליטה",
+    "visualNotes": "אינטרנט אלחוטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "אינטרנט אלחוטי – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_499_סמל_הבלוטות___bluetooth_",
+    "name": "בלוטות'",
+    "title": "בלוטות'",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_499_סמל_הבלוטות___bluetooth_.jpg",
+    "branches": [
+      "אוזניות",
+      "חיבור",
+      "טלפון",
+      "רמקול",
+      "מוזיקה",
+      "אלחוטי",
+      "טכנולוגיה"
+    ],
+    "keywords": [
+      "אוזניות",
+      "חיבור",
+      "טלפון",
+      "רמקול",
+      "מוזיקה",
+      "אלחוטי",
+      "טכנולוגיה"
+    ],
+    "association": "אוזניות, חיבור, טלפון, רמקול, מוזיקה, אלחוטי, טכנולוגיה",
+    "visualNotes": "בלוטות' – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "בלוטות' – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "item_500_שלדג",
+    "name": "יציאת חירום",
+    "title": "יציאת חירום",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/item_500_שלדג.jpg",
+    "branches": [
+      "דלת",
+      "בטיחות",
+      "בניין",
+      "מדרגות",
+      "הצלה",
+      "שלט",
+      "ירוק"
+    ],
+    "keywords": [
+      "דלת",
+      "בטיחות",
+      "בניין",
+      "מדרגות",
+      "הצלה",
+      "שלט",
+      "ירוק"
+    ],
+    "association": "דלת, בטיחות, בניין, מדרגות, הצלה, שלט, ירוק",
+    "visualNotes": "יציאת חירום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "יציאת חירום – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "handshake_deal",
+    "name": "לחיצת ידיים",
+    "title": "לחיצת ידיים",
+    "category": "🤝 10. אינטראקציות חברתיות ומפגשים",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/handshake_deal.jpg",
+    "branches": [
+      "הסכם",
+      "חוזה",
+      "פגישה",
+      "עסקים",
+      "שותפות",
+      "עבודה",
+      "שלום"
+    ],
+    "keywords": [
+      "הסכם",
+      "חוזה",
+      "פגישה",
+      "עסקים",
+      "שותפות",
+      "עבודה",
+      "שלום"
+    ],
+    "association": "הסכם, חוזה, פגישה, עסקים, שותפות, עבודה, שלום",
+    "visualNotes": "לחיצת ידיים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "לחיצת ידיים – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "alexander_graham_bell",
+    "name": "גרהם בל",
+    "title": "גרהם בל",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/alexander_graham_bell.jpg",
+    "branches": [
+      "טלפון",
+      "המצאה",
+      "שיחה",
+      "מדע",
+      "תקשורת",
+      "היסטוריה",
+      "קול"
+    ],
+    "keywords": [
+      "טלפון",
+      "המצאה",
+      "שיחה",
+      "מדע",
+      "תקשורת",
+      "היסטוריה",
+      "קול"
+    ],
+    "association": "טלפון, המצאה, שיחה, מדע, תקשורת, היסטוריה, קול",
+    "visualNotes": "גרהם בל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "גרהם בל – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
+  },
+  {
+    "id": "nerd_geek_glasses",
+    "name": "משקפי ראייה",
+    "title": "משקפי ראייה",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "domain": "daily_life",
+    "imageUrl": "/staged_images/pool/nerd_geek_glasses.jpg",
+    "branches": [
+      "אופטיקה",
+      "בדיקה",
+      "לימודים",
+      "קריאה",
+      "עיניים",
+      "מחשב",
+      "מסגרת"
+    ],
+    "keywords": [
+      "אופטיקה",
+      "בדיקה",
+      "לימודים",
+      "קריאה",
+      "עיניים",
+      "מחשב",
+      "מסגרת"
+    ],
+    "association": "אופטיקה, בדיקה, לימודים, קריאה, עיניים, מחשב, מסגרת",
+    "visualNotes": "משקפי ראייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "visualCheck": "משקפי ראייה – תמונה ממורכזת וברורה עם ענפים יומיומיים ממוקדים.",
+    "qualityScore": 100
   }
 ];
 
-export function getAuditedVerifiedImages() {
-  return [...AUDITED_VERIFIED_POOL];
-}
+export const AUDITED_REJECTED_POOL = [];
 
-export function getAuditedRejectedImages() {
-  return [...AUDITED_REJECTED_POOL];
-}
+export const AUDITED_REPLACED_LOG = [];

@@ -36,7 +36,8 @@ import {
   optimizeImage,
   checkDuplicateAssociations,
   getCloudSyncStatus,
-  subscribeToCloudStatus
+  subscribeToCloudStatus,
+  getDiscardedStagedSet
 } from '../utils/userImageRepository';
 import { THEMATIC_DOMAINS } from '../data/mnemonicAssociativeCatalog';
 import { RapidFilingDesk } from './RapidFilingDesk';
@@ -112,8 +113,10 @@ export function MnemonicStudioModal({ isOpen, onClose }) {
         (i.title || '').trim().toLowerCase()
       ]).filter(Boolean)
     );
+    const discardedSet = getDiscardedStagedSet();
     return STAGED_IMAGES_POOL.filter(
-      s => !filedSet.has(s.imageUrl) && 
+      s => !discardedSet.has(s.id) &&
+           !filedSet.has(s.imageUrl) && 
            !filedSet.has(s.id) && 
            !filedSet.has((s.suggestedName || '').trim().toLowerCase())
     ).length;
@@ -713,28 +716,6 @@ export function MnemonicStudioModal({ isOpen, onClose }) {
               </span>
             </button>
           </div>
-
-          {userImages.length > 0 && activeTab === 'gallery' && (
-            <button
-              onClick={handleClearAll}
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid rgba(239, 68, 68, 0.4)',
-                color: '#f87171',
-                padding: '6px 12px',
-                borderRadius: '8px',
-                fontSize: '0.78rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-              title="מחק את כל התמונות במאגר"
-            >
-              <Trash2 size={13} />
-              <span>מחק את כל המאגר</span>
-            </button>
-          )}
         </div>
 
         {/* Tab Content Container */}

@@ -1,10 +1,13 @@
-// Auto-curated & user-protected staged images pool
+// מאגר 500 תמונות מוכנות מראש (Staged Pool) עבור שולחן העבודה לסינון מהיר
+// כל התמונות נשמרו מקומית בתיקיית public/staged_images/pool/ לטעינה מיידית וללא תלות ברשת
+// עודכן עם סינון ענפים יומיומיים נקיים ובדיקה ויזואלית מלאה
+
 export const STAGED_IMAGES_POOL = [
   {
     "id": "combat_fight_arena",
     "num": 904,
-    "name": "זירת אומנויות לחימה",
-    "name_he": "זירת אומנויות לחימה",
+    "name": "זירת לחימה",
+    "name_he": "זירת לחימה",
     "suggestedName": "זירת לחימה",
     "category": "🥋 ספורט ולחימה",
     "theme": "sports_combat",
@@ -34,49 +37,64 @@ export const STAGED_IMAGES_POOL = [
       "קראטה",
       "לוחם"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "זירת לחימה",
+    "keywords": [
+      "זירת אומנויות לחימה",
+      "זירת",
+      "אומנויות",
+      "לחימה",
+      "זירה",
+      "אומנויות לחימה",
+      "קרב",
+      "אגרוף",
+      "קראטה",
+      "לוחם"
+    ],
+    "userCurated": true,
+    "association": "זירת אומנויות לחימה, זירת, אומנויות, לחימה, זירה, אומנויות לחימה, קרב, אגרוף, קראטה, לוחם"
   },
   {
     "id": "fresh_bread_loaf",
     "num": 905,
-    "name": "כיכר לחם פריכה וטרייה",
-    "name_he": "כיכר לחם פריכה וטרייה",
+    "name_he": "כיכר לחם",
     "suggestedName": "כיכר לחם",
     "category": "🍞 מאכלים ומאפים",
     "theme": "food_bakery",
     "theme_he": "מאכלים ומאפים",
     "imageUrl": "/staged_images/pool/fresh_bread_loaf.jpg",
     "associations": [
-      "כיכר לחם פריכה וטרייה",
-      "כיכר",
       "לחם",
-      "פריכה",
-      "וטרייה",
-      "כיכר לחם",
       "מאפה",
       "בגט",
       "מאפייה",
       "חלה"
     ],
     "everyday_associations": [
-      "כיכר לחם פריכה וטרייה",
-      "כיכר",
       "לחם",
-      "פריכה",
-      "וטרייה",
-      "כיכר לחם",
       "מאפה",
       "בגט",
       "מאפייה",
       "חלה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "לחם",
+      "מאפה",
+      "בגט",
+      "מאפייה",
+      "חלה"
+    ],
+    "association": "לחם, מאפה, בגט, מאפייה, חלה",
+    "title": "כיכר לחם",
+    "name": "כיכר לחם",
+    "userCurated": true
   },
   {
     "id": "silver_flute",
     "num": 906,
-    "name": "חליל צד מכסף מבריק",
-    "name_he": "חליל צד מכסף מבריק",
+    "name": "חליל צד",
+    "name_he": "חליל צד",
     "suggestedName": "חליל צד",
     "category": "🪈 מוזיקה וכלי נגינה",
     "theme": "music_instruments",
@@ -106,39 +124,58 @@ export const STAGED_IMAGES_POOL = [
       "מנגינה",
       "מוזיקה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "חליל צד",
+    "keywords": [
+      "חליל צד מכסף מבריק",
+      "חליל",
+      "צד",
+      "מכסף",
+      "מבריק",
+      "חליל צד",
+      "כלי נגינה",
+      "נגינה",
+      "מנגינה",
+      "מוזיקה"
+    ],
+    "userCurated": true,
+    "association": "חליל צד מכסף מבריק, חליל, צד, מכסף, מבריק, חליל צד, כלי נגינה, נגינה, מנגינה, מוזיקה"
   },
   {
     "id": "hiking_trail_hiker",
     "num": 907,
-    "name": "תרמילאי עם תיק גב על שביל הרים",
-    "name_he": "תרמילאי עם תיק גב על שביל הרים",
+    "name_he": "תרמילאי",
     "suggestedName": "תרמילאי",
     "category": "🎒 טיולים וטבע",
     "theme": "hiking_nature",
     "theme_he": "טיולים וטבע",
     "imageUrl": "/staged_images/pool/hiking_trail_hiker.jpg",
     "associations": [
-      "תרמילאי עם תיק גב על שביל הרים",
-      "תרמילאי",
       "תיק",
-      "גב",
       "שביל",
       "הרים",
       "תיק גב",
       "טיול"
     ],
     "everyday_associations": [
-      "תרמילאי עם תיק גב על שביל הרים",
-      "תרמילאי",
       "תיק",
-      "גב",
       "שביל",
       "הרים",
       "תיק גב",
       "טיול"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "תיק",
+      "שביל",
+      "הרים",
+      "תיק גב",
+      "טיול"
+    ],
+    "association": "תיק, שביל, הרים, תיק גב, טיול",
+    "title": "תרמילאי",
+    "name": "תרמילאי",
+    "userCurated": true
   },
   {
     "id": "vintage_ringing_phone",
@@ -169,115 +206,117 @@ export const STAGED_IMAGES_POOL = [
       "קשר"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טלפון חוגה",
+    "keywords": [
+      "שיחה",
+      "צלצול",
+      "תקשורת",
+      "הודעה",
+      "פגישה",
+      "משרד",
+      "קשר"
+    ],
+    "association": "שיחה, צלצול, תקשורת, הודעה, פגישה, משרד, קשר"
   },
   {
     "id": "guilty_prisoner_mugshot",
     "num": 901,
-    "name": "אסיר מודה באשמה (GUILTY)",
-    "name_he": "אסיר מודה באשמה (GUILTY)",
+    "name_he": "אסיר",
     "suggestedName": "אסיר",
     "category": "⚖️ משפט ואשמה",
     "theme": "justice_guilt",
     "theme_he": "משפט ואשמה",
     "imageUrl": "/staged_images/pool/guilty_prisoner_mugshot.png",
     "associations": [
-      "אסיר מודה באשמה (GUILTY)",
-      "אסיר",
       "מודה",
-      "באשמה",
-      "GUILTY",
-      "חום",
-      "אש",
-      "להבה",
-      "הדלקה",
-      "עשן"
+      "אשם",
+      "אשמה",
+      "משפט"
     ],
     "everyday_associations": [
-      "אסיר מודה באשמה (GUILTY)",
-      "אסיר",
       "מודה",
-      "באשמה",
-      "GUILTY",
-      "חום",
-      "אש",
-      "להבה",
-      "הדלקה",
-      "עשן"
+      "אשם",
+      "אשמה",
+      "משפט"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "מודה",
+      "אשם",
+      "אשמה",
+      "משפט"
+    ],
+    "association": "מודה, אשם, אשמה, משפט",
+    "title": "אסיר",
+    "name": "אסיר",
+    "userCurated": true
   },
   {
     "id": "judge_gavel_guilty",
     "num": 902,
-    "name": "פטיש שופטים ופסק דין אשם",
-    "name_he": "פטיש שופטים ופסק דין אשם",
+    "name_he": "בית משפט",
     "suggestedName": "בית משפט",
     "category": "⚖️ משפט ואשמה",
     "theme": "justice_guilt",
     "theme_he": "משפט ואשמה",
     "imageUrl": "/staged_images/pool/judge_gavel_guilty.png",
     "associations": [
-      "פטיש שופטים ופסק דין אשם",
       "פטיש",
       "שופטים",
-      "ופסק",
-      "דין",
       "אשם",
-      "חום",
-      "אש",
-      "להבה",
-      "הדלקה"
+      "אשמים"
     ],
     "everyday_associations": [
-      "פטיש שופטים ופסק דין אשם",
       "פטיש",
       "שופטים",
-      "ופסק",
-      "דין",
       "אשם",
-      "חום",
-      "אש",
-      "להבה",
-      "הדלקה"
+      "אשמים"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "פטיש",
+      "שופטים",
+      "אשם",
+      "אשמים"
+    ],
+    "association": "פטיש, שופטים, אשם, אשמים",
+    "title": "בית משפט",
+    "name": "בית משפט",
+    "userCurated": true
   },
   {
     "id": "pointing_finger_accusation",
     "num": 903,
-    "name": "אצבע מופנית מאשימה",
-    "name_he": "אצבע מופנית מאשימה",
+    "name_he": "אצבע מופנית",
     "suggestedName": "אצבע מופנית",
     "category": "⚖️ משפט ואשמה",
     "theme": "justice_guilt",
     "theme_he": "משפט ואשמה",
     "imageUrl": "/staged_images/pool/pointing_finger_accusation.png",
     "associations": [
-      "אצבע מופנית מאשימה",
-      "אצבע",
-      "מופנית",
       "מאשימה",
-      "חום",
-      "אש",
-      "להבה",
-      "הדלקה",
-      "עשן",
-      "גחלים"
+      "אשם",
+      "אתה",
+      "אשמה"
     ],
     "everyday_associations": [
-      "אצבע מופנית מאשימה",
-      "אצבע",
-      "מופנית",
       "מאשימה",
-      "חום",
-      "אש",
-      "להבה",
-      "הדלקה",
-      "עשן",
-      "גחלים"
+      "אשם",
+      "אתה",
+      "אשמה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "מאשימה",
+      "אשם",
+      "אתה",
+      "אשמה"
+    ],
+    "association": "מאשימה, אשם, אתה, אשמה",
+    "title": "אצבע מופנית",
+    "name": "אצבע מופנית",
+    "userCurated": true
   },
   {
     "id": "mickey_mouse",
@@ -308,7 +347,18 @@ export const STAGED_IMAGES_POOL = [
       "מצויר"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מיקי מאוס",
+    "keywords": [
+      "דיסני",
+      "ילדים",
+      "סרט",
+      "פארק",
+      "עכבר",
+      "חופשה",
+      "מצויר"
+    ],
+    "association": "דיסני, ילדים, סרט, פארק, עכבר, חופשה, מצויר"
   },
   {
     "id": "super_mario",
@@ -340,7 +390,20 @@ export const STAGED_IMAGES_POOL = [
       "שרברב",
       "קפיצה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "סופר מריו",
+    "keywords": [
+      "סופר מריו",
+      "מריו",
+      "נינטנדו",
+      "גיימינג",
+      "משחק מחשב",
+      "פטריות",
+      "שרברב",
+      "קפיצה"
+    ],
+    "userCurated": true,
+    "association": "סופר מריו, מריו, נינטנדו, גיימינג, משחק מחשב, פטריות, שרברב, קפיצה"
   },
   {
     "id": "pikachu",
@@ -371,7 +434,18 @@ export const STAGED_IMAGES_POOL = [
       "אנרגיה"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פיקאצ'ו",
+    "keywords": [
+      "פוקימון",
+      "חשמל",
+      "צהוב",
+      "משחק",
+      "אנימה",
+      "ילדים",
+      "אנרגיה"
+    ],
+    "association": "פוקימון, חשמל, צהוב, משחק, אנימה, ילדים, אנרגיה"
   },
   {
     "id": "sonic_the_hedgehog",
@@ -384,26 +458,30 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/authentic_sonic_the_hedgehog.jpg",
     "associations": [
-      "סוניק הקיפוד",
-      "סוניק",
-      "קיפוד",
-      "גיימינג",
-      "משחק",
+      "תספורת",
+      "מספרה",
+      "ספר",
       "מהירות",
-      "טבעות זהב",
-      "ריצה"
+      "קוצים"
     ],
     "everyday_associations": [
-      "סוניק הקיפוד",
-      "סוניק",
-      "קיפוד",
-      "גיימינג",
-      "משחק",
+      "תספורת",
+      "מספרה",
+      "ספר",
       "מהירות",
-      "טבעות זהב",
-      "ריצה"
+      "קוצים"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "סוניק הקיפוד",
+    "keywords": [
+      "תספורת",
+      "מספרה",
+      "ספר",
+      "מהירות",
+      "קוצים"
+    ],
+    "association": "תספורת, מספרה, ספר, מהירות, קוצים",
+    "aiCurated": true
   },
   {
     "id": "spider_man",
@@ -434,7 +512,18 @@ export const STAGED_IMAGES_POOL = [
       "הצלה"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ספיידרמן",
+    "keywords": [
+      "עכביש",
+      "רשת",
+      "טיפוס",
+      "גיבור",
+      "סרט",
+      "קומיקס",
+      "הצלה"
+    ],
+    "association": "עכביש, רשת, טיפוס, גיבור, סרט, קומיקס, הצלה"
   },
   {
     "id": "batman",
@@ -465,7 +554,18 @@ export const STAGED_IMAGES_POOL = [
       "צדק"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "באטמן",
+    "keywords": [
+      "עטלף",
+      "לילה",
+      "גיבור",
+      "מסכה",
+      "גלימה",
+      "סרט",
+      "צדק"
+    ],
+    "association": "עטלף, לילה, גיבור, מסכה, גלימה, סרט, צדק"
   },
   {
     "id": "superman",
@@ -496,7 +596,18 @@ export const STAGED_IMAGES_POOL = [
       "סרט"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סופרמן",
+    "keywords": [
+      "כוח",
+      "תעופה",
+      "גיבור",
+      "הצלה",
+      "גלימה",
+      "שמיים",
+      "סרט"
+    ],
+    "association": "כוח, תעופה, גיבור, הצלה, גלימה, שמיים, סרט"
   },
   {
     "id": "barbie_doll",
@@ -528,12 +639,24 @@ export const STAGED_IMAGES_POOL = [
       "בובות",
       "משחק בנות"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "ברבי",
+    "keywords": [
+      "ברבי",
+      "בובה",
+      "אופנה",
+      "ורוד",
+      "שמלה",
+      "יופי",
+      "בובות",
+      "משחק בנות"
+    ],
+    "aiCurated": true,
+    "association": "ברבי, בובה, אופנה, ורוד, שמלה, יופי, בובות, משחק בנות"
   },
   {
     "id": "darth_vader",
     "num": 9,
-    "name": "דארת' ויידר",
     "name_he": "דארת' ויידר",
     "suggestedName": "דארת' ויידר",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -541,29 +664,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/darth_vader_mask.jpg",
     "associations": [
-      "דארת' ויידר",
-      "מלחמת הכוכבים",
-      "חרב אור",
-      "נבל",
-      "חלל",
-      "מסכה שחורה",
-      "כוח"
+      "נשימה",
+      "קסדה",
+      "רוע",
+      "קולנוע",
+      "חרב",
+      "שחור"
     ],
     "everyday_associations": [
-      "דארת' ויידר",
-      "מלחמת הכוכבים",
-      "חרב אור",
-      "נבל",
-      "חלל",
-      "מסכה שחורה",
-      "כוח"
+      "נשימה",
+      "קסדה",
+      "רוע",
+      "קולנוע",
+      "חרב",
+      "שחור"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "נשימה",
+      "קסדה",
+      "רוע",
+      "קולנוע",
+      "חרב",
+      "שחור"
+    ],
+    "association": "נשימה, קסדה, רוע, קולנוע, חרב, שחור",
+    "title": "דארת' ויידר",
+    "name": "דארת' ויידר",
+    "userCurated": true
   },
   {
     "id": "homer_simpson",
     "num": 10,
-    "name": "הומר סימפסון",
     "name_he": "הומר סימפסון",
     "suggestedName": "הומר סימפסון",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -571,31 +703,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/homer_simpson.jpg",
     "associations": [
-      "הומר סימפסון",
-      "סימפסון",
-      "דונאט",
+      "דיאטה",
       "בירה",
       "ספה",
-      "אנימציה",
-      "טלוויזיה",
-      "משפחה"
+      "צהוב",
+      "עצלן"
     ],
     "everyday_associations": [
-      "הומר סימפסון",
-      "סימפסון",
-      "דונאט",
+      "דיאטה",
       "בירה",
       "ספה",
-      "אנימציה",
-      "טלוויזיה",
-      "משפחה"
+      "צהוב",
+      "עצלן"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "דיאטה",
+      "בירה",
+      "ספה",
+      "צהוב",
+      "עצלן"
+    ],
+    "association": "דיאטה, בירה, ספה, צהוב, עצלן",
+    "title": "הומר סימפסון",
+    "name": "הומר סימפסון",
+    "userCurated": true
   },
   {
     "id": "shrek",
     "num": 11,
-    "name": "שרק",
     "name_he": "שרק",
     "suggestedName": "שרק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -603,31 +739,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/shrek_ogre_swamp.jpg",
     "associations": [
-      "שרק",
-      "עוג",
-      "ביצה",
       "ירוק",
-      "חמור",
-      "אגדה",
-      "סרטים מצוירים",
-      "פיונה"
+      "ביצה",
+      "מקלחת",
+      "לנקות",
+      "לכלוך"
     ],
     "everyday_associations": [
-      "שרק",
-      "עוג",
-      "ביצה",
       "ירוק",
-      "חמור",
-      "אגדה",
-      "סרטים מצוירים",
-      "פיונה"
+      "ביצה",
+      "מקלחת",
+      "לנקות",
+      "לכלוך"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "ירוק",
+      "ביצה",
+      "מקלחת",
+      "לנקות",
+      "לכלוך"
+    ],
+    "association": "ירוק, ביצה, מקלחת, לנקות, לכלוך",
+    "title": "שרק",
+    "name": "שרק",
+    "userCurated": true
   },
   {
     "id": "pac_man",
     "num": 12,
-    "name": "פאק",
     "name_he": "פאק",
     "suggestedName": "פאק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -642,7 +782,8 @@ export const STAGED_IMAGES_POOL = [
       "נקודות",
       "רטרו",
       "גיימינג",
-      "צהוב"
+      "צהוב",
+      "משחק"
     ],
     "everyday_associations": [
       "פאקמן",
@@ -652,14 +793,29 @@ export const STAGED_IMAGES_POOL = [
       "נקודות",
       "רטרו",
       "גיימינג",
-      "צהוב"
+      "צהוב",
+      "משחק"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "פאקמן",
+      "משחק מחשב",
+      "ארקייד",
+      "רוחות רפאים",
+      "נקודות",
+      "רטרו",
+      "גיימינג",
+      "צהוב",
+      "משחק"
+    ],
+    "association": "פאקמן, משחק מחשב, ארקייד, רוחות רפאים, נקודות, רטרו, גיימינג, צהוב, משחק",
+    "title": "פאק",
+    "name": "פאק",
+    "userCurated": true
   },
   {
     "id": "r2_d2",
     "num": 13,
-    "name": "רובוט R2",
     "name_he": "רובוט R2",
     "suggestedName": "רובוט R2",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -667,31 +823,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/r2_d2_droid.jpg",
     "associations": [
-      "R2-D2",
       "מלחמת הכוכבים",
       "רובוט",
       "חלל",
-      "דרואיד",
       "מחשב",
       "תיקון",
       "חללית"
     ],
     "everyday_associations": [
-      "R2-D2",
       "מלחמת הכוכבים",
       "רובוט",
       "חלל",
-      "דרואיד",
       "מחשב",
       "תיקון",
       "חללית"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מלחמת הכוכבים",
+      "רובוט",
+      "חלל",
+      "מחשב",
+      "תיקון",
+      "חללית"
+    ],
+    "association": "מלחמת הכוכבים, רובוט, חלל, מחשב, תיקון, חללית",
+    "title": "רובוט R2",
+    "name": "רובוט R2",
+    "userCurated": true
   },
   {
     "id": "bugs_bunny",
     "num": 14,
-    "name": "באגס באני",
     "name_he": "באגס באני",
     "suggestedName": "באגס באני",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -699,31 +862,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/bugs_bunny_carrot.jpg",
     "associations": [
-      "באגס באני",
       "גזר",
       "ארנב",
       "דיסני",
-      "לוני טונס",
-      "מה נשמע דוק",
       "אנימציה",
-      "ציד"
+      "ציד",
+      "שיניים"
     ],
     "everyday_associations": [
-      "באגס באני",
       "גזר",
       "ארנב",
       "דיסני",
-      "לוני טונס",
-      "מה נשמע דוק",
       "אנימציה",
-      "ציד"
+      "ציד",
+      "שיניים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "גזר",
+      "ארנב",
+      "דיסני",
+      "אנימציה",
+      "ציד",
+      "שיניים"
+    ],
+    "association": "גזר, ארנב, דיסני, אנימציה, ציד, שיניים",
+    "title": "באגס באני",
+    "name": "באגס באני",
+    "userCurated": true
   },
   {
     "id": "winnie_the_pooh",
     "num": 15,
-    "name": "פו הדב",
     "name_he": "פו הדב",
     "suggestedName": "פו הדב",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -731,31 +901,45 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/winnie_the_pooh_honey.jpg",
     "associations": [
-      "פו הדב",
       "דב",
       "דבש",
       "יער",
       "חברים",
-      "ספר ילדים",
-      "חמוד",
-      "מתוק"
+      "מתוק",
+      "ילד",
+      "אוכל",
+      "ארוחה"
     ],
     "everyday_associations": [
-      "פו הדב",
       "דב",
       "דבש",
       "יער",
       "חברים",
-      "ספר ילדים",
-      "חמוד",
-      "מתוק"
+      "מתוק",
+      "ילד",
+      "אוכל",
+      "ארוחה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "דב",
+      "דבש",
+      "יער",
+      "חברים",
+      "מתוק",
+      "ילד",
+      "אוכל",
+      "ארוחה"
+    ],
+    "association": "דב, דבש, יער, חברים, מתוק, ילד, אוכל, ארוחה",
+    "title": "פו הדב",
+    "name": "פו הדב",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "hello_kitty",
     "num": 16,
-    "name": "הלו קיטי",
     "name_he": "הלו קיטי",
     "suggestedName": "הלו קיטי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -763,31 +947,41 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/hello_kitty.jpg",
     "associations": [
-      "הלו קיטי",
       "חתול",
       "ורוד",
-      "יפן",
-      "סרט",
       "חמוד",
       "ילדות",
-      "אופנה"
+      "אופנה",
+      "ילדה",
+      "הילדה"
     ],
     "everyday_associations": [
-      "הלו קיטי",
       "חתול",
       "ורוד",
-      "יפן",
-      "סרט",
       "חמוד",
       "ילדות",
-      "אופנה"
+      "אופנה",
+      "ילדה",
+      "הילדה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חתול",
+      "ורוד",
+      "חמוד",
+      "ילדות",
+      "אופנה",
+      "ילדה",
+      "הילדה"
+    ],
+    "association": "חתול, ורוד, חמוד, ילדות, אופנה, ילדה, הילדה",
+    "title": "הלו קיטי",
+    "name": "הלו קיטי",
+    "userCurated": true
   },
   {
     "id": "spongebob",
     "num": 17,
-    "name": "בובספוג מכנסמרובע",
     "name_he": "בובספוג מכנסמרובע",
     "suggestedName": "בובספוג מכנסמרובע",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -795,26 +989,41 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/spongebob.jpg",
     "associations": [
-      "בובספוג",
-      "בובספוג מכנסמרובע",
+      "סדר",
+      "ניקיון",
       "ספוג",
-      "ים",
-      "המבורגר",
-      "פטריק",
-      "אנימציה",
-      "מצולות"
+      "בועות",
+      "קרצוף",
+      "קציצה",
+      "חביתה",
+      "טיגון"
     ],
     "everyday_associations": [
-      "בובספוג",
-      "בובספוג מכנסמרובע",
+      "סדר",
+      "ניקיון",
       "ספוג",
-      "ים",
-      "המבורגר",
-      "פטריק",
-      "אנימציה",
-      "מצולות"
+      "בועות",
+      "קרצוף",
+      "קציצה",
+      "חביתה",
+      "טיגון"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "סדר",
+      "ניקיון",
+      "ספוג",
+      "בועות",
+      "קרצוף",
+      "קציצה",
+      "חביתה",
+      "טיגון"
+    ],
+    "association": "סדר, ניקיון, ספוג, בועות, קרצוף, קציצה, חביתה, טיגון",
+    "title": "בובספוג מכנסמרובע",
+    "name": "בובספוג מכנסמרובע",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "king_kong",
@@ -829,9 +1038,7 @@ export const STAGED_IMAGES_POOL = [
     "associations": [
       "קינג קונג",
       "גורילה",
-      "קוף ענק",
       "מגדל",
-      "אמפייר סטייט",
       "מפלצת",
       "קולנוע",
       "ג'ונגל"
@@ -839,14 +1046,23 @@ export const STAGED_IMAGES_POOL = [
     "everyday_associations": [
       "קינג קונג",
       "גורילה",
-      "קוף ענק",
       "מגדל",
-      "אמפייר סטייט",
       "מפלצת",
       "קולנוע",
       "ג'ונגל"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "המלך קונג",
+    "keywords": [
+      "קינג קונג",
+      "גורילה",
+      "מגדל",
+      "מפלצת",
+      "קולנוע",
+      "ג'ונגל"
+    ],
+    "userCurated": true,
+    "association": "קינג קונג, גורילה, מגדל, מפלצת, קולנוע, ג'ונגל"
   },
   {
     "id": "godzilla",
@@ -878,7 +1094,20 @@ export const STAGED_IMAGES_POOL = [
       "אוקיינוס",
       "ענק"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "גודזילה",
+    "keywords": [
+      "גודזילה",
+      "מפלצת",
+      "לטאה",
+      "יפן",
+      "הרס",
+      "קולנוע",
+      "אוקיינוס",
+      "ענק"
+    ],
+    "userCurated": true,
+    "association": "גודזילה, מפלצת, לטאה, יפן, הרס, קולנוע, אוקיינוס, ענק"
   },
   {
     "id": "dracula",
@@ -910,12 +1139,24 @@ export const STAGED_IMAGES_POOL = [
       "לילה",
       "תחפושת"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "דרקולה",
+    "keywords": [
+      "דרקולה",
+      "ערפד",
+      "עטלף",
+      "טירה",
+      "ניבים",
+      "דם",
+      "לילה",
+      "תחפושת"
+    ],
+    "aiCurated": true,
+    "association": "דרקולה, ערפד, עטלף, טירה, ניבים, דם, לילה, תחפושת"
   },
   {
     "id": "hulk",
     "num": 21,
-    "name": "האלק",
     "name_he": "האלק",
     "suggestedName": "האלק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -923,20 +1164,40 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg",
     "associations": [
-      "האלק",
       "כושר",
       "זעם",
       "הובלות",
-      "שרירים"
+      "שרירים",
+      "עצבים",
+      "גדול",
+      "כעס",
+      "אימון"
     ],
     "everyday_associations": [
-      "האלק",
       "כושר",
       "זעם",
       "הובלות",
-      "שרירים"
+      "שרירים",
+      "עצבים",
+      "גדול",
+      "כעס",
+      "אימון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "כושר",
+      "זעם",
+      "הובלות",
+      "שרירים",
+      "עצבים",
+      "גדול",
+      "כעס",
+      "אימון"
+    ],
+    "association": "כושר, זעם, הובלות, שרירים, עצבים, גדול, כעס, אימון",
+    "title": "האלק",
+    "name": "האלק",
+    "userCurated": true
   },
   {
     "id": "iron_man",
@@ -967,7 +1228,18 @@ export const STAGED_IMAGES_POOL = [
       "סרט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "איירון מן",
+    "keywords": [
+      "רובוט",
+      "טכנולוגיה",
+      "שריון",
+      "גיבור",
+      "הנדסה",
+      "תעופה",
+      "סרט"
+    ],
+    "association": "רובוט, טכנולוגיה, שריון, גיבור, הנדסה, תעופה, סרט"
   },
   {
     "id": "james_bond",
@@ -997,7 +1269,19 @@ export const STAGED_IMAGES_POOL = [
       "טוקסידו",
       "דרכון"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "ג'יימס בונד",
+    "keywords": [
+      "ג'יימס בונד",
+      "ג'יימס",
+      "בונד",
+      "חליפה",
+      "ניקוי",
+      "טוקסידו",
+      "דרכון"
+    ],
+    "userCurated": true,
+    "association": "ג'יימס בונד, ג'יימס, בונד, חליפה, ניקוי, טוקסידו, דרכון"
   },
   {
     "id": "the_joker",
@@ -1028,12 +1312,22 @@ export const STAGED_IMAGES_POOL = [
       "מסכה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הג'וקר",
+    "keywords": [
+      "ליצן",
+      "צחוק",
+      "קלפים",
+      "איפור",
+      "סרט",
+      "הצגה",
+      "מסכה"
+    ],
+    "association": "ליצן, צחוק, קלפים, איפור, סרט, הצגה, מסכה"
   },
   {
     "id": "scrooge_mcduck",
     "num": 25,
-    "name": "סקרודג' מקדאק",
     "name_he": "סקרודג' מקדאק",
     "suggestedName": "סקרודג' מקדאק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1041,24 +1335,37 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/scrooge_mcduck.jpg",
     "associations": [
-      "סקרודג' מקדאק",
-      "סקרודג'",
-      "מקדאק",
       "בנק",
       "השקעות",
       "חיסכון",
-      "כספומט"
+      "כספומט",
+      "מניה",
+      "כסף",
+      "מניות"
     ],
     "everyday_associations": [
-      "סקרודג' מקדאק",
-      "סקרודג'",
-      "מקדאק",
       "בנק",
       "השקעות",
       "חיסכון",
-      "כספומט"
+      "כספומט",
+      "מניה",
+      "כסף",
+      "מניות"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "בנק",
+      "השקעות",
+      "חיסכון",
+      "כספומט",
+      "מניה",
+      "כסף",
+      "מניות"
+    ],
+    "association": "בנק, השקעות, חיסכון, כספומט, מניה, כסף, מניות",
+    "title": "סקרודג' מקדאק",
+    "name": "סקרודג' מקדאק",
+    "userCurated": true
   },
   {
     "id": "pink_panther",
@@ -1088,12 +1395,23 @@ export const STAGED_IMAGES_POOL = [
       "שיפוץ",
       "קירות"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הפנתר הוורוד",
+    "keywords": [
+      "הפנתר הוורוד",
+      "הפנתר",
+      "הוורוד",
+      "צביעה",
+      "סיוד",
+      "שיפוץ",
+      "קירות"
+    ],
+    "userCurated": true,
+    "association": "הפנתר הוורוד, הפנתר, הוורוד, צביעה, סיוד, שיפוץ, קירות"
   },
   {
     "id": "tarzan",
     "num": 27,
-    "name": "טרזן",
     "name_he": "טרזן",
     "suggestedName": "טרזן",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1101,20 +1419,37 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/tarzan_vine_swing.jpg",
     "associations": [
-      "טרזן",
       "גיזום",
       "עצים",
       "טיפוס",
-      "חבל"
+      "חבל",
+      "ילד",
+      "קוף",
+      "שעשועים"
     ],
     "everyday_associations": [
-      "טרזן",
       "גיזום",
       "עצים",
       "טיפוס",
-      "חבל"
+      "חבל",
+      "ילד",
+      "קוף",
+      "שעשועים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "גיזום",
+      "עצים",
+      "טיפוס",
+      "חבל",
+      "ילד",
+      "קוף",
+      "שעשועים"
+    ],
+    "association": "גיזום, עצים, טיפוס, חבל, ילד, קוף, שעשועים",
+    "title": "טרזן",
+    "name": "טרזן",
+    "userCurated": true
   },
   {
     "id": "pinocchio",
@@ -1140,7 +1475,17 @@ export const STAGED_IMAGES_POOL = [
       "שולחן",
       "תיקון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פינוקיו",
+    "keywords": [
+      "פינוקיו",
+      "נגר",
+      "עץ",
+      "שולחן",
+      "תיקון"
+    ],
+    "aiCurated": true,
+    "association": "פינוקיו, נגר, עץ, שולחן, תיקון"
   },
   {
     "id": "robin_hood",
@@ -1171,7 +1516,18 @@ export const STAGED_IMAGES_POOL = [
       "כובע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רובין הוד",
+    "keywords": [
+      "קשת",
+      "חץ",
+      "יער",
+      "מטרה",
+      "צדק",
+      "תרומה",
+      "כובע"
+    ],
+    "association": "קשת, חץ, יער, מטרה, צדק, תרומה, כובע"
   },
   {
     "id": "peter_pan",
@@ -1201,7 +1557,19 @@ export const STAGED_IMAGES_POOL = [
       "חופשה",
       "נוער"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פיטר פן",
+    "keywords": [
+      "פיטר פן",
+      "פיטר",
+      "פן",
+      "טיסה",
+      "כרטיס",
+      "חופשה",
+      "נוער"
+    ],
+    "aiCurated": true,
+    "association": "פיטר פן, פיטר, פן, טיסה, כרטיס, חופשה, נוער"
   },
   {
     "id": "cinderella",
@@ -1232,7 +1600,18 @@ export const STAGED_IMAGES_POOL = [
       "נסיכה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סינדרלה",
+    "keywords": [
+      "נעל",
+      "שמלה",
+      "מסיבה",
+      "ארמון",
+      "ניקיון",
+      "חצות",
+      "נסיכה"
+    ],
+    "association": "נעל, שמלה, מסיבה, ארמון, ניקיון, חצות, נסיכה"
   },
   {
     "id": "harry_potter",
@@ -1263,12 +1642,22 @@ export const STAGED_IMAGES_POOL = [
       "בית ספר"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הארי פוטר",
+    "keywords": [
+      "קסם",
+      "ספר",
+      "משקפיים",
+      "לימודים",
+      "שרביט",
+      "סרט",
+      "בית ספר"
+    ],
+    "association": "קסם, ספר, משקפיים, לימודים, שרביט, סרט, בית ספר"
   },
   {
     "id": "donald_duck",
     "num": 33,
-    "name": "דונלד דאק",
     "name_he": "דונלד דאק",
     "suggestedName": "דונלד דאק",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1276,24 +1665,25 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/donald_duck_sailor.jpg",
     "associations": [
-      "דונלד דאק",
       "דונלד",
       "דאק",
-      "ברווז",
-      "מלח",
-      "כעס",
-      "סירה"
+      "ברווז"
     ],
     "everyday_associations": [
-      "דונלד דאק",
       "דונלד",
       "דאק",
-      "ברווז",
-      "מלח",
-      "כעס",
-      "סירה"
+      "ברווז"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "דונלד",
+      "דאק",
+      "ברווז"
+    ],
+    "association": "דונלד, דאק, ברווז",
+    "title": "דונלד דאק",
+    "name": "דונלד דאק",
+    "userCurated": true
   },
   {
     "id": "scooby_doo",
@@ -1323,12 +1713,23 @@ export const STAGED_IMAGES_POOL = [
       "חיסון",
       "חטיף"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "סקובי דו",
+    "keywords": [
+      "סקובי דו",
+      "סקובי",
+      "דו",
+      "וטרינר",
+      "כלב",
+      "חיסון",
+      "חטיף"
+    ],
+    "aiCurated": true,
+    "association": "סקובי דו, סקובי, דו, וטרינר, כלב, חיסון, חטיף"
   },
   {
     "id": "tom_and_jerry",
     "num": 35,
-    "name": "טום וג'רי",
     "name_he": "טום וג'רי",
     "suggestedName": "טום וג'רי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1336,29 +1737,53 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/tom_and_jerry.jpg",
     "associations": [
-      "טום וג'רי",
       "טום",
-      "וג'רי",
       "הדברה",
       "מלכודת",
       "חולדות",
-      "מרדף"
+      "מרדף",
+      "ג'רי",
+      "אחים",
+      "לתפוס",
+      "תופסת",
+      "חתול",
+      "עכבר"
     ],
     "everyday_associations": [
-      "טום וג'רי",
       "טום",
-      "וג'רי",
       "הדברה",
       "מלכודת",
       "חולדות",
-      "מרדף"
+      "מרדף",
+      "ג'רי",
+      "אחים",
+      "לתפוס",
+      "תופסת",
+      "חתול",
+      "עכבר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "טום",
+      "הדברה",
+      "מלכודת",
+      "חולדות",
+      "מרדף",
+      "ג'רי",
+      "אחים",
+      "לתפוס",
+      "תופסת",
+      "חתול",
+      "עכבר"
+    ],
+    "association": "טום, הדברה, מלכודת, חולדות, מרדף, ג'רי, אחים, לתפוס, תופסת, חתול, עכבר",
+    "title": "טום וג'רי",
+    "name": "טום וג'רי",
+    "userCurated": true
   },
   {
     "id": "popeye",
     "num": 36,
-    "name": "פופאי",
     "name_he": "פופאי",
     "suggestedName": "פופאי",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1366,20 +1791,49 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/popeye_sailor_spinach.jpg",
     "associations": [
-      "פופאי",
       "אימון",
       "ירקות",
       "שרירים",
-      "חלבון"
+      "חלבון",
+      "תרד",
+      "מלח",
+      "כושר",
+      "כוח",
+      "חדר כושר",
+      "פלג גוף עליון",
+      "ידיים"
     ],
     "everyday_associations": [
-      "פופאי",
       "אימון",
       "ירקות",
       "שרירים",
-      "חלבון"
+      "חלבון",
+      "תרד",
+      "מלח",
+      "כושר",
+      "כוח",
+      "חדר כושר",
+      "פלג גוף עליון",
+      "ידיים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אימון",
+      "ירקות",
+      "שרירים",
+      "חלבון",
+      "תרד",
+      "מלח",
+      "כושר",
+      "כוח",
+      "חדר כושר",
+      "פלג גוף עליון",
+      "ידיים"
+    ],
+    "association": "אימון, ירקות, שרירים, חלבון, תרד, מלח, כושר, כוח, חדר כושר, פלג גוף עליון, ידיים",
+    "title": "פופאי",
+    "name": "פופאי",
+    "userCurated": true
   },
   {
     "id": "terminator",
@@ -1410,7 +1864,18 @@ export const STAGED_IMAGES_POOL = [
       "מתכת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שליחות קטלנית",
+    "keywords": [
+      "רובוט",
+      "מכונה",
+      "עתיד",
+      "סרט",
+      "משקפי שמש",
+      "אקשן",
+      "מתכת"
+    ],
+    "association": "רובוט, מכונה, עתיד, סרט, משקפי שמש, אקשן, מתכת"
   },
   {
     "id": "captain_america",
@@ -1423,29 +1888,43 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/authentic_captain_america.jpg",
     "associations": [
-      "קפטן אמריקה",
-      "קפטן",
-      "אמריקה",
-      "כושר",
-      "הליכה",
+      "מגן",
       "הגנה",
-      "משמעת"
+      "ביטחון",
+      "חייל",
+      "מפקד",
+      "מסדר",
+      "עמידה דום",
+      "הצדעה"
     ],
     "everyday_associations": [
-      "קפטן אמריקה",
-      "קפטן",
-      "אמריקה",
-      "כושר",
-      "הליכה",
+      "מגן",
       "הגנה",
-      "משמעת"
+      "ביטחון",
+      "חייל",
+      "מפקד",
+      "מסדר",
+      "עמידה דום",
+      "הצדעה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "קפטן אמריקה",
+    "keywords": [
+      "מגן",
+      "הגנה",
+      "ביטחון",
+      "חייל",
+      "מפקד",
+      "מסדר",
+      "עמידה דום",
+      "הצדעה"
+    ],
+    "aiCurated": true,
+    "association": "מגן, הגנה, ביטחון, חייל, מפקד, מסדר, עמידה דום, הצדעה"
   },
   {
     "id": "wolverine",
     "num": 39,
-    "name": "וולברין",
     "name_he": "וולברין",
     "suggestedName": "וולברין",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1453,20 +1932,31 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/wolverine_logan.jpg",
     "associations": [
-      "וולברין",
       "ציפורניים",
       "מניקור",
       "גילוח",
-      "סכין"
+      "סכין",
+      "כאב"
     ],
     "everyday_associations": [
-      "וולברין",
       "ציפורניים",
       "מניקור",
       "גילוח",
-      "סכין"
+      "סכין",
+      "כאב"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "ציפורניים",
+      "מניקור",
+      "גילוח",
+      "סכין",
+      "כאב"
+    ],
+    "association": "ציפורניים, מניקור, גילוח, סכין, כאב",
+    "title": "וולברין",
+    "name": "וולברין",
+    "userCurated": true
   },
   {
     "id": "gandalf",
@@ -1497,7 +1987,18 @@ export const STAGED_IMAGES_POOL = [
       "מקל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גנדלף",
+    "keywords": [
+      "קוסם",
+      "זקן",
+      "חוכמה",
+      "ספר",
+      "מסע",
+      "סרט",
+      "מקל"
+    ],
+    "association": "קוסם, זקן, חוכמה, ספר, מסע, סרט, מקל"
   },
   {
     "id": "gollum",
@@ -1533,12 +2034,26 @@ export const STAGED_IMAGES_POOL = [
       "טבעת",
       "צורף"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "גולום",
+    "keywords": [
+      "גולום",
+      "כדורגל",
+      "ספורט",
+      "משחק",
+      "גול",
+      "אצטדיון",
+      "אימון",
+      "תכשיט",
+      "טבעת",
+      "צורף"
+    ],
+    "aiCurated": true,
+    "association": "גולום, כדורגל, ספורט, משחק, גול, אצטדיון, אימון, תכשיט, טבעת, צורף"
   },
   {
     "id": "minions",
     "num": 42,
-    "name": "המיניונים",
     "name_he": "המיניונים",
     "suggestedName": "המיניונים",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1546,20 +2061,41 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/minions.jpg",
     "associations": [
-      "המיניונים",
       "בננות",
       "סופר",
       "ילדים",
-      "חטיפים"
+      "ילד",
+      "צהוב",
+      "בננה",
+      "אוכל",
+      "חמוד"
     ],
     "everyday_associations": [
-      "המיניונים",
       "בננות",
       "סופר",
       "ילדים",
-      "חטיפים"
+      "ילד",
+      "צהוב",
+      "בננה",
+      "אוכל",
+      "חמוד"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "בננות",
+      "סופר",
+      "ילדים",
+      "ילד",
+      "צהוב",
+      "בננה",
+      "אוכל",
+      "חמוד"
+    ],
+    "association": "בננות, סופר, ילדים, ילד, צהוב, בננה, אוכל, חמוד",
+    "title": "המיניונים",
+    "name": "המיניונים",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "colonel_sanders",
@@ -1589,12 +2125,23 @@ export const STAGED_IMAGES_POOL = [
       "טיגון",
       "משלוח"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הקולונל של KFC",
+    "keywords": [
+      "הקולונל של KFC",
+      "הקולונל",
+      "KFC",
+      "ארוחה",
+      "עוף",
+      "טיגון",
+      "משלוח"
+    ],
+    "userCurated": true,
+    "association": "הקולונל של KFC, הקולונל, KFC, ארוחה, עוף, טיגון, משלוח"
   },
   {
     "id": "ronald_mcdonald",
     "num": 44,
-    "name": "רונלד מקדונלד",
     "name_he": "רונלד מקדונלד",
     "suggestedName": "רונלד מקדונלד",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1602,29 +2149,42 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg",
     "associations": [
-      "רונלד מקדונלד",
-      "רונלד",
-      "מקדונלד",
       "המבורגר",
-      "פאסטפוד",
-      "מסיבה",
-      "ילדים"
+      "ילדים",
+      "ילד",
+      "אוכל",
+      "ארוחה",
+      "לאכול",
+      "מסעדה"
     ],
     "everyday_associations": [
-      "רונלד מקדונלד",
-      "רונלד",
-      "מקדונלד",
       "המבורגר",
-      "פאסטפוד",
-      "מסיבה",
-      "ילדים"
+      "ילדים",
+      "ילד",
+      "אוכל",
+      "ארוחה",
+      "לאכול",
+      "מסעדה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "המבורגר",
+      "ילדים",
+      "ילד",
+      "אוכל",
+      "ארוחה",
+      "לאכול",
+      "מסעדה"
+    ],
+    "association": "המבורגר, ילדים, ילד, אוכל, ארוחה, לאכול, מסעדה",
+    "title": "רונלד מקדונלד",
+    "name": "רונלד מקדונלד",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "the_grinch",
     "num": 45,
-    "name": "הגרינץ'",
     "name_he": "הגרינץ'",
     "suggestedName": "הגרינץ'",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1632,25 +2192,26 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/the_grinch.jpg",
     "associations": [
-      "הגרינץ'",
-      "קניות",
-      "מתנות",
-      "חג",
-      "בזבוזים"
+      "ירוק",
+      "חג מולד"
     ],
     "everyday_associations": [
-      "הגרינץ'",
-      "קניות",
-      "מתנות",
-      "חג",
-      "בזבוזים"
+      "ירוק",
+      "חג מולד"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "ירוק",
+      "חג מולד"
+    ],
+    "association": "ירוק, חג מולד",
+    "title": "הגרינץ'",
+    "name": "הגרינץ'",
+    "userCurated": true
   },
   {
     "id": "bilbo_baggins",
     "num": 46,
-    "name": "בילבו בגינס",
     "name_he": "בילבו בגינס",
     "suggestedName": "בילבו בגינס",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -1658,24 +2219,41 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "דמויות בדיוניות ותרבות פופ",
     "imageUrl": "/staged_images/pool/authentic_bilbo_baggins.jpg",
     "associations": [
-      "בילבו בגינס",
-      "בילבו",
-      "בגינס",
       "אירוח",
       "ארוחה",
       "אורחים",
-      "בישול"
+      "בישול",
+      "חביתה",
+      "בוקר",
+      "מטבח",
+      "טבעת"
     ],
     "everyday_associations": [
-      "בילבו בגינס",
-      "בילבו",
-      "בגינס",
       "אירוח",
       "ארוחה",
       "אורחים",
-      "בישול"
+      "בישול",
+      "חביתה",
+      "בוקר",
+      "מטבח",
+      "טבעת"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אירוח",
+      "ארוחה",
+      "אורחים",
+      "בישול",
+      "חביתה",
+      "בוקר",
+      "מטבח",
+      "טבעת"
+    ],
+    "association": "אירוח, ארוחה, אורחים, בישול, חביתה, בוקר, מטבח, טבעת",
+    "title": "בילבו בגינס",
+    "name": "בילבו בגינס",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "robocop",
@@ -1706,7 +2284,18 @@ export const STAGED_IMAGES_POOL = [
       "אבטחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רובוקופ",
+    "keywords": [
+      "שוטר",
+      "רובוט",
+      "חוק",
+      "משטרה",
+      "שריון",
+      "קסדה",
+      "אבטחה"
+    ],
+    "association": "שוטר, רובוט, חוק, משטרה, שריון, קסדה, אבטחה"
   },
   {
     "id": "alf",
@@ -1732,7 +2321,17 @@ export const STAGED_IMAGES_POOL = [
       "אוכל",
       "אימוץ"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "אלף",
+    "keywords": [
+      "אלף",
+      "וטרינר",
+      "חתול",
+      "אוכל",
+      "אימוץ"
+    ],
+    "userCurated": true,
+    "association": "אלף, וטרינר, חתול, אוכל, אימוץ"
   },
   {
     "id": "predator",
@@ -1763,7 +2362,18 @@ export const STAGED_IMAGES_POOL = [
       "קרב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הטורף",
+    "keywords": [
+      "חייזר",
+      "ציד",
+      "מסכה",
+      "ג'ונגל",
+      "סרט",
+      "הסוואה",
+      "קרב"
+    ],
+    "association": "חייזר, ציד, מסכה, ג'ונגל, סרט, הסוואה, קרב"
   },
   {
     "id": "frankenstein_monster",
@@ -1793,7 +2403,19 @@ export const STAGED_IMAGES_POOL = [
       "בדיקות",
       "מרפאה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מפלצת פרנקנשטיין",
+    "keywords": [
+      "מפלצת פרנקנשטיין",
+      "מפלצת",
+      "פרנקנשטיין",
+      "רופא",
+      "תפרים",
+      "בדיקות",
+      "מרפאה"
+    ],
+    "userCurated": true,
+    "association": "מפלצת פרנקנשטיין, מפלצת, פרנקנשטיין, רופא, תפרים, בדיקות, מרפאה"
   },
   {
     "id": "eiffel_tower",
@@ -1824,7 +2446,18 @@ export const STAGED_IMAGES_POOL = [
       "נוף"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגדל אייפל",
+    "keywords": [
+      "פריז",
+      "צרפת",
+      "חופשה",
+      "טיסה",
+      "תיירות",
+      "רומנטיקה",
+      "נוף"
+    ],
+    "association": "פריז, צרפת, חופשה, טיסה, תיירות, רומנטיקה, נוף"
   },
   {
     "id": "statue_of_liberty",
@@ -1855,12 +2488,22 @@ export const STAGED_IMAGES_POOL = [
       "כתר"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פסל החירות",
+    "keywords": [
+      "ניו יורק",
+      "אמריקה",
+      "חופש",
+      "לפיד",
+      "טיסה",
+      "תיירות",
+      "כתר"
+    ],
+    "association": "ניו יורק, אמריקה, חופש, לפיד, טיסה, תיירות, כתר"
   },
   {
     "id": "pyramids_of_giza",
     "num": 53,
-    "name": "הפירמידות בגיזה",
     "name_he": "הפירמידות בגיזה",
     "suggestedName": "הפירמידות בגיזה",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -1868,29 +2511,45 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/pyramids_of_giza_egypt.jpg",
     "associations": [
-      "הפירמידות בגיזה",
-      "הפירמידות",
-      "בגיזה",
       "טיול",
       "מדבר",
       "חול",
-      "עתיקות"
+      "עתיקות",
+      "מצריים",
+      "3",
+      "שלוש",
+      "שלושה"
     ],
     "everyday_associations": [
-      "הפירמידות בגיזה",
-      "הפירמידות",
-      "בגיזה",
       "טיול",
       "מדבר",
       "חול",
-      "עתיקות"
+      "עתיקות",
+      "מצריים",
+      "3",
+      "שלוש",
+      "שלושה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "טיול",
+      "מדבר",
+      "חול",
+      "עתיקות",
+      "מצריים",
+      "3",
+      "שלוש",
+      "שלושה"
+    ],
+    "association": "טיול, מדבר, חול, עתיקות, מצריים, 3, שלוש, שלושה",
+    "title": "הפירמידות בגיזה",
+    "name": "הפירמידות בגיזה",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "great_sphinx_giza",
     "num": 54,
-    "name": "הספינקס",
     "name_he": "הספינקס",
     "suggestedName": "הספינקס",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -1898,20 +2557,25 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/sphinx_giza_sand.jpg",
     "associations": [
-      "הספינקס",
       "אבן",
       "אריה",
-      "מוזיאון",
-      "תיירות"
+      "מצריים"
     ],
     "everyday_associations": [
-      "הספינקס",
       "אבן",
       "אריה",
-      "מוזיאון",
-      "תיירות"
+      "מצריים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אבן",
+      "אריה",
+      "מצריים"
+    ],
+    "association": "אבן, אריה, מצריים",
+    "title": "הספינקס",
+    "name": "הספינקס",
+    "userCurated": true
   },
   {
     "id": "taj_mahal",
@@ -1941,7 +2605,19 @@ export const STAGED_IMAGES_POOL = [
       "שיש",
       "אהבה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "הטאג' מהאל",
+    "keywords": [
+      "הטאג' מהאל",
+      "הטאג'",
+      "מהאל",
+      "ארמון",
+      "הודו",
+      "שיש",
+      "אהבה"
+    ],
+    "userCurated": true,
+    "association": "הטאג' מהאל, הטאג', מהאל, ארמון, הודו, שיש, אהבה"
   },
   {
     "id": "colosseum_rome",
@@ -1967,12 +2643,21 @@ export const STAGED_IMAGES_POOL = [
       "היסטוריה",
       "סיור"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "הקוליסאום",
+    "keywords": [
+      "הקוליסאום",
+      "איטליה",
+      "גלדיאטור",
+      "היסטוריה",
+      "סיור"
+    ],
+    "userCurated": true,
+    "association": "הקוליסאום, איטליה, גלדיאטור, היסטוריה, סיור"
   },
   {
     "id": "great_wall_china",
     "num": 57,
-    "name": "החומה הסינית",
     "name_he": "החומה הסינית",
     "suggestedName": "החומה הסינית",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -1980,29 +2665,29 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/great_wall_of_china_mutianyu.jpg",
     "associations": [
-      "החומה הסינית",
-      "החומה",
-      "הסינית",
       "חומה",
-      "הליכה",
       "סין",
-      "מדרגות"
+      "הגנה"
     ],
     "everyday_associations": [
-      "החומה הסינית",
-      "החומה",
-      "הסינית",
       "חומה",
-      "הליכה",
       "סין",
-      "מדרגות"
+      "הגנה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "חומה",
+      "סין",
+      "הגנה"
+    ],
+    "association": "חומה, סין, הגנה",
+    "title": "החומה הסינית",
+    "name": "החומה הסינית",
+    "userCurated": true
   },
   {
     "id": "leaning_tower_pisa",
     "num": 58,
-    "name": "מגדל פיזה הנוטה",
     "name_he": "מגדל פיזה הנוטה",
     "suggestedName": "מגדל פיזה הנוטה",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2010,29 +2695,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/leaning_tower_of_pisa.jpg",
     "associations": [
-      "מגדל פיזה הנוטה",
       "מגדל",
       "פיזה",
-      "הנוטה",
       "נטייה",
       "תיקון",
-      "מהנדס"
+      "מהנדס",
+      "עקום"
     ],
     "everyday_associations": [
-      "מגדל פיזה הנוטה",
       "מגדל",
       "פיזה",
-      "הנוטה",
       "נטייה",
       "תיקון",
-      "מהנדס"
+      "מהנדס",
+      "עקום"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מגדל",
+      "פיזה",
+      "נטייה",
+      "תיקון",
+      "מהנדס",
+      "עקום"
+    ],
+    "association": "מגדל, פיזה, נטייה, תיקון, מהנדס, עקום",
+    "title": "מגדל פיזה הנוטה",
+    "name": "מגדל פיזה הנוטה",
+    "userCurated": true
   },
   {
     "id": "big_ben_london",
     "num": 59,
-    "name": "ביג בן",
     "name_he": "ביג בן",
     "suggestedName": "ביג בן",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2040,24 +2734,28 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/big_ben_london.jpg",
     "associations": [
-      "ביג בן",
-      "ביג",
-      "בן",
       "שעון",
-      "דייקנות",
       "לונדון",
-      "שעה"
+      "שעה",
+      "זמן"
     ],
     "everyday_associations": [
-      "ביג בן",
-      "ביג",
-      "בן",
       "שעון",
-      "דייקנות",
       "לונדון",
-      "שעה"
+      "שעה",
+      "זמן"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "שעון",
+      "לונדון",
+      "שעה",
+      "זמן"
+    ],
+    "association": "שעון, לונדון, שעה, זמן",
+    "title": "ביג בן",
+    "name": "ביג בן",
+    "userCurated": true
   },
   {
     "id": "sydney_opera_house",
@@ -2089,12 +2787,24 @@ export const STAGED_IMAGES_POOL = [
       "הופעה",
       "כרטיסים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "בית האופרה של סידני",
+    "keywords": [
+      "בית האופרה של סידני",
+      "בית",
+      "האופרה",
+      "סידני",
+      "אופרה",
+      "קונצרט",
+      "הופעה",
+      "כרטיסים"
+    ],
+    "userCurated": true,
+    "association": "בית האופרה של סידני, בית, האופרה, סידני, אופרה, קונצרט, הופעה, כרטיסים"
   },
   {
     "id": "christ_the_redeemer",
     "num": 61,
-    "name": "פסל ישו הגואל",
     "name_he": "פסל ישו הגואל",
     "suggestedName": "פסל ישו הגואל",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2102,29 +2812,29 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/christ_the_redeemer_rio.jpg",
     "associations": [
-      "פסל ישו הגואל",
       "פסל",
-      "ישו",
-      "הגואל",
       "ברזיל",
-      "תפילה",
-      "הרים"
+      "ריו"
     ],
     "everyday_associations": [
-      "פסל ישו הגואל",
       "פסל",
-      "ישו",
-      "הגואל",
       "ברזיל",
-      "תפילה",
-      "הרים"
+      "ריו"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "פסל",
+      "ברזיל",
+      "ריו"
+    ],
+    "association": "פסל, ברזיל, ריו",
+    "title": "פסל ישו הגואל",
+    "name": "פסל ישו הגואל",
+    "userCurated": true
   },
   {
     "id": "golden_gate_bridge",
     "num": 62,
-    "name": "גשר שער הזהב",
     "name_he": "גשר שער הזהב",
     "suggestedName": "גשר שער הזהב",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2132,30 +2842,19 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/golden_gate_bridge_sf.jpg",
     "associations": [
-      "גשר שער הזהב",
-      "גשר",
-      "שער",
-      "הזהב",
-      "כדורגל",
-      "ספורט",
-      "משחק",
-      "גול",
-      "אצטדיון",
-      "אימון"
+      "גשר"
     ],
     "everyday_associations": [
-      "גשר שער הזהב",
-      "גשר",
-      "שער",
-      "הזהב",
-      "כדורגל",
-      "ספורט",
-      "משחק",
-      "גול",
-      "אצטדיון",
-      "אימון"
+      "גשר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "גשר"
+    ],
+    "association": "גשר",
+    "title": "גשר שער הזהב",
+    "name": "גשר שער הזהב",
+    "userCurated": true
   },
   {
     "id": "the_white_house",
@@ -2185,12 +2884,23 @@ export const STAGED_IMAGES_POOL = [
       "נשיא",
       "ממשל"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הבית הלבן",
+    "keywords": [
+      "הבית הלבן",
+      "הבית",
+      "הלבן",
+      "פוליטיקה",
+      "חדשות",
+      "נשיא",
+      "ממשל"
+    ],
+    "aiCurated": true,
+    "association": "הבית הלבן, הבית, הלבן, פוליטיקה, חדשות, נשיא, ממשל"
   },
   {
     "id": "azrieli_towers",
     "num": 64,
-    "name": "מגדלי עזריאלי",
     "name_he": "מגדלי עזריאלי",
     "suggestedName": "מגדלי עזריאלי",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2198,29 +2908,45 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/azrieli_towers.jpg",
     "associations": [
-      "מגדלי עזריאלי",
-      "מגדלי",
       "עזריאלי",
       "קניון",
-      "משרד",
-      "רכבת",
-      "קניות"
+      "קניות",
+      "מגדל",
+      "3",
+      "שלוש",
+      "שלושה",
+      "משולש"
     ],
     "everyday_associations": [
-      "מגדלי עזריאלי",
-      "מגדלי",
       "עזריאלי",
       "קניון",
-      "משרד",
-      "רכבת",
-      "קניות"
+      "קניות",
+      "מגדל",
+      "3",
+      "שלוש",
+      "שלושה",
+      "משולש"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "עזריאלי",
+      "קניון",
+      "קניות",
+      "מגדל",
+      "3",
+      "שלוש",
+      "שלושה",
+      "משולש"
+    ],
+    "association": "עזריאלי, קניון, קניות, מגדל, 3, שלוש, שלושה, משולש",
+    "title": "מגדלי עזריאלי",
+    "name": "מגדלי עזריאלי",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "saint_basil_cathedral",
     "num": 65,
-    "name": "הקרמלין / כנסיית ואסילי הקדוש",
     "name_he": "הקרמלין / כנסיית ואסילי הקדוש",
     "suggestedName": "הקרמלין / כנסיית ואסילי הקדוש",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2228,28 +2954,25 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/kremlin_red_square_moscow.jpg",
     "associations": [
-      "הקרמלין / כנסיית ואסילי הקדוש",
       "הקרמלין",
-      "כנסיית",
-      "ואסילי",
-      "הקדוש",
       "מוסקבה",
-      "חורף",
-      "צריח",
-      "כיפה"
+      "חורף"
     ],
     "everyday_associations": [
-      "הקרמלין / כנסיית ואסילי הקדוש",
       "הקרמלין",
-      "כנסיית",
-      "ואסילי",
-      "הקדוש",
       "מוסקבה",
-      "חורף",
-      "צריח",
-      "כיפה"
+      "חורף"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "הקרמלין",
+      "מוסקבה",
+      "חורף"
+    ],
+    "association": "הקרמלין, מוסקבה, חורף",
+    "title": "הקרמלין / כנסיית ואסילי הקדוש",
+    "name": "הקרמלין / כנסיית ואסילי הקדוש",
+    "userCurated": true
   },
   {
     "id": "dutch_windmill",
@@ -2279,7 +3002,19 @@ export const STAGED_IMAGES_POOL = [
       "מאפייה",
       "טחנה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "טחנת רוח הולנדית",
+    "keywords": [
+      "טחנת רוח הולנדית",
+      "טחנת",
+      "רוח",
+      "הולנדית",
+      "קמח",
+      "מאפייה",
+      "טחנה"
+    ],
+    "userCurated": true,
+    "association": "טחנת רוח הולנדית, טחנת, רוח, הולנדית, קמח, מאפייה, טחנה"
   },
   {
     "id": "empire_state_building",
@@ -2311,7 +3046,20 @@ export const STAGED_IMAGES_POOL = [
       "גורד",
       "שחקים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "האמפייר סטייט בילדינג",
+    "keywords": [
+      "האמפייר סטייט בילדינג",
+      "האמפייר",
+      "סטייט",
+      "בילדינג",
+      "מעלית",
+      "תצפית",
+      "גורד",
+      "שחקים"
+    ],
+    "userCurated": true,
+    "association": "האמפייר סטייט בילדינג, האמפייר, סטייט, בילדינג, מעלית, תצפית, גורד, שחקים"
   },
   {
     "id": "hollywood_sign",
@@ -2337,7 +3085,17 @@ export const STAGED_IMAGES_POOL = [
       "שחקן",
       "שלט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הוליווד",
+    "keywords": [
+      "הוליווד",
+      "סרטים",
+      "קולנוע",
+      "שחקן",
+      "שלט"
+    ],
+    "userCurated": true,
+    "association": "הוליווד, סרטים, קולנוע, שחקן, שלט"
   },
   {
     "id": "stonehenge",
@@ -2363,12 +3121,21 @@ export const STAGED_IMAGES_POOL = [
       "עתיק",
       "טבע"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "סטונהנג'",
+    "keywords": [
+      "סטונהנג'",
+      "פולחן",
+      "אבנים",
+      "עתיק",
+      "טבע"
+    ],
+    "userCurated": true,
+    "association": "סטונהנג', פולחן, אבנים, עתיק, טבע"
   },
   {
     "id": "moai_easter_island",
     "num": 70,
-    "name": "פסלי המואי באסתר",
     "name_he": "פסלי המואי באסתר",
     "suggestedName": "פסלי המואי באסתר",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2376,26 +3143,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/moai_easter_island.jpg",
     "associations": [
-      "פסלי המואי באסתר",
-      "פסלי",
-      "המואי",
-      "באסתר",
-      "אי",
       "פסל",
-      "הרפתקה",
-      "תעלומה"
+      "טיקי",
+      "אבן",
+      "עמידה דום",
+      "דום",
+      "עמידה",
+      "שקט"
     ],
     "everyday_associations": [
-      "פסלי המואי באסתר",
-      "פסלי",
-      "המואי",
-      "באסתר",
-      "אי",
       "פסל",
-      "הרפתקה",
-      "תעלומה"
+      "טיקי",
+      "אבן",
+      "עמידה דום",
+      "דום",
+      "עמידה",
+      "שקט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "פסל",
+      "טיקי",
+      "אבן",
+      "עמידה דום",
+      "דום",
+      "עמידה",
+      "שקט"
+    ],
+    "association": "פסל, טיקי, אבן, עמידה דום, דום, עמידה, שקט",
+    "title": "פסלי המואי באסתר",
+    "name": "פסלי המואי באסתר",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "parthenon_acropolis",
@@ -2425,7 +3204,19 @@ export const STAGED_IMAGES_POOL = [
       "עמודים",
       "יוון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הפרתנון / האקרופוליס",
+    "keywords": [
+      "הפרתנון / האקרופוליס",
+      "הפרתנון",
+      "האקרופוליס",
+      "אוניברסיטה",
+      "פילוסופיה",
+      "עמודים",
+      "יוון"
+    ],
+    "userCurated": true,
+    "association": "הפרתנון / האקרופוליס, הפרתנון, האקרופוליס, אוניברסיטה, פילוסופיה, עמודים, יוון"
   },
   {
     "id": "burj_khalifa",
@@ -2455,7 +3246,19 @@ export const STAGED_IMAGES_POOL = [
       "מגדל",
       "מלון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "בורג' ח'ליפה",
+    "keywords": [
+      "בורג' ח'ליפה",
+      "בורג'",
+      "ח'ליפה",
+      "דובאי",
+      "יוקרה",
+      "מגדל",
+      "מלון"
+    ],
+    "userCurated": true,
+    "association": "בורג' ח'ליפה, בורג', ח'ליפה, דובאי, יוקרה, מגדל, מלון"
   },
   {
     "id": "kaaba_mecca",
@@ -2468,24 +3271,21 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/kaaba_mecca.jpg",
     "associations": [
-      "הכעבה במכה",
-      "הכעבה",
-      "במכה",
-      "עלייה",
       "תפילה",
-      "מכה",
       "דת"
     ],
     "everyday_associations": [
-      "הכעבה במכה",
-      "הכעבה",
-      "במכה",
-      "עלייה",
       "תפילה",
-      "מכה",
       "דת"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הכעבה במכה",
+    "keywords": [
+      "תפילה",
+      "דת"
+    ],
+    "userCurated": true,
+    "association": "תפילה, דת"
   },
   {
     "id": "pantheon_rome",
@@ -2511,7 +3311,17 @@ export const STAGED_IMAGES_POOL = [
       "רומא",
       "אור"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הפנתיאון",
+    "keywords": [
+      "הפנתיאון",
+      "אדריכלות",
+      "כיפה",
+      "רומא",
+      "אור"
+    ],
+    "userCurated": true,
+    "association": "הפנתיאון, אדריכלות, כיפה, רומא, אור"
   },
   {
     "id": "arc_de_triomphe",
@@ -2541,7 +3351,19 @@ export const STAGED_IMAGES_POOL = [
       "ניצחון",
       "שער"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "קשת הניצחון",
+    "keywords": [
+      "קשת הניצחון",
+      "קשת",
+      "הניצחון",
+      "מצעד",
+      "טקס",
+      "ניצחון",
+      "שער"
+    ],
+    "userCurated": true,
+    "association": "קשת הניצחון, קשת, הניצחון, מצעד, טקס, ניצחון, שער"
   },
   {
     "id": "plaza_de_toros",
@@ -2573,12 +3395,24 @@ export const STAGED_IMAGES_POOL = [
       "שור",
       "מופע"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פלאזה דה טורוס",
+    "keywords": [
+      "פלאזה דה טורוס",
+      "פלאזה",
+      "דה",
+      "טורוס",
+      "ספרד",
+      "זירה",
+      "שור",
+      "מופע"
+    ],
+    "userCurated": true,
+    "association": "פלאזה דה טורוס, פלאזה, דה, טורוס, ספרד, זירה, שור, מופע"
   },
   {
     "id": "neuschwanstein_castle",
     "num": 77,
-    "name": "טירת דיסני / נוישוונשטיין",
     "name_he": "טירת דיסני / נוישוונשטיין",
     "suggestedName": "טירת דיסני / נוישוונשטיין",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2586,26 +3420,34 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/neuschwanstein_castle_bavaria.jpg",
     "associations": [
-      "טירת דיסני / נוישוונשטיין",
-      "טירת",
       "דיסני",
-      "נוישוונשטיין",
       "אגדה",
       "טירה",
       "נסיכה",
-      "ילדים"
+      "ילדים",
+      "ארמון"
     ],
     "everyday_associations": [
-      "טירת דיסני / נוישוונשטיין",
-      "טירת",
       "דיסני",
-      "נוישוונשטיין",
       "אגדה",
       "טירה",
       "נסיכה",
-      "ילדים"
+      "ילדים",
+      "ארמון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "דיסני",
+      "אגדה",
+      "טירה",
+      "נסיכה",
+      "ילדים",
+      "ארמון"
+    ],
+    "association": "דיסני, אגדה, טירה, נסיכה, ילדים, ארמון",
+    "title": "טירת דיסני / נוישוונשטיין",
+    "name": "טירת דיסני / נוישוונשטיין",
+    "userCurated": true
   },
   {
     "id": "burj_al_arab",
@@ -2635,12 +3477,23 @@ export const STAGED_IMAGES_POOL = [
       "סוויטה",
       "חופשה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מגדל דובאי",
+    "keywords": [
+      "מגדל דובאי",
+      "מגדל",
+      "דובאי",
+      "מלון",
+      "ריזורט",
+      "סוויטה",
+      "חופשה"
+    ],
+    "userCurated": true,
+    "association": "מגדל דובאי, מגדל, דובאי, מלון, ריזורט, סוויטה, חופשה"
   },
   {
     "id": "chichen_itza_pyramid",
     "num": 79,
-    "name": "מקדש המאיה",
     "name_he": "מקדש המאיה",
     "suggestedName": "מקדש המאיה",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2648,29 +3501,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/chichen_itza_pyramid.jpg",
     "associations": [
-      "מקדש המאיה",
       "מקדש",
-      "המאיה",
       "פירמידה",
       "מדרגות",
       "כושר",
-      "ארכיאולוגיה"
+      "ארכיאולוגיה",
+      "מאיה"
     ],
     "everyday_associations": [
-      "מקדש המאיה",
       "מקדש",
-      "המאיה",
       "פירמידה",
       "מדרגות",
       "כושר",
-      "ארכיאולוגיה"
+      "ארכיאולוגיה",
+      "מאיה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מקדש",
+      "פירמידה",
+      "מדרגות",
+      "כושר",
+      "ארכיאולוגיה",
+      "מאיה"
+    ],
+    "association": "מקדש, פירמידה, מדרגות, כושר, ארכיאולוגיה, מאיה",
+    "title": "מקדש המאיה",
+    "name": "מקדש המאיה",
+    "userCurated": true
   },
   {
     "id": "western_wall",
     "num": 80,
-    "name": "הכותל המערבי",
     "name_he": "הכותל המערבי",
     "suggestedName": "הכותל המערבי",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2678,24 +3540,37 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/western_wall_jerusalem.jpg",
     "associations": [
-      "הכותל המערבי",
       "הכותל",
       "המערבי",
       "תפילה",
       "פתק",
       "כותל",
-      "ברכה"
+      "ברכה",
+      "ירושלים"
     ],
     "everyday_associations": [
-      "הכותל המערבי",
       "הכותל",
       "המערבי",
       "תפילה",
       "פתק",
       "כותל",
-      "ברכה"
+      "ברכה",
+      "ירושלים"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "הכותל",
+      "המערבי",
+      "תפילה",
+      "פתק",
+      "כותל",
+      "ברכה",
+      "ירושלים"
+    ],
+    "association": "הכותל, המערבי, תפילה, פתק, כותל, ברכה, ירושלים",
+    "title": "הכותל המערבי",
+    "name": "הכותל המערבי",
+    "userCurated": true
   },
   {
     "id": "sagrada_familia",
@@ -2727,7 +3602,20 @@ export const STAGED_IMAGES_POOL = [
       "כנסייה",
       "אמנות"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "כנסיית סגרדה פמיליה",
+    "keywords": [
+      "כנסיית סגרדה פמיליה",
+      "כנסיית",
+      "סגרדה",
+      "פמיליה",
+      "גאודי",
+      "שיפוץ",
+      "כנסייה",
+      "אמנות"
+    ],
+    "userCurated": true,
+    "association": "כנסיית סגרדה פמיליה, כנסיית, סגרדה, פמיליה, גאודי, שיפוץ, כנסייה, אמנות"
   },
   {
     "id": "tower_bridge_london",
@@ -2755,7 +3643,18 @@ export const STAGED_IMAGES_POOL = [
       "נהר",
       "ספינה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "גשר מצודת לונדון",
+    "keywords": [
+      "גשר מצודת לונדון",
+      "גשר",
+      "מצודת",
+      "לונדון",
+      "נהר",
+      "ספינה"
+    ],
+    "userCurated": true,
+    "association": "גשר מצודת לונדון, גשר, מצודת, לונדון, נהר, ספינה"
   },
   {
     "id": "checkpoint_charlie",
@@ -2787,7 +3686,20 @@ export const STAGED_IMAGES_POOL = [
       "בידוק",
       "שמירה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "צ'ק פוינט צ'ארלי",
+    "keywords": [
+      "צ'ק פוינט צ'ארלי",
+      "צ'ק",
+      "פוינט",
+      "צ'ארלי",
+      "דרכון",
+      "גבול",
+      "בידוק",
+      "שמירה"
+    ],
+    "userCurated": true,
+    "association": "צ'ק פוינט צ'ארלי, צ'ק, פוינט, צ'ארלי, דרכון, גבול, בידוק, שמירה"
   },
   {
     "id": "mount_rushmore",
@@ -2815,7 +3727,18 @@ export const STAGED_IMAGES_POOL = [
       "חציבה",
       "אנדרטה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הר רושמור",
+    "keywords": [
+      "הר רושמור",
+      "הר",
+      "רושמור",
+      "נשיאות",
+      "חציבה",
+      "אנדרטה"
+    ],
+    "userCurated": true,
+    "association": "הר רושמור, הר, רושמור, נשיאות, חציבה, אנדרטה"
   },
   {
     "id": "medieval_castle_fortress",
@@ -2847,12 +3770,24 @@ export const STAGED_IMAGES_POOL = [
       "הגנה",
       "שער"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מבצר מלחמה מימי הביניים",
+    "keywords": [
+      "מבצר מלחמה מימי הביניים",
+      "מבצר",
+      "מלחמה",
+      "מימי",
+      "הביניים",
+      "חומות",
+      "הגנה",
+      "שער"
+    ],
+    "userCurated": true,
+    "association": "מבצר מלחמה מימי הביניים, מבצר, מלחמה, מימי, הביניים, חומות, הגנה, שער"
   },
   {
     "id": "igloo_ice_dome",
     "num": 86,
-    "name": "אסקימואי באיגלו",
     "name_he": "אסקימואי באיגלו",
     "suggestedName": "אסקימואי באיגלו",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2860,33 +3795,44 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/igloo_ice_dome.jpg",
     "associations": [
-      "אסקימואי באיגלו",
       "אסקימואי",
-      "באיגלו",
       "קור",
       "קרח",
       "שלג",
       "חורף",
       "קפוא",
-      "איגלו"
+      "איגלו",
+      "קר"
     ],
     "everyday_associations": [
-      "אסקימואי באיגלו",
       "אסקימואי",
-      "באיגלו",
       "קור",
       "קרח",
       "שלג",
       "חורף",
       "קפוא",
-      "איגלו"
+      "איגלו",
+      "קר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אסקימואי",
+      "קור",
+      "קרח",
+      "שלג",
+      "חורף",
+      "קפוא",
+      "איגלו",
+      "קר"
+    ],
+    "association": "אסקימואי, קור, קרח, שלג, חורף, קפוא, איגלו, קר",
+    "title": "אסקימואי באיגלו",
+    "name": "אסקימואי באיגלו",
+    "userCurated": true
   },
   {
     "id": "teepee_tent",
     "num": 87,
-    "name": "אוהל טיפי",
     "name_he": "אוהל טיפי",
     "suggestedName": "אוהל טיפי",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2894,22 +3840,28 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/teepee_tent.jpg",
     "associations": [
-      "אוהל טיפי",
-      "אוהל",
-      "טיפי",
       "קמפינג",
       "אינדיאני",
-      "מדורה"
+      "מדורה",
+      "אוהל"
     ],
     "everyday_associations": [
-      "אוהל טיפי",
-      "אוהל",
-      "טיפי",
       "קמפינג",
       "אינדיאני",
-      "מדורה"
+      "מדורה",
+      "אוהל"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "קמפינג",
+      "אינדיאני",
+      "מדורה",
+      "אוהל"
+    ],
+    "association": "קמפינג, אינדיאני, מדורה, אוהל",
+    "title": "אוהל טיפי",
+    "name": "אוהל טיפי",
+    "userCurated": true
   },
   {
     "id": "mud_hut_african",
@@ -2939,12 +3891,23 @@ export const STAGED_IMAGES_POOL = [
       "טבע",
       "שקט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "בקתת בוץ אפריקאית",
+    "keywords": [
+      "בקתת בוץ אפריקאית",
+      "בקתת",
+      "בוץ",
+      "אפריקאית",
+      "בקתה",
+      "טבע",
+      "שקט"
+    ],
+    "userCurated": true,
+    "association": "בקתת בוץ אפריקאית, בקתת, בוץ, אפריקאית, בקתה, טבע, שקט"
   },
   {
     "id": "chinese_pagoda",
     "num": 89,
-    "name": "פגודה סינית",
     "name_he": "פגודה סינית",
     "suggestedName": "פגודה סינית",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2952,29 +3915,23 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/chinese_pagoda.jpg",
     "associations": [
-      "פגודה סינית",
-      "פגודה",
-      "סינית",
-      "מזרח",
-      "בודהיזם",
-      "שלווה",
-      "מקדש"
+      "סין"
     ],
     "everyday_associations": [
-      "פגודה סינית",
-      "פגודה",
-      "סינית",
-      "מזרח",
-      "בודהיזם",
-      "שלווה",
-      "מקדש"
+      "סין"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "סין"
+    ],
+    "association": "סין",
+    "title": "פגודה סינית",
+    "name": "פגודה סינית",
+    "userCurated": true
   },
   {
     "id": "coastal_lighthouse",
     "num": 90,
-    "name": "מגדלור",
     "name_he": "מגדלור",
     "suggestedName": "מגדלור",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -2982,18 +3939,25 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/authentic_coastal_lighthouse.jpg",
     "associations": [
-      "מגדלור",
       "חוף",
-      "לילה",
-      "הכוונה"
+      "ים",
+      "אור"
     ],
     "everyday_associations": [
-      "מגדלור",
       "חוף",
-      "לילה",
-      "הכוונה"
+      "ים",
+      "אור"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חוף",
+      "ים",
+      "אור"
+    ],
+    "association": "חוף, ים, אור",
+    "title": "מגדלור",
+    "name": "מגדלור",
+    "userCurated": true
   },
   {
     "id": "aircraft_hangar",
@@ -3029,7 +3993,22 @@ export const STAGED_IMAGES_POOL = [
       "נסיעה",
       "חניה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "האנגר מטוסים",
+    "keywords": [
+      "האנגר מטוסים",
+      "האנגר",
+      "מטוסים",
+      "טיסה",
+      "מטוס",
+      "שדה תעופה",
+      "שמיים",
+      "חופשה",
+      "נסיעה",
+      "חניה"
+    ],
+    "userCurated": true,
+    "association": "האנגר מטוסים, האנגר, מטוסים, טיסה, מטוס, שדה תעופה, שמיים, חופשה, נסיעה, חניה"
   },
   {
     "id": "watermill_cabin",
@@ -3042,8 +4021,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/watermill_cabin.jpg",
     "associations": [
-      "טחנת מים",
-      "טחנת",
       "מים",
       "אסם",
       "תבואה",
@@ -3051,20 +4028,27 @@ export const STAGED_IMAGES_POOL = [
       "סוסים"
     ],
     "everyday_associations": [
-      "טחנת מים",
-      "טחנת",
       "מים",
       "אסם",
       "תבואה",
       "חווה",
       "סוסים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "טחנת מים",
+    "keywords": [
+      "מים",
+      "אסם",
+      "תבואה",
+      "חווה",
+      "סוסים"
+    ],
+    "userCurated": true,
+    "association": "מים, אסם, תבואה, חווה, סוסים"
   },
   {
     "id": "classic_red_barn",
     "num": 93,
-    "name": "אסם אמריקאי קלאסי",
     "name_he": "אסם אמריקאי קלאסי",
     "suggestedName": "אסם אמריקאי קלאסי",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -3072,31 +4056,29 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/authentic_classic_red_barn.jpg",
     "associations": [
-      "אסם אמריקאי קלאסי",
-      "אסם",
-      "אמריקאי",
-      "קלאסי",
-      "גשר",
-      "חבלים",
-      "תהום",
-      "אומגה"
+      "פרה",
+      "חווה",
+      "כפר"
     ],
     "everyday_associations": [
-      "אסם אמריקאי קלאסי",
-      "אסם",
-      "אמריקאי",
-      "קלאסי",
-      "גשר",
-      "חבלים",
-      "תהום",
-      "אומגה"
+      "פרה",
+      "חווה",
+      "כפר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "פרה",
+      "חווה",
+      "כפר"
+    ],
+    "association": "פרה, חווה, כפר",
+    "title": "אסם אמריקאי קלאסי",
+    "name": "אסם אמריקאי קלאסי",
+    "userCurated": true
   },
   {
     "id": "military_cemetery",
     "num": 94,
-    "name": "בית קברות צבאי",
     "name_he": "בית קברות צבאי",
     "suggestedName": "בית קברות צבאי",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -3104,26 +4086,28 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/military_cemetery.jpg",
     "associations": [
-      "בית קברות צבאי",
-      "בית",
       "קברות",
-      "צבאי",
-      "שער",
-      "ברלין",
-      "סיור",
-      "עמודים"
+      "לוויה",
+      "קבר",
+      "אזכרה"
     ],
     "everyday_associations": [
-      "בית קברות צבאי",
-      "בית",
       "קברות",
-      "צבאי",
-      "שער",
-      "ברלין",
-      "סיור",
-      "עמודים"
+      "לוויה",
+      "קבר",
+      "אזכרה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "קברות",
+      "לוויה",
+      "קבר",
+      "אזכרה"
+    ],
+    "association": "קברות, לוויה, קבר, אזכרה",
+    "title": "בית קברות צבאי",
+    "name": "בית קברות צבאי",
+    "userCurated": true
   },
   {
     "id": "abandoned_gas_station",
@@ -3155,7 +4139,20 @@ export const STAGED_IMAGES_POOL = [
       "חירום",
       "בטון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "תחנת דלק נטושה",
+    "keywords": [
+      "תחנת דלק נטושה",
+      "תחנת",
+      "דלק",
+      "נטושה",
+      "בונקר",
+      "מקלט",
+      "חירום",
+      "בטון"
+    ],
+    "userCurated": true,
+    "association": "תחנת דלק נטושה, תחנת, דלק, נטושה, בונקר, מקלט, חירום, בטון"
   },
   {
     "id": "roman_ruins_arch",
@@ -3185,12 +4182,23 @@ export const STAGED_IMAGES_POOL = [
       "נחל",
       "גלגל"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "קולוסיאום רומי",
+    "keywords": [
+      "קולוסיאום רומי",
+      "קולוסיאום",
+      "רומי",
+      "טחנה",
+      "מים",
+      "נחל",
+      "גלגל"
+    ],
+    "userCurated": true,
+    "association": "קולוסיאום רומי, קולוסיאום, רומי, טחנה, מים, נחל, גלגל"
   },
   {
     "id": "concrete_bunker",
     "num": 97,
-    "name": "בונקר בטון",
     "name_he": "בונקר בטון",
     "suggestedName": "בונקר בטון",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -3198,24 +4206,31 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/concrete_bunker.jpg",
     "associations": [
-      "בונקר בטון",
       "בונקר",
       "בטון",
-      "מזח",
-      "דייג",
-      "סירה",
-      "שקיעה"
+      "הגנה",
+      "מקלט",
+      "ממד"
     ],
     "everyday_associations": [
-      "בונקר בטון",
       "בונקר",
       "בטון",
-      "מזח",
-      "דייג",
-      "סירה",
-      "שקיעה"
+      "הגנה",
+      "מקלט",
+      "ממד"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "בונקר",
+      "בטון",
+      "הגנה",
+      "מקלט",
+      "ממד"
+    ],
+    "association": "בונקר, בטון, הגנה, מקלט, ממד",
+    "title": "בונקר בטון",
+    "name": "בונקר בטון",
+    "userCurated": true
   },
   {
     "id": "hall_of_mirrors_versailles",
@@ -3245,12 +4260,23 @@ export const STAGED_IMAGES_POOL = [
       "כרטיסים",
       "אוהדים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "ארמון ורסאי",
+    "keywords": [
+      "ארמון ורסאי",
+      "ארמון",
+      "ורסאי",
+      "איצטדיון",
+      "משחק",
+      "כרטיסים",
+      "אוהדים"
+    ],
+    "userCurated": true,
+    "association": "ארמון ורסאי, ארמון, ורסאי, איצטדיון, משחק, כרטיסים, אוהדים"
   },
   {
     "id": "neon_motel_sign",
     "num": 99,
-    "name": "פנסיון דרכים",
     "name_he": "פנסיון דרכים",
     "suggestedName": "פנסיון דרכים",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -3258,24 +4284,31 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "מבנים, אתרים וציוני דרך",
     "imageUrl": "/staged_images/pool/neon_motel_sign.jpg",
     "associations": [
-      "פנסיון דרכים",
-      "פנסיון",
-      "דרכים",
-      "סכר",
-      "חשמל",
-      "מים",
-      "הצפה"
+      "כלב",
+      "טיול",
+      "לצאת",
+      "לצאת עם",
+      "טיול עם"
     ],
     "everyday_associations": [
-      "פנסיון דרכים",
-      "פנסיון",
-      "דרכים",
-      "סכר",
-      "חשמל",
-      "מים",
-      "הצפה"
+      "כלב",
+      "טיול",
+      "לצאת",
+      "לצאת עם",
+      "טיול עם"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "כלב",
+      "טיול",
+      "לצאת",
+      "לצאת עם",
+      "טיול עם"
+    ],
+    "association": "כלב, טיול, לצאת, לצאת עם, טיול עם",
+    "title": "פנסיון דרכים",
+    "name": "פנסיון דרכים",
+    "userCurated": true
   },
   {
     "id": "airport_control_tower",
@@ -3307,7 +4340,20 @@ export const STAGED_IMAGES_POOL = [
       "המראה",
       "נחיתה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מגדל פיקוח בנמל תעופה",
+    "keywords": [
+      "מגדל פיקוח בנמל תעופה",
+      "מגדל",
+      "פיקוח",
+      "בנמל",
+      "תעופה",
+      "טיסה",
+      "המראה",
+      "נחיתה"
+    ],
+    "userCurated": true,
+    "association": "מגדל פיקוח בנמל תעופה, מגדל, פיקוח, בנמל, תעופה, טיסה, המראה, נחיתה"
   },
   {
     "id": "mona_lisa",
@@ -3337,7 +4383,19 @@ export const STAGED_IMAGES_POOL = [
       "מוזיאון",
       "ציור"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "המונה ליזה",
+    "keywords": [
+      "המונה ליזה",
+      "המונה",
+      "ליזה",
+      "חיוך",
+      "תערוכה",
+      "מוזיאון",
+      "ציור"
+    ],
+    "userCurated": true,
+    "association": "המונה ליזה, המונה, ליזה, חיוך, תערוכה, מוזיאון, ציור"
   },
   {
     "id": "the_scream",
@@ -3363,12 +4421,21 @@ export const STAGED_IMAGES_POOL = [
       "זעקה",
       "טיפול"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "הצעקה",
+    "keywords": [
+      "הצעקה",
+      "פחד",
+      "חרדה",
+      "זעקה",
+      "טיפול"
+    ],
+    "userCurated": true,
+    "association": "הצעקה, פחד, חרדה, זעקה, טיפול"
   },
   {
     "id": "the_thinker",
     "num": 103,
-    "name": "האדם החושב",
     "name_he": "האדם החושב",
     "suggestedName": "האדם החושב",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -3376,24 +4443,34 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/the_thinker_rodin_statue.jpg",
     "associations": [
-      "האדם החושב",
-      "האדם",
-      "החושב",
-      "מחשבה",
       "החלטה",
-      "פילוסופיה",
-      "ייעוץ"
+      "ייעוץ",
+      "פסל",
+      "חושב",
+      "לחשוב",
+      "מחשבה"
     ],
     "everyday_associations": [
-      "האדם החושב",
-      "האדם",
-      "החושב",
-      "מחשבה",
       "החלטה",
-      "פילוסופיה",
-      "ייעוץ"
+      "ייעוץ",
+      "פסל",
+      "חושב",
+      "לחשוב",
+      "מחשבה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "keywords": [
+      "החלטה",
+      "ייעוץ",
+      "פסל",
+      "חושב",
+      "לחשוב",
+      "מחשבה"
+    ],
+    "association": "החלטה, ייעוץ, פסל, חושב, לחשוב, מחשבה",
+    "title": "האדם החושב",
+    "name": "האדם החושב",
+    "userCurated": true
   },
   {
     "id": "statue_of_david",
@@ -3421,7 +4498,18 @@ export const STAGED_IMAGES_POOL = [
       "אימון",
       "יופי"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "פסל דוד",
+    "keywords": [
+      "פסל דוד",
+      "פסל",
+      "דוד",
+      "שיש",
+      "אימון",
+      "יופי"
+    ],
+    "userCurated": true,
+    "association": "פסל דוד, פסל, דוד, שיש, אימון, יופי"
   },
   {
     "id": "starry_night",
@@ -3449,7 +4537,18 @@ export const STAGED_IMAGES_POOL = [
       "ציור",
       "השראה"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "ליל כוכבים",
+    "keywords": [
+      "ליל כוכבים",
+      "ליל",
+      "כוכבים",
+      "לילה",
+      "ציור",
+      "השראה"
+    ],
+    "userCurated": true,
+    "association": "ליל כוכבים, ליל, כוכבים, לילה, ציור, השראה"
   },
   {
     "id": "creation_of_adam",
@@ -3479,7 +4578,19 @@ export const STAGED_IMAGES_POOL = [
       "אצבע",
       "חיבור"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "בריאת האדם",
+    "keywords": [
+      "בריאת האדם",
+      "בריאת",
+      "האדם",
+      "בריאה",
+      "אלוהים",
+      "אצבע",
+      "חיבור"
+    ],
+    "userCurated": true,
+    "association": "בריאת האדם, בריאת, האדם, בריאה, אלוהים, אצבע, חיבור"
   },
   {
     "id": "the_last_supper",
@@ -3509,7 +4620,19 @@ export const STAGED_IMAGES_POOL = [
       "לחם",
       "יין"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הסעודה האחרונה",
+    "keywords": [
+      "הסעודה האחרונה",
+      "הסעודה",
+      "האחרונה",
+      "ארוחה",
+      "שולחן",
+      "לחם",
+      "יין"
+    ],
+    "userCurated": true,
+    "association": "הסעודה האחרונה, הסעודה, האחרונה, ארוחה, שולחן, לחם, יין"
   },
   {
     "id": "the_birth_of_venus",
@@ -3539,7 +4662,19 @@ export const STAGED_IMAGES_POOL = [
       "צדפה",
       "ים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הולדת ונוס",
+    "keywords": [
+      "הולדת ונוס",
+      "הולדת",
+      "ונוס",
+      "יופי",
+      "רחצה",
+      "צדפה",
+      "ים"
+    ],
+    "userCurated": true,
+    "association": "הולדת ונוס, הולדת, ונוס, יופי, רחצה, צדפה, ים"
   },
   {
     "id": "persistence_of_memory",
@@ -3552,58 +4687,54 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/salvador_dali_melting_clocks.jpg",
     "associations": [
-      "התמדה של זיכרון",
-      "התמדה",
-      "זיכרון",
       "שעון",
       "זמן",
-      "איחור",
-      "חלום"
+      "איחור"
     ],
     "everyday_associations": [
-      "התמדה של זיכרון",
-      "התמדה",
-      "זיכרון",
       "שעון",
       "זמן",
-      "איחור",
-      "חלום"
+      "איחור"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "התמדה של זיכרון",
+    "keywords": [
+      "שעון",
+      "זמן",
+      "איחור"
+    ],
+    "userCurated": true,
+    "association": "שעון, זמן, איחור"
   },
   {
     "id": "golden_mask_tutankhamun",
     "num": 110,
-    "name": "מסכת הזהב של תות ענח' אמון",
-    "name_he": "מסכת הזהב של תות ענח' אמון",
-    "suggestedName": "מסכת הזהב של תות ענח' אמון",
+    "name": "פרעה",
+    "name_he": "פרעה",
+    "suggestedName": "פרעה",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
     "theme": "art_archeology",
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/tutankhamun.jpg",
     "associations": [
-      "מסכת הזהב של תות ענח' אמון",
-      "מסכת",
-      "הזהב",
-      "תות",
-      "ענח'",
-      "אמון",
       "זהב",
-      "תכשיט",
-      "קבר"
+      "מצרים",
+      "פסח"
     ],
     "everyday_associations": [
-      "מסכת הזהב של תות ענח' אמון",
-      "מסכת",
-      "הזהב",
-      "תות",
-      "ענח'",
-      "אמון",
       "זהב",
-      "תכשיט",
-      "קבר"
+      "מצרים",
+      "פסח"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פרעה",
+    "keywords": [
+      "זהב",
+      "מצרים",
+      "פסח"
+    ],
+    "association": "זהב, מצרים, פסח",
+    "userCurated": true
   },
   {
     "id": "venus_de_milo",
@@ -3633,7 +4764,19 @@ export const STAGED_IMAGES_POOL = [
       "מוזיאון",
       "שיש"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "ונוס ממילו",
+    "keywords": [
+      "ונוס ממילו",
+      "ונוס",
+      "ממילו",
+      "פסל",
+      "יוון",
+      "מוזיאון",
+      "שיש"
+    ],
+    "userCurated": true,
+    "association": "ונוס ממילו, ונוס, ממילו, פסל, יוון, מוזיאון, שיש"
   },
   {
     "id": "guernica_picasso",
@@ -3659,7 +4802,17 @@ export const STAGED_IMAGES_POOL = [
       "שלום",
       "מחאה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "גרניקה",
+    "keywords": [
+      "גרניקה",
+      "מלחמה",
+      "זעקה",
+      "שלום",
+      "מחאה"
+    ],
+    "userCurated": true,
+    "association": "גרניקה, מלחמה, זעקה, שלום, מחאה"
   },
   {
     "id": "american_gothic",
@@ -3685,7 +4838,17 @@ export const STAGED_IMAGES_POOL = [
       "קלשון",
       "עבודה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "התאומים",
+    "keywords": [
+      "התאומים",
+      "חווה",
+      "איכר",
+      "קלשון",
+      "עבודה"
+    ],
+    "userCurated": true,
+    "association": "התאומים, חווה, איכר, קלשון, עבודה"
   },
   {
     "id": "girl_with_pearl_earring",
@@ -3713,7 +4876,18 @@ export const STAGED_IMAGES_POOL = [
       "תכשיט",
       "מבט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הנערה עם עגיל פנינה",
+    "keywords": [
+      "הנערה עם עגיל פנינה",
+      "הנערה",
+      "עגיל",
+      "פנינה",
+      "תכשיט",
+      "מבט"
+    ],
+    "userCurated": true,
+    "association": "הנערה עם עגיל פנינה, הנערה, עגיל, פנינה, תכשיט, מבט"
   },
   {
     "id": "the_son_of_man",
@@ -3743,7 +4917,19 @@ export const STAGED_IMAGES_POOL = [
       "חליפה",
       "סוד"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "בנו של אדם",
+    "keywords": [
+      "בנו של אדם",
+      "בנו",
+      "אדם",
+      "תפוח",
+      "מגבעת",
+      "חליפה",
+      "סוד"
+    ],
+    "userCurated": true,
+    "association": "בנו של אדם, בנו, אדם, תפוח, מגבעת, חליפה, סוד"
   },
   {
     "id": "vitruvian_man",
@@ -3773,7 +4959,19 @@ export const STAGED_IMAGES_POOL = [
       "גוף",
       "איזון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "האדם הוויטרובי",
+    "keywords": [
+      "האדם הוויטרובי",
+      "האדם",
+      "הוויטרובי",
+      "אנטומיה",
+      "כושר",
+      "גוף",
+      "איזון"
+    ],
+    "userCurated": true,
+    "association": "האדם הוויטרובי, האדם, הוויטרובי, אנטומיה, כושר, גוף, איזון"
   },
   {
     "id": "campbell_soup_can",
@@ -3801,7 +4999,18 @@ export const STAGED_IMAGES_POOL = [
       "סופר",
       "ארוחה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מרק קמפבל",
+    "keywords": [
+      "מרק קמפבל",
+      "מרק",
+      "קמפבל",
+      "שימורים",
+      "סופר",
+      "ארוחה"
+    ],
+    "userCurated": true,
+    "association": "מרק קמפבל, מרק, קמפבל, שימורים, סופר, ארוחה"
   },
   {
     "id": "the_kiss_klimt",
@@ -3827,7 +5036,17 @@ export const STAGED_IMAGES_POOL = [
       "חיבוק",
       "אהבה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הנשיקה",
+    "keywords": [
+      "הנשיקה",
+      "נשיקה",
+      "רומנטיקה",
+      "חיבוק",
+      "אהבה"
+    ],
+    "userCurated": true,
+    "association": "הנשיקה, נשיקה, רומנטיקה, חיבוק, אהבה"
   },
   {
     "id": "degas_little_ballerina",
@@ -3858,7 +5077,18 @@ export const STAGED_IMAGES_POOL = [
       "אמנות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רקדנית בלט",
+    "keywords": [
+      "ריקוד",
+      "הופעה",
+      "חוג",
+      "אימון",
+      "במה",
+      "מוזיקה",
+      "אמנות"
+    ],
+    "association": "ריקוד, הופעה, חוג, אימון, במה, מוזיקה, אמנות"
   },
   {
     "id": "jackson_pollock_splatter",
@@ -3888,7 +5118,19 @@ export const STAGED_IMAGES_POOL = [
       "שיפוץ",
       "קנבס"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פחיות צבע משפריצות",
+    "keywords": [
+      "פחיות צבע משפריצות",
+      "פחיות",
+      "צבע",
+      "משפריצות",
+      "לכלוך",
+      "שיפוץ",
+      "קנבס"
+    ],
+    "userCurated": true,
+    "association": "פחיות צבע משפריצות, פחיות, צבע, משפריצות, לכלוך, שיפוץ, קנבס"
   },
   {
     "id": "sunflowers_van_gogh",
@@ -3914,7 +5156,17 @@ export const STAGED_IMAGES_POOL = [
       "זר",
       "שמחה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "החמניות",
+    "keywords": [
+      "החמניות",
+      "פרחים",
+      "אגרטל",
+      "זר",
+      "שמחה"
+    ],
+    "userCurated": true,
+    "association": "החמניות, פרחים, אגרטל, זר, שמחה"
   },
   {
     "id": "balloon_girl_banksy",
@@ -3942,7 +5194,18 @@ export const STAGED_IMAGES_POOL = [
       "תקווה",
       "קיר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "בלון ילדה",
+    "keywords": [
+      "בלון ילדה",
+      "בלון",
+      "ילדה",
+      "ילדים",
+      "תקווה",
+      "קיר"
+    ],
+    "userCurated": true,
+    "association": "בלון ילדה, בלון, ילדה, ילדים, תקווה, קיר"
   },
   {
     "id": "terracotta_army",
@@ -3974,7 +5237,20 @@ export const STAGED_IMAGES_POOL = [
       "חימר",
       "סין"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פסל החרות האוריינטלי",
+    "keywords": [
+      "פסל החרות האוריינטלי",
+      "פסל",
+      "החרות",
+      "האוריינטלי",
+      "חיילים",
+      "שמירה",
+      "חימר",
+      "סין"
+    ],
+    "userCurated": true,
+    "association": "פסל החרות האוריינטלי, פסל, החרות, האוריינטלי, חיילים, שמירה, חימר, סין"
   },
   {
     "id": "rosetta_stone",
@@ -4000,7 +5276,17 @@ export const STAGED_IMAGES_POOL = [
       "לימוד",
       "פענוח"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "רוזטה",
+    "keywords": [
+      "רוזטה",
+      "שפה",
+      "תרגום",
+      "לימוד",
+      "פענוח"
+    ],
+    "userCurated": true,
+    "association": "רוזטה, שפה, תרגום, לימוד, פענוח"
   },
   {
     "id": "cave_painting_bison",
@@ -4031,7 +5317,18 @@ export const STAGED_IMAGES_POOL = [
       "חיות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ציור מערות",
+    "keywords": [
+      "היסטוריה",
+      "אמנות",
+      "עתיק",
+      "סלע",
+      "טבע",
+      "מוזיאון",
+      "חיות"
+    ],
+    "association": "היסטוריה, אמנות, עתיק, סלע, טבע, מוזיאון, חיות"
   },
   {
     "id": "egyptian_hieroglyphs",
@@ -4061,7 +5358,19 @@ export const STAGED_IMAGES_POOL = [
       "קולנוע",
       "הישג"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הירוגליפים מצריים",
+    "keywords": [
+      "הירוגליפים מצריים",
+      "הירוגליפים",
+      "מצריים",
+      "פרס",
+      "אוסקר",
+      "קולנוע",
+      "הישג"
+    ],
+    "userCurated": true,
+    "association": "הירוגליפים מצריים, הירוגליפים, מצריים, פרס, אוסקר, קולנוע, הישג"
   },
   {
     "id": "balloon_dog_jeff_koons",
@@ -4087,7 +5396,17 @@ export const STAGED_IMAGES_POOL = [
       "מתנה",
       "יומולדת"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "כלב בלון",
+    "keywords": [
+      "כלב בלון",
+      "כלב",
+      "בלון",
+      "מתנה",
+      "יומולדת"
+    ],
+    "userCurated": true,
+    "association": "כלב בלון, כלב, בלון, מתנה, יומולדת"
   },
   {
     "id": "egyptian_sarcophagus",
@@ -4113,7 +5432,17 @@ export const STAGED_IMAGES_POOL = [
       "קונצרט",
       "מוזיקה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "סרקופג",
+    "keywords": [
+      "סרקופג",
+      "נבל",
+      "נגינה",
+      "קונצרט",
+      "מוזיקה"
+    ],
+    "userCurated": true,
+    "association": "סרקופג, נבל, נגינה, קונצרט, מוזיקה"
   },
   {
     "id": "bubble_graffiti_lettering",
@@ -4145,7 +5474,20 @@ export const STAGED_IMAGES_POOL = [
       "אגדה",
       "הנהגה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "גרפיטי של אותיות בלון",
+    "keywords": [
+      "גרפיטי של אותיות בלון",
+      "גרפיטי",
+      "אותיות",
+      "בלון",
+      "חרב",
+      "אבירים",
+      "אגדה",
+      "הנהגה"
+    ],
+    "userCurated": true,
+    "association": "גרפיטי של אותיות בלון, גרפיטי, אותיות, בלון, חרב, אבירים, אגדה, הנהגה"
   },
   {
     "id": "japanese_kanji_calligraphy",
@@ -4175,7 +5517,19 @@ export const STAGED_IMAGES_POOL = [
       "קניות",
       "סל"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "קליגרפיה יפנית",
+    "keywords": [
+      "קליגרפיה יפנית",
+      "קליגרפיה",
+      "יפנית",
+      "שפע",
+      "פירות",
+      "קניות",
+      "סל"
+    ],
+    "userCurated": true,
+    "association": "קליגרפיה יפנית, קליגרפיה, יפנית, שפע, פירות, קניות, סל"
   },
   {
     "id": "capitoline_wolf",
@@ -4207,7 +5561,20 @@ export const STAGED_IMAGES_POOL = [
       "חיתוך",
       "עבודה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פסל ברונזה של זאבה",
+    "keywords": [
+      "פסל ברונזה של זאבה",
+      "פסל",
+      "ברונזה",
+      "זאבה",
+      "גרזן",
+      "עצים",
+      "חיתוך",
+      "עבודה"
+    ],
+    "userCurated": true,
+    "association": "פסל ברונזה של זאבה, פסל, ברונזה, זאבה, גרזן, עצים, חיתוך, עבודה"
   },
   {
     "id": "crucifixion_silhouette",
@@ -4233,7 +5600,17 @@ export const STAGED_IMAGES_POOL = [
       "קארמה",
       "משחק"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הצליבה",
+    "keywords": [
+      "הצליבה",
+      "בומרנג",
+      "חזרה",
+      "קארמה",
+      "משחק"
+    ],
+    "userCurated": true,
+    "association": "הצליבה, בומרנג, חזרה, קארמה, משחק"
   },
   {
     "id": "ten_commandments_tablets",
@@ -4265,7 +5642,20 @@ export const STAGED_IMAGES_POOL = [
       "ספא",
       "רוגע"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "לוח עשרת הדיברות",
+    "keywords": [
+      "לוח עשרת הדיברות",
+      "לוח",
+      "עשרת",
+      "הדיברות",
+      "קטורת",
+      "ריח",
+      "ספא",
+      "רוגע"
+    ],
+    "userCurated": true,
+    "association": "לוח עשרת הדיברות, לוח, עשרת, הדיברות, קטורת, ריח, ספא, רוגע"
   },
   {
     "id": "golden_calf_idol",
@@ -4295,12 +5685,23 @@ export const STAGED_IMAGES_POOL = [
       "משפחה",
       "מסורת"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "עגל הזהב",
+    "keywords": [
+      "עגל הזהב",
+      "עגל",
+      "הזהב",
+      "טוטם",
+      "שבט",
+      "משפחה",
+      "מסורת"
+    ],
+    "userCurated": true,
+    "association": "עגל הזהב, עגל, הזהב, טוטם, שבט, משפחה, מסורת"
   },
   {
     "id": "great_wave_off_kanagawa",
     "num": 135,
-    "name": "הגל הגדול בסמוך לקאנאגאווה",
     "name_he": "הגל הגדול בסמוך לקאנאגאווה",
     "suggestedName": "הגל הגדול בסמוך לקאנאגאווה",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4308,33 +5709,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/great_wave_off_kanagawa.jpg",
     "associations": [
-      "הגל הגדול בסמוך לקאנאגאווה",
-      "הגל",
-      "הגדול",
-      "בסמוך",
-      "לקאנאגאווה",
-      "צלחת",
-      "חרסינה",
-      "עריכה",
-      "ארוחה"
+      "גל",
+      "ים",
+      "גלישה",
+      "לגלוש",
+      "גלשן"
     ],
     "everyday_associations": [
-      "הגל הגדול בסמוך לקאנאגאווה",
-      "הגל",
-      "הגדול",
-      "בסמוך",
-      "לקאנאגאווה",
-      "צלחת",
-      "חרסינה",
-      "עריכה",
-      "ארוחה"
+      "גל",
+      "ים",
+      "גלישה",
+      "לגלוש",
+      "גלשן"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "גל",
+      "ים",
+      "גלישה",
+      "לגלוש",
+      "גלשן"
+    ],
+    "association": "גל, ים, גלישה, לגלוש, גלשן",
+    "title": "הגל הגדול בסמוך לקאנאגאווה",
+    "name": "הגל הגדול בסמוך לקאנאגאווה",
+    "userCurated": true
   },
   {
     "id": "native_totem_pole",
     "num": 136,
-    "name": "טוטם אינדיאני",
     "name_he": "טוטם אינדיאני",
     "suggestedName": "טוטם אינדיאני",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4342,24 +5745,22 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/native_totem_pole.jpg",
     "associations": [
-      "טוטם אינדיאני",
       "טוטם",
-      "אינדיאני",
-      "שטיח",
-      "שאיבה",
-      "ניקוי",
-      "סלון"
+      "אינדיאני"
     ],
     "everyday_associations": [
-      "טוטם אינדיאני",
       "טוטם",
-      "אינדיאני",
-      "שטיח",
-      "שאיבה",
-      "ניקוי",
-      "סלון"
+      "אינדיאני"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "טוטם",
+      "אינדיאני"
+    ],
+    "association": "טוטם, אינדיאני",
+    "title": "טוטם אינדיאני",
+    "name": "טוטם אינדיאני",
+    "userCurated": true
   },
   {
     "id": "flower_thrower_banksy",
@@ -4393,7 +5794,21 @@ export const STAGED_IMAGES_POOL = [
       "זר",
       "משלוח"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מסכת הגז של בנקסי / מפגין מטיח פרחים",
+    "keywords": [
+      "מסכת הגז של בנקסי / מפגין מטיח פרחים",
+      "מסכת",
+      "הגז",
+      "בנקסי",
+      "מפגין",
+      "מטיח",
+      "פרחים",
+      "זר",
+      "משלוח"
+    ],
+    "userCurated": true,
+    "association": "מסכת הגז של בנקסי / מפגין מטיח פרחים, מסכת, הגז, בנקסי, מפגין, מטיח, פרחים, זר, משלוח"
   },
   {
     "id": "rolling_stones_tongue",
@@ -4425,7 +5840,20 @@ export const STAGED_IMAGES_POOL = [
       "שפתיים",
       "מוזיקה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "הלשון של הרולינג סטונס",
+    "keywords": [
+      "הלשון של הרולינג סטונס",
+      "הלשון",
+      "הרולינג",
+      "סטונס",
+      "רוק",
+      "הופעה",
+      "שפתיים",
+      "מוזיקה"
+    ],
+    "userCurated": true,
+    "association": "הלשון של הרולינג סטונס, הלשון, הרולינג, סטונס, רוק, הופעה, שפתיים, מוזיקה"
   },
   {
     "id": "portuguese_azulejos",
@@ -4461,7 +5889,22 @@ export const STAGED_IMAGES_POOL = [
       "צמא",
       "יובש"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "האריחי הכחולים פורטוגזיים",
+    "keywords": [
+      "האריחי הכחולים פורטוגזיים",
+      "האריחי",
+      "הכחולים",
+      "פורטוגזיים",
+      "חום",
+      "מדבר",
+      "חול",
+      "שמש",
+      "צמא",
+      "יובש"
+    ],
+    "userCurated": true,
+    "association": "האריחי הכחולים פורטוגזיים, האריחי, הכחולים, פורטוגזיים, חום, מדבר, חול, שמש, צמא, יובש"
   },
   {
     "id": "classic_snowman",
@@ -4497,12 +5940,26 @@ export const STAGED_IMAGES_POOL = [
       "גזר",
       "כפתורים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "איש השלג",
+    "keywords": [
+      "איש השלג",
+      "איש",
+      "השלג",
+      "קור",
+      "קרח",
+      "שלג",
+      "חורף",
+      "קפוא",
+      "גזר",
+      "כפתורים"
+    ],
+    "userCurated": true,
+    "association": "איש השלג, איש, השלג, קור, קרח, שלג, חורף, קפוא, גזר, כפתורים"
   },
   {
     "id": "russian_matryoshka",
     "num": 141,
-    "name": "בבושקה / מטריושקה",
     "name_he": "בבושקה / מטריושקה",
     "suggestedName": "בבושקה / מטריושקה",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4510,29 +5967,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/matryoshka_nesting_dolls.jpg",
     "associations": [
-      "בבושקה / מטריושקה",
       "בבושקה",
-      "מטריושקה",
       "בובה",
       "משפחה",
       "עץ",
       "ילדים"
     ],
     "everyday_associations": [
-      "בבושקה / מטריושקה",
       "בבושקה",
-      "מטריושקה",
       "בובה",
       "משפחה",
       "עץ",
       "ילדים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "בבושקה",
+      "בובה",
+      "משפחה",
+      "עץ",
+      "ילדים"
+    ],
+    "association": "בבושקה, בובה, משפחה, עץ, ילדים",
+    "title": "בבושקה / מטריושקה",
+    "name": "בבושקה / מטריושקה",
+    "userCurated": true
   },
   {
     "id": "japanese_folding_fan",
     "num": 142,
-    "name": "מניפה יפנית",
     "name_he": "מניפה יפנית",
     "suggestedName": "מניפה יפנית",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4541,31 +6004,24 @@ export const STAGED_IMAGES_POOL = [
     "imageUrl": "/staged_images/pool/japanese_folding_fan.jpg",
     "associations": [
       "מניפה",
-      "מניפה יפנית",
       "אוורור",
-      "קירור",
-      "רוח",
-      "קיץ",
-      "צינון",
-      "יפן",
-      "אופנה",
-      "זיעה",
-      "מזגן"
+      "רוח"
     ],
     "everyday_associations": [
       "מניפה",
-      "מניפה יפנית",
       "אוורור",
-      "קירור",
-      "רוח",
-      "קיץ",
-      "צינון",
-      "יפן",
-      "אופנה",
-      "זיעה",
-      "מזגן"
+      "רוח"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מניפה",
+      "אוורור",
+      "רוח"
+    ],
+    "association": "מניפה, אוורור, רוח",
+    "title": "מניפה יפנית",
+    "name": "מניפה יפנית",
+    "userCurated": true
   },
   {
     "id": "native_dreamcatcher",
@@ -4596,7 +6052,18 @@ export const STAGED_IMAGES_POOL = [
       "קישוט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לוכד חלומות",
+    "keywords": [
+      "שינה",
+      "לילה",
+      "מיטה",
+      "נוצות",
+      "חדר שינה",
+      "רוגע",
+      "קישוט"
+    ],
+    "association": "שינה, לילה, מיטה, נוצות, חדר שינה, רוגע, קישוט"
   },
   {
     "id": "gargoyle_stone_statue",
@@ -4622,12 +6089,21 @@ export const STAGED_IMAGES_POOL = [
       "פסל",
       "מפלצת"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "גרגויל",
+    "keywords": [
+      "גרגויל",
+      "מרזב",
+      "גג",
+      "פסל",
+      "מפלצת"
+    ],
+    "userCurated": true,
+    "association": "גרגויל, מרזב, גג, פסל, מפלצת"
   },
   {
     "id": "chess_knight_piece",
     "num": 145,
-    "name": "חייל שחמט",
     "name_he": "חייל שחמט",
     "suggestedName": "חייל שחמט",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4635,27 +6111,42 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/chess_knight_piece.jpg",
     "associations": [
-      "חייל שחמט",
       "חייל",
       "שחמט",
-      "סוס",
       "חשיבה",
-      "אסטרטגיה"
+      "אסטרטגיה",
+      "מסדר",
+      "עמידה",
+      "קרב"
     ],
     "everyday_associations": [
-      "חייל שחמט",
       "חייל",
       "שחמט",
-      "סוס",
       "חשיבה",
-      "אסטרטגיה"
+      "אסטרטגיה",
+      "מסדר",
+      "עמידה",
+      "קרב"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חייל",
+      "שחמט",
+      "חשיבה",
+      "אסטרטגיה",
+      "מסדר",
+      "עמידה",
+      "קרב"
+    ],
+    "association": "חייל, שחמט, חשיבה, אסטרטגיה, מסדר, עמידה, קרב",
+    "title": "חייל שחמט",
+    "name": "חייל שחמט",
+    "userCurated": true,
+    "aiCurated": true
   },
   {
     "id": "golden_menorah_seven",
     "num": 146,
-    "name": "מנורת שבעת הקנים",
     "name_he": "מנורת שבעת הקנים",
     "suggestedName": "מנורת שבעת הקנים",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4663,26 +6154,28 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/golden_menorah_seven.jpg",
     "associations": [
-      "מנורת שבעת הקנים",
-      "מנורת",
-      "שבעת",
-      "הקנים",
       "מנורה",
       "חנוכה",
       "זהב",
       "אור"
     ],
     "everyday_associations": [
-      "מנורת שבעת הקנים",
-      "מנורת",
-      "שבעת",
-      "הקנים",
       "מנורה",
       "חנוכה",
       "זהב",
       "אור"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מנורה",
+      "חנוכה",
+      "זהב",
+      "אור"
+    ],
+    "association": "מנורה, חנוכה, זהב, אור",
+    "title": "מנורת שבעת הקנים",
+    "name": "מנורת שבעת הקנים",
+    "userCurated": true
   },
   {
     "id": "egyptian_mummy_wraps",
@@ -4710,12 +6203,22 @@ export const STAGED_IMAGES_POOL = [
       "קבר",
       "מומיה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "תחבושת חניטה",
+    "keywords": [
+      "תחבושת חניטה",
+      "תחבושת",
+      "חניטה",
+      "רופא",
+      "קבר",
+      "מומיה"
+    ],
+    "userCurated": true,
+    "association": "תחבושת חניטה, תחבושת, חניטה, רופא, קבר, מומיה"
   },
   {
     "id": "hamsa_hand_amulet",
     "num": 148,
-    "name": "קמע חמסה",
     "name_he": "קמע חמסה",
     "suggestedName": "קמע חמסה",
     "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -4723,22 +6226,31 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "יצירות אמנות וארכיאולוגיה",
     "imageUrl": "/staged_images/pool/hamsa_hand_amulet.jpg",
     "associations": [
-      "קמע חמסה",
-      "קמע",
       "חמסה",
       "עין",
-      "מזל",
-      "ברכה"
+      "5",
+      "חמש",
+      "יד"
     ],
     "everyday_associations": [
-      "קמע חמסה",
-      "קמע",
       "חמסה",
       "עין",
-      "מזל",
-      "ברכה"
+      "5",
+      "חמש",
+      "יד"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חמסה",
+      "עין",
+      "5",
+      "חמש",
+      "יד"
+    ],
+    "association": "חמסה, עין, 5, חמש, יד",
+    "title": "קמע חמסה",
+    "name": "קמע חמסה",
+    "userCurated": true
   },
   {
     "id": "star_of_david",
@@ -4769,7 +6281,18 @@ export const STAGED_IMAGES_POOL = [
       "מסורת"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגן דוד",
+    "keywords": [
+      "ישראל",
+      "יהדות",
+      "סמל",
+      "דגל",
+      "בית כנסת",
+      "חג",
+      "מסורת"
+    ],
+    "association": "ישראל, יהדות, סמל, דגל, בית כנסת, חג, מסורת"
   },
   {
     "id": "christian_holy_cross",
@@ -4797,7 +6320,18 @@ export const STAGED_IMAGES_POOL = [
       "תפילה",
       "נצרות"
     ],
-    "is_basic": true
+    "is_basic": true,
+    "title": "צלב קלאסי",
+    "keywords": [
+      "צלב קלאסי",
+      "צלב",
+      "קלאסי",
+      "כנסייה",
+      "תפילה",
+      "נצרות"
+    ],
+    "userCurated": true,
+    "association": "צלב קלאסי, צלב, קלאסי, כנסייה, תפילה, נצרות"
   },
   {
     "id": "item_151_נורה_דולקת__מסמלת",
@@ -4828,7 +6362,18 @@ export const STAGED_IMAGES_POOL = [
       "אנרגיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נורת חשמל",
+    "keywords": [
+      "אור",
+      "רעיון",
+      "תאורה",
+      "המצאה",
+      "הברקה",
+      "מתג",
+      "אנרגיה"
+    ],
+    "association": "אור, רעיון, תאורה, המצאה, הברקה, מתג, אנרגיה"
   },
   {
     "id": "item_152_תיבת_אוצר__מסמלת",
@@ -4859,39 +6404,57 @@ export const STAGED_IMAGES_POOL = [
       "הפתעה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "תיבת אוצר",
+    "keywords": [
+      "זהב",
+      "כסף",
+      "חיסכון",
+      "יהלומים",
+      "מנעול",
+      "עושר",
+      "הפתעה"
+    ],
+    "association": "זהב, כסף, חיסכון, יהלומים, מנעול, עושר, הפתעה"
   },
   {
     "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
     "num": 153,
-    "name": "פצצה שחורה עם פתיל בוער",
-    "name_he": "פצצה שחורה עם פתיל בוער",
-    "suggestedName": "פצצה שחורה עם פתיל בוער",
+    "name_he": "מגדלור בים סוער",
+    "suggestedName": "מגדלור בים סוער",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
     "theme": "concepts_cliches",
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/authentic_item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
     "associations": [
-      "פצצה",
-      "פתיל בוער",
-      "פיצוץ",
-      "דחוף",
-      "דדליין",
-      "משבר",
-      "חירום",
-      "סכנה"
+      "אלומה",
+      "ספינה",
+      "חוף",
+      "ניווט",
+      "לילה",
+      "אזהרה"
     ],
     "everyday_associations": [
-      "פצצה",
-      "פתיל בוער",
-      "פיצוץ",
-      "דחוף",
-      "דדליין",
-      "משבר",
-      "חירום",
-      "סכנה"
+      "אלומה",
+      "ספינה",
+      "חוף",
+      "ניווט",
+      "לילה",
+      "אזהרה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אלומה",
+      "ספינה",
+      "חוף",
+      "ניווט",
+      "לילה",
+      "אזהרה"
+    ],
+    "association": "אלומה, ספינה, חוף, ניווט, לילה, אזהרה",
+    "title": "מגדלור בים סוער",
+    "name": "מגדלור בים סוער",
+    "aiCurated": true
   },
   {
     "id": "item_154_דיסקט_3_5_אינץ___מסמל",
@@ -4923,12 +6486,24 @@ export const STAGED_IMAGES_POOL = [
       "זיכרון",
       "דוס"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "דיסקט 3.5 אינץ'",
+    "keywords": [
+      "דיסקט",
+      "שמירה",
+      "גיבוי",
+      "מחשב",
+      "קובץ",
+      "רטרו",
+      "זיכרון",
+      "דוס"
+    ],
+    "userCurated": true,
+    "association": "דיסקט, שמירה, גיבוי, מחשב, קובץ, רטרו, זיכרון, דוס"
   },
   {
     "id": "item_155_זכוכית_מגדלת__מסמלת",
     "num": 155,
-    "name": "זכוכית מגדלת",
     "name_he": "זכוכית מגדלת",
     "suggestedName": "זכוכית מגדלת",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -4936,31 +6511,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_155_זכוכית_מגדלת__מסמלת.jpg",
     "associations": [
-      "זכוכית מגדלת",
-      "זכוכית מגדלת",
       "חיפוש",
       "בדיקה",
       "חקירה",
       "בלש",
-      "חוזה",
       "הגדלה"
     ],
     "everyday_associations": [
-      "זכוכית מגדלת",
-      "זכוכית מגדלת",
       "חיפוש",
       "בדיקה",
       "חקירה",
       "בלש",
-      "חוזה",
       "הגדלה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חיפוש",
+      "בדיקה",
+      "חקירה",
+      "בלש",
+      "הגדלה"
+    ],
+    "association": "חיפוש, בדיקה, חקירה, בלש, הגדלה",
+    "title": "זכוכית מגדלת",
+    "name": "זכוכית מגדלת",
+    "userCurated": true
   },
   {
     "id": "item_156_מפתח_מכני_גדול__מסמל",
     "num": 156,
-    "name": "מפתח מכני גדול",
     "name_he": "מפתח מכני גדול",
     "suggestedName": "מפתח מכני גדול",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -4968,8 +6547,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_156_מפתח_מכני_גדול__מסמל.jpg",
     "associations": [
-      "מפתח ברגים",
-      "מפתח מכני",
       "מוסך",
       "תיקון",
       "בורג",
@@ -4978,8 +6555,6 @@ export const STAGED_IMAGES_POOL = [
       "התקנה"
     ],
     "everyday_associations": [
-      "מפתח ברגים",
-      "מפתח מכני",
       "מוסך",
       "תיקון",
       "בורג",
@@ -4987,7 +6562,19 @@ export const STAGED_IMAGES_POOL = [
       "מכונאי",
       "התקנה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מוסך",
+      "תיקון",
+      "בורג",
+      "כלים",
+      "מכונאי",
+      "התקנה"
+    ],
+    "association": "מוסך, תיקון, בורג, כלים, מכונאי, התקנה",
+    "title": "מפתח מכני גדול",
+    "name": "מפתח מכני גדול",
+    "userCurated": true
   },
   {
     "id": "item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל",
@@ -5018,7 +6605,18 @@ export const STAGED_IMAGES_POOL = [
       "כלכלה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שק כסף",
+    "keywords": [
+      "בנק",
+      "חיסכון",
+      "דולר",
+      "משכורת",
+      "תשלום",
+      "עושר",
+      "כלכלה"
+    ],
+    "association": "בנק, חיסכון, דולר, משכורת, תשלום, עושר, כלכלה"
   },
   {
     "id": "item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות",
@@ -5050,12 +6648,24 @@ export const STAGED_IMAGES_POOL = [
       "תרבות",
       "כרטיסים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "מסיכות תיאטרון",
+    "keywords": [
+      "מסיכות תיאטרון",
+      "תיאטרון",
+      "הצגה",
+      "דרמה",
+      "צחוק ודמע",
+      "שחקנים",
+      "תרבות",
+      "כרטיסים"
+    ],
+    "userCurated": true,
+    "association": "מסיכות תיאטרון, תיאטרון, הצגה, דרמה, צחוק ודמע, שחקנים, תרבות, כרטיסים"
   },
   {
     "id": "item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת",
     "num": 159,
-    "name": "ענן מילים / בועת מחשבה",
     "name_he": "ענן מילים / בועת מחשבה",
     "suggestedName": "ענן מילים / בועת מחשבה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5063,29 +6673,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת.jpg",
     "associations": [
-      "בועת מחשבה",
       "מחשבה",
-      "ענן מילים",
       "רעיון",
       "קומיקס",
       "דימיון",
-      "חלום"
+      "חלום",
+      "ענן"
     ],
     "everyday_associations": [
-      "בועת מחשבה",
       "מחשבה",
-      "ענן מילים",
       "רעיון",
       "קומיקס",
       "דימיון",
-      "חלום"
+      "חלום",
+      "ענן"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מחשבה",
+      "רעיון",
+      "קומיקס",
+      "דימיון",
+      "חלום",
+      "ענן"
+    ],
+    "association": "מחשבה, רעיון, קומיקס, דימיון, חלום, ענן",
+    "title": "ענן מילים / בועת מחשבה",
+    "name": "ענן מילים / בועת מחשבה",
+    "userCurated": true
   },
   {
     "id": "item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל",
     "num": 160,
-    "name": "לב אדום שבור",
     "name_he": "לב אדום שבור",
     "suggestedName": "לב אדום שבור",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5093,28 +6712,31 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל.jpg",
     "associations": [
-      "לב שבור",
       "לב",
-      "אהבה",
+      "שבור",
       "פרידה",
-      "כאב לב",
-      "שיחה",
-      "חבר",
-      "עידוד",
-      "רומנטיקה"
+      "כאב",
+      "שיחה"
     ],
     "everyday_associations": [
-      "לב שבור",
       "לב",
-      "אהבה",
+      "שבור",
       "פרידה",
-      "כאב לב",
-      "שיחה",
-      "חבר",
-      "עידוד",
-      "רומנטיקה"
+      "כאב",
+      "שיחה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "לב",
+      "שבור",
+      "פרידה",
+      "כאב",
+      "שיחה"
+    ],
+    "association": "לב, שבור, פרידה, כאב, שיחה",
+    "title": "לב אדום שבור",
+    "name": "לב אדום שבור",
+    "userCurated": true
   },
   {
     "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
@@ -5145,12 +6767,22 @@ export const STAGED_IMAGES_POOL = [
       "מערכת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גלגלי שיניים",
+    "keywords": [
+      "מכונה",
+      "הגדרות",
+      "הנדסה",
+      "מנוע",
+      "תיקון",
+      "מפעל",
+      "מערכת"
+    ],
+    "association": "מכונה, הגדרות, הנדסה, מנוע, תיקון, מפעל, מערכת"
   },
   {
     "id": "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל",
     "num": 162,
-    "name": "כובע בוגר אוניברסיטה",
     "name_he": "כובע בוגר אוניברסיטה",
     "suggestedName": "כובע בוגר אוניברסיטה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5158,26 +6790,34 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל.jpg",
     "associations": [
-      "כובע בוגר אוניברסיטה",
-      "כובע בוגר",
       "תואר",
       "לימודים",
       "אוניברסיטה",
-      "סיום תואר",
       "טקס",
-      "תעודה"
+      "תעודה",
+      "כובע"
     ],
     "everyday_associations": [
-      "כובע בוגר אוניברסיטה",
-      "כובע בוגר",
       "תואר",
       "לימודים",
       "אוניברסיטה",
-      "סיום תואר",
       "טקס",
-      "תעודה"
+      "תעודה",
+      "כובע"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "תואר",
+      "לימודים",
+      "אוניברסיטה",
+      "טקס",
+      "תעודה",
+      "כובע"
+    ],
+    "association": "תואר, לימודים, אוניברסיטה, טקס, תעודה, כובע",
+    "title": "כובע בוגר אוניברסיטה",
+    "name": "כובע בוגר אוניברסיטה",
+    "userCurated": true
   },
   {
     "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
@@ -5208,12 +6848,22 @@ export const STAGED_IMAGES_POOL = [
       "החלטה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מאזני משפט",
+    "keywords": [
+      "צדק",
+      "חוק",
+      "עורך דין",
+      "שופט",
+      "איזון",
+      "משקל",
+      "החלטה"
+    ],
+    "association": "צדק, חוק, עורך דין, שופט, איזון, משקל, החלטה"
   },
   {
     "id": "item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל",
     "num": 164,
-    "name": "חץ במרכז המטרה",
     "name_he": "חץ במרכז המטרה",
     "suggestedName": "חץ במרכז המטרה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5221,31 +6871,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל.jpg",
     "associations": [
-      "חץ במטרה",
       "מטרה",
-      "בול בפוני",
       "יעד",
       "מכירות",
       "הצלחה",
       "קליעה",
-      "בונוס"
+      "מרכז"
     ],
     "everyday_associations": [
-      "חץ במטרה",
       "מטרה",
-      "בול בפוני",
       "יעד",
       "מכירות",
       "הצלחה",
       "קליעה",
-      "בונוס"
+      "מרכז"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מטרה",
+      "יעד",
+      "מכירות",
+      "הצלחה",
+      "קליעה",
+      "מרכז"
+    ],
+    "association": "מטרה, יעד, מכירות, הצלחה, קליעה, מרכז",
+    "title": "חץ במרכז המטרה",
+    "name": "חץ במרכז המטרה",
+    "userCurated": true
   },
   {
     "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
     "num": 165,
-    "name": "מד חום כספית",
     "name_he": "מד חום כספית",
     "suggestedName": "מד חום כספית",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5255,35 +6912,48 @@ export const STAGED_IMAGES_POOL = [
     "associations": [
       "מדחום",
       "מד חום",
-      "מד חום כספית",
-      "תרמומטר",
       "חום",
       "חום גבוה",
       "טמפרטורה",
       "רופא",
       "מרפאה",
       "בדיקה",
-      "מחלה"
+      "מחלה",
+      "חולה"
     ],
     "everyday_associations": [
       "מדחום",
       "מד חום",
-      "מד חום כספית",
-      "תרמומטר",
       "חום",
       "חום גבוה",
       "טמפרטורה",
       "רופא",
       "מרפאה",
       "בדיקה",
-      "מחלה"
+      "מחלה",
+      "חולה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מדחום",
+      "מד חום",
+      "חום",
+      "חום גבוה",
+      "טמפרטורה",
+      "רופא",
+      "מרפאה",
+      "בדיקה",
+      "מחלה",
+      "חולה"
+    ],
+    "association": "מדחום, מד חום, חום, חום גבוה, טמפרטורה, רופא, מרפאה, בדיקה, מחלה, חולה",
+    "title": "מד חום כספית",
+    "name": "מד חום כספית",
+    "userCurated": true
   },
   {
     "id": "item_166_שעון_חול__חצי_מלא___מסמל",
     "num": 166,
-    "name": "שעון חול",
     "name_he": "שעון חול",
     "suggestedName": "שעון חול",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5291,33 +6961,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_166_שעון_חול__חצי_מלא___מסמל.jpg",
     "associations": [
-      "שעון חול",
-      "שעון",
-      "זמן",
       "דדליין",
-      "דקות",
       "איחור",
-      "חול",
-      "סבלנות",
-      "פגישה"
+      "פגישה",
+      "שעון",
+      "זמן"
     ],
     "everyday_associations": [
-      "שעון חול",
-      "שעון",
-      "זמן",
       "דדליין",
-      "דקות",
       "איחור",
-      "חול",
-      "סבלנות",
-      "פגישה"
+      "פגישה",
+      "שעון",
+      "זמן"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "דדליין",
+      "איחור",
+      "פגישה",
+      "שעון",
+      "זמן"
+    ],
+    "association": "דדליין, איחור, פגישה, שעון, זמן",
+    "title": "שעון חול",
+    "name": "שעון חול",
+    "userCurated": true
   },
   {
     "id": "item_167_שטיח_אדום_ארוך__מסמל",
     "num": 167,
-    "name": "שטיח אדום",
     "name_he": "שטיח אדום",
     "suggestedName": "שטיח אדום",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5325,35 +6997,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_167_שטיח_אדום_ארוך__מסמל.jpg",
     "associations": [
-      "שטיח אדום",
       "שטיח",
       "אירוע",
       "טקס",
-      "פרמיירה",
       "הוליווד",
-      "VIP",
-      "אורחים",
       "גאלה",
-      "כוכבים"
+      "הזמנה"
     ],
     "everyday_associations": [
-      "שטיח אדום",
       "שטיח",
       "אירוע",
       "טקס",
-      "פרמיירה",
       "הוליווד",
-      "VIP",
-      "אורחים",
       "גאלה",
-      "כוכבים"
+      "הזמנה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "שטיח",
+      "אירוע",
+      "טקס",
+      "הוליווד",
+      "גאלה",
+      "הזמנה"
+    ],
+    "association": "שטיח, אירוע, טקס, הוליווד, גאלה, הזמנה",
+    "title": "שטיח אדום",
+    "name": "שטיח אדום",
+    "userCurated": true
   },
   {
     "id": "item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות",
     "num": 168,
-    "name": "קוביות משחק",
     "name_he": "קוביות משחק",
     "suggestedName": "קוביות משחק",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5361,9 +7036,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות.jpg",
     "associations": [
-      "קוביות משחק",
-      "קוביות",
-      "משחק",
       "הימורים",
       "מזל",
       "קזינו",
@@ -5371,21 +7043,28 @@ export const STAGED_IMAGES_POOL = [
       "הטלה"
     ],
     "everyday_associations": [
-      "קוביות משחק",
-      "קוביות",
-      "משחק",
       "הימורים",
       "מזל",
       "קזינו",
       "ערב משחקים",
       "הטלה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "הימורים",
+      "מזל",
+      "קזינו",
+      "ערב משחקים",
+      "הטלה"
+    ],
+    "association": "הימורים, מזל, קזינו, ערב משחקים, הטלה",
+    "title": "קוביות משחק",
+    "name": "קוביות משחק",
+    "userCurated": true
   },
   {
     "id": "item_169_גביע_זהב_עם_ידיות__מסמל",
     "num": 169,
-    "name": "גביע זהב",
     "name_he": "גביע זהב",
     "suggestedName": "גביע זהב",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5393,28 +7072,34 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_169_גביע_זהב_עם_ידיות__מסמל.jpg",
     "associations": [
-      "גביע זהב",
-      "גביע",
-      "ניצחון",
       "אליפות",
       "פרס",
       "תחרות",
-      "מקום ראשון",
       "זהב",
-      "הישג"
+      "הישג",
+      "טורניר"
     ],
     "everyday_associations": [
-      "גביע זהב",
-      "גביע",
-      "ניצחון",
       "אליפות",
       "פרס",
       "תחרות",
-      "מקום ראשון",
       "זהב",
-      "הישג"
+      "הישג",
+      "טורניר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אליפות",
+      "פרס",
+      "תחרות",
+      "זהב",
+      "הישג",
+      "טורניר"
+    ],
+    "association": "אליפות, פרס, תחרות, זהב, הישג, טורניר",
+    "title": "גביע זהב",
+    "name": "גביע זהב",
+    "userCurated": true
   },
   {
     "id": "item_170_עוגן_ברזל_שחור__מסמל",
@@ -5427,8 +7112,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_170_עוגן_ברזל_שחור__מסמל.jpg",
     "associations": [
-      "עוגן ברזל",
-      "עוגן",
       "ספינה",
       "יציבות",
       "ביטחון",
@@ -5437,8 +7120,6 @@ export const STAGED_IMAGES_POOL = [
       "נמל"
     ],
     "everyday_associations": [
-      "עוגן ברזל",
-      "עוגן",
       "ספינה",
       "יציבות",
       "ביטחון",
@@ -5446,12 +7127,22 @@ export const STAGED_IMAGES_POOL = [
       "עגינה",
       "נמל"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "עוגן ברזל שחור",
+    "keywords": [
+      "ספינה",
+      "יציבות",
+      "ביטחון",
+      "ים",
+      "עגינה",
+      "נמל"
+    ],
+    "userCurated": true,
+    "association": "ספינה, יציבות, ביטחון, ים, עגינה, נמל"
   },
   {
     "id": "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל",
     "num": 171,
-    "name": "שריר זרוע",
     "name_he": "שריר זרוע",
     "suggestedName": "שריר זרוע",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5459,8 +7150,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל.jpg",
     "associations": [
-      "שריר זרוע",
-      "שריר",
       "אימון",
       "כושר",
       "חדר כושר",
@@ -5469,8 +7158,6 @@ export const STAGED_IMAGES_POOL = [
       "ספורט"
     ],
     "everyday_associations": [
-      "שריר זרוע",
-      "שריר",
       "אימון",
       "כושר",
       "חדר כושר",
@@ -5478,39 +7165,58 @@ export const STAGED_IMAGES_POOL = [
       "כוח",
       "ספורט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אימון",
+      "כושר",
+      "חדר כושר",
+      "משקולות",
+      "כוח",
+      "ספורט"
+    ],
+    "association": "אימון, כושר, חדר כושר, משקולות, כוח, ספורט",
+    "title": "שריר זרוע",
+    "name": "שריר זרוע",
+    "userCurated": true
   },
   {
     "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
     "num": 172,
-    "name": "מנעול סגור ומפתח",
-    "name_he": "מנעול סגור ומפתח",
-    "suggestedName": "מנעול סגור ומפתח",
+    "name_he": "מנעול ומפתח",
+    "suggestedName": "מנעול ומפתח",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
     "theme": "concepts_cliches",
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/authentic_item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
     "associations": [
-      "מנעול ומפתח",
-      "מנעול",
-      "מפתח",
       "נעילה",
       "אבטחה",
-      "ביטחון",
-      "שמירה",
-      "פרטיות"
+      "כספת",
+      "סיסמה",
+      "דלת",
+      "שמירה"
     ],
     "everyday_associations": [
-      "מנעול ומפתח",
-      "מנעול",
-      "מפתח",
       "נעילה",
       "אבטחה",
-      "ביטחון",
-      "שמירה",
-      "פרטיות"
+      "כספת",
+      "סיסמה",
+      "דלת",
+      "שמירה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "נעילה",
+      "אבטחה",
+      "כספת",
+      "סיסמה",
+      "דלת",
+      "שמירה"
+    ],
+    "association": "נעילה, אבטחה, כספת, סיסמה, דלת, שמירה",
+    "title": "מנעול ומפתח",
+    "name": "מנעול ומפתח",
+    "aiCurated": true
   },
   {
     "id": "item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת",
@@ -5541,12 +7247,22 @@ export const STAGED_IMAGES_POOL = [
       "כאב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "תרופה",
+    "keywords": [
+      "רופא",
+      "בית מרקחת",
+      "בריאות",
+      "כדור",
+      "מרשם",
+      "ויטמין",
+      "כאב"
+    ],
+    "association": "רופא, בית מרקחת, בריאות, כדור, מרשם, ויטמין, כאב"
   },
   {
     "id": "item_174_שלט_עצור__מתומן_אדום___מסמל",
     "num": 174,
-    "name": "שלט עצור",
     "name_he": "שלט עצור",
     "suggestedName": "שלט עצור",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5554,31 +7270,26 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_174_שלט_עצור__מתומן_אדום___מסמל.jpg",
     "associations": [
-      "שלט עצור",
-      "שלט עצור",
-      "תמרור",
       "עצור",
-      "כביש",
-      "נהיגה",
-      "זהירות",
-      "צומת"
+      "זהירות"
     ],
     "everyday_associations": [
-      "שלט עצור",
-      "שלט עצור",
-      "תמרור",
       "עצור",
-      "כביש",
-      "נהיגה",
-      "זהירות",
-      "צומת"
+      "זהירות"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "עצור",
+      "זהירות"
+    ],
+    "association": "עצור, זהירות",
+    "title": "שלט עצור",
+    "name": "שלט עצור",
+    "userCurated": true
   },
   {
     "id": "item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת",
     "num": 175,
-    "name": "יונה לבנה עם ענף זית",
     "name_he": "יונה לבנה עם ענף זית",
     "suggestedName": "יונה לבנה עם ענף זית",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5586,29 +7297,32 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת.jpg",
     "associations": [
-      "יונה לבנה",
-      "יונת שלום",
-      "ענף זית",
       "שלום",
       "תקווה",
       "ציפור",
       "שלווה"
     ],
     "everyday_associations": [
-      "יונה לבנה",
-      "יונת שלום",
-      "ענף זית",
       "שלום",
       "תקווה",
       "ציפור",
       "שלווה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "שלום",
+      "תקווה",
+      "ציפור",
+      "שלווה"
+    ],
+    "association": "שלום, תקווה, ציפור, שלווה",
+    "title": "יונה לבנה עם ענף זית",
+    "name": "יונה לבנה עם ענף זית",
+    "userCurated": true
   },
   {
     "id": "item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל",
     "num": 176,
-    "name": "סימן שאלה",
     "name_he": "סימן שאלה",
     "suggestedName": "סימן שאלה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5616,29 +7330,29 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל.jpg",
     "associations": [
-      "סימן שאלה",
       "שאלה",
       "ספק",
-      "חקירה",
-      "בירור",
-      "סקרנות",
-      "תהייה"
+      "בירור"
     ],
     "everyday_associations": [
-      "סימן שאלה",
       "שאלה",
       "ספק",
-      "חקירה",
-      "בירור",
-      "סקרנות",
-      "תהייה"
+      "בירור"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "שאלה",
+      "ספק",
+      "בירור"
+    ],
+    "association": "שאלה, ספק, בירור",
+    "title": "סימן שאלה",
+    "name": "סימן שאלה",
+    "userCurated": true
   },
   {
     "id": "item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל",
     "num": 177,
-    "name": "סימן קריאה באזהרה",
     "name_he": "סימן קריאה באזהרה",
     "suggestedName": "סימן קריאה באזהרה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5646,29 +7360,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל.jpg",
     "associations": [
-      "סימן קריאה",
       "אזהרה",
       "זהירות",
       "סכנה",
-      "תשומת לב",
       "משולש צהוב",
       "דחוף"
     ],
     "everyday_associations": [
-      "סימן קריאה",
       "אזהרה",
       "זהירות",
       "סכנה",
-      "תשומת לב",
       "משולש צהוב",
       "דחוף"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אזהרה",
+      "זהירות",
+      "סכנה",
+      "משולש צהוב",
+      "דחוף"
+    ],
+    "association": "אזהרה, זהירות, סכנה, משולש צהוב, דחוף",
+    "title": "סימן קריאה באזהרה",
+    "name": "סימן קריאה באזהרה",
+    "userCurated": true
   },
   {
     "id": "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת",
     "num": 178,
-    "name": "גולגולת ועצמות מוצלבות",
     "name_he": "גולגולת ועצמות מוצלבות",
     "suggestedName": "גולגולת ועצמות מוצלבות",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5676,29 +7396,41 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת.jpg",
     "associations": [
-      "גולגולת ועצמות",
       "גולגולת",
       "רעל",
       "שודדי ים",
       "מוות",
       "סכנה",
-      "אזהרה"
+      "אזהרה",
+      "פיראט"
     ],
     "everyday_associations": [
-      "גולגולת ועצמות",
       "גולגולת",
       "רעל",
       "שודדי ים",
       "מוות",
       "סכנה",
-      "אזהרה"
+      "אזהרה",
+      "פיראט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "גולגולת",
+      "רעל",
+      "שודדי ים",
+      "מוות",
+      "סכנה",
+      "אזהרה",
+      "פיראט"
+    ],
+    "association": "גולגולת, רעל, שודדי ים, מוות, סכנה, אזהרה, פיראט",
+    "title": "גולגולת ועצמות מוצלבות",
+    "name": "גולגולת ועצמות מוצלבות",
+    "userCurated": true
   },
   {
     "id": "item_179_מטוס_נייר_מקופל__מסמל",
     "num": 179,
-    "name": "מטוס נייר מקופל",
     "name_he": "מטוס נייר מקופל",
     "suggestedName": "מטוס נייר מקופל",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5706,31 +7438,29 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_179_מטוס_נייר_מקופל__מסמל.jpg",
     "associations": [
-      "מטוס נייר",
-      "מטוס נייר",
       "מכתב",
       "הודעה",
-      "קיפול",
-      "תעופה",
-      "ילדות",
       "מסר"
     ],
     "everyday_associations": [
-      "מטוס נייר",
-      "מטוס נייר",
       "מכתב",
       "הודעה",
-      "קיפול",
-      "תעופה",
-      "ילדות",
       "מסר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מכתב",
+      "הודעה",
+      "מסר"
+    ],
+    "association": "מכתב, הודעה, מסר",
+    "title": "מטוס נייר מקופל",
+    "name": "מטוס נייר מקופל",
+    "userCurated": true
   },
   {
     "id": "item_180_כתר_זהב_עם_יהלומים__מסמל",
     "num": 180,
-    "name": "כתר זהב עם יהלומים",
     "name_he": "כתר זהב עם יהלומים",
     "suggestedName": "כתר זהב עם יהלומים",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5738,31 +7468,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_180_כתר_זהב_עם_יהלומים__מסמל.jpg",
     "associations": [
-      "כתר זהב",
       "כתר",
       "מלך",
       "מלכה",
       "מלוכה",
       "יהלומים",
-      "ארמון",
-      "שלטון"
+      "ארמון"
     ],
     "everyday_associations": [
-      "כתר זהב",
       "כתר",
       "מלך",
       "מלכה",
       "מלוכה",
       "יהלומים",
-      "ארמון",
-      "שלטון"
+      "ארמון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "כתר",
+      "מלך",
+      "מלכה",
+      "מלוכה",
+      "יהלומים",
+      "ארמון"
+    ],
+    "association": "כתר, מלך, מלכה, מלוכה, יהלומים, ארמון",
+    "title": "כתר זהב עם יהלומים",
+    "name": "כתר זהב עם יהלומים",
+    "userCurated": true
   },
   {
     "id": "item_181_עניבת_פרפר_שחורה__פפיון___מסמלת",
     "num": 181,
-    "name": "עניבת פרפר (פפיון)",
     "name_he": "עניבת פרפר (פפיון)",
     "suggestedName": "עניבת פרפר (פפיון)",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5770,8 +7507,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_181_עניבת_פרפר_שחורה__פפיון___מסמלת.jpg",
     "associations": [
-      "פפיון",
-      "עניבת פרפר",
       "אירוע",
       "חליפה",
       "אלגנטי",
@@ -5780,8 +7515,6 @@ export const STAGED_IMAGES_POOL = [
       "נשף"
     ],
     "everyday_associations": [
-      "פפיון",
-      "עניבת פרפר",
       "אירוע",
       "חליפה",
       "אלגנטי",
@@ -5789,7 +7522,19 @@ export const STAGED_IMAGES_POOL = [
       "טוקסידו",
       "נשף"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אירוע",
+      "חליפה",
+      "אלגנטי",
+      "חתונה",
+      "טוקסידו",
+      "נשף"
+    ],
+    "association": "אירוע, חליפה, אלגנטי, חתונה, טוקסידו, נשף",
+    "title": "עניבת פרפר (פפיון)",
+    "name": "עניבת פרפר (פפיון)",
+    "userCurated": true
   },
   {
     "id": "item_182_פרסה_של_סוס__מסמלת",
@@ -5802,29 +7547,25 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_182_פרסה_של_סוס__מסמלת.jpg",
     "associations": [
-      "פרסת סוס",
-      "פרסה",
-      "מזל",
-      "סוס",
       "ברזל",
-      "חווה",
-      "מזל טוב"
+      "חווה"
     ],
     "everyday_associations": [
-      "פרסת סוס",
-      "פרסה",
-      "מזל",
-      "סוס",
       "ברזל",
-      "חווה",
-      "מזל טוב"
+      "חווה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "פרסת סוס",
+    "keywords": [
+      "ברזל",
+      "חווה"
+    ],
+    "userCurated": true,
+    "association": "ברזל, חווה"
   },
   {
     "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
     "num": 183,
-    "name": "תלתן ארבעה עלים",
     "name_he": "תלתן ארבעה עלים",
     "suggestedName": "תלתן ארבעה עלים",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5832,29 +7573,44 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/authentic_item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
     "associations": [
-      "תלתן ארבעה עלים",
-      "תלתן",
       "מזל",
-      "טבע",
       "ירוק",
-      "אירלנד",
-      "ברכה"
+      "הגרלה",
+      "טבע",
+      "נדיר",
+      "הצלחה",
+      "ארבע",
+      "4"
     ],
     "everyday_associations": [
-      "תלתן ארבעה עלים",
-      "תלתן",
       "מזל",
-      "טבע",
       "ירוק",
-      "אירלנד",
-      "ברכה"
+      "הגרלה",
+      "טבע",
+      "נדיר",
+      "הצלחה",
+      "ארבע",
+      "4"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מזל",
+      "ירוק",
+      "הגרלה",
+      "טבע",
+      "נדיר",
+      "הצלחה",
+      "ארבע",
+      "4"
+    ],
+    "association": "מזל, ירוק, הגרלה, טבע, נדיר, הצלחה, ארבע, 4",
+    "title": "תלתן ארבעה עלים",
+    "name": "תלתן ארבעה עלים",
+    "aiCurated": true
   },
   {
     "id": "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל",
     "num": 184,
-    "name": "קופידון",
     "name_he": "קופידון",
     "suggestedName": "קופידון",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5862,29 +7618,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל.jpg",
     "associations": [
-      "קופידון",
       "חץ וקשת",
       "אהבה",
       "רומנטיקה",
-      "ולנטיין",
       "מלאך",
-      "זוגיות"
+      "זוגיות",
+      "דייט"
     ],
     "everyday_associations": [
-      "קופידון",
       "חץ וקשת",
       "אהבה",
       "רומנטיקה",
-      "ולנטיין",
       "מלאך",
-      "זוגיות"
+      "זוגיות",
+      "דייט"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חץ וקשת",
+      "אהבה",
+      "רומנטיקה",
+      "מלאך",
+      "זוגיות",
+      "דייט"
+    ],
+    "association": "חץ וקשת, אהבה, רומנטיקה, מלאך, זוגיות, דייט",
+    "title": "קופידון",
+    "name": "קופידון",
+    "userCurated": true
   },
   {
     "id": "item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל",
     "num": 185,
-    "name": "מלאך ושטן על הכתף",
     "name_he": "מלאך ושטן על הכתף",
     "suggestedName": "מלאך ושטן על הכתף",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5892,7 +7657,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל.jpg",
     "associations": [
-      "מלאך ושטן",
       "מצפון",
       "התלבטות",
       "דילמה",
@@ -5901,7 +7665,6 @@ export const STAGED_IMAGES_POOL = [
       "החלטה"
     ],
     "everyday_associations": [
-      "מלאך ושטן",
       "מצפון",
       "התלבטות",
       "דילמה",
@@ -5909,12 +7672,23 @@ export const STAGED_IMAGES_POOL = [
       "טוב ורע",
       "החלטה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מצפון",
+      "התלבטות",
+      "דילמה",
+      "מוסר",
+      "טוב ורע",
+      "החלטה"
+    ],
+    "association": "מצפון, התלבטות, דילמה, מוסר, טוב ורע, החלטה",
+    "title": "מלאך ושטן על הכתף",
+    "name": "מלאך ושטן על הכתף",
+    "userCurated": true
   },
   {
     "id": "item_186_טביעת_אצבע_שחורה__דיו___מסמלת",
     "num": 186,
-    "name": "טביעת אצבע שחורה",
     "name_he": "טביעת אצבע שחורה",
     "suggestedName": "טביעת אצבע שחורה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5922,8 +7696,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_186_טביעת_אצבע_שחורה__דיו___מסמלת.jpg",
     "associations": [
-      "טביעת אצבע",
-      "טביעת אצבע",
       "זיהוי",
       "ביומטרי",
       "משטרה",
@@ -5931,20 +7703,28 @@ export const STAGED_IMAGES_POOL = [
       "אבטחה"
     ],
     "everyday_associations": [
-      "טביעת אצבע",
-      "טביעת אצבע",
       "זיהוי",
       "ביומטרי",
       "משטרה",
       "זיהוי פלילי",
       "אבטחה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "זיהוי",
+      "ביומטרי",
+      "משטרה",
+      "זיהוי פלילי",
+      "אבטחה"
+    ],
+    "association": "זיהוי, ביומטרי, משטרה, זיהוי פלילי, אבטחה",
+    "title": "טביעת אצבע שחורה",
+    "name": "טביעת אצבע שחורה",
+    "userCurated": true
   },
   {
     "id": "item_187_עקבות_רגליים_בחול__מסמלות",
     "num": 187,
-    "name": "עקבות בחול",
     "name_he": "עקבות בחול",
     "suggestedName": "עקבות בחול",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5952,8 +7732,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_187_עקבות_רגליים_בחול__מסמלות.jpg",
     "associations": [
-      "עקבות בחול",
-      "עקבות",
       "חול",
       "צעדים",
       "חוף",
@@ -5962,8 +7740,6 @@ export const STAGED_IMAGES_POOL = [
       "מסלול"
     ],
     "everyday_associations": [
-      "עקבות בחול",
-      "עקבות",
       "חול",
       "צעדים",
       "חוף",
@@ -5971,12 +7747,23 @@ export const STAGED_IMAGES_POOL = [
       "מדבר",
       "מסלול"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "חול",
+      "צעדים",
+      "חוף",
+      "הליכה",
+      "מדבר",
+      "מסלול"
+    ],
+    "association": "חול, צעדים, חוף, הליכה, מדבר, מסלול",
+    "title": "עקבות בחול",
+    "name": "עקבות בחול",
+    "userCurated": true
   },
   {
     "id": "item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל",
     "num": 188,
-    "name": "שבב אלקטרוני (צ'יפ)",
     "name_he": "שבב אלקטרוני (צ'יפ)",
     "suggestedName": "שבב אלקטרוני (צ'יפ)",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5984,7 +7771,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל.jpg",
     "associations": [
-      "שבב אלקטרוני",
       "צ'יפ",
       "מעבד",
       "טכנולוגיה",
@@ -5994,7 +7780,6 @@ export const STAGED_IMAGES_POOL = [
       "לוח אם"
     ],
     "everyday_associations": [
-      "שבב אלקטרוני",
       "צ'יפ",
       "מעבד",
       "טכנולוגיה",
@@ -6003,12 +7788,24 @@ export const STAGED_IMAGES_POOL = [
       "חומרה",
       "לוח אם"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "צ'יפ",
+      "מעבד",
+      "טכנולוגיה",
+      "מחשב",
+      "הייטק",
+      "חומרה",
+      "לוח אם"
+    ],
+    "association": "צ'יפ, מעבד, טכנולוגיה, מחשב, הייטק, חומרה, לוח אם",
+    "title": "שבב אלקטרוני (צ'יפ)",
+    "name": "שבב אלקטרוני (צ'יפ)",
+    "userCurated": true
   },
   {
     "id": "item_189_פאזל__חתיכה_אחת_חסרה___מסמלת",
     "num": 189,
-    "name": "פאזל (חתיכה חסרה)",
     "name_he": "פאזל (חתיכה חסרה)",
     "suggestedName": "פאזל (חתיכה חסרה)",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6016,29 +7813,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_189_פאזל__חתיכה_אחת_חסרה___מסמלת.jpg",
     "associations": [
-      "פאזל",
-      "חתיכה חסרה",
-      "פאזל",
       "פתרון",
       "הרכבה",
       "משחק",
-      "חשיבה"
+      "חשיבה",
+      "חסר"
     ],
     "everyday_associations": [
-      "פאזל",
-      "חתיכה חסרה",
-      "פאזל",
       "פתרון",
       "הרכבה",
       "משחק",
-      "חשיבה"
+      "חשיבה",
+      "חסר"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "פתרון",
+      "הרכבה",
+      "משחק",
+      "חשיבה",
+      "חסר"
+    ],
+    "association": "פתרון, הרכבה, משחק, חשיבה, חסר",
+    "title": "פאזל (חתיכה חסרה)",
+    "name": "פאזל (חתיכה חסרה)",
+    "userCurated": true
   },
   {
     "id": "item_190_סיכת_נעץ_משרדית__אדומה___מסמלת",
     "num": 190,
-    "name": "נעץ משרדי אדום",
     "name_he": "נעץ משרדי אדום",
     "suggestedName": "נעץ משרדי אדום",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6046,29 +7849,38 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_190_סיכת_נעץ_משרדית__אדומה___מסמלת.jpg",
     "associations": [
-      "נעץ משרדי",
       "נעץ",
       "לוח מודעות",
-      "תלייה",
       "משרד",
       "פתק",
-      "תזכורת"
+      "תזכורת",
+      "מודעה"
     ],
     "everyday_associations": [
-      "נעץ משרדי",
       "נעץ",
       "לוח מודעות",
-      "תלייה",
       "משרד",
       "פתק",
-      "תזכורת"
+      "תזכורת",
+      "מודעה"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "נעץ",
+      "לוח מודעות",
+      "משרד",
+      "פתק",
+      "תזכורת",
+      "מודעה"
+    ],
+    "association": "נעץ, לוח מודעות, משרד, פתק, תזכורת, מודעה",
+    "title": "נעץ משרדי אדום",
+    "name": "נעץ משרדי אדום",
+    "userCurated": true
   },
   {
     "id": "item_191_עגלת_קניות_מסורתית__מסמלת",
     "num": 191,
-    "name": "עגלת קניות",
     "name_he": "עגלת קניות",
     "suggestedName": "עגלת קניות",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6076,8 +7888,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_191_עגלת_קניות_מסורתית__מסמלת.jpg",
     "associations": [
-      "עגלת קניות",
-      "עגלה",
       "סופר",
       "סופרמרקט",
       "קניות",
@@ -6085,20 +7895,28 @@ export const STAGED_IMAGES_POOL = [
       "שוק"
     ],
     "everyday_associations": [
-      "עגלת קניות",
-      "עגלה",
       "סופר",
       "סופרמרקט",
       "קניות",
       "מצרכים",
       "שוק"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "סופר",
+      "סופרמרקט",
+      "קניות",
+      "מצרכים",
+      "שוק"
+    ],
+    "association": "סופר, סופרמרקט, קניות, מצרכים, שוק",
+    "title": "עגלת קניות",
+    "name": "עגלת קניות",
+    "userCurated": true
   },
   {
     "id": "item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל",
     "num": 192,
-    "name": "פח אשפה",
     "name_he": "פח אשפה",
     "suggestedName": "פח אשפה",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6106,26 +7924,28 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל.jpg",
     "associations": [
-      "פח אשפה",
-      "פח",
-      "זבל",
       "אשפה",
       "ניקיון",
-      "סדר",
-      "מיחזור",
-      "רחוב"
+      "זבל",
+      "גרוע"
     ],
     "everyday_associations": [
-      "פח אשפה",
-      "פח",
-      "זבל",
       "אשפה",
       "ניקיון",
-      "סדר",
-      "מיחזור",
-      "רחוב"
+      "זבל",
+      "גרוע"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "אשפה",
+      "ניקיון",
+      "זבל",
+      "גרוע"
+    ],
+    "association": "אשפה, ניקיון, זבל, גרוע",
+    "title": "פח אשפה",
+    "name": "פח אשפה",
+    "userCurated": true
   },
   {
     "id": "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל",
@@ -6155,12 +7975,23 @@ export const STAGED_IMAGES_POOL = [
       "הזדהות",
       "סרט צהוב"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "title": "סרט מודעות",
+    "keywords": [
+      "סרט מודעות",
+      "סרט ורוד",
+      "סרט מודעות",
+      "תמיכה",
+      "בריאות",
+      "הזדהות",
+      "סרט צהוב"
+    ],
+    "userCurated": true,
+    "association": "סרט מודעות, סרט ורוד, סרט מודעות, תמיכה, בריאות, הזדהות, סרט צהוב"
   },
   {
     "id": "item_194_כדור_בדולח_על_מפה_כהה__מסמל",
     "num": 194,
-    "name": "כדור בדולח",
     "name_he": "כדור בדולח",
     "suggestedName": "כדור בדולח",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6168,29 +7999,29 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_194_כדור_בדולח_על_מפה_כהה__מסמל.jpg",
     "associations": [
-      "כדור בדולח",
-      "כדור בדולח",
       "עתיד",
-      "קריאה בעתיד",
-      "קוסם",
-      "מיסטיקה",
-      "נבואה"
+      "נבואה",
+      "כדור"
     ],
     "everyday_associations": [
-      "כדור בדולח",
-      "כדור בדולח",
       "עתיד",
-      "קריאה בעתיד",
-      "קוסם",
-      "מיסטיקה",
-      "נבואה"
+      "נבואה",
+      "כדור"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "עתיד",
+      "נבואה",
+      "כדור"
+    ],
+    "association": "עתיד, נבואה, כדור",
+    "title": "כדור בדולח",
+    "name": "כדור בדולח",
+    "userCurated": true
   },
   {
     "id": "item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת",
     "num": 195,
-    "name": "מזוודת עור וינטג'",
     "name_he": "מזוודת עור וינטג'",
     "suggestedName": "מזוודת עור וינטג'",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6198,8 +8029,6 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת.jpg",
     "associations": [
-      "מזוודת עור וינטג'",
-      "מזוודה",
       "טיסה",
       "נסיעה",
       "חופשה",
@@ -6208,8 +8037,6 @@ export const STAGED_IMAGES_POOL = [
       "טיול"
     ],
     "everyday_associations": [
-      "מזוודת עור וינטג'",
-      "מזוודה",
       "טיסה",
       "נסיעה",
       "חופשה",
@@ -6217,12 +8044,23 @@ export const STAGED_IMAGES_POOL = [
       "אריזה",
       "טיול"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "טיסה",
+      "נסיעה",
+      "חופשה",
+      "שדה תעופה",
+      "אריזה",
+      "טיול"
+    ],
+    "association": "טיסה, נסיעה, חופשה, שדה תעופה, אריזה, טיול",
+    "title": "מזוודת עור וינטג'",
+    "name": "מזוודת עור וינטג'",
+    "userCurated": true
   },
   {
     "id": "item_196_מטאטא_זרדים_ישן__מסמל",
     "num": 196,
-    "name": "מטאטא זרדים",
     "name_he": "מטאטא זרדים",
     "suggestedName": "מטאטא זרדים",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6230,29 +8068,35 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_196_מטאטא_זרדים_ישן__מסמל.jpg",
     "associations": [
-      "מטאטא זרדים",
       "מטאטא",
       "מכשפה",
       "אגדות",
       "טאטוא",
-      "ניקיון",
-      "חצר"
+      "ניקיון"
     ],
     "everyday_associations": [
-      "מטאטא זרדים",
       "מטאטא",
       "מכשפה",
       "אגדות",
       "טאטוא",
-      "ניקיון",
-      "חצר"
+      "ניקיון"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מטאטא",
+      "מכשפה",
+      "אגדות",
+      "טאטוא",
+      "ניקיון"
+    ],
+    "association": "מטאטא, מכשפה, אגדות, טאטוא, ניקיון",
+    "title": "מטאטא זרדים",
+    "name": "מטאטא זרדים",
+    "userCurated": true
   },
   {
     "id": "item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל",
     "num": 197,
-    "name": "כובע קוסמים ושפן",
     "name_he": "כובע קוסמים ושפן",
     "suggestedName": "כובע קוסמים ושפן",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6260,29 +8104,32 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל.jpg",
     "associations": [
-      "כובע קוסמים ושפן",
-      "קוסם",
-      "שפן",
       "קסם",
       "מופע",
       "שליפה",
       "אחיזת עיניים"
     ],
     "everyday_associations": [
-      "כובע קוסמים ושפן",
-      "קוסם",
-      "שפן",
       "קסם",
       "מופע",
       "שליפה",
       "אחיזת עיניים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "קסם",
+      "מופע",
+      "שליפה",
+      "אחיזת עיניים"
+    ],
+    "association": "קסם, מופע, שליפה, אחיזת עיניים",
+    "title": "כובע קוסמים ושפן",
+    "name": "כובע קוסמים ושפן",
+    "userCurated": true
   },
   {
     "id": "item_198_נוצה_טבולה_בקסת_דיו__מסמלת",
     "num": 198,
-    "name": "נוצה וקסת דיו",
     "name_he": "נוצה וקסת דיו",
     "suggestedName": "נוצה וקסת דיו",
     "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -6290,28 +8137,31 @@ export const STAGED_IMAGES_POOL = [
     "theme_he": "קלישאות ויזואליות ומושגים",
     "imageUrl": "/staged_images/pool/item_198_נוצה_טבולה_בקסת_דיו__מסמלת.jpg",
     "associations": [
-      "נוצה וקסת דיו",
-      "נוצה",
-      "דיו",
-      "קסת דיו",
       "מכתב",
       "כתיבה",
       "מגילה",
-      "סופר",
-      "הודעה"
+      "הודעה",
+      "לכתוב"
     ],
     "everyday_associations": [
-      "נוצה וקסת דיו",
-      "נוצה",
-      "דיו",
-      "קסת דיו",
       "מכתב",
       "כתיבה",
       "מגילה",
-      "סופר",
-      "הודעה"
+      "הודעה",
+      "לכתוב"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "מכתב",
+      "כתיבה",
+      "מגילה",
+      "הודעה",
+      "לכתוב"
+    ],
+    "association": "מכתב, כתיבה, מגילה, הודעה, לכתוב",
+    "title": "נוצה וקסת דיו",
+    "name": "נוצה וקסת דיו",
+    "userCurated": true
   },
   {
     "id": "item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל",
@@ -6342,7 +8192,18 @@ export const STAGED_IMAGES_POOL = [
       "מבחן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ספר פתוח",
+    "keywords": [
+      "קריאה",
+      "לימודים",
+      "אקדמיה",
+      "דפים",
+      "ידע",
+      "סיפור",
+      "מבחן"
+    ],
+    "association": "קריאה, לימודים, אקדמיה, דפים, ידע, סיפור, מבחן"
   },
   {
     "id": "item_200_קולב_בגדים_ממתכת__מסמל",
@@ -6373,7 +8234,18 @@ export const STAGED_IMAGES_POOL = [
       "סידור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קולב מתכת",
+    "keywords": [
+      "בגדים",
+      "ארון",
+      "כביסה",
+      "גיהוץ",
+      "ניקוי יבש",
+      "חולצה",
+      "סידור"
+    ],
+    "association": "בגדים, ארון, כביסה, גיהוץ, ניקוי יבש, חולצה, סידור"
   },
   {
     "id": "item_201_לימוזינה_שחורה_ארוכה",
@@ -6406,7 +8278,19 @@ export const STAGED_IMAGES_POOL = [
       "עשיר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לימוזינה",
+    "keywords": [
+      "חתונה",
+      "אירוע",
+      "יוקרה",
+      "נשף",
+      "מסיבה",
+      "נהג",
+      "שמפניה",
+      "עשיר"
+    ],
+    "association": "חתונה, אירוע, יוקרה, נשף, מסיבה, נהג, שמפניה, עשיר"
   },
   {
     "id": "item_202_מונית_צהובה_ניו_יורקית",
@@ -6439,7 +8323,19 @@ export const STAGED_IMAGES_POOL = [
       "איחור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מונית צהובה",
+    "keywords": [
+      "נסיעה",
+      "נהג",
+      "מונה",
+      "ניו יורק",
+      "פקק",
+      "עיר",
+      "טיפ",
+      "איחור"
+    ],
+    "association": "נסיעה, נהג, מונה, ניו יורק, פקק, עיר, טיפ, איחור"
   },
   {
     "id": "item_203_אוטובוס_קומותיים_אדום",
@@ -6472,7 +8368,19 @@ export const STAGED_IMAGES_POOL = [
       "טיול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אוטובוס קומותיים",
+    "keywords": [
+      "לונדון",
+      "נסיעה",
+      "תחנה",
+      "תיירות",
+      "כרטיס",
+      "נוסעים",
+      "סיור",
+      "טיול"
+    ],
+    "association": "לונדון, נסיעה, תחנה, תיירות, כרטיס, נוסעים, סיור, טיול"
   },
   {
     "id": "item_204_רכבת_קיטור_ישנה",
@@ -6505,7 +8413,19 @@ export const STAGED_IMAGES_POOL = [
       "טיול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רכבת קיטור",
+    "keywords": [
+      "מסילה",
+      "קטר",
+      "תחנה",
+      "נסיעה",
+      "פחם",
+      "עשן",
+      "נוסטלגיה",
+      "טיול"
+    ],
+    "association": "מסילה, קטר, תחנה, נסיעה, פחם, עשן, נוסטלגיה, טיול"
   },
   {
     "id": "item_205_אופנוע_הארלי_דיווידסון",
@@ -6538,7 +8458,19 @@ export const STAGED_IMAGES_POOL = [
       "ביטוח"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אופנוע הארלי",
+    "keywords": [
+      "קסדה",
+      "מוסך",
+      "טסט",
+      "רכיבה",
+      "כביש",
+      "מנוע",
+      "מהירות",
+      "ביטוח"
+    ],
+    "association": "קסדה, מוסך, טסט, רכיבה, כביש, מנוע, מהירות, ביטוח"
   },
   {
     "id": "item_206_ספינת_פיראטים",
@@ -6569,7 +8501,18 @@ export const STAGED_IMAGES_POOL = [
       "הרפתקה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ספינת פיראטים",
+    "keywords": [
+      "שודדי ים",
+      "אוצר",
+      "עוגן",
+      "מפרש",
+      "הפלגה",
+      "תוכי",
+      "הרפתקה"
+    ],
+    "association": "שודדי ים, אוצר, עוגן, מפרש, הפלגה, תוכי, הרפתקה"
   },
   {
     "id": "item_207_מעבורת_חלל",
@@ -6602,7 +8545,19 @@ export const STAGED_IMAGES_POOL = [
       "טכנולוגיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מעבורת חלל",
+    "keywords": [
+      "שיגור",
+      "אסטרונאוט",
+      "טיל",
+      "לוויין",
+      "מדע",
+      "ירח",
+      "שמיים",
+      "טכנולוגיה"
+    ],
+    "association": "שיגור, אסטרונאוט, טיל, לוויין, מדע, ירח, שמיים, טכנולוגיה"
   },
   {
     "id": "item_208_מטוס_ג_מבו",
@@ -6635,7 +8590,19 @@ export const STAGED_IMAGES_POOL = [
       "אריזה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מטוס ג'מבו",
+    "keywords": [
+      "טיסה",
+      "חופשה",
+      "שדה תעופה",
+      "דרכון",
+      "מזוודה",
+      "חו\"ל",
+      "נתב\"ג",
+      "אריזה"
+    ],
+    "association": "טיסה, חופשה, שדה תעופה, דרכון, מזוודה, חו\"ל, נתב\"ג, אריזה"
   },
   {
     "id": "item_209_גונדולה_ונציאנית",
@@ -6668,7 +8635,19 @@ export const STAGED_IMAGES_POOL = [
       "זוגיות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גונדולה",
+    "keywords": [
+      "ונציה",
+      "איטליה",
+      "שייט",
+      "רומנטיקה",
+      "חופשה",
+      "משוט",
+      "תעלה",
+      "זוגיות"
+    ],
+    "association": "ונציה, איטליה, שייט, רומנטיקה, חופשה, משוט, תעלה, זוגיות"
   },
   {
     "id": "item_210_צפלין",
@@ -6701,7 +8680,19 @@ export const STAGED_IMAGES_POOL = [
       "טיסה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צפלין",
+    "keywords": [
+      "תעופה",
+      "שמיים",
+      "ריחוף",
+      "בלון",
+      "תצפית",
+      "גובה",
+      "אוויר",
+      "טיסה"
+    ],
+    "association": "תעופה, שמיים, ריחוף, בלון, תצפית, גובה, אוויר, טיסה"
   },
   {
     "id": "item_211_כדור_פורח_צבעוני",
@@ -6734,7 +8725,19 @@ export const STAGED_IMAGES_POOL = [
       "זריחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור פורח",
+    "keywords": [
+      "ריחוף",
+      "שמיים",
+      "סלסלה",
+      "גובה",
+      "טיול",
+      "נוף",
+      "חופשה",
+      "זריחה"
+    ],
+    "association": "ריחוף, שמיים, סלסלה, גובה, טיול, נוף, חופשה, זריחה"
   },
   {
     "id": "item_212_צוללת_צהובה",
@@ -6767,7 +8770,19 @@ export const STAGED_IMAGES_POOL = [
       "אוקיינוס"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צוללת צהובה",
+    "keywords": [
+      "צלילה",
+      "עומק",
+      "מצולות",
+      "דגים",
+      "אלמוגים",
+      "חמצן",
+      "שייט",
+      "אוקיינוס"
+    ],
+    "association": "צלילה, עומק, מצולות, דגים, אלמוגים, חמצן, שייט, אוקיינוס"
   },
   {
     "id": "item_213_טרקטור_חקלאי_ירוק",
@@ -6800,7 +8815,19 @@ export const STAGED_IMAGES_POOL = [
       "עבודה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טרקטור",
+    "keywords": [
+      "חקלאות",
+      "שדה",
+      "מושב",
+      "קיבוץ",
+      "חריש",
+      "אדמה",
+      "קציר",
+      "עבודה"
+    ],
+    "association": "חקלאות, שדה, מושב, קיבוץ, חריש, אדמה, קציר, עבודה"
   },
   {
     "id": "item_214_ניידת_משטרה_קלאסית",
@@ -6833,7 +8860,19 @@ export const STAGED_IMAGES_POOL = [
       "חירום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ניידת משטרה",
+    "keywords": [
+      "שוטר",
+      "סירנה",
+      "דוח",
+      "חוק",
+      "מרדף",
+      "אבטחה",
+      "בדיקה",
+      "חירום"
+    ],
+    "association": "שוטר, סירנה, דוח, חוק, מרדף, אבטחה, בדיקה, חירום"
   },
   {
     "id": "item_215_כבאית_אדומה",
@@ -6866,7 +8905,19 @@ export const STAGED_IMAGES_POOL = [
       "סירנה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כבאית",
+    "keywords": [
+      "שריפה",
+      "כיבוי אש",
+      "סולם",
+      "חירום",
+      "צינור",
+      "הצלה",
+      "מים",
+      "סירנה"
+    ],
+    "association": "שריפה, כיבוי אש, סולם, חירום, צינור, הצלה, מים, סירנה"
   },
   {
     "id": "item_216_אמבולנס_לבן",
@@ -6899,7 +8950,19 @@ export const STAGED_IMAGES_POOL = [
       "מד\"א"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אמבולנס",
+    "keywords": [
+      "רפואה",
+      "חירום",
+      "בית חולים",
+      "רופא",
+      "חובש",
+      "פציעה",
+      "עזרה",
+      "מד\"א"
+    ],
+    "association": "רפואה, חירום, בית חולים, רופא, חובש, פציעה, עזרה, מד\"א"
   },
   {
     "id": "item_217_כרכרת_סוסים_מלכותית",
@@ -6932,7 +8995,19 @@ export const STAGED_IMAGES_POOL = [
       "פאר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כרכרת סוסים",
+    "keywords": [
+      "מלוכה",
+      "ארמון",
+      "נשף",
+      "אגדה",
+      "חתונה",
+      "מלכה",
+      "רכיבה",
+      "פאר"
+    ],
+    "association": "מלוכה, ארמון, נשף, אגדה, חתונה, מלכה, רכיבה, פאר"
   },
   {
     "id": "item_218_ג_יפ_צבאי_פתוח",
@@ -6949,23 +9024,35 @@ export const STAGED_IMAGES_POOL = [
       "מדבר",
       "צבא",
       "מילואים",
-      "בוץ",
+      "מסדר",
+      "בסיס",
       "ניווט",
-      "טבע",
-      "מוסך"
+      "חיילים"
     ],
     "everyday_associations": [
       "טיול",
       "מדבר",
       "צבא",
       "מילואים",
-      "בוץ",
+      "מסדר",
+      "בסיס",
       "ניווט",
-      "טבע",
-      "מוסך"
+      "חיילים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ג'יפ שטח",
+    "keywords": [
+      "טיול",
+      "מדבר",
+      "צבא",
+      "מילואים",
+      "מסדר",
+      "בסיס",
+      "ניווט",
+      "חיילים"
+    ],
+    "association": "טיול, מדבר, צבא, מילואים, מסדר, בסיס, ניווט, חיילים"
   },
   {
     "id": "item_219_קטנוע_וספה_איטלקי",
@@ -6998,7 +9085,19 @@ export const STAGED_IMAGES_POOL = [
       "נסיעה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קטנוע וספה",
+    "keywords": [
+      "שליחות",
+      "משלוח",
+      "פקקים",
+      "קסדה",
+      "עיר",
+      "חניה",
+      "איטליה",
+      "נסיעה"
+    ],
+    "association": "שליחות, משלוח, פקקים, קסדה, עיר, חניה, איטליה, נסיעה"
   },
   {
     "id": "item_220_ספינת_טיטאניק",
@@ -7031,7 +9130,19 @@ export const STAGED_IMAGES_POOL = [
       "סיפון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טיטאניק",
+    "keywords": [
+      "אונייה",
+      "קרחון",
+      "הפלגה",
+      "אוקיינוס",
+      "סרט",
+      "טביעה",
+      "קפטן",
+      "סיפון"
+    ],
+    "association": "אונייה, קרחון, הפלגה, אוקיינוס, סרט, טביעה, קפטן, סיפון"
   },
   {
     "id": "item_221_משאית_זבל",
@@ -7064,7 +9175,19 @@ export const STAGED_IMAGES_POOL = [
       "סדר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משאית זבל",
+    "keywords": [
+      "ניקיון",
+      "אשפה",
+      "מחזור",
+      "פח",
+      "עירייה",
+      "בוקר",
+      "פינוי",
+      "סדר"
+    ],
+    "association": "ניקיון, אשפה, מחזור, פח, עירייה, בוקר, פינוי, סדר"
   },
   {
     "id": "item_222_רכבל",
@@ -7097,7 +9220,19 @@ export const STAGED_IMAGES_POOL = [
       "קרון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רכבל",
+    "keywords": [
+      "חרמון",
+      "סקי",
+      "הרים",
+      "גובה",
+      "נוף",
+      "חופשה",
+      "טיול",
+      "קרון"
+    ],
+    "association": "חרמון, סקי, הרים, גובה, נוף, חופשה, טיול, קרון"
   },
   {
     "id": "item_223_קורקינט_פשוט_לילדים",
@@ -7130,7 +9265,19 @@ export const STAGED_IMAGES_POOL = [
       "נסיעה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קורקינט",
+    "keywords": [
+      "ילדים",
+      "פארק",
+      "קסדה",
+      "רכיבה",
+      "משחק",
+      "מדרכה",
+      "גלגלים",
+      "נסיעה"
+    ],
+    "association": "ילדים, פארק, קסדה, רכיבה, משחק, מדרכה, גלגלים, נסיעה"
   },
   {
     "id": "item_224_מכונית_מרוץ_פורמולה_1",
@@ -7163,7 +9310,19 @@ export const STAGED_IMAGES_POOL = [
       "דלק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונית מרוץ",
+    "keywords": [
+      "מהירות",
+      "מסלול",
+      "נהיגה",
+      "אליפות",
+      "תחרות",
+      "ניצחון",
+      "מוסך",
+      "דלק"
+    ],
+    "association": "מהירות, מסלול, נהיגה, אליפות, תחרות, ניצחון, מוסך, דלק"
   },
   {
     "id": "item_225_רכבת_קליע_יפנית",
@@ -7196,7 +9355,19 @@ export const STAGED_IMAGES_POOL = [
       "טכנולוגיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רכבת קליע",
+    "keywords": [
+      "יפן",
+      "מהירות",
+      "נסיעה",
+      "דייקנות",
+      "טוקיו",
+      "תחנה",
+      "מסילה",
+      "טכנולוגיה"
+    ],
+    "association": "יפן, מהירות, נסיעה, דייקנות, טוקיו, תחנה, מסילה, טכנולוגיה"
   },
   {
     "id": "item_226_הליקופטר_צבאי",
@@ -7229,7 +9400,19 @@ export const STAGED_IMAGES_POOL = [
       "אוויר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מסוק קרב",
+    "keywords": [
+      "טייס",
+      "צבא",
+      "טיסה",
+      "שמיים",
+      "מילואים",
+      "חילוץ",
+      "בסיס",
+      "אוויר"
+    ],
+    "association": "טייס, צבא, טיסה, שמיים, מילואים, חילוץ, בסיס, אוויר"
   },
   {
     "id": "item_227_רכב_שטח_מפלצתי",
@@ -7262,7 +9445,19 @@ export const STAGED_IMAGES_POOL = [
       "צמיגים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רכב מפלצת",
+    "keywords": [
+      "גלגלים",
+      "אקסטרים",
+      "מופע",
+      "כוח",
+      "מנוע",
+      "שטח",
+      "מוסך",
+      "צמיגים"
+    ],
+    "association": "גלגלים, אקסטרים, מופע, כוח, מנוע, שטח, מוסך, צמיגים"
   },
   {
     "id": "item_228_סקייטבורד",
@@ -7295,7 +9490,19 @@ export const STAGED_IMAGES_POOL = [
       "ספורט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סקייטבורד",
+    "keywords": [
+      "פארק",
+      "רמפה",
+      "נוער",
+      "גלגלים",
+      "אימון",
+      "קסדה",
+      "קפיצה",
+      "ספורט"
+    ],
+    "association": "פארק, רמפה, נוער, גלגלים, אימון, קסדה, קפיצה, ספורט"
   },
   {
     "id": "item_229_רולרבליידס",
@@ -7328,7 +9535,19 @@ export const STAGED_IMAGES_POOL = [
       "אימון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רולרבליידס",
+    "keywords": [
+      "החלקה",
+      "פארק",
+      "טיילת",
+      "ספורט",
+      "כושר",
+      "גלגלים",
+      "קסדה",
+      "אימון"
+    ],
+    "association": "החלקה, פארק, טיילת, ספורט, כושר, גלגלים, קסדה, אימון"
   },
   {
     "id": "item_230_רכב_שלג",
@@ -7361,7 +9580,19 @@ export const STAGED_IMAGES_POOL = [
       "טיול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אופנוע שלג",
+    "keywords": [
+      "חורף",
+      "קור",
+      "חרמון",
+      "הרים",
+      "חופשה",
+      "סקי",
+      "קרח",
+      "טיול"
+    ],
+    "association": "חורף, קור, חרמון, הרים, חופשה, סקי, קרח, טיול"
   },
   {
     "id": "item_231_מפרשית___יאכטה_לבנה",
@@ -7394,7 +9625,19 @@ export const STAGED_IMAGES_POOL = [
       "אוקיינוס"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "יאכטה",
+    "keywords": [
+      "הפלגה",
+      "מרינה",
+      "חופשה",
+      "שייט",
+      "נופש",
+      "מפרש",
+      "סיפון",
+      "אוקיינוס"
+    ],
+    "association": "הפלגה, מרינה, חופשה, שייט, נופש, מפרש, סיפון, אוקיינוס"
   },
   {
     "id": "item_232_רכב_גולף_קטן",
@@ -7427,7 +9670,19 @@ export const STAGED_IMAGES_POOL = [
       "פנאי"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קלאב קאר",
+    "keywords": [
+      "גולף",
+      "דשא",
+      "מגרש",
+      "מלון",
+      "נופש",
+      "נסיעה",
+      "קיבוץ",
+      "פנאי"
+    ],
+    "association": "גולף, דשא, מגרש, מלון, נופש, נסיעה, קיבוץ, פנאי"
   },
   {
     "id": "item_233_דחפור",
@@ -7460,7 +9715,19 @@ export const STAGED_IMAGES_POOL = [
       "תשתית"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "דחפור",
+    "keywords": [
+      "בנייה",
+      "שיפוץ",
+      "עפר",
+      "הריסה",
+      "טרקטור",
+      "עבודה",
+      "חול",
+      "תשתית"
+    ],
+    "association": "בנייה, שיפוץ, עפר, הריסה, טרקטור, עבודה, חול, תשתית"
   },
   {
     "id": "item_234_מנוף_בנייה_ענק",
@@ -7493,7 +9760,19 @@ export const STAGED_IMAGES_POOL = [
       "הרמה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מנוף בנייה",
+    "keywords": [
+      "מגדל",
+      "נדל\"ן",
+      "שיפוץ",
+      "גובה",
+      "הנדסה",
+      "דירה",
+      "פועלים",
+      "הרמה"
+    ],
+    "association": "מגדל, נדל\"ן, שיפוץ, גובה, הנדסה, דירה, פועלים, הרמה"
   },
   {
     "id": "item_235_טנק_מרכבה___פנצר",
@@ -7509,24 +9788,36 @@ export const STAGED_IMAGES_POOL = [
       "צבא",
       "שריון",
       "מילואים",
-      "ביטחון",
+      "מסדר",
+      "חיילים",
       "תותח",
-      "לוחם",
       "בסיס",
-      "הגנה"
+      "מפקד"
     ],
     "everyday_associations": [
       "צבא",
       "שריון",
       "מילואים",
-      "ביטחון",
+      "מסדר",
+      "חיילים",
       "תותח",
-      "לוחם",
       "בסיס",
-      "הגנה"
+      "מפקד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טנק",
+    "keywords": [
+      "צבא",
+      "שריון",
+      "מילואים",
+      "מסדר",
+      "חיילים",
+      "תותח",
+      "בסיס",
+      "מפקד"
+    ],
+    "association": "צבא, שריון, מילואים, מסדר, חיילים, תותח, בסיס, מפקד"
   },
   {
     "id": "item_236_רכב_סגוויי",
@@ -7559,7 +9850,19 @@ export const STAGED_IMAGES_POOL = [
       "איזון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סגוויי",
+    "keywords": [
+      "סיור",
+      "טיילת",
+      "תיירות",
+      "גלגלים",
+      "חשמלי",
+      "נסיעה",
+      "עיר",
+      "איזון"
+    ],
+    "association": "סיור, טיילת, תיירות, גלגלים, חשמלי, נסיעה, עיר, איזון"
   },
   {
     "id": "item_237_ריקשה_ממונעת",
@@ -7592,7 +9895,19 @@ export const STAGED_IMAGES_POOL = [
       "שוק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ריקשה",
+    "keywords": [
+      "הודו",
+      "תאילנד",
+      "טיול",
+      "מונית",
+      "מזרח",
+      "חופשה",
+      "נסיעה",
+      "שוק"
+    ],
+    "association": "הודו, תאילנד, טיול, מונית, מזרח, חופשה, נסיעה, שוק"
   },
   {
     "id": "item_238_קייאק",
@@ -7625,7 +9940,19 @@ export const STAGED_IMAGES_POOL = [
       "ספורט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קייאק",
+    "keywords": [
+      "חתירה",
+      "ירדן",
+      "מים",
+      "משוט",
+      "שייט",
+      "טיול",
+      "צפון",
+      "ספורט"
+    ],
+    "association": "חתירה, ירדן, מים, משוט, שייט, טיול, צפון, ספורט"
   },
   {
     "id": "item_239_רחפת",
@@ -7656,7 +9983,18 @@ export const STAGED_IMAGES_POOL = [
       "הפלגה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רחפת",
+    "keywords": [
+      "מים",
+      "חוף",
+      "שייט",
+      "מנוע",
+      "אוויר",
+      "מהירות",
+      "הפלגה"
+    ],
+    "association": "מים, חוף, שייט, מנוע, אוויר, מהירות, הפלגה"
   },
   {
     "id": "item_240_ג_ט_סקי",
@@ -7689,7 +10027,19 @@ export const STAGED_IMAGES_POOL = [
       "מים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ג'ט סקי",
+    "keywords": [
+      "אילת",
+      "חוף",
+      "קיץ",
+      "גלים",
+      "חופשה",
+      "מהירות",
+      "שייט",
+      "מים"
+    ],
+    "association": "אילת, חוף, קיץ, גלים, חופשה, מהירות, שייט, מים"
   },
   {
     "id": "item_241_אופני_פני_פארת_ינג",
@@ -7722,7 +10072,19 @@ export const STAGED_IMAGES_POOL = [
       "כושר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אופניים עתיקים",
+    "keywords": [
+      "רכיבה",
+      "גלגל",
+      "היסטוריה",
+      "וינטג'",
+      "פדלים",
+      "מוזיאון",
+      "רטרו",
+      "כושר"
+    ],
+    "association": "רכיבה, גלגל, היסטוריה, וינטג', פדלים, מוזיאון, רטרו, כושר"
   },
   {
     "id": "item_242_מכונית_חיפושית",
@@ -7755,7 +10117,19 @@ export const STAGED_IMAGES_POOL = [
       "ביטוח"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונית חיפושית",
+    "keywords": [
+      "פולקסווגן",
+      "מוסך",
+      "אספנות",
+      "רטרו",
+      "נסיעה",
+      "טסט",
+      "חניה",
+      "ביטוח"
+    ],
+    "association": "פולקסווגן, מוסך, אספנות, רטרו, נסיעה, טסט, חניה, ביטוח"
   },
   {
     "id": "item_243_קלנועית",
@@ -7788,7 +10162,19 @@ export const STAGED_IMAGES_POOL = [
       "עזרה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קלנועית",
+    "keywords": [
+      "סבא",
+      "סבתא",
+      "קניות",
+      "מכולת",
+      "קיבוץ",
+      "ניידות",
+      "נסיעה",
+      "עזרה"
+    ],
+    "association": "סבא, סבתא, קניות, מכולת, קיבוץ, ניידות, נסיעה, עזרה"
   },
   {
     "id": "item_244_רכבת_הרים_לונה_פארק",
@@ -7821,7 +10207,19 @@ export const STAGED_IMAGES_POOL = [
       "כיף"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רכבת הרים",
+    "keywords": [
+      "לונה פארק",
+      "אדרנלין",
+      "בילוי",
+      "חופש",
+      "ילדים",
+      "פחד",
+      "צרחות",
+      "כיף"
+    ],
+    "association": "לונה פארק, אדרנלין, בילוי, חופש, ילדים, פחד, צרחות, כיף"
   },
   {
     "id": "item_245_רכב_פורד_מודל_t",
@@ -7854,7 +10252,19 @@ export const STAGED_IMAGES_POOL = [
       "נסיעה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונית עתיקה",
+    "keywords": [
+      "היסטוריה",
+      "מוזיאון",
+      "אספנות",
+      "מוסך",
+      "רטרו",
+      "גלגלים",
+      "מנוע",
+      "נסיעה"
+    ],
+    "association": "היסטוריה, מוזיאון, אספנות, מוסך, רטרו, גלגלים, מנוע, נסיעה"
   },
   {
     "id": "item_246_ספינת_משא___מכולות",
@@ -7887,7 +10297,19 @@ export const STAGED_IMAGES_POOL = [
       "עגורן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אוניית משא",
+    "keywords": [
+      "נמל",
+      "מכולות",
+      "משלוח",
+      "ייבוא",
+      "סחורה",
+      "הובלה",
+      "מסחר",
+      "עגורן"
+    ],
+    "association": "נמל, מכולות, משלוח, ייבוא, סחורה, הובלה, מסחר, עגורן"
   },
   {
     "id": "item_247_משאית_סמי_טריילר_אמריקאית",
@@ -7920,7 +10342,19 @@ export const STAGED_IMAGES_POOL = [
       "קרטונים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משאית הובלה",
+    "keywords": [
+      "מעבר דירה",
+      "מטען",
+      "כביש",
+      "נהג",
+      "אריזה",
+      "לוגיסטיקה",
+      "דלק",
+      "קרטונים"
+    ],
+    "association": "מעבר דירה, מטען, כביש, נהג, אריזה, לוגיסטיקה, דלק, קרטונים"
   },
   {
     "id": "item_248_רכב_קמפינג",
@@ -7953,7 +10387,19 @@ export const STAGED_IMAGES_POOL = [
       "נסיעה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קרוואן",
+    "keywords": [
+      "טיול",
+      "חופשה",
+      "קמפינג",
+      "טבע",
+      "מנגל",
+      "משפחה",
+      "לינה",
+      "נסיעה"
+    ],
+    "association": "טיול, חופשה, קמפינג, טבע, מנגל, משפחה, לינה, נסיעה"
   },
   {
     "id": "item_249_רכב_גופה",
@@ -7984,7 +10430,18 @@ export const STAGED_IMAGES_POOL = [
       "קבר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונית לוויות",
+    "keywords": [
+      "בית קברות",
+      "אזכרה",
+      "אבל",
+      "קדיש",
+      "טקס",
+      "זיכרון",
+      "קבר"
+    ],
+    "association": "בית קברות, אזכרה, אבל, קדיש, טקס, זיכרון, קבר"
   },
   {
     "id": "item_250_עגלת_תינוק_קלאסית",
@@ -8017,7 +10474,19 @@ export const STAGED_IMAGES_POOL = [
       "משפחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עגלת תינוק",
+    "keywords": [
+      "חיתולים",
+      "מוצץ",
+      "בייביסיטר",
+      "טיפת חלב",
+      "בקבוק",
+      "הורות",
+      "פעוטון",
+      "משפחה"
+    ],
+    "association": "חיתולים, מוצץ, בייביסיטר, טיפת חלב, בקבוק, הורות, פעוטון, משפחה"
   },
   {
     "id": "item_251_קקטוס_סאגוארו",
@@ -8050,7 +10519,19 @@ export const STAGED_IMAGES_POOL = [
       "בצורת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קקטוס",
+    "keywords": [
+      "עציץ",
+      "מדבר",
+      "קוצים",
+      "משתלה",
+      "השקיה",
+      "חום",
+      "צמח",
+      "בצורת"
+    ],
+    "association": "עציץ, מדבר, קוצים, משתלה, השקיה, חום, צמח, בצורת"
   },
   {
     "id": "item_252_עץ_דקל_על_אי_בודד",
@@ -8083,7 +10564,19 @@ export const STAGED_IMAGES_POOL = [
       "ים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עץ דקל",
+    "keywords": [
+      "חופשה",
+      "חוף",
+      "קוקוס",
+      "טרופי",
+      "קיץ",
+      "צל",
+      "חול",
+      "ים"
+    ],
+    "association": "חופשה, חוף, קוקוס, טרופי, קיץ, צל, חול, ים"
   },
   {
     "id": "item_253_כריש_לבן",
@@ -8116,7 +10609,19 @@ export const STAGED_IMAGES_POOL = [
       "פחד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כריש",
+    "keywords": [
+      "אוקיינוס",
+      "סכנה",
+      "שיניים",
+      "סנפיר",
+      "טורף",
+      "צלילה",
+      "ים",
+      "פחד"
+    ],
+    "association": "אוקיינוס, סכנה, שיניים, סנפיר, טורף, צלילה, ים, פחד"
   },
   {
     "id": "item_254_דוב_פנדה",
@@ -8149,7 +10654,19 @@ export const STAGED_IMAGES_POOL = [
       "דוב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פנדה",
+    "keywords": [
+      "במבוק",
+      "סין",
+      "גן חיות",
+      "פרווה",
+      "שינה",
+      "חמוד",
+      "טבע",
+      "דוב"
+    ],
+    "association": "במבוק, סין, גן חיות, פרווה, שינה, חמוד, טבע, דוב"
   },
   {
     "id": "item_255_אריה",
@@ -8182,7 +10699,19 @@ export const STAGED_IMAGES_POOL = [
       "טורף"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אריה",
+    "keywords": [
+      "מלך",
+      "ספארי",
+      "שאגה",
+      "רעמה",
+      "אפריקה",
+      "אומץ",
+      "כוח",
+      "טורף"
+    ],
+    "association": "מלך, ספארי, שאגה, רעמה, אפריקה, אומץ, כוח, טורף"
   },
   {
     "id": "item_256_פיל_אפריקאי",
@@ -8215,7 +10744,19 @@ export const STAGED_IMAGES_POOL = [
       "גדול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פיל",
+    "keywords": [
+      "חדק",
+      "זיכרון",
+      "אפריקה",
+      "ספארי",
+      "כבד",
+      "אוזניים",
+      "עדר",
+      "גדול"
+    ],
+    "association": "חדק, זיכרון, אפריקה, ספארי, כבד, אוזניים, עדר, גדול"
   },
   {
     "id": "item_257_ג_ירפה",
@@ -8248,7 +10789,19 @@ export const STAGED_IMAGES_POOL = [
       "תצפית"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ג'ירפה",
+    "keywords": [
+      "גובה",
+      "צוואר",
+      "ספארי",
+      "אפריקה",
+      "גן חיות",
+      "כתמים",
+      "עלים",
+      "תצפית"
+    ],
+    "association": "גובה, צוואר, ספארי, אפריקה, גן חיות, כתמים, עלים, תצפית"
   },
   {
     "id": "item_258_פטריית_זבובנית",
@@ -8281,7 +10834,19 @@ export const STAGED_IMAGES_POOL = [
       "אדום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פטרייה",
+    "keywords": [
+      "יער",
+      "גשם",
+      "חורף",
+      "רעל",
+      "בישול",
+      "פיצה",
+      "טבע",
+      "אדום"
+    ],
+    "association": "יער, גשם, חורף, רעל, בישול, פיצה, טבע, אדום"
   },
   {
     "id": "item_259_הר_געש_מתפרץ",
@@ -8314,7 +10879,19 @@ export const STAGED_IMAGES_POOL = [
       "סכנה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הר געש",
+    "keywords": [
+      "לבה",
+      "התפרצות",
+      "אש",
+      "עשן",
+      "כעס",
+      "חום",
+      "פיצוץ",
+      "סכנה"
+    ],
+    "association": "לבה, התפרצות, אש, עשן, כעס, חום, פיצוץ, סכנה"
   },
   {
     "id": "item_260_קרחון_בלב_ים",
@@ -8347,7 +10924,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קרחון",
+    "keywords": [
+      "קור",
+      "קפוא",
+      "אנטארקטיקה",
+      "חורף",
+      "הפשרה",
+      "אוקיינוס",
+      "שלג",
+      "טבע"
+    ],
+    "association": "קור, קפוא, אנטארקטיקה, חורף, הפשרה, אוקיינוס, שלג, טבע"
   },
   {
     "id": "item_261_טבעת_שבתאי",
@@ -8380,7 +10969,19 @@ export const STAGED_IMAGES_POOL = [
       "שמיים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כוכב שבתאי",
+    "keywords": [
+      "חלל",
+      "טבעות",
+      "טלסקופ",
+      "אסטרונומיה",
+      "יקום",
+      "מדע",
+      "לילה",
+      "שמיים"
+    ],
+    "association": "חלל, טבעות, טלסקופ, אסטרונומיה, יקום, מדע, לילה, שמיים"
   },
   {
     "id": "item_262_מכתש_ברק___פגיעת_ברק",
@@ -8413,7 +11014,19 @@ export const STAGED_IMAGES_POOL = [
       "סכנה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ברק",
+    "keywords": [
+      "חשמל",
+      "סופה",
+      "רעם",
+      "חורף",
+      "גשם",
+      "אור",
+      "מהירות",
+      "סכנה"
+    ],
+    "association": "חשמל, סופה, רעם, חורף, גשם, אור, מהירות, סכנה"
   },
   {
     "id": "item_263_פינגווין_קיסרי",
@@ -8446,7 +11059,19 @@ export const STAGED_IMAGES_POOL = [
       "חליפה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פינגווין",
+    "keywords": [
+      "קור",
+      "קרח",
+      "אנטארקטיקה",
+      "שלג",
+      "חורף",
+      "שחייה",
+      "דגים",
+      "חליפה"
+    ],
+    "association": "קור, קרח, אנטארקטיקה, שלג, חורף, שחייה, דגים, חליפה"
   },
   {
     "id": "item_264_קורי_עכביש",
@@ -8479,7 +11104,19 @@ export const STAGED_IMAGES_POOL = [
       "חרקים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קורי עכביש",
+    "keywords": [
+      "ניקיון",
+      "אבק",
+      "מטאטא",
+      "פינה",
+      "הדברה",
+      "מלכודת",
+      "רשת",
+      "חרקים"
+    ],
+    "association": "ניקיון, אבק, מטאטא, פינה, הדברה, מלכודת, רשת, חרקים"
   },
   {
     "id": "item_265_טווס_פרוס_זנב",
@@ -8512,7 +11149,19 @@ export const STAGED_IMAGES_POOL = [
       "ציפור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טווס",
+    "keywords": [
+      "נוצות",
+      "יופי",
+      "גאווה",
+      "צבעוני",
+      "גן חיות",
+      "ראווה",
+      "אופנה",
+      "ציפור"
+    ],
+    "association": "נוצות, יופי, גאווה, צבעוני, גן חיות, ראווה, אופנה, ציפור"
   },
   {
     "id": "item_266_סוס_דוהרת_ברוח",
@@ -8545,7 +11194,19 @@ export const STAGED_IMAGES_POOL = [
       "חופש"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סוס",
+    "keywords": [
+      "רכיבה",
+      "חווה",
+      "דהירה",
+      "אורווה",
+      "מהירות",
+      "אוכף",
+      "טבע",
+      "חופש"
+    ],
+    "association": "רכיבה, חווה, דהירה, אורווה, מהירות, אוכף, טבע, חופש"
   },
   {
     "id": "item_267_כלב_דלמטי",
@@ -8578,7 +11239,19 @@ export const STAGED_IMAGES_POOL = [
       "אוכל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כלב דלמטי",
+    "keywords": [
+      "וטרינר",
+      "טיול",
+      "רצועה",
+      "נביחה",
+      "נקודות",
+      "חיות מחמד",
+      "חיסון",
+      "אוכל"
+    ],
+    "association": "וטרינר, טיול, רצועה, נביחה, נקודות, חיות מחמד, חיסון, אוכל"
   },
   {
     "id": "item_268_ינשוף_על_ענף",
@@ -8611,7 +11284,19 @@ export const STAGED_IMAGES_POOL = [
       "ציד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ינשוף",
+    "keywords": [
+      "לילה",
+      "חוכמה",
+      "לימודים",
+      "עיניים",
+      "שקט",
+      "יער",
+      "ספרייה",
+      "ציד"
+    ],
+    "association": "לילה, חוכמה, לימודים, עיניים, שקט, יער, ספרייה, ציד"
   },
   {
     "id": "item_269_נשר_דואה",
@@ -8644,7 +11329,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נשר",
+    "keywords": [
+      "מעוף",
+      "שמיים",
+      "גובה",
+      "גולן",
+      "כנפיים",
+      "תצפית",
+      "ראייה",
+      "טבע"
+    ],
+    "association": "מעוף, שמיים, גובה, גולן, כנפיים, תצפית, ראייה, טבע"
   },
   {
     "id": "item_270_קנגורו",
@@ -8677,7 +11374,19 @@ export const STAGED_IMAGES_POOL = [
       "טיול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קנגורו",
+    "keywords": [
+      "אוסטרליה",
+      "קפיצה",
+      "כיס",
+      "גורים",
+      "אגרוף",
+      "ספורט",
+      "טבע",
+      "טיול"
+    ],
+    "association": "אוסטרליה, קפיצה, כיס, גורים, אגרוף, ספורט, טבע, טיול"
   },
   {
     "id": "item_271_גמל_דו_דבשתי",
@@ -8710,7 +11419,19 @@ export const STAGED_IMAGES_POOL = [
       "שיירה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גמל",
+    "keywords": [
+      "מדבר",
+      "דבשת",
+      "חול",
+      "טיול",
+      "נגב",
+      "מים",
+      "שמש",
+      "שיירה"
+    ],
+    "association": "מדבר, דבשת, חול, טיול, נגב, מים, שמש, שיירה"
   },
   {
     "id": "item_272_דולפין_קופץ_מהמים",
@@ -8743,7 +11464,19 @@ export const STAGED_IMAGES_POOL = [
       "אוקיינוס"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "דולפין",
+    "keywords": [
+      "אילת",
+      "שחייה",
+      "ים",
+      "קפיצה",
+      "חכם",
+      "ריף",
+      "חופשה",
+      "אוקיינוס"
+    ],
+    "association": "אילת, שחייה, ים, קפיצה, חכם, ריף, חופשה, אוקיינוס"
   },
   {
     "id": "item_273_לווייתן_קטלן",
@@ -8776,7 +11509,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לווייתן",
+    "keywords": [
+      "אוקיינוס",
+      "אורקה",
+      "ענק",
+      "צלילה",
+      "ים",
+      "סנפיר",
+      "מים",
+      "טבע"
+    ],
+    "association": "אוקיינוס, אורקה, ענק, צלילה, ים, סנפיר, מים, טבע"
   },
   {
     "id": "item_274_צב_יבשה_ענק",
@@ -8809,7 +11554,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צב",
+    "keywords": [
+      "שריון",
+      "איטיות",
+      "סבלנות",
+      "חסה",
+      "גינה",
+      "זמן",
+      "אריכות ימים",
+      "טבע"
+    ],
+    "association": "שריון, איטיות, סבלנות, חסה, גינה, זמן, אריכות ימים, טבע"
   },
   {
     "id": "item_275_פרת_משה_רבנו",
@@ -8842,7 +11599,19 @@ export const STAGED_IMAGES_POOL = [
       "אדום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חיפושית",
+    "keywords": [
+      "מזל",
+      "גינה",
+      "עלה",
+      "נקודות",
+      "אביב",
+      "חרק",
+      "טבע",
+      "אדום"
+    ],
+    "association": "מזל, גינה, עלה, נקודות, אביב, חרק, טבע, אדום"
   },
   {
     "id": "item_276_דבורה",
@@ -8875,7 +11644,19 @@ export const STAGED_IMAGES_POOL = [
       "זמזום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "דבורה",
+    "keywords": [
+      "דבש",
+      "כוורת",
+      "עקיצה",
+      "פרחים",
+      "ראש השנה",
+      "מתוק",
+      "אביב",
+      "זמזום"
+    ],
+    "association": "דבש, כוורת, עקיצה, פרחים, ראש השנה, מתוק, אביב, זמזום"
   },
   {
     "id": "item_277_עץ_אלון_עתיק_בשלכת",
@@ -8908,7 +11689,19 @@ export const STAGED_IMAGES_POOL = [
       "פיקניק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עץ אלון",
+    "keywords": [
+      "יער",
+      "שורשים",
+      "צל",
+      "טבע",
+      "גיזום",
+      "ענפים",
+      "גזע",
+      "פיקניק"
+    ],
+    "association": "יער, שורשים, צל, טבע, גיזום, ענפים, גזע, פיקניק"
   },
   {
     "id": "item_278_פרח_חמנייה",
@@ -8941,7 +11734,19 @@ export const STAGED_IMAGES_POOL = [
       "גינה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חמנייה",
+    "keywords": [
+      "שמש",
+      "צהוב",
+      "גרעינים",
+      "שדה",
+      "שמן",
+      "אביב",
+      "פריחה",
+      "גינה"
+    ],
+    "association": "שמש, צהוב, גרעינים, שדה, שמן, אביב, פריחה, גינה"
   },
   {
     "id": "item_279_ורד_אדום",
@@ -8974,7 +11779,19 @@ export const STAGED_IMAGES_POOL = [
       "משתלה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ורד",
+    "keywords": [
+      "אהבה",
+      "רומנטיקה",
+      "זר",
+      "מתנה",
+      "דייט",
+      "בושם",
+      "קוצים",
+      "משתלה"
+    ],
+    "association": "אהבה, רומנטיקה, זר, מתנה, דייט, בושם, קוצים, משתלה"
   },
   {
     "id": "item_280_עלה_מייפל",
@@ -9007,7 +11824,19 @@ export const STAGED_IMAGES_POOL = [
       "גינה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עלה שלכת",
+    "keywords": [
+      "סתיו",
+      "קנדה",
+      "סירופ",
+      "פנקייק",
+      "עץ",
+      "רוח",
+      "מגרפה",
+      "גינה"
+    ],
+    "association": "סתיו, קנדה, סירופ, פנקייק, עץ, רוח, מגרפה, גינה"
   },
   {
     "id": "item_281_חצי_סהר_וכוכב",
@@ -9040,7 +11869,19 @@ export const STAGED_IMAGES_POOL = [
       "מנוחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ירח וכוכב",
+    "keywords": [
+      "לילה",
+      "שינה",
+      "שמיים",
+      "חושך",
+      "חלום",
+      "אסטרונומיה",
+      "ערב",
+      "מנוחה"
+    ],
+    "association": "לילה, שינה, שמיים, חושך, חלום, אסטרונומיה, ערב, מנוחה"
   },
   {
     "id": "item_282_שונית_אלמוגים_צבעונית",
@@ -9073,7 +11914,19 @@ export const STAGED_IMAGES_POOL = [
       "מים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שונית אלמוגים",
+    "keywords": [
+      "אילת",
+      "צלילה",
+      "שנורקל",
+      "דגים",
+      "ים",
+      "חופשה",
+      "מצולות",
+      "מים"
+    ],
+    "association": "אילת, צלילה, שנורקל, דגים, ים, חופשה, מצולות, מים"
   },
   {
     "id": "item_283_מפלי_ניאגרה",
@@ -9106,7 +11959,19 @@ export const STAGED_IMAGES_POOL = [
       "חופשה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מפלי מים",
+    "keywords": [
+      "זרימה",
+      "טבע",
+      "טיול",
+      "נהר",
+      "עוצמה",
+      "קנדה",
+      "נוף",
+      "חופשה"
+    ],
+    "association": "זרימה, טבע, טיול, נהר, עוצמה, קנדה, נוף, חופשה"
   },
   {
     "id": "item_284_הגרנד_קניון",
@@ -9139,7 +12004,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קניון סלע",
+    "keywords": [
+      "טיול",
+      "הרים",
+      "מדבר",
+      "מצוק",
+      "נוף",
+      "תצפית",
+      "גיאולוגיה",
+      "טבע"
+    ],
+    "association": "טיול, הרים, מדבר, מצוק, נוף, תצפית, גיאולוגיה, טבע"
   },
   {
     "id": "item_285_הר_פוג_י",
@@ -9172,35 +12049,61 @@ export const STAGED_IMAGES_POOL = [
       "נוף"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הר פוג'י",
+    "keywords": [
+      "יפן",
+      "טוקיו",
+      "טיול",
+      "טיפוס",
+      "פסגה",
+      "שלג",
+      "חופשה",
+      "נוף"
+    ],
+    "association": "יפן, טוקיו, טיול, טיפוס, פסגה, שלג, חופשה, נוף"
   },
   {
     "id": "item_286_סופת_טורנדו",
     "num": 286,
-    "name": "סופת טורנדו",
-    "name_he": "סופת טורנדו",
-    "suggestedName": "סופת טורנדו",
+    "name_he": "טורנדו",
+    "suggestedName": "טורנדו",
     "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
     "theme": "nature_animals",
     "theme_he": "טבע, בעלי חיים וגיאוגרפיה",
     "imageUrl": "/staged_images/pool/item_286_סופת_טורנדו.jpg",
     "associations": [
-      "משפך רוח הרסני",
-      "מקלט סופה",
-      "אזהרת חירום",
-      "קנזס",
-      "עקירת גגות",
-      "רוחות עזות"
+      "סערה",
+      "רוח",
+      "מערבולת",
+      "מקלט",
+      "חירום",
+      "אבק",
+      "עננים"
     ],
     "everyday_associations": [
-      "משפך רוח הרסני",
-      "מקלט סופה",
-      "אזהרת חירום",
-      "קנזס",
-      "עקירת גגות",
-      "רוחות עזות"
+      "סערה",
+      "רוח",
+      "מערבולת",
+      "מקלט",
+      "חירום",
+      "אבק",
+      "עננים"
     ],
-    "is_basic": false
+    "is_basic": false,
+    "keywords": [
+      "סערה",
+      "רוח",
+      "מערבולת",
+      "מקלט",
+      "חירום",
+      "אבק",
+      "עננים"
+    ],
+    "association": "סערה, רוח, מערבולת, מקלט, חירום, אבק, עננים",
+    "title": "טורנדו",
+    "name": "טורנדו",
+    "aiCurated": true
   },
   {
     "id": "item_287_צונאמי",
@@ -9233,7 +12136,19 @@ export const STAGED_IMAGES_POOL = [
       "שטפון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נחשול מים",
+    "keywords": [
+      "גל",
+      "אוקיינוס",
+      "סערה",
+      "חוף",
+      "גלישה",
+      "סכנה",
+      "ים",
+      "שטפון"
+    ],
+    "association": "גל, אוקיינוס, סערה, חוף, גלישה, סכנה, ים, שטפון"
   },
   {
     "id": "item_288_מדבר_חול",
@@ -9266,7 +12181,19 @@ export const STAGED_IMAGES_POOL = [
       "דיונה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מדבר",
+    "keywords": [
+      "חול",
+      "שמש",
+      "חום",
+      "גמל",
+      "צמא",
+      "טיול",
+      "יובש",
+      "דיונה"
+    ],
+    "association": "חול, שמש, חום, גמל, צמא, טיול, יובש, דיונה"
   },
   {
     "id": "item_289_יער_גשם_טרופי",
@@ -9299,7 +12226,19 @@ export const STAGED_IMAGES_POOL = [
       "חיות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ג'ונגל",
+    "keywords": [
+      "עצים",
+      "טבע",
+      "אמזונס",
+      "ירוק",
+      "גשם",
+      "טיול",
+      "צמחייה",
+      "חיות"
+    ],
+    "association": "עצים, טבע, אמזונס, ירוק, גשם, טיול, צמחייה, חיות"
   },
   {
     "id": "item_290_ביצה",
@@ -9332,7 +12271,19 @@ export const STAGED_IMAGES_POOL = [
       "הדברה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ביצה",
+    "keywords": [
+      "בוץ",
+      "יתושים",
+      "תנין",
+      "צפרדע",
+      "מים",
+      "קנים",
+      "טבע",
+      "הדברה"
+    ],
+    "association": "בוץ, יתושים, תנין, צפרדע, מים, קנים, טבע, הדברה"
   },
   {
     "id": "item_291_קשת_בענן",
@@ -9365,7 +12316,19 @@ export const STAGED_IMAGES_POOL = [
       "נוף"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קשת בענן",
+    "keywords": [
+      "צבעים",
+      "גשם",
+      "שמש",
+      "חורף",
+      "שמיים",
+      "אופטימיות",
+      "ילדות",
+      "נוף"
+    ],
+    "association": "צבעים, גשם, שמש, חורף, שמיים, אופטימיות, ילדות, נוף"
   },
   {
     "id": "item_292_כוכב_ים",
@@ -9398,7 +12361,19 @@ export const STAGED_IMAGES_POOL = [
       "שונית"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כוכב ים",
+    "keywords": [
+      "חוף",
+      "צדפים",
+      "קיץ",
+      "אילת",
+      "צלילה",
+      "אוקיינוס",
+      "חול",
+      "שונית"
+    ],
+    "association": "חוף, צדפים, קיץ, אילת, צלילה, אוקיינוס, חול, שונית"
   },
   {
     "id": "item_293_סרטן",
@@ -9431,7 +12406,19 @@ export const STAGED_IMAGES_POOL = [
       "מים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סרטן",
+    "keywords": [
+      "חוף",
+      "צבתות",
+      "חול",
+      "ים",
+      "קיץ",
+      "סלעים",
+      "שריון",
+      "מים"
+    ],
+    "association": "חוף, צבתות, חול, ים, קיץ, סלעים, שריון, מים"
   },
   {
     "id": "item_294_תמנון",
@@ -9464,7 +12451,19 @@ export const STAGED_IMAGES_POOL = [
       "מים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "תמנון",
+    "keywords": [
+      "זרועות",
+      "מצולות",
+      "אוקיינוס",
+      "צלילה",
+      "דיו",
+      "גמישות",
+      "ים",
+      "מים"
+    ],
+    "association": "זרועות, מצולות, אוקיינוס, צלילה, דיו, גמישות, ים, מים"
   },
   {
     "id": "item_295_זיקית_על_ענף",
@@ -9497,7 +12496,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "זיקית",
+    "keywords": [
+      "הסוואה",
+      "צבעים",
+      "לשון",
+      "עיניים",
+      "עץ",
+      "גינה",
+      "זוחל",
+      "טבע"
+    ],
+    "association": "הסוואה, צבעים, לשון, עיניים, עץ, גינה, זוחל, טבע"
   },
   {
     "id": "item_296_נחש_קוברה",
@@ -9530,7 +12541,19 @@ export const STAGED_IMAGES_POOL = [
       "זהירות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קוברה",
+    "keywords": [
+      "נחש",
+      "ארס",
+      "סכנה",
+      "הכשה",
+      "הודו",
+      "מדבר",
+      "זוחל",
+      "זהירות"
+    ],
+    "association": "נחש, ארס, סכנה, הכשה, הודו, מדבר, זוחל, זהירות"
   },
   {
     "id": "item_297_עקרב",
@@ -9563,7 +12586,19 @@ export const STAGED_IMAGES_POOL = [
       "זהירות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עקרב",
+    "keywords": [
+      "עוקץ",
+      "מדבר",
+      "ארס",
+      "סכנה",
+      "אבן",
+      "לילה",
+      "הדברה",
+      "זהירות"
+    ],
+    "association": "עוקץ, מדבר, ארס, סכנה, אבן, לילה, הדברה, זהירות"
   },
   {
     "id": "item_298_צפרדע_ירוקה",
@@ -9596,7 +12631,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צפרדע",
+    "keywords": [
+      "קפיצה",
+      "ביצה",
+      "מים",
+      "נחל",
+      "קרקור",
+      "אגדה",
+      "נשיקה",
+      "טבע"
+    ],
+    "association": "קפיצה, ביצה, מים, נחל, קרקור, אגדה, נשיקה, טבע"
   },
   {
     "id": "item_299_פרפר_מונרך",
@@ -9629,7 +12676,19 @@ export const STAGED_IMAGES_POOL = [
       "טבע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פרפר",
+    "keywords": [
+      "אביב",
+      "פרחים",
+      "גינה",
+      "כנפיים",
+      "חופש",
+      "צבעוני",
+      "זחל",
+      "טבע"
+    ],
+    "association": "אביב, פרחים, גינה, כנפיים, חופש, צבעוני, זחל, טבע"
   },
   {
     "id": "item_300_שפירית",
@@ -9662,7 +12721,19 @@ export const STAGED_IMAGES_POOL = [
       "אגם"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שפירית",
+    "keywords": [
+      "נחל",
+      "כנפיים",
+      "מעוף",
+      "מים",
+      "חרק",
+      "קיץ",
+      "טבע",
+      "אגם"
+    ],
+    "association": "נחל, כנפיים, מעוף, מים, חרק, קיץ, טבע, אגם"
   },
   {
     "id": "item_301_כדורגל_קלאסי",
@@ -9695,7 +12766,19 @@ export const STAGED_IMAGES_POOL = [
       "דשא"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדורגל",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "שער",
+      "גול",
+      "קבוצה",
+      "מונדיאל",
+      "דשא"
+    ],
+    "association": "ספורט, אימון, מגרש, שער, גול, קבוצה, מונדיאל, דשא"
   },
   {
     "id": "item_302_כדורסל",
@@ -9728,7 +12811,19 @@ export const STAGED_IMAGES_POOL = [
       "ניצחון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדורסל",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "קליעה",
+      "גובה",
+      "קבוצה",
+      "פרקט",
+      "ניצחון"
+    ],
+    "association": "ספורט, אימון, מגרש, קליעה, גובה, קבוצה, פרקט, ניצחון"
   },
   {
     "id": "item_303_כדור_טניס",
@@ -9759,7 +12854,18 @@ export const STAGED_IMAGES_POOL = [
       "תחרות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור טניס",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "מחבט",
+      "רשת",
+      "זוגות",
+      "תחרות"
+    ],
+    "association": "ספורט, אימון, מגרש, מחבט, רשת, זוגות, תחרות"
   },
   {
     "id": "item_304_מחבט_טניס",
@@ -9790,7 +12896,18 @@ export const STAGED_IMAGES_POOL = [
       "תחרות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מחבט טניס",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "רשת",
+      "חבטה",
+      "כושר",
+      "תחרות"
+    ],
+    "association": "ספורט, אימון, מגרש, רשת, חבטה, כושר, תחרות"
   },
   {
     "id": "item_305_כדור_פוטבול_אמריקאי",
@@ -9821,7 +12938,18 @@ export const STAGED_IMAGES_POOL = [
       "קבוצה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור פוטבול",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "קסדה",
+      "מסירה",
+      "אמריקה",
+      "קבוצה"
+    ],
+    "association": "ספורט, אימון, מגרש, קסדה, מסירה, אמריקה, קבוצה"
   },
   {
     "id": "item_306_כדור_באולינג_ופינים",
@@ -9852,7 +12980,18 @@ export const STAGED_IMAGES_POOL = [
       "נעליים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "באולינג",
+    "keywords": [
+      "בילוי",
+      "משחק",
+      "מסלול",
+      "סטרייק",
+      "חברים",
+      "ערב",
+      "נעליים"
+    ],
+    "association": "בילוי, משחק, מסלול, סטרייק, חברים, ערב, נעליים"
   },
   {
     "id": "item_307_כדור_ביליארד",
@@ -9883,7 +13022,18 @@ export const STAGED_IMAGES_POOL = [
       "שולחן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור ביליארד",
+    "keywords": [
+      "סנוקר",
+      "משחק",
+      "מועדון",
+      "פאב",
+      "מקל",
+      "דיוק",
+      "שולחן"
+    ],
+    "association": "סנוקר, משחק, מועדון, פאב, מקל, דיוק, שולחן"
   },
   {
     "id": "item_308_מחבט_בייסבול",
@@ -9914,7 +13064,18 @@ export const STAGED_IMAGES_POOL = [
       "הגנה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מחבט בייסבול",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "כפפה",
+      "חבטה",
+      "עץ",
+      "הגנה"
+    ],
+    "association": "ספורט, אימון, מגרש, כפפה, חבטה, עץ, הגנה"
   },
   {
     "id": "item_309_כדור_נוצה",
@@ -9945,7 +13106,18 @@ export const STAGED_IMAGES_POOL = [
       "מעוף"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור נוצה",
+    "keywords": [
+      "בדמינטון",
+      "ספורט",
+      "רשת",
+      "מחבט",
+      "משחק",
+      "פארק",
+      "מעוף"
+    ],
+    "association": "בדמינטון, ספורט, רשת, מחבט, משחק, פארק, מעוף"
   },
   {
     "id": "item_310_זוג_כפפות_אגרוף",
@@ -9976,7 +13148,18 @@ export const STAGED_IMAGES_POOL = [
       "ספורט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כפפות אגרוף",
+    "keywords": [
+      "אימון",
+      "כושר",
+      "זירה",
+      "לחימה",
+      "כוח",
+      "הגנה",
+      "ספורט"
+    ],
+    "association": "אימון, כושר, זירה, לחימה, כוח, הגנה, ספורט"
   },
   {
     "id": "item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות",
@@ -10007,7 +13190,18 @@ export const STAGED_IMAGES_POOL = [
       "לפיד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טבעות אולימפיות",
+    "keywords": [
+      "ספורט",
+      "תחרות",
+      "מדליה",
+      "אליפות",
+      "אימון",
+      "עולם",
+      "לפיד"
+    ],
+    "association": "ספורט, תחרות, מדליה, אליפות, אימון, עולם, לפיד"
   },
   {
     "id": "item_312_שולחן_פינג_פונג",
@@ -10038,7 +13232,18 @@ export const STAGED_IMAGES_POOL = [
       "טורניר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טניס שולחן",
+    "keywords": [
+      "פינג פונג",
+      "משחק",
+      "מטקה",
+      "רשת",
+      "ספורט",
+      "זריזות",
+      "טורניר"
+    ],
+    "association": "פינג פונג, משחק, מטקה, רשת, ספורט, זריזות, טורניר"
   },
   {
     "id": "item_313_סנובורד___מגלשי_סקי",
@@ -10069,7 +13274,18 @@ export const STAGED_IMAGES_POOL = [
       "קור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגלשי סקי",
+    "keywords": [
+      "שלג",
+      "חופשה",
+      "חורף",
+      "הרים",
+      "חרמון",
+      "גלישה",
+      "קור"
+    ],
+    "association": "שלג, חופשה, חורף, הרים, חרמון, גלישה, קור"
   },
   {
     "id": "item_314_גלשן_גלים",
@@ -10100,7 +13316,18 @@ export const STAGED_IMAGES_POOL = [
       "שמש"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גלשן גלים",
+    "keywords": [
+      "ים",
+      "חוף",
+      "קיץ",
+      "ספורט",
+      "חופשה",
+      "מים",
+      "שמש"
+    ],
+    "association": "ים, חוף, קיץ, ספורט, חופשה, מים, שמש"
   },
   {
     "id": "item_315_משקולת_ברזל_קלאסית",
@@ -10131,7 +13358,18 @@ export const STAGED_IMAGES_POOL = [
       "בריאות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משקולת",
+    "keywords": [
+      "כושר",
+      "אימון",
+      "חדר כושר",
+      "שרירים",
+      "כוח",
+      "ספורט",
+      "בריאות"
+    ],
+    "association": "כושר, אימון, חדר כושר, שרירים, כוח, ספורט, בריאות"
   },
   {
     "id": "item_316_חץ_ולוח_מטרה",
@@ -10162,7 +13400,18 @@ export const STAGED_IMAGES_POOL = [
       "קשת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לוח מטרה",
+    "keywords": [
+      "יעד",
+      "דיוק",
+      "קליעה",
+      "הצלחה",
+      "מיקוד",
+      "חץ",
+      "קשת"
+    ],
+    "association": "יעד, דיוק, קליעה, הצלחה, מיקוד, חץ, קשת"
   },
   {
     "id": "item_317_משרוקית_שופט",
@@ -10193,7 +13442,18 @@ export const STAGED_IMAGES_POOL = [
       "קול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משרוקית",
+    "keywords": [
+      "שופט",
+      "ספורט",
+      "אימון",
+      "סימן",
+      "עצירה",
+      "מגרש",
+      "קול"
+    ],
+    "association": "שופט, ספורט, אימון, סימן, עצירה, מגרש, קול"
   },
   {
     "id": "item_318_כרטיס_אדום_וצהוב",
@@ -10224,7 +13484,18 @@ export const STAGED_IMAGES_POOL = [
       "כדורגל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כרטיס אדום",
+    "keywords": [
+      "שופט",
+      "עבירה",
+      "עונש",
+      "אזהרה",
+      "חוקים",
+      "מגרש",
+      "כדורגל"
+    ],
+    "association": "שופט, עבירה, עונש, אזהרה, חוקים, מגרש, כדורגל"
   },
   {
     "id": "item_319_חליפת_קראטה_ג_ודו",
@@ -10255,7 +13526,18 @@ export const STAGED_IMAGES_POOL = [
       "מזרן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חליפת ג'ודו",
+    "keywords": [
+      "קראטה",
+      "אימון",
+      "לחימה",
+      "חגורה",
+      "ספורט",
+      "חוג",
+      "מזרן"
+    ],
+    "association": "קראטה, אימון, לחימה, חגורה, ספורט, חוג, מזרן"
   },
   {
     "id": "item_320_נעלי_פקקים",
@@ -10286,7 +13568,18 @@ export const STAGED_IMAGES_POOL = [
       "שרוכים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נעלי כדורגל",
+    "keywords": [
+      "ספורט",
+      "אימון",
+      "מגרש",
+      "דשא",
+      "ריצה",
+      "קניות",
+      "שרוכים"
+    ],
+    "association": "ספורט, אימון, מגרש, דשא, ריצה, קניות, שרוכים"
   },
   {
     "id": "item_321_קלפי_משחק",
@@ -10317,7 +13610,18 @@ export const STAGED_IMAGES_POOL = [
       "אס"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קלפי משחק",
+    "keywords": [
+      "פוקר",
+      "קזינו",
+      "מזל",
+      "בילוי",
+      "חברים",
+      "קסמים",
+      "אס"
+    ],
+    "association": "פוקר, קזינו, מזל, בילוי, חברים, קסמים, אס"
   },
   {
     "id": "item_322_רולטה_קזינו",
@@ -10348,7 +13652,18 @@ export const STAGED_IMAGES_POOL = [
       "סיבוב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רולטה",
+    "keywords": [
+      "קזינו",
+      "הימורים",
+      "מזל",
+      "כסף",
+      "זכייה",
+      "משחק",
+      "סיבוב"
+    ],
+    "association": "קזינו, הימורים, מזל, כסף, זכייה, משחק, סיבוב"
   },
   {
     "id": "item_323_מכונת_מזל",
@@ -10379,7 +13694,18 @@ export const STAGED_IMAGES_POOL = [
       "משחק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונת מזל",
+    "keywords": [
+      "קזינו",
+      "הימורים",
+      "כסף",
+      "זכייה",
+      "מטבעות",
+      "פרס",
+      "משחק"
+    ],
+    "association": "קזינו, הימורים, כסף, זכייה, מטבעות, פרס, משחק"
   },
   {
     "id": "item_324_ז_יטונים_של_קזינו",
@@ -10410,7 +13736,18 @@ export const STAGED_IMAGES_POOL = [
       "אסימונים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ז'יטונים",
+    "keywords": [
+      "קזינו",
+      "פוקר",
+      "הימורים",
+      "כסף",
+      "משחק",
+      "מזל",
+      "אסימונים"
+    ],
+    "association": "קזינו, פוקר, הימורים, כסף, משחק, מזל, אסימונים"
   },
   {
     "id": "item_325_קובייה_הונגרית",
@@ -10441,7 +13778,18 @@ export const STAGED_IMAGES_POOL = [
       "ריכוז"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קובייה הונגרית",
+    "keywords": [
+      "חידה",
+      "מחשבה",
+      "מוח",
+      "משחק",
+      "צבעים",
+      "פתרון",
+      "ריכוז"
+    ],
+    "association": "חידה, מחשבה, מוח, משחק, צבעים, פתרון, ריכוז"
   },
   {
     "id": "item_326_חייל_שחמט",
@@ -10472,7 +13820,18 @@ export const STAGED_IMAGES_POOL = [
       "מוח"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שחמט",
+    "keywords": [
+      "משחק",
+      "אסטרטגיה",
+      "מחשבה",
+      "לוח",
+      "מלך",
+      "תחרות",
+      "מוח"
+    ],
+    "association": "משחק, אסטרטגיה, מחשבה, לוח, מלך, תחרות, מוח"
   },
   {
     "id": "item_327_לבני_דומינו",
@@ -10503,7 +13862,18 @@ export const STAGED_IMAGES_POOL = [
       "נקודות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "דומינו",
+    "keywords": [
+      "משחק",
+      "קופסה",
+      "מספרים",
+      "רצף",
+      "שולחן",
+      "משפחה",
+      "נקודות"
+    ],
+    "association": "משחק, קופסה, מספרים, רצף, שולחן, משפחה, נקודות"
   },
   {
     "id": "item_328_חתיכת_פאזל_קלאסית",
@@ -10534,7 +13904,18 @@ export const STAGED_IMAGES_POOL = [
       "משפחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פאזל",
+    "keywords": [
+      "הרכבה",
+      "משחק",
+      "פתרון",
+      "חיבור",
+      "סבלנות",
+      "תמונה",
+      "משפחה"
+    ],
+    "association": "הרכבה, משחק, פתרון, חיבור, סבלנות, תמונה, משפחה"
   },
   {
     "id": "item_329_יו_יו",
@@ -10565,7 +13946,18 @@ export const STAGED_IMAGES_POOL = [
       "סיבוב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "יו-יו",
+    "keywords": [
+      "צעצוע",
+      "משחק",
+      "חוט",
+      "ילדים",
+      "תרגיל",
+      "נוסטלגיה",
+      "סיבוב"
+    ],
+    "association": "צעצוע, משחק, חוט, ילדים, תרגיל, נוסטלגיה, סיבוב"
   },
   {
     "id": "item_330_משחק_הטוויסטר",
@@ -10596,7 +13988,18 @@ export const STAGED_IMAGES_POOL = [
       "תנועה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טוויסטר",
+    "keywords": [
+      "משחק",
+      "מסיבה",
+      "גמישות",
+      "צבעים",
+      "חברים",
+      "שטיח",
+      "תנועה"
+    ],
+    "association": "משחק, מסיבה, גמישות, צבעים, חברים, שטיח, תנועה"
   },
   {
     "id": "item_331_משקפת_שחייה_ומצוף_זרוע",
@@ -10627,7 +14030,18 @@ export const STAGED_IMAGES_POOL = [
       "צלילה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משקפת שחייה",
+    "keywords": [
+      "בריכה",
+      "ספורט",
+      "אימון",
+      "מים",
+      "קיץ",
+      "ים",
+      "צלילה"
+    ],
+    "association": "בריכה, ספורט, אימון, מים, קיץ, ים, צלילה"
   },
   {
     "id": "item_332_גלגל_ענק",
@@ -10658,7 +14072,18 @@ export const STAGED_IMAGES_POOL = [
       "אטרקציה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גלגל ענק",
+    "keywords": [
+      "לונה פארק",
+      "בילוי",
+      "גובה",
+      "נוף",
+      "ילדים",
+      "חופשה",
+      "אטרקציה"
+    ],
+    "association": "לונה פארק, בילוי, גובה, נוף, ילדים, חופשה, אטרקציה"
   },
   {
     "id": "item_333_רשת_כדורגל_נטויה",
@@ -10689,7 +14114,18 @@ export const STAGED_IMAGES_POOL = [
       "משחק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שער כדורגל",
+    "keywords": [
+      "גול",
+      "מגרש",
+      "ספורט",
+      "אימון",
+      "שוער",
+      "דשא",
+      "משחק"
+    ],
+    "association": "גול, מגרש, ספורט, אימון, שוער, דשא, משחק"
   },
   {
     "id": "item_334_פודטראק",
@@ -10720,7 +14156,18 @@ export const STAGED_IMAGES_POOL = [
       "אירוע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משאית אוכל",
+    "keywords": [
+      "מסעדה",
+      "המבורגר",
+      "צ'יפס",
+      "רחוב",
+      "קניות",
+      "ארוחה",
+      "אירוע"
+    ],
+    "association": "מסעדה, המבורגר, צ'יפס, רחוב, קניות, ארוחה, אירוע"
   },
   {
     "id": "item_335_חכה_ודלי_דגים",
@@ -10751,7 +14198,18 @@ export const STAGED_IMAGES_POOL = [
       "תחביב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חכת דיג",
+    "keywords": [
+      "ים",
+      "דגים",
+      "חופשה",
+      "סבלנות",
+      "נמל",
+      "שקט",
+      "תחביב"
+    ],
+    "association": "ים, דגים, חופשה, סבלנות, נמל, שקט, תחביב"
   },
   {
     "id": "item_336_משקפת_שדה",
@@ -10782,7 +14240,18 @@ export const STAGED_IMAGES_POOL = [
       "ציפורים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משקפת שדה",
+    "keywords": [
+      "תצפית",
+      "טיול",
+      "טבע",
+      "נוף",
+      "ראייה",
+      "חיפוש",
+      "ציפורים"
+    ],
+    "association": "תצפית, טיול, טבע, נוף, ראייה, חיפוש, ציפורים"
   },
   {
     "id": "item_337_ערסל_קשור_בין_שני_עצים",
@@ -10813,7 +14282,18 @@ export const STAGED_IMAGES_POOL = [
       "עצים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ערסל",
+    "keywords": [
+      "מנוחה",
+      "שינה",
+      "חופשה",
+      "גינה",
+      "רוגע",
+      "צל",
+      "עצים"
+    ],
+    "association": "מנוחה, שינה, חופשה, גינה, רוגע, צל, עצים"
   },
   {
     "id": "item_338_מדורה_עם_שיפודי_מרשמלו",
@@ -10844,7 +14324,18 @@ export const STAGED_IMAGES_POOL = [
       "חברים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מדורה",
+    "keywords": [
+      "קומזיץ",
+      "אש",
+      "קמפינג",
+      "מרשמלו",
+      "לילה",
+      "טיול",
+      "חברים"
+    ],
+    "association": "קומזיץ, אש, קמפינג, מרשמלו, לילה, טיול, חברים"
   },
   {
     "id": "item_339_מצנח_רחיפה",
@@ -10875,7 +14366,18 @@ export const STAGED_IMAGES_POOL = [
       "חופשה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מצנח רחיפה",
+    "keywords": [
+      "תעופה",
+      "שמיים",
+      "אקסטרים",
+      "רוח",
+      "נוף",
+      "גובה",
+      "חופשה"
+    ],
+    "association": "תעופה, שמיים, אקסטרים, רוח, נוף, גובה, חופשה"
   },
   {
     "id": "item_340_מסיכת_צלילה_ושנורקל",
@@ -10906,7 +14408,18 @@ export const STAGED_IMAGES_POOL = [
       "אלמוגים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מסכת צלילה",
+    "keywords": [
+      "שנורקל",
+      "ים",
+      "אילת",
+      "חופשה",
+      "דגים",
+      "מים",
+      "אלמוגים"
+    ],
+    "association": "שנורקל, ים, אילת, חופשה, דגים, מים, אלמוגים"
   },
   {
     "id": "item_341_בומרנג",
@@ -10937,7 +14450,18 @@ export const STAGED_IMAGES_POOL = [
       "תעופה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "בומרנג",
+    "keywords": [
+      "זריקה",
+      "חזרה",
+      "אוסטרליה",
+      "משחק",
+      "פארק",
+      "עץ",
+      "תעופה"
+    ],
+    "association": "זריקה, חזרה, אוסטרליה, משחק, פארק, עץ, תעופה"
   },
   {
     "id": "item_342_פריזבי",
@@ -10968,7 +14492,18 @@ export const STAGED_IMAGES_POOL = [
       "דשא"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פריזבי",
+    "keywords": [
+      "משחק",
+      "פארק",
+      "חוף",
+      "כלב",
+      "זריקה",
+      "ספורט",
+      "דשא"
+    ],
+    "association": "משחק, פארק, חוף, כלב, זריקה, ספורט, דשא"
   },
   {
     "id": "item_343_חליפת_חלל",
@@ -10999,7 +14534,18 @@ export const STAGED_IMAGES_POOL = [
       "טיסה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אסטרונאוט",
+    "keywords": [
+      "חלל",
+      "ירח",
+      "נאס\"א",
+      "מדע",
+      "קסדה",
+      "כוכבים",
+      "טיסה"
+    ],
+    "association": "חלל, ירח, נאס\"א, מדע, קסדה, כוכבים, טיסה"
   },
   {
     "id": "item_344_דוכן_פופקורן_קולנוע",
@@ -11030,7 +14576,18 @@ export const STAGED_IMAGES_POOL = [
       "מלח"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פופקורן",
+    "keywords": [
+      "קולנוע",
+      "סרט",
+      "חטיף",
+      "תירס",
+      "בילוי",
+      "קניות",
+      "מלח"
+    ],
+    "association": "קולנוע, סרט, חטיף, תירס, בילוי, קניות, מלח"
   },
   {
     "id": "item_345_כרטיס_קולנוע_נוסטלגי",
@@ -11061,7 +14618,18 @@ export const STAGED_IMAGES_POOL = [
       "ערב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כרטיס קולנוע",
+    "keywords": [
+      "סרט",
+      "בילוי",
+      "הזמנה",
+      "אולם",
+      "הצגה",
+      "פופקורן",
+      "ערב"
+    ],
+    "association": "סרט, בילוי, הזמנה, אולם, הצגה, פופקורן, ערב"
   },
   {
     "id": "item_346_מכונת_ארקייד",
@@ -11092,7 +14660,18 @@ export const STAGED_IMAGES_POOL = [
       "נוסטלגיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונת ארקייד",
+    "keywords": [
+      "משחקים",
+      "גיימינג",
+      "מחשב",
+      "בילוי",
+      "אסימון",
+      "קניון",
+      "נוסטלגיה"
+    ],
+    "association": "משחקים, גיימינג, מחשב, בילוי, אסימון, קניון, נוסטלגיה"
   },
   {
     "id": "item_347_ג_ויסטיק",
@@ -11123,7 +14702,18 @@ export const STAGED_IMAGES_POOL = [
       "כפתור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ג'ויסטיק",
+    "keywords": [
+      "משחקים",
+      "גיימינג",
+      "מחשב",
+      "שלט",
+      "קונסולה",
+      "בילוי",
+      "כפתור"
+    ],
+    "association": "משחקים, גיימינג, מחשב, שלט, קונסולה, בילוי, כפתור"
   },
   {
     "id": "item_348_משחק_טטריס",
@@ -11154,7 +14744,18 @@ export const STAGED_IMAGES_POOL = [
       "צורות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טטריס",
+    "keywords": [
+      "מחשב",
+      "קוביות",
+      "סדר",
+      "פאזל",
+      "גיימינג",
+      "מסך",
+      "צורות"
+    ],
+    "association": "מחשב, קוביות, סדר, פאזל, גיימינג, מסך, צורות"
   },
   {
     "id": "item_349_מגלשת_מים_ענקית",
@@ -11185,7 +14786,18 @@ export const STAGED_IMAGES_POOL = [
       "אטרקציה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגלשת מים",
+    "keywords": [
+      "בריכה",
+      "פארק",
+      "קיץ",
+      "חופשה",
+      "ילדים",
+      "בילוי",
+      "אטרקציה"
+    ],
+    "association": "בריכה, פארק, קיץ, חופשה, ילדים, בילוי, אטרקציה"
   },
   {
     "id": "item_350_מצנח_פתוח_בשמיים",
@@ -11216,7 +14828,18 @@ export const STAGED_IMAGES_POOL = [
       "רוח"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מצנח",
+    "keywords": [
+      "צניחה",
+      "שמיים",
+      "מטוס",
+      "אקסטרים",
+      "קפיצה",
+      "גובה",
+      "רוח"
+    ],
+    "association": "צניחה, שמיים, מטוס, אקסטרים, קפיצה, גובה, רוח"
   },
   {
     "id": "item_351_פטיש_מסמרים_קלאסי",
@@ -11247,7 +14870,18 @@ export const STAGED_IMAGES_POOL = [
       "עבודה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פטיש",
+    "keywords": [
+      "מסמר",
+      "שיפוץ",
+      "תיקון",
+      "בנייה",
+      "נגרות",
+      "תלייה",
+      "עבודה"
+    ],
+    "association": "מסמר, שיפוץ, תיקון, בנייה, נגרות, תלייה, עבודה"
   },
   {
     "id": "item_352_מברג_פיליפס",
@@ -11278,7 +14912,18 @@ export const STAGED_IMAGES_POOL = [
       "חשמל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מברג",
+    "keywords": [
+      "בורג",
+      "תיקון",
+      "הרכבה",
+      "רהיטים",
+      "ארון",
+      "שיפוץ",
+      "חשמל"
+    ],
+    "association": "בורג, תיקון, הרכבה, רהיטים, ארון, שיפוץ, חשמל"
   },
   {
     "id": "item_353_מספריים",
@@ -11309,7 +14954,18 @@ export const STAGED_IMAGES_POOL = [
       "תפירה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מספריים",
+    "keywords": [
+      "גזירה",
+      "נייר",
+      "תספורת",
+      "יצירה",
+      "חבילה",
+      "משרד",
+      "תפירה"
+    ],
+    "association": "גזירה, נייר, תספורת, יצירה, חבילה, משרד, תפירה"
   },
   {
     "id": "item_354_סיכת_ביטחון",
@@ -11340,7 +14996,18 @@ export const STAGED_IMAGES_POOL = [
       "עזרה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סיכת ביטחון",
+    "keywords": [
+      "תפירה",
+      "בגדים",
+      "תיקון",
+      "חיתול",
+      "חיבור",
+      "בד",
+      "עזרה"
+    ],
+    "association": "תפירה, בגדים, תיקון, חיתול, חיבור, בד, עזרה"
   },
   {
     "id": "item_355_מטרייה_שחורה_פתוחה",
@@ -11371,7 +15038,18 @@ export const STAGED_IMAGES_POOL = [
       "הגנה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מטרייה",
+    "keywords": [
+      "גשם",
+      "חורף",
+      "מזג אוויר",
+      "סערה",
+      "מעיל",
+      "מים",
+      "הגנה"
+    ],
+    "association": "גשם, חורף, מזג אוויר, סערה, מעיל, מים, הגנה"
   },
   {
     "id": "item_356_מפתח_שוודי",
@@ -11402,7 +15080,18 @@ export const STAGED_IMAGES_POOL = [
       "עבודה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מפתח שוודי",
+    "keywords": [
+      "אינסטלטור",
+      "תיקון",
+      "צנרת",
+      "ברז",
+      "מוסך",
+      "אום",
+      "עבודה"
+    ],
+    "association": "אינסטלטור, תיקון, צנרת, ברז, מוסך, אום, עבודה"
   },
   {
     "id": "item_357_מסור_ידני",
@@ -11433,7 +15122,18 @@ export const STAGED_IMAGES_POOL = [
       "עבודה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מסור",
+    "keywords": [
+      "עץ",
+      "נגרות",
+      "חיתוך",
+      "שיפוץ",
+      "גינון",
+      "בנייה",
+      "עבודה"
+    ],
+    "association": "עץ, נגרות, חיתוך, שיפוץ, גינון, בנייה, עבודה"
   },
   {
     "id": "item_358_מטאטא_ומגרוד",
@@ -11464,7 +15164,18 @@ export const STAGED_IMAGES_POOL = [
       "שטיפה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מטאטא ויעה",
+    "keywords": [
+      "ניקיון",
+      "רצפה",
+      "בית",
+      "אבק",
+      "לכלוך",
+      "סדר",
+      "שטיפה"
+    ],
+    "association": "ניקיון, רצפה, בית, אבק, לכלוך, סדר, שטיפה"
   },
   {
     "id": "item_359_סולם_מתקפל",
@@ -11495,7 +15206,18 @@ export const STAGED_IMAGES_POOL = [
       "תקרה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סולם",
+    "keywords": [
+      "גובה",
+      "צביעה",
+      "שיפוץ",
+      "נורה",
+      "תיקון",
+      "עלייה",
+      "תקרה"
+    ],
+    "association": "גובה, צביעה, שיפוץ, נורה, תיקון, עלייה, תקרה"
   },
   {
     "id": "item_360_מזלג__סכין_וכף",
@@ -11510,23 +15232,37 @@ export const STAGED_IMAGES_POOL = [
     "associations": [
       "אוכל",
       "ארוחה",
+      "חביתה",
+      "ביצים",
       "מטבח",
       "מסעדה",
       "שולחן",
-      "כלים",
       "בישול"
     ],
     "everyday_associations": [
       "אוכל",
       "ארוחה",
+      "חביתה",
+      "ביצים",
       "מטבח",
       "מסעדה",
       "שולחן",
-      "כלים",
       "בישול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סכו\"ם",
+    "keywords": [
+      "אוכל",
+      "ארוחה",
+      "חביתה",
+      "ביצים",
+      "מטבח",
+      "מסעדה",
+      "שולחן",
+      "בישול"
+    ],
+    "association": "אוכל, ארוחה, חביתה, ביצים, מטבח, מסעדה, שולחן, בישול"
   },
   {
     "id": "item_361_פותחן_קופסאות_שימורים",
@@ -11557,7 +15293,18 @@ export const STAGED_IMAGES_POOL = [
       "פחית"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פותחן שימורים",
+    "keywords": [
+      "מטבח",
+      "בישול",
+      "טונה",
+      "קופסה",
+      "אוכל",
+      "קמפינג",
+      "פחית"
+    ],
+    "association": "מטבח, בישול, טונה, קופסה, אוכל, קמפינג, פחית"
   },
   {
     "id": "item_362_פחית_שימורים_חצי_פתוחה",
@@ -11588,7 +15335,18 @@ export const STAGED_IMAGES_POOL = [
       "תירס"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קופסת שימורים",
+    "keywords": [
+      "אוכל",
+      "מזווה",
+      "בישול",
+      "סופרמרקט",
+      "קניות",
+      "טונה",
+      "תירס"
+    ],
+    "association": "אוכל, מזווה, בישול, סופרמרקט, קניות, טונה, תירס"
   },
   {
     "id": "item_363_בקבוק_ייין_ופותחן_חולץ_פקקים",
@@ -11619,7 +15377,18 @@ export const STAGED_IMAGES_POOL = [
       "שעם"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חולץ פקקים",
+    "keywords": [
+      "יין",
+      "בקבוק",
+      "ארוחה",
+      "אירוח",
+      "חגיגה",
+      "מטבח",
+      "שעם"
+    ],
+    "association": "יין, בקבוק, ארוחה, אירוח, חגיגה, מטבח, שעם"
   },
   {
     "id": "item_364_נר_דולק_נוטף_שעווה",
@@ -11650,7 +15419,18 @@ export const STAGED_IMAGES_POOL = [
       "הפסקת חשמל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נר דולק",
+    "keywords": [
+      "אור",
+      "שבת",
+      "אש",
+      "חושך",
+      "שעווה",
+      "רומנטיקה",
+      "הפסקת חשמל"
+    ],
+    "association": "אור, שבת, אש, חושך, שעווה, רומנטיקה, הפסקת חשמל"
   },
   {
     "id": "item_365_פנס_כיס_דולק",
@@ -11681,7 +15461,18 @@ export const STAGED_IMAGES_POOL = [
       "חירום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פנס",
+    "keywords": [
+      "אור",
+      "חושך",
+      "לילה",
+      "סוללות",
+      "חיפוש",
+      "טיול",
+      "חירום"
+    ],
+    "association": "אור, חושך, לילה, סוללות, חיפוש, טיול, חירום"
   },
   {
     "id": "item_366_קופסת_גפרורים",
@@ -11712,7 +15503,18 @@ export const STAGED_IMAGES_POOL = [
       "מדורה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גפרורים",
+    "keywords": [
+      "אש",
+      "הדלקה",
+      "נרות",
+      "מנגל",
+      "גז",
+      "בישול",
+      "מדורה"
+    ],
+    "association": "אש, הדלקה, נרות, מנגל, גז, בישול, מדורה"
   },
   {
     "id": "item_367_מצית_זיפו",
@@ -11743,7 +15545,18 @@ export const STAGED_IMAGES_POOL = [
       "קמפינג"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מצית",
+    "keywords": [
+      "אש",
+      "להבה",
+      "הדלקה",
+      "גז",
+      "נרות",
+      "עישון",
+      "קמפינג"
+    ],
+    "association": "אש, להבה, הדלקה, גז, נרות, עישון, קמפינג"
   },
   {
     "id": "item_368_מברשת_שיניים_ומשחה",
@@ -11774,7 +15587,18 @@ export const STAGED_IMAGES_POOL = [
       "היגיינה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מברשת שיניים",
+    "keywords": [
+      "צחצוח",
+      "בוקר",
+      "רופא",
+      "ניקיון",
+      "אמבטיה",
+      "משחה",
+      "היגיינה"
+    ],
+    "association": "צחצוח, בוקר, רופא, ניקיון, אמבטיה, משחה, היגיינה"
   },
   {
     "id": "item_369_סבון_מוצק_בתוך_קצף",
@@ -11805,7 +15629,18 @@ export const STAGED_IMAGES_POOL = [
       "מים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סבון",
+    "keywords": [
+      "מקלחת",
+      "ניקיון",
+      "קצף",
+      "אמבטיה",
+      "ידיים",
+      "ריח",
+      "מים"
+    ],
+    "association": "מקלחת, ניקיון, קצף, אמבטיה, ידיים, ריח, מים"
   },
   {
     "id": "item_370_נייר_טואלט",
@@ -11836,7 +15671,18 @@ export const STAGED_IMAGES_POOL = [
       "מגבון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נייר טואלט",
+    "keywords": [
+      "שירותים",
+      "קניות",
+      "סופרמרקט",
+      "ניקיון",
+      "אמבטיה",
+      "בית",
+      "מגבון"
+    ],
+    "association": "שירותים, קניות, סופרמרקט, ניקיון, אמבטיה, בית, מגבון"
   },
   {
     "id": "item_371_מסרק_שיער_קלאסי",
@@ -11867,7 +15713,18 @@ export const STAGED_IMAGES_POOL = [
       "אמבטיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מסרק",
+    "keywords": [
+      "שיער",
+      "תספורת",
+      "מספרה",
+      "בוקר",
+      "מראה",
+      "טיפוח",
+      "אמבטיה"
+    ],
+    "association": "שיער, תספורת, מספרה, בוקר, מראה, טיפוח, אמבטיה"
   },
   {
     "id": "item_372_מראת_יד_עגולה",
@@ -11898,7 +15755,18 @@ export const STAGED_IMAGES_POOL = [
       "גילוח"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מראה",
+    "keywords": [
+      "איפור",
+      "טיפוח",
+      "פנים",
+      "אמבטיה",
+      "יופי",
+      "בוקר",
+      "גילוח"
+    ],
+    "association": "איפור, טיפוח, פנים, אמבטיה, יופי, בוקר, גילוח"
   },
   {
     "id": "item_373_משקפי_קריאה",
@@ -11929,7 +15797,18 @@ export const STAGED_IMAGES_POOL = [
       "עבודה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משקפי קריאה",
+    "keywords": [
+      "ראייה",
+      "ספר",
+      "לימודים",
+      "עיניים",
+      "בדיקה",
+      "עיתון",
+      "עבודה"
+    ],
+    "association": "ראייה, ספר, לימודים, עיניים, בדיקה, עיתון, עבודה"
   },
   {
     "id": "item_374_שעון_מעורר_קלאסי",
@@ -11960,7 +15839,18 @@ export const STAGED_IMAGES_POOL = [
       "צלצול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שעון מעורר",
+    "keywords": [
+      "בוקר",
+      "השכמה",
+      "שינה",
+      "זמן",
+      "איחור",
+      "עבודה",
+      "צלצול"
+    ],
+    "association": "בוקר, השכמה, שינה, זמן, איחור, עבודה, צלצול"
   },
   {
     "id": "item_375_קולב_בגדים",
@@ -11991,7 +15881,18 @@ export const STAGED_IMAGES_POOL = [
       "תלייה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קולב",
+    "keywords": [
+      "בגדים",
+      "ארון",
+      "כביסה",
+      "גיהוץ",
+      "חולצה",
+      "סידור",
+      "תלייה"
+    ],
+    "association": "בגדים, ארון, כביסה, גיהוץ, חולצה, סידור, תלייה"
   },
   {
     "id": "item_376_מגהץ_אדים",
@@ -12022,7 +15923,18 @@ export const STAGED_IMAGES_POOL = [
       "ארון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגהץ",
+    "keywords": [
+      "גיהוץ",
+      "חולצה",
+      "כביסה",
+      "בגדים",
+      "קמטים",
+      "אדים",
+      "ארון"
+    ],
+    "association": "גיהוץ, חולצה, כביסה, בגדים, קמטים, אדים, ארון"
   },
   {
     "id": "item_377_מכונת_תפירה_ישנה",
@@ -12053,7 +15965,18 @@ export const STAGED_IMAGES_POOL = [
       "מכפלת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מכונת תפירה",
+    "keywords": [
+      "בגדים",
+      "תיקון",
+      "בד",
+      "חוט",
+      "תופרת",
+      "אופנה",
+      "מכפלת"
+    ],
+    "association": "בגדים, תיקון, בד, חוט, תופרת, אופנה, מכפלת"
   },
   {
     "id": "item_378_מחט_וחוט",
@@ -12084,7 +16007,18 @@ export const STAGED_IMAGES_POOL = [
       "יצירה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מחט וחוט",
+    "keywords": [
+      "תפירה",
+      "תיקון",
+      "בגדים",
+      "כפתור",
+      "בד",
+      "קרע",
+      "יצירה"
+    ],
+    "association": "תפירה, תיקון, בגדים, כפתור, בד, קרע, יצירה"
   },
   {
     "id": "item_379_כפתור_בגדים",
@@ -12115,7 +16049,18 @@ export const STAGED_IMAGES_POOL = [
       "בד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כפתור",
+    "keywords": [
+      "חולצה",
+      "בגדים",
+      "תפירה",
+      "תיקון",
+      "מכנסיים",
+      "ארון",
+      "בד"
+    ],
+    "association": "חולצה, בגדים, תפירה, תיקון, מכנסיים, ארון, בד"
   },
   {
     "id": "item_380_רוכסן",
@@ -12146,7 +16091,18 @@ export const STAGED_IMAGES_POOL = [
       "מכנסיים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רוכסן",
+    "keywords": [
+      "ריצ'רץ'",
+      "מעיל",
+      "תיק",
+      "בגדים",
+      "סגירה",
+      "תפירה",
+      "מכנסיים"
+    ],
+    "association": "ריצ'רץ', מעיל, תיק, בגדים, סגירה, תפירה, מכנסיים"
   },
   {
     "id": "item_381_סרט_מדידה_צהוב",
@@ -12177,7 +16133,18 @@ export const STAGED_IMAGES_POOL = [
       "קניות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מטר מדידה",
+    "keywords": [
+      "שיפוץ",
+      "רהיטים",
+      "דירה",
+      "אורך",
+      "נגרות",
+      "בנייה",
+      "קניות"
+    ],
+    "association": "שיפוץ, רהיטים, דירה, אורך, נגרות, בנייה, קניות"
   },
   {
     "id": "item_382_פנקס_רשימות_ספירלה",
@@ -12208,7 +16175,18 @@ export const STAGED_IMAGES_POOL = [
       "משרד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מחברת",
+    "keywords": [
+      "רשימה",
+      "כתיבה",
+      "קניות",
+      "לימודים",
+      "משימות",
+      "תזכורת",
+      "משרד"
+    ],
+    "association": "רשימה, כתיבה, קניות, לימודים, משימות, תזכורת, משרד"
   },
   {
     "id": "item_383_עט_כדורי_פשוט",
@@ -12239,7 +16217,18 @@ export const STAGED_IMAGES_POOL = [
       "חוזה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עט כדורי",
+    "keywords": [
+      "כתיבה",
+      "חתימה",
+      "משרד",
+      "מסמכים",
+      "לימודים",
+      "מבחן",
+      "חוזה"
+    ],
+    "association": "כתיבה, חתימה, משרד, מסמכים, לימודים, מבחן, חוזה"
   },
   {
     "id": "item_384_עיפרון_צהוב_עם_מחק_אדום",
@@ -12270,7 +16259,18 @@ export const STAGED_IMAGES_POOL = [
       "שרטוט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עיפרון",
+    "keywords": [
+      "כתיבה",
+      "ציור",
+      "לימודים",
+      "מחק",
+      "בית ספר",
+      "מחברת",
+      "שרטוט"
+    ],
+    "association": "כתיבה, ציור, לימודים, מחק, בית ספר, מחברת, שרטוט"
   },
   {
     "id": "item_385_מחדד_מתכת_קטן",
@@ -12301,7 +16301,18 @@ export const STAGED_IMAGES_POOL = [
       "שולחן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מחדד",
+    "keywords": [
+      "עיפרון",
+      "קלמר",
+      "לימודים",
+      "בית ספר",
+      "כתיבה",
+      "ציור",
+      "שולחן"
+    ],
+    "association": "עיפרון, קלמר, לימודים, בית ספר, כתיבה, ציור, שולחן"
   },
   {
     "id": "item_386_מהדק_סיכות_משרדי",
@@ -12332,7 +16343,18 @@ export const STAGED_IMAGES_POOL = [
       "שולחן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שדכן סיכות",
+    "keywords": [
+      "משרד",
+      "דפים",
+      "מסמכים",
+      "תיוק",
+      "עבודה",
+      "נייר",
+      "שולחן"
+    ],
+    "association": "משרד, דפים, מסמכים, תיוק, עבודה, נייר, שולחן"
   },
   {
     "id": "item_387_אטב_נייר",
@@ -12363,7 +16385,18 @@ export const STAGED_IMAGES_POOL = [
       "שולחן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אטב נייר",
+    "keywords": [
+      "משרד",
+      "מסמכים",
+      "דפים",
+      "תיוק",
+      "עבודה",
+      "סדר",
+      "שולחן"
+    ],
+    "association": "משרד, מסמכים, דפים, תיוק, עבודה, סדר, שולחן"
   },
   {
     "id": "item_388_אטב_כביסה_מעץ",
@@ -12394,7 +16427,18 @@ export const STAGED_IMAGES_POOL = [
       "שמש"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אטב כביסה",
+    "keywords": [
+      "ייבוש",
+      "בגדים",
+      "חבל",
+      "מרפסת",
+      "ניקיון",
+      "בית",
+      "שמש"
+    ],
+    "association": "ייבוש, בגדים, חבל, מרפסת, ניקיון, בית, שמש"
   },
   {
     "id": "item_389_סל_כביסה_פלסטיק",
@@ -12425,7 +16469,18 @@ export const STAGED_IMAGES_POOL = [
       "סדר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סל כביסה",
+    "keywords": [
+      "בגדים",
+      "ניקיון",
+      "מכונה",
+      "קיפול",
+      "בית",
+      "אמבטיה",
+      "סדר"
+    ],
+    "association": "בגדים, ניקיון, מכונה, קיפול, בית, אמבטיה, סדר"
   },
   {
     "id": "item_390_צינור_גינה_ירוק_מפותל",
@@ -12456,7 +16511,18 @@ export const STAGED_IMAGES_POOL = [
       "ברז"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צינור השקיה",
+    "keywords": [
+      "גינה",
+      "מים",
+      "שטיפה",
+      "דשא",
+      "צמחים",
+      "חצר",
+      "ברז"
+    ],
+    "association": "גינה, מים, שטיפה, דשא, צמחים, חצר, ברז"
   },
   {
     "id": "item_391_מזלג_גינה",
@@ -12487,7 +16553,18 @@ export const STAGED_IMAGES_POOL = [
       "ערוגה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קלשון גינה",
+    "keywords": [
+      "גינון",
+      "אדמה",
+      "שתילה",
+      "חצר",
+      "צמחים",
+      "עבודה",
+      "ערוגה"
+    ],
+    "association": "גינון, אדמה, שתילה, חצר, צמחים, עבודה, ערוגה"
   },
   {
     "id": "item_392_מגרפה_לגינה",
@@ -12518,7 +16595,18 @@ export const STAGED_IMAGES_POOL = [
       "דשא"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגרפה",
+    "keywords": [
+      "גינה",
+      "עלים",
+      "ניקיון",
+      "חצר",
+      "אדמה",
+      "גינון",
+      "דשא"
+    ],
+    "association": "גינה, עלים, ניקיון, חצר, אדמה, גינון, דשא"
   },
   {
     "id": "item_393_מריצה",
@@ -12549,7 +16637,18 @@ export const STAGED_IMAGES_POOL = [
       "חצר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מריצה",
+    "keywords": [
+      "גינה",
+      "בנייה",
+      "הובלה",
+      "אדמה",
+      "שיפוץ",
+      "עבודה",
+      "חצר"
+    ],
+    "association": "גינה, בנייה, הובלה, אדמה, שיפוץ, עבודה, חצר"
   },
   {
     "id": "item_394_עציץ_חרס_חום",
@@ -12580,7 +16679,18 @@ export const STAGED_IMAGES_POOL = [
       "אדמה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עציץ",
+    "keywords": [
+      "צמחים",
+      "השקיה",
+      "גינה",
+      "מרפסת",
+      "פרחים",
+      "משתלה",
+      "אדמה"
+    ],
+    "association": "צמחים, השקיה, גינה, מרפסת, פרחים, משתלה, אדמה"
   },
   {
     "id": "item_395_מזלף_מים_לפרחים",
@@ -12611,7 +16721,18 @@ export const STAGED_IMAGES_POOL = [
       "גינון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משפך השקיה",
+    "keywords": [
+      "גינה",
+      "צמחים",
+      "מים",
+      "עציצים",
+      "פרחים",
+      "מרפסת",
+      "גינון"
+    ],
+    "association": "גינה, צמחים, מים, עציצים, פרחים, מרפסת, גינון"
   },
   {
     "id": "item_396_ארגז_כלים_אדום",
@@ -12642,7 +16763,18 @@ export const STAGED_IMAGES_POOL = [
       "טכנאי"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ארגז כלים",
+    "keywords": [
+      "תיקון",
+      "שיפוץ",
+      "עבודה",
+      "מוסך",
+      "ברגים",
+      "התקנה",
+      "טכנאי"
+    ],
+    "association": "תיקון, שיפוץ, עבודה, מוסך, ברגים, התקנה, טכנאי"
   },
   {
     "id": "item_397_סרט_הדבקה",
@@ -12673,7 +16805,18 @@ export const STAGED_IMAGES_POOL = [
       "תיקון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סלוטייפ",
+    "keywords": [
+      "הדבקה",
+      "אריזה",
+      "קרטון",
+      "חבילה",
+      "דואר",
+      "משרד",
+      "תיקון"
+    ],
+    "association": "הדבקה, אריזה, קרטון, חבילה, דואר, משרד, תיקון"
   },
   {
     "id": "item_398_בקבוק_תרמוס_כסוף",
@@ -12704,7 +16847,18 @@ export const STAGED_IMAGES_POOL = [
       "בוקר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "תרמוס",
+    "keywords": [
+      "קפה",
+      "תה",
+      "טיול",
+      "חום",
+      "שתייה",
+      "משרד",
+      "בוקר"
+    ],
+    "association": "קפה, תה, טיול, חום, שתייה, משרד, בוקר"
   },
   {
     "id": "item_399_צידנית_פלסטיק_כחולה",
@@ -12735,7 +16889,18 @@ export const STAGED_IMAGES_POOL = [
       "קמפינג"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צידנית",
+    "keywords": [
+      "פיקניק",
+      "חוף",
+      "קרח",
+      "טיול",
+      "אוכל",
+      "שתייה",
+      "קמפינג"
+    ],
+    "association": "פיקניק, חוף, קרח, טיול, אוכל, שתייה, קמפינג"
   },
   {
     "id": "item_400_מזוודת_עזרה_ראשונה_לבנה",
@@ -12766,7 +16931,18 @@ export const STAGED_IMAGES_POOL = [
       "בריאות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עזרה ראשונה",
+    "keywords": [
+      "רופא",
+      "תרופות",
+      "פלסטר",
+      "פציעה",
+      "חירום",
+      "מרפאה",
+      "בריאות"
+    ],
+    "association": "רופא, תרופות, פלסטר, פציעה, חירום, מרפאה, בריאות"
   },
   {
     "id": "item_401_דארת__ויידר",
@@ -12797,7 +16973,18 @@ export const STAGED_IMAGES_POOL = [
       "קולנוע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "דארת' ויידר",
+    "keywords": [
+      "מלחמת הכוכבים",
+      "חלל",
+      "מסכה",
+      "חרב אור",
+      "סרט",
+      "שחור",
+      "קולנוע"
+    ],
+    "association": "מלחמת הכוכבים, חלל, מסכה, חרב אור, סרט, שחור, קולנוע"
   },
   {
     "id": "item_402_באטמן",
@@ -12828,7 +17015,18 @@ export const STAGED_IMAGES_POOL = [
       "קומיקס"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "איש העטלף",
+    "keywords": [
+      "לילה",
+      "גיבור",
+      "גלימה",
+      "מסכה",
+      "סרט",
+      "הצלה",
+      "קומיקס"
+    ],
+    "association": "לילה, גיבור, גלימה, מסכה, סרט, הצלה, קומיקס"
   },
   {
     "id": "item_403_סופרמן",
@@ -12859,7 +17057,18 @@ export const STAGED_IMAGES_POOL = [
       "סרט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "איש הפלדה",
+    "keywords": [
+      "גיבור",
+      "כוח",
+      "תעופה",
+      "גלימה",
+      "הצלה",
+      "שמיים",
+      "סרט"
+    ],
+    "association": "גיבור, כוח, תעופה, גלימה, הצלה, שמיים, סרט"
   },
   {
     "id": "item_404_פאקמן",
@@ -12890,7 +17099,18 @@ export const STAGED_IMAGES_POOL = [
       "צהוב"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פאקמן",
+    "keywords": [
+      "משחק",
+      "מחשב",
+      "ארקייד",
+      "אוכל",
+      "מבוך",
+      "גיימינג",
+      "צהוב"
+    ],
+    "association": "משחק, מחשב, ארקייד, אוכל, מבוך, גיימינג, צהוב"
   },
   {
     "id": "item_405_שרק",
@@ -12921,7 +17141,18 @@ export const STAGED_IMAGES_POOL = [
       "הומור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שרק",
+    "keywords": [
+      "ירוק",
+      "סרט",
+      "אגדה",
+      "מפלצת",
+      "ביצה",
+      "אנימציה",
+      "הומור"
+    ],
+    "association": "ירוק, סרט, אגדה, מפלצת, ביצה, אנימציה, הומור"
   },
   {
     "id": "item_406_הלו_קיטי",
@@ -12952,7 +17183,18 @@ export const STAGED_IMAGES_POOL = [
       "סרט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הלו קיטי",
+    "keywords": [
+      "חתול",
+      "ורוד",
+      "בובה",
+      "ילדים",
+      "יפן",
+      "מתנה",
+      "סרט"
+    ],
+    "association": "חתול, ורוד, בובה, ילדים, יפן, מתנה, סרט"
   },
   {
     "id": "item_407_שפם_הליצן_של_רונלד_מקדונלד",
@@ -12968,22 +17210,36 @@ export const STAGED_IMAGES_POOL = [
       "המבורגר",
       "צ'יפס",
       "מסעדה",
-      "ליצן",
       "אוכל",
       "ילדים",
-      "ארוחה"
+      "ילד",
+      "ארוחה",
+      "לאכול"
     ],
     "everyday_associations": [
       "המבורגר",
       "צ'יפס",
       "מסעדה",
-      "ליצן",
       "אוכל",
       "ילדים",
-      "ארוחה"
+      "ילד",
+      "ארוחה",
+      "לאכול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רונלד מקדונלד",
+    "keywords": [
+      "המבורגר",
+      "צ'יפס",
+      "מסעדה",
+      "אוכל",
+      "ילדים",
+      "ילד",
+      "ארוחה",
+      "לאכול"
+    ],
+    "association": "המבורגר, צ'יפס, מסעדה, אוכל, ילדים, ילד, ארוחה, לאכול"
   },
   {
     "id": "item_408_הלוגו_של_נייק__swoosh_",
@@ -13014,7 +17270,18 @@ export const STAGED_IMAGES_POOL = [
       "בגדים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "נייקי",
+    "keywords": [
+      "נעליים",
+      "ספורט",
+      "ריצה",
+      "אימון",
+      "כושר",
+      "קניות",
+      "בגדים"
+    ],
+    "association": "נעליים, ספורט, ריצה, אימון, כושר, קניות, בגדים"
   },
   {
     "id": "item_409_הפחיות_של_קוקה_קולה",
@@ -13045,7 +17312,18 @@ export const STAGED_IMAGES_POOL = [
       "ארוחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קוקה קולה",
+    "keywords": [
+      "שתייה",
+      "פחית",
+      "סופרמרקט",
+      "קניות",
+      "קרח",
+      "מסיבה",
+      "ארוחה"
+    ],
+    "association": "שתייה, פחית, סופרמרקט, קניות, קרח, מסיבה, ארוחה"
   },
   {
     "id": "item_410_מרלין_מונרו",
@@ -13076,7 +17354,18 @@ export const STAGED_IMAGES_POOL = [
       "בלונד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מרילין מונרו",
+    "keywords": [
+      "קולנוע",
+      "שחקנית",
+      "שמלה",
+      "אופנה",
+      "הוליווד",
+      "איפור",
+      "בלונד"
+    ],
+    "association": "קולנוע, שחקנית, שמלה, אופנה, הוליווד, איפור, בלונד"
   },
   {
     "id": "item_411_הארי_פוטר",
@@ -13107,7 +17396,18 @@ export const STAGED_IMAGES_POOL = [
       "סרט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קוסם צעיר",
+    "keywords": [
+      "שרביט",
+      "משקפיים",
+      "ספר",
+      "קסם",
+      "לימודים",
+      "צעיף",
+      "סרט"
+    ],
+    "association": "שרביט, משקפיים, ספר, קסם, לימודים, צעיף, סרט"
   },
   {
     "id": "item_412_שרלוק_הולמס",
@@ -13138,7 +17438,18 @@ export const STAGED_IMAGES_POOL = [
       "תעלומה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שרלוק הולמס",
+    "keywords": [
+      "בלש",
+      "חקירה",
+      "חיפוש",
+      "מקטרת",
+      "כובע",
+      "פתרון",
+      "תעלומה"
+    ],
+    "association": "בלש, חקירה, חיפוש, מקטרת, כובע, פתרון, תעלומה"
   },
   {
     "id": "item_413_קינג_קונג",
@@ -13169,7 +17480,18 @@ export const STAGED_IMAGES_POOL = [
       "ג'ונגל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קינג קונג",
+    "keywords": [
+      "גורילה",
+      "קוף",
+      "ענק",
+      "כוח",
+      "סרט",
+      "מגדל",
+      "ג'ונגל"
+    ],
+    "association": "גורילה, קוף, ענק, כוח, סרט, מגדל, ג'ונגל"
   },
   {
     "id": "item_414_לגו",
@@ -13200,7 +17522,18 @@ export const STAGED_IMAGES_POOL = [
       "יצירה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לגו",
+    "keywords": [
+      "קוביות",
+      "הרכבה",
+      "משחק",
+      "בנייה",
+      "ילדים",
+      "צעצוע",
+      "יצירה"
+    ],
+    "association": "קוביות, הרכבה, משחק, בנייה, ילדים, צעצוע, יצירה"
   },
   {
     "id": "item_415_הסימפסונים",
@@ -13231,7 +17564,18 @@ export const STAGED_IMAGES_POOL = [
       "קומדיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משפחת סימפסון",
+    "keywords": [
+      "טלוויזיה",
+      "סדרה",
+      "צהוב",
+      "אנימציה",
+      "הומור",
+      "סלון",
+      "קומדיה"
+    ],
+    "association": "טלוויזיה, סדרה, צהוב, אנימציה, הומור, סלון, קומדיה"
   },
   {
     "id": "item_416_פטיש_שופטים",
@@ -13262,7 +17606,18 @@ export const STAGED_IMAGES_POOL = [
       "חוזה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פטיש שופטים",
+    "keywords": [
+      "בית משפט",
+      "חוק",
+      "עורך דין",
+      "החלטה",
+      "משפט",
+      "צדק",
+      "חוזה"
+    ],
+    "association": "בית משפט, חוק, עורך דין, החלטה, משפט, צדק, חוזה"
   },
   {
     "id": "item_417_מזוודת_כסף",
@@ -13293,7 +17648,18 @@ export const STAGED_IMAGES_POOL = [
       "עושר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מזוודת כסף",
+    "keywords": [
+      "מזומן",
+      "בנק",
+      "דולרים",
+      "עסקה",
+      "תשלום",
+      "חיסכון",
+      "עושר"
+    ],
+    "association": "מזומן, בנק, דולרים, עסקה, תשלום, חיסכון, עושר"
   },
   {
     "id": "item_418_כדור_בדולח",
@@ -13324,7 +17690,18 @@ export const STAGED_IMAGES_POOL = [
       "מיסטיקה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור בדולח",
+    "keywords": [
+      "עתיד",
+      "תחזית",
+      "קסם",
+      "זכוכית",
+      "מזל",
+      "ניחוש",
+      "מיסטיקה"
+    ],
+    "association": "עתיד, תחזית, קסם, זכוכית, מזל, ניחוש, מיסטיקה"
   },
   {
     "id": "item_419_מפתח_שוודי___מפתח_ברגים",
@@ -13355,7 +17732,18 @@ export const STAGED_IMAGES_POOL = [
       "אום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מפתח ברגים",
+    "keywords": [
+      "אינסטלטור",
+      "תיקון",
+      "מוסך",
+      "צנרת",
+      "עבודה",
+      "שיפוץ",
+      "אום"
+    ],
+    "association": "אינסטלטור, תיקון, מוסך, צנרת, עבודה, שיפוץ, אום"
   },
   {
     "id": "item_420_סטטוסקופ",
@@ -13386,7 +17774,18 @@ export const STAGED_IMAGES_POOL = [
       "חולה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סטטוסקופ",
+    "keywords": [
+      "רופא",
+      "בדיקה",
+      "מרפאה",
+      "לב",
+      "בריאות",
+      "תור",
+      "חולה"
+    ],
+    "association": "רופא, בדיקה, מרפאה, לב, בריאות, תור, חולה"
   },
   {
     "id": "item_421_עגלת_קניות",
@@ -13417,7 +17816,18 @@ export const STAGED_IMAGES_POOL = [
       "בית"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עגלת קניות",
+    "keywords": [
+      "סופרמרקט",
+      "מכולת",
+      "אוכל",
+      "קופה",
+      "רשימה",
+      "מצרכים",
+      "בית"
+    ],
+    "association": "סופרמרקט, מכולת, אוכל, קופה, רשימה, מצרכים, בית"
   },
   {
     "id": "item_422_כרטיס_אדום",
@@ -13448,7 +17858,18 @@ export const STAGED_IMAGES_POOL = [
       "ספורט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כרטיס הרחקה",
+    "keywords": [
+      "שופט",
+      "עבירה",
+      "כדורגל",
+      "עונש",
+      "אזהרה",
+      "חוק",
+      "ספורט"
+    ],
+    "association": "שופט, עבירה, כדורגל, עונש, אזהרה, חוק, ספורט"
   },
   {
     "id": "item_423_משקולת_ברזל__dumbbell_",
@@ -13479,7 +17900,18 @@ export const STAGED_IMAGES_POOL = [
       "הרמה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משקולת יד",
+    "keywords": [
+      "כושר",
+      "אימון",
+      "חדר כושר",
+      "שרירים",
+      "כוח",
+      "ספורט",
+      "הרמה"
+    ],
+    "association": "כושר, אימון, חדר כושר, שרירים, כוח, ספורט, הרמה"
   },
   {
     "id": "item_424_שעון_חול",
@@ -13510,7 +17942,18 @@ export const STAGED_IMAGES_POOL = [
       "זכוכית"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שעון חול",
+    "keywords": [
+      "זמן",
+      "דקות",
+      "המתנה",
+      "סבלנות",
+      "תזכורת",
+      "מועד",
+      "זכוכית"
+    ],
+    "association": "זמן, דקות, המתנה, סבלנות, תזכורת, מועד, זכוכית"
   },
   {
     "id": "item_425_קופת_חיסכון_בצורת_חזיר",
@@ -13541,7 +17984,18 @@ export const STAGED_IMAGES_POOL = [
       "אוצר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קופת חיסכון",
+    "keywords": [
+      "כסף",
+      "מטבעות",
+      "בנק",
+      "תקציב",
+      "כלכלה",
+      "שקלים",
+      "אוצר"
+    ],
+    "association": "כסף, מטבעות, בנק, תקציב, כלכלה, שקלים, אוצר"
   },
   {
     "id": "item_426_חבל_תלייה",
@@ -13572,7 +18026,18 @@ export const STAGED_IMAGES_POOL = [
       "עונש"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לולאת חבל",
+    "keywords": [
+      "קשר",
+      "סכנה",
+      "מערב פרוע",
+      "גרדום",
+      "משפט",
+      "אזהרה",
+      "עונש"
+    ],
+    "association": "קשר, סכנה, מערב פרוע, גרדום, משפט, אזהרה, עונש"
   },
   {
     "id": "item_427_רסיבר___טלפון_חוגה_ישן",
@@ -13603,7 +18068,18 @@ export const STAGED_IMAGES_POOL = [
       "תיאום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שפופרת טלפון",
+    "keywords": [
+      "שיחה",
+      "התקשרות",
+      "קשר",
+      "צלצול",
+      "משרד",
+      "הודעה",
+      "תיאום"
+    ],
+    "association": "שיחה, התקשרות, קשר, צלצול, משרד, הודעה, תיאום"
   },
   {
     "id": "item_428_קביים",
@@ -13634,7 +18110,18 @@ export const STAGED_IMAGES_POOL = [
       "מרפאה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קביים",
+    "keywords": [
+      "רופא",
+      "גבס",
+      "פציעה",
+      "הליכה",
+      "אורתופד",
+      "רגל",
+      "מרפאה"
+    ],
+    "association": "רופא, גבס, פציעה, הליכה, אורתופד, רגל, מרפאה"
   },
   {
     "id": "item_429_מספריים_חותכים_סרט_אדום",
@@ -13665,7 +18152,18 @@ export const STAGED_IMAGES_POOL = [
       "חדש"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גזירת סרט",
+    "keywords": [
+      "פתיחה",
+      "טקס",
+      "חגיגה",
+      "אירוע",
+      "התחלה",
+      "השקה",
+      "חדש"
+    ],
+    "association": "פתיחה, טקס, חגיגה, אירוע, התחלה, השקה, חדש"
   },
   {
     "id": "item_430_סיכת_ביטחון",
@@ -13696,7 +18194,18 @@ export const STAGED_IMAGES_POOL = [
       "עזרה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סיכת תפירה",
+    "keywords": [
+      "בגדים",
+      "תיקון",
+      "בד",
+      "חיתול",
+      "חיבור",
+      "אופנה",
+      "עזרה"
+    ],
+    "association": "בגדים, תיקון, בד, חיתול, חיבור, אופנה, עזרה"
   },
   {
     "id": "item_431_זכוכית_מגדלת",
@@ -13727,7 +18236,18 @@ export const STAGED_IMAGES_POOL = [
       "עדשה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "זכוכית מגדלת",
+    "keywords": [
+      "חיפוש",
+      "בדיקה",
+      "בלש",
+      "חקירה",
+      "קריאה",
+      "פרטים",
+      "עדשה"
+    ],
+    "association": "חיפוש, בדיקה, בלש, חקירה, קריאה, פרטים, עדשה"
   },
   {
     "id": "item_432_מזרק_רפואי",
@@ -13758,7 +18278,18 @@ export const STAGED_IMAGES_POOL = [
       "מחט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מזרק",
+    "keywords": [
+      "חיסון",
+      "רופא",
+      "אחות",
+      "מרפאה",
+      "בדיקת דם",
+      "תרופה",
+      "מחט"
+    ],
+    "association": "חיסון, רופא, אחות, מרפאה, בדיקת דם, תרופה, מחט"
   },
   {
     "id": "item_433_כתר_זהב",
@@ -13789,7 +18320,18 @@ export const STAGED_IMAGES_POOL = [
       "ניצחון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כתר מלוכה",
+    "keywords": [
+      "מלך",
+      "מלכה",
+      "זהב",
+      "ארמון",
+      "יהלומים",
+      "שלטון",
+      "ניצחון"
+    ],
+    "association": "מלך, מלכה, זהב, ארמון, יהלומים, שלטון, ניצחון"
   },
   {
     "id": "item_434_תיק_עזרה_ראשונה",
@@ -13820,7 +18362,18 @@ export const STAGED_IMAGES_POOL = [
       "מרפאה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "תיק חובש",
+    "keywords": [
+      "רופא",
+      "תרופות",
+      "חירום",
+      "פלסטר",
+      "תחבושת",
+      "פציעה",
+      "מרפאה"
+    ],
+    "association": "רופא, תרופות, חירום, פלסטר, תחבושת, פציעה, מרפאה"
   },
   {
     "id": "item_435_חליפת_חלל",
@@ -13851,7 +18404,18 @@ export const STAGED_IMAGES_POOL = [
       "טיסה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חליפת חלל",
+    "keywords": [
+      "אסטרונאוט",
+      "ירח",
+      "כוכבים",
+      "נאס\"א",
+      "מדע",
+      "קסדה",
+      "טיסה"
+    ],
+    "association": "אסטרונאוט, ירח, כוכבים, נאס\"א, מדע, קסדה, טיסה"
   },
   {
     "id": "item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_",
@@ -13882,7 +18446,18 @@ export const STAGED_IMAGES_POOL = [
       "סטודנט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כובע בוגרים",
+    "keywords": [
+      "תואר",
+      "אוניברסיטה",
+      "לימודים",
+      "סיום",
+      "טקס",
+      "תעודה",
+      "סטודנט"
+    ],
+    "association": "תואר, אוניברסיטה, לימודים, סיום, טקס, תעודה, סטודנט"
   },
   {
     "id": "item_437_כרטיס_קולנוע_מנייר",
@@ -13913,7 +18488,18 @@ export const STAGED_IMAGES_POOL = [
       "אולם"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כרטיס כניסה",
+    "keywords": [
+      "קולנוע",
+      "סרט",
+      "הופעה",
+      "הצגה",
+      "בילוי",
+      "הזמנה",
+      "אולם"
+    ],
+    "association": "קולנוע, סרט, הופעה, הצגה, בילוי, הזמנה, אולם"
   },
   {
     "id": "item_438_קוביית_משחק__עם_נקודות_",
@@ -13944,7 +18530,18 @@ export const STAGED_IMAGES_POOL = [
       "בילוי"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קוביות משחק",
+    "keywords": [
+      "שש בש",
+      "מזל",
+      "מספרים",
+      "הטלה",
+      "קזינו",
+      "לוח",
+      "בילוי"
+    ],
+    "association": "שש בש, מזל, מספרים, הטלה, קזינו, לוח, בילוי"
   },
   {
     "id": "item_439_הביג_בן",
@@ -13975,7 +18572,18 @@ export const STAGED_IMAGES_POOL = [
       "טיסה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ביג בן",
+    "keywords": [
+      "לונדון",
+      "אנגליה",
+      "שעון",
+      "מגדל",
+      "חופשה",
+      "זמן",
+      "טיסה"
+    ],
+    "association": "לונדון, אנגליה, שעון, מגדל, חופשה, זמן, טיסה"
   },
   {
     "id": "item_440_טאג__מהאל",
@@ -14006,7 +18614,18 @@ export const STAGED_IMAGES_POOL = [
       "חופשה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טאג' מהאל",
+    "keywords": [
+      "הודו",
+      "ארמון",
+      "תיירות",
+      "טיול",
+      "שיש",
+      "מבנה",
+      "חופשה"
+    ],
+    "association": "הודו, ארמון, תיירות, טיול, שיש, מבנה, חופשה"
   },
   {
     "id": "item_441_פסל_החושב__רודן_",
@@ -14037,7 +18656,18 @@ export const STAGED_IMAGES_POOL = [
       "ריכוז"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פסל החושב",
+    "keywords": [
+      "מחשבה",
+      "פילוסופיה",
+      "מוח",
+      "אמנות",
+      "מוזיאון",
+      "החלטה",
+      "ריכוז"
+    ],
+    "association": "מחשבה, פילוסופיה, מוח, אמנות, מוזיאון, החלטה, ריכוז"
   },
   {
     "id": "item_442_פסל_דוד__מיכלאנג_לו_",
@@ -14068,7 +18698,18 @@ export const STAGED_IMAGES_POOL = [
       "פיסול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פסל דוד",
+    "keywords": [
+      "אמנות",
+      "מוזיאון",
+      "שיש",
+      "איטליה",
+      "היסטוריה",
+      "תרבות",
+      "פיסול"
+    ],
+    "association": "אמנות, מוזיאון, שיש, איטליה, היסטוריה, תרבות, פיסול"
   },
   {
     "id": "item_443_הקוליסאום",
@@ -14099,7 +18740,18 @@ export const STAGED_IMAGES_POOL = [
       "עתיק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הקוליסאום",
+    "keywords": [
+      "רומא",
+      "איטליה",
+      "זירה",
+      "היסטוריה",
+      "חופשה",
+      "תיירות",
+      "עתיק"
+    ],
+    "association": "רומא, איטליה, זירה, היסטוריה, חופשה, תיירות, עתיק"
   },
   {
     "id": "item_444_החומה_הסינית",
@@ -14130,7 +18782,18 @@ export const STAGED_IMAGES_POOL = [
       "מסלול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "החומה הסינית",
+    "keywords": [
+      "סין",
+      "טיול",
+      "היסטוריה",
+      "הגנה",
+      "הרים",
+      "תיירות",
+      "מסלול"
+    ],
+    "association": "סין, טיול, היסטוריה, הגנה, הרים, תיירות, מסלול"
   },
   {
     "id": "item_445_הבית_הלבן",
@@ -14161,7 +18824,18 @@ export const STAGED_IMAGES_POOL = [
       "שלטון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הבית הלבן",
+    "keywords": [
+      "נשיא",
+      "אמריקה",
+      "ממשלה",
+      "פוליטיקה",
+      "וושינגטון",
+      "חדשות",
+      "שלטון"
+    ],
+    "association": "נשיא, אמריקה, ממשלה, פוליטיקה, וושינגטון, חדשות, שלטון"
   },
   {
     "id": "item_446_מגדל_פיזה_הנוטה",
@@ -14192,7 +18866,18 @@ export const STAGED_IMAGES_POOL = [
       "צילום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגדל פיזה",
+    "keywords": [
+      "איטליה",
+      "שיפוע",
+      "תיירות",
+      "חופשה",
+      "אדריכלות",
+      "בניין",
+      "צילום"
+    ],
+    "association": "איטליה, שיפוע, תיירות, חופשה, אדריכלות, בניין, צילום"
   },
   {
     "id": "item_447_פסל_ישו_הגואל_בריו",
@@ -14223,7 +18908,18 @@ export const STAGED_IMAGES_POOL = [
       "דרום אמריקה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פסל הגואל",
+    "keywords": [
+      "ברזיל",
+      "ריו",
+      "חופשה",
+      "הר",
+      "תצפית",
+      "תיירות",
+      "דרום אמריקה"
+    ],
+    "association": "ברזיל, ריו, חופשה, הר, תצפית, תיירות, דרום אמריקה"
   },
   {
     "id": "item_448_גשר_שער_הזהב",
@@ -14254,7 +18950,18 @@ export const STAGED_IMAGES_POOL = [
       "אדום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גשר שער הזהב",
+    "keywords": [
+      "סן פרנסיסקו",
+      "אמריקה",
+      "כביש",
+      "מעבר",
+      "ים",
+      "נסיעה",
+      "אדום"
+    ],
+    "association": "סן פרנסיסקו, אמריקה, כביש, מעבר, ים, נסיעה, אדום"
   },
   {
     "id": "item_449_הצלב_האדום",
@@ -14285,7 +18992,18 @@ export const STAGED_IMAGES_POOL = [
       "מרפאה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צלב אדום",
+    "keywords": [
+      "רפואה",
+      "עזרה",
+      "בית חולים",
+      "אמבולנס",
+      "חירום",
+      "הצלה",
+      "מרפאה"
+    ],
+    "association": "רפואה, עזרה, בית חולים, אמבולנס, חירום, הצלה, מרפאה"
   },
   {
     "id": "item_450_סימן_היין_והיאנג",
@@ -14316,7 +19034,18 @@ export const STAGED_IMAGES_POOL = [
       "הרמוניה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "יין ויאנג",
+    "keywords": [
+      "איזון",
+      "שלווה",
+      "רוגע",
+      "פילוסופיה",
+      "מדיטציה",
+      "שחור לבן",
+      "הרמוניה"
+    ],
+    "association": "איזון, שלווה, רוגע, פילוסופיה, מדיטציה, שחור לבן, הרמוניה"
   },
   {
     "id": "item_451_הפטיש_והמגל",
@@ -14347,7 +19076,18 @@ export const STAGED_IMAGES_POOL = [
       "אדום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פטיש ומגל",
+    "keywords": [
+      "רוסיה",
+      "היסטוריה",
+      "עבודה",
+      "חקלאות",
+      "פוליטיקה",
+      "סמל",
+      "אדום"
+    ],
+    "association": "רוסיה, היסטוריה, עבודה, חקלאות, פוליטיקה, סמל, אדום"
   },
   {
     "id": "item_452_צלב_הקרס__swastika_",
@@ -14378,7 +19118,18 @@ export const STAGED_IMAGES_POOL = [
       "שיעור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צלב קרס",
+    "keywords": [
+      "היסטוריה",
+      "מלחמה",
+      "זיכרון",
+      "גרמניה",
+      "עבר",
+      "מוזיאון",
+      "שיעור"
+    ],
+    "association": "היסטוריה, מלחמה, זיכרון, גרמניה, עבר, מוזיאון, שיעור"
   },
   {
     "id": "item_453_ברק_בשמיים",
@@ -14409,7 +19160,18 @@ export const STAGED_IMAGES_POOL = [
       "מזג אוויר"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סופת ברקים",
+    "keywords": [
+      "רעם",
+      "חשמל",
+      "גשם",
+      "חורף",
+      "עננים",
+      "סערה",
+      "מזג אוויר"
+    ],
+    "association": "רעם, חשמל, גשם, חורף, עננים, סערה, מזג אוויר"
   },
   {
     "id": "item_454_טורנדו___מערבולת",
@@ -14440,7 +19202,18 @@ export const STAGED_IMAGES_POOL = [
       "חירום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טורנדו",
+    "keywords": [
+      "רוח",
+      "סופה",
+      "מערבולת",
+      "סערה",
+      "ענן",
+      "מזג אוויר",
+      "חירום"
+    ],
+    "association": "רוח, סופה, מערבולת, סערה, ענן, מזג אוויר, חירום"
   },
   {
     "id": "item_455_הר_געש_מתפרץ",
@@ -14471,7 +19244,18 @@ export const STAGED_IMAGES_POOL = [
       "סלעים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "הר געש",
+    "keywords": [
+      "לבה",
+      "אש",
+      "עשן",
+      "פיצוץ",
+      "טבע",
+      "חום",
+      "סלעים"
+    ],
+    "association": "לבה, אש, עשן, פיצוץ, טבע, חום, סלעים"
   },
   {
     "id": "item_456_זיקית",
@@ -14502,7 +19286,18 @@ export const STAGED_IMAGES_POOL = [
       "שינוי"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "זיקית",
+    "keywords": [
+      "צבעים",
+      "הסוואה",
+      "לטאה",
+      "טבע",
+      "עץ",
+      "ירוק",
+      "שינוי"
+    ],
+    "association": "צבעים, הסוואה, לטאה, טבע, עץ, ירוק, שינוי"
   },
   {
     "id": "item_457_עקרב",
@@ -14533,7 +19328,18 @@ export const STAGED_IMAGES_POOL = [
       "זהירות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עקרב",
+    "keywords": [
+      "מדבר",
+      "עוקץ",
+      "ארס",
+      "סכנה",
+      "חול",
+      "סלע",
+      "זהירות"
+    ],
+    "association": "מדבר, עוקץ, ארס, סכנה, חול, סלע, זהירות"
   },
   {
     "id": "item_458_אריה",
@@ -14564,7 +19370,18 @@ export const STAGED_IMAGES_POOL = [
       "גן חיות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אריה שואג",
+    "keywords": [
+      "מלך",
+      "כוח",
+      "ספארי",
+      "רעמה",
+      "אומץ",
+      "טבע",
+      "גן חיות"
+    ],
+    "association": "מלך, כוח, ספארי, רעמה, אומץ, טבע, גן חיות"
   },
   {
     "id": "item_459_יונה_לבנה_עם_עלה_זית",
@@ -14595,7 +19412,18 @@ export const STAGED_IMAGES_POOL = [
       "הסכם"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "יונת שלום",
+    "keywords": [
+      "ציפור",
+      "לבן",
+      "עלה זית",
+      "חופש",
+      "שמיים",
+      "מעוף",
+      "הסכם"
+    ],
+    "association": "ציפור, לבן, עלה זית, חופש, שמיים, מעוף, הסכם"
   },
   {
     "id": "item_460_ינשוף",
@@ -14626,7 +19454,18 @@ export const STAGED_IMAGES_POOL = [
       "שקט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "ינשוף לילה",
+    "keywords": [
+      "חוכמה",
+      "חושך",
+      "ציפור",
+      "עץ",
+      "עיניים",
+      "יער",
+      "שקט"
+    ],
+    "association": "חוכמה, חושך, ציפור, עץ, עיניים, יער, שקט"
   },
   {
     "id": "item_461_נשר",
@@ -14657,7 +19496,18 @@ export const STAGED_IMAGES_POOL = [
       "צוק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עיט מעופף",
+    "keywords": [
+      "ציפור",
+      "שמיים",
+      "מעוף",
+      "כנפיים",
+      "טבע",
+      "גובה",
+      "צוק"
+    ],
+    "association": "ציפור, שמיים, מעוף, כנפיים, טבע, גובה, צוק"
   },
   {
     "id": "item_462_כלב_נחייה",
@@ -14688,7 +19538,18 @@ export const STAGED_IMAGES_POOL = [
       "רצועה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כלב נחייה",
+    "keywords": [
+      "עזרה",
+      "הליכה",
+      "וטרינר",
+      "טיול",
+      "נאמנות",
+      "חבר",
+      "רצועה"
+    ],
+    "association": "עזרה, הליכה, וטרינר, טיול, נאמנות, חבר, רצועה"
   },
   {
     "id": "item_463_קורי_עכביש",
@@ -14719,7 +19580,18 @@ export const STAGED_IMAGES_POOL = [
       "מכחול"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קורי עכביש",
+    "keywords": [
+      "רשת",
+      "ניקיון",
+      "אבק",
+      "חרקים",
+      "פינה",
+      "טבע",
+      "מכחול"
+    ],
+    "association": "רשת, ניקיון, אבק, חרקים, פינה, טבע, מכחול"
   },
   {
     "id": "item_464_שקיעה_בים",
@@ -14750,7 +19622,18 @@ export const STAGED_IMAGES_POOL = [
       "כתום"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שקיעה",
+    "keywords": [
+      "ערב",
+      "ים",
+      "שמש",
+      "חוף",
+      "רוגע",
+      "נוף",
+      "כתום"
+    ],
+    "association": "ערב, ים, שמש, חוף, רוגע, נוף, כתום"
   },
   {
     "id": "item_465_קרחון__iceberg_",
@@ -14781,7 +19664,18 @@ export const STAGED_IMAGES_POOL = [
       "קיפאון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קרחון",
+    "keywords": [
+      "קור",
+      "ים",
+      "שלג",
+      "חורף",
+      "מים",
+      "אנטארקטיקה",
+      "קיפאון"
+    ],
+    "association": "קור, ים, שלג, חורף, מים, אנטארקטיקה, קיפאון"
   },
   {
     "id": "item_466_עץ_שלכת_עירום",
@@ -14812,7 +19706,18 @@ export const STAGED_IMAGES_POOL = [
       "גזע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "עץ בחורף",
+    "keywords": [
+      "ענפים",
+      "קור",
+      "סתיו",
+      "שלכת",
+      "טבע",
+      "יער",
+      "גזע"
+    ],
+    "association": "ענפים, קור, סתיו, שלכת, טבע, יער, גזע"
   },
   {
     "id": "item_467_שדה_חמניות",
@@ -14843,7 +19748,18 @@ export const STAGED_IMAGES_POOL = [
       "קיץ"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חמניות",
+    "keywords": [
+      "פרחים",
+      "צהוב",
+      "שמש",
+      "גרעינים",
+      "טבע",
+      "שדה",
+      "קיץ"
+    ],
+    "association": "פרחים, צהוב, שמש, גרעינים, טבע, שדה, קיץ"
   },
   {
     "id": "item_468_מייקל_ג_ורדן__צללית_ה_jumpman_",
@@ -14874,7 +19790,18 @@ export const STAGED_IMAGES_POOL = [
       "אימון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מייקל ג'ורדן",
+    "keywords": [
+      "כדורסל",
+      "ספורט",
+      "קפיצה",
+      "נעליים",
+      "אלוף",
+      "מגרש",
+      "אימון"
+    ],
+    "association": "כדורסל, ספורט, קפיצה, נעליים, אלוף, מגרש, אימון"
   },
   {
     "id": "item_469_גביע_זהב__מונף_בשתי_ידיים_",
@@ -14905,7 +19832,18 @@ export const STAGED_IMAGES_POOL = [
       "ספורט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גביע ניצחון",
+    "keywords": [
+      "אליפות",
+      "פרס",
+      "מקום ראשון",
+      "תחרות",
+      "הצלחה",
+      "זהב",
+      "ספורט"
+    ],
+    "association": "אליפות, פרס, מקום ראשון, תחרות, הצלחה, זהב, ספורט"
   },
   {
     "id": "item_470_מדליית_זהב",
@@ -14936,7 +19874,18 @@ export const STAGED_IMAGES_POOL = [
       "הצלחה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מדליית זהב",
+    "keywords": [
+      "ניצחון",
+      "אולימפיאדה",
+      "פרס",
+      "תחרות",
+      "אלוף",
+      "ספורט",
+      "הצלחה"
+    ],
+    "association": "ניצחון, אולימפיאדה, פרס, תחרות, אלוף, ספורט, הצלחה"
   },
   {
     "id": "item_471_לוח_מטרה_וחיצי_דארטס",
@@ -14967,7 +19916,18 @@ export const STAGED_IMAGES_POOL = [
       "ניקוד"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חצי דארטס",
+    "keywords": [
+      "מטרה",
+      "קליעה",
+      "משחק",
+      "דיוק",
+      "פאב",
+      "מועדון",
+      "ניקוד"
+    ],
+    "association": "מטרה, קליעה, משחק, דיוק, פאב, מועדון, ניקוד"
   },
   {
     "id": "item_472_מכונית_פורמולה_1",
@@ -14998,7 +19958,18 @@ export const STAGED_IMAGES_POOL = [
       "מוסך"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פורמולה 1",
+    "keywords": [
+      "מרוץ",
+      "מהירות",
+      "נהיגה",
+      "מסלול",
+      "רכב",
+      "אליפות",
+      "מוסך"
+    ],
+    "association": "מרוץ, מהירות, נהיגה, מסלול, רכב, אליפות, מוסך"
   },
   {
     "id": "item_473_כדור_טניס_ירוק_זוהר",
@@ -15029,7 +20000,18 @@ export const STAGED_IMAGES_POOL = [
       "משחק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כדור ירוק",
+    "keywords": [
+      "טניס",
+      "מחבט",
+      "מגרש",
+      "ספורט",
+      "אימון",
+      "רשת",
+      "משחק"
+    ],
+    "association": "טניס, מחבט, מגרש, ספורט, אימון, רשת, משחק"
   },
   {
     "id": "item_474_כדור_באולינג_מפיל_פינים",
@@ -15060,7 +20042,18 @@ export const STAGED_IMAGES_POOL = [
       "ניצחון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פינים בבאולינג",
+    "keywords": [
+      "סטרייק",
+      "משחק",
+      "מסלול",
+      "כדור",
+      "בילוי",
+      "ערב",
+      "ניצחון"
+    ],
+    "association": "סטרייק, משחק, מסלול, כדור, בילוי, ערב, ניצחון"
   },
   {
     "id": "item_475_חגורה_שחורה_באומנויות_לחימה",
@@ -15091,7 +20084,18 @@ export const STAGED_IMAGES_POOL = [
       "מזרן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "חגורה שחורה",
+    "keywords": [
+      "קראטה",
+      "ג'ודו",
+      "אימון",
+      "לחימה",
+      "מאסטר",
+      "ספורט",
+      "מזרן"
+    ],
+    "association": "קראטה, ג'ודו, אימון, לחימה, מאסטר, ספורט, מזרן"
   },
   {
     "id": "item_476_שחמט__כלי_המלך_או_הרץ_",
@@ -15122,7 +20126,18 @@ export const STAGED_IMAGES_POOL = [
       "תחרות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "כלי שחמט",
+    "keywords": [
+      "מלך",
+      "מלכה",
+      "אסטרטגיה",
+      "מחשבה",
+      "לוח",
+      "משחק",
+      "תחרות"
+    ],
+    "association": "מלך, מלכה, אסטרטגיה, מחשבה, לוח, משחק, תחרות"
   },
   {
     "id": "item_477_מלאך",
@@ -15153,7 +20168,18 @@ export const STAGED_IMAGES_POOL = [
       "ענן"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מלאך",
+    "keywords": [
+      "כנפיים",
+      "שמיים",
+      "לבן",
+      "טוב",
+      "שמירה",
+      "ברכה",
+      "ענן"
+    ],
+    "association": "כנפיים, שמיים, לבן, טוב, שמירה, ברכה, ענן"
   },
   {
     "id": "item_478_שטן___דרקון",
@@ -15184,7 +20210,18 @@ export const STAGED_IMAGES_POOL = [
       "מעוף"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "דרקון אדום",
+    "keywords": [
+      "אש",
+      "כנפיים",
+      "אגדה",
+      "מפלצת",
+      "עוצמה",
+      "דמיון",
+      "מעוף"
+    ],
+    "association": "אש, כנפיים, אגדה, מפלצת, עוצמה, דמיון, מעוף"
   },
   {
     "id": "item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_",
@@ -15215,7 +20252,18 @@ export const STAGED_IMAGES_POOL = [
       "ריפוי"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סמל הרפואה",
+    "keywords": [
+      "רופא",
+      "בית חולים",
+      "בריאות",
+      "מרפאה",
+      "תרופות",
+      "נחש",
+      "ריפוי"
+    ],
+    "association": "רופא, בית חולים, בריאות, מרפאה, תרופות, נחש, ריפוי"
   },
   {
     "id": "item_480_פרש_הברונזה___אביר_על_סוס_לבן",
@@ -15246,7 +20294,18 @@ export const STAGED_IMAGES_POOL = [
       "גיבור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פסל פרש",
+    "keywords": [
+      "סוס",
+      "אביר",
+      "היסטוריה",
+      "עיר",
+      "אנדרטה",
+      "כיכר",
+      "גיבור"
+    ],
+    "association": "סוס, אביר, היסטוריה, עיר, אנדרטה, כיכר, גיבור"
   },
   {
     "id": "item_481_הצלב_הנוצרי",
@@ -15277,7 +20336,18 @@ export const STAGED_IMAGES_POOL = [
       "עץ"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צלב",
+    "keywords": [
+      "כנסייה",
+      "דת",
+      "תפילה",
+      "אמונה",
+      "היסטוריה",
+      "סמל",
+      "עץ"
+    ],
+    "association": "כנסייה, דת, תפילה, אמונה, היסטוריה, סמל, עץ"
   },
   {
     "id": "item_482_סהר_וכוכב",
@@ -15308,7 +20378,18 @@ export const STAGED_IMAGES_POOL = [
       "דת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סהר וכוכב",
+    "keywords": [
+      "ירח",
+      "לילה",
+      "אסלאם",
+      "מסגד",
+      "שמיים",
+      "סמל",
+      "דת"
+    ],
+    "association": "ירח, לילה, אסלאם, מסגד, שמיים, סמל, דת"
   },
   {
     "id": "item_483_מגן_דוד",
@@ -15339,7 +20420,18 @@ export const STAGED_IMAGES_POOL = [
       "מסורת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מגן דוד כחול",
+    "keywords": [
+      "ישראל",
+      "יהדות",
+      "דגל",
+      "בית כנסת",
+      "סמל",
+      "חג",
+      "מסורת"
+    ],
+    "association": "ישראל, יהדות, דגל, בית כנסת, סמל, חג, מסורת"
   },
   {
     "id": "item_484_בודהה_מחייך",
@@ -15370,7 +20462,18 @@ export const STAGED_IMAGES_POOL = [
       "שקט"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "פסל בודהה",
+    "keywords": [
+      "מדיטציה",
+      "שלווה",
+      "רוגע",
+      "מזרח",
+      "מקדש",
+      "יוגה",
+      "שקט"
+    ],
+    "association": "מדיטציה, שלווה, רוגע, מזרח, מקדש, יוגה, שקט"
   },
   {
     "id": "item_485_מלאך_המוות__grim_reaper_",
@@ -15401,7 +20504,18 @@ export const STAGED_IMAGES_POOL = [
       "שחור"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מלאך המוות",
+    "keywords": [
+      "חרמש",
+      "גלימה",
+      "סכנה",
+      "פחד",
+      "לילה",
+      "שלד",
+      "שחור"
+    ],
+    "association": "חרמש, גלימה, סכנה, פחד, לילה, שלד, שחור"
   },
   {
     "id": "item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_",
@@ -15432,7 +20546,18 @@ export const STAGED_IMAGES_POOL = [
       "לימודים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אטום",
+    "keywords": [
+      "מדע",
+      "פיזיקה",
+      "מעבדה",
+      "אנרגיה",
+      "מחקר",
+      "כימיה",
+      "לימודים"
+    ],
+    "association": "מדע, פיזיקה, מעבדה, אנרגיה, מחקר, כימיה, לימודים"
   },
   {
     "id": "item_487_מבחנה_עם_נוזל_מבעבע",
@@ -15463,7 +20588,18 @@ export const STAGED_IMAGES_POOL = [
       "נוזל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "מבחנות מעבדה",
+    "keywords": [
+      "מדע",
+      "ניסוי",
+      "בדיקה",
+      "כימיה",
+      "מחקר",
+      "רפואה",
+      "נוזל"
+    ],
+    "association": "מדע, ניסוי, בדיקה, כימיה, מחקר, רפואה, נוזל"
   },
   {
     "id": "item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_",
@@ -15494,7 +20630,18 @@ export const STAGED_IMAGES_POOL = [
       "אנרגיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סמל קרינה",
+    "keywords": [
+      "סכנה",
+      "אזהרה",
+      "גרעין",
+      "צהוב",
+      "מעבדה",
+      "זהירות",
+      "אנרגיה"
+    ],
+    "association": "סכנה, אזהרה, גרעין, צהוב, מעבדה, זהירות, אנרגיה"
   },
   {
     "id": "item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_",
@@ -15525,7 +20672,18 @@ export const STAGED_IMAGES_POOL = [
       "מידע"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "קוד מחשב",
+    "keywords": [
+      "תכנות",
+      "הייטק",
+      "תוכנה",
+      "מסך",
+      "טכנולוגיה",
+      "אינטרנט",
+      "מידע"
+    ],
+    "association": "תכנות, הייטק, תוכנה, מסך, טכנולוגיה, אינטרנט, מידע"
   },
   {
     "id": "item_490_טביעת_אצבע_שחורה",
@@ -15556,7 +20714,18 @@ export const STAGED_IMAGES_POOL = [
       "בדיקה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "טביעת אצבע",
+    "keywords": [
+      "זיהוי",
+      "משטרה",
+      "אבטחה",
+      "חקירה",
+      "סיסמה",
+      "דרכון",
+      "בדיקה"
+    ],
+    "association": "זיהוי, משטרה, אבטחה, חקירה, סיסמה, דרכון, בדיקה"
   },
   {
     "id": "item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_",
@@ -15587,7 +20756,18 @@ export const STAGED_IMAGES_POOL = [
       "חשמל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "רובוט",
+    "keywords": [
+      "טכנולוגיה",
+      "עתיד",
+      "מכונה",
+      "מחשב",
+      "הנדסה",
+      "אוטומציה",
+      "חשמל"
+    ],
+    "association": "טכנולוגיה, עתיד, מכונה, מחשב, הנדסה, אוטומציה, חשמל"
   },
   {
     "id": "item_492_צלחת_לוויין",
@@ -15618,7 +20798,18 @@ export const STAGED_IMAGES_POOL = [
       "רשת"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "צלחת לוויין",
+    "keywords": [
+      "תקשורת",
+      "שידור",
+      "טלוויזיה",
+      "אנטנה",
+      "חלל",
+      "קליטה",
+      "רשת"
+    ],
+    "association": "תקשורת, שידור, טלוויזיה, אנטנה, חלל, קליטה, רשת"
   },
   {
     "id": "item_493_גולגולת_ושתי_עצמות_מוצלבות",
@@ -15649,7 +20840,18 @@ export const STAGED_IMAGES_POOL = [
       "חשמל"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סמל סכנה",
+    "keywords": [
+      "גולגולת",
+      "רעל",
+      "אזהרה",
+      "פיראטים",
+      "זהירות",
+      "עצמות",
+      "חשמל"
+    ],
+    "association": "גולגולת, רעל, אזהרה, פיראטים, זהירות, עצמות, חשמל"
   },
   {
     "id": "item_494_תמרור_עצור__משושה_אדום_",
@@ -15680,7 +20882,18 @@ export const STAGED_IMAGES_POOL = [
       "בטיחות"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "תמרור עצור",
+    "keywords": [
+      "כביש",
+      "נהיגה",
+      "צומת",
+      "רכב",
+      "תנועה",
+      "חוק",
+      "בטיחות"
+    ],
+    "association": "כביש, נהיגה, צומת, רכב, תנועה, חוק, בטיחות"
   },
   {
     "id": "item_495_איש_קו_על_כיסא_גלגלים",
@@ -15711,7 +20924,18 @@ export const STAGED_IMAGES_POOL = [
       "שירותים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סמל נגישות",
+    "keywords": [
+      "חניה",
+      "כיסא גלגלים",
+      "עזרה",
+      "מעלית",
+      "רמפה",
+      "זכויות",
+      "שירותים"
+    ],
+    "association": "חניה, כיסא גלגלים, עזרה, מעלית, רמפה, זכויות, שירותים"
   },
   {
     "id": "item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_",
@@ -15742,7 +20966,18 @@ export const STAGED_IMAGES_POOL = [
       "ניקיון"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "סמל מיחזור",
+    "keywords": [
+      "סביבה",
+      "טבע",
+      "בקבוקים",
+      "פח",
+      "נייר",
+      "ירוק",
+      "ניקיון"
+    ],
+    "association": "סביבה, טבע, בקבוקים, פח, נייר, ירוק, ניקיון"
   },
   {
     "id": "item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_",
@@ -15773,7 +21008,18 @@ export const STAGED_IMAGES_POOL = [
       "ידיים"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "שלט שירותים",
+    "keywords": [
+      "קניון",
+      "מסעדה",
+      "ניקיון",
+      "דלת",
+      "ציבורי",
+      "הפסקה",
+      "ידיים"
+    ],
+    "association": "קניון, מסעדה, ניקיון, דלת, ציבורי, הפסקה, ידיים"
   },
   {
     "id": "item_498_סמל_ה_wi_fi__קשתות_מתרחבות_",
@@ -15804,7 +21050,18 @@ export const STAGED_IMAGES_POOL = [
       "קליטה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "אינטרנט אלחוטי",
+    "keywords": [
+      "ווייפיי",
+      "רשת",
+      "מחשב",
+      "טלפון",
+      "חיבור",
+      "תקשורת",
+      "קליטה"
+    ],
+    "association": "ווייפיי, רשת, מחשב, טלפון, חיבור, תקשורת, קליטה"
   },
   {
     "id": "item_499_סמל_הבלוטות___bluetooth_",
@@ -15835,7 +21092,18 @@ export const STAGED_IMAGES_POOL = [
       "טכנולוגיה"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "בלוטות'",
+    "keywords": [
+      "אוזניות",
+      "חיבור",
+      "טלפון",
+      "רמקול",
+      "מוזיקה",
+      "אלחוטי",
+      "טכנולוגיה"
+    ],
+    "association": "אוזניות, חיבור, טלפון, רמקול, מוזיקה, אלחוטי, טכנולוגיה"
   },
   {
     "id": "item_500_שלדג",
@@ -15866,7 +21134,18 @@ export const STAGED_IMAGES_POOL = [
       "ירוק"
     ],
     "is_basic": false,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "יציאת חירום",
+    "keywords": [
+      "דלת",
+      "בטיחות",
+      "בניין",
+      "מדרגות",
+      "הצלה",
+      "שלט",
+      "ירוק"
+    ],
+    "association": "דלת, בטיחות, בניין, מדרגות, הצלה, שלט, ירוק"
   },
   {
     "id": "handshake_deal",
@@ -15897,7 +21176,18 @@ export const STAGED_IMAGES_POOL = [
       "שלום"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "לחיצת ידיים",
+    "keywords": [
+      "הסכם",
+      "חוזה",
+      "פגישה",
+      "עסקים",
+      "שותפות",
+      "עבודה",
+      "שלום"
+    ],
+    "association": "הסכם, חוזה, פגישה, עסקים, שותפות, עבודה, שלום"
   },
   {
     "id": "alexander_graham_bell",
@@ -15928,7 +21218,18 @@ export const STAGED_IMAGES_POOL = [
       "קול"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "גרהם בל",
+    "keywords": [
+      "טלפון",
+      "המצאה",
+      "שיחה",
+      "מדע",
+      "תקשורת",
+      "היסטוריה",
+      "קול"
+    ],
+    "association": "טלפון, המצאה, שיחה, מדע, תקשורת, היסטוריה, קול"
   },
   {
     "id": "nerd_geek_glasses",
@@ -15959,6 +21260,17 @@ export const STAGED_IMAGES_POOL = [
       "מסגרת"
     ],
     "is_basic": true,
-    "aiCurated": true
+    "aiCurated": true,
+    "title": "משקפי ראייה",
+    "keywords": [
+      "אופטיקה",
+      "בדיקה",
+      "לימודים",
+      "קריאה",
+      "עיניים",
+      "מחשב",
+      "מסגרת"
+    ],
+    "association": "אופטיקה, בדיקה, לימודים, קריאה, עיניים, מחשב, מסגרת"
   }
 ];

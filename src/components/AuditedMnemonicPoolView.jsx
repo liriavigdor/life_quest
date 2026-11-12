@@ -20,7 +20,7 @@ export function AuditedMnemonicPoolView({
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [promotedIds, setPromotedIds] = useState(new Set());
+  const [promotedIds, setPromotedIds] = useState(() => new Set(AUDITED_VERIFIED_POOL.map(i => i.id)));
 
   const isVerifiedMode = mode === 'verified';
   const rawList = isVerifiedMode ? AUDITED_VERIFIED_POOL : AUDITED_REJECTED_POOL;

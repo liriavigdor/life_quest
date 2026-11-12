@@ -10,6 +10,13 @@ import { STAGED_IMAGES_POOL } from '../data/stagedImagesPool.js';
 // Cache in-memory for fast instant re-use
 const SEARCH_CACHE = new Map();
 
+function distillEnglishQuery(rawEn = '') {
+  return String(rawEn || '')
+    .replace(/\b(photography|photograph|photo|iconic|portrait|classic|vintage|picture|image|high quality|hd|wallpaper|stock|background|isolated)\b/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /**
  * מציאת תמונה פופולרית ברשת לפי ביטוי חיפוש בעברית
  * מחזיר עד 5 תוצאות מדורגות
@@ -17,12 +24,12 @@ const SEARCH_CACHE = new Map();
 export async function searchPopularWebImages(query, limit = 5, englishQuery = '') {
   if (!query || typeof query !== 'string') return [];
   const cleanQ = query.trim();
-  const cleanEn = (englishQuery || '').trim();
+  const rawEn = (englishQuery || '').trim();
+  const cleanEn = distillEnglishQuery(rawEn) || rawEn;
 
   // שער ברזל הרמטי:
   // איסור מוחלט על פנייה לרשת ללא שאילתת צילום קונקרטית ומאומתת באנגלית!
-  // שאילתות עבריות במאגרי מדיה בינלאומיים (כמו Commons) מניבות דגימות מינרלים, סלעים או סריקות ארכיון מוזרות.
-  if (!cleanEn || cleanEn.length < 3 || /[\u0590-\u05FF]/.test(cleanEn)) {
+  if (!cleanEn || cleanEn.length < 2 || /[\u0590-\u05FF]/.test(cleanEn)) {
     return [];
   }
 
@@ -39,7 +46,7 @@ export async function searchPopularWebImages(query, limit = 5, englishQuery = ''
     return [];
   }
 
-  const cacheKey = `${cleanQ}__${cleanEn}`;
+  const cacheKey = `${cleanQ}__${cleanEn.toLowerCase()}`;
   if (SEARCH_CACHE.has(cacheKey)) {
     return SEARCH_CACHE.get(cacheKey);
   }
@@ -52,7 +59,7 @@ export async function searchPopularWebImages(query, limit = 5, englishQuery = ''
     params.set('q', cleanQ);
     params.set('en', cleanEn);
     const res = await fetch(`/api/search-image?${params.toString()}`, {
-      signal: AbortSignal.timeout(6000)
+      signal: AbortSignal.timeout(7500)
     });
     if (res.ok) {
       const data = await res.json();
@@ -65,18 +72,78 @@ export async function searchPopularWebImages(query, limit = 5, englishQuery = ''
     }
   } catch (_) {}
 
-  // 2. Direct client-side Wikimedia Commons fallback (ONLY with verified cleanEn!)
+  // 2. Client-side Wikipedia Article Lead Photo fallback (תמונת הערך הראשית מויקיפדיה האנגלית והעברית)
+  if (images.length === 0 && cleanEn) {
+    const fetchWikiLeadPhotos = async (lang, term) => {
+      if (!term || term.length < 2) return [];
+      try {
+        const apiUrl = `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(term)}&gsrlimit=4&prop=pageimages&piprop=thumbnail&pithumbsize=960&format=json&origin=*`;
+        const r = await fetch(apiUrl, { signal: AbortSignal.timeout(3500) });
+        if (!r.ok) return [];
+        const d = await r.json();
+        const pages = d.query?.pages ? Object.values(d.query.pages) : [];
+        pages.sort((a, b) => (a.index || 99) - (b.index || 99));
+        const found = [];
+        for (const p of pages) {
+          const thumb = p.thumbnail;
+          const src = thumb?.source;
+          if (!src || !src.includes('/wikipedia/commons/')) continue;
+          const tLow = `${p.title || ''} ${src}`.toLowerCase();
+          if (/\.svg|\.gif|\.tif|\.pdf|\.djvu|disambig|question_book|icon|logo|flag_of|coat_of_arms|map_of|locator|blank|signature|stamp|book|album/i.test(tLow)) continue;
+          const w = Number(thumb.width) || 0;
+          const h = Number(thumb.height) || 0;
+          if (w < 400 || h < 250) continue;
+          const ratio = w / h;
+          if (ratio < 0.95 || ratio > 2.3) continue;
+          found.push(src);
+        }
+        return found;
+      } catch (_) {
+        return [];
+      }
+    };
+
+    try {
+      const conciseEn = cleanEn.split(/\s+/).slice(0, 3).join(' ');
+      const [enPhotos, hePhotos] = await Promise.all([
+        fetchWikiLeadPhotos('en', conciseEn),
+        /[\u0590-\u05FF]/.test(cleanQ) ? fetchWikiLeadPhotos('he', cleanQ) : Promise.resolve([])
+      ]);
+      const combined = [...new Set([...hePhotos, ...enPhotos])];
+      if (combined.length > 0) {
+        images = combined.slice(0, limit);
+      }
+    } catch (_) {}
+  }
+
+  // 3. Direct client-side Wikimedia Commons fallback (ONLY with verified cleanEn, excluding DJVU/book scans & vertical crops!)
   if (images.length === 0 && cleanEn) {
     try {
-      const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(cleanEn)}&gsrnamespace=6&gsrlimit=6&prop=pageimages&pithumbsize=800&format=json&origin=*`;
+      const safeWikiQ = `${cleanEn} -filetype:djvu -filetype:pdf -filetype:tif -filetype:svg -intitle:djvu -intitle:book -intitle:volume -intitle:map`;
+      const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(safeWikiQ)}&gsrnamespace=6&gsrlimit=12&prop=pageimages&pithumbsize=960&format=json&origin=*`;
       const res = await fetch(url, { signal: AbortSignal.timeout(4000) });
       if (res.ok) {
         const data = await res.json();
         const pages = data.query?.pages;
         if (pages) {
           const urls = Object.values(pages)
+            .filter(p => {
+              const t = (p.title || '').toLowerCase();
+              const w = Number(p.thumbnail?.width) || 0;
+              const h = Number(p.thumbnail?.height) || 0;
+              const ratio = (w > 0 && h > 0) ? (w / h) : 1.4;
+              return (
+                w >= 420 &&
+                ratio >= 1.05 && ratio <= 2.25 &&
+                !/\.djvu|\.pdf|\.tif|\.svg|\.webm|book|volume|page_|ia_|library|archive|scan|catalog|treatise|diagram|map|plaque|gravestone|herbarium/.test(t)
+              );
+            })
             .map(p => p.thumbnail?.source)
-            .filter(u => u && !u.includes('.svg') && !u.includes('.pdf') && !u.includes('.webm'));
+            .filter(u => {
+              if (!u) return false;
+              const low = u.toLowerCase();
+              return !/\.djvu|\.pdf|\.tif|\.svg|\.webm|page1-|ia_|scan|book/.test(low);
+            });
           if (urls.length > 0) {
             images = urls.slice(0, limit);
           }

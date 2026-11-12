@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-11-11T16:21:07.679Z",
+  "savedAt": "2026-11-12T08:53:40.238Z",
   "discardedIds": [
     "newtons_cradle",
     "sherlock_holmes",
@@ -83,212 +83,72 @@
     "item_158_מסיכות_תיאטרון__צוחקת_ובוכה___מסמלות",
     "item_170_עוגן_ברזל_שחור__מסמל",
     "item_182_פרסה_של_סוס__מסמלת",
-    "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל"
+    "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל",
+    "alexander_graham_bell"
   ],
   "flaggedBadMap": {
-    "bill_gates": {
-      "name": "ביל גייטס",
-      "imageUrl": "/staged_images/bill_gates.jpg",
-      "topic": "celebrities",
-      "flaggedAt": 1793446293298
+    "scooby_doo": {
+      "id": "scooby_doo",
+      "title": "סקובי דו",
+      "name": "סקובי דו",
+      "imageUrl": "/staged_images/pool/authentic_scooby_doo.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794473322784
     },
-    "charlie_chaplin": {
-      "name": "צ'ארלי צ'פלין",
-      "imageUrl": "/staged_images/charlie_chaplin.jpg",
-      "topic": "celebrities",
-      "flaggedAt": 1793446329747
-    },
-    "colosseum": {
-      "name": "הקולוסיאום",
-      "imageUrl": "/staged_images/colosseum.jpg",
-      "topic": "associative",
-      "flaggedAt": 1793446336676
-    },
-    "compass": {
-      "name": "מצפן עתיק",
-      "imageUrl": "/staged_images/compass.jpg",
-      "topic": "associative",
-      "flaggedAt": 1793446337917
-    },
-    "freddie_mercury": {
-      "name": "פרדי מרקורי",
-      "imageUrl": "/staged_images/freddie_mercury.jpg",
-      "topic": "celebrities",
-      "flaggedAt": 1793446346272
-    },
-    "gollum": {
-      "name": "גולום",
-      "imageUrl": "/staged_images/gollum.jpg",
-      "topic": "fictional",
-      "flaggedAt": 1793446437322
-    },
-    "michael_jordan": {
-      "name": "מייקל ג'ורדן",
-      "imageUrl": "/staged_images/michael_jordan.jpg",
-      "topic": "celebrities",
-      "flaggedAt": 1793447214760
-    },
-    "spiderman": {
-      "name": "ספיידרמן",
-      "imageUrl": "/staged_images/spiderman.jpg",
-      "topic": "fictional",
-      "flaggedAt": 1793447964708
-    },
-    "super_mario": {
-      "name": "סופר מריו",
-      "imageUrl": "/staged_images/super_mario.jpg",
-      "topic": "fictional",
-      "flaggedAt": 1793448150139
-    },
-    "treasure_chest": {
-      "name": "תיבת אוצר",
-      "imageUrl": "/staged_images/treasure_chest.jpg",
-      "topic": "associative",
-      "flaggedAt": 1793448209385
+    "mickey_mouse": {
+      "id": "mickey_mouse",
+      "title": "מיקי מאוס",
+      "name": "מיקי מאוס",
+      "imageUrl": "/staged_images/pool/mickey_mouse.jpg",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "reason": "איור/מצויר - דרוש צילום אמיתי",
+      "flaggedAt": 1794473328295
     },
     "sonic_the_hedgehog": {
       "id": "sonic_the_hedgehog",
       "title": "סוניק הקיפוד",
       "name": "סוניק הקיפוד",
-      "imageUrl": "/staged_images/pool/sonic_the_hedgehog.jpg",
+      "imageUrl": "/staged_images/pool/authentic_sonic_the_hedgehog.jpg",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
       "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400507418
+      "flaggedAt": 1794473333899
     },
     "barbie_doll": {
       "id": "barbie_doll",
       "title": "ברבי",
       "name": "ברבי",
-      "imageUrl": "/staged_images/pool/barbie_doll_classic.jpg",
+      "imageUrl": "/staged_images/pool/authentic_barbie_doll.jpg",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
       "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400660397
+      "flaggedAt": 1794473341805
     },
-    "dracula": {
-      "id": "dracula",
-      "title": "דרקולה",
-      "name": "דרקולה",
-      "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+    "winnie_the_pooh": {
+      "id": "winnie_the_pooh",
+      "title": "פו הדב",
+      "name": "פו הדב",
+      "imageUrl": "/staged_images/pool/winnie_the_pooh_honey.jpg",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
       "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400677807
+      "flaggedAt": 1794473344278
     },
-    "pinocchio": {
-      "id": "pinocchio",
-      "title": "פינוקיו",
-      "name": "פינוקיו",
-      "imageUrl": "/staged_images/pool/pinocchio.jpg",
+    "spongebob": {
+      "id": "spongebob",
+      "title": "בובספוג מכנסמרובע",
+      "name": "בובספוג מכנסמרובע",
+      "imageUrl": "/staged_images/pool/spongebob.jpg",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
       "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400704604
+      "flaggedAt": 1794473346130
     },
     "peter_pan": {
       "id": "peter_pan",
       "title": "פיטר פן",
       "name": "פיטר פן",
-      "imageUrl": "/staged_images/pool/peter_pan.jpg",
+      "imageUrl": "/staged_images/pool/authentic_peter_pan.jpg",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
       "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400764050
-    },
-    "scooby_doo": {
-      "id": "scooby_doo",
-      "title": "סקובי דו",
-      "name": "סקובי דו",
-      "imageUrl": "/staged_images/pool/scooby_doo_snack.jpg",
-      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400796013
-    },
-    "captain_america": {
-      "id": "captain_america",
-      "title": "קפטן אמריקה",
-      "name": "קפטן אמריקה",
-      "imageUrl": "/staged_images/pool/captain_america_steve.jpg",
-      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794400911781
-    },
-    "bilbo_baggins": {
-      "id": "bilbo_baggins",
-      "title": "בילבו בגינס",
-      "name": "בילבו בגינס",
-      "imageUrl": "/staged_images/pool/bilbo_baggins_ring.jpg",
-      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794401015513
-    },
-    "the_white_house": {
-      "id": "the_white_house",
-      "title": "הבית הלבן",
-      "name": "הבית הלבן",
-      "imageUrl": "/staged_images/pool/the_white_house.jpg",
-      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794401209144
-    },
-    "coastal_lighthouse": {
-      "id": "coastal_lighthouse",
-      "title": "מגדלור",
-      "name": "מגדלור",
-      "imageUrl": "/staged_images/pool/coastal_lighthouse.jpg",
-      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794401466736
-    },
-    "classic_red_barn": {
-      "id": "classic_red_barn",
-      "title": "אסם אמריקאי קלאסי",
-      "name": "אסם אמריקאי קלאסי",
-      "imageUrl": "/staged_images/pool/classic_red_barn.jpg",
-      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794401494911
-    },
-    "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת": {
-      "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
-      "title": "פצצה שחורה עם פתיל בוער",
-      "name": "פצצה שחורה עם פתיל בוער",
-      "imageUrl": "/staged_images/pool/item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg",
-      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794402456773
-    },
-    "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל": {
-      "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
-      "title": "מד חום כספית",
-      "name": "מד חום כספית",
-      "imageUrl": "/staged_images/pool/item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל.jpg",
-      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794402621296
-    },
-    "item_172_מנעול_סגור__ומפתח_בצד___מסמל": {
-      "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
-      "title": "מנעול סגור ומפתח",
-      "name": "מנעול סגור ומפתח",
-      "imageUrl": "/staged_images/pool/item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg",
-      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794402723732
-    },
-    "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל": {
-      "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
-      "title": "תלתן ארבעה עלים",
-      "name": "תלתן ארבעה עלים",
-      "imageUrl": "/staged_images/pool/item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל.jpg",
-      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794403196685
-    },
-    "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל": {
-      "id": "item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל",
-      "title": "סרט מודעות",
-      "name": "סרט מודעות",
-      "imageUrl": "/staged_images/pool/item_193_סרט_מודעות_ארוך_קשור_בלולאה__ורוד_צהוב___מסמל.jpg",
-      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
-      "reason": "איור/מצויר - דרוש צילום אמיתי",
-      "flaggedAt": 1794403448132
+      "flaggedAt": 1794473355265
     }
   },
   "localEdits": {
@@ -1268,8 +1128,43 @@
         "רוחות עזות"
       ],
       "isModified": true
+    },
+    "robin_hood": {
+      "keywords": [
+        "עזרה",
+        "קשת",
+        "חץ",
+        "צדק",
+        "לוחם"
+      ],
+      "isModified": true
+    },
+    "pinocchio": {
+      "keywords": [
+        "נגר",
+        "עץ",
+        "שולחן",
+        "תיקון",
+        "שקר"
+      ],
+      "isModified": true
+    },
+    "item_317_משרוקית_שופט": {
+      "keywords": [
+        "שופט",
+        "ספורט",
+        "אימון",
+        "סימן",
+        "מגרש",
+        "קול"
+      ],
+      "isModified": true
+    },
+    "nerd_geek_glasses": {
+      "title": "משקפי ראייה",
+      "isModified": true
     }
   },
   "totalItems": 511,
-  "timestamp": 1794414067676
+  "timestamp": 1794473620236
 }

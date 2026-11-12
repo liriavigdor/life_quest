@@ -23,6 +23,7 @@ import { searchPopularWebImages } from './webImageSearch.js';
 import { getGeminiApiKey } from './geminiLiveEngine.js';
 import { 
   findUserImageByKeyword, 
+  findBestUserImagesForTask,
   approveAndSaveMnemonicImage, 
   dislikeAndRemoveMnemonicImage,
   isAssociationDisliked 
@@ -1476,15 +1477,15 @@ export async function fetchGeminiLiveAssociations(taskText = '') {
    - כאשר המשימה היא תחרות או משחק ("להשתתף בטורניר בייבלייד") — המוקד הוא המשחק עצמו ("בייבלייד" -> סביבון מסתחרר, סופת טייפון/הוריקן, זירת קרב).
 
 3. **חוק האסוציאציה החושית:** לעולם אל תציג את החפץ המשעמם עצמו. צור 5 עוגנים חיים, חושיים, אנושיים או תרבותיים בלתי נשכחים!
-4. **חיפוש תמונות מדויק:** englishQuery חייב להכיל אך ורק מילות צילום קונקרטיות באנגלית (למשל: "chocolate pudding whipped cream dessert glass photography", "tyrannosaurus rex roaring dinosaur prehistoric", "magician pulling rabbit out of hat photography").
+4. **חיפוש תמונות מדויק ונקי (2-4 מילים בלבד!):** englishQuery חייב להכיל אך ורק את האובייקט החזותי המוחשי באנגלית ב-2 עד 4 מילים מדויקות, **ללא מילות סרק** כמו "photography", "photo", "iconic", "portrait" (למשל: "chocolate pudding whipped cream", "tyrannosaurus rex dinosaur", "magician rabbit top hat", "fluffy omelette skillet", "red Ferrari sports car").
 
 החזר אך ורק אובייקט JSON תקין (ללא שום markdown וללא טקסט עודף):
 {
   "coreConcept": "הענף המרכזי במילה אחת",
   "associations": [
     {
-      "anchorName": "שם עוגן חזותי אנושי או פעיל בעברית",
-      "englishQuery": "photo search query in english with photographic terms",
+      "anchorName": "שם עוגן חזותי אנושי או פעיל בעברית (2-3 מילים)",
+      "englishQuery": "concise 2 to 4 word concrete visual subject in english",
       "emoji": "אימוג'י יחיד",
       "explanation": "הסבר קצרצר וקולח שמחבר את המשימה לעוגן"
     }
@@ -1492,7 +1493,7 @@ export async function fetchGeminiLiveAssociations(taskText = '') {
 }
 חובה לייצר בדיוק 5 אסוציאציות שונות ומוחשיות.`;
 
-  const models = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-3.8-flash'];
+  const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
   for (const model of models) {
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -1538,7 +1539,6 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
   for (const sw of STOP_WORDS) {
     branchTokens.delete(sw);
   }
-  // הוספת גרסה ללא ה' הידיעה בלבד (אך לעולם לא קיצוץ אותיות שורש כמו מ' מ"מגן" שהפך ל"גן"!)
   for (const t of Array.from(branchTokens)) {
     if (t.length >= 4 && t.startsWith('ה')) {
       const stripped = t.slice(1);
@@ -1548,7 +1548,33 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
     }
   }
 
-  // 1. הפקת 5 אסוציאציות מגוונות (שנשמרות ברזרבה בצד!)
+  // 1. חיפוש ראשוני ומיידי ב"המאגר שלי" (433 תמונות מאומתות) לפני פנייה ל-Gemini!
+  const branchCandidates = [];
+  const seenUrls = new Set();
+
+  // נחפש גם לפי משפט המשימה המלא (כמו "הילד צריך לאכול" או "עמידה דום") וגם לפי הענף המחולץ
+  const userMatchesFull = findBestUserImagesForTask(cleanTask, 5);
+  const userMatchesBranch = branchKeyword !== cleanTask ? findBestUserImagesForTask(branchKeyword, 5) : [];
+  const allUserMatches = [...userMatchesFull, ...userMatchesBranch];
+
+  for (const userMatch of allUserMatches) {
+    if (branchCandidates.length >= 5) break;
+    if (userMatch && userMatch.imageUrl && !userMatch.imageUrl.startsWith('data:image/svg') && !seenUrls.has(userMatch.imageUrl)) {
+      if (!isAssociationDisliked(cleanTask, userMatch.imageUrl)) {
+        seenUrls.add(userMatch.imageUrl);
+        branchCandidates.push({
+          anchorName: userMatch.title || branchKeyword,
+          imageUrl: userMatch.imageUrl,
+          emoji: userMatch.emoji || '⭐',
+          explanation: userMatch.caption || `עוגן חזותי מהמאגר שלך: ${userMatch.title} (${(userMatch.keywords || []).slice(0, 4).join(', ')})`,
+          fromPool: true,
+          source: 'user_approved'
+        });
+      }
+    }
+  }
+
+  // 2. בדיקת הקטלוג המנוהל לפי ענפים
   let reserveAssociations = [];
   const catalogEntry = MNEMONIC_ANCHOR_CATALOG[branchKeyword] || 
     Object.values(MNEMONIC_ANCHOR_CATALOG).find(c => c.synonyms.some(s => {
@@ -1558,56 +1584,6 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
 
   if (catalogEntry && Array.isArray(catalogEntry.associations)) {
     reserveAssociations = catalogEntry.associations.map(a => ({ ...a }));
-  } else {
-    // 🧠 פנייה ל-AI חי בזמן אמת (Gemini Live)
-    try {
-      const geminiResult = await fetchGeminiLiveAssociations(cleanTask);
-      if (geminiResult && Array.isArray(geminiResult.associations) && geminiResult.associations.length > 0) {
-        reserveAssociations = geminiResult.associations;
-        if (geminiResult.coreConcept) {
-          branchKeyword = geminiResult.coreConcept;
-          branchLower = branchKeyword.toLowerCase();
-        }
-      }
-    } catch (_) {}
-
-    // גיבוי ממוקד של המילה החסרה ע"י סוכן 3 אם אין אסוציאציות
-    if (reserveAssociations.length === 0) {
-      reserveAssociations = [
-        {
-          anchorName: branchKeyword,
-          searchQuery: branchKeyword,
-          englishQuery: `${branchKeyword} photography`,
-          emoji: '💡',
-          explanation: `עוגן זיכרון בארמון עבור ${cleanTask}`
-        }
-      ];
-    }
-  }
-
-  // 2. חיפוש במאגר לפי "ענפים" (Branches Search)
-  // סורק אך ורק מקורות מאומתים: מאגר משתמש אישי וקטלוג עוגנים מפוקח
-  const branchCandidates = [];
-  const seenUrls = new Set();
-
-  // בדיקת מאגר אישי מאושר של המשתמש קודם כל
-  const userMatch = findUserImageByKeyword(branchLower);
-  if (userMatch && userMatch.imageUrl && !userMatch.imageUrl.startsWith('data:image/svg')) {
-    if (!isAssociationDisliked(cleanTask, userMatch.imageUrl)) {
-      seenUrls.add(userMatch.imageUrl);
-      branchCandidates.push({
-        anchorName: userMatch.title || branchKeyword,
-        imageUrl: userMatch.imageUrl,
-        emoji: userMatch.emoji || '⭐',
-        explanation: userMatch.caption || `עוגן אישי מנצח מהמאגר שלך!`,
-        fromPool: true,
-        source: 'user_approved'
-      });
-    }
-  }
-
-  // בדיקת הקטלוג המנוהל לפי ענפים (קטלוג מאומת ומפוקח בלבד!)
-  if (catalogEntry && Array.isArray(catalogEntry.associations)) {
     for (const assoc of catalogEntry.associations) {
       if (branchCandidates.length >= 5) break;
       if (assoc.imageUrl && !seenUrls.has(assoc.imageUrl)) {
@@ -1626,11 +1602,51 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
     }
   }
 
+  // 3. אך ורק אם המאגר האישי והקטלוג לא החזירו אף מועמד — פונים ל-Gemini Live
+  if (branchCandidates.length === 0 && reserveAssociations.length === 0) {
+    try {
+      const geminiResult = await fetchGeminiLiveAssociations(cleanTask);
+      if (geminiResult && Array.isArray(geminiResult.associations) && geminiResult.associations.length > 0) {
+        reserveAssociations = geminiResult.associations;
+        // נבדוק אם האסוציאציות ש-Gemini הציע קיימות ב"המאגר שלי"!
+        for (const assoc of reserveAssociations) {
+          if (branchCandidates.length >= 5) break;
+          const repoHits = findBestUserImagesForTask(assoc.anchorName, 2);
+          for (const hit of repoHits) {
+            if (hit && hit.imageUrl && !seenUrls.has(hit.imageUrl) && !isAssociationDisliked(cleanTask, hit.imageUrl)) {
+              seenUrls.add(hit.imageUrl);
+              branchCandidates.push({
+                anchorName: hit.title || assoc.anchorName,
+                imageUrl: hit.imageUrl,
+                emoji: assoc.emoji || hit.emoji || '⭐',
+                explanation: assoc.explanation || `עוגן מהמאגר שלך: ${hit.title}`,
+                fromPool: true,
+                source: 'user_approved'
+              });
+            }
+          }
+        }
+      }
+    } catch (_) {}
+
+    if (reserveAssociations.length === 0) {
+      reserveAssociations = [
+        {
+          anchorName: branchKeyword,
+          searchQuery: branchKeyword,
+          englishQuery: `${branchKeyword} photography`,
+          emoji: '💡',
+          explanation: `עוגן זיכרון בארמון עבור ${cleanTask}`
+        }
+      ];
+    }
+  }
+
   return {
     branchKeyword,
     reserveAssociations,
     branchCandidates,
-    isComplete: branchCandidates.length >= 5
+    isComplete: branchCandidates.length > 0
   };
 }
 
@@ -1642,20 +1658,37 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
   const candidates = [...(agent1Result.branchCandidates || [])];
   const seenUrls = new Set(candidates.map(c => c.imageUrl).filter(Boolean));
 
-  // אם סוכן 1 כבר מצא 5 תמונות שלמות בענפים — סוכן 2 מסיים מיד!
-  if (candidates.length >= 5) {
+  // אם סוכן 1 כבר מצא תמונות מאומתות מתוך "המאגר שלי" — מחזירים אותן מיד באפס השהיה וללא פניה לויקימדיה!
+  if (candidates.length > 0) {
     return candidates.slice(0, 5);
   }
 
   // רשימת האסוציאציות שסוכן 1 שמר ברזרבה
   const pendingAssociations = [...(agent1Result.reserveAssociations || [])];
 
-  // שלב א': בדיקת תמונות שורש מובנות ומאומתות בקטלוג המפוקח
+  // שלב א': בדיקת תמונות שורש ב"המאגר שלי" ובקטלוג המפוקח עבור כל אסוציאציה ברזרבה
   for (let i = pendingAssociations.length - 1; i >= 0; i--) {
     if (candidates.length >= 5) break;
     const assoc = pendingAssociations[i];
 
-    // האם יש תמונת שורש מובנית בקטלוג המפוקח?
+    // 1. בדיקה ב"המאגר שלי" לפי שם העוגן שהוצע
+    const repoMatches = findBestUserImagesForTask(assoc.anchorName || '', 1);
+    const repoHit = repoMatches[0];
+    if (repoHit && repoHit.imageUrl && !seenUrls.has(repoHit.imageUrl) && !isAssociationDisliked(cleanTask, repoHit.imageUrl)) {
+      seenUrls.add(repoHit.imageUrl);
+      candidates.push({
+        anchorName: repoHit.title || assoc.anchorName,
+        imageUrl: repoHit.imageUrl,
+        emoji: assoc.emoji || '⭐',
+        explanation: assoc.explanation || `עוגן שורש מהמאגר שלך: ${repoHit.title}`,
+        fromPool: true,
+        source: 'user_approved'
+      });
+      pendingAssociations.splice(i, 1);
+      continue;
+    }
+
+    // 2. האם יש תמונת שורש מובנית בקטלוג המפוקח?
     if (assoc.imageUrl && !seenUrls.has(assoc.imageUrl) && !isAssociationDisliked(cleanTask, assoc.imageUrl)) {
       seenUrls.add(assoc.imageUrl);
       candidates.push({
@@ -1666,12 +1699,12 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
         fromPool: true,
         source: 'root_catalog'
       });
-      pendingAssociations.splice(i, 1); // נמחק מרשימת החיפוש ברשת!
+      pendingAssociations.splice(i, 1);
     }
   }
 
-  // שלב ב': חיפוש ברשת של האסוציאציות החסרות בלבד!
-  if (candidates.length < 5) {
+  // שלב ב': חיפוש ברשת אך ורק אם לא נמצאה אף תמונה ב"המאגר שלי"!
+  if (candidates.length === 0) {
     for (const missingAssoc of pendingAssociations) {
       if (candidates.length >= 5) break;
 
@@ -1695,7 +1728,7 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
     }
   }
 
-  // אם אין שום מועמד מאושר — מציגים כרטיסיית ברירת מחדל אלגנטית נקייה אחת בלבד (ללא שכפול חלופות פיקטיביות!)
+  // אם אין שום מועמד מאושר — מציגים כרטיסיית ברירת מחדל אלגנטית נקייה אחת בלבד
   if (candidates.length === 0) {
     const fallbackCard = generateDynamicFallbackCard(cleanTask);
     candidates.push({
@@ -1775,18 +1808,32 @@ export async function processTaskListWithSynergy(rawItems = []) {
 
   if (cleanList.length === 0) return [];
 
-  const processedStations = await Promise.all(cleanList.map(async (taskText, idx) => {
+  const rawStations = await Promise.all(cleanList.map(async (taskText, idx) => {
     // 1. סוכן 1: הפקת 5 אסוציאציות (ברזרבה) + סריקת המאגר לפי "ענפים"
     const agent1Result = await agent1ExtractBranchesAndSearch(taskText);
 
     // 2. סוכן 2: סריקה לפי "שורש" במאגר + השלמת תמונות חסרות ברשת בלבד
     const candidates = await agent2SearchRootAndCompleteFromWeb(agent1Result, taskText);
-    const primary = candidates[0] || {
+    return { idx, taskText, agent1Result, candidates };
+  }));
+
+  // הבטחה שכל תחנה ברשימה מקבלת תמונה ראשית ייחודית (ללא כפילויות בין תחנות באותה רשימה)
+  const usedPrimaryUrls = new Set();
+  const processedStations = rawStations.map(({ idx, taskText, agent1Result, candidates }) => {
+    let chosenIdx = 0;
+    for (let i = 0; i < candidates.length; i++) {
+      if (candidates[i]?.imageUrl && !usedPrimaryUrls.has(candidates[i].imageUrl)) {
+        chosenIdx = i;
+        break;
+      }
+    }
+    const primary = candidates[chosenIdx] || candidates[0] || {
       anchorName: taskText,
       imageUrl: generateDynamicFallbackCard(taskText),
       emoji: '📌',
       explanation: `עוגן זיכרון בארמון עבור ${taskText}`
     };
+    if (primary.imageUrl) usedPrimaryUrls.add(primary.imageUrl);
 
     return {
       order: idx + 1,
@@ -1799,10 +1846,10 @@ export async function processTaskListWithSynergy(rawItems = []) {
       story: primary.explanation,
       hasRepositoryImage: Boolean(primary.imageUrl && !primary.imageUrl.startsWith('data:image/svg')),
       candidates,
-      currentCandidateIndex: 0,
+      currentCandidateIndex: chosenIdx,
       isAiCurated: true
     };
-  }));
+  });
 
   // 3. עובד 4: אריגת סיפור המסע בארמון
   const grandFinaleStory = weavePalaceStory(processedStations);
