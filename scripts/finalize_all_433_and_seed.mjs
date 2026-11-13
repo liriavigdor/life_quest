@@ -41,6 +41,7 @@ const specialCleanups = {
   },
   'item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת': {
     title: 'מגדלור בים סוער',
+    imageUrl: '/staged_images/pool/lighthouse_stormy_sea.jpg',
     keywords: ['אלומה', 'ספינה', 'חוף', 'ניווט', 'לילה', 'אזהרה']
   },
   'item_172_מנעול_סגור__ומפתח_בצד___מסמל': {
@@ -65,7 +66,11 @@ const specialCleanups = {
   },
   'item_360_מזלג__סכין_וכף': {
     title: 'סכו"ם',
-    keywords: ['אוכל', 'ארוחה', 'חביתה', 'ביצים', 'מטבח', 'מסעדה', 'שולחן', 'בישול']
+    keywords: ['סכו"ם', 'מזלג', 'סכין', 'כף', 'אוכל', 'ארוחה', 'שולחן', 'מטבח', 'מסעדה', 'בישול']
+  },
+  'item_302_כדורסל': {
+    title: 'כדורסל',
+    keywords: ['כדורסל', 'כדרור', 'לכדרר', 'ספורט', 'אימון', 'מגרש', 'קליעה', 'סל', 'פרקט']
   },
   'ronald_mcdonald': {
     title: 'רונלד מקדונלד',
@@ -129,27 +134,30 @@ for (const item of STAGED_IMAGES_POOL) {
     copy.keywords = specialCleanups[copy.id].keywords;
     copy.associations = copy.keywords;
     copy.everyday_associations = copy.keywords;
-    copy.aiCurated = true;
-  } else if (!copy.aiCurated) {
-    // First-batch item (user curated)
-    const resolvedTitle = edit?.title || aud?.title || copy.suggestedName || copy.name || copy.name_he || copy.title;
-    const resolvedKw = (edit?.keywords && edit.keywords.length > 0)
-      ? edit.keywords
-      : (aud?.keywords && aud.keywords.length > 0)
-        ? aud.keywords
-        : (copy.everyday_associations || copy.associations || copy.keywords || []);
-    copy.title = String(resolvedTitle).trim();
-    copy.name = copy.title;
-    copy.name_he = copy.title;
-    copy.suggestedName = copy.title;
-    copy.keywords = resolvedKw.map(k => String(k).trim()).filter(Boolean);
-    copy.associations = copy.keywords;
-    copy.everyday_associations = copy.keywords;
+    if (specialCleanups[copy.id].imageUrl) {
+      copy.imageUrl = specialCleanups[copy.id].imageUrl;
+    }
+  }
+
+  // Local edits from user_curation_state.json ALWAYS take top precedence
+  if (edit) {
+    if (edit.title) {
+      copy.title = String(edit.title).trim();
+      copy.name = copy.title;
+      copy.name_he = copy.title;
+      copy.suggestedName = copy.title;
+    }
+    if (Array.isArray(edit.keywords) && edit.keywords.length > 0) {
+      copy.keywords = edit.keywords.map(k => String(k).trim()).filter(Boolean);
+      copy.associations = copy.keywords;
+      copy.everyday_associations = copy.keywords;
+    }
     copy.userCurated = true;
-  } else {
-    // AI-curated item (331 items)
-    const resolvedTitle = copy.suggestedName || copy.name || copy.name_he || copy.title;
-    const resolvedKw = copy.everyday_associations || copy.associations || copy.keywords || [];
+  } else if (!specialCleanups[copy.id]) {
+    const resolvedTitle = aud?.title || copy.suggestedName || copy.name || copy.name_he || copy.title;
+    const resolvedKw = (aud?.keywords && aud.keywords.length > 0)
+      ? aud.keywords
+      : (copy.everyday_associations || copy.associations || copy.keywords || []);
     copy.title = String(resolvedTitle).trim();
     copy.name = copy.title;
     copy.name_he = copy.title;
@@ -165,6 +173,51 @@ for (const item of STAGED_IMAGES_POOL) {
     activeItems.push(copy);
   }
   updatedStagedPool.push(copy);
+}
+
+// Add authentic asian_noodles_bowl if not already in pool
+if (!updatedStagedPool.some(x => x.id === 'asian_noodles_bowl')) {
+  const noodleItem = {
+    id: 'asian_noodles_bowl',
+    name: 'קערת איטריות',
+    title: 'קערת איטריות',
+    suggestedName: 'קערת איטריות',
+    imageUrl: '/staged_images/pool/asian_noodles_bowl.jpg',
+    category: '🛠️ 8. חפצים יומיומיים וכלים (351–400)',
+    domain: 'daily_life',
+    keywords: ['איטריות', 'אטריות', 'נודלס', 'מרק', 'ראמן', 'פסטה', 'ספגטי', 'אוכל', 'בישול', 'ארוחה'],
+    associations: ['איטריות', 'אטריות', 'נודלס', 'מרק', 'ראמן', 'ספגטי', 'פסטה', 'אוכל', 'בישול', 'ארוחה'],
+    everyday_associations: ['איטריות', 'אטריות', 'נודלס', 'מרק', 'ראמן', 'ספגטי', 'פסטה', 'אוכל', 'בישול', 'ארוחה'],
+    association: 'איטריות, אטריות, נודלס, מרק, ראמן, ספגטי, פסטה, אוכל, בישול, ארוחה',
+    uploaderName: 'חן (ידני)',
+    isUserApproved: true,
+    isCuratedSeed: true
+  };
+  updatedStagedPool.push(noodleItem);
+  activeItems.push(noodleItem);
+}
+
+// Add classic_cartoon_bomb if not already in pool
+if (!updatedStagedPool.some(x => x.id === 'classic_cartoon_bomb')) {
+  const bombItem = {
+    id: 'classic_cartoon_bomb',
+    name: 'פצצה',
+    title: 'פצצה',
+    suggestedName: 'פצצה',
+    imageUrl: '/staged_images/pool/classic_cartoon_bomb.png',
+    category: '🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)',
+    domain: 'daily_life',
+    keywords: ['דדליין', 'דחוף', 'חירום', 'אזהרה'],
+    associations: ['דדליין', 'דחוף', 'חירום', 'אזהרה'],
+    everyday_associations: ['דדליין', 'דחוף', 'חירום', 'אזהרה'],
+    association: 'דדליין, דחוף, חירום, אזהרה',
+    caption: 'פצצה שחורה עם פתיל בוער וניצוצות הממחישה דדליין בוער ומשימות דחופות!',
+    uploaderName: 'חן + AI',
+    isUserApproved: true,
+    isCuratedSeed: true
+  };
+  updatedStagedPool.push(bombItem);
+  activeItems.push(bombItem);
 }
 
 console.log(`Updated STAGED_IMAGES_POOL: ${updatedStagedPool.length} total, ${activeItems.length} active.`);

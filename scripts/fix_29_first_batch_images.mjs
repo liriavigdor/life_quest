@@ -35,7 +35,6 @@ const FETCHES = [
   { file: 'tutankhamun.jpg', wiki: 'Mask of Tutankhamun', commons: 'Tutankhamun mask gold' },
   { file: 'chess_knight_piece.jpg', wiki: 'Knight (chess)', commons: 'Chess knight piece wooden' },
   { file: 'golden_menorah_seven.jpg', wiki: 'Menorah (Temple)', commons: 'Temple Menorah golden Jerusalem' },
-  { file: 'authentic_item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת.jpg', wiki: '', commons: 'Comic bomb fuse OR Naval mine museum' },
   { file: 'item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל.jpg', wiki: 'Square academic cap', commons: 'Graduation mortarboard cap' },
   { file: 'item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל.jpg', wiki: 'Bullseye (target)', commons: 'Archery target arrow bullseye' },
   { file: 'item_167_שטיח_אדום_ארוך__מסמל.jpg', wiki: 'Red carpet', commons: 'Red carpet event VIP' },

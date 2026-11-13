@@ -132,7 +132,22 @@ function buildCustomPracticeStations(input = DEFAULT_STATION_ANCHORS, forcedStor
     let finalEmoji = st.card?.emoji || srcObj?.emoji || st.celebrity?.emoji || '📌';
     let finalStory = srcObj?.story || st.roomSensoryGuidedPrompt;
 
-    // Curated stations from modern orchestrator / user selection are strictly preserved without legacy hijacking
+    // Self-healing: If station has an SVG fallback or mismatched cutlery for eggs, retrieve optimal anchor from repository
+    if (!finalImageUrl || finalImageUrl.startsWith('data:image/svg') || (st.itemTitle === 'ביצים' && finalImageUrl.includes('360'))) {
+      const match = findUserImageByKeyword(st.itemTitle);
+      if (match && match.imageUrl && !match.imageUrl.startsWith('data:image/svg')) {
+        finalImageUrl = match.imageUrl;
+        finalAssocWord = match.title;
+        if (!finalCandidates || finalCandidates.length === 0) {
+          finalCandidates = [{
+            anchorName: match.title,
+            imageUrl: match.imageUrl,
+            emoji: match.emoji || '⭐',
+            explanation: `עוגן מהמאגר שלך: ${match.title}`
+          }];
+        }
+      }
+    }
 
     return {
       id: `loci-custom-${idx + 1}`,
@@ -325,17 +340,15 @@ export function StardewInstitutionComplex({
     try {
       const version = localStorage.getItem('lifequest_practice_stations_version');
       const saved = localStorage.getItem('lifequest_active_practice_stations');
-      if (saved && version === 'v11_pure_loci_curated') {
+      if (saved && version === 'v12_synergy_curated') {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
           const hasFallback = parsed.some(p => 
             !p.imageUrl || 
             p.imageUrl.startsWith('data:image/svg') || 
-            p.imageUrl.includes('approved_') || 
-            p.imageUrl.startsWith('http') || 
+            (p.title === 'ביצים' && p.imageUrl.includes('360')) ||
             !p.candidates || 
-            p.candidates.length === 0 ||
-            p.imageUrl.includes('remy_ratatouille_chef')
+            p.candidates.length === 0
           );
           if (!hasFallback) return parsed;
           const upgraded = buildCustomPracticeStations(parsed);
@@ -345,12 +358,12 @@ export function StardewInstitutionComplex({
           return upgraded;
         }
       } else if (saved) {
-        // Upgrade legacy cache to new curated version
+        // Upgrade legacy cache to new curated version v12
         try {
           const parsed = JSON.parse(saved);
           if (Array.isArray(parsed) && parsed.length > 0) {
             const upgraded = buildCustomPracticeStations(parsed);
-            localStorage.setItem('lifequest_practice_stations_version', 'v11_pure_loci_curated');
+            localStorage.setItem('lifequest_practice_stations_version', 'v12_synergy_curated');
             localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(upgraded));
             return upgraded;
           }
@@ -359,7 +372,7 @@ export function StardewInstitutionComplex({
     } catch (_) {}
     const defaults = buildCustomPracticeStations(DEFAULT_STATION_ANCHORS);
     try {
-      localStorage.setItem('lifequest_practice_stations_version', 'v11_pure_loci_curated');
+      localStorage.setItem('lifequest_practice_stations_version', 'v12_synergy_curated');
       localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(defaults));
     } catch (_) {}
     return defaults;
@@ -371,11 +384,11 @@ export function StardewInstitutionComplex({
       setActivePracticeStations((prev) => {
         let changed = false;
         const refreshed = prev.map((st) => {
-          // Strictly match ONLY if user explicitly uploaded/approved an image for this EXACT task title
           const matchedUserImg = findUserImageByKeyword(st.title);
-          if (matchedUserImg && matchedUserImg.isUserApproved && matchedUserImg.imageUrl && !matchedUserImg.imageUrl.startsWith('data:image/svg')) {
+          if (matchedUserImg && matchedUserImg.imageUrl && !matchedUserImg.imageUrl.startsWith('data:image/svg')) {
+            const needsHealing = !st.imageUrl || st.imageUrl.startsWith('data:image/svg') || (st.title === 'ביצים' && st.imageUrl.includes('360'));
             const isExactTitle = matchedUserImg.title && matchedUserImg.title.trim().toLowerCase() === st.title.trim().toLowerCase();
-            if (isExactTitle && st.imageUrl !== matchedUserImg.imageUrl) {
+            if ((isExactTitle || needsHealing) && st.imageUrl !== matchedUserImg.imageUrl) {
               changed = true;
               return {
                 ...st,

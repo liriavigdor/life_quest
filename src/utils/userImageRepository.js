@@ -75,134 +75,7 @@ CANONICAL_KEYWORDS_MAP.set(toCanonicalKey("מייקל ג'ורדן"), JORDAN_CANO
 CANONICAL_KEYWORDS_MAP.set(toCanonicalKey('מייקל גורדן'), JORDAN_CANONICAL);
 
 // מאגר ענפים מפורש, עשיר ומדויק לכל העוגנים במאגר המשתמש (ללא קיצוצי אותיות, ללא שמות פרטיים וללא פעלים ארעיים!)
-export const EXPLICIT_REPOSITORY_ANCHOR_BRANCHES = [
-  {
-    match: ['רובין', 'robin_hood', 'עזרה'],
-    title: 'רובין הוד',
-    imageUrl: '/staged_images/pool/robin_hood_bow_arrow.jpg',
-    keywords: ['עזרה', 'קשת', 'חץ', 'יער שרווד', 'צדק', 'לוחם'],
-    caption: 'רובין הוד חמוש בקשת וחצים ביער שרווד מסייע לנזקקים!'
-  },
-  {
-    match: ['סאנדיי', 'גלידה', 'ice_cream_sundae', 'approved_1794388680439'],
-    title: 'קערת סאנדיי גלידה עם קצפת ודובדבן 🍨🍒',
-    imageUrl: '/staged_images/pool/approved_1794388680281.jpg',
-    keywords: ['גלידה', 'סאנדיי', 'קצפת', 'דובדבן', 'קינוח', 'מתוק'],
-    caption: 'מנת גלידה חגיגית עם הר קצפת ודובדבן אדום בראשו!'
-  },
-  {
-    match: ['ספיידרמן', 'spider_man'],
-    title: 'ספיידרמן מטפס בזריזות על קיר גורד שחקים 🕷️🏙️',
-    imageUrl: '/staged_images/pool/spider_man.jpg',
-    keywords: ['טיפוס', 'ספיידרמן', 'עכביש', 'קיר', 'גורד שחקים', 'קורים'],
-    caption: 'איש העכביש מטפס על קירות אנכיים בקלות ובזריזות מדהימה!'
-  },
-  {
-    match: ['אריה', 'שאגה', 'item_458_אריה'],
-    title: 'אריה שואג',
-    imageUrl: '/staged_images/pool/item_458_אריה.jpg',
-    keywords: ['אריה', 'אומץ', 'שאגה', 'ספארי', 'טורף', 'מלך החיות'],
-    caption: 'אריה שואג במלוא העוצמה ומפגין אומץ ומנהיגות!'
-  },
-  {
-    match: ['מרקיורי', 'מרקורי', 'קריוקי', 'freddie_mercury'],
-    title: 'פרדי מרקיורי שר בהתלהבות למיקרופון באצטדיון 🎤👑',
-    imageUrl: '/staged_images/pool/queen_freddie_mercury_wembley.jpg',
-    keywords: ['קריוקי', 'פרדי מרקיורי', 'מיקרופון', 'שירה', 'הופעה', 'אצטדיון'],
-    caption: 'פרדי מרקיורי מרעיד את האצטדיון בשירה עוצמתית לתוך המיקרופון!'
-  },
-  {
-    match: ['פיקאצ', 'pikachu', 'פוקימון'],
-    title: 'פיקאצ\'ו פולט מכת ברק וניצוצות חשמל ⚡🐭',
-    imageUrl: '/staged_images/pool/pikachu_electric_mouse.jpg',
-    keywords: ['אנימה', 'פיקאצ\'ו', 'ברק', 'חשמל', 'פוקימון', 'טעינה'],
-    caption: 'פיקאצ\'ו האגדי טוען 100,000 וולט ומחשמל את כנס האנימה!'
-  },
-  {
-    match: ['טייפון', 'בייבלייד', 'סופה', 'approved_1794324419053'],
-    title: 'טייפון',
-    imageUrl: '/staged_images/pool/approved_1794324418922.jpg',
-    keywords: ['בייבלייד', 'טייפון', 'סופה', 'מערבולת', 'סערה', 'סיבוב'],
-    caption: 'מערבולת רוח עוצמתית המדמה את סיבוב הלהבים והזירה!'
-  },
-  {
-    match: ['סאגוארו', 'קקטוס', 'מדחום', 'item_251'],
-    title: 'קקטוס סאגוארו',
-    imageUrl: '/staged_images/pool/item_251_קקטוס_סאגוארו.jpg',
-    keywords: ['מדחום', 'קקטוס', 'חום', 'מדבר', 'שרב', 'שמש'],
-    caption: 'קקטוס סאגוארו ענק עומד בשיא החום המדברי ומזכיר מדחום לוהט!'
-  },
-  {
-    match: ['מסי', 'ליאו', 'messi'],
-    title: 'ליאו מסי מניף את גביע העולם 🏆🇦🇷',
-    imageUrl: '/staged_images/pool/lionel_messi_world_cup.jpg',
-    keywords: ['כדורגל', 'ליאו מסי', 'גביע', 'מונדיאל', 'אליפות', 'מגרש'],
-    caption: 'ליאו מסי מניף את גביע העולם המוזהב באושר עילאי ומזכיר משחק כדורגל!'
-  },
-  {
-    match: ['פלפס', 'phelps', 'שחייה', 'שחיה'],
-    title: 'מייקל פלפס עם 28 מדליות זהב אולימפיות 🏊🥇',
-    imageUrl: '/staged_images/pool/michael_phelps_medals.jpg',
-    keywords: ['שחייה', 'מייקל פלפס', 'בריכה', 'מדליה', 'אולימפיאדה', 'מים'],
-    caption: 'מייקל פלפס, השחיין הגדול בהיסטוריה, עטור מדליות זהב מזנק לבריכה!'
-  },
-  {
-    match: ['בובספוג', 'spongebob'],
-    title: 'בובספוג',
-    imageUrl: '/staged_images/pool/spongebob.jpg',
-    keywords: ['סדר', 'ניקיון', 'בובספוג', 'ספוג', 'בועות', 'קרצוף'],
-    caption: 'בובספוג מכנסמרובע הוא ספוג ניקיון חרוץ שמבריק ומסדר את כל החדר!'
-  },
-  {
-    match: ['ג\'ינס', 'גינס', 'מכנסיים', 'מכנס', 'jeans'],
-    title: 'מכנסי ג\'ינס מקופלים',
-    imageUrl: '/staged_images/pool/classic_blue_denim_jeans.jpg',
-    keywords: ['מכנסיים', 'ג\'ינס', 'דנים', 'בגדים', 'כיסים', 'חגורה'],
-    caption: 'מכנסי ג\'ינס דנים כחולים מקופלים ומגוהצים בצורה מושלמת!'
-  },
-  {
-    match: ['כדורגל על דשא', 'כדורגל קלאסי', 'soccer'],
-    title: 'כדורגל קלאסי על דשא',
-    imageUrl: '/staged_images/pool/item_301_כדורגל_קלאסי.jpg',
-    keywords: ['כדורגל', 'דשא', 'מגרש', 'אימון', 'שער', 'ספורט'],
-    caption: 'כדורגל עור קלאסי בשחור-לבן מונח על דשא ירוק ורענן!'
-  },
-  {
-    match: ['וונקה', 'wonka', 'שוקולד', 'chocolate'],
-    title: 'חפיסת שוקולד מריר פרימיום',
-    imageUrl: '/staged_images/pool/pieces_dark_chocolate_bar.jpg',
-    keywords: ['שוקולד', 'קקאו', 'חפיסה', 'קוביות', 'מתוק', 'ממתק'],
-    caption: 'חפיסת שוקולד מריר שבורה לקוביות עשירות עם פולי קקאו טבעיים!'
-  },
-  {
-    match: ['לחם', 'bread'],
-    title: 'כיכר לחם כפרי חם וטרי',
-    imageUrl: '/staged_images/pool/fresh_bread_loaf.jpg',
-    keywords: ['לחם', 'מאפייה', 'כיכר', 'שמרים', 'כריך', 'טוסט'],
-    caption: 'כיכר לחם מחמצת פריכה וזהובה שיצאה זה עתה מתנור האבן!'
-  },
-  {
-    match: ['לנקות את הרכב', 'שטיפת רכב', 'ניקיון רכב'],
-    title: 'שטיפת רכב עם דלי קצף וספוג',
-    imageUrl: '/staged_images/pool/car_wash_bucket_sponge.jpg',
-    keywords: ['ניקיון רכב', 'שטיפה', 'ספוג', 'קצף', 'דלי', 'ברק'],
-    caption: 'דלי מים עם קצף סבון עשיר וספוג רך ממרקים את הרכב לברק מושלם!'
-  },
-  {
-    match: ['הסמל של הרכב', 'סמל רכב', 'סמל הרכב'],
-    title: 'סמל רכב כרום מבריק',
-    imageUrl: '/staged_images/pool/chrome_car_hood_emblem.jpg',
-    keywords: ['סמל רכב', 'תיקון', 'כרום', 'מכסה מנוע', 'מוסך', 'רכב'],
-    caption: 'סמל רכב קלאסי מצופה כרום מלוטש ומבריק המותקן בחזית מכסה המנוע!'
-  },
-  {
-    match: ['מדי צבא', 'מדים', 'military_uniform'],
-    title: 'חייל במדי צבא ייצוגיים',
-    imageUrl: '/staged_images/pool/military_dress_uniform.jpg',
-    keywords: ['מדי צבא', 'מדים', 'חייל', 'צבא', 'בסיס', 'כומתה'],
-    caption: 'חייל במדי צבא מגוהצים וייצוגיים עם כומתה על הכתף!'
-  }
-];
+export const EXPLICIT_REPOSITORY_ANCHOR_BRANCHES = [];
 
 export function sanitizeUserRecord(record) {
   if (!record) return false;
@@ -237,33 +110,6 @@ export function sanitizeUserRecord(record) {
   const idKey = toCanonicalKey(record.id);
   const imgUrl = (record.imageUrl || '').toLowerCase();
 
-  // 1. בדיקת התאמה מדויקת בלבד לעוגנים המפורשים במאגר (ללא דריסת תת-מחרוזות אקראיות)
-  for (const entry of EXPLICIT_REPOSITORY_ANCHOR_BRANCHES) {
-    const isMatched = entry.match.some(m => {
-      const mKey = toCanonicalKey(m);
-      return titleKey === mKey || idKey === mKey;
-    });
-
-    if (isMatched) {
-      if (JSON.stringify(record.keywords) !== JSON.stringify(entry.keywords)) {
-        record.keywords = [...entry.keywords];
-        changed = true;
-      }
-      if (entry.title && record.title !== entry.title && !record.title?.includes(entry.title)) {
-        record.title = entry.title;
-        changed = true;
-      }
-      if (entry.imageUrl && record.imageUrl !== entry.imageUrl && (imgUrl.includes('formula') || imgUrl.includes('fresco') || imgUrl.includes('wonka') || !record.imageUrl)) {
-        record.imageUrl = entry.imageUrl;
-        changed = true;
-      }
-      if (entry.caption && (!record.caption || record.caption.includes('לנסיעה'))) {
-        record.caption = entry.caption;
-        changed = true;
-      }
-      return changed;
-    }
-  }
 
   // 2. סינון כללי עבור תמונות שאינן במאגר המפורש:
   // איסור מוחלט על שמות פרטיים של חברים, פעלים ארעיים, ותגיות חתוכות באותיות סופיות!
@@ -276,14 +122,19 @@ export function sanitizeUserRecord(record) {
     'ייבלייד', 'וקולד', 'דורגל', 'ובספוג', 'ואג', 'חקימ', 'שחקימ'
   ]);
 
+  const titleWords = new Set(
+    title.toLowerCase().replace(/[()\/\"'’`\-]/g, ' ').split(/\s+/).filter(w => w.length > 1)
+  );
+
   const rawList = Array.isArray(record.keywords) ? record.keywords : [];
   const cleanList = [];
   for (const raw of rawList) {
     const str = String(raw).trim();
-    if (!str || str.length < 2) continue;
+    if (!str || str.length < 2 || str.includes(' ')) continue;
     if (BANNED_PERSON_AND_VERBS.has(str)) continue;
+    if (titleWords.has(str.toLowerCase())) continue;
 
-    if (!cleanList.includes(str) && cleanList.length < 8) {
+    if (!cleanList.includes(str) && cleanList.length < 4) {
       cleanList.push(str);
     }
   }
@@ -1459,9 +1310,19 @@ export function hebrewWordMatches(searchWord = '', targetText = '') {
 }
 
 const SEMANTIC_CONCEPT_EXPANSIONS = {
-  'חביתה': ['חביתה', 'ביצים', 'טיגון', 'סכו"ם', 'בישול', 'ארוחה', 'בוקר', 'מטבח'],
-  'ביצה': ['ביצים', 'חביתה', 'בוקר', 'ארוחה', 'טיגון'],
-  'ביצימ': ['ביצים', 'חביתה', 'בוקר', 'ארוחה', 'טיגון'],
+  'חביתה': ['חביתה', 'ביצים', 'ביצה', 'תרנגול', 'לול', 'בוקר', 'טיגון'],
+  'ביצה': ['ביצים', 'ביצה', 'חביתה', 'תרנגול', 'לול', 'בוקר', 'טיגון'],
+  'ביצימ': ['ביצים', 'ביצה', 'חביתה', 'תרנגול', 'לול', 'בוקר', 'טיגון'],
+  'ביצים': ['ביצים', 'ביצה', 'חביתה', 'תרנגול', 'לול', 'בוקר', 'טיגון'],
+  'תרנגול': ['תרנגול', 'ביצים', 'ביצה', 'חביתה', 'לול', 'כרבולת', 'בוקר', 'השכמה', 'זריחה'],
+  'בייקון': ['בייקון', 'חזיר', 'דיר', 'בשר', 'בוקר', 'טיגון'],
+  'בייקונ': ['בייקון', 'חזיר', 'דיר', 'בשר', 'בוקר', 'טיגון'],
+  'חזיר': ['חזיר', 'בייקון', 'דיר', 'בוץ', 'קופת חיסכון', 'ורוד'],
+  'כדרור': ['כדרור', 'לכדרר', 'כדורסל', 'מגרש', 'ספורט', 'קליעה', 'כדור'],
+  'לכדרר': ['כדרור', 'לכדרר', 'כדורסל', 'מגרש', 'ספורט', 'קליעה', 'כדור'],
+  'איטריות': ['איטריות', 'אטריות', 'נודלס', 'ראמן', 'מרק', 'פסטה', 'ספגטי', 'בישול', 'ארוחה', 'אוכל'],
+  'אטריות': ['איטריות', 'אטריות', 'נודלס', 'ראמן', 'מרק', 'פסטה', 'ספגטי', 'בישול', 'ארוחה', 'אוכל'],
+  'נודלס': ['איטריות', 'אטריות', 'נודלס', 'ראמן', 'מרק', 'פסטה', 'ספגטי', 'בישול', 'ארוחה', 'אוכל'],
   'לאכול': ['אוכל', 'ארוחה', 'לאכול', 'המבורגר', 'מסעדה', 'בישול', 'דבש', 'בננות'],
   'אוכל': ['אוכל', 'ארוחה', 'לאכול', 'המבורגר', 'מסעדה', 'בישול'],
   'ארוחה': ['ארוחה', 'אוכל', 'מסעדה', 'בישול', 'שולחן'],
@@ -1503,10 +1364,12 @@ const MODAL_AUXILIARY_WORDS = new Set([
  * מחפש ומדרג את 5 התמונות המתאימות ביותר מתוך "המאגר שלי" (433 תמונות מאומתות) עבור משימה נתונה.
  * מתחשב בכל המילים במשפט (למשל "הילד צריך לאכול" יעדיף כרטיס שיש בו גם "ילד/ילדים" וגם "אוכל/ארוחה").
  */
-export function findBestUserImagesForTask(taskText = '', limit = 5) {
+export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}) {
   if (!taskText || !cachedUserImages.length) return [];
   const rawClean = String(taskText).trim().toLowerCase();
   if (!rawClean) return [];
+
+  const mode = typeof options === 'string' ? options : (options?.mode || 'all');
 
   // פירוק המשימה לקבוצות מושגים (Concept Groups)
   const rawTokens = rawClean.split(/[,\s+./\-–—!?()[\]{}'"]+/).filter(Boolean);
@@ -1574,15 +1437,27 @@ export function findBestUserImagesForTask(taskText = '', limit = 5) {
     let score = 0;
     let matchedGroupsCount = 0;
 
-    // 1. התאמה מלאה לכותרת או למשימה משויכת
-    if (itemTitle === rawClean || itemTasks.includes(rawClean)) {
-      score += 600;
+    // 1. התאמה מלאה לכותרת או למשימה משויכת (במצב ענפים בלבד לא מקדמים את החפץ עצמו!)
+    if (mode !== 'branches') {
+      if (itemTitle === rawClean || itemTasks.includes(rawClean)) {
+        score += 600;
+      }
+    } else {
+      // חוק הברזל של סוכן 1: במצב ענפים פוסלים כרטיס שנושאו (השורש) הוא החפץ עצמו!
+      if (itemTitle === rawClean) {
+        continue;
+      }
     }
 
     // 2. בדיקת התאמה מול כל קבוצת מושגים במשפט
     for (const group of conceptGroups) {
       let groupBest = 0;
       const origLow = group.original.toLowerCase();
+
+      // חוק ענפים של סוכן 1: פסילת הצגת החפץ עצמו
+      if (mode === 'branches' && (itemTitle === origLow || (origLow.length >= 3 && hebrewWordMatches(origLow, itemTitle)))) {
+        continue;
+      }
 
       for (const variant of group.variants) {
         const vLow = variant.toLowerCase();
@@ -1597,17 +1472,39 @@ export function findBestUserImagesForTask(taskText = '', limit = 5) {
           continue;
         }
 
-        if (itemTitle === vLow) {
-          groupBest = Math.max(groupBest, isPrimaryTerm ? 340 : 140);
-        } else if (itemKeywords.includes(vLow)) {
-          groupBest = Math.max(groupBest, isPrimaryTerm ? 300 : 95);
-        } else if (itemTitle && vLow.length >= 3 && hebrewWordMatches(vLow, itemTitle)) {
-          groupBest = Math.max(groupBest, isPrimaryTerm ? 220 : 90);
+        if (mode === 'roots') {
+          // סוכן 2: חיפוש תמונות שורש (Root Search) לפי נושא התמונה
+          if (itemTitle === vLow) {
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 400 : 200);
+          } else if (itemTitle && vLow.length >= 3 && hebrewWordMatches(vLow, itemTitle)) {
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 300 : 150);
+          }
+        } else if (mode === 'branches') {
+          // סוכן 1: חיפוש ענפים ואסוציאציות בלבד (Branch Search) ללא שורש החפץ!
+          if (itemKeywords.includes(vLow)) {
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 350 : 120);
+          } else {
+            for (const kw of itemKeywords) {
+              if (kw === vLow || (vLow.length >= 3 && kw.length >= 3 && hebrewWordMatches(vLow, kw))) {
+                groupBest = Math.max(groupBest, isPrimaryTerm ? 250 : 90);
+                break;
+              }
+            }
+          }
         } else {
-          for (const kw of itemKeywords) {
-            if (kw === vLow || (vLow.length >= 3 && kw.length >= 3 && hebrewWordMatches(vLow, kw))) {
-              groupBest = Math.max(groupBest, isPrimaryTerm ? 200 : 80);
-              break;
+          // מצב משולב רגיל (Default / All)
+          if (itemTitle === vLow) {
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 340 : 140);
+          } else if (itemKeywords.includes(vLow)) {
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 300 : 95);
+          } else if (itemTitle && vLow.length >= 3 && hebrewWordMatches(vLow, itemTitle)) {
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 220 : 90);
+          } else {
+            for (const kw of itemKeywords) {
+              if (kw === vLow || (vLow.length >= 3 && kw.length >= 3 && hebrewWordMatches(vLow, kw))) {
+                groupBest = Math.max(groupBest, isPrimaryTerm ? 200 : 80);
+                break;
+              }
             }
           }
         }

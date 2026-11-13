@@ -10,6 +10,7 @@ import { findUserImageByKeyword, hebrewWordMatches, isAssociationDisliked } from
 import { generateDynamicFallbackCard } from './deterministicStoryEngine.js';
 import { STAGED_IMAGES_POOL } from '../data/stagedImagesPool.js';
 import { searchPopularWebImages } from './webImageSearch.js';
+import { ingestImagePermanently } from './geminiVisionAuditor.js';
 import { processTaskListWithSynergy } from './mnemonicPipelineOrchestrator.js';
 
 const FEEDBACK_STORAGE_KEY = 'lifequest_mnemonic_feedback_records_v1';
@@ -17,7 +18,20 @@ const RATINGS_MAP_KEY = 'lifequest_mnemonic_ratings_map_v1';
 
 // Comprehensive Hebrew to high-yield English search terms for Commons API
 export const HEBREW_TO_COMMONS_QUERY_MAP = {
+  // Office, Tasks & Writing
+  'סקר': { primary: 'clipboard survey questionnaire pen photography', secondary: 'survey questionnaire clipboard checklist' },
+  'שאלון': { primary: 'clipboard questionnaire checklist pen', secondary: 'survey questionnaire clipboard' },
+  'מאמר': { primary: 'fountain pen writing notebook desk', secondary: 'typewriter vintage paper writing' },
+  'כתבה': { primary: 'newspaper morning coffee reading desk', secondary: 'journalist typing laptop writing' },
+  'דלת': { primary: 'vintage wooden front door house', secondary: 'rustic antique door entrance' },
+  'דלתות': { primary: 'vintage wooden front door house', secondary: 'rustic antique door entrance' },
+
   // Food & Dining
+  'איטריות': { primary: 'asian noodles bowl ramen photography', secondary: 'pasta spaghetti noodles plate' },
+  'אטריות': { primary: 'asian noodles bowl ramen photography', secondary: 'pasta spaghetti noodles plate' },
+  'נודלס': { primary: 'asian noodles bowl ramen photography', secondary: 'pasta spaghetti noodles plate' },
+  'בייקון': { primary: 'crispy bacon strips breakfast photography', secondary: 'farm pig cute photography' },
+  'כדרור': { primary: 'basketball court wooden floor ball photography', secondary: 'basketball player dunking photography' },
   'שניצל': { primary: 'schnitzel cutlet', secondary: 'fried chicken cutlet plate' },
   'שניצלים': { primary: 'schnitzel cutlet', secondary: 'fried chicken cutlet plate' },
   'פיצה': { primary: 'pizza slice hot cheese', secondary: 'italian pizza oven' },
@@ -355,209 +369,6 @@ export async function curateSingleItemWithAi(itemText = '') {
   return synergy?.stations?.[0] || null;
 }
 
-// Legacy curateSingleItemWithAi superseded by 4-agent processTaskListWithSynergy
-async function _legacyCurateSingleItem(clean) {
-
-  // Step 2, 3 & 4: Hebrew Root & Morphological Mnemonic Pipeline (The 5-Step Canon)
-  // NOTE: Do NOT call saveUserImage here! Images are added to the user repository ONLY after positive feedback (👍).
-  const rootCandidates = getRootMnemonicCandidates(clean);
-  if (rootCandidates.length > 0) {
-    const topCandidate = rootCandidates[0];
-    const mappedCandidates = rootCandidates.map(c => ({
-      anchorName: c.anchorWord || c.name,
-      imageUrl: c.imageUrl,
-      emoji: c.emoji || '🚨',
-      explanation: c.explanation,
-      fromPool: true
-    }));
-
-    return {
-      title: clean,
-      coreConcept: topCandidate.concept || clean,
-      associationWord: topCandidate.anchorWord,
-      imageUrl: topCandidate.imageUrl,
-      emoji: topCandidate.emoji || '🚨',
-      story: topCandidate.explanation,
-      hasRepositoryImage: true,
-      candidates: mappedCandidates,
-      currentCandidateIndex: 0,
-      card: {
-        imageUrl: topCandidate.imageUrl,
-        name: topCandidate.name,
-        emoji: topCandidate.emoji || '🚨',
-        caption: `${clean} ➔ ${topCandidate.anchorWord}`
-      },
-      alternativeCandidates: rootCandidates.slice(1),
-      isAiCurated: true,
-      confidenceScore: 99
-    };
-  }
-
-  // 2. Check existing verified catalog / staged pool / master arsenal
-  const existing = findMnemonicAssetByKeyword(clean);
-  if (existing && (existing.matchScore >= 80 || existing.isVerified)) {
-    const anchorWord = existing.name || existing.title || clean;
-    return {
-      title: clean,
-      associationWord: anchorWord,
-      imageUrl: existing.imageUrl,
-      emoji: existing.emoji || '⭐',
-      story: existing.caption || `עוגן מנצח בארמון: ${anchorWord}`,
-      hasRepositoryImage: true,
-      candidates: [
-        {
-          anchorName: anchorWord,
-          imageUrl: existing.imageUrl,
-          emoji: existing.emoji || '⭐',
-          explanation: existing.caption || `עוגן מנצח בארמון: ${anchorWord}`,
-          fromPool: true
-        }
-      ],
-      currentCandidateIndex: 0,
-      card: {
-        imageUrl: existing.imageUrl,
-        name: anchorWord,
-        emoji: existing.emoji || '⭐',
-        caption: existing.caption || anchorWord
-      },
-      isAiCurated: false,
-      confidenceScore: existing.matchScore || 90
-    };
-  }
-
-  // 3. Check direct cognitive concept mapping
-  let chosenQuery = clean;
-  let chosenAnchor = clean;
-  let chosenEmoji = '💡';
-  let matchedMeta = null;
-
-  for (const [kw, meta] of Object.entries(CONCEPT_VISUAL_MAP)) {
-    if (clean.includes(kw)) {
-      matchedMeta = meta;
-      chosenQuery = meta.query;
-      chosenAnchor = meta.anchor;
-      chosenEmoji = meta.emoji;
-      break;
-    }
-  }
-
-  if (matchedMeta) {
-    const anchorMatch = findMnemonicAssetByKeyword(chosenAnchor);
-    let anchorImageUrl = anchorMatch?.imageUrl;
-
-    if (!anchorImageUrl && (chosenQuery || chosenAnchor)) {
-      try {
-        const popular = await searchPopularWebImages(chosenAnchor, 3, chosenQuery);
-        if (popular && popular[0]) {
-          anchorImageUrl = popular[0];
-        }
-      } catch (_) {}
-    }
-    if (!anchorImageUrl && chosenQuery) {
-      anchorImageUrl = await fetchCommonsMnemonicImage(chosenQuery);
-    }
-    if (!anchorImageUrl && matchedMeta.directUrl) {
-      anchorImageUrl = matchedMeta.directUrl;
-    }
-    const finalUrl = anchorImageUrl || matchedMeta.directUrl || generateDynamicFallbackCard(chosenAnchor);
-
-    return {
-      title: clean,
-      associationWord: chosenAnchor,
-      imageUrl: finalUrl,
-      emoji: chosenEmoji,
-      story: `עוגן זיכרון פעיל: ${clean} ➔ ${chosenAnchor}`,
-      hasRepositoryImage: Boolean(anchorMatch?.imageUrl),
-      candidates: [
-        {
-          anchorName: chosenAnchor,
-          imageUrl: finalUrl,
-          emoji: chosenEmoji,
-          explanation: `עוגן זיכרון פעיל: ${clean} ➔ ${chosenAnchor}`,
-          fromPool: Boolean(anchorMatch?.imageUrl)
-        }
-      ],
-      currentCandidateIndex: 0,
-      card: {
-        imageUrl: finalUrl,
-        name: chosenAnchor,
-        emoji: chosenEmoji,
-        caption: `${clean} ➔ ${chosenAnchor}`
-      },
-      isAiCurated: Boolean(anchorImageUrl),
-      confidenceScore: 98
-    };
-  }
-
-  // 4. שער ברזל: איסור מוחלט על חיפוש ביטוי המשימה הגולמי ברשת!
-  // סוכן 2 ו-3 מחפשים ברשת אך ורק עוגן מאושר באנגלית צילומית שיצא מסוכן 1, ולעולם לא טקסט משימה גולמי.
-  let webUrls = [];
-  if (chosenAnchor && chosenAnchor !== clean) {
-    const { primary } = resolveEnglishMnemonicQueries(chosenAnchor);
-    webUrls = await searchPopularWebImages(chosenAnchor, 4, primary);
-  }
-
-  // 5. Check STAGED_IMAGES_POOL ONLY for strict exact name match on real-world items (reject fictional characters!)
-  let fallbackLocalUrl = null;
-  const poolItem = STAGED_IMAGES_POOL.find(p => {
-    if (p.theme === 'fictional_pop' || p.category?.includes('בדיוניות') || p.category?.includes('1. דמויות')) {
-      return false;
-    }
-    const pName = (p.name_he || p.name || p.suggestedName || '').trim().toLowerCase();
-    return pName && (pName === clean.toLowerCase() || clean.toLowerCase() === pName);
-  });
-  if (poolItem && poolItem.imageUrl) {
-    fallbackLocalUrl = poolItem.imageUrl;
-    if (chosenAnchor === clean && (poolItem.suggestedName || poolItem.name_he)) {
-      chosenAnchor = poolItem.suggestedName || poolItem.name_he;
-    }
-  }
-
-  // Prioritize real web images of the actual object, then local exact match, then commons
-  const allCandidateUrls = Array.from(new Set([
-    ...webUrls,
-    ...(fallbackLocalUrl ? [fallbackLocalUrl] : []),
-    ...(commonsUrl ? [commonsUrl] : [])
-  ])).filter(Boolean);
-
-  const finalImageUrl = allCandidateUrls[0] || generateDynamicFallbackCard(chosenAnchor);
-  const candidates = allCandidateUrls.length > 0
-    ? allCandidateUrls.map((url) => ({
-        anchorName: chosenAnchor,
-        imageUrl: url,
-        emoji: chosenEmoji,
-        explanation: `עוגן חזותי עבור "${clean}" — לחץ אהבתי 👍 כדי להוסיף אותו למאגר הקבוע שלך!`,
-        fromPool: url === fallbackLocalUrl
-      }))
-    : [
-        {
-          anchorName: chosenAnchor,
-          imageUrl: generateDynamicFallbackCard(chosenAnchor),
-          emoji: chosenEmoji,
-          explanation: `עוגן זיכרון בארמון עבור "${clean}"`,
-          fromPool: false
-        }
-      ];
-
-  return {
-    title: clean,
-    associationWord: chosenAnchor,
-    imageUrl: finalImageUrl,
-    emoji: chosenEmoji,
-    story: `עוגן חזותי פעיל: ${chosenAnchor} — חרוט ונעוץ בזיכרון היטב!`,
-    hasRepositoryImage: Boolean(fallbackLocalUrl && finalImageUrl === fallbackLocalUrl),
-    candidates,
-    currentCandidateIndex: 0,
-    card: {
-      imageUrl: finalImageUrl,
-      name: chosenAnchor,
-      emoji: chosenEmoji,
-      caption: chosenAnchor
-    },
-    isAiCurated: allCandidateUrls.length > 0,
-  };
-}
-
 /**
  * Curate and elevate an entire list with autonomous AI verification
  */
@@ -703,7 +514,21 @@ export async function regenerateAlternativeMnemonicImage(itemTitle = '', current
       if ((!resolvedImg || resolvedImg.startsWith('data:image/svg')) && cand.englishQuery && !/[\u0590-\u05FF]/.test(cand.englishQuery)) {
         const fetched = await searchPopularWebImages(cand.anchorName, 3, cand.englishQuery);
         if (fetched && fetched[0]) {
-          resolvedImg = fetched[0];
+          let candidateUrl = fetched[0];
+          if (candidateUrl.startsWith('http') && !candidateUrl.includes('/staged_images/pool/')) {
+            try {
+              const ingestRes = await ingestImagePermanently({
+                imageUrl: candidateUrl,
+                anchorName: cand.anchorName,
+                coreConcept: clean,
+                explanation: cand.explanation || ''
+              });
+              if (ingestRes && ingestRes.ok && ingestRes.localImageUrl) {
+                candidateUrl = ingestRes.localImageUrl;
+              }
+            } catch (_) {}
+          }
+          resolvedImg = candidateUrl;
           cand.imageUrl = resolvedImg;
         }
       }

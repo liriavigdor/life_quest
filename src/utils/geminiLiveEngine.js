@@ -11,6 +11,7 @@
 
 import { STAGED_IMAGES_POOL } from '../data/stagedImagesPool.js';
 import { searchPopularWebImages } from './webImageSearch.js';
+import { ingestImagePermanently, auditImageWithGeminiVision } from './geminiVisionAuditor.js';
 import { getUserImagesSync, findUserImageByKeyword, hebrewWordMatches } from './userImageRepository.js';
 
 const STORAGE_KEY = 'lifequest_gemini_api_key';
@@ -146,8 +147,8 @@ ${JSON.stringify(cleanList, null, 2)}
   "grandFinaleStory": "משפט עלילתי שלם, קצר ומבריק שמחבר את כל האסוציאציות בלי חזרות"
 }`;
 
-  // Call Gemini API (Active supported production models)
-  const models = ['gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-2.5-flash'];
+  // Call Gemini API (Active supported production models with fast fallback)
+  const models = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-3.8-flash'];
   let jsonResponse = null;
   let lastErr = null;
 
@@ -221,13 +222,31 @@ ${JSON.stringify(cleanList, null, 2)}
     try {
       const webImages = await searchPopularWebImages(searchQuery || anchorName, 4, englishQuery);
       if (webImages && webImages.length > 0 && webImages[0]) {
+        let finalImageUrl = webImages[0];
+        // מנגנון הורדה והטמעה קבועה (מניעת חסימות 403 / CORS ואימות ראייה)
+        if (finalImageUrl.startsWith('http') && !finalImageUrl.includes('/staged_images/pool/')) {
+          try {
+            const ingestRes = await ingestImagePermanently({
+              imageUrl: finalImageUrl,
+              anchorName,
+              coreConcept,
+              explanation: assoc.explanation || '',
+              emoji: assoc.emoji || '💡',
+              apiKey
+            });
+            if (ingestRes && ingestRes.ok && ingestRes.localImageUrl) {
+              finalImageUrl = ingestRes.localImageUrl;
+            }
+          } catch (_) {}
+        }
+
         return {
           anchorName,
-          imageUrl: webImages[0],
+          imageUrl: finalImageUrl,
           emoji: assoc.emoji || '💡',
           explanation: assoc.explanation || '',
-          fromPool: false,
-          source: 'web_search'
+          fromPool: finalImageUrl.includes('/staged_images/pool/'),
+          source: finalImageUrl.includes('/staged_images/pool/') ? 'ingested_permanent' : 'web_search'
         };
       }
     } catch (err) {

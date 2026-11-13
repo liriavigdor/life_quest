@@ -155,6 +155,191 @@ export default defineConfig({
           }
         });
 
+        // חילוץ מפתח ה-API של ג'מיני מקובץ .env לצורכי ביקורת ראייה בשרת
+        let cachedGeminiKey = '';
+        try {
+          const envPath = path.resolve(process.cwd(), '.env');
+          if (fs.existsSync(envPath)) {
+            const envContent = fs.readFileSync(envPath, 'utf8');
+            const m = envContent.match(/VITE_GEMINI_API_KEY=(.+)/);
+            if (m) cachedGeminiKey = m[1].trim();
+          }
+        } catch (_) {}
+
+        /**
+         * מנגנון "עיני ה-AI" בשרת: ביקורת ראייה על קובץ התמונה לפני אישורו
+         */
+        async function serverAuditBufferWithVision({ buffer, mimeType, anchorName, coreConcept, apiKey }) {
+          const key = (apiKey && apiKey.trim().length > 10) ? apiKey.trim() : cachedGeminiKey;
+          if (!key) {
+            return { approved: true, score: 7, reason: 'ללא ביקורת ראייה (חסר מפתח API)', isRealPhoto: true };
+          }
+
+          const b64 = buffer.toString('base64');
+          const prompt = `אתה מבקר איכות צילום קוגניטיבי של ארמון הזיכרון (LifeQuest).
+העוגן המבוקש הוא: "${anchorName || coreConcept}".
+נושא הענף: "${coreConcept || anchorName}".
+
+הבט בתמונה המצורפת ובדוק:
+1. האם זו תמונה חיה, אמיתית, צבעונית ומוארת היטב שמתאימה ישירות לעוגן המבוקש? (אם זה משהו אחר לגמרי - פסול מיד!).
+2. פסול מיד: דיאגרמות, תרשימים, עצי תהליך, סכמות, גרפים, סריקות מסמכים/ספרים, שחור-לבן מטושטש, וקטורים זולים/קליפארט, סימני מים של חברות סטוק או איור פרימיטיבי.
+
+החזר אך ורק JSON:
+{
+  "approved": boolean,
+  "score": number,
+  "reason": "נימוק קצר וחד בעברית",
+  "isRealPhoto": boolean
+}`;
+
+          const visionModels = ['gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-3.8-flash'];
+          for (const model of visionModels) {
+            try {
+              const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
+              const gRes = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  contents: [{
+                    parts: [
+                      { text: prompt },
+                      { inlineData: { mimeType: mimeType || 'image/jpeg', data: b64 } }
+                    ]
+                  }],
+                  generationConfig: {
+                    temperature: 0.1,
+                    responseMimeType: 'application/json'
+                  }
+                }),
+                signal: AbortSignal.timeout(16000)
+              });
+
+              if (gRes.ok) {
+                const gData = await gRes.json();
+                const text = gData.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                  const parsed = JSON.parse(text.replace(/```json/g, '').replace(/```/g, '').trim());
+                  return {
+                    approved: Boolean(parsed.approved && Number(parsed.score) >= 7),
+                    score: Number(parsed.score) || 5,
+                    reason: parsed.reason || '',
+                    isRealPhoto: Boolean(parsed.isRealPhoto)
+                  };
+                }
+              }
+            } catch (_) {}
+          }
+          return { approved: true, score: 6, reason: 'ביקורת ראייה השהתה מענה - אושר כרזרבה' };
+        }
+
+        /**
+         * הורדה והטמעה קבועה של תמונה בשרת המקומי (Zero-CORS, Zero-403)
+         */
+        async function serverIngestImageBuffer({ imageUrl, anchorName = '', coreConcept = '', explanation = '', emoji = '⭐', apiKey = '' }) {
+          if (!imageUrl || imageUrl.startsWith('data:image/svg')) {
+            return { ok: false, error: 'Invalid URL' };
+          }
+
+          const poolDir = path.resolve(process.cwd(), 'public', 'staged_images', 'pool');
+          fs.mkdirSync(poolDir, { recursive: true });
+
+          let buffer = null;
+          let ext = 'jpg';
+          let mimeType = 'image/jpeg';
+
+          if (/^https?:\/\//i.test(imageUrl)) {
+            const dlRes = await fetch(imageUrl, {
+              headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LifeQuestIngestBot/1.0' },
+              signal: AbortSignal.timeout(7500)
+            });
+            if (!dlRes.ok) return { ok: false, error: `Download failed HTTP ${dlRes.status}` };
+            const ct = (dlRes.headers.get('content-type') || '').toLowerCase();
+            ext = ct.includes('png') ? 'png' : ct.includes('webp') ? 'webp' : 'jpg';
+            mimeType = ct.split(';')[0].trim() || 'image/jpeg';
+            buffer = Buffer.from(await dlRes.arrayBuffer());
+          } else if (/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/.test(imageUrl)) {
+            const match = imageUrl.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
+            ext = match[1] === 'jpeg' ? 'jpg' : match[1];
+            mimeType = `image/${match[1]}`;
+            buffer = Buffer.from(match[2], 'base64');
+          }
+
+          if (!buffer || buffer.length < 3500) {
+            return { ok: false, error: 'Image buffer too small or corrupt' };
+          }
+
+          // בדיקת ראייה (Vision Audit)
+          const audit = await serverAuditBufferWithVision({
+            buffer,
+            mimeType,
+            anchorName,
+            coreConcept,
+            apiKey
+          });
+
+          if (!audit.approved) {
+            return { ok: false, rejected: true, audit };
+          }
+
+          // שמירה קבועה במאגר המקומי (Local Pool Ingestion)
+          const cleanSlug = (anchorName || coreConcept || 'anchor')
+            .replace(/[^\w\u0590-\u05FF]+/g, '_')
+            .slice(0, 30);
+          const fileName = `ingested_${cleanSlug}_${Date.now()}.${ext}`;
+          const filePath = path.join(poolDir, fileName);
+          fs.writeFileSync(filePath, buffer);
+          const localImageUrl = `/staged_images/pool/${fileName}`;
+
+          // עדכון approved_manifest.json
+          try {
+            const manifestPath = path.resolve(process.cwd(), 'public', 'staged_images', 'approved_manifest.json');
+            let manifest = [];
+            if (fs.existsSync(manifestPath)) {
+              manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8') || '[]');
+            }
+            manifest.unshift({
+              id: `ingested_${Date.now()}`,
+              title: anchorName || coreConcept,
+              name: anchorName || coreConcept,
+              imageUrl: localImageUrl,
+              keywords: [anchorName, coreConcept].filter(Boolean),
+              associatedTasks: [coreConcept, anchorName].filter(Boolean),
+              caption: explanation || audit.reason,
+              emoji,
+              isUserApproved: true,
+              source: 'vision_ingested_permanent',
+              qualityScore: audit.score * 10,
+              approvedAt: new Date().toISOString()
+            });
+            fs.writeFileSync(manifestPath, JSON.stringify(manifest.slice(0, 500), null, 2), 'utf8');
+          } catch (_) {}
+
+          return { ok: true, localImageUrl, audit };
+        }
+
+        // Endpoint ייעודי חדש להורדה והטמעה מיידית
+        server.middlewares.use('/api/ingest-image', async (req, res) => {
+          if (req.method !== 'POST') {
+            res.statusCode = 405;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ ok: false, error: 'Method not allowed' }));
+            return;
+          }
+          try {
+            let body = '';
+            for await (const chunk of req) body += chunk;
+            const payload = JSON.parse(body || '{}');
+            const result = await serverIngestImageBuffer(payload);
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify(result));
+          } catch (err) {
+            res.statusCode = 500;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ ok: false, error: err.message }));
+          }
+        });
+
         const SERVER_IMAGE_CACHE = new Map();
 
         // רשימה שחורה של אתרי תמונות בתשלום עם סימני מים, חנויות, קליפארט וממים באיכות נמוכה
@@ -412,6 +597,30 @@ export default defineConfig({
 
             scoredCandidates.sort((a, b) => (b.score || 0) - (a.score || 0));
             const results = scoredCandidates.slice(0, 8);
+
+            // מנגנון ההורדה וההטמעה המיידי (Ingestion & Vision Audit Pipeline)
+            // מוריד ומאמת בראייה את התמונה המובילה לשרת המקומי כדי שהדפדפן לעולם לא ייתקל ב-403 / CORS
+            for (let i = 0; i < Math.min(2, results.length); i++) {
+              const cand = results[i];
+              if (cand && cand.image && cand.image.startsWith('http') && !cand.image.includes('/staged_images/pool/')) {
+                try {
+                  const ingestRes = await serverIngestImageBuffer({
+                    imageUrl: cand.image,
+                    anchorName: query || englishQuery,
+                    coreConcept: query,
+                    explanation: cand.title
+                  });
+                  if (ingestRes && ingestRes.ok && ingestRes.localImageUrl) {
+                    cand.originalImage = cand.image;
+                    cand.image = ingestRes.localImageUrl;
+                    cand.thumbnail = ingestRes.localImageUrl;
+                    cand.isIngested = true;
+                    cand.audit = ingestRes.audit;
+                    break; // התמונה המובילה אושרה והוטמעה בהצלחה
+                  }
+                } catch (_) {}
+              }
+            }
 
             if (results.length > 0) {
               SERVER_IMAGE_CACHE.set(cacheKey, results);

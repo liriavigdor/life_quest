@@ -92,9 +92,9 @@ export async function searchPopularWebImages(query, limit = 5, englishQuery = ''
           if (/\.svg|\.gif|\.tif|\.pdf|\.djvu|disambig|question_book|icon|logo|flag_of|coat_of_arms|map_of|locator|blank|signature|stamp|book|album/i.test(tLow)) continue;
           const w = Number(thumb.width) || 0;
           const h = Number(thumb.height) || 0;
-          if (w < 400 || h < 250) continue;
-          const ratio = w / h;
-          if (ratio < 0.95 || ratio > 2.3) continue;
+          if (w < 300 || h < 200) continue;
+          const ratio = (w > 0 && h > 0) ? (w / h) : 1.0;
+          if (ratio < 0.65 || ratio > 2.4) continue;
           found.push(src);
         }
         return found;
@@ -104,12 +104,22 @@ export async function searchPopularWebImages(query, limit = 5, englishQuery = ''
     };
 
     try {
-      const conciseEn = cleanEn.split(/\s+/).slice(0, 3).join(' ');
-      const [enPhotos, hePhotos] = await Promise.all([
-        fetchWikiLeadPhotos('en', conciseEn),
-        /[\u0590-\u05FF]/.test(cleanQ) ? fetchWikiLeadPhotos('he', cleanQ) : Promise.resolve([])
-      ]);
-      const combined = [...new Set([...hePhotos, ...enPhotos])];
+      const words = cleanEn.split(/\s+/).filter(Boolean);
+      const searchTerms = [
+        words.slice(0, 2).join(' '),
+        words[0]
+      ].filter(t => t && t.length >= 2);
+
+      const promises = [];
+      for (const t of searchTerms) {
+        promises.push(fetchWikiLeadPhotos('en', t));
+      }
+      if (/[\u0590-\u05FF]/.test(cleanQ)) {
+        promises.push(fetchWikiLeadPhotos('he', cleanQ));
+      }
+
+      const results = await Promise.all(promises);
+      const combined = [...new Set(results.flat())];
       if (combined.length > 0) {
         images = combined.slice(0, limit);
       }

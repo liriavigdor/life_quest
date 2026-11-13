@@ -1,5 +1,146 @@
 [
   {
+    "id": "approved_1794552699595",
+    "title": "תרנגול",
+    "name": "תרנגול",
+    "imageUrl": "/staged_images/pool/farm_rooster_v2.jpg",
+    "keywords": [
+      "סריקות",
+      "בוקר",
+      "תרנגול"
+    ],
+    "associatedTasks": [
+      "סריקות כל בוקר",
+      "תרנגול"
+    ],
+    "caption": "עוגן חזותי מהמאגר שלך: תרנגול (השכמה, בוקר, לול, כרבולת)",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-13T06:51:39.596Z"
+  },
+  {
+    "id": "ingested_1794552673204",
+    "title": "חנות אריזה",
+    "name": "חנות אריזה",
+    "imageUrl": "/staged_images/pool/ingested_חנות_אריזה_1794552673190.jpg",
+    "keywords": [
+      "חנות אריזה",
+      "קרטונייה"
+    ],
+    "associatedTasks": [
+      "קרטונייה",
+      "חנות אריזה"
+    ],
+    "caption": "עוגן עבור חנות אריזה",
+    "emoji": "🏢",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-13T06:51:13.204Z"
+  },
+  {
+    "id": "ingested_1794552670551",
+    "title": "מפעל קרטון",
+    "name": "מפעל קרטון",
+    "imageUrl": "/staged_images/pool/ingested_מפעל_קרטון_1794552670418.jpg",
+    "keywords": [
+      "מפעל קרטון",
+      "קרטונייה"
+    ],
+    "associatedTasks": [
+      "קרטונייה",
+      "מפעל קרטון"
+    ],
+    "caption": "עוגן עבור מפעל קרטון",
+    "emoji": "🏭",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-13T06:51:10.551Z"
+  },
+  {
+    "id": "ingested_1794552665447",
+    "title": "חנות אריזה",
+    "name": "חנות אריזה",
+    "imageUrl": "/staged_images/pool/ingested_חנות_אריזה_1794552664915.jpg",
+    "keywords": [
+      "חנות אריזה",
+      "חנות אריזה"
+    ],
+    "associatedTasks": [
+      "חנות אריזה",
+      "חנות אריזה"
+    ],
+    "caption": "How to Label Moving Boxes | Qshark Moving",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-13T06:51:05.447Z"
+  },
+  {
+    "id": "ingested_1794552650308",
+    "title": "מפעל קרטון",
+    "name": "מפעל קרטון",
+    "imageUrl": "/staged_images/pool/ingested_מפעל_קרטון_1794552650296.jpg",
+    "keywords": [
+      "מפעל קרטון",
+      "מפעל קרטון"
+    ],
+    "associatedTasks": [
+      "מפעל קרטון",
+      "מפעל קרטון"
+    ],
+    "caption": "Corrugated Cardboard Sheet, Paper Density (GSM): 200 GSM, 3 Ply at ₹ 5 ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-13T06:50:50.308Z"
+  },
+  {
+    "id": "ingested_1794552641452",
+    "title": "קרן לייזר",
+    "name": "קרן לייזר",
+    "imageUrl": "/staged_images/pool/ingested_קרן_לייזר_1794552641433.jpg",
+    "keywords": [
+      "קרן לייזר",
+      "סריקות כל בוקר"
+    ],
+    "associatedTasks": [
+      "סריקות כל בוקר",
+      "קרן לייזר"
+    ],
+    "caption": "עוגן עבור קרן לייזר",
+    "emoji": "🔦",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-13T06:50:41.452Z"
+  },
+  {
+    "id": "ingested_1794552637786",
+    "title": "קרן לייזר",
+    "name": "קרן לייזר",
+    "imageUrl": "/staged_images/pool/ingested_קרן_לייזר_1794552637746.jpg",
+    "keywords": [
+      "קרן לייזר",
+      "קרן לייזר"
+    ],
+    "associatedTasks": [
+      "קרן לייזר",
+      "קרן לייזר"
+    ],
+    "caption": "Red laser beams light effect on black background photo. | LAUNCH",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-13T06:50:37.786Z"
+  },
+  {
     "id": "approved_1794415079653",
     "title": "כובע קוסמים ושפן",
     "name": "כובע קוסמים ושפן",

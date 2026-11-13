@@ -1,0 +1,8437 @@
+{
+  "metadata": {
+    "generatedAt": "2026-11-13T07:00:12.499Z",
+    "totalActiveRoots": 438,
+    "totalUniqueBranches": 912,
+    "totalBranchConnections": 1708,
+    "averageBranchesPerRoot": "3.90",
+    "saturatedBranchesCount": 62,
+    "nearSaturatedBranchesCount": 102,
+    "lowBranchesCount": 748,
+    "validationIssuesCount": 33
+  },
+  "branchesRanked": [
+    {
+      "branch": "משחק",
+      "count": 17
+    },
+    {
+      "branch": "טיול",
+      "count": 16
+    },
+    {
+      "branch": "אימון",
+      "count": 14
+    },
+    {
+      "branch": "תיקון",
+      "count": 14
+    },
+    {
+      "branch": "חוף",
+      "count": 12
+    },
+    {
+      "branch": "חופשה",
+      "count": 12
+    },
+    {
+      "branch": "ניקיון",
+      "count": 12
+    },
+    {
+      "branch": "בגדים",
+      "count": 10
+    },
+    {
+      "branch": "שמיים",
+      "count": 10
+    },
+    {
+      "branch": "חורף",
+      "count": 9
+    },
+    {
+      "branch": "ים",
+      "count": 9
+    },
+    {
+      "branch": "רשת",
+      "count": 9
+    },
+    {
+      "branch": "גינה",
+      "count": 8
+    },
+    {
+      "branch": "מחשב",
+      "count": 8
+    },
+    {
+      "branch": "סכנה",
+      "count": 8
+    },
+    {
+      "branch": "רופא",
+      "count": 8
+    },
+    {
+      "branch": "גובה",
+      "count": 7
+    },
+    {
+      "branch": "טבע",
+      "count": 7
+    },
+    {
+      "branch": "מדבר",
+      "count": 7
+    },
+    {
+      "branch": "צהוב",
+      "count": 7
+    },
+    {
+      "branch": "שיפוץ",
+      "count": 7
+    },
+    {
+      "branch": "אוכל",
+      "count": 6
+    },
+    {
+      "branch": "אש",
+      "count": 6
+    },
+    {
+      "branch": "גיבור",
+      "count": 6
+    },
+    {
+      "branch": "היסטוריה",
+      "count": 6
+    },
+    {
+      "branch": "ילדים",
+      "count": 6
+    },
+    {
+      "branch": "לילה",
+      "count": 6
+    },
+    {
+      "branch": "לימודים",
+      "count": 6
+    },
+    {
+      "branch": "מוסך",
+      "count": 6
+    },
+    {
+      "branch": "מזל",
+      "count": 6
+    },
+    {
+      "branch": "מים",
+      "count": 6
+    },
+    {
+      "branch": "קור",
+      "count": 6
+    },
+    {
+      "branch": "קניות",
+      "count": 6
+    },
+    {
+      "branch": "קסדה",
+      "count": 6
+    },
+    {
+      "branch": "אוקיינוס",
+      "count": 5
+    },
+    {
+      "branch": "אור",
+      "count": 5
+    },
+    {
+      "branch": "אזהרה",
+      "count": 5
+    },
+    {
+      "branch": "אילת",
+      "count": 5
+    },
+    {
+      "branch": "בילוי",
+      "count": 5
+    },
+    {
+      "branch": "הימורים",
+      "count": 5
+    },
+    {
+      "branch": "הרים",
+      "count": 5
+    },
+    {
+      "branch": "זהב",
+      "count": 5
+    },
+    {
+      "branch": "חול",
+      "count": 5
+    },
+    {
+      "branch": "טיסה",
+      "count": 5
+    },
+    {
+      "branch": "ירוק",
+      "count": 5
+    },
+    {
+      "branch": "כוח",
+      "count": 5
+    },
+    {
+      "branch": "כושר",
+      "count": 5
+    },
+    {
+      "branch": "כנפיים",
+      "count": 5
+    },
+    {
+      "branch": "כסף",
+      "count": 5
+    },
+    {
+      "branch": "מחשבה",
+      "count": 5
+    },
+    {
+      "branch": "מלך",
+      "count": 5
+    },
+    {
+      "branch": "נוצות",
+      "count": 5
+    },
+    {
+      "branch": "נסיעה",
+      "count": 5
+    },
+    {
+      "branch": "סופרמרקט",
+      "count": 5
+    },
+    {
+      "branch": "סרט",
+      "count": 5
+    },
+    {
+      "branch": "עץ",
+      "count": 5
+    },
+    {
+      "branch": "פארק",
+      "count": 5
+    },
+    {
+      "branch": "צלילה",
+      "count": 5
+    },
+    {
+      "branch": "קזינו",
+      "count": 5
+    },
+    {
+      "branch": "שמש",
+      "count": 5
+    },
+    {
+      "branch": "תיירות",
+      "count": 5
+    },
+    {
+      "branch": "תעופה",
+      "count": 5
+    },
+    {
+      "branch": "אגדה",
+      "count": 4
+    },
+    {
+      "branch": "איטליה",
+      "count": 4
+    },
+    {
+      "branch": "אירוע",
+      "count": 4
+    },
+    {
+      "branch": "אליפות",
+      "count": 4
+    },
+    {
+      "branch": "אקסטרים",
+      "count": 4
+    },
+    {
+      "branch": "ארמון",
+      "count": 4
+    },
+    {
+      "branch": "בדיקה",
+      "count": 4
+    },
+    {
+      "branch": "בוקר",
+      "count": 4
+    },
+    {
+      "branch": "בנייה",
+      "count": 4
+    },
+    {
+      "branch": "בנק",
+      "count": 4
+    },
+    {
+      "branch": "גשם",
+      "count": 4
+    },
+    {
+      "branch": "דשא",
+      "count": 4
+    },
+    {
+      "branch": "הגנה",
+      "count": 4
+    },
+    {
+      "branch": "הרכבה",
+      "count": 4
+    },
+    {
+      "branch": "ורוד",
+      "count": 4
+    },
+    {
+      "branch": "חבטה",
+      "count": 4
+    },
+    {
+      "branch": "חושך",
+      "count": 4
+    },
+    {
+      "branch": "חיסכון",
+      "count": 4
+    },
+    {
+      "branch": "חירום",
+      "count": 4
+    },
+    {
+      "branch": "כתיבה",
+      "count": 4
+    },
+    {
+      "branch": "מגדל",
+      "count": 4
+    },
+    {
+      "branch": "מגרש",
+      "count": 4
+    },
+    {
+      "branch": "מהירות",
+      "count": 4
+    },
+    {
+      "branch": "מכונה",
+      "count": 4
+    },
+    {
+      "branch": "מסלול",
+      "count": 4
+    },
+    {
+      "branch": "משרד",
+      "count": 4
+    },
+    {
+      "branch": "סין",
+      "count": 4
+    },
+    {
+      "branch": "צבעים",
+      "count": 4
+    },
+    {
+      "branch": "קולנוע",
+      "count": 4
+    },
+    {
+      "branch": "רובוט",
+      "count": 4
+    },
+    {
+      "branch": "רכיבה",
+      "count": 4
+    },
+    {
+      "branch": "שינה",
+      "count": 4
+    },
+    {
+      "branch": "שלג",
+      "count": 4
+    },
+    {
+      "branch": "שריון",
+      "count": 4
+    },
+    {
+      "branch": "שרירים",
+      "count": 4
+    },
+    {
+      "branch": "אבטחה",
+      "count": 3
+    },
+    {
+      "branch": "אבק",
+      "count": 3
+    },
+    {
+      "branch": "אמבטיה",
+      "count": 3
+    },
+    {
+      "branch": "אמנות",
+      "count": 3
+    },
+    {
+      "branch": "אסטרטגיה",
+      "count": 3
+    },
+    {
+      "branch": "ארוחה",
+      "count": 3
+    },
+    {
+      "branch": "ארס",
+      "count": 3
+    },
+    {
+      "branch": "אשם",
+      "count": 3
+    },
+    {
+      "branch": "בישול",
+      "count": 3
+    },
+    {
+      "branch": "בריכה",
+      "count": 3
+    },
+    {
+      "branch": "גלגלים",
+      "count": 3
+    },
+    {
+      "branch": "גלימה",
+      "count": 3
+    },
+    {
+      "branch": "דגים",
+      "count": 3
+    },
+    {
+      "branch": "דיסני",
+      "count": 3
+    },
+    {
+      "branch": "דפים",
+      "count": 3
+    },
+    {
+      "branch": "הודעה",
+      "count": 3
+    },
+    {
+      "branch": "הטלה",
+      "count": 3
+    },
+    {
+      "branch": "הליכה",
+      "count": 3
+    },
+    {
+      "branch": "המבורגר",
+      "count": 3
+    },
+    {
+      "branch": "זמן",
+      "count": 3
+    },
+    {
+      "branch": "זריקה",
+      "count": 3
+    },
+    {
+      "branch": "חוכמה",
+      "count": 3
+    },
+    {
+      "branch": "חום",
+      "count": 3
+    },
+    {
+      "branch": "חוק",
+      "count": 3
+    },
+    {
+      "branch": "חלל",
+      "count": 3
+    },
+    {
+      "branch": "חקירה",
+      "count": 3
+    },
+    {
+      "branch": "חשמל",
+      "count": 3
+    },
+    {
+      "branch": "טיפוס",
+      "count": 3
+    },
+    {
+      "branch": "טכנולוגיה",
+      "count": 3
+    },
+    {
+      "branch": "טקס",
+      "count": 3
+    },
+    {
+      "branch": "יער",
+      "count": 3
+    },
+    {
+      "branch": "ירח",
+      "count": 3
+    },
+    {
+      "branch": "כדור",
+      "count": 3
+    },
+    {
+      "branch": "לונדון",
+      "count": 3
+    },
+    {
+      "branch": "מדע",
+      "count": 3
+    },
+    {
+      "branch": "מלכה",
+      "count": 3
+    },
+    {
+      "branch": "מסכה",
+      "count": 3
+    },
+    {
+      "branch": "מסמכים",
+      "count": 3
+    },
+    {
+      "branch": "מסעדה",
+      "count": 3
+    },
+    {
+      "branch": "מעוף",
+      "count": 3
+    },
+    {
+      "branch": "משטרה",
+      "count": 3
+    },
+    {
+      "branch": "נהיגה",
+      "count": 3
+    },
+    {
+      "branch": "נמל",
+      "count": 3
+    },
+    {
+      "branch": "נקודות",
+      "count": 3
+    },
+    {
+      "branch": "סערה",
+      "count": 3
+    },
+    {
+      "branch": "ספארי",
+      "count": 3
+    },
+    {
+      "branch": "עוקץ",
+      "count": 3
+    },
+    {
+      "branch": "עיניים",
+      "count": 3
+    },
+    {
+      "branch": "עתיד",
+      "count": 3
+    },
+    {
+      "branch": "פסל",
+      "count": 3
+    },
+    {
+      "branch": "פרחים",
+      "count": 3
+    },
+    {
+      "branch": "צבא",
+      "count": 3
+    },
+    {
+      "branch": "ציפור",
+      "count": 3
+    },
+    {
+      "branch": "קיץ",
+      "count": 3
+    },
+    {
+      "branch": "קמפינג",
+      "count": 3
+    },
+    {
+      "branch": "קסם",
+      "count": 3
+    },
+    {
+      "branch": "קפיצה",
+      "count": 3
+    },
+    {
+      "branch": "קרח",
+      "count": 3
+    },
+    {
+      "branch": "רוח",
+      "count": 3
+    },
+    {
+      "branch": "רומנטיקה",
+      "count": 3
+    },
+    {
+      "branch": "רעל",
+      "count": 3
+    },
+    {
+      "branch": "שייט",
+      "count": 3
+    },
+    {
+      "branch": "שמלה",
+      "count": 3
+    },
+    {
+      "branch": "שעון",
+      "count": 3
+    },
+    {
+      "branch": "תפילה",
+      "count": 3
+    },
+    {
+      "branch": "תפירה",
+      "count": 3
+    },
+    {
+      "branch": "תרופות",
+      "count": 3
+    },
+    {
+      "branch": "אבן",
+      "count": 2
+    },
+    {
+      "branch": "אדום",
+      "count": 2
+    },
+    {
+      "branch": "אדמה",
+      "count": 2
+    },
+    {
+      "branch": "אהבה",
+      "count": 2
+    },
+    {
+      "branch": "אוניברסיטה",
+      "count": 2
+    },
+    {
+      "branch": "אינדיאני",
+      "count": 2
+    },
+    {
+      "branch": "אינסטלטור",
+      "count": 2
+    },
+    {
+      "branch": "איפור",
+      "count": 2
+    },
+    {
+      "branch": "אירוח",
+      "count": 2
+    },
+    {
+      "branch": "אמריקה",
+      "count": 2
+    },
+    {
+      "branch": "אנטארקטיקה",
+      "count": 2
+    },
+    {
+      "branch": "אנימציה",
+      "count": 2
+    },
+    {
+      "branch": "אסטרונאוט",
+      "count": 2
+    },
+    {
+      "branch": "אספנות",
+      "count": 2
+    },
+    {
+      "branch": "ארון",
+      "count": 2
+    },
+    {
+      "branch": "אריזה",
+      "count": 2
+    },
+    {
+      "branch": "ארקייד",
+      "count": 2
+    },
+    {
+      "branch": "אשמה",
+      "count": 2
+    },
+    {
+      "branch": "אשפה",
+      "count": 2
+    },
+    {
+      "branch": "בד",
+      "count": 2
+    },
+    {
+      "branch": "בובה",
+      "count": 2
+    },
+    {
+      "branch": "בוץ",
+      "count": 2
+    },
+    {
+      "branch": "בורג",
+      "count": 2
+    },
+    {
+      "branch": "ביצה",
+      "count": 2
+    },
+    {
+      "branch": "בלש",
+      "count": 2
+    },
+    {
+      "branch": "בקבוק",
+      "count": 2
+    },
+    {
+      "branch": "ברזיל",
+      "count": 2
+    },
+    {
+      "branch": "גבינה",
+      "count": 2
+    },
+    {
+      "branch": "גביע",
+      "count": 2
+    },
+    {
+      "branch": "גולגולת",
+      "count": 2
+    },
+    {
+      "branch": "גיהוץ",
+      "count": 2
+    },
+    {
+      "branch": "גיימינג",
+      "count": 2
+    },
+    {
+      "branch": "גל",
+      "count": 2
+    },
+    {
+      "branch": "גלישה",
+      "count": 2
+    },
+    {
+      "branch": "גרעינים",
+      "count": 2
+    },
+    {
+      "branch": "דב",
+      "count": 2
+    },
+    {
+      "branch": "דבש",
+      "count": 2
+    },
+    {
+      "branch": "דדליין",
+      "count": 2
+    },
+    {
+      "branch": "דחוף",
+      "count": 2
+    },
+    {
+      "branch": "דיוק",
+      "count": 2
+    },
+    {
+      "branch": "דירה",
+      "count": 2
+    },
+    {
+      "branch": "דלת",
+      "count": 2
+    },
+    {
+      "branch": "הגשה",
+      "count": 2
+    },
+    {
+      "branch": "הדברה",
+      "count": 2
+    },
+    {
+      "branch": "הדלקה",
+      "count": 2
+    },
+    {
+      "branch": "הודו",
+      "count": 2
+    },
+    {
+      "branch": "הופעה",
+      "count": 2
+    },
+    {
+      "branch": "הסוואה",
+      "count": 2
+    },
+    {
+      "branch": "הפלגה",
+      "count": 2
+    },
+    {
+      "branch": "הצלה",
+      "count": 2
+    },
+    {
+      "branch": "הצלחה",
+      "count": 2
+    },
+    {
+      "branch": "השכמה",
+      "count": 2
+    },
+    {
+      "branch": "וטרינר",
+      "count": 2
+    },
+    {
+      "branch": "זהירות",
+      "count": 2
+    },
+    {
+      "branch": "זיהוי",
+      "count": 2
+    },
+    {
+      "branch": "זירה",
+      "count": 2
+    },
+    {
+      "branch": "זקן",
+      "count": 2
+    },
+    {
+      "branch": "חבל",
+      "count": 2
+    },
+    {
+      "branch": "חווה",
+      "count": 2
+    },
+    {
+      "branch": "חוט",
+      "count": 2
+    },
+    {
+      "branch": "חולצה",
+      "count": 2
+    },
+    {
+      "branch": "חטיף",
+      "count": 2
+    },
+    {
+      "branch": "חיבור",
+      "count": 2
+    },
+    {
+      "branch": "חיסון",
+      "count": 2
+    },
+    {
+      "branch": "חיפוש",
+      "count": 2
+    },
+    {
+      "branch": "חיתול",
+      "count": 2
+    },
+    {
+      "branch": "חלב",
+      "count": 2
+    },
+    {
+      "branch": "חליפה",
+      "count": 2
+    },
+    {
+      "branch": "חצר",
+      "count": 2
+    },
+    {
+      "branch": "חקלאות",
+      "count": 2
+    },
+    {
+      "branch": "חרמון",
+      "count": 2
+    },
+    {
+      "branch": "חשיבה",
+      "count": 2
+    },
+    {
+      "branch": "חתול",
+      "count": 2
+    },
+    {
+      "branch": "חתונה",
+      "count": 2
+    },
+    {
+      "branch": "טלוויזיה",
+      "count": 2
+    },
+    {
+      "branch": "טלפון",
+      "count": 2
+    },
+    {
+      "branch": "יהדות",
+      "count": 2
+    },
+    {
+      "branch": "יעד",
+      "count": 2
+    },
+    {
+      "branch": "יפן",
+      "count": 2
+    },
+    {
+      "branch": "ישראל",
+      "count": 2
+    },
+    {
+      "branch": "כאב",
+      "count": 2
+    },
+    {
+      "branch": "כביסה",
+      "count": 2
+    },
+    {
+      "branch": "כלב",
+      "count": 2
+    },
+    {
+      "branch": "כתמים",
+      "count": 2
+    },
+    {
+      "branch": "כתר",
+      "count": 2
+    },
+    {
+      "branch": "לב",
+      "count": 2
+    },
+    {
+      "branch": "לבה",
+      "count": 2
+    },
+    {
+      "branch": "להבה",
+      "count": 2
+    },
+    {
+      "branch": "לוויה",
+      "count": 2
+    },
+    {
+      "branch": "מדליה",
+      "count": 2
+    },
+    {
+      "branch": "מדרגות",
+      "count": 2
+    },
+    {
+      "branch": "מוזיאון",
+      "count": 2
+    },
+    {
+      "branch": "מוח",
+      "count": 2
+    },
+    {
+      "branch": "מופע",
+      "count": 2
+    },
+    {
+      "branch": "מזרן",
+      "count": 2
+    },
+    {
+      "branch": "מטבח",
+      "count": 2
+    },
+    {
+      "branch": "מטרה",
+      "count": 2
+    },
+    {
+      "branch": "מילואים",
+      "count": 2
+    },
+    {
+      "branch": "מכולת",
+      "count": 2
+    },
+    {
+      "branch": "מכתב",
+      "count": 2
+    },
+    {
+      "branch": "מלוכה",
+      "count": 2
+    },
+    {
+      "branch": "מנוחה",
+      "count": 2
+    },
+    {
+      "branch": "מנוע",
+      "count": 2
+    },
+    {
+      "branch": "מסיבה",
+      "count": 2
+    },
+    {
+      "branch": "מסירה",
+      "count": 2
+    },
+    {
+      "branch": "מפלצת",
+      "count": 2
+    },
+    {
+      "branch": "מצולות",
+      "count": 2
+    },
+    {
+      "branch": "מקלחת",
+      "count": 2
+    },
+    {
+      "branch": "מרפסת",
+      "count": 2
+    },
+    {
+      "branch": "משחקים",
+      "count": 2
+    },
+    {
+      "branch": "משטח",
+      "count": 2
+    },
+    {
+      "branch": "משלוח",
+      "count": 2
+    },
+    {
+      "branch": "נאס\"א",
+      "count": 2
+    },
+    {
+      "branch": "נוף",
+      "count": 2
+    },
+    {
+      "branch": "נחל",
+      "count": 2
+    },
+    {
+      "branch": "נחש",
+      "count": 2
+    },
+    {
+      "branch": "נשיא",
+      "count": 2
+    },
+    {
+      "branch": "נשימה",
+      "count": 2
+    },
+    {
+      "branch": "נשף",
+      "count": 2
+    },
+    {
+      "branch": "סבלנות",
+      "count": 2
+    },
+    {
+      "branch": "סדר",
+      "count": 2
+    },
+    {
+      "branch": "סופה",
+      "count": 2
+    },
+    {
+      "branch": "סופר",
+      "count": 2
+    },
+    {
+      "branch": "סטרייק",
+      "count": 2
+    },
+    {
+      "branch": "סירנה",
+      "count": 2
+    },
+    {
+      "branch": "סמל",
+      "count": 2
+    },
+    {
+      "branch": "סנפיר",
+      "count": 2
+    },
+    {
+      "branch": "ספר",
+      "count": 2
+    },
+    {
+      "branch": "סתיו",
+      "count": 2
+    },
+    {
+      "branch": "עבודה",
+      "count": 2
+    },
+    {
+      "branch": "עבירה",
+      "count": 2
+    },
+    {
+      "branch": "עזרה",
+      "count": 2
+    },
+    {
+      "branch": "עטלף",
+      "count": 2
+    },
+    {
+      "branch": "עלים",
+      "count": 2
+    },
+    {
+      "branch": "ענק",
+      "count": 2
+    },
+    {
+      "branch": "עצים",
+      "count": 2
+    },
+    {
+      "branch": "עקשנות",
+      "count": 2
+    },
+    {
+      "branch": "עשן",
+      "count": 2
+    },
+    {
+      "branch": "פגישה",
+      "count": 2
+    },
+    {
+      "branch": "פוליטיקה",
+      "count": 2
+    },
+    {
+      "branch": "פוקר",
+      "count": 2
+    },
+    {
+      "branch": "פח",
+      "count": 2
+    },
+    {
+      "branch": "פלסטר",
+      "count": 2
+    },
+    {
+      "branch": "פציעה",
+      "count": 2
+    },
+    {
+      "branch": "פרידה",
+      "count": 2
+    },
+    {
+      "branch": "פרס",
+      "count": 2
+    },
+    {
+      "branch": "פתק",
+      "count": 2
+    },
+    {
+      "branch": "פתרון",
+      "count": 2
+    },
+    {
+      "branch": "צ'יפס",
+      "count": 2
+    },
+    {
+      "branch": "צדק",
+      "count": 2
+    },
+    {
+      "branch": "ציפורניים",
+      "count": 2
+    },
+    {
+      "branch": "צלצול",
+      "count": 2
+    },
+    {
+      "branch": "צמחים",
+      "count": 2
+    },
+    {
+      "branch": "צנרת",
+      "count": 2
+    },
+    {
+      "branch": "קוביות",
+      "count": 2
+    },
+    {
+      "branch": "קופסה",
+      "count": 2
+    },
+    {
+      "branch": "קליעה",
+      "count": 2
+    },
+    {
+      "branch": "קניון",
+      "count": 2
+    },
+    {
+      "branch": "קרב",
+      "count": 2
+    },
+    {
+      "branch": "קשר",
+      "count": 2
+    },
+    {
+      "branch": "רהיטים",
+      "count": 2
+    },
+    {
+      "branch": "רוגע",
+      "count": 2
+    },
+    {
+      "branch": "רטרו",
+      "count": 2
+    },
+    {
+      "branch": "ריו",
+      "count": 2
+    },
+    {
+      "branch": "ריחוף",
+      "count": 2
+    },
+    {
+      "branch": "ריצה",
+      "count": 2
+    },
+    {
+      "branch": "רמפה",
+      "count": 2
+    },
+    {
+      "branch": "רעיון",
+      "count": 2
+    },
+    {
+      "branch": "רעם",
+      "count": 2
+    },
+    {
+      "branch": "רפואה",
+      "count": 2
+    },
+    {
+      "branch": "שאגה",
+      "count": 2
+    },
+    {
+      "branch": "שדה",
+      "count": 2
+    },
+    {
+      "branch": "שוטר",
+      "count": 2
+    },
+    {
+      "branch": "שולחן",
+      "count": 2
+    },
+    {
+      "branch": "שופט",
+      "count": 2
+    },
+    {
+      "branch": "שחור",
+      "count": 2
+    },
+    {
+      "branch": "שיחה",
+      "count": 2
+    },
+    {
+      "branch": "שיניים",
+      "count": 2
+    },
+    {
+      "branch": "שיפוט",
+      "count": 2
+    },
+    {
+      "branch": "שלווה",
+      "count": 2
+    },
+    {
+      "branch": "שנורקל",
+      "count": 2
+    },
+    {
+      "branch": "תואר",
+      "count": 2
+    },
+    {
+      "branch": "תותח",
+      "count": 2
+    },
+    {
+      "branch": "תחנה",
+      "count": 2
+    },
+    {
+      "branch": "תחרות",
+      "count": 2
+    },
+    {
+      "branch": "תיוק",
+      "count": 2
+    },
+    {
+      "branch": "תיק",
+      "count": 2
+    },
+    {
+      "branch": "תספורת",
+      "count": 2
+    },
+    {
+      "branch": "תקווה",
+      "count": 2
+    },
+    {
+      "branch": "תקשורת",
+      "count": 2
+    },
+    {
+      "branch": "5",
+      "count": 1
+    },
+    {
+      "branch": "אביב",
+      "count": 1
+    },
+    {
+      "branch": "אביר",
+      "count": 1
+    },
+    {
+      "branch": "אבל",
+      "count": 1
+    },
+    {
+      "branch": "אגדות",
+      "count": 1
+    },
+    {
+      "branch": "אגם",
+      "count": 1
+    },
+    {
+      "branch": "אוהל",
+      "count": 1
+    },
+    {
+      "branch": "אוורור",
+      "count": 1
+    },
+    {
+      "branch": "אוזניות",
+      "count": 1
+    },
+    {
+      "branch": "אוזניים",
+      "count": 1
+    },
+    {
+      "branch": "אוכף",
+      "count": 1
+    },
+    {
+      "branch": "אולם",
+      "count": 1
+    },
+    {
+      "branch": "אונייה",
+      "count": 1
+    },
+    {
+      "branch": "אוסטרליה",
+      "count": 1
+    },
+    {
+      "branch": "אופנה",
+      "count": 1
+    },
+    {
+      "branch": "אופנוע",
+      "count": 1
+    },
+    {
+      "branch": "אוצר",
+      "count": 1
+    },
+    {
+      "branch": "אורווה",
+      "count": 1
+    },
+    {
+      "branch": "אורחים",
+      "count": 1
+    },
+    {
+      "branch": "אורך",
+      "count": 1
+    },
+    {
+      "branch": "אורקה",
+      "count": 1
+    },
+    {
+      "branch": "אזכרה",
+      "count": 1
+    },
+    {
+      "branch": "איזון",
+      "count": 1
+    },
+    {
+      "branch": "איחור",
+      "count": 1
+    },
+    {
+      "branch": "איטיות",
+      "count": 1
+    },
+    {
+      "branch": "אלגנטי",
+      "count": 1
+    },
+    {
+      "branch": "אלומה",
+      "count": 1
+    },
+    {
+      "branch": "אמונה",
+      "count": 1
+    },
+    {
+      "branch": "אמזונס",
+      "count": 1
+    },
+    {
+      "branch": "אנגליה",
+      "count": 1
+    },
+    {
+      "branch": "אנטנה",
+      "count": 1
+    },
+    {
+      "branch": "אנרגיה",
+      "count": 1
+    },
+    {
+      "branch": "אסטרונומיה",
+      "count": 1
+    },
+    {
+      "branch": "אסלאם",
+      "count": 1
+    },
+    {
+      "branch": "אסקימואי",
+      "count": 1
+    },
+    {
+      "branch": "אפריקה",
+      "count": 1
+    },
+    {
+      "branch": "אצטדיון",
+      "count": 1
+    },
+    {
+      "branch": "אקדמיה",
+      "count": 1
+    },
+    {
+      "branch": "ארגזים",
+      "count": 1
+    },
+    {
+      "branch": "אריה",
+      "count": 1
+    },
+    {
+      "branch": "ארנב",
+      "count": 1
+    },
+    {
+      "branch": "אשמים",
+      "count": 1
+    },
+    {
+      "branch": "אתה",
+      "count": 1
+    },
+    {
+      "branch": "בבושקה",
+      "count": 1
+    },
+    {
+      "branch": "בגט",
+      "count": 1
+    },
+    {
+      "branch": "בונקר",
+      "count": 1
+    },
+    {
+      "branch": "בועות",
+      "count": 1
+    },
+    {
+      "branch": "בטון",
+      "count": 1
+    },
+    {
+      "branch": "בטיחות",
+      "count": 1
+    },
+    {
+      "branch": "ביומטרי",
+      "count": 1
+    },
+    {
+      "branch": "בירה",
+      "count": 1
+    },
+    {
+      "branch": "בירור",
+      "count": 1
+    },
+    {
+      "branch": "בית",
+      "count": 1
+    },
+    {
+      "branch": "בית-משפט",
+      "count": 1
+    },
+    {
+      "branch": "בלון",
+      "count": 1
+    },
+    {
+      "branch": "במבוק",
+      "count": 1
+    },
+    {
+      "branch": "במה",
+      "count": 1
+    },
+    {
+      "branch": "בניין",
+      "count": 1
+    },
+    {
+      "branch": "בננות",
+      "count": 1
+    },
+    {
+      "branch": "בסיס",
+      "count": 1
+    },
+    {
+      "branch": "בעיטה",
+      "count": 1
+    },
+    {
+      "branch": "בקבוקים",
+      "count": 1
+    },
+    {
+      "branch": "ברווז",
+      "count": 1
+    },
+    {
+      "branch": "ברז",
+      "count": 1
+    },
+    {
+      "branch": "ברזל",
+      "count": 1
+    },
+    {
+      "branch": "בשורות",
+      "count": 1
+    },
+    {
+      "branch": "ג'ונגל",
+      "count": 1
+    },
+    {
+      "branch": "גאווה",
+      "count": 1
+    },
+    {
+      "branch": "גאולה",
+      "count": 1
+    },
+    {
+      "branch": "גבס",
+      "count": 1
+    },
+    {
+      "branch": "גולן",
+      "count": 1
+    },
+    {
+      "branch": "גולף",
+      "count": 1
+    },
+    {
+      "branch": "גור",
+      "count": 1
+    },
+    {
+      "branch": "גורילה",
+      "count": 1
+    },
+    {
+      "branch": "גז",
+      "count": 1
+    },
+    {
+      "branch": "גזירה",
+      "count": 1
+    },
+    {
+      "branch": "גזר",
+      "count": 1
+    },
+    {
+      "branch": "גידים",
+      "count": 1
+    },
+    {
+      "branch": "גיזום",
+      "count": 1
+    },
+    {
+      "branch": "גילוח",
+      "count": 1
+    },
+    {
+      "branch": "גינון",
+      "count": 1
+    },
+    {
+      "branch": "גלגל",
+      "count": 1
+    },
+    {
+      "branch": "גלגליות",
+      "count": 1
+    },
+    {
+      "branch": "גלים",
+      "count": 1
+    },
+    {
+      "branch": "גמישות",
+      "count": 1
+    },
+    {
+      "branch": "גמל",
+      "count": 1
+    },
+    {
+      "branch": "גרוע",
+      "count": 1
+    },
+    {
+      "branch": "גרעין",
+      "count": 1
+    },
+    {
+      "branch": "גשר",
+      "count": 1
+    },
+    {
+      "branch": "דאן",
+      "count": 1
+    },
+    {
+      "branch": "דאק",
+      "count": 1
+    },
+    {
+      "branch": "דבשת",
+      "count": 1
+    },
+    {
+      "branch": "דגל",
+      "count": 1
+    },
+    {
+      "branch": "דהירה",
+      "count": 1
+    },
+    {
+      "branch": "דוח",
+      "count": 1
+    },
+    {
+      "branch": "דולר",
+      "count": 1
+    },
+    {
+      "branch": "דולרים",
+      "count": 1
+    },
+    {
+      "branch": "דונלד",
+      "count": 1
+    },
+    {
+      "branch": "דיאטה",
+      "count": 1
+    },
+    {
+      "branch": "דיון",
+      "count": 1
+    },
+    {
+      "branch": "דייקנות",
+      "count": 1
+    },
+    {
+      "branch": "דילמה",
+      "count": 1
+    },
+    {
+      "branch": "דימיון",
+      "count": 1
+    },
+    {
+      "branch": "דין",
+      "count": 1
+    },
+    {
+      "branch": "דיר",
+      "count": 1
+    },
+    {
+      "branch": "דקות",
+      "count": 1
+    },
+    {
+      "branch": "דת",
+      "count": 1
+    },
+    {
+      "branch": "הגדרות",
+      "count": 1
+    },
+    {
+      "branch": "הגרלה",
+      "count": 1
+    },
+    {
+      "branch": "הדבקה",
+      "count": 1
+    },
+    {
+      "branch": "הובלה",
+      "count": 1
+    },
+    {
+      "branch": "הובלות",
+      "count": 1
+    },
+    {
+      "branch": "הוגוורטס",
+      "count": 1
+    },
+    {
+      "branch": "הוליווד",
+      "count": 1
+    },
+    {
+      "branch": "הורות",
+      "count": 1
+    },
+    {
+      "branch": "הזמנה",
+      "count": 1
+    },
+    {
+      "branch": "החלטה",
+      "count": 1
+    },
+    {
+      "branch": "החלקה",
+      "count": 1
+    },
+    {
+      "branch": "הייטק",
+      "count": 1
+    },
+    {
+      "branch": "הישג",
+      "count": 1
+    },
+    {
+      "branch": "הכותל",
+      "count": 1
+    },
+    {
+      "branch": "הכשה",
+      "count": 1
+    },
+    {
+      "branch": "המערבי",
+      "count": 1
+    },
+    {
+      "branch": "המצאה",
+      "count": 1
+    },
+    {
+      "branch": "המתנה",
+      "count": 1
+    },
+    {
+      "branch": "הנדסה",
+      "count": 1
+    },
+    {
+      "branch": "הנפה",
+      "count": 1
+    },
+    {
+      "branch": "הסכם",
+      "count": 1
+    },
+    {
+      "branch": "הפסקה",
+      "count": 1
+    },
+    {
+      "branch": "הצגה",
+      "count": 1
+    },
+    {
+      "branch": "הצדעה",
+      "count": 1
+    },
+    {
+      "branch": "הקרמלין",
+      "count": 1
+    },
+    {
+      "branch": "הר",
+      "count": 1
+    },
+    {
+      "branch": "הרחקה",
+      "count": 1
+    },
+    {
+      "branch": "הריסה",
+      "count": 1
+    },
+    {
+      "branch": "הרמוניה",
+      "count": 1
+    },
+    {
+      "branch": "הרס",
+      "count": 1
+    },
+    {
+      "branch": "הרשעה",
+      "count": 1
+    },
+    {
+      "branch": "השקיה",
+      "count": 1
+    },
+    {
+      "branch": "השקעות",
+      "count": 1
+    },
+    {
+      "branch": "התלבטות",
+      "count": 1
+    },
+    {
+      "branch": "התפרצות",
+      "count": 1
+    },
+    {
+      "branch": "התקשרות",
+      "count": 1
+    },
+    {
+      "branch": "ווייפיי",
+      "count": 1
+    },
+    {
+      "branch": "וינטג",
+      "count": 1
+    },
+    {
+      "branch": "ונציה",
+      "count": 1
+    },
+    {
+      "branch": "זבל",
+      "count": 1
+    },
+    {
+      "branch": "זוגיות",
+      "count": 1
+    },
+    {
+      "branch": "זוחל",
+      "count": 1
+    },
+    {
+      "branch": "זיכרון",
+      "count": 1
+    },
+    {
+      "branch": "זכוכית",
+      "count": 1
+    },
+    {
+      "branch": "זכייה",
+      "count": 1
+    },
+    {
+      "branch": "זן",
+      "count": 1
+    },
+    {
+      "branch": "זעם",
+      "count": 1
+    },
+    {
+      "branch": "זר",
+      "count": 1
+    },
+    {
+      "branch": "זרועות",
+      "count": 1
+    },
+    {
+      "branch": "זרימה",
+      "count": 1
+    },
+    {
+      "branch": "זרם",
+      "count": 1
+    },
+    {
+      "branch": "זרנוק",
+      "count": 1
+    },
+    {
+      "branch": "חבילה",
+      "count": 1
+    },
+    {
+      "branch": "חברים",
+      "count": 1
+    },
+    {
+      "branch": "חגורה",
+      "count": 1
+    },
+    {
+      "branch": "חגיגה",
+      "count": 1
+    },
+    {
+      "branch": "חדק",
+      "count": 1
+    },
+    {
+      "branch": "חדשות",
+      "count": 1
+    },
+    {
+      "branch": "חו\"ל",
+      "count": 1
+    },
+    {
+      "branch": "חובש",
+      "count": 1
+    },
+    {
+      "branch": "חוג",
+      "count": 1
+    },
+    {
+      "branch": "חוזה",
+      "count": 1
+    },
+    {
+      "branch": "חולדות",
+      "count": 1
+    },
+    {
+      "branch": "חולי",
+      "count": 1
+    },
+    {
+      "branch": "חומה",
+      "count": 1
+    },
+    {
+      "branch": "חושב",
+      "count": 1
+    },
+    {
+      "branch": "חזרה",
+      "count": 1
+    },
+    {
+      "branch": "חידה",
+      "count": 1
+    },
+    {
+      "branch": "חידוד",
+      "count": 1
+    },
+    {
+      "branch": "חייזר",
+      "count": 1
+    },
+    {
+      "branch": "חייל",
+      "count": 1
+    },
+    {
+      "branch": "חילוץ",
+      "count": 1
+    },
+    {
+      "branch": "חיתוך",
+      "count": 1
+    },
+    {
+      "branch": "חיתולים",
+      "count": 1
+    },
+    {
+      "branch": "חלבון",
+      "count": 1
+    },
+    {
+      "branch": "חמוד",
+      "count": 1
+    },
+    {
+      "branch": "חמסה",
+      "count": 1
+    },
+    {
+      "branch": "חמש",
+      "count": 1
+    },
+    {
+      "branch": "חנוכה",
+      "count": 1
+    },
+    {
+      "branch": "חניה",
+      "count": 1
+    },
+    {
+      "branch": "חסה",
+      "count": 1
+    },
+    {
+      "branch": "חץ",
+      "count": 1
+    },
+    {
+      "branch": "חרב",
+      "count": 1
+    },
+    {
+      "branch": "חרמש",
+      "count": 1
+    },
+    {
+      "branch": "חרקים",
+      "count": 1
+    },
+    {
+      "branch": "חתימה",
+      "count": 1
+    },
+    {
+      "branch": "חתירה",
+      "count": 1
+    },
+    {
+      "branch": "טאטוא",
+      "count": 1
+    },
+    {
+      "branch": "טאצדאון",
+      "count": 1
+    },
+    {
+      "branch": "טבעות",
+      "count": 1
+    },
+    {
+      "branch": "טבעת",
+      "count": 1
+    },
+    {
+      "branch": "טוב",
+      "count": 1
+    },
+    {
+      "branch": "טוטם",
+      "count": 1
+    },
+    {
+      "branch": "טום",
+      "count": 1
+    },
+    {
+      "branch": "טונה",
+      "count": 1
+    },
+    {
+      "branch": "טוקיו",
+      "count": 1
+    },
+    {
+      "branch": "טורף",
+      "count": 1
+    },
+    {
+      "branch": "טיילת",
+      "count": 1
+    },
+    {
+      "branch": "טייס",
+      "count": 1
+    },
+    {
+      "branch": "טיל",
+      "count": 1
+    },
+    {
+      "branch": "טיפוח",
+      "count": 1
+    },
+    {
+      "branch": "טיפות",
+      "count": 1
+    },
+    {
+      "branch": "טיקי",
+      "count": 1
+    },
+    {
+      "branch": "טירה",
+      "count": 1
+    },
+    {
+      "branch": "טלסקופ",
+      "count": 1
+    },
+    {
+      "branch": "טמפרטורה",
+      "count": 1
+    },
+    {
+      "branch": "טסט",
+      "count": 1
+    },
+    {
+      "branch": "טרופי",
+      "count": 1
+    },
+    {
+      "branch": "יהלומים",
+      "count": 1
+    },
+    {
+      "branch": "יופי",
+      "count": 1
+    },
+    {
+      "branch": "יוקרה",
+      "count": 1
+    },
+    {
+      "branch": "ייבוא",
+      "count": 1
+    },
+    {
+      "branch": "ייבוש",
+      "count": 1
+    },
+    {
+      "branch": "יין",
+      "count": 1
+    },
+    {
+      "branch": "ייעוץ",
+      "count": 1
+    },
+    {
+      "branch": "ילדות",
+      "count": 1
+    },
+    {
+      "branch": "יצירה",
+      "count": 1
+    },
+    {
+      "branch": "ירקות",
+      "count": 1
+    },
+    {
+      "branch": "יתושים",
+      "count": 1
+    },
+    {
+      "branch": "כביש",
+      "count": 1
+    },
+    {
+      "branch": "כבלים",
+      "count": 1
+    },
+    {
+      "branch": "כדרור",
+      "count": 1
+    },
+    {
+      "branch": "כוורת",
+      "count": 1
+    },
+    {
+      "branch": "כוכבים",
+      "count": 1
+    },
+    {
+      "branch": "כימיה",
+      "count": 1
+    },
+    {
+      "branch": "כיס",
+      "count": 1
+    },
+    {
+      "branch": "כישוף",
+      "count": 1
+    },
+    {
+      "branch": "כלור",
+      "count": 1
+    },
+    {
+      "branch": "כלים",
+      "count": 1
+    },
+    {
+      "branch": "כנסייה",
+      "count": 1
+    },
+    {
+      "branch": "כספומט",
+      "count": 1
+    },
+    {
+      "branch": "כספת",
+      "count": 1
+    },
+    {
+      "branch": "כפר",
+      "count": 1
+    },
+    {
+      "branch": "כפתור",
+      "count": 1
+    },
+    {
+      "branch": "כרבולת",
+      "count": 1
+    },
+    {
+      "branch": "כרטיס",
+      "count": 1
+    },
+    {
+      "branch": "לבן",
+      "count": 1
+    },
+    {
+      "branch": "לגלוש",
+      "count": 1
+    },
+    {
+      "branch": "לוויין",
+      "count": 1
+    },
+    {
+      "branch": "לוח",
+      "count": 1
+    },
+    {
+      "branch": "לול",
+      "count": 1
+    },
+    {
+      "branch": "לולאה",
+      "count": 1
+    },
+    {
+      "branch": "לחם",
+      "count": 1
+    },
+    {
+      "branch": "לטאה",
+      "count": 1
+    },
+    {
+      "branch": "ליצן",
+      "count": 1
+    },
+    {
+      "branch": "לכדרר",
+      "count": 1
+    },
+    {
+      "branch": "לנקות",
+      "count": 1
+    },
+    {
+      "branch": "לפיד",
+      "count": 1
+    },
+    {
+      "branch": "לצאת",
+      "count": 1
+    },
+    {
+      "branch": "לשון",
+      "count": 1
+    },
+    {
+      "branch": "מאסטר",
+      "count": 1
+    },
+    {
+      "branch": "מאפה",
+      "count": 1
+    },
+    {
+      "branch": "מאפייה",
+      "count": 1
+    },
+    {
+      "branch": "מאשימה",
+      "count": 1
+    },
+    {
+      "branch": "מגילה",
+      "count": 1
+    },
+    {
+      "branch": "מגן",
+      "count": 1
+    },
+    {
+      "branch": "מדורה",
+      "count": 1
+    },
+    {
+      "branch": "מדחום",
+      "count": 1
+    },
+    {
+      "branch": "מדיטציה",
+      "count": 1
+    },
+    {
+      "branch": "מובילים",
+      "count": 1
+    },
+    {
+      "branch": "מודה",
+      "count": 1
+    },
+    {
+      "branch": "מוות",
+      "count": 1
+    },
+    {
+      "branch": "מוט",
+      "count": 1
+    },
+    {
+      "branch": "מונית",
+      "count": 1
+    },
+    {
+      "branch": "מוסקבה",
+      "count": 1
+    },
+    {
+      "branch": "מוסר",
+      "count": 1
+    },
+    {
+      "branch": "מועדון",
+      "count": 1
+    },
+    {
+      "branch": "מוצץ",
+      "count": 1
+    },
+    {
+      "branch": "מושב",
+      "count": 1
+    },
+    {
+      "branch": "מותג",
+      "count": 1
+    },
+    {
+      "branch": "מזווה",
+      "count": 1
+    },
+    {
+      "branch": "מזומן",
+      "count": 1
+    },
+    {
+      "branch": "מזרח",
+      "count": 1
+    },
+    {
+      "branch": "מחזור",
+      "count": 1
+    },
+    {
+      "branch": "מחק",
+      "count": 1
+    },
+    {
+      "branch": "מטאטא",
+      "count": 1
+    },
+    {
+      "branch": "מטבעות",
+      "count": 1
+    },
+    {
+      "branch": "מטוס",
+      "count": 1
+    },
+    {
+      "branch": "מטקות",
+      "count": 1
+    },
+    {
+      "branch": "מכבסה",
+      "count": 1
+    },
+    {
+      "branch": "מכולות",
+      "count": 1
+    },
+    {
+      "branch": "מכירות",
+      "count": 1
+    },
+    {
+      "branch": "מכשפה",
+      "count": 1
+    },
+    {
+      "branch": "מלאך",
+      "count": 1
+    },
+    {
+      "branch": "מלון",
+      "count": 1
+    },
+    {
+      "branch": "מלכודת",
+      "count": 1
+    },
+    {
+      "branch": "ממשל",
+      "count": 1
+    },
+    {
+      "branch": "ממשלה",
+      "count": 1
+    },
+    {
+      "branch": "מנגל",
+      "count": 1
+    },
+    {
+      "branch": "מנורה",
+      "count": 1
+    },
+    {
+      "branch": "מניפה",
+      "count": 1
+    },
+    {
+      "branch": "מניקור",
+      "count": 1
+    },
+    {
+      "branch": "מסגד",
+      "count": 1
+    },
+    {
+      "branch": "מסילה",
+      "count": 1
+    },
+    {
+      "branch": "מסך",
+      "count": 1
+    },
+    {
+      "branch": "מסמר",
+      "count": 1
+    },
+    {
+      "branch": "מספרה",
+      "count": 1
+    },
+    {
+      "branch": "מספרים",
+      "count": 1
+    },
+    {
+      "branch": "מסר",
+      "count": 1
+    },
+    {
+      "branch": "מעבד",
+      "count": 1
+    },
+    {
+      "branch": "מעבדה",
+      "count": 1
+    },
+    {
+      "branch": "מעבר",
+      "count": 1
+    },
+    {
+      "branch": "מעופף",
+      "count": 1
+    },
+    {
+      "branch": "מעיל",
+      "count": 1
+    },
+    {
+      "branch": "מעקה",
+      "count": 1
+    },
+    {
+      "branch": "מערבולת",
+      "count": 1
+    },
+    {
+      "branch": "מערבון",
+      "count": 1
+    },
+    {
+      "branch": "מפקד",
+      "count": 1
+    },
+    {
+      "branch": "מפרץ",
+      "count": 1
+    },
+    {
+      "branch": "מפרש",
+      "count": 1
+    },
+    {
+      "branch": "מצוק",
+      "count": 1
+    },
+    {
+      "branch": "מצפון",
+      "count": 1
+    },
+    {
+      "branch": "מצריים",
+      "count": 1
+    },
+    {
+      "branch": "מצרים",
+      "count": 1
+    },
+    {
+      "branch": "מצרכים",
+      "count": 1
+    },
+    {
+      "branch": "מקדש",
+      "count": 1
+    },
+    {
+      "branch": "מקור",
+      "count": 1
+    },
+    {
+      "branch": "מקלות",
+      "count": 1
+    },
+    {
+      "branch": "מקלט",
+      "count": 1
+    },
+    {
+      "branch": "מרוץ",
+      "count": 1
+    },
+    {
+      "branch": "מרינה",
+      "count": 1
+    },
+    {
+      "branch": "מרעה",
+      "count": 1
+    },
+    {
+      "branch": "מרפא",
+      "count": 1
+    },
+    {
+      "branch": "מרפאה",
+      "count": 1
+    },
+    {
+      "branch": "מרק",
+      "count": 1
+    },
+    {
+      "branch": "מרשם",
+      "count": 1
+    },
+    {
+      "branch": "מרשמלו",
+      "count": 1
+    },
+    {
+      "branch": "משוט",
+      "count": 1
+    },
+    {
+      "branch": "משכורת",
+      "count": 1
+    },
+    {
+      "branch": "משפחה",
+      "count": 1
+    },
+    {
+      "branch": "משפט",
+      "count": 1
+    },
+    {
+      "branch": "משקולות",
+      "count": 1
+    },
+    {
+      "branch": "משקל",
+      "count": 1
+    },
+    {
+      "branch": "משקפיים",
+      "count": 1
+    },
+    {
+      "branch": "משתלה",
+      "count": 1
+    },
+    {
+      "branch": "מתנה",
+      "count": 1
+    },
+    {
+      "branch": "נבואה",
+      "count": 1
+    },
+    {
+      "branch": "נביחה",
+      "count": 1
+    },
+    {
+      "branch": "נגר",
+      "count": 1
+    },
+    {
+      "branch": "נגרות",
+      "count": 1
+    },
+    {
+      "branch": "נדיר",
+      "count": 1
+    },
+    {
+      "branch": "נדל\"ן",
+      "count": 1
+    },
+    {
+      "branch": "נהר",
+      "count": 1
+    },
+    {
+      "branch": "נוער",
+      "count": 1
+    },
+    {
+      "branch": "נוקאאוט",
+      "count": 1
+    },
+    {
+      "branch": "נורה",
+      "count": 1
+    },
+    {
+      "branch": "נטייה",
+      "count": 1
+    },
+    {
+      "branch": "ניגודים",
+      "count": 1
+    },
+    {
+      "branch": "ניווט",
+      "count": 1
+    },
+    {
+      "branch": "נייר",
+      "count": 1
+    },
+    {
+      "branch": "ניסוי",
+      "count": 1
+    },
+    {
+      "branch": "ניצחון",
+      "count": 1
+    },
+    {
+      "branch": "נכות",
+      "count": 1
+    },
+    {
+      "branch": "נסיכה",
+      "count": 1
+    },
+    {
+      "branch": "נעילה",
+      "count": 1
+    },
+    {
+      "branch": "נעל",
+      "count": 1
+    },
+    {
+      "branch": "נעץ",
+      "count": 1
+    },
+    {
+      "branch": "נרות",
+      "count": 1
+    },
+    {
+      "branch": "סבא",
+      "count": 1
+    },
+    {
+      "branch": "סביבה",
+      "count": 1
+    },
+    {
+      "branch": "סבלות",
+      "count": 1
+    },
+    {
+      "branch": "סבתא",
+      "count": 1
+    },
+    {
+      "branch": "סדרה",
+      "count": 1
+    },
+    {
+      "branch": "סוואנה",
+      "count": 1
+    },
+    {
+      "branch": "סוללות",
+      "count": 1
+    },
+    {
+      "branch": "סולם",
+      "count": 1
+    },
+    {
+      "branch": "סוס",
+      "count": 1
+    },
+    {
+      "branch": "סיבוב",
+      "count": 1
+    },
+    {
+      "branch": "סיום",
+      "count": 1
+    },
+    {
+      "branch": "סיוע",
+      "count": 1
+    },
+    {
+      "branch": "סיור",
+      "count": 1
+    },
+    {
+      "branch": "סימן",
+      "count": 1
+    },
+    {
+      "branch": "סיסמה",
+      "count": 1
+    },
+    {
+      "branch": "סירופ",
+      "count": 1
+    },
+    {
+      "branch": "סכין",
+      "count": 1
+    },
+    {
+      "branch": "סל",
+      "count": 1
+    },
+    {
+      "branch": "סלסלה",
+      "count": 1
+    },
+    {
+      "branch": "סלע",
+      "count": 1
+    },
+    {
+      "branch": "סנוקר",
+      "count": 1
+    },
+    {
+      "branch": "סניקרס",
+      "count": 1
+    },
+    {
+      "branch": "ספה",
+      "count": 1
+    },
+    {
+      "branch": "ספוג",
+      "count": 1
+    },
+    {
+      "branch": "ספורט",
+      "count": 1
+    },
+    {
+      "branch": "ספינה",
+      "count": 1
+    },
+    {
+      "branch": "ספק",
+      "count": 1
+    },
+    {
+      "branch": "סקי",
+      "count": 1
+    },
+    {
+      "branch": "עדר",
+      "count": 1
+    },
+    {
+      "branch": "עומק",
+      "count": 1
+    },
+    {
+      "branch": "עזריאלי",
+      "count": 1
+    },
+    {
+      "branch": "עין",
+      "count": 1
+    },
+    {
+      "branch": "עיר",
+      "count": 1
+    },
+    {
+      "branch": "עכביש",
+      "count": 1
+    },
+    {
+      "branch": "עלה",
+      "count": 1
+    },
+    {
+      "branch": "ענף",
+      "count": 1
+    },
+    {
+      "branch": "ענפים",
+      "count": 1
+    },
+    {
+      "branch": "עסקה",
+      "count": 1
+    },
+    {
+      "branch": "עסקים",
+      "count": 1
+    },
+    {
+      "branch": "עפר",
+      "count": 1
+    },
+    {
+      "branch": "עפרונות",
+      "count": 1
+    },
+    {
+      "branch": "עצור",
+      "count": 1
+    },
+    {
+      "branch": "עציץ",
+      "count": 1
+    },
+    {
+      "branch": "עציצים",
+      "count": 1
+    },
+    {
+      "branch": "ערב",
+      "count": 1
+    },
+    {
+      "branch": "ערבות",
+      "count": 1
+    },
+    {
+      "branch": "עתיק",
+      "count": 1
+    },
+    {
+      "branch": "עתיקות",
+      "count": 1
+    },
+    {
+      "branch": "פאב",
+      "count": 1
+    },
+    {
+      "branch": "פאזל",
+      "count": 1
+    },
+    {
+      "branch": "פאקמן",
+      "count": 1
+    },
+    {
+      "branch": "פדלים",
+      "count": 1
+    },
+    {
+      "branch": "פודיום",
+      "count": 1
+    },
+    {
+      "branch": "פולקסווגן",
+      "count": 1
+    },
+    {
+      "branch": "פוקימון",
+      "count": 1
+    },
+    {
+      "branch": "פחד",
+      "count": 1
+    },
+    {
+      "branch": "פחית",
+      "count": 1
+    },
+    {
+      "branch": "פטיש",
+      "count": 1
+    },
+    {
+      "branch": "פיזה",
+      "count": 1
+    },
+    {
+      "branch": "פיזיקה",
+      "count": 1
+    },
+    {
+      "branch": "פילוסופיה",
+      "count": 1
+    },
+    {
+      "branch": "פינג-פונג",
+      "count": 1
+    },
+    {
+      "branch": "פינה",
+      "count": 1
+    },
+    {
+      "branch": "פיצוץ",
+      "count": 1
+    },
+    {
+      "branch": "פיקניק",
+      "count": 1
+    },
+    {
+      "branch": "פיראטים",
+      "count": 1
+    },
+    {
+      "branch": "פירמידה",
+      "count": 1
+    },
+    {
+      "branch": "פנים",
+      "count": 1
+    },
+    {
+      "branch": "פנקייק",
+      "count": 1
+    },
+    {
+      "branch": "פסח",
+      "count": 1
+    },
+    {
+      "branch": "פסטה",
+      "count": 1
+    },
+    {
+      "branch": "פסק-דין",
+      "count": 1
+    },
+    {
+      "branch": "פקק",
+      "count": 1
+    },
+    {
+      "branch": "פקקים",
+      "count": 1
+    },
+    {
+      "branch": "פרה",
+      "count": 1
+    },
+    {
+      "branch": "פריז",
+      "count": 1
+    },
+    {
+      "branch": "פתיחה",
+      "count": 1
+    },
+    {
+      "branch": "צ'יפ",
+      "count": 1
+    },
+    {
+      "branch": "צביעה",
+      "count": 1
+    },
+    {
+      "branch": "צבעוני",
+      "count": 1
+    },
+    {
+      "branch": "צבתות",
+      "count": 1
+    },
+    {
+      "branch": "צדפים",
+      "count": 1
+    },
+    {
+      "branch": "צוואר",
+      "count": 1
+    },
+    {
+      "branch": "צומת",
+      "count": 1
+    },
+    {
+      "branch": "צוקים",
+      "count": 1
+    },
+    {
+      "branch": "צחוק",
+      "count": 1
+    },
+    {
+      "branch": "צחצוח",
+      "count": 1
+    },
+    {
+      "branch": "ציד",
+      "count": 1
+    },
+    {
+      "branch": "ציור",
+      "count": 1
+    },
+    {
+      "branch": "צל",
+      "count": 1
+    },
+    {
+      "branch": "צניחה",
+      "count": 1
+    },
+    {
+      "branch": "צעדים",
+      "count": 1
+    },
+    {
+      "branch": "צעצוע",
+      "count": 1
+    },
+    {
+      "branch": "צפרדע",
+      "count": 1
+    },
+    {
+      "branch": "צרפת",
+      "count": 1
+    },
+    {
+      "branch": "קבר",
+      "count": 1
+    },
+    {
+      "branch": "קברות",
+      "count": 1
+    },
+    {
+      "branch": "קומזיץ",
+      "count": 1
+    },
+    {
+      "branch": "קומיקס",
+      "count": 1
+    },
+    {
+      "branch": "קוסם",
+      "count": 1
+    },
+    {
+      "branch": "קוסמטיקאית",
+      "count": 1
+    },
+    {
+      "branch": "קוף",
+      "count": 1
+    },
+    {
+      "branch": "קופה",
+      "count": 1
+    },
+    {
+      "branch": "קוצים",
+      "count": 1
+    },
+    {
+      "branch": "קוקוס",
+      "count": 1
+    },
+    {
+      "branch": "קורות",
+      "count": 1
+    },
+    {
+      "branch": "קטר",
+      "count": 1
+    },
+    {
+      "branch": "קיבוץ",
+      "count": 1
+    },
+    {
+      "branch": "קיפול",
+      "count": 1
+    },
+    {
+      "branch": "קלמר",
+      "count": 1
+    },
+    {
+      "branch": "קלפים",
+      "count": 1
+    },
+    {
+      "branch": "קנדה",
+      "count": 1
+    },
+    {
+      "branch": "קנזס",
+      "count": 1
+    },
+    {
+      "branch": "קפה",
+      "count": 1
+    },
+    {
+      "branch": "קפוא",
+      "count": 1
+    },
+    {
+      "branch": "קפיצות",
+      "count": 1
+    },
+    {
+      "branch": "קצף",
+      "count": 1
+    },
+    {
+      "branch": "קרחון",
+      "count": 1
+    },
+    {
+      "branch": "קרטון",
+      "count": 1
+    },
+    {
+      "branch": "קריאה",
+      "count": 1
+    },
+    {
+      "branch": "קשירה",
+      "count": 1
+    },
+    {
+      "branch": "קשת",
+      "count": 1
+    },
+    {
+      "branch": "ראייה",
+      "count": 1
+    },
+    {
+      "branch": "ראמן",
+      "count": 1
+    },
+    {
+      "branch": "רומא",
+      "count": 1
+    },
+    {
+      "branch": "רוסיה",
+      "count": 1
+    },
+    {
+      "branch": "רוע",
+      "count": 1
+    },
+    {
+      "branch": "רועה",
+      "count": 1
+    },
+    {
+      "branch": "רחוב",
+      "count": 1
+    },
+    {
+      "branch": "ריצ'רץ'",
+      "count": 1
+    },
+    {
+      "branch": "ריקוד",
+      "count": 1
+    },
+    {
+      "branch": "רישום",
+      "count": 1
+    },
+    {
+      "branch": "רכב",
+      "count": 1
+    },
+    {
+      "branch": "רמקול",
+      "count": 1
+    },
+    {
+      "branch": "רעמה",
+      "count": 1
+    },
+    {
+      "branch": "רפת",
+      "count": 1
+    },
+    {
+      "branch": "רצף",
+      "count": 1
+    },
+    {
+      "branch": "רצפה",
+      "count": 1
+    },
+    {
+      "branch": "רשימה",
+      "count": 1
+    },
+    {
+      "branch": "שאלה",
+      "count": 1
+    },
+    {
+      "branch": "שבבים",
+      "count": 1
+    },
+    {
+      "branch": "שבור",
+      "count": 1
+    },
+    {
+      "branch": "שביל",
+      "count": 1
+    },
+    {
+      "branch": "שבילים",
+      "count": 1
+    },
+    {
+      "branch": "שודדים",
+      "count": 1
+    },
+    {
+      "branch": "שופטים",
+      "count": 1
+    },
+    {
+      "branch": "שוקו",
+      "count": 1
+    },
+    {
+      "branch": "שורשים",
+      "count": 1
+    },
+    {
+      "branch": "שחייה",
+      "count": 1
+    },
+    {
+      "branch": "שחמט",
+      "count": 1
+    },
+    {
+      "branch": "שחקנית",
+      "count": 1
+    },
+    {
+      "branch": "שטיח",
+      "count": 1
+    },
+    {
+      "branch": "שטיפה",
+      "count": 1
+    },
+    {
+      "branch": "שיגור",
+      "count": 1
+    },
+    {
+      "branch": "שידור",
+      "count": 1
+    },
+    {
+      "branch": "שינוע",
+      "count": 1
+    },
+    {
+      "branch": "שיננית",
+      "count": 1
+    },
+    {
+      "branch": "שיער",
+      "count": 1
+    },
+    {
+      "branch": "שיפוע",
+      "count": 1
+    },
+    {
+      "branch": "שירותים",
+      "count": 1
+    },
+    {
+      "branch": "שיש",
+      "count": 1
+    },
+    {
+      "branch": "שלום",
+      "count": 1
+    },
+    {
+      "branch": "שלט",
+      "count": 1
+    },
+    {
+      "branch": "שליחות",
+      "count": 1
+    },
+    {
+      "branch": "שליפה",
+      "count": 1
+    },
+    {
+      "branch": "שלכת",
+      "count": 1
+    },
+    {
+      "branch": "שעה",
+      "count": 1
+    },
+    {
+      "branch": "שעווה",
+      "count": 1
+    },
+    {
+      "branch": "שער",
+      "count": 1
+    },
+    {
+      "branch": "שק",
+      "count": 1
+    },
+    {
+      "branch": "שרביט",
+      "count": 1
+    },
+    {
+      "branch": "שרוכים",
+      "count": 1
+    },
+    {
+      "branch": "שש-בש",
+      "count": 1
+    },
+    {
+      "branch": "שתייה",
+      "count": 1
+    },
+    {
+      "branch": "שתילה",
+      "count": 1
+    },
+    {
+      "branch": "תאורה",
+      "count": 1
+    },
+    {
+      "branch": "תאילנד",
+      "count": 1
+    },
+    {
+      "branch": "תה",
+      "count": 1
+    },
+    {
+      "branch": "תוכנה",
+      "count": 1
+    },
+    {
+      "branch": "תזכורת",
+      "count": 1
+    },
+    {
+      "branch": "תחזית",
+      "count": 1
+    },
+    {
+      "branch": "תחפושת",
+      "count": 1
+    },
+    {
+      "branch": "תירס",
+      "count": 1
+    },
+    {
+      "branch": "תכנות",
+      "count": 1
+    },
+    {
+      "branch": "תכשיט",
+      "count": 1
+    },
+    {
+      "branch": "תלייה",
+      "count": 1
+    },
+    {
+      "branch": "תנועה",
+      "count": 1
+    },
+    {
+      "branch": "תנין",
+      "count": 1
+    },
+    {
+      "branch": "תפיסה",
+      "count": 1
+    },
+    {
+      "branch": "תצפית",
+      "count": 1
+    },
+    {
+      "branch": "תקציב",
+      "count": 1
+    },
+    {
+      "branch": "תרומה",
+      "count": 1
+    },
+    {
+      "branch": "תרופה",
+      "count": 1
+    }
+  ],
+  "roots": [
+    {
+      "id": "teepee_tent",
+      "title": "אוהל טיפי אינדיאני",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "קמפינג",
+        "אינדיאני",
+        "מדורה",
+        "אוהל"
+      ]
+    },
+    {
+      "id": "item_203_אוטובוס_קומותיים_אדום",
+      "title": "אוטובוס קומותיים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "לונדון",
+        "נסיעה",
+        "תחנה",
+        "תיירות"
+      ]
+    },
+    {
+      "id": "item_246_ספינת_משא___מכולות",
+      "title": "אוניית משא",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "נמל",
+        "מכולות",
+        "משלוח",
+        "ייבוא"
+      ]
+    },
+    {
+      "id": "item_205_אופנוע_הארלי_דיווידסון",
+      "title": "אופנוע הארלי",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "קסדה",
+        "מוסך",
+        "טסט",
+        "רכיבה"
+      ]
+    },
+    {
+      "id": "item_230_רכב_שלג",
+      "title": "אופנוע שלג",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "חורף",
+        "קור",
+        "חרמון",
+        "הרים"
+      ]
+    },
+    {
+      "id": "item_241_אופני_פני_פארת_ינג",
+      "title": "אופניים עתיקים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "רכיבה",
+        "גלגל",
+        "וינטג",
+        "פדלים"
+      ]
+    },
+    {
+      "id": "item_388_אטב_כביסה_מעץ",
+      "title": "אטב כביסה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ייבוש",
+        "בגדים",
+        "חבל",
+        "מרפסת"
+      ]
+    },
+    {
+      "id": "item_387_אטב_נייר",
+      "title": "אטב נייר",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "משרד",
+        "מסמכים",
+        "דפים",
+        "תיוק"
+      ]
+    },
+    {
+      "id": "item_486_מודל_האטום__גרעין_ומסלולי_אלקטרונים_אליפטיים_",
+      "title": "אטום",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "מדע",
+        "פיזיקה",
+        "מעבדה",
+        "אנרגיה"
+      ]
+    },
+    {
+      "id": "igloo_ice_dome",
+      "title": "איגלו אסקימואי",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "אסקימואי",
+        "קור",
+        "קרח",
+        "שלג"
+      ]
+    },
+    {
+      "id": "iron_man",
+      "title": "איירון מן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "רובוט",
+        "טכנולוגיה",
+        "שריון",
+        "גיבור"
+      ]
+    },
+    {
+      "id": "item_498_סמל_ה_wi_fi__קשתות_מתרחבות_",
+      "title": "אינטרנט אלחוטי",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "ווייפיי",
+        "רשת",
+        "מחשב",
+        "טלפון"
+      ]
+    },
+    {
+      "id": "item_402_באטמן",
+      "title": "איש העטלף",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "לילה",
+        "גיבור",
+        "גלימה",
+        "מסכה"
+      ]
+    },
+    {
+      "id": "item_403_סופרמן",
+      "title": "איש הפלדה",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "גיבור",
+        "כוח",
+        "תעופה",
+        "גלימה"
+      ]
+    },
+    {
+      "id": "item_216_אמבולנס_לבן",
+      "title": "אמבולנס",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "רפואה",
+        "חירום",
+        "סירנה",
+        "חובש"
+      ]
+    },
+    {
+      "id": "item_343_חליפת_חלל",
+      "title": "אסטרונאוט",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "חלל",
+        "ירח",
+        "נאס\"א",
+        "מדע"
+      ]
+    },
+    {
+      "id": "guilty_prisoner_mugshot",
+      "title": "אסיר",
+      "category": "⚖️ משפט ואשמה",
+      "branches": [
+        "מודה",
+        "אשם",
+        "אשמה",
+        "משפט"
+      ]
+    },
+    {
+      "id": "classic_red_barn",
+      "title": "אסם אמריקאי קלאסי",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "פרה",
+        "חווה",
+        "כפר"
+      ]
+    },
+    {
+      "id": "pointing_finger_accusation",
+      "title": "אצבע מופנית",
+      "category": "⚖️ משפט ואשמה",
+      "branches": [
+        "מאשימה",
+        "אשם",
+        "אתה",
+        "אשמה"
+      ]
+    },
+    {
+      "id": "item_396_ארגז_כלים_אדום",
+      "title": "ארגז כלים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תיקון",
+        "שיפוץ",
+        "עבודה",
+        "מוסך"
+      ]
+    },
+    {
+      "id": "item_255_אריה",
+      "title": "אריה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "מלך",
+        "ספארי",
+        "שאגה",
+        "רעמה"
+      ]
+    },
+    {
+      "id": "item_458_אריה",
+      "title": "אריה שואג",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "שאגה",
+        "טורף",
+        "מלך",
+        "סוואנה"
+      ]
+    },
+    {
+      "id": "bugs_bunny",
+      "title": "באגס באני",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "גזר",
+        "ארנב",
+        "דיסני",
+        "אנימציה"
+      ]
+    },
+    {
+      "id": "item_306_כדור_באולינג_ופינים",
+      "title": "באולינג",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "בילוי",
+        "משחק",
+        "מסלול",
+        "סטרייק"
+      ]
+    },
+    {
+      "id": "batman",
+      "title": "באטמן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "עטלף",
+        "לילה",
+        "גיבור",
+        "מסכה"
+      ]
+    },
+    {
+      "id": "spongebob",
+      "title": "בובספוג",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "סדר",
+        "ניקיון",
+        "ספוג",
+        "בועות"
+      ]
+    },
+    {
+      "id": "russian_matryoshka",
+      "title": "בובת מטריושקה מעץ",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "בבושקה",
+        "בובה",
+        "משפחה",
+        "עץ"
+      ]
+    },
+    {
+      "id": "item_341_בומרנג",
+      "title": "בומרנג",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "זריקה",
+        "חזרה",
+        "אוסטרליה",
+        "משחק"
+      ]
+    },
+    {
+      "id": "concrete_bunker",
+      "title": "בונקר מבוצר",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "בונקר",
+        "בטון",
+        "הגנה",
+        "מקלט"
+      ]
+    },
+    {
+      "id": "item_159_ענן_מילים_מחשבה__בועה_חלקה_או_מסולסלת___מסמלת",
+      "title": "בועת מחשבה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מחשבה",
+        "רעיון",
+        "קומיקס",
+        "דימיון"
+      ]
+    },
+    {
+      "id": "big_ben_london",
+      "title": "ביג בן",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "שעון",
+        "לונדון",
+        "שעה",
+        "זמן"
+      ]
+    },
+    {
+      "id": "item_439_הביג_בן",
+      "title": "ביג בן",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "לונדון",
+        "אנגליה",
+        "שעון",
+        "מגדל"
+      ]
+    },
+    {
+      "id": "bilbo_baggins",
+      "title": "בילבו בגינס",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "אירוח",
+        "ארוחה",
+        "אורחים",
+        "בישול"
+      ]
+    },
+    {
+      "id": "item_290_ביצה",
+      "title": "ביצה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "בוץ",
+        "יתושים",
+        "תנין",
+        "צפרדע"
+      ]
+    },
+    {
+      "id": "judge_gavel_guilty",
+      "title": "בית משפט",
+      "category": "⚖️ משפט ואשמה",
+      "branches": [
+        "פטיש",
+        "שופטים",
+        "אשם",
+        "אשמים"
+      ]
+    },
+    {
+      "id": "military_cemetery",
+      "title": "בית עלמין צבאי",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "קברות",
+        "לוויה",
+        "קבר",
+        "אזכרה"
+      ]
+    },
+    {
+      "id": "item_499_סמל_הבלוטות___bluetooth_",
+      "title": "בלוטות'",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "אוזניות",
+        "חיבור",
+        "טלפון",
+        "רמקול"
+      ]
+    },
+    {
+      "id": "barbie_doll",
+      "title": "ברבי",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "קוסמטיקאית",
+        "ציפורניים",
+        "ורוד",
+        "שמלה"
+      ]
+    },
+    {
+      "id": "farm_duck",
+      "title": "ברווז שוחה באגם",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אמבטיה",
+        "בריכה",
+        "מקור",
+        "נוצות"
+      ]
+    },
+    {
+      "id": "item_262_מכתש_ברק___פגיעת_ברק",
+      "title": "ברק",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חשמל",
+        "סופה",
+        "רעם",
+        "חורף"
+      ]
+    },
+    {
+      "id": "item_347_ג_ויסטיק",
+      "title": "ג'ויסטיק",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "משחקים",
+        "גיימינג",
+        "מחשב",
+        "שלט"
+      ]
+    },
+    {
+      "id": "item_289_יער_גשם_טרופי",
+      "title": "ג'ונגל",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "עצים",
+        "טבע",
+        "אמזונס",
+        "ירוק"
+      ]
+    },
+    {
+      "id": "item_240_ג_ט_סקי",
+      "title": "ג'ט סקי",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "אילת",
+        "חוף",
+        "קיץ",
+        "גלים"
+      ]
+    },
+    {
+      "id": "item_218_ג_יפ_צבאי_פתוח",
+      "title": "ג'יפ שטח",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "טיול",
+        "מדבר",
+        "צבא",
+        "מילואים"
+      ]
+    },
+    {
+      "id": "item_257_ג_ירפה",
+      "title": "ג'ירפה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "צוואר",
+        "גובה",
+        "עלים",
+        "ספארי"
+      ]
+    },
+    {
+      "id": "item_169_גביע_זהב_עם_ידיות__מסמל",
+      "title": "גביע זהב",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אליפות",
+        "פרס",
+        "תחרות",
+        "זהב"
+      ]
+    },
+    {
+      "id": "item_469_גביע_זהב__מונף_בשתי_ידיים_",
+      "title": "גביע ניצחון",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "אליפות",
+        "מדליה",
+        "פרס",
+        "במה"
+      ]
+    },
+    {
+      "id": "item_178_גולגולת_עם_שתי_עצמות_מוצלבות__מסמלת",
+      "title": "גולגולת ועצמות מוצלבות",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "גולגולת",
+        "רעל",
+        "מוות",
+        "סכנה"
+      ]
+    },
+    {
+      "id": "gollum",
+      "title": "גולום",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "אצטדיון",
+        "אימון",
+        "תכשיט",
+        "טבעת"
+      ]
+    },
+    {
+      "id": "item_209_גונדולה_ונציאנית",
+      "title": "גונדולה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "ונציה",
+        "איטליה",
+        "שייט",
+        "רומנטיקה"
+      ]
+    },
+    {
+      "id": "item_429_מספריים_חותכים_סרט_אדום",
+      "title": "גזירת סרט",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "פתיחה",
+        "טקס",
+        "חגיגה",
+        "אירוע"
+      ]
+    },
+    {
+      "id": "item_332_גלגל_ענק",
+      "title": "גלגל ענק",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "פארק",
+        "גובה",
+        "נוף",
+        "סיבוב"
+      ]
+    },
+    {
+      "id": "item_161_גלגל_שיניים__או_שניים_שלובים___מסמל",
+      "title": "גלגלי שיניים",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מכונה",
+        "הגדרות",
+        "הנדסה",
+        "מנוע"
+      ]
+    },
+    {
+      "id": "item_314_גלשן_גלים",
+      "title": "גלשן גלים",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "גלישה",
+        "ים",
+        "סנפיר"
+      ]
+    },
+    {
+      "id": "item_271_גמל_דו_דבשתי",
+      "title": "גמל",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "מדבר",
+        "דבשת",
+        "חול",
+        "טיול"
+      ]
+    },
+    {
+      "id": "gandalf",
+      "title": "גנדלף",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "קוסם",
+        "זקן",
+        "חוכמה",
+        "ספר"
+      ]
+    },
+    {
+      "id": "item_366_קופסת_גפרורים",
+      "title": "גפרורים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אש",
+        "הדלקה",
+        "נרות",
+        "מנגל"
+      ]
+    },
+    {
+      "id": "golden_gate_bridge",
+      "title": "גשר הזהב בסן פרנסיסקו",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "גשר"
+      ]
+    },
+    {
+      "id": "item_448_גשר_שער_הזהב",
+      "title": "גשר שער הזהב",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "מפרץ",
+        "כבלים",
+        "אדום",
+        "מעבר"
+      ]
+    },
+    {
+      "id": "darth_vader",
+      "title": "דארת' ויידר",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "נשימה",
+        "קסדה",
+        "רוע",
+        "קולנוע"
+      ]
+    },
+    {
+      "id": "item_401_דארת__ויידר",
+      "title": "דארת' ויידר",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "קסדה",
+        "נשימה",
+        "חרב",
+        "שחור"
+      ]
+    },
+    {
+      "id": "item_276_דבורה",
+      "title": "דבורה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "דבש",
+        "עוקץ",
+        "כוורת",
+        "פרחים"
+      ]
+    },
+    {
+      "id": "item_272_דולפין_קופץ_מהמים",
+      "title": "דולפין",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אילת",
+        "שחייה",
+        "ים",
+        "קפיצה"
+      ]
+    },
+    {
+      "id": "item_327_לבני_דומינו",
+      "title": "דומינו",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "משחק",
+        "קופסה",
+        "מספרים",
+        "רצף"
+      ]
+    },
+    {
+      "id": "donald_duck",
+      "title": "דונלד דאק",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "דונלד",
+        "דאק",
+        "ברווז"
+      ]
+    },
+    {
+      "id": "item_233_דחפור",
+      "title": "דחפור",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "בנייה",
+        "שיפוץ",
+        "עפר",
+        "הריסה"
+      ]
+    },
+    {
+      "id": "dracula",
+      "title": "דרקולה",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "שיניים",
+        "שיננית",
+        "עטלף",
+        "תחפושת"
+      ]
+    },
+    {
+      "id": "item_478_שטן___דרקון",
+      "title": "דרקון אדום",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "אש",
+        "כנפיים",
+        "אגדה",
+        "מפלצת"
+      ]
+    },
+    {
+      "id": "the_thinker",
+      "title": "האדם החושב",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "החלטה",
+        "ייעוץ",
+        "פסל",
+        "חושב"
+      ]
+    },
+    {
+      "id": "hulk",
+      "title": "האלק",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "כושר",
+        "זעם",
+        "הובלות",
+        "שרירים"
+      ]
+    },
+    {
+      "id": "harry_potter",
+      "title": "הארי פוטר",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "כישוף",
+        "שרביט",
+        "הוגוורטס",
+        "קסם"
+      ]
+    },
+    {
+      "id": "the_white_house",
+      "title": "הבית הלבן",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "פוליטיקה",
+        "חדשות",
+        "נשיא",
+        "ממשל"
+      ]
+    },
+    {
+      "id": "item_445_הבית_הלבן",
+      "title": "הבית הלבן",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "נשיא",
+        "אמריקה",
+        "ממשלה",
+        "פוליטיקה"
+      ]
+    },
+    {
+      "id": "the_joker",
+      "title": "הג'וקר",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "ליצן",
+        "צחוק",
+        "קלפים",
+        "איפור"
+      ]
+    },
+    {
+      "id": "great_wave_off_kanagawa",
+      "title": "הגל הגדול בסמוך לקאנאגאווה",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "גל",
+        "ים",
+        "גלישה",
+        "לגלוש"
+      ]
+    },
+    {
+      "id": "the_grinch",
+      "title": "הגרינץ'",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "ירוק"
+      ]
+    },
+    {
+      "id": "homer_simpson",
+      "title": "הומר סימפסון",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "דיאטה",
+        "בירה",
+        "ספה",
+        "צהוב"
+      ]
+    },
+    {
+      "id": "great_wall_china",
+      "title": "החומה הגדולה",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "חומה",
+        "סין",
+        "הגנה"
+      ]
+    },
+    {
+      "id": "item_444_החומה_הסינית",
+      "title": "החומה הסינית",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "סין",
+        "טיול",
+        "היסטוריה",
+        "הגנה"
+      ]
+    },
+    {
+      "id": "predator",
+      "title": "הטורף",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "חייזר",
+        "ציד",
+        "מסכה",
+        "ג'ונגל"
+      ]
+    },
+    {
+      "id": "western_wall",
+      "title": "הכותל המערבי בירושלים",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "הכותל",
+        "המערבי",
+        "תפילה",
+        "פתק"
+      ]
+    },
+    {
+      "id": "hello_kitty",
+      "title": "הלו קיטי",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "חתול",
+        "ורוד",
+        "חמוד",
+        "ילדות"
+      ]
+    },
+    {
+      "id": "item_406_הלו_קיטי",
+      "title": "הלו קיטי",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "חתול",
+        "ורוד",
+        "בובה",
+        "ילדים"
+      ]
+    },
+    {
+      "id": "minions",
+      "title": "המיניונים",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "בננות",
+        "סופר",
+        "ילדים",
+        "צהוב"
+      ]
+    },
+    {
+      "id": "great_sphinx_giza",
+      "title": "הספינקס",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "אבן",
+        "אריה",
+        "מצריים"
+      ]
+    },
+    {
+      "id": "pyramids_of_giza",
+      "title": "הפירמידות בגיזה",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "טיול",
+        "מדבר",
+        "חול",
+        "עתיקות"
+      ]
+    },
+    {
+      "id": "item_443_הקוליסאום",
+      "title": "הקוליסאום",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "רומא",
+        "איטליה",
+        "זירה",
+        "היסטוריה"
+      ]
+    },
+    {
+      "id": "item_259_הר_געש_מתפרץ",
+      "title": "הר געש",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "לבה",
+        "התפרצות",
+        "אש",
+        "עשן"
+      ]
+    },
+    {
+      "id": "item_455_הר_געש_מתפרץ",
+      "title": "הר געש",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "לבה",
+        "אש",
+        "עשן",
+        "פיצוץ"
+      ]
+    },
+    {
+      "id": "item_285_הר_פוג_י",
+      "title": "הר פוג'י",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "יפן",
+        "טוקיו",
+        "טיול",
+        "טיפוס"
+      ]
+    },
+    {
+      "id": "wolverine",
+      "title": "וולברין",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "ציפורניים",
+        "מניקור",
+        "גילוח",
+        "סכין"
+      ]
+    },
+    {
+      "id": "item_279_ורד_אדום",
+      "title": "ורד",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אהבה",
+        "רומנטיקה",
+        "זר",
+        "מתנה"
+      ]
+    },
+    {
+      "id": "item_324_ז_יטונים_של_קזינו",
+      "title": "ז'יטונים",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "קזינו",
+        "פוקר",
+        "הימורים",
+        "כסף"
+      ]
+    },
+    {
+      "id": "item_295_זיקית_על_ענף",
+      "title": "זיקית",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "הסוואה",
+        "צבעים",
+        "לשון",
+        "עיניים"
+      ]
+    },
+    {
+      "id": "item_456_זיקית",
+      "title": "זיקית",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "צבעים",
+        "הסוואה",
+        "לטאה",
+        "טבע"
+      ]
+    },
+    {
+      "id": "item_155_זכוכית_מגדלת__מסמלת",
+      "title": "זכוכית מגדלת",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "חיפוש",
+        "בדיקה",
+        "חקירה",
+        "בלש"
+      ]
+    },
+    {
+      "id": "item_431_זכוכית_מגדלת",
+      "title": "זכוכית מגדלת",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "חיפוש",
+        "בדיקה",
+        "בלש",
+        "חקירה"
+      ]
+    },
+    {
+      "id": "item_475_חגורה_שחורה_באומנויות_לחימה",
+      "title": "חגורה שחורה באמנויות לחימה",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "דאן",
+        "מאסטר",
+        "מזרן",
+        "קרב"
+      ]
+    },
+    {
+      "id": "item_363_בקבוק_ייין_ופותחן_חולץ_פקקים",
+      "title": "חולץ פקקים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "יין",
+        "בקבוק",
+        "ארוחה",
+        "אירוח"
+      ]
+    },
+    {
+      "id": "farm_pig",
+      "title": "חזיר",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "בוץ",
+        "חיסכון",
+        "ורוד",
+        "דיר"
+      ]
+    },
+    {
+      "id": "chess_knight_piece",
+      "title": "חייל שחמט",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "חייל",
+        "שחמט",
+        "חשיבה",
+        "אסטרטגיה"
+      ]
+    },
+    {
+      "id": "item_275_פרת_משה_רבנו",
+      "title": "חיפושית",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "מזל",
+        "גינה",
+        "עלה",
+        "נקודות"
+      ]
+    },
+    {
+      "id": "item_335_חכה_ודלי_דגים",
+      "title": "חכת דיג",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "ים",
+        "דגים",
+        "חופשה",
+        "סבלנות"
+      ]
+    },
+    {
+      "id": "item_319_חליפת_קראטה_ג_ודו",
+      "title": "חליפת ג'ודו וקראטה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "חגורה",
+        "מזרן",
+        "קרב",
+        "הטלה"
+      ]
+    },
+    {
+      "id": "item_435_חליפת_חלל",
+      "title": "חליפת חלל",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "אסטרונאוט",
+        "ירח",
+        "כוכבים",
+        "נאס\"א"
+      ]
+    },
+    {
+      "id": "farm_donkey",
+      "title": "חמור משא",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אוזניים",
+        "עקשנות",
+        "סבלות",
+        "אוכף"
+      ]
+    },
+    {
+      "id": "item_467_שדה_חמניות",
+      "title": "חמניות",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "פרחים",
+        "צהוב",
+        "שמש",
+        "גרעינים"
+      ]
+    },
+    {
+      "id": "item_278_פרח_חמנייה",
+      "title": "חמנייה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "שמש",
+        "צהוב",
+        "גרעינים",
+        "שדה"
+      ]
+    },
+    {
+      "id": "item_164_חץ_שלוח_פוגע_בול_במרכז_המטרה__מסמל",
+      "title": "חץ בלב המטרה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מטרה",
+        "יעד",
+        "מכירות",
+        "הצלחה"
+      ]
+    },
+    {
+      "id": "item_471_לוח_מטרה_וחיצי_דארטס",
+      "title": "חצי דארטס",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "מטרה",
+        "קליעה",
+        "משחק",
+        "דיוק"
+      ]
+    },
+    {
+      "id": "item_440_טאג__מהאל",
+      "title": "טאג' מהאל",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "הודו",
+        "ארמון",
+        "תיירות",
+        "טיול"
+      ]
+    },
+    {
+      "id": "item_490_טביעת_אצבע_שחורה",
+      "title": "טביעת אצבע",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "זיהוי",
+        "משטרה",
+        "אבטחה",
+        "חקירה"
+      ]
+    },
+    {
+      "id": "item_186_טביעת_אצבע_שחורה__דיו___מסמלת",
+      "title": "טביעת אצבע שחורה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "זיהוי",
+        "ביומטרי",
+        "משטרה",
+        "אבטחה"
+      ]
+    },
+    {
+      "id": "item_311_הטבעות_האולימפיות__חמש_טבעות_צבעוניות_שלובות",
+      "title": "טבעות אולימפיות",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מדליה",
+        "אליפות",
+        "גביע",
+        "תחרות"
+      ]
+    },
+    {
+      "id": "item_330_משחק_הטוויסטר",
+      "title": "טוויסטר",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "משחק",
+        "מסיבה",
+        "גמישות",
+        "צבעים"
+      ]
+    },
+    {
+      "id": "item_265_טווס_פרוס_זנב",
+      "title": "טווס",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "נוצות",
+        "יופי",
+        "גאווה",
+        "צבעוני"
+      ]
+    },
+    {
+      "id": "native_totem_pole",
+      "title": "טוטם מגולף",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "טוטם",
+        "אינדיאני"
+      ]
+    },
+    {
+      "id": "tom_and_jerry",
+      "title": "טום וג'רי",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "טום",
+        "הדברה",
+        "מלכודת",
+        "חולדות"
+      ]
+    },
+    {
+      "id": "item_454_טורנדו___מערבולת",
+      "title": "טורנדו",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "מערבולת",
+        "סופה",
+        "הרס",
+        "רוח"
+      ]
+    },
+    {
+      "id": "item_348_משחק_טטריס",
+      "title": "טטריס",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מחשב",
+        "קוביות",
+        "סדר",
+        "פאזל"
+      ]
+    },
+    {
+      "id": "item_220_ספינת_טיטאניק",
+      "title": "טיטאניק",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "אונייה",
+        "קרחון",
+        "הפלגה",
+        "אוקיינוס"
+      ]
+    },
+    {
+      "id": "neuschwanstein_castle",
+      "title": "טירת נוישוונשטיין",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "דיסני",
+        "אגדה",
+        "טירה",
+        "נסיכה"
+      ]
+    },
+    {
+      "id": "vintage_ringing_phone",
+      "title": "טלפון חוגה",
+      "category": "☎️ תקשורת",
+      "branches": [
+        "שיחה",
+        "צלצול",
+        "תקשורת",
+        "הודעה"
+      ]
+    },
+    {
+      "id": "item_312_שולחן_פינג_פונג",
+      "title": "טניס שולחן",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "פינג-פונג",
+        "מטקות",
+        "משחק",
+        "רשת"
+      ]
+    },
+    {
+      "id": "item_235_טנק_מרכבה___פנצר",
+      "title": "טנק",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "צבא",
+        "שריון",
+        "מילואים",
+        "תותח"
+      ]
+    },
+    {
+      "id": "tarzan",
+      "title": "טרזן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "גיזום",
+        "עצים",
+        "טיפוס",
+        "חבל"
+      ]
+    },
+    {
+      "id": "item_213_טרקטור_חקלאי_ירוק",
+      "title": "טרקטור",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "חקלאות",
+        "שדה",
+        "מושב",
+        "קיבוץ"
+      ]
+    },
+    {
+      "id": "item_231_מפרשית___יאכטה_לבנה",
+      "title": "יאכטה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "הפלגה",
+        "מרינה",
+        "חופשה",
+        "שייט"
+      ]
+    },
+    {
+      "id": "item_329_יו_יו",
+      "title": "יו-יו",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "צעצוע",
+        "משחק",
+        "חוט",
+        "ילדים"
+      ]
+    },
+    {
+      "id": "item_175_יונה_לבנה_עם_ענף_זית_בפה__מסמלת",
+      "title": "יונה לבנה עם ענף זית",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "שלום",
+        "תקווה",
+        "ציפור",
+        "שלווה"
+      ]
+    },
+    {
+      "id": "item_459_יונה_לבנה_עם_עלה_זית",
+      "title": "יונת שלום",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "תקווה",
+        "נוצות",
+        "ענף",
+        "בשורות"
+      ]
+    },
+    {
+      "id": "item_450_סימן_היין_והיאנג",
+      "title": "יין ויאנג",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "איזון",
+        "הרמוניה",
+        "ניגודים",
+        "זן"
+      ]
+    },
+    {
+      "id": "item_268_ינשוף_על_ענף",
+      "title": "ינשוף",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "לילה",
+        "חוכמה",
+        "לימודים",
+        "עיניים"
+      ]
+    },
+    {
+      "id": "item_460_ינשוף",
+      "title": "ינשוף לילה",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "חוכמה",
+        "חושך",
+        "ציפור",
+        "עץ"
+      ]
+    },
+    {
+      "id": "item_500_שלדג",
+      "title": "יציאת חירום",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "דלת",
+        "בטיחות",
+        "בניין",
+        "מדרגות"
+      ]
+    },
+    {
+      "id": "item_281_חצי_סהר_וכוכב",
+      "title": "ירח וכוכב",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "לילה",
+        "שינה",
+        "שמיים",
+        "חושך"
+      ]
+    },
+    {
+      "id": "item_215_כבאית_אדומה",
+      "title": "כבאית אש",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "זרנוק",
+        "סולם",
+        "חילוץ"
+      ]
+    },
+    {
+      "id": "farm_sheep",
+      "title": "כבשה צמרירית",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "עדר",
+        "רועה",
+        "מרעה",
+        "חלב"
+      ]
+    },
+    {
+      "id": "item_418_כדור_בדולח",
+      "title": "כדור בדולח",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "עתיד",
+        "תחזית",
+        "קסם",
+        "זכוכית"
+      ]
+    },
+    {
+      "id": "item_194_כדור_בדולח_על_מפה_כהה__מסמל",
+      "title": "כדור בדולח לחיזוי",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "עתיד",
+        "נבואה",
+        "כדור"
+      ]
+    },
+    {
+      "id": "item_307_כדור_ביליארד",
+      "title": "כדור ביליארד",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "סנוקר",
+        "משחק",
+        "מועדון",
+        "פאב"
+      ]
+    },
+    {
+      "id": "item_473_כדור_טניס_ירוק_זוהר",
+      "title": "כדור טניס זוהר",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "רשת",
+        "משטח",
+        "אימון",
+        "חבטה"
+      ]
+    },
+    {
+      "id": "item_303_כדור_טניס",
+      "title": "כדור טניס צהוב",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "רשת",
+        "הגשה",
+        "משטח",
+        "אימון"
+      ]
+    },
+    {
+      "id": "item_305_כדור_פוטבול_אמריקאי",
+      "title": "כדור פוטבול",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "תפיסה",
+        "שריון",
+        "טאצדאון",
+        "אימון"
+      ]
+    },
+    {
+      "id": "item_211_כדור_פורח_צבעוני",
+      "title": "כדור פורח",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "ריחוף",
+        "שמיים",
+        "סלסלה",
+        "גובה"
+      ]
+    },
+    {
+      "id": "item_301_כדורגל_קלאסי",
+      "title": "כדורגל קלאסי",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "דשא",
+        "מגרש",
+        "אימון",
+        "שער"
+      ]
+    },
+    {
+      "id": "item_302_כדורסל",
+      "title": "כדורסל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "כדרור",
+        "לכדרר",
+        "אימון",
+        "מגרש"
+      ]
+    },
+    {
+      "id": "item_162_כובע_בוגר_אוניברסיטה__מרובע_עם_גדיל___מסמל",
+      "title": "כובע בוגר אוניברסיטה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "תואר",
+        "לימודים",
+        "אוניברסיטה",
+        "טקס"
+      ]
+    },
+    {
+      "id": "item_436_כובע_בוגרים__שוליים_מרובעים_וגדיל_",
+      "title": "כובע בוגרים",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "תואר",
+        "אוניברסיטה",
+        "לימודים",
+        "סיום"
+      ]
+    },
+    {
+      "id": "item_197_כובע_קוסמים_שחור_וגבוה_עם_שפנפן_מציץ__מסמל",
+      "title": "כובע קוסמים ושפן",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "קסם",
+        "מופע",
+        "שליפה"
+      ]
+    },
+    {
+      "id": "item_292_כוכב_ים",
+      "title": "כוכב ים",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חוף",
+        "צדפים",
+        "קיץ",
+        "אילת"
+      ]
+    },
+    {
+      "id": "item_261_טבעת_שבתאי",
+      "title": "כוכב שבתאי",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חלל",
+        "טבעות",
+        "טלסקופ",
+        "אסטרונומיה"
+      ]
+    },
+    {
+      "id": "fresh_bread_loaf",
+      "title": "כיכר לחם כפרי",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "לחם",
+        "מאפה",
+        "בגט",
+        "מאפייה"
+      ]
+    },
+    {
+      "id": "item_267_כלב_דלמטי",
+      "title": "כלב דלמטי",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "נקודות",
+        "כתמים",
+        "נביחה",
+        "גור"
+      ]
+    },
+    {
+      "id": "item_462_כלב_נחייה",
+      "title": "כלב נחייה",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "עזרה",
+        "הליכה",
+        "וטרינר",
+        "טיול"
+      ]
+    },
+    {
+      "id": "item_476_שחמט__כלי_המלך_או_הרץ_",
+      "title": "כלי שחמט",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "מלך",
+        "מלכה",
+        "אסטרטגיה",
+        "מחשבה"
+      ]
+    },
+    {
+      "id": "saint_basil_cathedral",
+      "title": "כנסיית וסילי הקדוש",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "הקרמלין",
+        "מוסקבה",
+        "חורף"
+      ]
+    },
+    {
+      "id": "item_310_זוג_כפפות_אגרוף",
+      "title": "כפפות אגרוף אדומות",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "זירה",
+        "נוקאאוט",
+        "חבטה",
+        "שק"
+      ]
+    },
+    {
+      "id": "item_379_כפתור_בגדים",
+      "title": "כפתור",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חולצה",
+        "בגדים",
+        "תפירה",
+        "תיקון"
+      ]
+    },
+    {
+      "id": "item_318_כרטיס_אדום_וצהוב",
+      "title": "כרטיס אדום וצהוב",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "הרחקה",
+        "עבירה",
+        "אזהרה",
+        "שיפוט"
+      ]
+    },
+    {
+      "id": "item_422_כרטיס_אדום",
+      "title": "כרטיס הרחקה",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "עבירה",
+        "שיפוט",
+        "הפסקה"
+      ]
+    },
+    {
+      "id": "item_437_כרטיס_קולנוע_מנייר",
+      "title": "כרטיס כניסה",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "קולנוע",
+        "סרט",
+        "הופעה",
+        "הצגה"
+      ]
+    },
+    {
+      "id": "item_345_כרטיס_קולנוע_נוסטלגי",
+      "title": "כרטיס קולנוע",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "סרט",
+        "בילוי",
+        "הזמנה",
+        "אולם"
+      ]
+    },
+    {
+      "id": "item_253_כריש_לבן",
+      "title": "כריש",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אוקיינוס",
+        "סכנה",
+        "שיניים",
+        "סנפיר"
+      ]
+    },
+    {
+      "id": "item_217_כרכרת_סוסים_מלכותית",
+      "title": "כרכרת סוסים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מלוכה",
+        "ארמון",
+        "נשף",
+        "אגדה"
+      ]
+    },
+    {
+      "id": "item_433_כתר_זהב",
+      "title": "כתר מלוכה",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "מלך",
+        "מלכה",
+        "זהב",
+        "ארמון"
+      ]
+    },
+    {
+      "id": "item_180_כתר_זהב_עם_יהלומים__מסמל",
+      "title": "כתר מלוכה עם יהלומים",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "כתר",
+        "מלך",
+        "מלכה",
+        "מלוכה"
+      ]
+    },
+    {
+      "id": "item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל",
+      "title": "לב שבור",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "לב",
+        "שבור",
+        "פרידה",
+        "כאב"
+      ]
+    },
+    {
+      "id": "item_414_לגו",
+      "title": "לגו",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "קוביות",
+        "הרכבה",
+        "משחק",
+        "בנייה"
+      ]
+    },
+    {
+      "id": "item_408_הלוגו_של_נייק__swoosh_",
+      "title": "לוגו סווש נייקי",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "סניקרס",
+        "מותג",
+        "אימון",
+        "ריצה"
+      ]
+    },
+    {
+      "id": "item_273_לווייתן_קטלן",
+      "title": "לווייתן",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אוקיינוס",
+        "אורקה",
+        "ענק",
+        "צלילה"
+      ]
+    },
+    {
+      "id": "item_316_חץ_ולוח_מטרה",
+      "title": "לוח מטרה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "יעד",
+        "דיוק",
+        "קליעה",
+        "הצלחה"
+      ]
+    },
+    {
+      "id": "native_dreamcatcher",
+      "title": "לוכד חלומות",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "שינה",
+        "נוצות",
+        "רוגע",
+        "מנוחה"
+      ]
+    },
+    {
+      "id": "item_426_חבל_תלייה",
+      "title": "לולאת חבל",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "לולאה",
+        "קשר",
+        "קשירה",
+        "מערבון"
+      ]
+    },
+    {
+      "id": "handshake_deal",
+      "title": "לחיצת ידיים",
+      "category": "🤝 10. אינטראקציות חברתיות ומפגשים",
+      "branches": [
+        "הסכם",
+        "חוזה",
+        "פגישה",
+        "עסקים"
+      ]
+    },
+    {
+      "id": "item_201_לימוזינה_שחורה_ארוכה",
+      "title": "לימוזינה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "חתונה",
+        "אירוע",
+        "יוקרה",
+        "נשף"
+      ]
+    },
+    {
+      "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
+      "title": "מאזני משפט",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "שופט",
+        "צדק",
+        "דין",
+        "חוק"
+      ]
+    },
+    {
+      "id": "item_487_מבחנה_עם_נוזל_מבעבע",
+      "title": "מבחנות מעבדה",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "מדע",
+        "ניסוי",
+        "בדיקה",
+        "כימיה"
+      ]
+    },
+    {
+      "id": "item_352_מברג_פיליפס",
+      "title": "מברג",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בורג",
+        "תיקון",
+        "הרכבה",
+        "רהיטים"
+      ]
+    },
+    {
+      "id": "item_368_מברשת_שיניים_ומשחה",
+      "title": "מברשת שיניים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "צחצוח",
+        "בוקר",
+        "רופא",
+        "ניקיון"
+      ]
+    },
+    {
+      "id": "eiffel_tower",
+      "title": "מגדל אייפל",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "פריז",
+        "צרפת",
+        "חופשה",
+        "טיסה"
+      ]
+    },
+    {
+      "id": "item_446_מגדל_פיזה_הנוטה",
+      "title": "מגדל פיזה",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "איטליה",
+        "שיפוע",
+        "תיירות",
+        "חופשה"
+      ]
+    },
+    {
+      "id": "leaning_tower_pisa",
+      "title": "מגדל פיזה הנוטה",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "מגדל",
+        "פיזה",
+        "נטייה",
+        "תיקון"
+      ]
+    },
+    {
+      "id": "coastal_lighthouse",
+      "title": "מגדלור",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "חוף",
+        "ים",
+        "אור"
+      ]
+    },
+    {
+      "id": "item_153_פצצה_שחורה_עגולה_עם_פתיל_בוער__מסמלת",
+      "title": "מגדלור בים סוער",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אלומה",
+        "ספינה",
+        "חוף",
+        "ניווט"
+      ]
+    },
+    {
+      "id": "azrieli_towers",
+      "title": "מגדלי עזריאלי",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "עזריאלי",
+        "קניון",
+        "קניות",
+        "מגדל"
+      ]
+    },
+    {
+      "id": "item_376_מגהץ_אדים",
+      "title": "מגהץ",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גיהוץ",
+        "חולצה",
+        "כביסה",
+        "בגדים"
+      ]
+    },
+    {
+      "id": "item_313_סנובורד___מגלשי_סקי",
+      "title": "מגלשי סקי",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "שלג",
+        "חופשה",
+        "חורף",
+        "הרים"
+      ]
+    },
+    {
+      "id": "item_349_מגלשת_מים_ענקית",
+      "title": "מגלשת מים",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "בריכה",
+        "פארק",
+        "קיץ",
+        "חופשה"
+      ]
+    },
+    {
+      "id": "star_of_david",
+      "title": "מגן דוד",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "ישראל",
+        "יהדות",
+        "תפילה",
+        "סמל"
+      ]
+    },
+    {
+      "id": "item_483_מגן_דוד",
+      "title": "מגן דוד כחול",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "ישראל",
+        "סמל",
+        "יהדות",
+        "דגל"
+      ]
+    },
+    {
+      "id": "item_392_מגרפה_לגינה",
+      "title": "מגרפה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גינה",
+        "עלים",
+        "ניקיון",
+        "חצר"
+      ]
+    },
+    {
+      "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
+      "title": "מד חום כספית",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מדחום",
+        "חום",
+        "טמפרטורה",
+        "רופא"
+      ]
+    },
+    {
+      "id": "item_288_מדבר_חול",
+      "title": "מדבר",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חול",
+        "שמש",
+        "חום",
+        "גמל"
+      ]
+    },
+    {
+      "id": "item_338_מדורה_עם_שיפודי_מרשמלו",
+      "title": "מדורה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "קומזיץ",
+        "אש",
+        "קמפינג",
+        "מרשמלו"
+      ]
+    },
+    {
+      "id": "item_470_מדליית_זהב",
+      "title": "מדליית זהב אולימפית",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "ניצחון",
+        "גביע",
+        "פודיום",
+        "הישג"
+      ]
+    },
+    {
+      "id": "item_202_מונית_צהובה_ניו_יורקית",
+      "title": "מונית צהובה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "נסיעה",
+        "תנועה",
+        "פקק",
+        "תיירות"
+      ]
+    },
+    {
+      "id": "item_417_מזוודת_כסף",
+      "title": "מזוודת כסף",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "מזומן",
+        "בנק",
+        "דולרים",
+        "עסקה"
+      ]
+    },
+    {
+      "id": "item_195_מזוודת_עור_חומה_מרובעת_עם_מדבקות__מסמלת",
+      "title": "מזוודת עור וינטג'",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "טיסה",
+        "נסיעה",
+        "חופשה",
+        "אריזה"
+      ]
+    },
+    {
+      "id": "item_432_מזרק_רפואי",
+      "title": "מזרק",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "חיסון",
+        "תרופה",
+        "זריקה",
+        "רופא"
+      ]
+    },
+    {
+      "id": "item_308_מחבט_בייסבול",
+      "title": "מחבט בייסבול",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "חבטה",
+        "עץ",
+        "בסיס",
+        "הגשה"
+      ]
+    },
+    {
+      "id": "item_304_מחבט_טניס",
+      "title": "מחבט טניס",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "גידים",
+        "הנפה",
+        "רשת",
+        "משחק"
+      ]
+    },
+    {
+      "id": "item_382_פנקס_רשימות_ספירלה",
+      "title": "מחברת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "רשימה",
+        "כתיבה",
+        "קניות",
+        "לימודים"
+      ]
+    },
+    {
+      "id": "item_385_מחדד_מתכת_קטן",
+      "title": "מחדד",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חידוד",
+        "עפרונות",
+        "שבבים",
+        "קלמר"
+      ]
+    },
+    {
+      "id": "item_378_מחט_וחוט",
+      "title": "מחט וחוט",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תפירה",
+        "תיקון",
+        "בגדים",
+        "כפתור"
+      ]
+    },
+    {
+      "id": "item_358_מטאטא_ומגרוד",
+      "title": "מטאטא ויעה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ניקיון",
+        "רצפה",
+        "בית",
+        "אבק"
+      ]
+    },
+    {
+      "id": "item_196_מטאטא_זרדים_ישן__מסמל",
+      "title": "מטאטא זרדים",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מטאטא",
+        "מכשפה",
+        "אגדות",
+        "טאטוא"
+      ]
+    },
+    {
+      "id": "item_208_מטוס_ג_מבו",
+      "title": "מטוס ג'מבו",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "טיסה",
+        "חו\"ל",
+        "שמיים",
+        "נמל"
+      ]
+    },
+    {
+      "id": "item_179_מטוס_נייר_מקופל__מסמל",
+      "title": "מטוס נייר מקופל",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מכתב",
+        "הודעה",
+        "מסר"
+      ]
+    },
+    {
+      "id": "item_381_סרט_מדידה_צהוב",
+      "title": "מטר מדידה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שיפוץ",
+        "רהיטים",
+        "דירה",
+        "אורך"
+      ]
+    },
+    {
+      "id": "item_355_מטרייה_שחורה_פתוחה",
+      "title": "מטרייה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גשם",
+        "חורף",
+        "טיפות",
+        "סערה"
+      ]
+    },
+    {
+      "id": "item_468_מייקל_ג_ורדן__צללית_ה_jumpman_",
+      "title": "מייקל ג'ורדן ג'מפמן",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "כדור",
+        "אדום",
+        "אימון",
+        "סל"
+      ]
+    },
+    {
+      "id": "mickey_mouse",
+      "title": "מיקי מאוס",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "דיסני",
+        "ילדים",
+        "סרט",
+        "פארק"
+      ]
+    },
+    {
+      "id": "item_242_מכונית_חיפושית",
+      "title": "מכונית חיפושית",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "פולקסווגן",
+        "מוסך",
+        "אספנות",
+        "רטרו"
+      ]
+    },
+    {
+      "id": "item_249_רכב_גופה",
+      "title": "מכונית לוויות",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "לוויה",
+        "אבל",
+        "שחור",
+        "פרידה"
+      ]
+    },
+    {
+      "id": "item_224_מכונית_מרוץ_פורמולה_1",
+      "title": "מכונית מרוץ",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מהירות",
+        "מסלול",
+        "נהיגה",
+        "אליפות"
+      ]
+    },
+    {
+      "id": "item_245_רכב_פורד_מודל_t",
+      "title": "מכונית עתיקה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "היסטוריה",
+        "מוזיאון",
+        "אספנות",
+        "מוסך"
+      ]
+    },
+    {
+      "id": "item_346_מכונת_ארקייד",
+      "title": "מכונת ארקייד",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "משחקים",
+        "גיימינג",
+        "מחשב",
+        "בילוי"
+      ]
+    },
+    {
+      "id": "item_323_מכונת_מזל",
+      "title": "מכונת מזל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "קזינו",
+        "הימורים",
+        "כסף",
+        "זכייה"
+      ]
+    },
+    {
+      "id": "item_377_מכונת_תפירה_ישנה",
+      "title": "מכונת תפירה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בגדים",
+        "תיקון",
+        "בד",
+        "חוט"
+      ]
+    },
+    {
+      "id": "item_477_מלאך",
+      "title": "מלאך",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "כנפיים",
+        "שמיים",
+        "לבן",
+        "טוב"
+      ]
+    },
+    {
+      "id": "item_485_מלאך_המוות__grim_reaper_",
+      "title": "מלאך המוות",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "חרמש",
+        "גלימה",
+        "סכנה",
+        "פחד"
+      ]
+    },
+    {
+      "id": "item_185_מלאך_שטן_קטן_על_הכתף__עם_קלשון___מסמל",
+      "title": "מלאך ושטן על הכתף",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מצפון",
+        "התלבטות",
+        "דילמה",
+        "מוסר"
+      ]
+    },
+    {
+      "id": "item_234_מנוף_בנייה_ענק",
+      "title": "מנוף בנייה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מגדל",
+        "נדל\"ן",
+        "שיפוץ",
+        "גובה"
+      ]
+    },
+    {
+      "id": "golden_menorah_seven",
+      "title": "מנורת שבעת הקנים",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "מנורה",
+        "חנוכה",
+        "זהב",
+        "אור"
+      ]
+    },
+    {
+      "id": "japanese_folding_fan",
+      "title": "מניפת משי מסורתית",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "מניפה",
+        "אוורור",
+        "רוח"
+      ]
+    },
+    {
+      "id": "item_172_מנעול_סגור__ומפתח_בצד___מסמל",
+      "title": "מנעול ומפתח",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "נעילה",
+        "אבטחה",
+        "כספת",
+        "סיסמה"
+      ]
+    },
+    {
+      "id": "item_226_הליקופטר_צבאי",
+      "title": "מסוק קרב",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "טייס",
+        "צבא",
+        "טיסה",
+        "שמיים"
+      ]
+    },
+    {
+      "id": "item_357_מסור_ידני",
+      "title": "מסור",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "עץ",
+        "נגרות",
+        "חיתוך",
+        "שיפוץ"
+      ]
+    },
+    {
+      "id": "item_340_מסיכת_צלילה_ושנורקל",
+      "title": "מסכת צלילה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "שנורקל",
+        "ים",
+        "אילת",
+        "חופשה"
+      ]
+    },
+    {
+      "id": "item_353_מספריים",
+      "title": "מספריים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גזירה",
+        "נייר",
+        "תספורת",
+        "יצירה"
+      ]
+    },
+    {
+      "id": "item_371_מסרק_שיער_קלאסי",
+      "title": "מסרק",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שיער",
+        "תספורת",
+        "מספרה",
+        "בוקר"
+      ]
+    },
+    {
+      "id": "item_207_מעבורת_חלל",
+      "title": "מעבורת חלל",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "שיגור",
+        "אסטרונאוט",
+        "טיל",
+        "לוויין"
+      ]
+    },
+    {
+      "id": "item_283_מפלי_ניאגרה",
+      "title": "מפלי מים",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "זרימה",
+        "טבע",
+        "טיול",
+        "נהר"
+      ]
+    },
+    {
+      "id": "item_419_מפתח_שוודי___מפתח_ברגים",
+      "title": "מפתח ברגים",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "אינסטלטור",
+        "תיקון",
+        "מוסך",
+        "צנרת"
+      ]
+    },
+    {
+      "id": "item_156_מפתח_מכני_גדול__מסמל",
+      "title": "מפתח מכני גדול",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מוסך",
+        "תיקון",
+        "בורג",
+        "כלים"
+      ]
+    },
+    {
+      "id": "item_356_מפתח_שוודי",
+      "title": "מפתח שוודי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אינסטלטור",
+        "תיקון",
+        "צנרת",
+        "ברז"
+      ]
+    },
+    {
+      "id": "item_367_מצית_זיפו",
+      "title": "מצית",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אש",
+        "להבה",
+        "הדלקה",
+        "גז"
+      ]
+    },
+    {
+      "id": "item_350_מצנח_פתוח_בשמיים",
+      "title": "מצנח",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "צניחה",
+        "שמיים",
+        "מטוס",
+        "אקסטרים"
+      ]
+    },
+    {
+      "id": "item_339_מצנח_רחיפה",
+      "title": "מצנח רחיפה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "תעופה",
+        "שמיים",
+        "אקסטרים",
+        "רוח"
+      ]
+    },
+    {
+      "id": "item_372_מראת_יד_עגולה",
+      "title": "מראה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "איפור",
+        "טיפוח",
+        "פנים",
+        "אמבטיה"
+      ]
+    },
+    {
+      "id": "item_410_מרלין_מונרו",
+      "title": "מרילין מונרו",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "קולנוע",
+        "שחקנית",
+        "שמלה",
+        "אופנה"
+      ]
+    },
+    {
+      "id": "item_393_מריצה",
+      "title": "מריצה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גינה",
+        "בנייה",
+        "הובלה",
+        "אדמה"
+      ]
+    },
+    {
+      "id": "item_334_פודטראק",
+      "title": "משאית אוכל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מסעדה",
+        "המבורגר",
+        "צ'יפס",
+        "רחוב"
+      ]
+    },
+    {
+      "id": "item_247_משאית_סמי_טריילר_אמריקאית",
+      "title": "משאית הובלה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מובילים",
+        "ארגזים",
+        "דירה",
+        "שינוע"
+      ]
+    },
+    {
+      "id": "item_221_משאית_זבל",
+      "title": "משאית זבל",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "ניקיון",
+        "אשפה",
+        "מחזור",
+        "פח"
+      ]
+    },
+    {
+      "id": "item_415_הסימפסונים",
+      "title": "משפחת סימפסון",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "טלוויזיה",
+        "סדרה",
+        "צהוב",
+        "אנימציה"
+      ]
+    },
+    {
+      "id": "item_395_מזלף_מים_לפרחים",
+      "title": "משפך השקיה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גינה",
+        "צמחים",
+        "מים",
+        "עציצים"
+      ]
+    },
+    {
+      "id": "item_315_משקולת_ברזל_קלאסית",
+      "title": "משקולת",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "כושר",
+        "שרירים",
+        "אימון",
+        "ברזל"
+      ]
+    },
+    {
+      "id": "item_423_משקולת_ברזל__dumbbell_",
+      "title": "משקולת יד",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "כושר",
+        "אימון",
+        "משקל",
+        "שרירים"
+      ]
+    },
+    {
+      "id": "item_373_משקפי_קריאה",
+      "title": "משקפי קריאה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ראייה",
+        "ספר",
+        "לימודים",
+        "עיניים"
+      ]
+    },
+    {
+      "id": "nerd_geek_glasses",
+      "title": "משקפי ראייה",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": []
+    },
+    {
+      "id": "item_336_משקפת_שדה",
+      "title": "משקפת שדה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "תצפית",
+        "טיול",
+        "טבע",
+        "נוף"
+      ]
+    },
+    {
+      "id": "item_331_משקפת_שחייה_ומצוף_זרוע",
+      "title": "משקפת שחייה ומצוף",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "בריכה",
+        "כלור",
+        "צלילה",
+        "מים"
+      ]
+    },
+    {
+      "id": "item_317_משרוקית_שופט",
+      "title": "משרוקית שיפוט",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "שופט",
+        "ספורט",
+        "אימון",
+        "סימן"
+      ]
+    },
+    {
+      "id": "item_198_נוצה_טבולה_בקסת_דיו__מסמלת",
+      "title": "נוצה וקסת דיו",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מכתב",
+        "כתיבה",
+        "מגילה",
+        "הודעה"
+      ]
+    },
+    {
+      "id": "item_309_כדור_נוצה",
+      "title": "נוצת בדמינטון",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מעופף",
+        "נוצות",
+        "רשת",
+        "חבטה"
+      ]
+    },
+    {
+      "id": "item_151_נורה_דולקת__מסמלת",
+      "title": "נורת חשמל",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אור",
+        "רעיון",
+        "תאורה",
+        "המצאה"
+      ]
+    },
+    {
+      "id": "item_287_צונאמי",
+      "title": "נחשול מים",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "גל",
+        "אוקיינוס",
+        "סערה",
+        "חוף"
+      ]
+    },
+    {
+      "id": "item_214_ניידת_משטרה_קלאסית",
+      "title": "ניידת משטרה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "שוטר",
+        "סירנה",
+        "דוח",
+        "חוק"
+      ]
+    },
+    {
+      "id": "item_370_נייר_טואלט",
+      "title": "נייר טואלט",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שירותים",
+        "קניות",
+        "סופרמרקט",
+        "ניקיון"
+      ]
+    },
+    {
+      "id": "item_320_נעלי_פקקים",
+      "title": "נעלי פקקים למגרש",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "דשא",
+        "מסירה",
+        "ריצה",
+        "שרוכים"
+      ]
+    },
+    {
+      "id": "item_190_סיכת_נעץ_משרדית__אדומה___מסמלת",
+      "title": "נעץ משרדי אדום",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "נעץ",
+        "משרד",
+        "פתק",
+        "תזכורת"
+      ]
+    },
+    {
+      "id": "item_364_נר_דולק_נוטף_שעווה",
+      "title": "נר דולק בשעווה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "להבה",
+        "שעווה",
+        "חושך",
+        "אור"
+      ]
+    },
+    {
+      "id": "item_269_נשר_דואה",
+      "title": "נשר",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "מעוף",
+        "שמיים",
+        "גובה",
+        "גולן"
+      ]
+    },
+    {
+      "id": "item_369_סבון_מוצק_בתוך_קצף",
+      "title": "סבון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מקלחת",
+        "ניקיון",
+        "קצף",
+        "אמבטיה"
+      ]
+    },
+    {
+      "id": "item_236_רכב_סגוויי",
+      "title": "סגוויי",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "סיור",
+        "טיילת",
+        "תיירות",
+        "גלגלים"
+      ]
+    },
+    {
+      "id": "item_482_סהר_וכוכב",
+      "title": "סהר וכוכב",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "ירח",
+        "לילה",
+        "אסלאם",
+        "מסגד"
+      ]
+    },
+    {
+      "id": "item_359_סולם_מתקפל",
+      "title": "סולם",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גובה",
+        "צביעה",
+        "שיפוץ",
+        "נורה"
+      ]
+    },
+    {
+      "id": "sonic_the_hedgehog",
+      "title": "סוניק הקיפוד",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": []
+    },
+    {
+      "id": "item_266_סוס_דוהרת_ברוח",
+      "title": "סוס",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "רכיבה",
+        "חווה",
+        "דהירה",
+        "אורווה"
+      ]
+    },
+    {
+      "id": "superman",
+      "title": "סופרמן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "כוח",
+        "תעופה",
+        "גיבור",
+        "הצלה"
+      ]
+    },
+    {
+      "id": "item_453_ברק_בשמיים",
+      "title": "סופת ברקים",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "רעם",
+        "חשמל",
+        "סערה",
+        "גשם"
+      ]
+    },
+    {
+      "id": "item_286_סופת_טורנדו",
+      "title": "סופת טורנדו",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "קנזס"
+      ]
+    },
+    {
+      "id": "item_420_סטטוסקופ",
+      "title": "סטטוסקופ",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "רופא",
+        "בדיקה",
+        "מרפאה",
+        "לב"
+      ]
+    },
+    {
+      "id": "item_354_סיכת_ביטחון",
+      "title": "סיכת ביטחון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תפירה",
+        "בגדים",
+        "תיקון",
+        "חיתול"
+      ]
+    },
+    {
+      "id": "item_430_סיכת_ביטחון",
+      "title": "סיכת תפירה",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "בגדים",
+        "תיקון",
+        "בד",
+        "חיתול"
+      ]
+    },
+    {
+      "id": "item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל",
+      "title": "סימן קריאה באזהרה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אזהרה",
+        "זהירות",
+        "סכנה",
+        "דחוף"
+      ]
+    },
+    {
+      "id": "item_176_סימן_שאלה_ענק__מעל_ראש_קטן___מסמל",
+      "title": "סימן שאלה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "שאלה",
+        "ספק",
+        "בירור"
+      ]
+    },
+    {
+      "id": "cinderella",
+      "title": "סינדרלה",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "נעל",
+        "שמלה",
+        "מסיבה",
+        "ארמון"
+      ]
+    },
+    {
+      "id": "item_360_מזלג__סכין_וכף",
+      "title": "סכו\"ם",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אוכל",
+        "ארוחה",
+        "שולחן",
+        "מטבח"
+      ]
+    },
+    {
+      "id": "item_389_סל_כביסה_פלסטיק",
+      "title": "סל כביסה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בגדים",
+        "ניקיון",
+        "מכונה",
+        "קיפול"
+      ]
+    },
+    {
+      "id": "item_397_סרט_הדבקה",
+      "title": "סלוטייפ",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "הדבקה",
+        "אריזה",
+        "קרטון",
+        "חבילה"
+      ]
+    },
+    {
+      "id": "item_479_מטה_הרפואה__נחש_כרוך_סביב_מוט_",
+      "title": "סמל הרפואה",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "נחש",
+        "מוט",
+        "רופא",
+        "מרפא"
+      ]
+    },
+    {
+      "id": "item_496_סמל_המיחזור__שלושה_חצים_ירוקים_בלולאה_",
+      "title": "סמל מיחזור",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "סביבה",
+        "טבע",
+        "בקבוקים",
+        "פח"
+      ]
+    },
+    {
+      "id": "item_495_איש_קו_על_כיסא_גלגלים",
+      "title": "סמל נגישות",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "נכות",
+        "רמפה",
+        "סיוע",
+        "חניה"
+      ]
+    },
+    {
+      "id": "item_493_גולגולת_ושתי_עצמות_מוצלבות",
+      "title": "סמל סכנה",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "גולגולת",
+        "רעל",
+        "אזהרה",
+        "פיראטים"
+      ]
+    },
+    {
+      "id": "item_488_סמל_הקרינה_הרדיואקטיבית__שלוש_מניפות_שחורות_על_רקע_צהוב_",
+      "title": "סמל קרינה",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "סכנה",
+        "אזהרה",
+        "גרעין",
+        "צהוב"
+      ]
+    },
+    {
+      "id": "spider_man",
+      "title": "ספיידרמן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "עכביש",
+        "רשת",
+        "טיפוס",
+        "גיבור"
+      ]
+    },
+    {
+      "id": "item_206_ספינת_פיראטים",
+      "title": "ספינת פיראטים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "שודדים",
+        "מפרש",
+        "תותח",
+        "אוצר"
+      ]
+    },
+    {
+      "id": "item_199_ספר_עבה_פתוח_עם_דפים_מצהיבים__מסמל",
+      "title": "ספר פתוח",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "קריאה",
+        "לימודים",
+        "אקדמיה",
+        "דפים"
+      ]
+    },
+    {
+      "id": "scooby_doo",
+      "title": "סקובי דו",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "וטרינר",
+        "כלב",
+        "חיסון",
+        "חטיף"
+      ]
+    },
+    {
+      "id": "item_228_סקייטבורד",
+      "title": "סקייטבורד רחוב",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "גלגלים",
+        "מעקה",
+        "קפיצה",
+        "רמפה"
+      ]
+    },
+    {
+      "id": "scrooge_mcduck",
+      "title": "סקרודג' מקדאק",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "בנק",
+        "השקעות",
+        "חיסכון",
+        "כספומט"
+      ]
+    },
+    {
+      "id": "item_293_סרטן",
+      "title": "סרטן",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חוף",
+        "צבתות",
+        "חול",
+        "ים"
+      ]
+    },
+    {
+      "id": "item_191_עגלת_קניות_מסורתית__מסמלת",
+      "title": "עגלת קניות",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "סופר",
+        "סופרמרקט",
+        "קניות",
+        "מצרכים"
+      ]
+    },
+    {
+      "id": "item_421_עגלת_קניות",
+      "title": "עגלת קניות",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "סופרמרקט",
+        "מכולת",
+        "אוכל",
+        "קופה"
+      ]
+    },
+    {
+      "id": "item_250_עגלת_תינוק_קלאסית",
+      "title": "עגלת תינוק",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "חיתולים",
+        "מוצץ",
+        "בקבוק",
+        "הורות"
+      ]
+    },
+    {
+      "id": "farm_goat",
+      "title": "עז הרים עם קרניים",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "גבינה",
+        "זקן",
+        "צוקים",
+        "עקשנות"
+      ]
+    },
+    {
+      "id": "item_400_מזוודת_עזרה_ראשונה_לבנה",
+      "title": "עזרה ראשונה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "רופא",
+        "תרופות",
+        "פלסטר",
+        "פציעה"
+      ]
+    },
+    {
+      "id": "item_383_עט_כדורי_פשוט",
+      "title": "עט כדורי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "כתיבה",
+        "חתימה",
+        "משרד",
+        "מסמכים"
+      ]
+    },
+    {
+      "id": "item_461_נשר",
+      "title": "עיט מעופף",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "ציפור",
+        "שמיים",
+        "מעוף",
+        "כנפיים"
+      ]
+    },
+    {
+      "id": "item_384_עיפרון_צהוב_עם_מחק_אדום",
+      "title": "עיפרון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "כתיבה",
+        "ציור",
+        "מחק",
+        "רישום"
+      ]
+    },
+    {
+      "id": "item_280_עלה_מייפל",
+      "title": "עלה שלכת",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "סתיו",
+        "קנדה",
+        "סירופ",
+        "פנקייק"
+      ]
+    },
+    {
+      "id": "item_181_עניבת_פרפר_שחורה__פפיון___מסמלת",
+      "title": "עניבת פרפר (פפיון)",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אירוע",
+        "חליפה",
+        "אלגנטי",
+        "חתונה"
+      ]
+    },
+    {
+      "id": "item_277_עץ_אלון_עתיק_בשלכת",
+      "title": "עץ אלון",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "יער",
+        "שורשים",
+        "צל",
+        "טבע"
+      ]
+    },
+    {
+      "id": "item_466_עץ_שלכת_עירום",
+      "title": "עץ בחורף",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "ענפים",
+        "קור",
+        "סתיו",
+        "שלכת"
+      ]
+    },
+    {
+      "id": "item_252_עץ_דקל_על_אי_בודד",
+      "title": "עץ דקל",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חופשה",
+        "חוף",
+        "קוקוס",
+        "טרופי"
+      ]
+    },
+    {
+      "id": "item_394_עציץ_חרס_חום",
+      "title": "עציץ",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "צמחים",
+        "השקיה",
+        "גינה",
+        "מרפסת"
+      ]
+    },
+    {
+      "id": "item_187_עקבות_רגליים_בחול__מסמלות",
+      "title": "עקבות בחול הים",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "חול",
+        "צעדים",
+        "חוף",
+        "הליכה"
+      ]
+    },
+    {
+      "id": "item_297_עקרב",
+      "title": "עקרב",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "עוקץ",
+        "מדבר",
+        "ארס",
+        "סכנה"
+      ]
+    },
+    {
+      "id": "item_457_עקרב",
+      "title": "עקרב",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "מדבר",
+        "עוקץ",
+        "ארס",
+        "סכנה"
+      ]
+    },
+    {
+      "id": "item_337_ערסל_קשור_בין_שני_עצים",
+      "title": "ערסל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מנוחה",
+        "שינה",
+        "חופשה",
+        "גינה"
+      ]
+    },
+    {
+      "id": "item_328_חתיכת_פאזל_קלאסית",
+      "title": "פאזל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "הרכבה",
+        "משחק",
+        "פתרון",
+        "חיבור"
+      ]
+    },
+    {
+      "id": "item_189_פאזל__חתיכה_אחת_חסרה___מסמלת",
+      "title": "פאזל עם חתיכה חסרה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "פתרון",
+        "הרכבה",
+        "משחק",
+        "חשיבה"
+      ]
+    },
+    {
+      "id": "pac_man",
+      "title": "פאקמן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "פאקמן",
+        "ארקייד",
+        "נקודות",
+        "רטרו"
+      ]
+    },
+    {
+      "id": "item_404_פאקמן",
+      "title": "פאקמן",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "משחק",
+        "מחשב",
+        "ארקייד",
+        "אוכל"
+      ]
+    },
+    {
+      "id": "chinese_pagoda",
+      "title": "פגודה אסייתית מסורתית",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "סין"
+      ]
+    },
+    {
+      "id": "winnie_the_pooh",
+      "title": "פו הדב",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "דב",
+        "דבש",
+        "יער",
+        "חברים"
+      ]
+    },
+    {
+      "id": "popeye",
+      "title": "פופאי",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "אימון",
+        "ירקות",
+        "שרירים",
+        "חלבון"
+      ]
+    },
+    {
+      "id": "item_344_דוכן_פופקורן_קולנוע",
+      "title": "פופקורן",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "קולנוע",
+        "סרט",
+        "חטיף",
+        "תירס"
+      ]
+    },
+    {
+      "id": "item_472_מכונית_פורמולה_1",
+      "title": "פורמולה 1",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "מרוץ",
+        "מהירות",
+        "נהיגה",
+        "מסלול"
+      ]
+    },
+    {
+      "id": "item_361_פותחן_קופסאות_שימורים",
+      "title": "פותחן שימורים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מטבח",
+        "בישול",
+        "טונה",
+        "קופסה"
+      ]
+    },
+    {
+      "id": "item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל",
+      "title": "פח אשפה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אשפה",
+        "ניקיון",
+        "זבל",
+        "גרוע"
+      ]
+    },
+    {
+      "id": "item_351_פטיש_מסמרים_קלאסי",
+      "title": "פטיש",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מסמר",
+        "שיפוץ",
+        "תיקון",
+        "בנייה"
+      ]
+    },
+    {
+      "id": "item_451_הפטיש_והמגל",
+      "title": "פטיש ומגל",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "רוסיה",
+        "היסטוריה",
+        "עבודה",
+        "חקלאות"
+      ]
+    },
+    {
+      "id": "item_416_פטיש_שופטים",
+      "title": "פטיש שופטים",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "פסק-דין",
+        "הרשעה",
+        "דיון",
+        "בית-משפט"
+      ]
+    },
+    {
+      "id": "item_258_פטריית_זבובנית",
+      "title": "פטרייה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "יער",
+        "גשם",
+        "חורף",
+        "רעל"
+      ]
+    },
+    {
+      "id": "peter_pan",
+      "title": "פיטר פן",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "טיסה",
+        "כרטיס",
+        "חופשה",
+        "נוער"
+      ]
+    },
+    {
+      "id": "item_256_פיל_אפריקאי",
+      "title": "פיל",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חדק",
+        "זיכרון",
+        "אפריקה",
+        "ספארי"
+      ]
+    },
+    {
+      "id": "item_263_פינגווין_קיסרי",
+      "title": "פינגווין",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "קור",
+        "קרח",
+        "אנטארקטיקה",
+        "שלג"
+      ]
+    },
+    {
+      "id": "pinocchio",
+      "title": "פינוקיו",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "נגר",
+        "עץ",
+        "שולחן",
+        "תיקון"
+      ]
+    },
+    {
+      "id": "item_474_כדור_באולינג_מפיל_פינים",
+      "title": "פינים בבאולינג",
+      "category": "⚽ ספורט, משחקים ואישים",
+      "branches": [
+        "סטרייק",
+        "משחק",
+        "מסלול",
+        "כדור"
+      ]
+    },
+    {
+      "id": "pikachu",
+      "title": "פיקאצ'ו",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "פוקימון",
+        "חשמל",
+        "צהוב",
+        "משחק"
+      ]
+    },
+    {
+      "id": "chichen_itza_pyramid",
+      "title": "פירמידת המאיה בצ'יצ'ן איצה",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "מקדש",
+        "פירמידה",
+        "מדרגות",
+        "כושר"
+      ]
+    },
+    {
+      "id": "item_254_דוב_פנדה",
+      "title": "פנדה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "במבוק",
+        "סין",
+        "דב",
+        "כתמים"
+      ]
+    },
+    {
+      "id": "item_365_פנס_כיס_דולק",
+      "title": "פנס",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אור",
+        "חושך",
+        "לילה",
+        "סוללות"
+      ]
+    },
+    {
+      "id": "item_484_בודהה_מחייך",
+      "title": "פסל בודהה",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "מדיטציה",
+        "שלווה",
+        "רוגע",
+        "מזרח"
+      ]
+    },
+    {
+      "id": "item_442_פסל_דוד__מיכלאנג_לו_",
+      "title": "פסל דוד",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "אמנות",
+        "מוזיאון",
+        "שיש",
+        "איטליה"
+      ]
+    },
+    {
+      "id": "item_447_פסל_ישו_הגואל_בריו",
+      "title": "פסל הגואל",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "ריו",
+        "ברזיל",
+        "הר",
+        "גאולה"
+      ]
+    },
+    {
+      "id": "christ_the_redeemer",
+      "title": "פסל הגואל בריו",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "פסל",
+        "ברזיל",
+        "ריו"
+      ]
+    },
+    {
+      "id": "item_441_פסל_החושב__רודן_",
+      "title": "פסל החושב",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "מחשבה",
+        "פילוסופיה",
+        "מוח",
+        "אמנות"
+      ]
+    },
+    {
+      "id": "statue_of_liberty",
+      "title": "פסל החירות",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "לפיד",
+        "אמריקה",
+        "נמל",
+        "כתר"
+      ]
+    },
+    {
+      "id": "item_480_פרש_הברונזה___אביר_על_סוס_לבן",
+      "title": "פסל פרש",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "סוס",
+        "אביר",
+        "היסטוריה",
+        "עיר"
+      ]
+    },
+    {
+      "id": "moai_easter_island",
+      "title": "פסלי מואי באי הפסחא",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "פסל",
+        "טיקי",
+        "אבן"
+      ]
+    },
+    {
+      "id": "classic_cartoon_bomb",
+      "title": "פצצה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "דדליין",
+        "דחוף",
+        "חירום",
+        "אזהרה"
+      ]
+    },
+    {
+      "id": "farm_cow",
+      "title": "פרה הולנדית",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "חלב",
+        "שוקו",
+        "רפת",
+        "גבינה"
+      ]
+    },
+    {
+      "id": "golden_mask_tutankhamun",
+      "title": "פרעה",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "זהב",
+        "מצרים",
+        "פסח"
+      ]
+    },
+    {
+      "id": "item_299_פרפר_מונרך",
+      "title": "פרפר",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אביב",
+        "פרחים",
+        "גינה",
+        "כנפיים"
+      ]
+    },
+    {
+      "id": "item_274_צב_יבשה_ענק",
+      "title": "צב",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "שריון",
+        "איטיות",
+        "זוחל",
+        "חסה"
+      ]
+    },
+    {
+      "id": "item_212_צוללת_צהובה",
+      "title": "צוללת צהובה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "צלילה",
+        "עומק",
+        "מצולות",
+        "דגים"
+      ]
+    },
+    {
+      "id": "item_399_צידנית_פלסטיק_כחולה",
+      "title": "צידנית",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "פיקניק",
+        "חוף",
+        "קרח",
+        "טיול"
+      ]
+    },
+    {
+      "id": "cave_painting_bison",
+      "title": "ציור מערות",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "היסטוריה",
+        "אמנות",
+        "עתיק",
+        "סלע"
+      ]
+    },
+    {
+      "id": "item_390_צינור_גינה_ירוק_מפותל",
+      "title": "צינור השקיה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גינה",
+        "מים",
+        "שטיפה",
+        "דשא"
+      ]
+    },
+    {
+      "id": "item_481_הצלב_הנוצרי",
+      "title": "צלב",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "כנסייה",
+        "דת",
+        "תפילה",
+        "אמונה"
+      ]
+    },
+    {
+      "id": "item_449_הצלב_האדום",
+      "title": "צלב אדום",
+      "category": "🖼️ אמנות, היסטוריה, מבנים ואדריכלות",
+      "branches": [
+        "רפואה",
+        "חירום",
+        "הצלה",
+        "תרומה"
+      ]
+    },
+    {
+      "id": "item_492_צלחת_לוויין",
+      "title": "צלחת לוויין",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "תקשורת",
+        "שידור",
+        "טלוויזיה",
+        "אנטנה"
+      ]
+    },
+    {
+      "id": "item_342_פריזבי",
+      "title": "צלחת פריזבי",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "תעופה",
+        "חוף",
+        "זריקה",
+        "מסירה"
+      ]
+    },
+    {
+      "id": "item_210_צפלין",
+      "title": "צפלין",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "תעופה",
+        "שמיים",
+        "ריחוף",
+        "בלון"
+      ]
+    },
+    {
+      "id": "item_298_צפרדע_ירוקה",
+      "title": "צפרדע",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "קפיצה",
+        "ביצה",
+        "מים",
+        "נחל"
+      ]
+    },
+    {
+      "id": "item_428_קביים",
+      "title": "קביים",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "רופא",
+        "גבס",
+        "פציעה",
+        "הליכה"
+      ]
+    },
+    {
+      "id": "item_438_קוביית_משחק__עם_נקודות_",
+      "title": "קוביות משחק",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "מזל",
+        "שש-בש",
+        "הטלה",
+        "הימורים"
+      ]
+    },
+    {
+      "id": "item_168_קוביות_משחק__עם_הנקודות_1_6___מסמלות",
+      "title": "קוביות שש-בש",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "הימורים",
+        "מזל",
+        "קזינו",
+        "הטלה"
+      ]
+    },
+    {
+      "id": "item_325_קובייה_הונגרית",
+      "title": "קובייה הונגרית",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "חידה",
+        "מחשבה",
+        "מוח",
+        "משחק"
+      ]
+    },
+    {
+      "id": "item_296_נחש_קוברה",
+      "title": "קוברה",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "נחש",
+        "ארס",
+        "סכנה",
+        "הכשה"
+      ]
+    },
+    {
+      "id": "item_489_קוד_בינארי__מסכים_של_0_ו_1_ירוקים_זורמים_",
+      "title": "קוד מחשב",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "תכנות",
+        "הייטק",
+        "תוכנה",
+        "מסך"
+      ]
+    },
+    {
+      "id": "item_375_קולב_בגדים",
+      "title": "קולב",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בגדים",
+        "ארון",
+        "כביסה",
+        "גיהוץ"
+      ]
+    },
+    {
+      "id": "item_200_קולב_בגדים_ממתכת__מסמל",
+      "title": "קולב מתכת",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מכבסה",
+        "חליפה",
+        "ארון",
+        "תלייה"
+      ]
+    },
+    {
+      "id": "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל",
+      "title": "קופידון מלאך האהבה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אהבה",
+        "רומנטיקה",
+        "מלאך",
+        "זוגיות"
+      ]
+    },
+    {
+      "id": "item_362_פחית_שימורים_חצי_פתוחה",
+      "title": "קופסת שימורים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אוכל",
+        "מזווה",
+        "בישול",
+        "סופרמרקט"
+      ]
+    },
+    {
+      "id": "item_425_קופת_חיסכון_בצורת_חזיר",
+      "title": "קופת חיסכון",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "כסף",
+        "מטבעות",
+        "בנק",
+        "תקציב"
+      ]
+    },
+    {
+      "id": "item_409_הפחיות_של_קוקה_קולה",
+      "title": "קוקה קולה",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "שתייה",
+        "פחית",
+        "סופרמרקט",
+        "קניות"
+      ]
+    },
+    {
+      "id": "item_264_קורי_עכביש",
+      "title": "קורי עכביש",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "ניקיון",
+        "אבק",
+        "פינה",
+        "הדברה"
+      ]
+    },
+    {
+      "id": "item_463_קורי_עכביש",
+      "title": "קורי עכביש",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "רשת",
+        "ניקיון",
+        "אבק",
+        "חרקים"
+      ]
+    },
+    {
+      "id": "item_223_קורקינט_פשוט_לילדים",
+      "title": "קורקינט",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "ילדים",
+        "פארק",
+        "קסדה",
+        "רכיבה"
+      ]
+    },
+    {
+      "id": "item_219_קטנוע_וספה_איטלקי",
+      "title": "קטנוע וספה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "שליחות",
+        "משלוח",
+        "פקקים",
+        "קסדה"
+      ]
+    },
+    {
+      "id": "item_238_קייאק",
+      "title": "קייאק נהרות",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "משוט",
+        "זרם",
+        "חתירה",
+        "אגם"
+      ]
+    },
+    {
+      "id": "item_413_קינג_קונג",
+      "title": "קינג קונג",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "גורילה",
+        "קוף",
+        "ענק",
+        "כוח"
+      ]
+    },
+    {
+      "id": "item_232_רכב_גולף_קטן",
+      "title": "קלאב קאר",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "גולף",
+        "דשא",
+        "מגרש",
+        "מלון"
+      ]
+    },
+    {
+      "id": "item_243_קלנועית",
+      "title": "קלנועית",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "סבא",
+        "סבתא",
+        "קניות",
+        "מכולת"
+      ]
+    },
+    {
+      "id": "item_321_קלפי_משחק",
+      "title": "קלפי משחק",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "פוקר",
+        "קזינו",
+        "מזל",
+        "בילוי"
+      ]
+    },
+    {
+      "id": "item_391_מזלג_גינה",
+      "title": "קלשון גינה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גינון",
+        "אדמה",
+        "שתילה",
+        "חצר"
+      ]
+    },
+    {
+      "id": "hamsa_hand_amulet",
+      "title": "קמע חמסה",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "חמסה",
+        "עין",
+        "5",
+        "חמש"
+      ]
+    },
+    {
+      "id": "item_270_קנגורו",
+      "title": "קנגורו אוסטרלי",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "כיס",
+        "קפיצות",
+        "ערבות"
+      ]
+    },
+    {
+      "id": "item_284_הגרנד_קניון",
+      "title": "קניון סלע",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "טיול",
+        "הרים",
+        "מדבר",
+        "מצוק"
+      ]
+    },
+    {
+      "id": "asian_noodles_bowl",
+      "title": "קערת איטריות",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מרק",
+        "ראמן",
+        "פסטה",
+        "מקלות"
+      ]
+    },
+    {
+      "id": "captain_america",
+      "title": "קפטן אמריקה",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "מגן",
+        "הגנה",
+        "מפקד",
+        "הצדעה"
+      ]
+    },
+    {
+      "id": "item_251_קקטוס_סאגוארו",
+      "title": "קקטוס",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "עציץ",
+        "מדבר",
+        "קוצים",
+        "משתלה"
+      ]
+    },
+    {
+      "id": "item_248_רכב_קמפינג",
+      "title": "קרוואן",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "טיול",
+        "חופשה",
+        "קמפינג",
+        "טבע"
+      ]
+    },
+    {
+      "id": "item_260_קרחון_בלב_ים",
+      "title": "קרחון",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "קור",
+        "קפוא",
+        "אנטארקטיקה",
+        "חורף"
+      ]
+    },
+    {
+      "id": "item_465_קרחון__iceberg_",
+      "title": "קרחון",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "קור",
+        "ים",
+        "שלג",
+        "חורף"
+      ]
+    },
+    {
+      "id": "item_291_קשת_בענן",
+      "title": "קשת בענן",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "צבעים",
+        "גשם",
+        "שמש",
+        "חורף"
+      ]
+    },
+    {
+      "id": "item_491_רובוט_מתכתי__קופסתי_עם_עיניים_מאירות_",
+      "title": "רובוט",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "טכנולוגיה",
+        "עתיד",
+        "מכונה",
+        "מחשב"
+      ]
+    },
+    {
+      "id": "r2_d2",
+      "title": "רובוט R2D2",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "רובוט",
+        "חלל",
+        "מחשב",
+        "תיקון"
+      ]
+    },
+    {
+      "id": "robocop",
+      "title": "רובוקופ",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "שוטר",
+        "רובוט",
+        "חוק",
+        "משטרה"
+      ]
+    },
+    {
+      "id": "robin_hood",
+      "title": "רובין הוד",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "עזרה",
+        "קשת",
+        "חץ",
+        "צדק"
+      ]
+    },
+    {
+      "id": "item_380_רוכסן",
+      "title": "רוכסן",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ריצ'רץ'",
+        "מעיל",
+        "תיק",
+        "בגדים"
+      ]
+    },
+    {
+      "id": "item_322_רולטה_קזינו",
+      "title": "רולטה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "קזינו",
+        "הימורים",
+        "מזל",
+        "כסף"
+      ]
+    },
+    {
+      "id": "item_229_רולרבליידס",
+      "title": "רולרבליידס מהיר",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "החלקה",
+        "גלגליות",
+        "שבילים",
+        "קסדה"
+      ]
+    },
+    {
+      "id": "ronald_mcdonald",
+      "title": "רונלד מקדונלד",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "המבורגר",
+        "ילדים",
+        "אוכל"
+      ]
+    },
+    {
+      "id": "item_407_שפם_הליצן_של_רונלד_מקדונלד",
+      "title": "רונלד מקדונלד",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "המבורגר",
+        "צ'יפס",
+        "מסעדה",
+        "אוכל"
+      ]
+    },
+    {
+      "id": "item_239_רחפת",
+      "title": "רחפת",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מים",
+        "חוף",
+        "שייט",
+        "מנוע"
+      ]
+    },
+    {
+      "id": "item_237_ריקשה_ממונעת",
+      "title": "ריקשה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "הודו",
+        "תאילנד",
+        "טיול",
+        "מונית"
+      ]
+    },
+    {
+      "id": "item_227_רכב_שטח_מפלצתי",
+      "title": "רכב מפלצת",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "גלגלים",
+        "אקסטרים",
+        "מופע",
+        "כוח"
+      ]
+    },
+    {
+      "id": "item_222_רכבל",
+      "title": "רכבל",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "חרמון",
+        "סקי",
+        "הרים",
+        "גובה"
+      ]
+    },
+    {
+      "id": "item_244_רכבת_הרים_לונה_פארק",
+      "title": "רכבת הרים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "פארק",
+        "מהירות",
+        "בילוי",
+        "אקסטרים"
+      ]
+    },
+    {
+      "id": "item_204_רכבת_קיטור_ישנה",
+      "title": "רכבת קיטור",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מסילה",
+        "קטר",
+        "תחנה",
+        "נסיעה"
+      ]
+    },
+    {
+      "id": "item_225_רכבת_קליע_יפנית",
+      "title": "רכבת קליע",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "יפן",
+        "מהירות",
+        "נסיעה",
+        "דייקנות"
+      ]
+    },
+    {
+      "id": "degas_little_ballerina",
+      "title": "רקדנית בלט",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "ריקוד",
+        "הופעה",
+        "חוג",
+        "אימון"
+      ]
+    },
+    {
+      "id": "item_188_שבב_אלקטרוני__צ_יפ_ירוק_עם_פסי_זהב___מסמל",
+      "title": "שבב אלקטרוני (צ'יפ)",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "צ'יפ",
+        "מעבד",
+        "טכנולוגיה",
+        "מחשב"
+      ]
+    },
+    {
+      "id": "item_386_מהדק_סיכות_משרדי",
+      "title": "שדכן סיכות",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "משרד",
+        "דפים",
+        "מסמכים",
+        "תיוק"
+      ]
+    },
+    {
+      "id": "item_282_שונית_אלמוגים_צבעונית",
+      "title": "שונית אלמוגים",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "אילת",
+        "צלילה",
+        "שנורקל",
+        "דגים"
+      ]
+    },
+    {
+      "id": "item_326_חייל_שחמט",
+      "title": "שחמט",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "משחק",
+        "אסטרטגיה",
+        "מחשבה",
+        "לוח"
+      ]
+    },
+    {
+      "id": "item_167_שטיח_אדום_ארוך__מסמל",
+      "title": "שטיח אדום",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "שטיח",
+        "אירוע",
+        "טקס",
+        "הוליווד"
+      ]
+    },
+    {
+      "id": "neon_motel_sign",
+      "title": "שלט ניאון וינטג'",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "כלב",
+        "טיול",
+        "לצאת"
+      ]
+    },
+    {
+      "id": "item_174_שלט_עצור__מתומן_אדום___מסמל",
+      "title": "שלט עצור",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "עצור",
+        "זהירות"
+      ]
+    },
+    {
+      "id": "item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_",
+      "title": "שלט שירותים",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "קניון",
+        "מסעדה",
+        "ניקיון",
+        "דלת"
+      ]
+    },
+    {
+      "id": "terminator",
+      "title": "שליחות קטלנית",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "רובוט",
+        "מכונה",
+        "אופנוע",
+        "משקפיים"
+      ]
+    },
+    {
+      "id": "item_166_שעון_חול__חצי_מלא___מסמל",
+      "title": "שעון חול",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "דדליין",
+        "איחור",
+        "פגישה",
+        "שעון"
+      ]
+    },
+    {
+      "id": "item_424_שעון_חול",
+      "title": "שעון חול",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "זמן",
+        "דקות",
+        "המתנה",
+        "סבלנות"
+      ]
+    },
+    {
+      "id": "item_374_שעון_מעורר_קלאסי",
+      "title": "שעון מעורר",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בוקר",
+        "השכמה",
+        "שינה",
+        "זמן"
+      ]
+    },
+    {
+      "id": "item_333_רשת_כדורגל_נטויה",
+      "title": "שער ורשת כדורגל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "קורות",
+        "בעיטה",
+        "רשת",
+        "מגרש"
+      ]
+    },
+    {
+      "id": "item_427_רסיבר___טלפון_חוגה_ישן",
+      "title": "שפופרת טלפון",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "שיחה",
+        "התקשרות",
+        "קשר",
+        "צלצול"
+      ]
+    },
+    {
+      "id": "item_300_שפירית",
+      "title": "שפירית",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "נחל",
+        "כנפיים",
+        "מעוף",
+        "מים"
+      ]
+    },
+    {
+      "id": "item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל",
+      "title": "שק כסף",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "בנק",
+        "חיסכון",
+        "דולר",
+        "משכורת"
+      ]
+    },
+    {
+      "id": "item_464_שקיעה_בים",
+      "title": "שקיעה",
+      "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
+      "branches": [
+        "ערב",
+        "ים",
+        "שמש",
+        "חוף"
+      ]
+    },
+    {
+      "id": "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל",
+      "title": "שריר זרוע מנופח",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "אימון",
+        "כושר",
+        "משקולות",
+        "כוח"
+      ]
+    },
+    {
+      "id": "shrek",
+      "title": "שרק",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "ירוק",
+        "ביצה",
+        "מקלחת",
+        "לנקות"
+      ]
+    },
+    {
+      "id": "item_405_שרק",
+      "title": "שרק",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "ירוק",
+        "סרט",
+        "אגדה",
+        "מפלצת"
+      ]
+    },
+    {
+      "id": "item_152_תיבת_אוצר__מסמלת",
+      "title": "תיבת אוצר",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "זהב",
+        "כסף",
+        "חיסכון",
+        "יהלומים"
+      ]
+    },
+    {
+      "id": "item_434_תיק_עזרה_ראשונה",
+      "title": "תיק חובש",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "רופא",
+        "תרופות",
+        "חירום",
+        "פלסטר"
+      ]
+    },
+    {
+      "id": "item_183_עלה_תלתן_בעל_ארבעה_עלים__מסמל",
+      "title": "תלתן ארבעה עלים",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "מזל",
+        "ירוק",
+        "הגרלה",
+        "נדיר"
+      ]
+    },
+    {
+      "id": "item_294_תמנון",
+      "title": "תמנון",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "זרועות",
+        "מצולות",
+        "אוקיינוס",
+        "צלילה"
+      ]
+    },
+    {
+      "id": "item_494_תמרור_עצור__משושה_אדום_",
+      "title": "תמרור עצור",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "כביש",
+        "נהיגה",
+        "צומת",
+        "רכב"
+      ]
+    },
+    {
+      "id": "item_173_גלולת_תרופה__חצי_אדום_חצי_לבן___מסמלת",
+      "title": "תרופה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "תרופות",
+        "כאב",
+        "מרשם",
+        "חולי"
+      ]
+    },
+    {
+      "id": "item_398_בקבוק_תרמוס_כסוף",
+      "title": "תרמוס",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "קפה",
+        "תה",
+        "טיול",
+        "חום"
+      ]
+    },
+    {
+      "id": "hiking_trail_hiker",
+      "title": "תרמילאי",
+      "category": "🎒 טיולים וטבע",
+      "branches": [
+        "תיק",
+        "שביל",
+        "הרים",
+        "טיול"
+      ]
+    },
+    {
+      "id": "farm_rooster",
+      "title": "תרנגול",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "בוקר",
+        "השכמה",
+        "כרבולת",
+        "לול"
+      ]
+    }
+  ]
+}

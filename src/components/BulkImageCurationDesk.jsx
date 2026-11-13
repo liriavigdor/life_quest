@@ -36,6 +36,37 @@ import { getEverydaySuggestionsForItem } from '../data/everydayMnemonicSuggestio
  * מאפשר מעבר מהיר על כל 500+ התמונות בתצוגת גריד מרווחת, מחיקה מהירה בלחיצה אחת,
  * עריכת שורשים בזמן אמת, והצמדה/הסרה מיידית של ענפי אסוציאציות.
  */
+function sanitizeLocalEditsMap(editsObj) {
+  if (!editsObj || typeof editsObj !== 'object') return {};
+  const cleaned = {};
+  for (const [id, edit] of Object.entries(editsObj)) {
+    if (!edit) continue;
+    const itemTitle = String(edit.title || '');
+    const titleWords = new Set(
+      itemTitle.toLowerCase().replace(/[()\/\"'’`\-]/g, ' ').split(/\s+/).filter(w => w.length > 1)
+    );
+    let keywords = Array.isArray(edit.keywords) ? edit.keywords : [];
+    keywords = Array.from(new Set(keywords.map(k => String(k).trim()).filter(Boolean)))
+      .filter(k => {
+        const lk = k.toLowerCase();
+        if (lk === itemTitle.toLowerCase()) return false;
+        if (titleWords.has(lk)) return false;
+        if (lk.includes(' ')) return false;
+        if (itemTitle.includes('איטריות') && (lk === 'איטריות' || lk === 'אטריות' || lk === 'נודלס')) return false;
+        if (itemTitle.includes('מגדלור') && (lk === 'מגדלור' || lk === 'מגדל-אור')) return false;
+        if (itemTitle.includes('פצצה') && lk === 'פצצה') return false;
+        return true;
+      })
+      .slice(0, 4);
+
+    cleaned[id] = {
+      ...edit,
+      keywords
+    };
+  }
+  return cleaned;
+}
+
 export function BulkImageCurationDesk({ 
   userImages = [], 
   uploaderName = '',
@@ -58,7 +89,7 @@ export function BulkImageCurationDesk({
   const [localEdits, setLocalEdits] = useState(() => {
     try {
       const saved = localStorage.getItem('lifequest_staged_local_edits');
-      return saved ? JSON.parse(saved) : {};
+      return saved ? sanitizeLocalEditsMap(JSON.parse(saved)) : {};
     } catch (_) {
       return {};
     }
@@ -74,8 +105,12 @@ export function BulkImageCurationDesk({
       if (!saved) return {};
       const parsed = JSON.parse(saved);
       const cleaned = {};
+      const resolvedClassicIds = new Set([
+        'scooby_doo', 'mickey_mouse', 'sonic_the_hedgehog', 'barbie_doll', 'winnie_the_pooh', 'spongebob', 'peter_pan'
+      ]);
       for (const [k, v] of Object.entries(parsed)) {
-        // Clear old flags from before our full AI visual replacement & audit pass
+        // Clear flags for items that were already fixed with classic images
+        if (resolvedClassicIds.has(k)) continue;
         if (v && v.flaggedAt && v.flaggedAt > 1794415000000) {
           cleaned[k] = v;
         }
@@ -170,23 +205,27 @@ export function BulkImageCurationDesk({
     return new Map(STAGED_TRIPLET_POOL.map(t => [t.id, t]));
   }, []);
 
-  // Compute categories list from STAGED_IMAGES_POOL
+  // Compute categories list from the active user repository pool
+  const basePool = useMemo(() => {
+    return (userImages && userImages.length > 0) ? userImages : STAGED_IMAGES_POOL;
+  }, [userImages]);
+
   const categoriesList = useMemo(() => {
     const cats = new Set();
-    STAGED_IMAGES_POOL.forEach(item => {
+    basePool.forEach(item => {
       if (item.category) cats.add(item.category);
     });
     return Array.from(cats);
-  }, []);
+  }, [basePool]);
 
-  // Unified items with current effective data
+  // Unified items with current effective data from the active pool
   const unifiedItems = useMemo(() => {
-    return STAGED_IMAGES_POOL.map(item => {
+    return basePool.map(item => {
       const id = item.id;
       const edits = localEdits[id] || {};
-      const filedItem = filedMap.get(item.imageUrl) || filedMap.get(id) || filedMap.get((item.suggestedName || item.name || '').trim().toLowerCase());
+      const filedItem = filedMap.get(item.imageUrl) || filedMap.get(id) || filedMap.get((item.suggestedName || item.name || '').trim().toLowerCase()) || item;
       
-      const isFiled = Boolean(filedItem);
+      const isFiled = true; // All items in basePool are in the active repository!
       const isDiscarded = discardedIds.has(id);
       const isFlaggedBad = Boolean(flaggedBadMap[id]);
       const flagInfo = flaggedBadMap[id] || null;
@@ -203,9 +242,24 @@ export function BulkImageCurationDesk({
             ? item.everyday_associations
             : (item.associations || []);
 
-      // Clean keywords: unique, non-empty, and omit exact root title
+      // Clean keywords: unique, non-empty, single-word, no root title overlaps, max 4
+      const titleWords = new Set(
+        title.toLowerCase().replace(/[()\/\"'’`\-]/g, ' ').split(/\s+/).filter(w => w.length > 1)
+      );
       const cleanKeywords = Array.from(new Set(keywords.map(k => String(k).trim()).filter(Boolean)))
-        .filter(k => k.toLowerCase() !== title.toLowerCase());
+        .filter(k => {
+          const lk = k.toLowerCase();
+          if (lk === title.toLowerCase()) return false;
+          if (titleWords.has(lk)) return false;
+          if (lk.includes(' ')) return false;
+          if (title.includes('איטריות') && (lk === 'איטריות' || lk === 'אטריות' || lk === 'נודלס')) return false;
+          if (title.includes('מגדלור') && (lk === 'מגדלור' || lk === 'מגדל-אור')) return false;
+          if (title.includes('פצצה') && lk === 'פצצה') return false;
+          if (title.includes('כדורסל') && lk === 'כדורסל') return false;
+          if (title.includes('כדורגל') && lk === 'כדורגל') return false;
+          return true;
+        })
+        .slice(0, 4);
 
       return {
         ...item,
@@ -594,9 +648,9 @@ export function BulkImageCurationDesk({
             <button
               onClick={() => setStatusFilter('all')}
               style={{
-                backgroundColor: statusFilter === 'all' ? '#3b82f6' : '#0f172a',
+                backgroundColor: statusFilter === 'all' ? '#0284c7' : '#0f172a',
                 color: statusFilter === 'all' ? '#ffffff' : '#94a3b8',
-                border: statusFilter === 'all' ? '1px solid #60a5fa' : '1px solid #334155',
+                border: statusFilter === 'all' ? '1px solid #38bdf8' : '1px solid #334155',
                 padding: '7px 14px',
                 borderRadius: '10px',
                 fontSize: '0.84rem',
@@ -607,112 +661,55 @@ export function BulkImageCurationDesk({
                 gap: '6px'
               }}
             >
-              <span>🌐 כל התמונות</span>
+              <span>🌐 כל המאגר הפעיל</span>
               <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.total})</span>
             </button>
 
-            <button
-              onClick={() => setStatusFilter('pending')}
-              style={{
-                backgroundColor: statusFilter === 'pending' ? '#d97706' : '#0f172a',
-                color: statusFilter === 'pending' ? '#ffffff' : '#f59e0b',
-                border: statusFilter === 'pending' ? '1px solid #f59e0b' : '1px solid #334155',
-                padding: '7px 14px',
-                borderRadius: '10px',
-                fontSize: '0.84rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-            >
-              <span>⏳ ממתינות למיון</span>
-              <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.pending})</span>
-            </button>
+            {stats.flagged > 0 && (
+              <button
+                onClick={() => setStatusFilter('flagged')}
+                style={{
+                  backgroundColor: statusFilter === 'flagged' ? '#b45309' : '#0f172a',
+                  color: statusFilter === 'flagged' ? '#ffffff' : '#fbbf24',
+                  border: statusFilter === 'flagged' ? '1px solid #f59e0b' : '1px solid #334155',
+                  padding: '7px 14px',
+                  borderRadius: '10px',
+                  fontSize: '0.84rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <AlertTriangle size={14} />
+                <span>⚠️ דורשות החלפה</span>
+                <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.flagged})</span>
+              </button>
+            )}
 
-            <button
-              onClick={() => setStatusFilter('filed')}
-              style={{
-                backgroundColor: statusFilter === 'filed' ? '#059669' : '#0f172a',
-                color: statusFilter === 'filed' ? '#ffffff' : '#34d399',
-                border: statusFilter === 'filed' ? '1px solid #10b981' : '1px solid #334155',
-                padding: '7px 14px',
-                borderRadius: '10px',
-                fontSize: '0.84rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-            >
-              <span>✅ במאגר הפעיל</span>
-              <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.filed})</span>
-            </button>
-
-            <button
-              onClick={() => setStatusFilter('trash')}
-              style={{
-                backgroundColor: statusFilter === 'trash' ? '#dc2626' : '#0f172a',
-                color: statusFilter === 'trash' ? '#ffffff' : '#f87171',
-                border: statusFilter === 'trash' ? '1px solid #ef4444' : '1px solid #334155',
-                padding: '7px 14px',
-                borderRadius: '10px',
-                fontSize: '0.84rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-            >
-              <Trash2 size={14} />
-              <span>סל מחזור / למחיקה</span>
-              <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.trash})</span>
-            </button>
-
-            <button
-              onClick={() => setStatusFilter('ai_curated')}
-              style={{
-                backgroundColor: statusFilter === 'ai_curated' ? '#4f46e5' : '#0f172a',
-                color: statusFilter === 'ai_curated' ? '#ffffff' : '#a5b4fc',
-                border: statusFilter === 'ai_curated' ? '1px solid #6366f1' : '1px solid #334155',
-                padding: '7px 14px',
-                borderRadius: '10px',
-                fontSize: '0.84rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-            >
-              <Sparkles size={14} />
-              <span>🤖 תוקנו ע״י AI</span>
-              <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.aiCurated})</span>
-            </button>
-
-            <button
-              onClick={() => setStatusFilter('flagged')}
-              style={{
-                backgroundColor: statusFilter === 'flagged' ? '#b45309' : '#0f172a',
-                color: statusFilter === 'flagged' ? '#ffffff' : '#fbbf24',
-                border: statusFilter === 'flagged' ? '1px solid #f59e0b' : '1px solid #334155',
-                padding: '7px 14px',
-                borderRadius: '10px',
-                fontSize: '0.84rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-            >
-              <AlertTriangle size={14} />
-              <span>⚠️ דורשות החלפה</span>
-              <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.flagged})</span>
-            </button>
+            {stats.trash > 0 && (
+              <button
+                onClick={() => setStatusFilter('trash')}
+                style={{
+                  backgroundColor: statusFilter === 'trash' ? '#dc2626' : '#0f172a',
+                  color: statusFilter === 'trash' ? '#ffffff' : '#f87171',
+                  border: statusFilter === 'trash' ? '1px solid #ef4444' : '1px solid #334155',
+                  padding: '7px 14px',
+                  borderRadius: '10px',
+                  fontSize: '0.84rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <Trash2 size={14} />
+                <span>סל מחזור</span>
+                <span style={{ opacity: 0.85, fontSize: '0.78rem' }}>({stats.trash})</span>
+              </button>
+            )}
 
             {stats.flagged > 0 && (
               <button
@@ -970,7 +967,7 @@ export function BulkImageCurationDesk({
                   }}
                 >
                   <img 
-                    src={item.imageUrl} 
+                    src={item.imageUrl ? `${item.imageUrl}${item.imageUrl.includes('?') ? '&' : '?'}v=clean_v3` : ''} 
                     alt={item.title}
                     loading="lazy"
                     onError={(e) => {
