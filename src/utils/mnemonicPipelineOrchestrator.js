@@ -31,6 +31,7 @@ import {
   isAssociationDisliked 
 } from './userImageRepository.js';
 import { generateDynamicFallbackCard } from './deterministicStoryEngine.js';
+import { authorWeaveStory } from './theAuthorStoryEngine.js';
 
 // ============================================================================
 // עובד 1: מאגר אסוציאציות עוגנים מנמוניים (Mnemonic Anchor Specialist)
@@ -487,9 +488,11 @@ export function weavePalaceStory(curatedStations = []) {
     return 'מסע הזיכרון בארמון מוכן לשינון!';
   }
 
+  const woven = authorWeaveStory(curatedStations);
+  if (woven) return woven;
+
   const anchorList = curatedStations.map((st, i) => {
     const name = st.associationWord || st.title || `תחנה ${i + 1}`;
-    // ניקוי אימוג'י ומילים עודפות למשפט קולח
     return name.replace(/[^\u0590-\u05FFa-zA-Z0-9\s]/g, '').trim();
   }).filter(Boolean);
 
@@ -543,6 +546,7 @@ export async function processTaskListWithSynergy(rawItems = []) {
       title: taskText,
       coreConcept: agent1Result.branchKeyword || taskText,
       associationWord: primary.anchorName,
+      category: primary.category || '',
       imageUrl: primary.imageUrl,
       celebrationImage: primary.imageUrl,
       emoji: primary.emoji || '⭐',

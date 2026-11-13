@@ -472,6 +472,7 @@ export function weaveDeterministicStory(userItems = [], options = {}) {
       order: index + 1,
       itemTitle: text,
       matchedCard,
+      category: item?.category || matchedCard?.category || '',
       associationWord: item?.associationWord || matchedCard?.name || matchedCard?.name_he || text,
       originalItem: item
     };

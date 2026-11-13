@@ -57,7 +57,7 @@ function sanitizeLocalEditsMap(editsObj) {
         if (itemTitle.includes('פצצה') && lk === 'פצצה') return false;
         return true;
       })
-      .slice(0, 4);
+      .slice(0, 5);
 
     cleaned[id] = {
       ...edit,
@@ -242,7 +242,7 @@ export function BulkImageCurationDesk({
             ? item.everyday_associations
             : (item.associations || []);
 
-      // Clean keywords: unique, non-empty, single-word, no root title overlaps, max 4
+      // Clean keywords: unique, non-empty, single-word, no root title overlaps, max 5
       const titleWords = new Set(
         title.toLowerCase().replace(/[()\/\"'’`\-]/g, ' ').split(/\s+/).filter(w => w.length > 1)
       );
@@ -259,7 +259,7 @@ export function BulkImageCurationDesk({
           if (title.includes('כדורגל') && lk === 'כדורגל') return false;
           return true;
         })
-        .slice(0, 4);
+        .slice(0, 5);
 
       return {
         ...item,
@@ -273,7 +273,7 @@ export function BulkImageCurationDesk({
         hasLocalEdits: Boolean(edits.isModified)
       };
     });
-  }, [localEdits, filedMap, discardedIds, flaggedBadMap]);
+  }, [basePool, localEdits, filedMap, discardedIds, flaggedBadMap]);
 
   // Filtered Items based on Status, Search, and Category
   const filteredItems = useMemo(() => {
@@ -599,8 +599,8 @@ export function BulkImageCurationDesk({
       });
     }
 
-    // Return first 4 distinct suggestions
-    return Array.from(new Set(suggestions)).slice(0, 4);
+    // Return first 5 distinct suggestions
+    return Array.from(new Set(suggestions)).slice(0, 5);
   };
 
   return (
@@ -972,6 +972,8 @@ export function BulkImageCurationDesk({
                     loading="lazy"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
+                      const fallback = e.currentTarget.nextElementSibling;
+                      if (fallback) fallback.style.display = 'flex';
                     }}
                     style={{
                       width: '100%',
@@ -979,6 +981,32 @@ export function BulkImageCurationDesk({
                       objectFit: 'cover'
                     }}
                   />
+
+                  {/* Missing Image Fallback Placeholder Indicator */}
+                  <div 
+                    className="missing-image-fallback"
+                    style={{
+                      display: item.imageUrl ? 'none' : 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: '#0f172a',
+                      color: '#f87171',
+                      padding: '16px',
+                      textAlign: 'center',
+                      gap: '6px'
+                    }}
+                  >
+                    <AlertTriangle size={26} color="#f59e0b" />
+                    <span style={{ fontSize: '0.80rem', fontWeight: 700, color: '#fca5a5' }}>
+                      ⚠️ תמונה חסרה (placeholder) בתיקייה
+                    </span>
+                    <span style={{ fontSize: '0.68rem', color: '#94a3b8', direction: 'ltr', wordBreak: 'break-all', maxWidth: '90%' }}>
+                      {item.imageUrl ? item.imageUrl.split('/').pop() : item.id}
+                    </span>
+                  </div>
 
                   {/* Top-Right Status Badge */}
                   <div style={{ position: 'absolute', top: '8px', right: '8px', display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>

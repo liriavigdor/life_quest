@@ -1,46 +1,134 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-13T07:00:12.499Z",
-    "totalActiveRoots": 438,
-    "totalUniqueBranches": 912,
-    "totalBranchConnections": 1708,
-    "averageBranchesPerRoot": "3.90",
-    "saturatedBranchesCount": 62,
-    "nearSaturatedBranchesCount": 102,
-    "lowBranchesCount": 748,
+    "generatedAt": "2026-11-13T09:05:08.902Z",
+    "totalActiveRoots": 588,
+    "totalUniqueBranches": 998,
+    "totalBranchConnections": 2458,
+    "averageBranchesPerRoot": "4.18",
+    "saturatedBranchesCount": 121,
+    "nearSaturatedBranchesCount": 156,
+    "lowBranchesCount": 721,
     "validationIssuesCount": 33
   },
   "branchesRanked": [
     {
-      "branch": "משחק",
-      "count": 17
-    },
-    {
       "branch": "טיול",
-      "count": 16
-    },
-    {
-      "branch": "אימון",
-      "count": 14
-    },
-    {
-      "branch": "תיקון",
-      "count": 14
-    },
-    {
-      "branch": "חוף",
-      "count": 12
-    },
-    {
-      "branch": "חופשה",
-      "count": 12
+      "count": 26
     },
     {
       "branch": "ניקיון",
-      "count": 12
+      "count": 25
+    },
+    {
+      "branch": "אימון",
+      "count": 22
+    },
+    {
+      "branch": "קניות",
+      "count": 22
+    },
+    {
+      "branch": "תיקון",
+      "count": 22
+    },
+    {
+      "branch": "חופשה",
+      "count": 20
+    },
+    {
+      "branch": "סופרמרקט",
+      "count": 19
+    },
+    {
+      "branch": "משחק",
+      "count": 18
+    },
+    {
+      "branch": "חוף",
+      "count": 17
+    },
+    {
+      "branch": "ארוחה",
+      "count": 16
+    },
+    {
+      "branch": "רופא",
+      "count": 15
     },
     {
       "branch": "בגדים",
+      "count": 14
+    },
+    {
+      "branch": "לימודים",
+      "count": 14
+    },
+    {
+      "branch": "מטבח",
+      "count": 14
+    },
+    {
+      "branch": "אוכל",
+      "count": 13
+    },
+    {
+      "branch": "אירוע",
+      "count": 13
+    },
+    {
+      "branch": "חורף",
+      "count": 13
+    },
+    {
+      "branch": "ילדים",
+      "count": 13
+    },
+    {
+      "branch": "בוקר",
+      "count": 12
+    },
+    {
+      "branch": "מים",
+      "count": 12
+    },
+    {
+      "branch": "משרד",
+      "count": 12
+    },
+    {
+      "branch": "נסיעה",
+      "count": 12
+    },
+    {
+      "branch": "עבודה",
+      "count": 11
+    },
+    {
+      "branch": "בית",
+      "count": 10
+    },
+    {
+      "branch": "גינה",
+      "count": 10
+    },
+    {
+      "branch": "ים",
+      "count": 10
+    },
+    {
+      "branch": "סדר",
+      "count": 10
+    },
+    {
+      "branch": "פגישה",
+      "count": 10
+    },
+    {
+      "branch": "קור",
+      "count": 10
+    },
+    {
+      "branch": "קיץ",
       "count": 10
     },
     {
@@ -48,11 +136,31 @@
       "count": 10
     },
     {
-      "branch": "חורף",
+      "branch": "אמבטיה",
       "count": 9
     },
     {
-      "branch": "ים",
+      "branch": "בישול",
+      "count": 9
+    },
+    {
+      "branch": "בנק",
+      "count": 9
+    },
+    {
+      "branch": "חשמל",
+      "count": 9
+    },
+    {
+      "branch": "טבע",
+      "count": 9
+    },
+    {
+      "branch": "כושר",
+      "count": 9
+    },
+    {
+      "branch": "מוסך",
       "count": 9
     },
     {
@@ -60,7 +168,15 @@
       "count": 9
     },
     {
-      "branch": "גינה",
+      "branch": "שיפוץ",
+      "count": 9
+    },
+    {
+      "branch": "בדיקה",
+      "count": 8
+    },
+    {
+      "branch": "לילה",
       "count": 8
     },
     {
@@ -68,11 +184,27 @@
       "count": 8
     },
     {
+      "branch": "מסעדה",
+      "count": 8
+    },
+    {
+      "branch": "משלוח",
+      "count": 8
+    },
+    {
       "branch": "סכנה",
       "count": 8
     },
     {
-      "branch": "רופא",
+      "branch": "רכב",
+      "count": 8
+    },
+    {
+      "branch": "שינה",
+      "count": 8
+    },
+    {
+      "branch": "תיירות",
       "count": 8
     },
     {
@@ -80,7 +212,23 @@
       "count": 7
     },
     {
-      "branch": "טבע",
+      "branch": "היסטוריה",
+      "count": 7
+    },
+    {
+      "branch": "חגיגה",
+      "count": 7
+    },
+    {
+      "branch": "טיסה",
+      "count": 7
+    },
+    {
+      "branch": "טיפוח",
+      "count": 7
+    },
+    {
+      "branch": "כסף",
       "count": 7
     },
     {
@@ -88,15 +236,31 @@
       "count": 7
     },
     {
+      "branch": "מכולת",
+      "count": 7
+    },
+    {
+      "branch": "פארק",
+      "count": 7
+    },
+    {
       "branch": "צהוב",
       "count": 7
     },
     {
-      "branch": "שיפוץ",
+      "branch": "תשלום",
       "count": 7
     },
     {
-      "branch": "אוכל",
+      "branch": "אור",
+      "count": 6
+    },
+    {
+      "branch": "אזהרה",
+      "count": 6
+    },
+    {
+      "branch": "אמנות",
       "count": 6
     },
     {
@@ -104,27 +268,31 @@
       "count": 6
     },
     {
+      "branch": "בילוי",
+      "count": 6
+    },
+    {
       "branch": "גיבור",
       "count": 6
     },
     {
-      "branch": "היסטוריה",
+      "branch": "הליכה",
       "count": 6
     },
     {
-      "branch": "ילדים",
+      "branch": "זהב",
       "count": 6
     },
     {
-      "branch": "לילה",
+      "branch": "חום",
       "count": 6
     },
     {
-      "branch": "לימודים",
+      "branch": "חיסכון",
       "count": 6
     },
     {
-      "branch": "מוסך",
+      "branch": "כתיבה",
       "count": 6
     },
     {
@@ -132,15 +300,23 @@
       "count": 6
     },
     {
-      "branch": "מים",
+      "branch": "מסמכים",
       "count": 6
     },
     {
-      "branch": "קור",
+      "branch": "מקלחת",
       "count": 6
     },
     {
-      "branch": "קניות",
+      "branch": "מתנה",
+      "count": 6
+    },
+    {
+      "branch": "נהיגה",
+      "count": 6
+    },
+    {
+      "branch": "סרט",
       "count": 6
     },
     {
@@ -148,15 +324,15 @@
       "count": 6
     },
     {
+      "branch": "שמש",
+      "count": 6
+    },
+    {
+      "branch": "אגדה",
+      "count": 5
+    },
+    {
       "branch": "אוקיינוס",
-      "count": 5
-    },
-    {
-      "branch": "אור",
-      "count": 5
-    },
-    {
-      "branch": "אזהרה",
       "count": 5
     },
     {
@@ -164,7 +340,31 @@
       "count": 5
     },
     {
-      "branch": "בילוי",
+      "branch": "אינסטלטור",
+      "count": 5
+    },
+    {
+      "branch": "אירוח",
+      "count": 5
+    },
+    {
+      "branch": "בנייה",
+      "count": 5
+    },
+    {
+      "branch": "בריכה",
+      "count": 5
+    },
+    {
+      "branch": "דיסני",
+      "count": 5
+    },
+    {
+      "branch": "הודעה",
+      "count": 5
+    },
+    {
+      "branch": "הופעה",
       "count": 5
     },
     {
@@ -176,7 +376,19 @@
       "count": 5
     },
     {
-      "branch": "זהב",
+      "branch": "הרכבה",
+      "count": 5
+    },
+    {
+      "branch": "זיהוי",
+      "count": 5
+    },
+    {
+      "branch": "זמן",
+      "count": 5
+    },
+    {
+      "branch": "חוג",
       "count": 5
     },
     {
@@ -184,7 +396,11 @@
       "count": 5
     },
     {
-      "branch": "טיסה",
+      "branch": "חירום",
+      "count": 5
+    },
+    {
+      "branch": "חתונה",
       "count": 5
     },
     {
@@ -192,11 +408,11 @@
       "count": 5
     },
     {
-      "branch": "כוח",
+      "branch": "כביש",
       "count": 5
     },
     {
-      "branch": "כושר",
+      "branch": "כוח",
       "count": 5
     },
     {
@@ -204,7 +420,11 @@
       "count": 5
     },
     {
-      "branch": "כסף",
+      "branch": "כרטיס",
+      "count": 5
+    },
+    {
+      "branch": "מהירות",
       "count": 5
     },
     {
@@ -216,19 +436,11 @@
       "count": 5
     },
     {
+      "branch": "מסיבה",
+      "count": 5
+    },
+    {
       "branch": "נוצות",
-      "count": 5
-    },
-    {
-      "branch": "נסיעה",
-      "count": 5
-    },
-    {
-      "branch": "סופרמרקט",
-      "count": 5
-    },
-    {
-      "branch": "סרט",
       "count": 5
     },
     {
@@ -236,11 +448,11 @@
       "count": 5
     },
     {
-      "branch": "פארק",
+      "branch": "צלילה",
       "count": 5
     },
     {
-      "branch": "צלילה",
+      "branch": "צנרת",
       "count": 5
     },
     {
@@ -248,11 +460,27 @@
       "count": 5
     },
     {
-      "branch": "שמש",
+      "branch": "קפה",
       "count": 5
     },
     {
-      "branch": "תיירות",
+      "branch": "קריאה",
+      "count": 5
+    },
+    {
+      "branch": "רוגע",
+      "count": 5
+    },
+    {
+      "branch": "רכיבה",
+      "count": 5
+    },
+    {
+      "branch": "שלג",
+      "count": 5
+    },
+    {
+      "branch": "תחנה",
       "count": 5
     },
     {
@@ -260,7 +488,19 @@
       "count": 5
     },
     {
-      "branch": "אגדה",
+      "branch": "תפירה",
+      "count": 5
+    },
+    {
+      "branch": "תרופות",
+      "count": 5
+    },
+    {
+      "branch": "אבטחה",
+      "count": 4
+    },
+    {
+      "branch": "אהבה",
       "count": 4
     },
     {
@@ -268,11 +508,11 @@
       "count": 4
     },
     {
-      "branch": "אירוע",
+      "branch": "אליפות",
       "count": 4
     },
     {
-      "branch": "אליפות",
+      "branch": "אפייה",
       "count": 4
     },
     {
@@ -280,27 +520,27 @@
       "count": 4
     },
     {
+      "branch": "אריזה",
+      "count": 4
+    },
+    {
       "branch": "ארמון",
       "count": 4
     },
     {
-      "branch": "בדיקה",
-      "count": 4
-    },
-    {
-      "branch": "בוקר",
-      "count": 4
-    },
-    {
-      "branch": "בנייה",
-      "count": 4
-    },
-    {
-      "branch": "בנק",
-      "count": 4
-    },
-    {
       "branch": "גשם",
+      "count": 4
+    },
+    {
+      "branch": "דדליין",
+      "count": 4
+    },
+    {
+      "branch": "דירה",
+      "count": 4
+    },
+    {
+      "branch": "דפים",
       "count": 4
     },
     {
@@ -312,7 +552,19 @@
       "count": 4
     },
     {
-      "branch": "הרכבה",
+      "branch": "הורות",
+      "count": 4
+    },
+    {
+      "branch": "הזמנה",
+      "count": 4
+    },
+    {
+      "branch": "הצלחה",
+      "count": 4
+    },
+    {
+      "branch": "וטרינר",
       "count": 4
     },
     {
@@ -320,7 +572,23 @@
       "count": 4
     },
     {
+      "branch": "זקן",
+      "count": 4
+    },
+    {
       "branch": "חבטה",
+      "count": 4
+    },
+    {
+      "branch": "חבילה",
+      "count": 4
+    },
+    {
+      "branch": "חוזה",
+      "count": 4
+    },
+    {
+      "branch": "חוכמה",
       "count": 4
     },
     {
@@ -328,15 +596,39 @@
       "count": 4
     },
     {
-      "branch": "חיסכון",
+      "branch": "חקירה",
       "count": 4
     },
     {
-      "branch": "חירום",
+      "branch": "חשבון",
       "count": 4
     },
     {
-      "branch": "כתיבה",
+      "branch": "חשבונות",
+      "count": 4
+    },
+    {
+      "branch": "חתימה",
+      "count": 4
+    },
+    {
+      "branch": "טסט",
+      "count": 4
+    },
+    {
+      "branch": "טקס",
+      "count": 4
+    },
+    {
+      "branch": "יצירה",
+      "count": 4
+    },
+    {
+      "branch": "כאב",
+      "count": 4
+    },
+    {
+      "branch": "כביסה",
       "count": 4
     },
     {
@@ -348,7 +640,7 @@
       "count": 4
     },
     {
-      "branch": "מהירות",
+      "branch": "מדע",
       "count": 4
     },
     {
@@ -356,11 +648,27 @@
       "count": 4
     },
     {
+      "branch": "מכתב",
+      "count": 4
+    },
+    {
+      "branch": "מנוחה",
+      "count": 4
+    },
+    {
       "branch": "מסלול",
       "count": 4
     },
     {
-      "branch": "משרד",
+      "branch": "מספרה",
+      "count": 4
+    },
+    {
+      "branch": "מרפאה",
+      "count": 4
+    },
+    {
+      "branch": "סבון",
       "count": 4
     },
     {
@@ -368,7 +676,23 @@
       "count": 4
     },
     {
+      "branch": "עזרה",
+      "count": 4
+    },
+    {
+      "branch": "עתיד",
+      "count": 4
+    },
+    {
+      "branch": "פרחים",
+      "count": 4
+    },
+    {
       "branch": "צבעים",
+      "count": 4
+    },
+    {
+      "branch": "צילום",
       "count": 4
     },
     {
@@ -376,19 +700,31 @@
       "count": 4
     },
     {
+      "branch": "קסם",
+      "count": 4
+    },
+    {
+      "branch": "קרח",
+      "count": 4
+    },
+    {
+      "branch": "רהיטים",
+      "count": 4
+    },
+    {
       "branch": "רובוט",
       "count": 4
     },
     {
-      "branch": "רכיבה",
+      "branch": "רוח",
       "count": 4
     },
     {
-      "branch": "שינה",
+      "branch": "רומנטיקה",
       "count": 4
     },
     {
-      "branch": "שלג",
+      "branch": "שיער",
       "count": 4
     },
     {
@@ -400,27 +736,39 @@
       "count": 4
     },
     {
-      "branch": "אבטחה",
-      "count": 3
+      "branch": "שתייה",
+      "count": 4
+    },
+    {
+      "branch": "תזונה",
+      "count": 4
+    },
+    {
+      "branch": "תיוק",
+      "count": 4
+    },
+    {
+      "branch": "תספורת",
+      "count": 4
     },
     {
       "branch": "אבק",
       "count": 3
     },
     {
-      "branch": "אמבטיה",
+      "branch": "אוניברסיטה",
       "count": 3
     },
     {
-      "branch": "אמנות",
+      "branch": "איפור",
+      "count": 3
+    },
+    {
+      "branch": "אנימציה",
       "count": 3
     },
     {
       "branch": "אסטרטגיה",
-      "count": 3
-    },
-    {
-      "branch": "ארוחה",
       "count": 3
     },
     {
@@ -432,11 +780,23 @@
       "count": 3
     },
     {
-      "branch": "בישול",
+      "branch": "אשפה",
       "count": 3
     },
     {
-      "branch": "בריכה",
+      "branch": "ביטוח",
+      "count": 3
+    },
+    {
+      "branch": "בלש",
+      "count": 3
+    },
+    {
+      "branch": "גיזום",
+      "count": 3
+    },
+    {
+      "branch": "גיימינג",
       "count": 3
     },
     {
@@ -452,15 +812,15 @@
       "count": 3
     },
     {
-      "branch": "דיסני",
+      "branch": "דיאטה",
       "count": 3
     },
     {
-      "branch": "דפים",
+      "branch": "דלת",
       "count": 3
     },
     {
-      "branch": "הודעה",
+      "branch": "הדברה",
       "count": 3
     },
     {
@@ -468,15 +828,7 @@
       "count": 3
     },
     {
-      "branch": "הליכה",
-      "count": 3
-    },
-    {
       "branch": "המבורגר",
-      "count": 3
-    },
-    {
-      "branch": "זמן",
       "count": 3
     },
     {
@@ -484,11 +836,11 @@
       "count": 3
     },
     {
-      "branch": "חוכמה",
+      "branch": "חוט",
       "count": 3
     },
     {
-      "branch": "חום",
+      "branch": "חולצה",
       "count": 3
     },
     {
@@ -496,15 +848,23 @@
       "count": 3
     },
     {
+      "branch": "חיפוש",
+      "count": 3
+    },
+    {
+      "branch": "חלב",
+      "count": 3
+    },
+    {
       "branch": "חלל",
       "count": 3
     },
     {
-      "branch": "חקירה",
+      "branch": "חצר",
       "count": 3
     },
     {
-      "branch": "חשמל",
+      "branch": "חתול",
       "count": 3
     },
     {
@@ -516,11 +876,19 @@
       "count": 3
     },
     {
-      "branch": "טקס",
+      "branch": "טלוויזיה",
+      "count": 3
+    },
+    {
+      "branch": "יעד",
       "count": 3
     },
     {
       "branch": "יער",
+      "count": 3
+    },
+    {
+      "branch": "יפן",
       "count": 3
     },
     {
@@ -532,11 +900,39 @@
       "count": 3
     },
     {
+      "branch": "כפתור",
+      "count": 3
+    },
+    {
+      "branch": "לב",
+      "count": 3
+    },
+    {
       "branch": "לונדון",
       "count": 3
     },
     {
-      "branch": "מדע",
+      "branch": "לחם",
+      "count": 3
+    },
+    {
+      "branch": "מאפייה",
+      "count": 3
+    },
+    {
+      "branch": "מוזיאון",
+      "count": 3
+    },
+    {
+      "branch": "מוח",
+      "count": 3
+    },
+    {
+      "branch": "מחזור",
+      "count": 3
+    },
+    {
+      "branch": "מלון",
       "count": 3
     },
     {
@@ -548,15 +944,15 @@
       "count": 3
     },
     {
-      "branch": "מסמכים",
-      "count": 3
-    },
-    {
-      "branch": "מסעדה",
-      "count": 3
-    },
-    {
       "branch": "מעוף",
+      "count": 3
+    },
+    {
+      "branch": "מצרכים",
+      "count": 3
+    },
+    {
+      "branch": "מרשם",
       "count": 3
     },
     {
@@ -564,11 +960,11 @@
       "count": 3
     },
     {
-      "branch": "נהיגה",
+      "branch": "נמל",
       "count": 3
     },
     {
-      "branch": "נמל",
+      "branch": "נעילה",
       "count": 3
     },
     {
@@ -584,6 +980,14 @@
       "count": 3
     },
     {
+      "branch": "ספר",
+      "count": 3
+    },
+    {
+      "branch": "סתימה",
+      "count": 3
+    },
+    {
       "branch": "עוקץ",
       "count": 3
     },
@@ -592,7 +996,19 @@
       "count": 3
     },
     {
-      "branch": "עתיד",
+      "branch": "עסקים",
+      "count": 3
+    },
+    {
+      "branch": "עצים",
+      "count": 3
+    },
+    {
+      "branch": "ערב",
+      "count": 3
+    },
+    {
+      "branch": "פח",
       "count": 3
     },
     {
@@ -600,7 +1016,7 @@
       "count": 3
     },
     {
-      "branch": "פרחים",
+      "branch": "פציעה",
       "count": 3
     },
     {
@@ -608,11 +1024,19 @@
       "count": 3
     },
     {
+      "branch": "ציור",
+      "count": 3
+    },
+    {
       "branch": "ציפור",
       "count": 3
     },
     {
-      "branch": "קיץ",
+      "branch": "ציפורניים",
+      "count": 3
+    },
+    {
+      "branch": "צמחים",
       "count": 3
     },
     {
@@ -620,7 +1044,7 @@
       "count": 3
     },
     {
-      "branch": "קסם",
+      "branch": "קניון",
       "count": 3
     },
     {
@@ -628,15 +1052,11 @@
       "count": 3
     },
     {
-      "branch": "קרח",
+      "branch": "ריצה",
       "count": 3
     },
     {
-      "branch": "רוח",
-      "count": 3
-    },
-    {
-      "branch": "רומנטיקה",
+      "branch": "רעיון",
       "count": 3
     },
     {
@@ -644,7 +1064,27 @@
       "count": 3
     },
     {
+      "branch": "רצפה",
+      "count": 3
+    },
+    {
+      "branch": "שטיפה",
+      "count": 3
+    },
+    {
+      "branch": "שיחה",
+      "count": 3
+    },
+    {
       "branch": "שייט",
+      "count": 3
+    },
+    {
+      "branch": "שיניים",
+      "count": 3
+    },
+    {
+      "branch": "שיננית",
       "count": 3
     },
     {
@@ -656,15 +1096,27 @@
       "count": 3
     },
     {
+      "branch": "תואר",
+      "count": 3
+    },
+    {
+      "branch": "תינוק",
+      "count": 3
+    },
+    {
+      "branch": "תכשיט",
+      "count": 3
+    },
+    {
       "branch": "תפילה",
       "count": 3
     },
     {
-      "branch": "תפירה",
+      "branch": "תקלה",
       "count": 3
     },
     {
-      "branch": "תרופות",
+      "branch": "תרופה",
       "count": 3
     },
     {
@@ -680,11 +1132,19 @@
       "count": 2
     },
     {
-      "branch": "אהבה",
+      "branch": "אוורור",
       "count": 2
     },
     {
-      "branch": "אוניברסיטה",
+      "branch": "אופנה",
+      "count": 2
+    },
+    {
+      "branch": "אחות",
+      "count": 2
+    },
+    {
+      "branch": "איחור",
       "count": 2
     },
     {
@@ -692,15 +1152,7 @@
       "count": 2
     },
     {
-      "branch": "אינסטלטור",
-      "count": 2
-    },
-    {
-      "branch": "איפור",
-      "count": 2
-    },
-    {
-      "branch": "אירוח",
+      "branch": "אישור",
       "count": 2
     },
     {
@@ -708,11 +1160,11 @@
       "count": 2
     },
     {
-      "branch": "אנטארקטיקה",
+      "branch": "אנגליה",
       "count": 2
     },
     {
-      "branch": "אנימציה",
+      "branch": "אנטארקטיקה",
       "count": 2
     },
     {
@@ -724,11 +1176,11 @@
       "count": 2
     },
     {
-      "branch": "ארון",
+      "branch": "אקדמיה",
       "count": 2
     },
     {
-      "branch": "אריזה",
+      "branch": "ארון",
       "count": 2
     },
     {
@@ -737,10 +1189,6 @@
     },
     {
       "branch": "אשמה",
-      "count": 2
-    },
-    {
-      "branch": "אשפה",
       "count": 2
     },
     {
@@ -760,15 +1208,19 @@
       "count": 2
     },
     {
+      "branch": "בטיחות",
+      "count": 2
+    },
+    {
       "branch": "ביצה",
       "count": 2
     },
     {
-      "branch": "בלש",
+      "branch": "בקבוק",
       "count": 2
     },
     {
-      "branch": "בקבוק",
+      "branch": "ברז",
       "count": 2
     },
     {
@@ -784,6 +1236,10 @@
       "count": 2
     },
     {
+      "branch": "גבס",
+      "count": 2
+    },
+    {
       "branch": "גולגולת",
       "count": 2
     },
@@ -792,7 +1248,7 @@
       "count": 2
     },
     {
-      "branch": "גיימינג",
+      "branch": "גילוח",
       "count": 2
     },
     {
@@ -800,7 +1256,15 @@
       "count": 2
     },
     {
+      "branch": "גלגל",
+      "count": 2
+    },
+    {
       "branch": "גלישה",
+      "count": 2
+    },
+    {
+      "branch": "גן",
       "count": 2
     },
     {
@@ -816,7 +1280,11 @@
       "count": 2
     },
     {
-      "branch": "דדליין",
+      "branch": "דואר",
+      "count": 2
+    },
+    {
+      "branch": "דוח",
       "count": 2
     },
     {
@@ -828,11 +1296,11 @@
       "count": 2
     },
     {
-      "branch": "דירה",
+      "branch": "דקות",
       "count": 2
     },
     {
-      "branch": "דלת",
+      "branch": "האכלה",
       "count": 2
     },
     {
@@ -840,11 +1308,11 @@
       "count": 2
     },
     {
-      "branch": "הדברה",
+      "branch": "הדלקה",
       "count": 2
     },
     {
-      "branch": "הדלקה",
+      "branch": "הובלה",
       "count": 2
     },
     {
@@ -852,11 +1320,11 @@
       "count": 2
     },
     {
-      "branch": "הופעה",
+      "branch": "הסוואה",
       "count": 2
     },
     {
-      "branch": "הסוואה",
+      "branch": "הסכם",
       "count": 2
     },
     {
@@ -868,15 +1336,11 @@
       "count": 2
     },
     {
-      "branch": "הצלחה",
-      "count": 2
-    },
-    {
       "branch": "השכמה",
       "count": 2
     },
     {
-      "branch": "וטרינר",
+      "branch": "זבל",
       "count": 2
     },
     {
@@ -884,7 +1348,11 @@
       "count": 2
     },
     {
-      "branch": "זיהוי",
+      "branch": "זוגיות",
+      "count": 2
+    },
+    {
+      "branch": "זיכרון",
       "count": 2
     },
     {
@@ -892,11 +1360,11 @@
       "count": 2
     },
     {
-      "branch": "זקן",
+      "branch": "חבל",
       "count": 2
     },
     {
-      "branch": "חבל",
+      "branch": "חדשות",
       "count": 2
     },
     {
@@ -904,11 +1372,7 @@
       "count": 2
     },
     {
-      "branch": "חוט",
-      "count": 2
-    },
-    {
-      "branch": "חולצה",
+      "branch": "חולי",
       "count": 2
     },
     {
@@ -924,23 +1388,11 @@
       "count": 2
     },
     {
-      "branch": "חיפוש",
-      "count": 2
-    },
-    {
       "branch": "חיתול",
       "count": 2
     },
     {
-      "branch": "חלב",
-      "count": 2
-    },
-    {
       "branch": "חליפה",
-      "count": 2
-    },
-    {
-      "branch": "חצר",
       "count": 2
     },
     {
@@ -956,19 +1408,11 @@
       "count": 2
     },
     {
-      "branch": "חתול",
-      "count": 2
-    },
-    {
-      "branch": "חתונה",
-      "count": 2
-    },
-    {
-      "branch": "טלוויזיה",
-      "count": 2
-    },
-    {
       "branch": "טלפון",
+      "count": 2
+    },
+    {
+      "branch": "טעינה",
       "count": 2
     },
     {
@@ -976,11 +1420,11 @@
       "count": 2
     },
     {
-      "branch": "יעד",
+      "branch": "יוקרה",
       "count": 2
     },
     {
-      "branch": "יפן",
+      "branch": "ייבוש",
       "count": 2
     },
     {
@@ -988,11 +1432,7 @@
       "count": 2
     },
     {
-      "branch": "כאב",
-      "count": 2
-    },
-    {
-      "branch": "כביסה",
+      "branch": "כבלים",
       "count": 2
     },
     {
@@ -1005,10 +1445,6 @@
     },
     {
       "branch": "כתר",
-      "count": 2
-    },
-    {
-      "branch": "לב",
       "count": 2
     },
     {
@@ -1032,11 +1468,7 @@
       "count": 2
     },
     {
-      "branch": "מוזיאון",
-      "count": 2
-    },
-    {
-      "branch": "מוח",
+      "branch": "מוזיקה",
       "count": 2
     },
     {
@@ -1044,11 +1476,19 @@
       "count": 2
     },
     {
+      "branch": "מזומן",
+      "count": 2
+    },
+    {
+      "branch": "מזרח",
+      "count": 2
+    },
+    {
       "branch": "מזרן",
       "count": 2
     },
     {
-      "branch": "מטבח",
+      "branch": "מטבעות",
       "count": 2
     },
     {
@@ -1060,19 +1500,7 @@
       "count": 2
     },
     {
-      "branch": "מכולת",
-      "count": 2
-    },
-    {
-      "branch": "מכתב",
-      "count": 2
-    },
-    {
       "branch": "מלוכה",
-      "count": 2
-    },
-    {
-      "branch": "מנוחה",
       "count": 2
     },
     {
@@ -1080,11 +1508,19 @@
       "count": 2
     },
     {
-      "branch": "מסיבה",
+      "branch": "מניקור",
       "count": 2
     },
     {
       "branch": "מסירה",
+      "count": 2
+    },
+    {
+      "branch": "מסך",
+      "count": 2
+    },
+    {
+      "branch": "מספרים",
       "count": 2
     },
     {
@@ -1096,11 +1532,11 @@
       "count": 2
     },
     {
-      "branch": "מקלחת",
+      "branch": "מרפסת",
       "count": 2
     },
     {
-      "branch": "מרפסת",
+      "branch": "מרק",
       "count": 2
     },
     {
@@ -1112,7 +1548,11 @@
       "count": 2
     },
     {
-      "branch": "משלוח",
+      "branch": "משפחה",
+      "count": 2
+    },
+    {
+      "branch": "משפט",
       "count": 2
     },
     {
@@ -1124,11 +1564,23 @@
       "count": 2
     },
     {
+      "branch": "נזילה",
+      "count": 2
+    },
+    {
       "branch": "נחל",
       "count": 2
     },
     {
       "branch": "נחש",
+      "count": 2
+    },
+    {
+      "branch": "נייר",
+      "count": 2
+    },
+    {
+      "branch": "נסיכה",
       "count": 2
     },
     {
@@ -1144,11 +1596,15 @@
       "count": 2
     },
     {
+      "branch": "סביבה",
+      "count": 2
+    },
+    {
       "branch": "סבלנות",
       "count": 2
     },
     {
-      "branch": "סדר",
+      "branch": "סדרה",
       "count": 2
     },
     {
@@ -1176,23 +1632,11 @@
       "count": 2
     },
     {
-      "branch": "ספר",
-      "count": 2
-    },
-    {
       "branch": "סתיו",
       "count": 2
     },
     {
-      "branch": "עבודה",
-      "count": 2
-    },
-    {
       "branch": "עבירה",
-      "count": 2
-    },
-    {
-      "branch": "עזרה",
       "count": 2
     },
     {
@@ -1208,7 +1652,7 @@
       "count": 2
     },
     {
-      "branch": "עצים",
+      "branch": "עסקה",
       "count": 2
     },
     {
@@ -1220,10 +1664,6 @@
       "count": 2
     },
     {
-      "branch": "פגישה",
-      "count": 2
-    },
-    {
       "branch": "פוליטיקה",
       "count": 2
     },
@@ -1232,7 +1672,7 @@
       "count": 2
     },
     {
-      "branch": "פח",
+      "branch": "פיזיקה",
       "count": 2
     },
     {
@@ -1240,15 +1680,19 @@
       "count": 2
     },
     {
-      "branch": "פציעה",
-      "count": 2
-    },
-    {
       "branch": "פרידה",
       "count": 2
     },
     {
+      "branch": "פריז",
+      "count": 2
+    },
+    {
       "branch": "פרס",
+      "count": 2
+    },
+    {
+      "branch": "פרסום",
       "count": 2
     },
     {
@@ -1264,11 +1708,19 @@
       "count": 2
     },
     {
+      "branch": "צביעה",
+      "count": 2
+    },
+    {
       "branch": "צדק",
       "count": 2
     },
     {
-      "branch": "ציפורניים",
+      "branch": "צומת",
+      "count": 2
+    },
+    {
+      "branch": "צחצוח",
       "count": 2
     },
     {
@@ -1276,11 +1728,7 @@
       "count": 2
     },
     {
-      "branch": "צמחים",
-      "count": 2
-    },
-    {
-      "branch": "צנרת",
+      "branch": "צעצוע",
       "count": 2
     },
     {
@@ -1288,7 +1736,19 @@
       "count": 2
     },
     {
+      "branch": "קומזיץ",
+      "count": 2
+    },
+    {
+      "branch": "קוסמטיקאית",
+      "count": 2
+    },
+    {
       "branch": "קופסה",
+      "count": 2
+    },
+    {
+      "branch": "קיר",
       "count": 2
     },
     {
@@ -1296,7 +1756,7 @@
       "count": 2
     },
     {
-      "branch": "קניון",
+      "branch": "קצף",
       "count": 2
     },
     {
@@ -1304,15 +1764,11 @@
       "count": 2
     },
     {
+      "branch": "קרטון",
+      "count": 2
+    },
+    {
       "branch": "קשר",
-      "count": 2
-    },
-    {
-      "branch": "רהיטים",
-      "count": 2
-    },
-    {
-      "branch": "רוגע",
       "count": 2
     },
     {
@@ -1328,15 +1784,7 @@
       "count": 2
     },
     {
-      "branch": "ריצה",
-      "count": 2
-    },
-    {
       "branch": "רמפה",
-      "count": 2
-    },
-    {
-      "branch": "רעיון",
       "count": 2
     },
     {
@@ -1349,6 +1797,10 @@
     },
     {
       "branch": "שאגה",
+      "count": 2
+    },
+    {
+      "branch": "שביל",
       "count": 2
     },
     {
@@ -1368,19 +1820,27 @@
       "count": 2
     },
     {
+      "branch": "שוק",
+      "count": 2
+    },
+    {
       "branch": "שחור",
       "count": 2
     },
     {
-      "branch": "שיחה",
+      "branch": "שטיח",
       "count": 2
     },
     {
-      "branch": "שיניים",
+      "branch": "שידור",
       "count": 2
     },
     {
       "branch": "שיפוט",
+      "count": 2
+    },
+    {
+      "branch": "שירותים",
       "count": 2
     },
     {
@@ -1392,7 +1852,11 @@
       "count": 2
     },
     {
-      "branch": "תואר",
+      "branch": "שעה",
+      "count": 2
+    },
+    {
+      "branch": "תה",
       "count": 2
     },
     {
@@ -1400,7 +1864,7 @@
       "count": 2
     },
     {
-      "branch": "תחנה",
+      "branch": "תזכורת",
       "count": 2
     },
     {
@@ -1408,15 +1872,19 @@
       "count": 2
     },
     {
-      "branch": "תיוק",
-      "count": 2
-    },
-    {
       "branch": "תיק",
       "count": 2
     },
     {
-      "branch": "תספורת",
+      "branch": "תכנות",
+      "count": 2
+    },
+    {
+      "branch": "תלייה",
+      "count": 2
+    },
+    {
+      "branch": "תנועה",
       "count": 2
     },
     {
@@ -1424,7 +1892,15 @@
       "count": 2
     },
     {
+      "branch": "תקציב",
+      "count": 2
+    },
+    {
       "branch": "תקשורת",
+      "count": 2
+    },
+    {
+      "branch": "תרומה",
       "count": 2
     },
     {
@@ -1444,6 +1920,10 @@
       "count": 1
     },
     {
+      "branch": "אבקה",
+      "count": 1
+    },
+    {
       "branch": "אגדות",
       "count": 1
     },
@@ -1453,10 +1933,6 @@
     },
     {
       "branch": "אוהל",
-      "count": 1
-    },
-    {
-      "branch": "אוורור",
       "count": 1
     },
     {
@@ -1484,10 +1960,6 @@
       "count": 1
     },
     {
-      "branch": "אופנה",
-      "count": 1
-    },
-    {
       "branch": "אופנוע",
       "count": 1
     },
@@ -1504,6 +1976,10 @@
       "count": 1
     },
     {
+      "branch": "אורטופד",
+      "count": 1
+    },
+    {
       "branch": "אורך",
       "count": 1
     },
@@ -1516,11 +1992,15 @@
       "count": 1
     },
     {
-      "branch": "איזון",
+      "branch": "אזעקה",
       "count": 1
     },
     {
-      "branch": "איחור",
+      "branch": "אחריות",
+      "count": 1
+    },
+    {
+      "branch": "איזון",
       "count": 1
     },
     {
@@ -1541,10 +2021,6 @@
     },
     {
       "branch": "אמזונס",
-      "count": 1
-    },
-    {
-      "branch": "אנגליה",
       "count": 1
     },
     {
@@ -1576,10 +2052,6 @@
       "count": 1
     },
     {
-      "branch": "אקדמיה",
-      "count": 1
-    },
-    {
       "branch": "ארגזים",
       "count": 1
     },
@@ -1593,6 +2065,10 @@
     },
     {
       "branch": "אשמים",
+      "count": 1
+    },
+    {
+      "branch": "אשפוז",
       "count": 1
     },
     {
@@ -1620,11 +2096,15 @@
       "count": 1
     },
     {
-      "branch": "בטיחות",
+      "branch": "ביומטרי",
       "count": 1
     },
     {
-      "branch": "ביומטרי",
+      "branch": "בייביסיטר",
+      "count": 1
+    },
+    {
+      "branch": "בימוי",
       "count": 1
     },
     {
@@ -1633,10 +2113,6 @@
     },
     {
       "branch": "בירור",
-      "count": 1
-    },
-    {
-      "branch": "בית",
       "count": 1
     },
     {
@@ -1680,11 +2156,11 @@
       "count": 1
     },
     {
-      "branch": "ברז",
+      "branch": "ברזל",
       "count": 1
     },
     {
-      "branch": "ברזל",
+      "branch": "ברק",
       "count": 1
     },
     {
@@ -1701,10 +2177,6 @@
     },
     {
       "branch": "גאולה",
-      "count": 1
-    },
-    {
-      "branch": "גבס",
       "count": 1
     },
     {
@@ -1740,19 +2212,7 @@
       "count": 1
     },
     {
-      "branch": "גיזום",
-      "count": 1
-    },
-    {
-      "branch": "גילוח",
-      "count": 1
-    },
-    {
       "branch": "גינון",
-      "count": 1
-    },
-    {
-      "branch": "גלגל",
       "count": 1
     },
     {
@@ -1804,10 +2264,6 @@
       "count": 1
     },
     {
-      "branch": "דוח",
-      "count": 1
-    },
-    {
       "branch": "דולר",
       "count": 1
     },
@@ -1820,7 +2276,7 @@
       "count": 1
     },
     {
-      "branch": "דיאטה",
+      "branch": "דיו",
       "count": 1
     },
     {
@@ -1848,10 +2304,6 @@
       "count": 1
     },
     {
-      "branch": "דקות",
-      "count": 1
-    },
-    {
       "branch": "דת",
       "count": 1
     },
@@ -1868,7 +2320,7 @@
       "count": 1
     },
     {
-      "branch": "הובלה",
+      "branch": "הדפסה",
       "count": 1
     },
     {
@@ -1884,15 +2336,15 @@
       "count": 1
     },
     {
-      "branch": "הורות",
-      "count": 1
-    },
-    {
-      "branch": "הזמנה",
+      "branch": "הוצאות",
       "count": 1
     },
     {
       "branch": "החלטה",
+      "count": 1
+    },
+    {
+      "branch": "החלפה",
       "count": 1
     },
     {
@@ -1936,7 +2388,7 @@
       "count": 1
     },
     {
-      "branch": "הסכם",
+      "branch": "הפגנה",
       "count": 1
     },
     {
@@ -1976,6 +2428,10 @@
       "count": 1
     },
     {
+      "branch": "הרצאה",
+      "count": 1
+    },
+    {
       "branch": "הרשעה",
       "count": 1
     },
@@ -1989,6 +2445,10 @@
     },
     {
       "branch": "התלבטות",
+      "count": 1
+    },
+    {
+      "branch": "התנעה",
       "count": 1
     },
     {
@@ -2012,19 +2472,7 @@
       "count": 1
     },
     {
-      "branch": "זבל",
-      "count": 1
-    },
-    {
-      "branch": "זוגיות",
-      "count": 1
-    },
-    {
       "branch": "זוחל",
-      "count": 1
-    },
-    {
-      "branch": "זיכרון",
       "count": 1
     },
     {
@@ -2064,7 +2512,7 @@
       "count": 1
     },
     {
-      "branch": "חבילה",
+      "branch": "חבישה",
       "count": 1
     },
     {
@@ -2076,15 +2524,11 @@
       "count": 1
     },
     {
-      "branch": "חגיגה",
-      "count": 1
-    },
-    {
       "branch": "חדק",
       "count": 1
     },
     {
-      "branch": "חדשות",
+      "branch": "חדר",
       "count": 1
     },
     {
@@ -2096,23 +2540,15 @@
       "count": 1
     },
     {
-      "branch": "חוג",
-      "count": 1
-    },
-    {
-      "branch": "חוזה",
-      "count": 1
-    },
-    {
       "branch": "חולדות",
       "count": 1
     },
     {
-      "branch": "חולי",
+      "branch": "חומה",
       "count": 1
     },
     {
-      "branch": "חומה",
+      "branch": "חופה",
       "count": 1
     },
     {
@@ -2132,6 +2568,10 @@
       "count": 1
     },
     {
+      "branch": "חיות",
+      "count": 1
+    },
+    {
       "branch": "חייזר",
       "count": 1
     },
@@ -2144,6 +2584,10 @@
       "count": 1
     },
     {
+      "branch": "חימום",
+      "count": 1
+    },
+    {
       "branch": "חיתוך",
       "count": 1
     },
@@ -2153,6 +2597,10 @@
     },
     {
       "branch": "חלבון",
+      "count": 1
+    },
+    {
+      "branch": "חלונות",
       "count": 1
     },
     {
@@ -2176,6 +2624,10 @@
       "count": 1
     },
     {
+      "branch": "חסד",
+      "count": 1
+    },
+    {
       "branch": "חסה",
       "count": 1
     },
@@ -2193,10 +2645,6 @@
     },
     {
       "branch": "חרקים",
-      "count": 1
-    },
-    {
-      "branch": "חתימה",
       "count": 1
     },
     {
@@ -2240,6 +2688,10 @@
       "count": 1
     },
     {
+      "branch": "טורניר",
+      "count": 1
+    },
+    {
       "branch": "טורף",
       "count": 1
     },
@@ -2256,7 +2708,7 @@
       "count": 1
     },
     {
-      "branch": "טיפוח",
+      "branch": "טיפ",
       "count": 1
     },
     {
@@ -2280,10 +2732,6 @@
       "count": 1
     },
     {
-      "branch": "טסט",
-      "count": 1
-    },
-    {
       "branch": "טרופי",
       "count": 1
     },
@@ -2296,15 +2744,7 @@
       "count": 1
     },
     {
-      "branch": "יוקרה",
-      "count": 1
-    },
-    {
       "branch": "ייבוא",
-      "count": 1
-    },
-    {
-      "branch": "ייבוש",
       "count": 1
     },
     {
@@ -2320,10 +2760,6 @@
       "count": 1
     },
     {
-      "branch": "יצירה",
-      "count": 1
-    },
-    {
       "branch": "ירקות",
       "count": 1
     },
@@ -2332,11 +2768,7 @@
       "count": 1
     },
     {
-      "branch": "כביש",
-      "count": 1
-    },
-    {
-      "branch": "כבלים",
+      "branch": "כבל",
       "count": 1
     },
     {
@@ -2349,6 +2781,10 @@
     },
     {
       "branch": "כוכבים",
+      "count": 1
+    },
+    {
+      "branch": "כיבוי",
       "count": 1
     },
     {
@@ -2388,15 +2824,7 @@
       "count": 1
     },
     {
-      "branch": "כפתור",
-      "count": 1
-    },
-    {
       "branch": "כרבולת",
-      "count": 1
-    },
-    {
-      "branch": "כרטיס",
       "count": 1
     },
     {
@@ -2421,10 +2849,6 @@
     },
     {
       "branch": "לולאה",
-      "count": 1
-    },
-    {
-      "branch": "לחם",
       "count": 1
     },
     {
@@ -2464,11 +2888,11 @@
       "count": 1
     },
     {
-      "branch": "מאפייה",
+      "branch": "מאשימה",
       "count": 1
     },
     {
-      "branch": "מאשימה",
+      "branch": "מגהץ",
       "count": 1
     },
     {
@@ -2489,6 +2913,10 @@
     },
     {
       "branch": "מדיטציה",
+      "count": 1
+    },
+    {
+      "branch": "מדרסים",
       "count": 1
     },
     {
@@ -2540,18 +2968,6 @@
       "count": 1
     },
     {
-      "branch": "מזומן",
-      "count": 1
-    },
-    {
-      "branch": "מזרח",
-      "count": 1
-    },
-    {
-      "branch": "מחזור",
-      "count": 1
-    },
-    {
       "branch": "מחק",
       "count": 1
     },
@@ -2560,15 +2976,23 @@
       "count": 1
     },
     {
-      "branch": "מטבעות",
-      "count": 1
-    },
-    {
       "branch": "מטוס",
       "count": 1
     },
     {
+      "branch": "מטען",
+      "count": 1
+    },
+    {
       "branch": "מטקות",
+      "count": 1
+    },
+    {
+      "branch": "מטרייה",
+      "count": 1
+    },
+    {
+      "branch": "מיחזור",
       "count": 1
     },
     {
@@ -2589,10 +3013,6 @@
     },
     {
       "branch": "מלאך",
-      "count": 1
-    },
-    {
-      "branch": "מלון",
       "count": 1
     },
     {
@@ -2620,10 +3040,6 @@
       "count": 1
     },
     {
-      "branch": "מניקור",
-      "count": 1
-    },
-    {
       "branch": "מסגד",
       "count": 1
     },
@@ -2632,19 +3048,7 @@
       "count": 1
     },
     {
-      "branch": "מסך",
-      "count": 1
-    },
-    {
       "branch": "מסמר",
-      "count": 1
-    },
-    {
-      "branch": "מספרה",
-      "count": 1
-    },
-    {
-      "branch": "מספרים",
       "count": 1
     },
     {
@@ -2696,6 +3100,10 @@
       "count": 1
     },
     {
+      "branch": "מפתח",
+      "count": 1
+    },
+    {
       "branch": "מצוק",
       "count": 1
     },
@@ -2709,10 +3117,6 @@
     },
     {
       "branch": "מצרים",
-      "count": 1
-    },
-    {
-      "branch": "מצרכים",
       "count": 1
     },
     {
@@ -2732,6 +3136,10 @@
       "count": 1
     },
     {
+      "branch": "מקרר",
+      "count": 1
+    },
+    {
       "branch": "מרוץ",
       "count": 1
     },
@@ -2748,19 +3156,11 @@
       "count": 1
     },
     {
-      "branch": "מרפאה",
-      "count": 1
-    },
-    {
-      "branch": "מרק",
-      "count": 1
-    },
-    {
-      "branch": "מרשם",
-      "count": 1
-    },
-    {
       "branch": "מרשמלו",
+      "count": 1
+    },
+    {
+      "branch": "מרתון",
       "count": 1
     },
     {
@@ -2769,14 +3169,6 @@
     },
     {
       "branch": "משכורת",
-      "count": 1
-    },
-    {
-      "branch": "משפחה",
-      "count": 1
-    },
-    {
-      "branch": "משפט",
       "count": 1
     },
     {
@@ -2796,7 +3188,11 @@
       "count": 1
     },
     {
-      "branch": "מתנה",
+      "branch": "מתיחות",
+      "count": 1
+    },
+    {
+      "branch": "מתכון",
       "count": 1
     },
     {
@@ -2852,10 +3248,6 @@
       "count": 1
     },
     {
-      "branch": "נייר",
-      "count": 1
-    },
-    {
       "branch": "ניסוי",
       "count": 1
     },
@@ -2865,14 +3257,6 @@
     },
     {
       "branch": "נכות",
-      "count": 1
-    },
-    {
-      "branch": "נסיכה",
-      "count": 1
-    },
-    {
-      "branch": "נעילה",
       "count": 1
     },
     {
@@ -2892,10 +3276,6 @@
       "count": 1
     },
     {
-      "branch": "סביבה",
-      "count": 1
-    },
-    {
       "branch": "סבלות",
       "count": 1
     },
@@ -2904,11 +3284,11 @@
       "count": 1
     },
     {
-      "branch": "סדרה",
+      "branch": "סוואנה",
       "count": 1
     },
     {
-      "branch": "סוואנה",
+      "branch": "סוללה",
       "count": 1
     },
     {
@@ -2924,7 +3304,15 @@
       "count": 1
     },
     {
+      "branch": "סחיטה",
+      "count": 1
+    },
+    {
       "branch": "סיבוב",
+      "count": 1
+    },
+    {
+      "branch": "סיוד",
       "count": 1
     },
     {
@@ -2957,6 +3345,10 @@
     },
     {
       "branch": "סל",
+      "count": 1
+    },
+    {
+      "branch": "סלט",
       "count": 1
     },
     {
@@ -2996,11 +3388,19 @@
       "count": 1
     },
     {
+      "branch": "ספרייה",
+      "count": 1
+    },
+    {
       "branch": "סקי",
       "count": 1
     },
     {
       "branch": "עדר",
+      "count": 1
+    },
+    {
+      "branch": "עוגה",
       "count": 1
     },
     {
@@ -3036,14 +3436,6 @@
       "count": 1
     },
     {
-      "branch": "עסקה",
-      "count": 1
-    },
-    {
-      "branch": "עסקים",
-      "count": 1
-    },
-    {
       "branch": "עפר",
       "count": 1
     },
@@ -3061,10 +3453,6 @@
     },
     {
       "branch": "עציצים",
-      "count": 1
-    },
-    {
-      "branch": "ערב",
       "count": 1
     },
     {
@@ -3100,6 +3488,10 @@
       "count": 1
     },
     {
+      "branch": "פוליש",
+      "count": 1
+    },
+    {
       "branch": "פולקסווגן",
       "count": 1
     },
@@ -3121,10 +3513,6 @@
     },
     {
       "branch": "פיזה",
-      "count": 1
-    },
-    {
-      "branch": "פיזיקה",
       "count": 1
     },
     {
@@ -3152,11 +3540,27 @@
       "count": 1
     },
     {
+      "branch": "פירות",
+      "count": 1
+    },
+    {
       "branch": "פירמידה",
       "count": 1
     },
     {
+      "branch": "פן",
+      "count": 1
+    },
+    {
+      "branch": "פנאי",
+      "count": 1
+    },
+    {
       "branch": "פנים",
+      "count": 1
+    },
+    {
+      "branch": "פנצר",
       "count": 1
     },
     {
@@ -3176,6 +3580,10 @@
       "count": 1
     },
     {
+      "branch": "פקיד",
+      "count": 1
+    },
+    {
       "branch": "פקק",
       "count": 1
     },
@@ -3188,19 +3596,11 @@
       "count": 1
     },
     {
-      "branch": "פריז",
-      "count": 1
-    },
-    {
       "branch": "פתיחה",
       "count": 1
     },
     {
       "branch": "צ'יפ",
-      "count": 1
-    },
-    {
-      "branch": "צביעה",
       "count": 1
     },
     {
@@ -3220,10 +3620,6 @@
       "count": 1
     },
     {
-      "branch": "צומת",
-      "count": 1
-    },
-    {
       "branch": "צוקים",
       "count": 1
     },
@@ -3232,15 +3628,7 @@
       "count": 1
     },
     {
-      "branch": "צחצוח",
-      "count": 1
-    },
-    {
       "branch": "ציד",
-      "count": 1
-    },
-    {
-      "branch": "ציור",
       "count": 1
     },
     {
@@ -3253,10 +3641,6 @@
     },
     {
       "branch": "צעדים",
-      "count": 1
-    },
-    {
-      "branch": "צעצוע",
       "count": 1
     },
     {
@@ -3276,19 +3660,11 @@
       "count": 1
     },
     {
-      "branch": "קומזיץ",
-      "count": 1
-    },
-    {
       "branch": "קומיקס",
       "count": 1
     },
     {
       "branch": "קוסם",
-      "count": 1
-    },
-    {
-      "branch": "קוסמטיקאית",
       "count": 1
     },
     {
@@ -3340,7 +3716,7 @@
       "count": 1
     },
     {
-      "branch": "קפה",
+      "branch": "קנס",
       "count": 1
     },
     {
@@ -3352,19 +3728,7 @@
       "count": 1
     },
     {
-      "branch": "קצף",
-      "count": 1
-    },
-    {
       "branch": "קרחון",
-      "count": 1
-    },
-    {
-      "branch": "קרטון",
-      "count": 1
-    },
-    {
-      "branch": "קריאה",
       "count": 1
     },
     {
@@ -3400,7 +3764,15 @@
       "count": 1
     },
     {
+      "branch": "רוקח",
+      "count": 1
+    },
+    {
       "branch": "רחוב",
+      "count": 1
+    },
+    {
+      "branch": "ריח",
       "count": 1
     },
     {
@@ -3413,10 +3785,6 @@
     },
     {
       "branch": "רישום",
-      "count": 1
-    },
-    {
-      "branch": "רכב",
       "count": 1
     },
     {
@@ -3436,10 +3804,6 @@
       "count": 1
     },
     {
-      "branch": "רצפה",
-      "count": 1
-    },
-    {
       "branch": "רשימה",
       "count": 1
     },
@@ -3456,11 +3820,15 @@
       "count": 1
     },
     {
-      "branch": "שביל",
+      "branch": "שבילים",
       "count": 1
     },
     {
-      "branch": "שבילים",
+      "branch": "שבר",
+      "count": 1
+    },
+    {
+      "branch": "שבת",
       "count": 1
     },
     {
@@ -3492,19 +3860,11 @@
       "count": 1
     },
     {
-      "branch": "שטיח",
-      "count": 1
-    },
-    {
-      "branch": "שטיפה",
-      "count": 1
-    },
-    {
       "branch": "שיגור",
       "count": 1
     },
     {
-      "branch": "שידור",
+      "branch": "שיזוף",
       "count": 1
     },
     {
@@ -3512,23 +3872,19 @@
       "count": 1
     },
     {
-      "branch": "שיננית",
-      "count": 1
-    },
-    {
-      "branch": "שיער",
-      "count": 1
-    },
-    {
       "branch": "שיפוע",
       "count": 1
     },
     {
-      "branch": "שירותים",
+      "branch": "שירות",
       "count": 1
     },
     {
       "branch": "שיש",
+      "count": 1
+    },
+    {
+      "branch": "שכירות",
       "count": 1
     },
     {
@@ -3552,10 +3908,6 @@
       "count": 1
     },
     {
-      "branch": "שעה",
-      "count": 1
-    },
-    {
       "branch": "שעווה",
       "count": 1
     },
@@ -3565,6 +3917,10 @@
     },
     {
       "branch": "שק",
+      "count": 1
+    },
+    {
+      "branch": "שקילה",
       "count": 1
     },
     {
@@ -3580,11 +3936,11 @@
       "count": 1
     },
     {
-      "branch": "שתייה",
+      "branch": "שתילה",
       "count": 1
     },
     {
-      "branch": "שתילה",
+      "branch": "תאונה",
       "count": 1
     },
     {
@@ -3596,7 +3952,11 @@
       "count": 1
     },
     {
-      "branch": "תה",
+      "branch": "תאריך",
+      "count": 1
+    },
+    {
+      "branch": "תדלוק",
       "count": 1
     },
     {
@@ -3604,7 +3964,7 @@
       "count": 1
     },
     {
-      "branch": "תזכורת",
+      "branch": "תור",
       "count": 1
     },
     {
@@ -3620,19 +3980,7 @@
       "count": 1
     },
     {
-      "branch": "תכנות",
-      "count": 1
-    },
-    {
-      "branch": "תכשיט",
-      "count": 1
-    },
-    {
-      "branch": "תלייה",
-      "count": 1
-    },
-    {
-      "branch": "תנועה",
+      "branch": "תכנון",
       "count": 1
     },
     {
@@ -3648,15 +3996,11 @@
       "count": 1
     },
     {
-      "branch": "תקציב",
+      "branch": "תרבות",
       "count": 1
     },
     {
-      "branch": "תרומה",
-      "count": 1
-    },
-    {
-      "branch": "תרופה",
+      "branch": "תרשים",
       "count": 1
     }
   ],
@@ -3670,6 +4014,42 @@
         "אינדיאני",
         "מדורה",
         "אוהל"
+      ]
+    },
+    {
+      "id": "new_123_camping_tent",
+      "title": "אוהל קמפינג משפחתי",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "טיול",
+        "טבע",
+        "חופשה",
+        "שינה",
+        "משפחה"
+      ]
+    },
+    {
+      "id": "new_015_over_ear_headphones",
+      "title": "אוזניות קשת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מוזיקה",
+        "שיחה",
+        "ריצה",
+        "אימון",
+        "פגישה"
+      ]
+    },
+    {
+      "id": "new_060_city_bus",
+      "title": "אוטובוס עירוני",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "תחנה",
+        "נסיעה",
+        "כרטיס",
+        "עבודה",
+        "לימודים"
       ]
     },
     {
@@ -3714,6 +4094,18 @@
         "קור",
         "חרמון",
         "הרים"
+      ]
+    },
+    {
+      "id": "new_120_mountain_bike",
+      "title": "אופני הרים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "רכיבה",
+        "אימון",
+        "כושר",
+        "טיול",
+        "פארק"
       ]
     },
     {
@@ -3816,6 +4208,30 @@
       ]
     },
     {
+      "id": "new_102_albert_einstein",
+      "title": "אלברט איינשטיין",
+      "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+      "branches": [
+        "מדע",
+        "לימודים",
+        "חוכמה",
+        "פיזיקה",
+        "מוח"
+      ]
+    },
+    {
+      "id": "new_105_elsa_frozen",
+      "title": "אלזה מלכת השלג",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "קרח",
+        "קור",
+        "חורף",
+        "נסיכה",
+        "דיסני"
+      ]
+    },
+    {
       "id": "item_216_אמבולנס_לבן",
       "title": "אמבולנס",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -3824,6 +4240,18 @@
         "חירום",
         "סירנה",
         "חובש"
+      ]
+    },
+    {
+      "id": "new_139_bubble_bathtub",
+      "title": "אמבטיה מלאה קצף",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מקלחת",
+        "רוגע",
+        "מים",
+        "סבון",
+        "ילדים"
       ]
     },
     {
@@ -3870,6 +4298,18 @@
       ]
     },
     {
+      "id": "new_069_cat_litter_box",
+      "title": "ארגז חול לחתול",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ניקיון",
+        "וטרינר",
+        "בית",
+        "קניות",
+        "סופרמרקט"
+      ]
+    },
+    {
       "id": "item_396_ארגז_כלים_אדום",
       "title": "ארגז כלים",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -3878,6 +4318,18 @@
         "שיפוץ",
         "עבודה",
         "מוסך"
+      ]
+    },
+    {
+      "id": "new_013_cardboard_box",
+      "title": "ארגז קרטון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חבילה",
+        "משלוח",
+        "דואר",
+        "אריזה",
+        "הובלה"
       ]
     },
     {
@@ -4068,6 +4520,138 @@
       ]
     },
     {
+      "id": "new_113_blender",
+      "title": "בלנדר שייקים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "פירות",
+        "תזונה",
+        "שתייה",
+        "מטבח",
+        "דיאטה"
+      ]
+    },
+    {
+      "id": "new_075_perfume_bottle",
+      "title": "בקבוק בושם",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "טיפוח",
+        "מתנה",
+        "אירוע",
+        "יוקרה",
+        "ריח"
+      ]
+    },
+    {
+      "id": "new_074_nail_polish",
+      "title": "בקבוק לק",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ציפורניים",
+        "מניקור",
+        "קוסמטיקאית",
+        "טיפוח",
+        "איפור"
+      ]
+    },
+    {
+      "id": "new_041_mineral_water",
+      "title": "בקבוק מים מינרליים",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "שתייה",
+        "סופרמרקט",
+        "אימון",
+        "טיול",
+        "קניות"
+      ]
+    },
+    {
+      "id": "new_045_cough_syrup",
+      "title": "בקבוק סירופ רפואי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תרופה",
+        "תרופות",
+        "מרשם",
+        "חולי",
+        "רופא"
+      ]
+    },
+    {
+      "id": "new_126_sunscreen_bottle",
+      "title": "בקבוק קרם הגנה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חוף",
+        "קיץ",
+        "שמש",
+        "בריכה",
+        "טיול"
+      ]
+    },
+    {
+      "id": "new_039_olive_oil",
+      "title": "בקבוק שמן זית",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "בישול",
+        "מטבח",
+        "סופרמרקט",
+        "קניות",
+        "סלט"
+      ]
+    },
+    {
+      "id": "new_076_shampoo_bottle",
+      "title": "בקבוק שמפו",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מקלחת",
+        "שיער",
+        "אמבטיה",
+        "סופרמרקט",
+        "קניות"
+      ]
+    },
+    {
+      "id": "new_119_champagne_bottle",
+      "title": "בקבוק שמפניה נפתח",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "חגיגה",
+        "מסיבה",
+        "הצלחה",
+        "אירוע",
+        "חתונה"
+      ]
+    },
+    {
+      "id": "new_061_baby_bottle",
+      "title": "בקבוק תינוק",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "הורות",
+        "חלב",
+        "האכלה",
+        "לילה",
+        "ילדים"
+      ]
+    },
+    {
+      "id": "new_029_cleaning_spray",
+      "title": "בקבוק תרסיס ניקוי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ניקיון",
+        "חלונות",
+        "מטבח",
+        "הדברה",
+        "בית"
+      ]
+    },
+    {
       "id": "barbie_doll",
       "title": "ברבי",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -4087,6 +4671,18 @@
         "בריכה",
         "מקור",
         "נוצות"
+      ]
+    },
+    {
+      "id": "new_021_dripping_faucet",
+      "title": "ברז מטפטף",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אינסטלטור",
+        "נזילה",
+        "צנרת",
+        "תיקון",
+        "מים"
       ]
     },
     {
@@ -4156,6 +4752,18 @@
       ]
     },
     {
+      "id": "new_116_ice_cream_cone",
+      "title": "גביע גלידה",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "קיץ",
+        "חוף",
+        "בילוי",
+        "ילדים",
+        "חופשה"
+      ]
+    },
+    {
       "id": "item_169_גביע_זהב_עם_ידיות__מסמל",
       "title": "גביע זהב",
       "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -4219,6 +4827,18 @@
         "טקס",
         "חגיגה",
         "אירוע"
+      ]
+    },
+    {
+      "id": "new_080_acoustic_guitar",
+      "title": "גיטרה אקוסטית",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מוזיקה",
+        "חוג",
+        "הופעה",
+        "אימון",
+        "קומזיץ"
       ]
     },
     {
@@ -4339,6 +4959,18 @@
       ]
     },
     {
+      "id": "new_065_teddy_bear",
+      "title": "דובי פרווה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ילדים",
+        "תינוק",
+        "צעצוע",
+        "מתנה",
+        "שינה"
+      ]
+    },
+    {
       "id": "item_272_דולפין_קופץ_מהמים",
       "title": "דולפין",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -4379,6 +5011,18 @@
         "שיפוץ",
         "עפר",
         "הריסה"
+      ]
+    },
+    {
+      "id": "new_007_passport_booklet",
+      "title": "דרכון",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "טיסה",
+        "חופשה",
+        "זיהוי",
+        "תיירות",
+        "נסיעה"
       ]
     },
     {
@@ -4652,6 +5296,18 @@
       ]
     },
     {
+      "id": "new_108_wall_e",
+      "title": "וולי הרובוט",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "מחזור",
+        "אשפה",
+        "ניקיון",
+        "עתיד",
+        "אנימציה"
+      ]
+    },
+    {
       "id": "item_279_ורד_אדום",
       "title": "ורד",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -4671,6 +5327,18 @@
         "פוקר",
         "הימורים",
         "כסף"
+      ]
+    },
+    {
+      "id": "new_078_wedding_rings",
+      "title": "זוג טבעות נישואין",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "חתונה",
+        "אירוע",
+        "חופה",
+        "אהבה",
+        "תכשיט"
       ]
     },
     {
@@ -4718,6 +5386,18 @@
       ]
     },
     {
+      "id": "new_079_bouquet_flowers",
+      "title": "זר פרחים צבעוני",
+      "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+      "branches": [
+        "מתנה",
+        "אירוע",
+        "שבת",
+        "אהבה",
+        "חגיגה"
+      ]
+    },
+    {
       "id": "item_475_חגורה_שחורה_באומנויות_לחימה",
       "title": "חגורה שחורה באמנויות לחימה",
       "category": "⚽ ספורט, משחקים ואישים",
@@ -4726,6 +5406,18 @@
         "מאסטר",
         "מזרן",
         "קרב"
+      ]
+    },
+    {
+      "id": "new_050_dental_floss",
+      "title": "חוט דנטלי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שיניים",
+        "שיננית",
+        "צחצוח",
+        "רופא",
+        "אמבטיה"
       ]
     },
     {
@@ -4740,6 +5432,18 @@
       ]
     },
     {
+      "id": "new_006_ink_stamp",
+      "title": "חותמת דיו",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אישור",
+        "משרד",
+        "מסמכים",
+        "חתימה",
+        "חוזה"
+      ]
+    },
+    {
       "id": "farm_pig",
       "title": "חזיר",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -4748,6 +5452,18 @@
         "חיסכון",
         "ורוד",
         "דיר"
+      ]
+    },
+    {
+      "id": "new_147_museum_facade",
+      "title": "חזית מוזיאון עם עמודים",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "אמנות",
+        "היסטוריה",
+        "תיירות",
+        "טיול",
+        "תרבות"
       ]
     },
     {
@@ -4770,6 +5486,18 @@
         "גינה",
         "עלה",
         "נקודות"
+      ]
+    },
+    {
+      "id": "new_062_baby_diaper",
+      "title": "חיתול",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תינוק",
+        "הורות",
+        "קניות",
+        "סופרמרקט",
+        "ילדים"
       ]
     },
     {
@@ -4858,6 +5586,18 @@
         "קליעה",
         "משחק",
         "דיוק"
+      ]
+    },
+    {
+      "id": "new_036_yellow_cheese",
+      "title": "חריץ גבינה צהובה",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "סופרמרקט",
+        "קניות",
+        "מכולת",
+        "ארוחה",
+        "מקרר"
       ]
     },
     {
@@ -4980,6 +5720,18 @@
       ]
     },
     {
+      "id": "new_130_kitchen_timer",
+      "title": "טיימר מטבח",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "זמן",
+        "דדליין",
+        "בישול",
+        "אפייה",
+        "דקות"
+      ]
+    },
+    {
       "id": "neuschwanstein_castle",
       "title": "טירת נוישוונשטיין",
       "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -5057,6 +5809,18 @@
       ]
     },
     {
+      "id": "new_047_arm_cast",
+      "title": "יד מגובסת",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "גבס",
+        "שבר",
+        "אורטופד",
+        "צילום",
+        "מרפאה"
+      ]
+    },
+    {
       "id": "item_329_יו_יו",
       "title": "יו-יו",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -5098,6 +5862,18 @@
         "הרמוניה",
         "ניגודים",
         "זן"
+      ]
+    },
+    {
+      "id": "new_064_school_backpack",
+      "title": "ילקוט בית ספר",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גן",
+        "לימודים",
+        "חוג",
+        "ילדים",
+        "בוקר"
       ]
     },
     {
@@ -5242,6 +6018,18 @@
       ]
     },
     {
+      "id": "new_068_yarn_ball",
+      "title": "כדור צמר",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חתול",
+        "משחק",
+        "תפירה",
+        "חוט",
+        "יצירה"
+      ]
+    },
+    {
       "id": "item_301_כדורגל_קלאסי",
       "title": "כדורגל קלאסי",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -5296,6 +6084,18 @@
       ]
     },
     {
+      "id": "new_111_chef_hat",
+      "title": "כובע שף לבן",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בישול",
+        "מסעדה",
+        "ארוחה",
+        "מטבח",
+        "אפייה"
+      ]
+    },
+    {
       "id": "item_292_כוכב_ים",
       "title": "כוכב ים",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -5318,6 +6118,30 @@
       ]
     },
     {
+      "id": "new_148_bookshelf",
+      "title": "כוננית ספרים עמוסה",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "קריאה",
+        "לימודים",
+        "ספרייה",
+        "סדר",
+        "אקדמיה"
+      ]
+    },
+    {
+      "id": "new_034_french_baguette",
+      "title": "כיכר בגט",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "לחם",
+        "מאפייה",
+        "סופרמרקט",
+        "קניות",
+        "ארוחה"
+      ]
+    },
+    {
       "id": "fresh_bread_loaf",
       "title": "כיכר לחם כפרי",
       "category": "🍞 מאכלים ומאפים",
@@ -5326,6 +6150,18 @@
         "מאפה",
         "בגט",
         "מאפייה"
+      ]
+    },
+    {
+      "id": "new_125_beach_chair",
+      "title": "כיסא נוח ושמשייה",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "חוף",
+        "ים",
+        "קיץ",
+        "חופשה",
+        "שיזוף"
       ]
     },
     {
@@ -5372,6 +6208,30 @@
       ]
     },
     {
+      "id": "new_001_atm_machine",
+      "title": "כספומט",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בנק",
+        "מזומן",
+        "כרטיס",
+        "תשלום",
+        "חיסכון"
+      ]
+    },
+    {
+      "id": "new_086_safe_box",
+      "title": "כספת פלדה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אבטחה",
+        "כסף",
+        "חיסכון",
+        "נעילה",
+        "תכשיט"
+      ]
+    },
+    {
       "id": "item_310_זוג_כפפות_אגרוף",
       "title": "כפפות אגרוף אדומות",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -5405,6 +6265,18 @@
       ]
     },
     {
+      "id": "new_002_credit_card",
+      "title": "כרטיס אשראי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תשלום",
+        "בנק",
+        "קניות",
+        "חשבון",
+        "עסקה"
+      ]
+    },
+    {
       "id": "item_422_כרטיס_אדום",
       "title": "כרטיס הרחקה",
       "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
@@ -5434,6 +6306,18 @@
         "בילוי",
         "הזמנה",
         "אולם"
+      ]
+    },
+    {
+      "id": "new_096_train_ticket",
+      "title": "כרטיס רכבת",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "נסיעה",
+        "תחנה",
+        "טיול",
+        "עבודה",
+        "תשלום"
       ]
     },
     {
@@ -5525,6 +6409,18 @@
       ]
     },
     {
+      "id": "new_094_whiteboard",
+      "title": "לוח מחיק משרדי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "פגישה",
+        "תרשים",
+        "תכנון",
+        "לימודים",
+        "רעיון"
+      ]
+    },
+    {
       "id": "item_316_חץ_ולוח_מטרה",
       "title": "לוח מטרה",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -5533,6 +6429,18 @@
         "דיוק",
         "קליעה",
         "הצלחה"
+      ]
+    },
+    {
+      "id": "new_011_wall_calendar",
+      "title": "לוח שנה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תאריך",
+        "פגישה",
+        "תזכורת",
+        "תור",
+        "חופשה"
       ]
     },
     {
@@ -5580,6 +6488,18 @@
       ]
     },
     {
+      "id": "new_140_standing_fan",
+      "title": "מאוורר עמוד",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חום",
+        "קיץ",
+        "אוורור",
+        "רוח",
+        "חשמל"
+      ]
+    },
+    {
       "id": "item_163_מאזני_צדק__שתי_כפות_מאוזנות___מסמלות",
       "title": "מאזני משפט",
       "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5621,6 +6541,18 @@
         "בוקר",
         "רופא",
         "ניקיון"
+      ]
+    },
+    {
+      "id": "new_028_mop_and_bucket",
+      "title": "מגב ודלי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שטיפה",
+        "רצפה",
+        "ניקיון",
+        "מים",
+        "בית"
       ]
     },
     {
@@ -5744,6 +6676,18 @@
       ]
     },
     {
+      "id": "new_131_megaphone",
+      "title": "מגפון כריזה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "הודעה",
+        "אירוע",
+        "הפגנה",
+        "פרסום",
+        "קריאה"
+      ]
+    },
+    {
       "id": "item_392_מגרפה_לגינה",
       "title": "מגרפה",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -5755,6 +6699,18 @@
       ]
     },
     {
+      "id": "new_117_sushi_roll",
+      "title": "מגש סושי",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "מסעדה",
+        "משלוח",
+        "אוכל",
+        "יפן",
+        "ארוחה"
+      ]
+    },
+    {
       "id": "item_165_מד_חום_של_כספית_מתפוצץ_למעלה__מסמל",
       "title": "מד חום כספית",
       "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -5762,6 +6718,18 @@
         "מדחום",
         "חום",
         "טמפרטורה",
+        "רופא"
+      ]
+    },
+    {
+      "id": "new_048_blood_pressure",
+      "title": "מד לחץ דם",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "בדיקה",
+        "לב",
+        "אחות",
+        "מרפאה",
         "רופא"
       ]
     },
@@ -5788,6 +6756,30 @@
       ]
     },
     {
+      "id": "new_055_parking_meter",
+      "title": "מדחן חניה",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "דוח",
+        "תשלום",
+        "רכב",
+        "כביש",
+        "קנס"
+      ]
+    },
+    {
+      "id": "new_026_dishwasher",
+      "title": "מדיח כלים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מטבח",
+        "ניקיון",
+        "סבון",
+        "ארוחה",
+        "סדר"
+      ]
+    },
+    {
       "id": "item_470_מדליית_זהב",
       "title": "מדליית זהב אולימפית",
       "category": "⚽ ספורט, משחקים ואישים",
@@ -5799,6 +6791,30 @@
       ]
     },
     {
+      "id": "new_010_office_printer",
+      "title": "מדפסת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "הדפסה",
+        "משרד",
+        "מסמכים",
+        "דיו",
+        "דפים"
+      ]
+    },
+    {
+      "id": "new_103_mona_lisa",
+      "title": "מונה ליזה",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "אמנות",
+        "מוזיאון",
+        "פריז",
+        "ציור",
+        "תיירות"
+      ]
+    },
+    {
       "id": "item_202_מונית_צהובה_ניו_יורקית",
       "title": "מונית צהובה",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -5807,6 +6823,42 @@
         "תנועה",
         "פקק",
         "תיירות"
+      ]
+    },
+    {
+      "id": "new_063_baby_pacifier",
+      "title": "מוצץ",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תינוק",
+        "הורות",
+        "שינה",
+        "רוגע",
+        "גן"
+      ]
+    },
+    {
+      "id": "new_032_air_conditioner",
+      "title": "מזגן",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "קור",
+        "חום",
+        "קיץ",
+        "חורף",
+        "תיקון"
+      ]
+    },
+    {
+      "id": "new_128_trolley_suitcase",
+      "title": "מזוודת טרולי על גלגלים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "טיסה",
+        "חופשה",
+        "אריזה",
+        "נסיעה",
+        "מלון"
       ]
     },
     {
@@ -5829,6 +6881,30 @@
         "נסיעה",
         "חופשה",
         "אריזה"
+      ]
+    },
+    {
+      "id": "new_143_pruning_shears",
+      "title": "מזמרת גינון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גיזום",
+        "גינה",
+        "צמחים",
+        "עצים",
+        "פרחים"
+      ]
+    },
+    {
+      "id": "new_083_yoga_mat",
+      "title": "מזרן יוגה מגולגל",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "אימון",
+        "כושר",
+        "מתיחות",
+        "חוג",
+        "רוגע"
       ]
     },
     {
@@ -5876,6 +6952,18 @@
       ]
     },
     {
+      "id": "new_110_frying_pan",
+      "title": "מחבת טיגון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בישול",
+        "מטבח",
+        "ארוחה",
+        "בוקר",
+        "אוכל"
+      ]
+    },
+    {
       "id": "item_385_מחדד_מתכת_קטן",
       "title": "מחדד",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -5895,6 +6983,30 @@
         "תיקון",
         "בגדים",
         "כפתור"
+      ]
+    },
+    {
+      "id": "new_014_laptop_computer",
+      "title": "מחשב נייד",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "עבודה",
+        "פגישה",
+        "כתיבה",
+        "תכנות",
+        "משרד"
+      ]
+    },
+    {
+      "id": "new_004_pocket_calculator",
+      "title": "מחשבון כיס",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תקציב",
+        "הוצאות",
+        "מספרים",
+        "בנק",
+        "לימודים"
       ]
     },
     {
@@ -5941,6 +7053,30 @@
       ]
     },
     {
+      "id": "new_016_phone_charger",
+      "title": "מטען לטלפון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "טעינה",
+        "חשמל",
+        "סוללה",
+        "כבל",
+        "נסיעה"
+      ]
+    },
+    {
+      "id": "new_088_fire_extinguisher",
+      "title": "מטף כיבוי אש",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "בטיחות",
+        "חירום",
+        "רכב",
+        "טסט",
+        "אזהרה"
+      ]
+    },
+    {
       "id": "item_381_סרט_מדידה_צהוב",
       "title": "מטר מדידה",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -5963,6 +7099,42 @@
       ]
     },
     {
+      "id": "new_137_double_bed",
+      "title": "מיטה זוגית מוצעת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שינה",
+        "לילה",
+        "מנוחה",
+        "רהיטים",
+        "מלון"
+      ]
+    },
+    {
+      "id": "new_052_hospital_bed",
+      "title": "מיטת בית חולים",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "רופא",
+        "אשפוז",
+        "בדיקה",
+        "מרפאה",
+        "אחות"
+      ]
+    },
+    {
+      "id": "new_071_hair_dryer",
+      "title": "מייבש שיער",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תספורת",
+        "מספרה",
+        "ייבוש",
+        "טיפוח",
+        "אמבטיה"
+      ]
+    },
+    {
       "id": "item_468_מייקל_ג_ורדן__צללית_ה_jumpman_",
       "title": "מייקל ג'ורדן ג'מפמן",
       "category": "⚽ ספורט, משחקים ואישים",
@@ -5982,6 +7154,30 @@
         "ילדים",
         "סרט",
         "פארק"
+      ]
+    },
+    {
+      "id": "new_115_microwave",
+      "title": "מיקרוגל",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חימום",
+        "מטבח",
+        "אוכל",
+        "ארוחה",
+        "עבודה"
+      ]
+    },
+    {
+      "id": "new_095_microphone",
+      "title": "מיקרופון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "הופעה",
+        "פגישה",
+        "הרצאה",
+        "אירוע",
+        "שידור"
       ]
     },
     {
@@ -6040,6 +7236,18 @@
       ]
     },
     {
+      "id": "new_025_washing_machine",
+      "title": "מכונת כביסה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תלייה",
+        "בגדים",
+        "ניקיון",
+        "אבקה",
+        "סחיטה"
+      ]
+    },
+    {
       "id": "item_323_מכונת_מזל",
       "title": "מכונת מזל",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -6051,6 +7259,30 @@
       ]
     },
     {
+      "id": "new_056_car_wash",
+      "title": "מכונת שטיפת רכבים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "פוליש",
+        "ניקיון",
+        "סבון",
+        "ברק",
+        "מים"
+      ]
+    },
+    {
+      "id": "new_072_hair_clippers",
+      "title": "מכונת תספורת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ספר",
+        "מספרה",
+        "שיער",
+        "גילוח",
+        "טיפוח"
+      ]
+    },
+    {
       "id": "item_377_מכונת_תפירה_ישנה",
       "title": "מכונת תפירה",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -6059,6 +7291,18 @@
         "תיקון",
         "בד",
         "חוט"
+      ]
+    },
+    {
+      "id": "new_142_lawn_mower",
+      "title": "מכסחת דשא",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "גינה",
+        "גיזום",
+        "חצר",
+        "ניקיון",
+        "קיץ"
       ]
     },
     {
@@ -6106,6 +7350,18 @@
       ]
     },
     {
+      "id": "new_106_aladdin_lamp",
+      "title": "מנורת הקסמים של אלאדין",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "קסם",
+        "אגדה",
+        "זהב",
+        "דיסני",
+        "מזרח"
+      ]
+    },
+    {
       "id": "golden_menorah_seven",
       "title": "מנורת שבעת הקנים",
       "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
@@ -6113,6 +7369,18 @@
         "מנורה",
         "חנוכה",
         "זהב",
+        "אור"
+      ]
+    },
+    {
+      "id": "new_093_desk_lamp",
+      "title": "מנורת שולחן",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "לימודים",
+        "קריאה",
+        "עבודה",
+        "משרד",
         "אור"
       ]
     },
@@ -6204,6 +7472,30 @@
       ]
     },
     {
+      "id": "new_133_sealed_envelope",
+      "title": "מעטפה חתומה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מכתב",
+        "דואר",
+        "חשבונות",
+        "הזמנה",
+        "משלוח"
+      ]
+    },
+    {
+      "id": "new_112_rolling_pin",
+      "title": "מערוך עץ",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אפייה",
+        "מטבח",
+        "עוגה",
+        "לחם",
+        "בישול"
+      ]
+    },
+    {
       "id": "item_283_מפלי_ניאגרה",
       "title": "מפלי מים",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -6237,6 +7529,18 @@
       ]
     },
     {
+      "id": "new_020_plumber_pipe_wrench",
+      "title": "מפתח צינורות אדום",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אינסטלטור",
+        "סתימה",
+        "ברז",
+        "צנרת",
+        "נזילה"
+      ]
+    },
+    {
       "id": "item_356_מפתח_שוודי",
       "title": "מפתח שוודי",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -6248,6 +7552,18 @@
       ]
     },
     {
+      "id": "new_059_car_battery",
+      "title": "מצבר רכב",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מוסך",
+        "חשמל",
+        "התנעה",
+        "כבלים",
+        "תקלה"
+      ]
+    },
+    {
       "id": "item_367_מצית_זיפו",
       "title": "מצית",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -6256,6 +7572,30 @@
         "להבה",
         "הדלקה",
         "גז"
+      ]
+    },
+    {
+      "id": "new_081_dslr_camera",
+      "title": "מצלמה דיגיטלית",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "צילום",
+        "טיול",
+        "חופשה",
+        "אירוע",
+        "זיכרון"
+      ]
+    },
+    {
+      "id": "new_087_security_camera",
+      "title": "מצלמת אבטחה",
+      "category": "🧪 מדע, טכנולוגיה וחלל",
+      "branches": [
+        "אזעקה",
+        "בית",
+        "עסקים",
+        "צילום",
+        "ביטוח"
       ]
     },
     {
@@ -6281,6 +7621,54 @@
       ]
     },
     {
+      "id": "new_114_toaster",
+      "title": "מצנם פרוסות לחם",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בוקר",
+        "מטבח",
+        "ארוחה",
+        "קפה",
+        "חשמל"
+      ]
+    },
+    {
+      "id": "new_124_navigation_compass",
+      "title": "מצפן ניווט",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "טיול",
+        "שביל",
+        "טבע",
+        "יעד",
+        "הליכה"
+      ]
+    },
+    {
+      "id": "new_023_electric_drill",
+      "title": "מקדחה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "בנייה",
+        "הרכבה",
+        "תיקון",
+        "שיפוץ",
+        "קיר"
+      ]
+    },
+    {
+      "id": "new_030_refrigerator",
+      "title": "מקרר",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אוכל",
+        "מטבח",
+        "קניות",
+        "מצרכים",
+        "קור"
+      ]
+    },
+    {
       "id": "item_372_מראת_יד_עגולה",
       "title": "מראה",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -6289,6 +7677,18 @@
         "טיפוח",
         "פנים",
         "אמבטיה"
+      ]
+    },
+    {
+      "id": "new_107_mary_poppins",
+      "title": "מרי פופינס",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "בייביסיטר",
+        "ילדים",
+        "מטרייה",
+        "סדר",
+        "ניקיון"
       ]
     },
     {
@@ -6314,6 +7714,18 @@
       ]
     },
     {
+      "id": "new_053_gas_pump",
+      "title": "משאבת דלק",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "שטיפה",
+        "תדלוק",
+        "רכב",
+        "כביש",
+        "נסיעה"
+      ]
+    },
+    {
       "id": "item_334_פודטראק",
       "title": "משאית אוכל",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -6322,6 +7734,18 @@
         "המבורגר",
         "צ'יפס",
         "רחוב"
+      ]
+    },
+    {
+      "id": "new_122_tow_truck",
+      "title": "משאית גרר",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "מוסך",
+        "תקלה",
+        "רכב",
+        "תאונה",
+        "כביש"
       ]
     },
     {
@@ -6344,6 +7768,18 @@
         "אשפה",
         "מחזור",
         "פח"
+      ]
+    },
+    {
+      "id": "new_042_pizza_slice",
+      "title": "משולש פיצה",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "אוכל",
+        "משלוח",
+        "מסעדה",
+        "ארוחה",
+        "ערב"
       ]
     },
     {
@@ -6391,6 +7827,18 @@
       ]
     },
     {
+      "id": "new_051_bathroom_scale",
+      "title": "משקל אדם",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "דיאטה",
+        "תזונה",
+        "שקילה",
+        "אימון",
+        "כושר"
+      ]
+    },
+    {
       "id": "item_373_משקפי_קריאה",
       "title": "משקפי קריאה",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -6406,6 +7854,18 @@
       "title": "משקפי ראייה",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
       "branches": []
+    },
+    {
+      "id": "new_127_sunglasses",
+      "title": "משקפי שמש",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "קיץ",
+        "חוף",
+        "נהיגה",
+        "חופשה",
+        "אופנה"
+      ]
     },
     {
       "id": "item_336_משקפת_שדה",
@@ -6438,6 +7898,18 @@
         "ספורט",
         "אימון",
         "סימן"
+      ]
+    },
+    {
+      "id": "new_018_wall_light_switch",
+      "title": "מתג תאורה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "כיבוי",
+        "חשמל",
+        "חדר",
+        "בית",
+        "תיקון"
       ]
     },
     {
@@ -6515,6 +7987,18 @@
         "מסירה",
         "ריצה",
         "שרוכים"
+      ]
+    },
+    {
+      "id": "new_082_running_shoes",
+      "title": "נעלי ריצה ספורטיביות",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "מרתון",
+        "אימון",
+        "כושר",
+        "הליכה",
+        "מדרסים"
       ]
     },
     {
@@ -6707,6 +8191,18 @@
       ]
     },
     {
+      "id": "new_109_cooking_pot",
+      "title": "סיר בישול על הכיריים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מתכון",
+        "מטבח",
+        "מרק",
+        "ארוחה",
+        "אוכל"
+      ]
+    },
+    {
       "id": "item_360_מזלג__סכין_וכף",
       "title": "סכו\"ם",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -6715,6 +8211,18 @@
         "ארוחה",
         "שולחן",
         "מטבח"
+      ]
+    },
+    {
+      "id": "new_073_razor_blade",
+      "title": "סכין גילוח",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "קצף",
+        "זקן",
+        "מקלחת",
+        "טיפוח",
+        "אמבטיה"
       ]
     },
     {
@@ -6737,6 +8245,30 @@
         "אריזה",
         "קרטון",
         "חבילה"
+      ]
+    },
+    {
+      "id": "new_090_thread_spool",
+      "title": "סליל חוטים צבעוני",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תפירה",
+        "תיקון",
+        "בגדים",
+        "כפתור",
+        "יצירה"
+      ]
+    },
+    {
+      "id": "new_037_vegetable_basket",
+      "title": "סלסלת ירקות טריים",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "סופרמרקט",
+        "קניות",
+        "שוק",
+        "בישול",
+        "תזונה"
       ]
     },
     {
@@ -6795,6 +8327,30 @@
       ]
     },
     {
+      "id": "new_104_santa_claus",
+      "title": "סנטה קלאוס",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "מתנה",
+        "חורף",
+        "חגיגה",
+        "זקן",
+        "שלג"
+      ]
+    },
+    {
+      "id": "new_136_living_room_sofa",
+      "title": "ספה בסלון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מנוחה",
+        "בית",
+        "רהיטים",
+        "טלוויזיה",
+        "אירוח"
+      ]
+    },
+    {
       "id": "spider_man",
       "title": "ספיידרמן",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -6814,6 +8370,18 @@
         "מפרש",
         "תותח",
         "אוצר"
+      ]
+    },
+    {
+      "id": "new_040_cappuccino_cup",
+      "title": "ספל קפה הפוך",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "בוקר",
+        "פגישה",
+        "מסעדה",
+        "עבודה",
+        "שתייה"
       ]
     },
     {
@@ -6905,6 +8473,18 @@
       ]
     },
     {
+      "id": "new_043_birthday_cake",
+      "title": "עוגת יום הולדת",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "מסיבה",
+        "חגיגה",
+        "מתנה",
+        "אירוע",
+        "מאפייה"
+      ]
+    },
+    {
       "id": "farm_goat",
       "title": "עז הרים עם קרניים",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -6938,6 +8518,18 @@
       ]
     },
     {
+      "id": "new_009_fountain_pen",
+      "title": "עט נובע",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "כתיבה",
+        "חתימה",
+        "חוזה",
+        "הסכם",
+        "משרד"
+      ]
+    },
+    {
       "id": "item_461_נשר",
       "title": "עיט מעופף",
       "category": "🏜️ טבע, תופעות טבע ובעלי חיים",
@@ -6960,6 +8552,18 @@
       ]
     },
     {
+      "id": "new_132_daily_newspaper",
+      "title": "עיתון יומי מקופל",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חדשות",
+        "בוקר",
+        "קריאה",
+        "קפה",
+        "פרסום"
+      ]
+    },
+    {
       "id": "item_280_עלה_מייפל",
       "title": "עלה שלכת",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -6968,6 +8572,18 @@
         "קנדה",
         "סירופ",
         "פנקייק"
+      ]
+    },
+    {
+      "id": "new_070_barber_pole",
+      "title": "עמוד ספרים מסתובב",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "תספורת",
+        "פן",
+        "מספרה",
+        "שיער",
+        "טיפוח"
       ]
     },
     {
@@ -7059,6 +8675,18 @@
       ]
     },
     {
+      "id": "new_098_towel_stack",
+      "title": "ערימת מגבות נקיות",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מקלחת",
+        "אמבטיה",
+        "כביסה",
+        "בריכה",
+        "חוף"
+      ]
+    },
+    {
       "id": "item_337_ערסל_קשור_בין_שני_עצים",
       "title": "ערסל",
       "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
@@ -7133,6 +8761,18 @@
       ]
     },
     {
+      "id": "new_022_rubber_plunger",
+      "title": "פומפה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "סתימה",
+        "אינסטלטור",
+        "שירותים",
+        "צנרת",
+        "תיקון"
+      ]
+    },
+    {
       "id": "popeye",
       "title": "פופאי",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -7185,6 +8825,18 @@
         "ניקיון",
         "זבל",
         "גרוע"
+      ]
+    },
+    {
+      "id": "new_100_recycling_bin",
+      "title": "פח מיחזור כחול",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מחזור",
+        "נייר",
+        "קרטון",
+        "סביבה",
+        "ניקיון"
       ]
     },
     {
@@ -7309,6 +8961,30 @@
       ]
     },
     {
+      "id": "new_144_paint_palette",
+      "title": "פלטת צבעים ומכחול",
+      "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+      "branches": [
+        "ציור",
+        "אמנות",
+        "יצירה",
+        "חוג",
+        "צביעה"
+      ]
+    },
+    {
+      "id": "new_046_band_aid",
+      "title": "פלסטר",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "פציעה",
+        "חבישה",
+        "עזרה",
+        "תרופה",
+        "רופא"
+      ]
+    },
+    {
       "id": "item_254_דוב_פנדה",
       "title": "פנדה",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -7328,6 +9004,18 @@
         "חושך",
         "לילה",
         "סוללות"
+      ]
+    },
+    {
+      "id": "new_003_bank_checkbook",
+      "title": "פנקס המחאות",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תשלום",
+        "בנק",
+        "חתימה",
+        "שכירות",
+        "חשבון"
       ]
     },
     {
@@ -7414,6 +9102,18 @@
         "פסל",
         "טיקי",
         "אבן"
+      ]
+    },
+    {
+      "id": "new_097_hotel_bell",
+      "title": "פעמון קבלה במלון",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "שירות",
+        "פקיד",
+        "מפתח",
+        "הזמנה",
+        "אירוח"
       ]
     },
     {
@@ -7559,6 +9259,18 @@
       ]
     },
     {
+      "id": "new_054_car_tire",
+      "title": "צמיג רכב",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "פנצר",
+        "גלגל",
+        "מוסך",
+        "טסט",
+        "נהיגה"
+      ]
+    },
+    {
       "id": "item_210_צפלין",
       "title": "צפלין",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -7581,6 +9293,18 @@
       ]
     },
     {
+      "id": "new_019_bunch_of_keys",
+      "title": "צרור מפתחות",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "נעילה",
+        "דלת",
+        "דירה",
+        "בית",
+        "רכב"
+      ]
+    },
+    {
       "id": "item_428_קביים",
       "title": "קביים",
       "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
@@ -7589,6 +9313,18 @@
         "גבס",
         "פציעה",
         "הליכה"
+      ]
+    },
+    {
+      "id": "new_085_receipt_paper",
+      "title": "קבלה מודפסת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תשלום",
+        "קניות",
+        "חשבון",
+        "החלפה",
+        "אחריות"
       ]
     },
     {
@@ -7669,6 +9405,30 @@
       ]
     },
     {
+      "id": "new_031_electric_kettle",
+      "title": "קומקום חשמלי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "קפה",
+        "תה",
+        "מטבח",
+        "מים",
+        "בוקר"
+      ]
+    },
+    {
+      "id": "new_091_cash_register",
+      "title": "קופה רושמת",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "סופרמרקט",
+        "תשלום",
+        "קניות",
+        "מכולת",
+        "חשבון"
+      ]
+    },
+    {
       "id": "item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל",
       "title": "קופידון מלאך האהבה",
       "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -7677,6 +9437,18 @@
         "רומנטיקה",
         "מלאך",
         "זוגיות"
+      ]
+    },
+    {
+      "id": "new_077_gift_box",
+      "title": "קופסת מתנה עם סרט",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "חגיגה",
+        "אירוע",
+        "מסיבה",
+        "חתונה",
+        "קניות"
       ]
     },
     {
@@ -7699,6 +9471,18 @@
         "מטבעות",
         "בנק",
         "תקציב"
+      ]
+    },
+    {
+      "id": "new_150_charity_box",
+      "title": "קופת צדקה",
+      "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+      "branches": [
+        "תרומה",
+        "עזרה",
+        "כסף",
+        "מטבעות",
+        "חסד"
       ]
     },
     {
@@ -7790,6 +9574,18 @@
       ]
     },
     {
+      "id": "new_145_clapperboard",
+      "title": "קלאפר קולנוע",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "סרט",
+        "צילום",
+        "הופעה",
+        "סדרה",
+        "בימוי"
+      ]
+    },
+    {
       "id": "item_243_קלנועית",
       "title": "קלנועית",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -7798,6 +9594,18 @@
         "סבתא",
         "קניות",
         "מכולת"
+      ]
+    },
+    {
+      "id": "new_005_office_binder",
+      "title": "קלסר משרדי",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תיוק",
+        "מסמכים",
+        "ביטוח",
+        "חשבונות",
+        "סדר"
       ]
     },
     {
@@ -7855,6 +9663,18 @@
       ]
     },
     {
+      "id": "new_066_dog_bowl",
+      "title": "קערת אוכל לכלב",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "וטרינר",
+        "האכלה",
+        "חיות",
+        "טיול",
+        "סופרמרקט"
+      ]
+    },
+    {
       "id": "asian_noodles_bowl",
       "title": "קערת איטריות",
       "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
@@ -7866,6 +9686,18 @@
       ]
     },
     {
+      "id": "new_038_fruit_bowl",
+      "title": "קערת פירות",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "סופרמרקט",
+        "קניות",
+        "שוק",
+        "ארוחה",
+        "תזונה"
+      ]
+    },
+    {
       "id": "captain_america",
       "title": "קפטן אמריקה",
       "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
@@ -7874,6 +9706,18 @@
         "הגנה",
         "מפקד",
         "הצדעה"
+      ]
+    },
+    {
+      "id": "new_044_medicine_capsule",
+      "title": "קפסולת תרופה",
+      "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+      "branches": [
+        "תרופות",
+        "מרשם",
+        "כאב",
+        "רוקח",
+        "רופא"
       ]
     },
     {
@@ -7921,6 +9765,42 @@
       ]
     },
     {
+      "id": "new_035_egg_carton",
+      "title": "קרטון ביצים",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "סופרמרקט",
+        "קניות",
+        "אפייה",
+        "מכולת",
+        "ארוחה"
+      ]
+    },
+    {
+      "id": "new_033_milk_carton",
+      "title": "קרטון חלב",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "סופרמרקט",
+        "קניות",
+        "מכולת",
+        "קפה",
+        "ארוחה"
+      ]
+    },
+    {
+      "id": "new_089_ironing_board",
+      "title": "קרש גיהוץ",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מגהץ",
+        "בגדים",
+        "חולצה",
+        "כביסה",
+        "סדר"
+      ]
+    },
+    {
       "id": "item_291_קשת_בענן",
       "title": "קשת בענן",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -7929,6 +9809,30 @@
         "גשם",
         "שמש",
         "חורף"
+      ]
+    },
+    {
+      "id": "new_138_shower_head",
+      "title": "ראש מקלחת זורם",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "אמבטיה",
+        "מים",
+        "ניקיון",
+        "בוקר",
+        "סבון"
+      ]
+    },
+    {
+      "id": "new_141_radiator_heater",
+      "title": "רדיאטור חימום",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "חורף",
+        "קור",
+        "חום",
+        "חשמל",
+        "בית"
       ]
     },
     {
@@ -7998,6 +9902,18 @@
       ]
     },
     {
+      "id": "new_024_paint_roller",
+      "title": "רולר צביעה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "סיוד",
+        "שיפוץ",
+        "קיר",
+        "דירה",
+        "תיקון"
+      ]
+    },
+    {
       "id": "item_229_רולרבליידס",
       "title": "רולרבליידס מהיר",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -8052,6 +9968,18 @@
       ]
     },
     {
+      "id": "new_058_drivers_license",
+      "title": "רישיון נהיגה",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "טסט",
+        "ביטוח",
+        "זיהוי",
+        "כרטיס",
+        "רכב"
+      ]
+    },
+    {
       "id": "item_227_רכב_שטח_מפלצתי",
       "title": "רכב מפלצת",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -8085,6 +10013,18 @@
       ]
     },
     {
+      "id": "new_121_passenger_train",
+      "title": "רכבת נוסעים",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "נסיעה",
+        "תחנה",
+        "טיול",
+        "עבודה",
+        "מהירות"
+      ]
+    },
+    {
       "id": "item_204_רכבת_קיטור_ישנה",
       "title": "רכבת קיטור",
       "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
@@ -8104,6 +10044,30 @@
         "מהירות",
         "נסיעה",
         "דייקנות"
+      ]
+    },
+    {
+      "id": "new_057_traffic_light",
+      "title": "רמזור",
+      "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+      "branches": [
+        "נהיגה",
+        "כביש",
+        "צומת",
+        "תנועה",
+        "רכב"
+      ]
+    },
+    {
+      "id": "new_067_dog_leash",
+      "title": "רצועת טיול לכלב",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "פארק",
+        "הליכה",
+        "אימון",
+        "בוקר",
+        "ערב"
       ]
     },
     {
@@ -8140,6 +10104,18 @@
       ]
     },
     {
+      "id": "new_027_vacuum_cleaner",
+      "title": "שואב אבק",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "ניקיון",
+        "רצפה",
+        "שטיח",
+        "סדר",
+        "בית"
+      ]
+    },
+    {
       "id": "item_282_שונית_אלמוגים_צבעונית",
       "title": "שונית אלמוגים",
       "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
@@ -8173,6 +10149,18 @@
       ]
     },
     {
+      "id": "new_049_chattering_teeth",
+      "title": "שיניים תותבות מתקתקות",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "שיננית",
+        "רופא",
+        "סתימה",
+        "כאב",
+        "בדיקה"
+      ]
+    },
+    {
       "id": "neon_motel_sign",
       "title": "שלט ניאון וינטג'",
       "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
@@ -8192,6 +10180,18 @@
       ]
     },
     {
+      "id": "new_146_game_controller",
+      "title": "שלט קונסולת משחקים",
+      "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+      "branches": [
+        "טורניר",
+        "מסך",
+        "כפתור",
+        "פנאי",
+        "גיימינג"
+      ]
+    },
+    {
       "id": "item_497_איש_ואישה__הסמלים_על_דלתות_השירותים_",
       "title": "שלט שירותים",
       "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
@@ -8200,6 +10200,18 @@
         "מסעדה",
         "ניקיון",
         "דלת"
+      ]
+    },
+    {
+      "id": "new_092_delivery_scooter",
+      "title": "שליח על קטנוע",
+      "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+      "branches": [
+        "משלוח",
+        "טיפ",
+        "אוכל",
+        "חבילה",
+        "הזמנה"
       ]
     },
     {
@@ -8244,6 +10256,18 @@
         "השכמה",
         "שינה",
         "זמן"
+      ]
+    },
+    {
+      "id": "new_129_wall_clock",
+      "title": "שעון קיר עגול",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "זמן",
+        "פגישה",
+        "שעה",
+        "איחור",
+        "דדליין"
       ]
     },
     {
@@ -8302,6 +10326,42 @@
       ]
     },
     {
+      "id": "new_099_trash_bag",
+      "title": "שקית אשפה שחורה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מיחזור",
+        "זבל",
+        "ניקיון",
+        "פח",
+        "סדר"
+      ]
+    },
+    {
+      "id": "new_084_shopping_bag",
+      "title": "שקית קניות מלאה",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "סופרמרקט",
+        "קניון",
+        "מכולת",
+        "מצרכים",
+        "בגדים"
+      ]
+    },
+    {
+      "id": "new_017_power_outlet",
+      "title": "שקע חשמל",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "מטען",
+        "חשבונות",
+        "תקלה",
+        "תיקון",
+        "טעינה"
+      ]
+    },
+    {
       "id": "item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל",
       "title": "שריר זרוע מנופח",
       "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -8310,6 +10370,18 @@
         "כושר",
         "משקולות",
         "כוח"
+      ]
+    },
+    {
+      "id": "new_101_sherlock_holmes",
+      "title": "שרלוק הולמס",
+      "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+      "branches": [
+        "בלש",
+        "חקירה",
+        "חיפוש",
+        "בדיקה",
+        "אנגליה"
       ]
     },
     {
@@ -8335,6 +10407,18 @@
       ]
     },
     {
+      "id": "new_118_wine_glasses",
+      "title": "שתי כוסות יין אדום",
+      "category": "🍞 מאכלים ומאפים",
+      "branches": [
+        "רומנטיקה",
+        "זוגיות",
+        "חגיגה",
+        "אירוח",
+        "מסעדה"
+      ]
+    },
+    {
       "id": "item_152_תיבת_אוצר__מסמלת",
       "title": "תיבת אוצר",
       "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
@@ -8346,6 +10430,18 @@
       ]
     },
     {
+      "id": "new_012_red_mailbox",
+      "title": "תיבת דואר אדומה",
+      "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+      "branches": [
+        "מכתב",
+        "חבילה",
+        "משלוח",
+        "חשבונות",
+        "הודעה"
+      ]
+    },
+    {
       "id": "item_434_תיק_עזרה_ראשונה",
       "title": "תיק חובש",
       "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
@@ -8354,6 +10450,30 @@
         "תרופות",
         "חירום",
         "פלסטר"
+      ]
+    },
+    {
+      "id": "new_135_executive_briefcase",
+      "title": "תיק מנהלים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "עבודה",
+        "פגישה",
+        "עסקים",
+        "משרד",
+        "משפט"
+      ]
+    },
+    {
+      "id": "new_134_document_folder",
+      "title": "תיקיית מסמכים",
+      "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+      "branches": [
+        "תיוק",
+        "משרד",
+        "עבודה",
+        "חוזה",
+        "סדר"
       ]
     },
     {
@@ -8387,6 +10507,30 @@
         "נהיגה",
         "צומת",
         "רכב"
+      ]
+    },
+    {
+      "id": "new_008_id_card",
+      "title": "תעודת זהות",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "זיהוי",
+        "בנק",
+        "משרד",
+        "אישור",
+        "כרטיס"
+      ]
+    },
+    {
+      "id": "new_149_graduation_diploma",
+      "title": "תעודת סיום מגולגלת בסרט",
+      "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+      "branches": [
+        "תואר",
+        "לימודים",
+        "אוניברסיטה",
+        "הצלחה",
+        "טקס"
       ]
     },
     {

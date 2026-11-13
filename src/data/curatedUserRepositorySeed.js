@@ -8363,6 +8363,3006 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "isUserApproved": true,
     "isCuratedSeed": true,
     "createdAt": 1794400000440
+  },
+  {
+    "id": "new_001_atm_machine",
+    "name": "כספומט",
+    "title": "כספומט",
+    "imageUrl": "/staged_images/pool/new_001_atm_machine.jpg",
+    "keywords": [
+      "בנק",
+      "מזומן",
+      "כרטיס",
+      "תשלום",
+      "חיסכון"
+    ],
+    "association": "בנק, מזומן, כרטיס, תשלום, חיסכון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001001
+  },
+  {
+    "id": "new_002_credit_card",
+    "name": "כרטיס אשראי",
+    "title": "כרטיס אשראי",
+    "imageUrl": "/staged_images/pool/new_002_credit_card.jpg",
+    "keywords": [
+      "תשלום",
+      "בנק",
+      "קניות",
+      "חשבון",
+      "עסקה"
+    ],
+    "association": "תשלום, בנק, קניות, חשבון, עסקה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001002
+  },
+  {
+    "id": "new_003_bank_checkbook",
+    "name": "פנקס המחאות",
+    "title": "פנקס המחאות",
+    "imageUrl": "/staged_images/pool/new_003_bank_checkbook.jpg",
+    "keywords": [
+      "תשלום",
+      "בנק",
+      "חתימה",
+      "שכירות",
+      "חשבון"
+    ],
+    "association": "תשלום, בנק, חתימה, שכירות, חשבון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001003
+  },
+  {
+    "id": "new_004_pocket_calculator",
+    "name": "מחשבון כיס",
+    "title": "מחשבון כיס",
+    "imageUrl": "/staged_images/pool/new_004_pocket_calculator.jpg",
+    "keywords": [
+      "תקציב",
+      "הוצאות",
+      "מספרים",
+      "בנק",
+      "לימודים"
+    ],
+    "association": "תקציב, הוצאות, מספרים, בנק, לימודים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001004
+  },
+  {
+    "id": "new_005_office_binder",
+    "name": "קלסר משרדי",
+    "title": "קלסר משרדי",
+    "imageUrl": "/staged_images/pool/new_005_office_binder.jpg",
+    "keywords": [
+      "תיוק",
+      "מסמכים",
+      "ביטוח",
+      "חשבונות",
+      "סדר"
+    ],
+    "association": "תיוק, מסמכים, ביטוח, חשבונות, סדר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001005
+  },
+  {
+    "id": "new_006_ink_stamp",
+    "name": "חותמת דיו",
+    "title": "חותמת דיו",
+    "imageUrl": "/staged_images/pool/new_006_ink_stamp.jpg",
+    "keywords": [
+      "אישור",
+      "משרד",
+      "מסמכים",
+      "חתימה",
+      "חוזה"
+    ],
+    "association": "אישור, משרד, מסמכים, חתימה, חוזה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001006
+  },
+  {
+    "id": "new_007_passport_booklet",
+    "name": "דרכון",
+    "title": "דרכון",
+    "imageUrl": "/staged_images/pool/new_007_passport_booklet.jpg",
+    "keywords": [
+      "טיסה",
+      "חופשה",
+      "זיהוי",
+      "תיירות",
+      "נסיעה"
+    ],
+    "association": "טיסה, חופשה, זיהוי, תיירות, נסיעה",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001007
+  },
+  {
+    "id": "new_008_id_card",
+    "name": "תעודת זהות",
+    "title": "תעודת זהות",
+    "imageUrl": "/staged_images/pool/new_008_id_card.jpg",
+    "keywords": [
+      "זיהוי",
+      "בנק",
+      "משרד",
+      "אישור",
+      "כרטיס"
+    ],
+    "association": "זיהוי, בנק, משרד, אישור, כרטיס",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001008
+  },
+  {
+    "id": "new_009_fountain_pen",
+    "name": "עט נובע",
+    "title": "עט נובע",
+    "imageUrl": "/staged_images/pool/new_009_fountain_pen.jpg",
+    "keywords": [
+      "כתיבה",
+      "חתימה",
+      "חוזה",
+      "הסכם",
+      "משרד"
+    ],
+    "association": "כתיבה, חתימה, חוזה, הסכם, משרד",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001009
+  },
+  {
+    "id": "new_010_office_printer",
+    "name": "מדפסת",
+    "title": "מדפסת",
+    "imageUrl": "/staged_images/pool/new_010_office_printer.jpg",
+    "keywords": [
+      "הדפסה",
+      "משרד",
+      "מסמכים",
+      "דיו",
+      "דפים"
+    ],
+    "association": "הדפסה, משרד, מסמכים, דיו, דפים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001010
+  },
+  {
+    "id": "new_011_wall_calendar",
+    "name": "לוח שנה",
+    "title": "לוח שנה",
+    "imageUrl": "/staged_images/pool/new_011_wall_calendar.jpg",
+    "keywords": [
+      "תאריך",
+      "פגישה",
+      "תזכורת",
+      "תור",
+      "חופשה"
+    ],
+    "association": "תאריך, פגישה, תזכורת, תור, חופשה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001011
+  },
+  {
+    "id": "new_012_red_mailbox",
+    "name": "תיבת דואר אדומה",
+    "title": "תיבת דואר אדומה",
+    "imageUrl": "/staged_images/pool/new_012_red_mailbox.jpg",
+    "keywords": [
+      "מכתב",
+      "חבילה",
+      "משלוח",
+      "חשבונות",
+      "הודעה"
+    ],
+    "association": "מכתב, חבילה, משלוח, חשבונות, הודעה",
+    "domain": "daily_life",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001012
+  },
+  {
+    "id": "new_013_cardboard_box",
+    "name": "ארגז קרטון",
+    "title": "ארגז קרטון",
+    "imageUrl": "/staged_images/pool/new_013_cardboard_box.jpg",
+    "keywords": [
+      "חבילה",
+      "משלוח",
+      "דואר",
+      "אריזה",
+      "הובלה"
+    ],
+    "association": "חבילה, משלוח, דואר, אריזה, הובלה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001013
+  },
+  {
+    "id": "new_014_laptop_computer",
+    "name": "מחשב נייד",
+    "title": "מחשב נייד",
+    "imageUrl": "/staged_images/pool/new_014_laptop_computer.jpg",
+    "keywords": [
+      "עבודה",
+      "פגישה",
+      "כתיבה",
+      "תכנות",
+      "משרד"
+    ],
+    "association": "עבודה, פגישה, כתיבה, תכנות, משרד",
+    "domain": "daily_life",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001014
+  },
+  {
+    "id": "new_015_over_ear_headphones",
+    "name": "אוזניות קשת",
+    "title": "אוזניות קשת",
+    "imageUrl": "/staged_images/pool/new_015_over_ear_headphones.jpg",
+    "keywords": [
+      "מוזיקה",
+      "שיחה",
+      "ריצה",
+      "אימון",
+      "פגישה"
+    ],
+    "association": "מוזיקה, שיחה, ריצה, אימון, פגישה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001015
+  },
+  {
+    "id": "new_016_phone_charger",
+    "name": "מטען לטלפון",
+    "title": "מטען לטלפון",
+    "imageUrl": "/staged_images/pool/new_016_phone_charger.jpg",
+    "keywords": [
+      "טעינה",
+      "חשמל",
+      "סוללה",
+      "כבל",
+      "נסיעה"
+    ],
+    "association": "טעינה, חשמל, סוללה, כבל, נסיעה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001016
+  },
+  {
+    "id": "new_017_power_outlet",
+    "name": "שקע חשמל",
+    "title": "שקע חשמל",
+    "imageUrl": "/staged_images/pool/new_017_power_outlet.jpg",
+    "keywords": [
+      "מטען",
+      "חשבונות",
+      "תקלה",
+      "תיקון",
+      "טעינה"
+    ],
+    "association": "מטען, חשבונות, תקלה, תיקון, טעינה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001017
+  },
+  {
+    "id": "new_018_wall_light_switch",
+    "name": "מתג תאורה",
+    "title": "מתג תאורה",
+    "imageUrl": "/staged_images/pool/new_018_wall_light_switch.jpg",
+    "keywords": [
+      "כיבוי",
+      "חשמל",
+      "חדר",
+      "בית",
+      "תיקון"
+    ],
+    "association": "כיבוי, חשמל, חדר, בית, תיקון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001018
+  },
+  {
+    "id": "new_019_bunch_of_keys",
+    "name": "צרור מפתחות",
+    "title": "צרור מפתחות",
+    "imageUrl": "/staged_images/pool/new_019_bunch_of_keys.jpg",
+    "keywords": [
+      "נעילה",
+      "דלת",
+      "דירה",
+      "בית",
+      "רכב"
+    ],
+    "association": "נעילה, דלת, דירה, בית, רכב",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001019
+  },
+  {
+    "id": "new_020_plumber_pipe_wrench",
+    "name": "מפתח צינורות אדום",
+    "title": "מפתח צינורות אדום",
+    "imageUrl": "/staged_images/pool/new_020_plumber_pipe_wrench.jpg",
+    "keywords": [
+      "אינסטלטור",
+      "סתימה",
+      "ברז",
+      "צנרת",
+      "נזילה"
+    ],
+    "association": "אינסטלטור, סתימה, ברז, צנרת, נזילה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001020
+  },
+  {
+    "id": "new_021_dripping_faucet",
+    "name": "ברז מטפטף",
+    "title": "ברז מטפטף",
+    "imageUrl": "/staged_images/pool/new_021_dripping_faucet.jpg",
+    "keywords": [
+      "אינסטלטור",
+      "נזילה",
+      "צנרת",
+      "תיקון",
+      "מים"
+    ],
+    "association": "אינסטלטור, נזילה, צנרת, תיקון, מים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001021
+  },
+  {
+    "id": "new_022_rubber_plunger",
+    "name": "פומפה",
+    "title": "פומפה",
+    "imageUrl": "/staged_images/pool/new_022_rubber_plunger.jpg",
+    "keywords": [
+      "סתימה",
+      "אינסטלטור",
+      "שירותים",
+      "צנרת",
+      "תיקון"
+    ],
+    "association": "סתימה, אינסטלטור, שירותים, צנרת, תיקון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001022
+  },
+  {
+    "id": "new_023_electric_drill",
+    "name": "מקדחה",
+    "title": "מקדחה",
+    "imageUrl": "/staged_images/pool/new_023_electric_drill.jpg",
+    "keywords": [
+      "בנייה",
+      "הרכבה",
+      "תיקון",
+      "שיפוץ",
+      "קיר"
+    ],
+    "association": "בנייה, הרכבה, תיקון, שיפוץ, קיר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001023
+  },
+  {
+    "id": "new_024_paint_roller",
+    "name": "רולר צביעה",
+    "title": "רולר צביעה",
+    "imageUrl": "/staged_images/pool/new_024_paint_roller.jpg",
+    "keywords": [
+      "סיוד",
+      "שיפוץ",
+      "קיר",
+      "דירה",
+      "תיקון"
+    ],
+    "association": "סיוד, שיפוץ, קיר, דירה, תיקון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001024
+  },
+  {
+    "id": "new_025_washing_machine",
+    "name": "מכונת כביסה",
+    "title": "מכונת כביסה",
+    "imageUrl": "/staged_images/pool/new_025_washing_machine.jpg",
+    "keywords": [
+      "תלייה",
+      "בגדים",
+      "ניקיון",
+      "אבקה",
+      "סחיטה"
+    ],
+    "association": "תלייה, בגדים, ניקיון, אבקה, סחיטה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001025
+  },
+  {
+    "id": "new_026_dishwasher",
+    "name": "מדיח כלים",
+    "title": "מדיח כלים",
+    "imageUrl": "/staged_images/pool/new_026_dishwasher.jpg",
+    "keywords": [
+      "מטבח",
+      "ניקיון",
+      "סבון",
+      "ארוחה",
+      "סדר"
+    ],
+    "association": "מטבח, ניקיון, סבון, ארוחה, סדר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001026
+  },
+  {
+    "id": "new_027_vacuum_cleaner",
+    "name": "שואב אבק",
+    "title": "שואב אבק",
+    "imageUrl": "/staged_images/pool/new_027_vacuum_cleaner.jpg",
+    "keywords": [
+      "ניקיון",
+      "רצפה",
+      "שטיח",
+      "סדר",
+      "בית"
+    ],
+    "association": "ניקיון, רצפה, שטיח, סדר, בית",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001027
+  },
+  {
+    "id": "new_028_mop_and_bucket",
+    "name": "מגב ודלי",
+    "title": "מגב ודלי",
+    "imageUrl": "/staged_images/pool/new_028_mop_and_bucket.jpg",
+    "keywords": [
+      "שטיפה",
+      "רצפה",
+      "ניקיון",
+      "מים",
+      "בית"
+    ],
+    "association": "שטיפה, רצפה, ניקיון, מים, בית",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001028
+  },
+  {
+    "id": "new_029_cleaning_spray",
+    "name": "בקבוק תרסיס ניקוי",
+    "title": "בקבוק תרסיס ניקוי",
+    "imageUrl": "/staged_images/pool/new_029_cleaning_spray.jpg",
+    "keywords": [
+      "ניקיון",
+      "חלונות",
+      "מטבח",
+      "הדברה",
+      "בית"
+    ],
+    "association": "ניקיון, חלונות, מטבח, הדברה, בית",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001029
+  },
+  {
+    "id": "new_030_refrigerator",
+    "name": "מקרר",
+    "title": "מקרר",
+    "imageUrl": "/staged_images/pool/new_030_refrigerator.jpg",
+    "keywords": [
+      "אוכל",
+      "מטבח",
+      "קניות",
+      "מצרכים",
+      "קור"
+    ],
+    "association": "אוכל, מטבח, קניות, מצרכים, קור",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001030
+  },
+  {
+    "id": "new_031_electric_kettle",
+    "name": "קומקום חשמלי",
+    "title": "קומקום חשמלי",
+    "imageUrl": "/staged_images/pool/new_031_electric_kettle.jpg",
+    "keywords": [
+      "קפה",
+      "תה",
+      "מטבח",
+      "מים",
+      "בוקר"
+    ],
+    "association": "קפה, תה, מטבח, מים, בוקר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001031
+  },
+  {
+    "id": "new_032_air_conditioner",
+    "name": "מזגן",
+    "title": "מזגן",
+    "imageUrl": "/staged_images/pool/new_032_air_conditioner.jpg",
+    "keywords": [
+      "קור",
+      "חום",
+      "קיץ",
+      "חורף",
+      "תיקון"
+    ],
+    "association": "קור, חום, קיץ, חורף, תיקון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001032
+  },
+  {
+    "id": "new_033_milk_carton",
+    "name": "קרטון חלב",
+    "title": "קרטון חלב",
+    "imageUrl": "/staged_images/pool/new_033_milk_carton.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "קניות",
+      "מכולת",
+      "קפה",
+      "ארוחה"
+    ],
+    "association": "סופרמרקט, קניות, מכולת, קפה, ארוחה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001033
+  },
+  {
+    "id": "new_034_french_baguette",
+    "name": "כיכר בגט",
+    "title": "כיכר בגט",
+    "imageUrl": "/staged_images/pool/new_034_french_baguette.jpg",
+    "keywords": [
+      "לחם",
+      "מאפייה",
+      "סופרמרקט",
+      "קניות",
+      "ארוחה"
+    ],
+    "association": "לחם, מאפייה, סופרמרקט, קניות, ארוחה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001034
+  },
+  {
+    "id": "new_035_egg_carton",
+    "name": "קרטון ביצים",
+    "title": "קרטון ביצים",
+    "imageUrl": "/staged_images/pool/new_035_egg_carton.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "קניות",
+      "אפייה",
+      "מכולת",
+      "ארוחה"
+    ],
+    "association": "סופרמרקט, קניות, אפייה, מכולת, ארוחה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001035
+  },
+  {
+    "id": "new_036_yellow_cheese",
+    "name": "חריץ גבינה צהובה",
+    "title": "חריץ גבינה צהובה",
+    "imageUrl": "/staged_images/pool/new_036_yellow_cheese.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "קניות",
+      "מכולת",
+      "ארוחה",
+      "מקרר"
+    ],
+    "association": "סופרמרקט, קניות, מכולת, ארוחה, מקרר",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001036
+  },
+  {
+    "id": "new_037_vegetable_basket",
+    "name": "סלסלת ירקות טריים",
+    "title": "סלסלת ירקות טריים",
+    "imageUrl": "/staged_images/pool/new_037_vegetable_basket.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "קניות",
+      "שוק",
+      "בישול",
+      "תזונה"
+    ],
+    "association": "סופרמרקט, קניות, שוק, בישול, תזונה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001037
+  },
+  {
+    "id": "new_038_fruit_bowl",
+    "name": "קערת פירות",
+    "title": "קערת פירות",
+    "imageUrl": "/staged_images/pool/new_038_fruit_bowl.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "קניות",
+      "שוק",
+      "ארוחה",
+      "תזונה"
+    ],
+    "association": "סופרמרקט, קניות, שוק, ארוחה, תזונה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001038
+  },
+  {
+    "id": "new_039_olive_oil",
+    "name": "בקבוק שמן זית",
+    "title": "בקבוק שמן זית",
+    "imageUrl": "/staged_images/pool/new_039_olive_oil.jpg",
+    "keywords": [
+      "בישול",
+      "מטבח",
+      "סופרמרקט",
+      "קניות",
+      "סלט"
+    ],
+    "association": "בישול, מטבח, סופרמרקט, קניות, סלט",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001039
+  },
+  {
+    "id": "new_040_cappuccino_cup",
+    "name": "ספל קפה הפוך",
+    "title": "ספל קפה הפוך",
+    "imageUrl": "/staged_images/pool/new_040_cappuccino_cup.jpg",
+    "keywords": [
+      "בוקר",
+      "פגישה",
+      "מסעדה",
+      "עבודה",
+      "שתייה"
+    ],
+    "association": "בוקר, פגישה, מסעדה, עבודה, שתייה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001040
+  },
+  {
+    "id": "new_041_mineral_water",
+    "name": "בקבוק מים מינרליים",
+    "title": "בקבוק מים מינרליים",
+    "imageUrl": "/staged_images/pool/new_041_mineral_water.jpg",
+    "keywords": [
+      "שתייה",
+      "סופרמרקט",
+      "אימון",
+      "טיול",
+      "קניות"
+    ],
+    "association": "שתייה, סופרמרקט, אימון, טיול, קניות",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001041
+  },
+  {
+    "id": "new_042_pizza_slice",
+    "name": "משולש פיצה",
+    "title": "משולש פיצה",
+    "imageUrl": "/staged_images/pool/new_042_pizza_slice.jpg",
+    "keywords": [
+      "אוכל",
+      "משלוח",
+      "מסעדה",
+      "ארוחה",
+      "ערב"
+    ],
+    "association": "אוכל, משלוח, מסעדה, ארוחה, ערב",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001042
+  },
+  {
+    "id": "new_043_birthday_cake",
+    "name": "עוגת יום הולדת",
+    "title": "עוגת יום הולדת",
+    "imageUrl": "/staged_images/pool/new_043_birthday_cake.jpg",
+    "keywords": [
+      "מסיבה",
+      "חגיגה",
+      "מתנה",
+      "אירוע",
+      "מאפייה"
+    ],
+    "association": "מסיבה, חגיגה, מתנה, אירוע, מאפייה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001043
+  },
+  {
+    "id": "new_044_medicine_capsule",
+    "name": "קפסולת תרופה",
+    "title": "קפסולת תרופה",
+    "imageUrl": "/staged_images/pool/new_044_medicine_capsule.jpg",
+    "keywords": [
+      "תרופות",
+      "מרשם",
+      "כאב",
+      "רוקח",
+      "רופא"
+    ],
+    "association": "תרופות, מרשם, כאב, רוקח, רופא",
+    "domain": "daily_life",
+    "category": "🧠 4. קלישאות ויזואליות, רעיונות ומושגים (151–200)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001044
+  },
+  {
+    "id": "new_045_cough_syrup",
+    "name": "בקבוק סירופ רפואי",
+    "title": "בקבוק סירופ רפואי",
+    "imageUrl": "/staged_images/pool/new_045_cough_syrup.jpg",
+    "keywords": [
+      "תרופה",
+      "תרופות",
+      "מרשם",
+      "חולי",
+      "רופא"
+    ],
+    "association": "תרופה, תרופות, מרשם, חולי, רופא",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001045
+  },
+  {
+    "id": "new_046_band_aid",
+    "name": "פלסטר",
+    "title": "פלסטר",
+    "imageUrl": "/staged_images/pool/new_046_band_aid.jpg",
+    "keywords": [
+      "פציעה",
+      "חבישה",
+      "עזרה",
+      "תרופה",
+      "רופא"
+    ],
+    "association": "פציעה, חבישה, עזרה, תרופה, רופא",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001046
+  },
+  {
+    "id": "new_047_arm_cast",
+    "name": "יד מגובסת",
+    "title": "יד מגובסת",
+    "imageUrl": "/staged_images/pool/new_047_arm_cast.jpg",
+    "keywords": [
+      "גבס",
+      "שבר",
+      "אורטופד",
+      "צילום",
+      "מרפאה"
+    ],
+    "association": "גבס, שבר, אורטופד, צילום, מרפאה",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001047
+  },
+  {
+    "id": "new_048_blood_pressure",
+    "name": "מד לחץ דם",
+    "title": "מד לחץ דם",
+    "imageUrl": "/staged_images/pool/new_048_blood_pressure.jpg",
+    "keywords": [
+      "בדיקה",
+      "לב",
+      "אחות",
+      "מרפאה",
+      "רופא"
+    ],
+    "association": "בדיקה, לב, אחות, מרפאה, רופא",
+    "domain": "daily_life",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001048
+  },
+  {
+    "id": "new_049_chattering_teeth",
+    "name": "שיניים תותבות מתקתקות",
+    "title": "שיניים תותבות מתקתקות",
+    "imageUrl": "/staged_images/pool/new_049_chattering_teeth.jpg",
+    "keywords": [
+      "שיננית",
+      "רופא",
+      "סתימה",
+      "כאב",
+      "בדיקה"
+    ],
+    "association": "שיננית, רופא, סתימה, כאב, בדיקה",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001049
+  },
+  {
+    "id": "new_050_dental_floss",
+    "name": "חוט דנטלי",
+    "title": "חוט דנטלי",
+    "imageUrl": "/staged_images/pool/new_050_dental_floss.jpg",
+    "keywords": [
+      "שיניים",
+      "שיננית",
+      "צחצוח",
+      "רופא",
+      "אמבטיה"
+    ],
+    "association": "שיניים, שיננית, צחצוח, רופא, אמבטיה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001050
+  },
+  {
+    "id": "new_051_bathroom_scale",
+    "name": "משקל אדם",
+    "title": "משקל אדם",
+    "imageUrl": "/staged_images/pool/new_051_bathroom_scale.jpg",
+    "keywords": [
+      "דיאטה",
+      "תזונה",
+      "שקילה",
+      "אימון",
+      "כושר"
+    ],
+    "association": "דיאטה, תזונה, שקילה, אימון, כושר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001051
+  },
+  {
+    "id": "new_052_hospital_bed",
+    "name": "מיטת בית חולים",
+    "title": "מיטת בית חולים",
+    "imageUrl": "/staged_images/pool/new_052_hospital_bed.jpg",
+    "keywords": [
+      "רופא",
+      "אשפוז",
+      "בדיקה",
+      "מרפאה",
+      "אחות"
+    ],
+    "association": "רופא, אשפוז, בדיקה, מרפאה, אחות",
+    "domain": "daily_life",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001052
+  },
+  {
+    "id": "new_053_gas_pump",
+    "name": "משאבת דלק",
+    "title": "משאבת דלק",
+    "imageUrl": "/staged_images/pool/new_053_gas_pump.jpg",
+    "keywords": [
+      "שטיפה",
+      "תדלוק",
+      "רכב",
+      "כביש",
+      "נסיעה"
+    ],
+    "association": "שטיפה, תדלוק, רכב, כביש, נסיעה",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001053
+  },
+  {
+    "id": "new_054_car_tire",
+    "name": "צמיג רכב",
+    "title": "צמיג רכב",
+    "imageUrl": "/staged_images/pool/new_054_car_tire.jpg",
+    "keywords": [
+      "פנצר",
+      "גלגל",
+      "מוסך",
+      "טסט",
+      "נהיגה"
+    ],
+    "association": "פנצר, גלגל, מוסך, טסט, נהיגה",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001054
+  },
+  {
+    "id": "new_055_parking_meter",
+    "name": "מדחן חניה",
+    "title": "מדחן חניה",
+    "imageUrl": "/staged_images/pool/new_055_parking_meter.jpg",
+    "keywords": [
+      "דוח",
+      "תשלום",
+      "רכב",
+      "כביש",
+      "קנס"
+    ],
+    "association": "דוח, תשלום, רכב, כביש, קנס",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001055
+  },
+  {
+    "id": "new_056_car_wash",
+    "name": "מכונת שטיפת רכבים",
+    "title": "מכונת שטיפת רכבים",
+    "imageUrl": "/staged_images/pool/new_056_car_wash.jpg",
+    "keywords": [
+      "פוליש",
+      "ניקיון",
+      "סבון",
+      "ברק",
+      "מים"
+    ],
+    "association": "פוליש, ניקיון, סבון, ברק, מים",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001056
+  },
+  {
+    "id": "new_057_traffic_light",
+    "name": "רמזור",
+    "title": "רמזור",
+    "imageUrl": "/staged_images/pool/new_057_traffic_light.jpg",
+    "keywords": [
+      "נהיגה",
+      "כביש",
+      "צומת",
+      "תנועה",
+      "רכב"
+    ],
+    "association": "נהיגה, כביש, צומת, תנועה, רכב",
+    "domain": "daily_life",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001057
+  },
+  {
+    "id": "new_058_drivers_license",
+    "name": "רישיון נהיגה",
+    "title": "רישיון נהיגה",
+    "imageUrl": "/staged_images/pool/new_058_drivers_license.jpg",
+    "keywords": [
+      "טסט",
+      "ביטוח",
+      "זיהוי",
+      "כרטיס",
+      "רכב"
+    ],
+    "association": "טסט, ביטוח, זיהוי, כרטיס, רכב",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001058
+  },
+  {
+    "id": "new_059_car_battery",
+    "name": "מצבר רכב",
+    "title": "מצבר רכב",
+    "imageUrl": "/staged_images/pool/new_059_car_battery.jpg",
+    "keywords": [
+      "מוסך",
+      "חשמל",
+      "התנעה",
+      "כבלים",
+      "תקלה"
+    ],
+    "association": "מוסך, חשמל, התנעה, כבלים, תקלה",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001059
+  },
+  {
+    "id": "new_060_city_bus",
+    "name": "אוטובוס עירוני",
+    "title": "אוטובוס עירוני",
+    "imageUrl": "/staged_images/pool/new_060_city_bus.jpg",
+    "keywords": [
+      "תחנה",
+      "נסיעה",
+      "כרטיס",
+      "עבודה",
+      "לימודים"
+    ],
+    "association": "תחנה, נסיעה, כרטיס, עבודה, לימודים",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001060
+  },
+  {
+    "id": "new_061_baby_bottle",
+    "name": "בקבוק תינוק",
+    "title": "בקבוק תינוק",
+    "imageUrl": "/staged_images/pool/new_061_baby_bottle.jpg",
+    "keywords": [
+      "הורות",
+      "חלב",
+      "האכלה",
+      "לילה",
+      "ילדים"
+    ],
+    "association": "הורות, חלב, האכלה, לילה, ילדים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001061
+  },
+  {
+    "id": "new_062_baby_diaper",
+    "name": "חיתול",
+    "title": "חיתול",
+    "imageUrl": "/staged_images/pool/new_062_baby_diaper.jpg",
+    "keywords": [
+      "תינוק",
+      "הורות",
+      "קניות",
+      "סופרמרקט",
+      "ילדים"
+    ],
+    "association": "תינוק, הורות, קניות, סופרמרקט, ילדים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001062
+  },
+  {
+    "id": "new_063_baby_pacifier",
+    "name": "מוצץ",
+    "title": "מוצץ",
+    "imageUrl": "/staged_images/pool/new_063_baby_pacifier.jpg",
+    "keywords": [
+      "תינוק",
+      "הורות",
+      "שינה",
+      "רוגע",
+      "גן"
+    ],
+    "association": "תינוק, הורות, שינה, רוגע, גן",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001063
+  },
+  {
+    "id": "new_064_school_backpack",
+    "name": "ילקוט בית ספר",
+    "title": "ילקוט בית ספר",
+    "imageUrl": "/staged_images/pool/new_064_school_backpack.jpg",
+    "keywords": [
+      "גן",
+      "לימודים",
+      "חוג",
+      "ילדים",
+      "בוקר"
+    ],
+    "association": "גן, לימודים, חוג, ילדים, בוקר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001064
+  },
+  {
+    "id": "new_065_teddy_bear",
+    "name": "דובי פרווה",
+    "title": "דובי פרווה",
+    "imageUrl": "/staged_images/pool/new_065_teddy_bear.jpg",
+    "keywords": [
+      "ילדים",
+      "תינוק",
+      "צעצוע",
+      "מתנה",
+      "שינה"
+    ],
+    "association": "ילדים, תינוק, צעצוע, מתנה, שינה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001065
+  },
+  {
+    "id": "new_066_dog_bowl",
+    "name": "קערת אוכל לכלב",
+    "title": "קערת אוכל לכלב",
+    "imageUrl": "/staged_images/pool/new_066_dog_bowl.jpg",
+    "keywords": [
+      "וטרינר",
+      "האכלה",
+      "חיות",
+      "טיול",
+      "סופרמרקט"
+    ],
+    "association": "וטרינר, האכלה, חיות, טיול, סופרמרקט",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001066
+  },
+  {
+    "id": "new_067_dog_leash",
+    "name": "רצועת טיול לכלב",
+    "title": "רצועת טיול לכלב",
+    "imageUrl": "/staged_images/pool/new_067_dog_leash.jpg",
+    "keywords": [
+      "פארק",
+      "הליכה",
+      "אימון",
+      "בוקר",
+      "ערב"
+    ],
+    "association": "פארק, הליכה, אימון, בוקר, ערב",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001067
+  },
+  {
+    "id": "new_068_yarn_ball",
+    "name": "כדור צמר",
+    "title": "כדור צמר",
+    "imageUrl": "/staged_images/pool/new_068_yarn_ball.jpg",
+    "keywords": [
+      "חתול",
+      "משחק",
+      "תפירה",
+      "חוט",
+      "יצירה"
+    ],
+    "association": "חתול, משחק, תפירה, חוט, יצירה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001068
+  },
+  {
+    "id": "new_069_cat_litter_box",
+    "name": "ארגז חול לחתול",
+    "title": "ארגז חול לחתול",
+    "imageUrl": "/staged_images/pool/new_069_cat_litter_box.jpg",
+    "keywords": [
+      "ניקיון",
+      "וטרינר",
+      "בית",
+      "קניות",
+      "סופרמרקט"
+    ],
+    "association": "ניקיון, וטרינר, בית, קניות, סופרמרקט",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001069
+  },
+  {
+    "id": "new_070_barber_pole",
+    "name": "עמוד ספרים מסתובב",
+    "title": "עמוד ספרים מסתובב",
+    "imageUrl": "/staged_images/pool/new_070_barber_pole.jpg",
+    "keywords": [
+      "תספורת",
+      "פן",
+      "מספרה",
+      "שיער",
+      "טיפוח"
+    ],
+    "association": "תספורת, פן, מספרה, שיער, טיפוח",
+    "domain": "daily_life",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001070
+  },
+  {
+    "id": "new_071_hair_dryer",
+    "name": "מייבש שיער",
+    "title": "מייבש שיער",
+    "imageUrl": "/staged_images/pool/new_071_hair_dryer.jpg",
+    "keywords": [
+      "תספורת",
+      "מספרה",
+      "ייבוש",
+      "טיפוח",
+      "אמבטיה"
+    ],
+    "association": "תספורת, מספרה, ייבוש, טיפוח, אמבטיה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001071
+  },
+  {
+    "id": "new_072_hair_clippers",
+    "name": "מכונת תספורת",
+    "title": "מכונת תספורת",
+    "imageUrl": "/staged_images/pool/new_072_hair_clippers.jpg",
+    "keywords": [
+      "ספר",
+      "מספרה",
+      "שיער",
+      "גילוח",
+      "טיפוח"
+    ],
+    "association": "ספר, מספרה, שיער, גילוח, טיפוח",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001072
+  },
+  {
+    "id": "new_073_razor_blade",
+    "name": "סכין גילוח",
+    "title": "סכין גילוח",
+    "imageUrl": "/staged_images/pool/new_073_razor_blade.jpg",
+    "keywords": [
+      "קצף",
+      "זקן",
+      "מקלחת",
+      "טיפוח",
+      "אמבטיה"
+    ],
+    "association": "קצף, זקן, מקלחת, טיפוח, אמבטיה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001073
+  },
+  {
+    "id": "new_074_nail_polish",
+    "name": "בקבוק לק",
+    "title": "בקבוק לק",
+    "imageUrl": "/staged_images/pool/new_074_nail_polish.jpg",
+    "keywords": [
+      "ציפורניים",
+      "מניקור",
+      "קוסמטיקאית",
+      "טיפוח",
+      "איפור"
+    ],
+    "association": "ציפורניים, מניקור, קוסמטיקאית, טיפוח, איפור",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001074
+  },
+  {
+    "id": "new_075_perfume_bottle",
+    "name": "בקבוק בושם",
+    "title": "בקבוק בושם",
+    "imageUrl": "/staged_images/pool/new_075_perfume_bottle.jpg",
+    "keywords": [
+      "טיפוח",
+      "מתנה",
+      "אירוע",
+      "יוקרה",
+      "ריח"
+    ],
+    "association": "טיפוח, מתנה, אירוע, יוקרה, ריח",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001075
+  },
+  {
+    "id": "new_076_shampoo_bottle",
+    "name": "בקבוק שמפו",
+    "title": "בקבוק שמפו",
+    "imageUrl": "/staged_images/pool/new_076_shampoo_bottle.jpg",
+    "keywords": [
+      "מקלחת",
+      "שיער",
+      "אמבטיה",
+      "סופרמרקט",
+      "קניות"
+    ],
+    "association": "מקלחת, שיער, אמבטיה, סופרמרקט, קניות",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001076
+  },
+  {
+    "id": "new_077_gift_box",
+    "name": "קופסת מתנה עם סרט",
+    "title": "קופסת מתנה עם סרט",
+    "imageUrl": "/staged_images/pool/new_077_gift_box.jpg",
+    "keywords": [
+      "חגיגה",
+      "אירוע",
+      "מסיבה",
+      "חתונה",
+      "קניות"
+    ],
+    "association": "חגיגה, אירוע, מסיבה, חתונה, קניות",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001077
+  },
+  {
+    "id": "new_078_wedding_rings",
+    "name": "זוג טבעות נישואין",
+    "title": "זוג טבעות נישואין",
+    "imageUrl": "/staged_images/pool/new_078_wedding_rings.jpg",
+    "keywords": [
+      "חתונה",
+      "אירוע",
+      "חופה",
+      "אהבה",
+      "תכשיט"
+    ],
+    "association": "חתונה, אירוע, חופה, אהבה, תכשיט",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001078
+  },
+  {
+    "id": "new_079_bouquet_flowers",
+    "name": "זר פרחים צבעוני",
+    "title": "זר פרחים צבעוני",
+    "imageUrl": "/staged_images/pool/new_079_bouquet_flowers.jpg",
+    "keywords": [
+      "מתנה",
+      "אירוע",
+      "שבת",
+      "אהבה",
+      "חגיגה"
+    ],
+    "association": "מתנה, אירוע, שבת, אהבה, חגיגה",
+    "domain": "daily_life",
+    "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001079
+  },
+  {
+    "id": "new_080_acoustic_guitar",
+    "name": "גיטרה אקוסטית",
+    "title": "גיטרה אקוסטית",
+    "imageUrl": "/staged_images/pool/new_080_acoustic_guitar.jpg",
+    "keywords": [
+      "מוזיקה",
+      "חוג",
+      "הופעה",
+      "אימון",
+      "קומזיץ"
+    ],
+    "association": "מוזיקה, חוג, הופעה, אימון, קומזיץ",
+    "domain": "daily_life",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001080
+  },
+  {
+    "id": "new_081_dslr_camera",
+    "name": "מצלמה דיגיטלית",
+    "title": "מצלמה דיגיטלית",
+    "imageUrl": "/staged_images/pool/new_081_dslr_camera.jpg",
+    "keywords": [
+      "צילום",
+      "טיול",
+      "חופשה",
+      "אירוע",
+      "זיכרון"
+    ],
+    "association": "צילום, טיול, חופשה, אירוע, זיכרון",
+    "domain": "daily_life",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001081
+  },
+  {
+    "id": "new_082_running_shoes",
+    "name": "נעלי ריצה ספורטיביות",
+    "title": "נעלי ריצה ספורטיביות",
+    "imageUrl": "/staged_images/pool/new_082_running_shoes.jpg",
+    "keywords": [
+      "מרתון",
+      "אימון",
+      "כושר",
+      "הליכה",
+      "מדרסים"
+    ],
+    "association": "מרתון, אימון, כושר, הליכה, מדרסים",
+    "domain": "daily_life",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001082
+  },
+  {
+    "id": "new_083_yoga_mat",
+    "name": "מזרן יוגה מגולגל",
+    "title": "מזרן יוגה מגולגל",
+    "imageUrl": "/staged_images/pool/new_083_yoga_mat.jpg",
+    "keywords": [
+      "אימון",
+      "כושר",
+      "מתיחות",
+      "חוג",
+      "רוגע"
+    ],
+    "association": "אימון, כושר, מתיחות, חוג, רוגע",
+    "domain": "daily_life",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001083
+  },
+  {
+    "id": "new_084_shopping_bag",
+    "name": "שקית קניות מלאה",
+    "title": "שקית קניות מלאה",
+    "imageUrl": "/staged_images/pool/new_084_shopping_bag.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "קניון",
+      "מכולת",
+      "מצרכים",
+      "בגדים"
+    ],
+    "association": "סופרמרקט, קניון, מכולת, מצרכים, בגדים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001084
+  },
+  {
+    "id": "new_085_receipt_paper",
+    "name": "קבלה מודפסת",
+    "title": "קבלה מודפסת",
+    "imageUrl": "/staged_images/pool/new_085_receipt_paper.jpg",
+    "keywords": [
+      "תשלום",
+      "קניות",
+      "חשבון",
+      "החלפה",
+      "אחריות"
+    ],
+    "association": "תשלום, קניות, חשבון, החלפה, אחריות",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001085
+  },
+  {
+    "id": "new_086_safe_box",
+    "name": "כספת פלדה",
+    "title": "כספת פלדה",
+    "imageUrl": "/staged_images/pool/new_086_safe_box.jpg",
+    "keywords": [
+      "אבטחה",
+      "כסף",
+      "חיסכון",
+      "נעילה",
+      "תכשיט"
+    ],
+    "association": "אבטחה, כסף, חיסכון, נעילה, תכשיט",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001086
+  },
+  {
+    "id": "new_087_security_camera",
+    "name": "מצלמת אבטחה",
+    "title": "מצלמת אבטחה",
+    "imageUrl": "/staged_images/pool/new_087_security_camera.jpg",
+    "keywords": [
+      "אזעקה",
+      "בית",
+      "עסקים",
+      "צילום",
+      "ביטוח"
+    ],
+    "association": "אזעקה, בית, עסקים, צילום, ביטוח",
+    "domain": "daily_life",
+    "category": "🧪 מדע, טכנולוגיה וחלל",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001087
+  },
+  {
+    "id": "new_088_fire_extinguisher",
+    "name": "מטף כיבוי אש",
+    "title": "מטף כיבוי אש",
+    "imageUrl": "/staged_images/pool/new_088_fire_extinguisher.jpg",
+    "keywords": [
+      "בטיחות",
+      "חירום",
+      "רכב",
+      "טסט",
+      "אזהרה"
+    ],
+    "association": "בטיחות, חירום, רכב, טסט, אזהרה",
+    "domain": "daily_life",
+    "category": "⚠️ שלטים, אזהרות ואייקונים בינלאומיים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001088
+  },
+  {
+    "id": "new_089_ironing_board",
+    "name": "קרש גיהוץ",
+    "title": "קרש גיהוץ",
+    "imageUrl": "/staged_images/pool/new_089_ironing_board.jpg",
+    "keywords": [
+      "מגהץ",
+      "בגדים",
+      "חולצה",
+      "כביסה",
+      "סדר"
+    ],
+    "association": "מגהץ, בגדים, חולצה, כביסה, סדר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001089
+  },
+  {
+    "id": "new_090_thread_spool",
+    "name": "סליל חוטים צבעוני",
+    "title": "סליל חוטים צבעוני",
+    "imageUrl": "/staged_images/pool/new_090_thread_spool.jpg",
+    "keywords": [
+      "תפירה",
+      "תיקון",
+      "בגדים",
+      "כפתור",
+      "יצירה"
+    ],
+    "association": "תפירה, תיקון, בגדים, כפתור, יצירה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001090
+  },
+  {
+    "id": "new_091_cash_register",
+    "name": "קופה רושמת",
+    "title": "קופה רושמת",
+    "imageUrl": "/staged_images/pool/new_091_cash_register.jpg",
+    "keywords": [
+      "סופרמרקט",
+      "תשלום",
+      "קניות",
+      "מכולת",
+      "חשבון"
+    ],
+    "association": "סופרמרקט, תשלום, קניות, מכולת, חשבון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001091
+  },
+  {
+    "id": "new_092_delivery_scooter",
+    "name": "שליח על קטנוע",
+    "title": "שליח על קטנוע",
+    "imageUrl": "/staged_images/pool/new_092_delivery_scooter.jpg",
+    "keywords": [
+      "משלוח",
+      "טיפ",
+      "אוכל",
+      "חבילה",
+      "הזמנה"
+    ],
+    "association": "משלוח, טיפ, אוכל, חבילה, הזמנה",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001092
+  },
+  {
+    "id": "new_093_desk_lamp",
+    "name": "מנורת שולחן",
+    "title": "מנורת שולחן",
+    "imageUrl": "/staged_images/pool/new_093_desk_lamp.jpg",
+    "keywords": [
+      "לימודים",
+      "קריאה",
+      "עבודה",
+      "משרד",
+      "אור"
+    ],
+    "association": "לימודים, קריאה, עבודה, משרד, אור",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001093
+  },
+  {
+    "id": "new_094_whiteboard",
+    "name": "לוח מחיק משרדי",
+    "title": "לוח מחיק משרדי",
+    "imageUrl": "/staged_images/pool/new_094_whiteboard.jpg",
+    "keywords": [
+      "פגישה",
+      "תרשים",
+      "תכנון",
+      "לימודים",
+      "רעיון"
+    ],
+    "association": "פגישה, תרשים, תכנון, לימודים, רעיון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001094
+  },
+  {
+    "id": "new_095_microphone",
+    "name": "מיקרופון",
+    "title": "מיקרופון",
+    "imageUrl": "/staged_images/pool/new_095_microphone.jpg",
+    "keywords": [
+      "הופעה",
+      "פגישה",
+      "הרצאה",
+      "אירוע",
+      "שידור"
+    ],
+    "association": "הופעה, פגישה, הרצאה, אירוע, שידור",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001095
+  },
+  {
+    "id": "new_096_train_ticket",
+    "name": "כרטיס רכבת",
+    "title": "כרטיס רכבת",
+    "imageUrl": "/staged_images/pool/new_096_train_ticket.jpg",
+    "keywords": [
+      "נסיעה",
+      "תחנה",
+      "טיול",
+      "עבודה",
+      "תשלום"
+    ],
+    "association": "נסיעה, תחנה, טיול, עבודה, תשלום",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001096
+  },
+  {
+    "id": "new_097_hotel_bell",
+    "name": "פעמון קבלה במלון",
+    "title": "פעמון קבלה במלון",
+    "imageUrl": "/staged_images/pool/new_097_hotel_bell.jpg",
+    "keywords": [
+      "שירות",
+      "פקיד",
+      "מפתח",
+      "הזמנה",
+      "אירוח"
+    ],
+    "association": "שירות, פקיד, מפתח, הזמנה, אירוח",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001097
+  },
+  {
+    "id": "new_098_towel_stack",
+    "name": "ערימת מגבות נקיות",
+    "title": "ערימת מגבות נקיות",
+    "imageUrl": "/staged_images/pool/new_098_towel_stack.jpg",
+    "keywords": [
+      "מקלחת",
+      "אמבטיה",
+      "כביסה",
+      "בריכה",
+      "חוף"
+    ],
+    "association": "מקלחת, אמבטיה, כביסה, בריכה, חוף",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001098
+  },
+  {
+    "id": "new_099_trash_bag",
+    "name": "שקית אשפה שחורה",
+    "title": "שקית אשפה שחורה",
+    "imageUrl": "/staged_images/pool/new_099_trash_bag.jpg",
+    "keywords": [
+      "מיחזור",
+      "זבל",
+      "ניקיון",
+      "פח",
+      "סדר"
+    ],
+    "association": "מיחזור, זבל, ניקיון, פח, סדר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001099
+  },
+  {
+    "id": "new_100_recycling_bin",
+    "name": "פח מיחזור כחול",
+    "title": "פח מיחזור כחול",
+    "imageUrl": "/staged_images/pool/new_100_recycling_bin.jpg",
+    "keywords": [
+      "מחזור",
+      "נייר",
+      "קרטון",
+      "סביבה",
+      "ניקיון"
+    ],
+    "association": "מחזור, נייר, קרטון, סביבה, ניקיון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001100
+  },
+  {
+    "id": "new_101_sherlock_holmes",
+    "name": "שרלוק הולמס",
+    "title": "שרלוק הולמס",
+    "imageUrl": "/staged_images/pool/new_101_sherlock_holmes.jpg",
+    "keywords": [
+      "בלש",
+      "חקירה",
+      "חיפוש",
+      "בדיקה",
+      "אנגליה"
+    ],
+    "association": "בלש, חקירה, חיפוש, בדיקה, אנגליה",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001101
+  },
+  {
+    "id": "new_102_albert_einstein",
+    "name": "אלברט איינשטיין",
+    "title": "אלברט איינשטיין",
+    "imageUrl": "/staged_images/pool/new_102_albert_einstein.jpg",
+    "keywords": [
+      "מדע",
+      "לימודים",
+      "חוכמה",
+      "פיזיקה",
+      "מוח"
+    ],
+    "association": "מדע, לימודים, חוכמה, פיזיקה, מוח",
+    "domain": "daily_life",
+    "category": "🎬 דמויות פופולריות, מותגים ואיקוני תרבות",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001102
+  },
+  {
+    "id": "new_103_mona_lisa",
+    "name": "מונה ליזה",
+    "title": "מונה ליזה",
+    "imageUrl": "/staged_images/pool/new_103_mona_lisa.jpg",
+    "keywords": [
+      "אמנות",
+      "מוזיאון",
+      "פריז",
+      "ציור",
+      "תיירות"
+    ],
+    "association": "אמנות, מוזיאון, פריז, ציור, תיירות",
+    "domain": "daily_life",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001103
+  },
+  {
+    "id": "new_104_santa_claus",
+    "name": "סנטה קלאוס",
+    "title": "סנטה קלאוס",
+    "imageUrl": "/staged_images/pool/new_104_santa_claus.jpg",
+    "keywords": [
+      "מתנה",
+      "חורף",
+      "חגיגה",
+      "זקן",
+      "שלג"
+    ],
+    "association": "מתנה, חורף, חגיגה, זקן, שלג",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001104
+  },
+  {
+    "id": "new_105_elsa_frozen",
+    "name": "אלזה מלכת השלג",
+    "title": "אלזה מלכת השלג",
+    "imageUrl": "/staged_images/pool/new_105_elsa_frozen.jpg",
+    "keywords": [
+      "קרח",
+      "קור",
+      "חורף",
+      "נסיכה",
+      "דיסני"
+    ],
+    "association": "קרח, קור, חורף, נסיכה, דיסני",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001105
+  },
+  {
+    "id": "new_106_aladdin_lamp",
+    "name": "מנורת הקסמים של אלאדין",
+    "title": "מנורת הקסמים של אלאדין",
+    "imageUrl": "/staged_images/pool/new_106_aladdin_lamp.jpg",
+    "keywords": [
+      "קסם",
+      "אגדה",
+      "זהב",
+      "דיסני",
+      "מזרח"
+    ],
+    "association": "קסם, אגדה, זהב, דיסני, מזרח",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001106
+  },
+  {
+    "id": "new_107_mary_poppins",
+    "name": "מרי פופינס",
+    "title": "מרי פופינס",
+    "imageUrl": "/staged_images/pool/new_107_mary_poppins.jpg",
+    "keywords": [
+      "בייביסיטר",
+      "ילדים",
+      "מטרייה",
+      "סדר",
+      "ניקיון"
+    ],
+    "association": "בייביסיטר, ילדים, מטרייה, סדר, ניקיון",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001107
+  },
+  {
+    "id": "new_108_wall_e",
+    "name": "וולי הרובוט",
+    "title": "וולי הרובוט",
+    "imageUrl": "/staged_images/pool/new_108_wall_e.jpg",
+    "keywords": [
+      "מחזור",
+      "אשפה",
+      "ניקיון",
+      "עתיד",
+      "אנימציה"
+    ],
+    "association": "מחזור, אשפה, ניקיון, עתיד, אנימציה",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001108
+  },
+  {
+    "id": "new_109_cooking_pot",
+    "name": "סיר בישול על הכיריים",
+    "title": "סיר בישול על הכיריים",
+    "imageUrl": "/staged_images/pool/new_109_cooking_pot.jpg",
+    "keywords": [
+      "מתכון",
+      "מטבח",
+      "מרק",
+      "ארוחה",
+      "אוכל"
+    ],
+    "association": "מתכון, מטבח, מרק, ארוחה, אוכל",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001109
+  },
+  {
+    "id": "new_110_frying_pan",
+    "name": "מחבת טיגון",
+    "title": "מחבת טיגון",
+    "imageUrl": "/staged_images/pool/new_110_frying_pan.jpg",
+    "keywords": [
+      "בישול",
+      "מטבח",
+      "ארוחה",
+      "בוקר",
+      "אוכל"
+    ],
+    "association": "בישול, מטבח, ארוחה, בוקר, אוכל",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001110
+  },
+  {
+    "id": "new_111_chef_hat",
+    "name": "כובע שף לבן",
+    "title": "כובע שף לבן",
+    "imageUrl": "/staged_images/pool/new_111_chef_hat.jpg",
+    "keywords": [
+      "בישול",
+      "מסעדה",
+      "ארוחה",
+      "מטבח",
+      "אפייה"
+    ],
+    "association": "בישול, מסעדה, ארוחה, מטבח, אפייה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001111
+  },
+  {
+    "id": "new_112_rolling_pin",
+    "name": "מערוך עץ",
+    "title": "מערוך עץ",
+    "imageUrl": "/staged_images/pool/new_112_rolling_pin.jpg",
+    "keywords": [
+      "אפייה",
+      "מטבח",
+      "עוגה",
+      "לחם",
+      "בישול"
+    ],
+    "association": "אפייה, מטבח, עוגה, לחם, בישול",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001112
+  },
+  {
+    "id": "new_113_blender",
+    "name": "בלנדר שייקים",
+    "title": "בלנדר שייקים",
+    "imageUrl": "/staged_images/pool/new_113_blender.jpg",
+    "keywords": [
+      "פירות",
+      "תזונה",
+      "שתייה",
+      "מטבח",
+      "דיאטה"
+    ],
+    "association": "פירות, תזונה, שתייה, מטבח, דיאטה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001113
+  },
+  {
+    "id": "new_114_toaster",
+    "name": "מצנם פרוסות לחם",
+    "title": "מצנם פרוסות לחם",
+    "imageUrl": "/staged_images/pool/new_114_toaster.jpg",
+    "keywords": [
+      "בוקר",
+      "מטבח",
+      "ארוחה",
+      "קפה",
+      "חשמל"
+    ],
+    "association": "בוקר, מטבח, ארוחה, קפה, חשמל",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001114
+  },
+  {
+    "id": "new_115_microwave",
+    "name": "מיקרוגל",
+    "title": "מיקרוגל",
+    "imageUrl": "/staged_images/pool/new_115_microwave.jpg",
+    "keywords": [
+      "חימום",
+      "מטבח",
+      "אוכל",
+      "ארוחה",
+      "עבודה"
+    ],
+    "association": "חימום, מטבח, אוכל, ארוחה, עבודה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001115
+  },
+  {
+    "id": "new_116_ice_cream_cone",
+    "name": "גביע גלידה",
+    "title": "גביע גלידה",
+    "imageUrl": "/staged_images/pool/new_116_ice_cream_cone.jpg",
+    "keywords": [
+      "קיץ",
+      "חוף",
+      "בילוי",
+      "ילדים",
+      "חופשה"
+    ],
+    "association": "קיץ, חוף, בילוי, ילדים, חופשה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001116
+  },
+  {
+    "id": "new_117_sushi_roll",
+    "name": "מגש סושי",
+    "title": "מגש סושי",
+    "imageUrl": "/staged_images/pool/new_117_sushi_roll.jpg",
+    "keywords": [
+      "מסעדה",
+      "משלוח",
+      "אוכל",
+      "יפן",
+      "ארוחה"
+    ],
+    "association": "מסעדה, משלוח, אוכל, יפן, ארוחה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001117
+  },
+  {
+    "id": "new_118_wine_glasses",
+    "name": "שתי כוסות יין אדום",
+    "title": "שתי כוסות יין אדום",
+    "imageUrl": "/staged_images/pool/new_118_wine_glasses.jpg",
+    "keywords": [
+      "רומנטיקה",
+      "זוגיות",
+      "חגיגה",
+      "אירוח",
+      "מסעדה"
+    ],
+    "association": "רומנטיקה, זוגיות, חגיגה, אירוח, מסעדה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001118
+  },
+  {
+    "id": "new_119_champagne_bottle",
+    "name": "בקבוק שמפניה נפתח",
+    "title": "בקבוק שמפניה נפתח",
+    "imageUrl": "/staged_images/pool/new_119_champagne_bottle.jpg",
+    "keywords": [
+      "חגיגה",
+      "מסיבה",
+      "הצלחה",
+      "אירוע",
+      "חתונה"
+    ],
+    "association": "חגיגה, מסיבה, הצלחה, אירוע, חתונה",
+    "domain": "daily_life",
+    "category": "🍞 מאכלים ומאפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001119
+  },
+  {
+    "id": "new_120_mountain_bike",
+    "name": "אופני הרים",
+    "title": "אופני הרים",
+    "imageUrl": "/staged_images/pool/new_120_mountain_bike.jpg",
+    "keywords": [
+      "רכיבה",
+      "אימון",
+      "כושר",
+      "טיול",
+      "פארק"
+    ],
+    "association": "רכיבה, אימון, כושר, טיול, פארק",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001120
+  },
+  {
+    "id": "new_121_passenger_train",
+    "name": "רכבת נוסעים",
+    "title": "רכבת נוסעים",
+    "imageUrl": "/staged_images/pool/new_121_passenger_train.jpg",
+    "keywords": [
+      "נסיעה",
+      "תחנה",
+      "טיול",
+      "עבודה",
+      "מהירות"
+    ],
+    "association": "נסיעה, תחנה, טיול, עבודה, מהירות",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001121
+  },
+  {
+    "id": "new_122_tow_truck",
+    "name": "משאית גרר",
+    "title": "משאית גרר",
+    "imageUrl": "/staged_images/pool/new_122_tow_truck.jpg",
+    "keywords": [
+      "מוסך",
+      "תקלה",
+      "רכב",
+      "תאונה",
+      "כביש"
+    ],
+    "association": "מוסך, תקלה, רכב, תאונה, כביש",
+    "domain": "daily_life",
+    "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001122
+  },
+  {
+    "id": "new_123_camping_tent",
+    "name": "אוהל קמפינג משפחתי",
+    "title": "אוהל קמפינג משפחתי",
+    "imageUrl": "/staged_images/pool/new_123_camping_tent.jpg",
+    "keywords": [
+      "טיול",
+      "טבע",
+      "חופשה",
+      "שינה",
+      "משפחה"
+    ],
+    "association": "טיול, טבע, חופשה, שינה, משפחה",
+    "domain": "daily_life",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001123
+  },
+  {
+    "id": "new_124_navigation_compass",
+    "name": "מצפן ניווט",
+    "title": "מצפן ניווט",
+    "imageUrl": "/staged_images/pool/new_124_navigation_compass.jpg",
+    "keywords": [
+      "טיול",
+      "שביל",
+      "טבע",
+      "יעד",
+      "הליכה"
+    ],
+    "association": "טיול, שביל, טבע, יעד, הליכה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001124
+  },
+  {
+    "id": "new_125_beach_chair",
+    "name": "כיסא נוח ושמשייה",
+    "title": "כיסא נוח ושמשייה",
+    "imageUrl": "/staged_images/pool/new_125_beach_chair.jpg",
+    "keywords": [
+      "חוף",
+      "ים",
+      "קיץ",
+      "חופשה",
+      "שיזוף"
+    ],
+    "association": "חוף, ים, קיץ, חופשה, שיזוף",
+    "domain": "daily_life",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001125
+  },
+  {
+    "id": "new_126_sunscreen_bottle",
+    "name": "בקבוק קרם הגנה",
+    "title": "בקבוק קרם הגנה",
+    "imageUrl": "/staged_images/pool/new_126_sunscreen_bottle.jpg",
+    "keywords": [
+      "חוף",
+      "קיץ",
+      "שמש",
+      "בריכה",
+      "טיול"
+    ],
+    "association": "חוף, קיץ, שמש, בריכה, טיול",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001126
+  },
+  {
+    "id": "new_127_sunglasses",
+    "name": "משקפי שמש",
+    "title": "משקפי שמש",
+    "imageUrl": "/staged_images/pool/new_127_sunglasses.jpg",
+    "keywords": [
+      "קיץ",
+      "חוף",
+      "נהיגה",
+      "חופשה",
+      "אופנה"
+    ],
+    "association": "קיץ, חוף, נהיגה, חופשה, אופנה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001127
+  },
+  {
+    "id": "new_128_trolley_suitcase",
+    "name": "מזוודת טרולי על גלגלים",
+    "title": "מזוודת טרולי על גלגלים",
+    "imageUrl": "/staged_images/pool/new_128_trolley_suitcase.jpg",
+    "keywords": [
+      "טיסה",
+      "חופשה",
+      "אריזה",
+      "נסיעה",
+      "מלון"
+    ],
+    "association": "טיסה, חופשה, אריזה, נסיעה, מלון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001128
+  },
+  {
+    "id": "new_129_wall_clock",
+    "name": "שעון קיר עגול",
+    "title": "שעון קיר עגול",
+    "imageUrl": "/staged_images/pool/new_129_wall_clock.jpg",
+    "keywords": [
+      "זמן",
+      "פגישה",
+      "שעה",
+      "איחור",
+      "דדליין"
+    ],
+    "association": "זמן, פגישה, שעה, איחור, דדליין",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001129
+  },
+  {
+    "id": "new_130_kitchen_timer",
+    "name": "טיימר מטבח",
+    "title": "טיימר מטבח",
+    "imageUrl": "/staged_images/pool/new_130_kitchen_timer.jpg",
+    "keywords": [
+      "זמן",
+      "דדליין",
+      "בישול",
+      "אפייה",
+      "דקות"
+    ],
+    "association": "זמן, דדליין, בישול, אפייה, דקות",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001130
+  },
+  {
+    "id": "new_131_megaphone",
+    "name": "מגפון כריזה",
+    "title": "מגפון כריזה",
+    "imageUrl": "/staged_images/pool/new_131_megaphone.jpg",
+    "keywords": [
+      "הודעה",
+      "אירוע",
+      "הפגנה",
+      "פרסום",
+      "קריאה"
+    ],
+    "association": "הודעה, אירוע, הפגנה, פרסום, קריאה",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001131
+  },
+  {
+    "id": "new_132_daily_newspaper",
+    "name": "עיתון יומי מקופל",
+    "title": "עיתון יומי מקופל",
+    "imageUrl": "/staged_images/pool/new_132_daily_newspaper.jpg",
+    "keywords": [
+      "חדשות",
+      "בוקר",
+      "קריאה",
+      "קפה",
+      "פרסום"
+    ],
+    "association": "חדשות, בוקר, קריאה, קפה, פרסום",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001132
+  },
+  {
+    "id": "new_133_sealed_envelope",
+    "name": "מעטפה חתומה",
+    "title": "מעטפה חתומה",
+    "imageUrl": "/staged_images/pool/new_133_sealed_envelope.jpg",
+    "keywords": [
+      "מכתב",
+      "דואר",
+      "חשבונות",
+      "הזמנה",
+      "משלוח"
+    ],
+    "association": "מכתב, דואר, חשבונות, הזמנה, משלוח",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001133
+  },
+  {
+    "id": "new_134_document_folder",
+    "name": "תיקיית מסמכים",
+    "title": "תיקיית מסמכים",
+    "imageUrl": "/staged_images/pool/new_134_document_folder.jpg",
+    "keywords": [
+      "תיוק",
+      "משרד",
+      "עבודה",
+      "חוזה",
+      "סדר"
+    ],
+    "association": "תיוק, משרד, עבודה, חוזה, סדר",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001134
+  },
+  {
+    "id": "new_135_executive_briefcase",
+    "name": "תיק מנהלים",
+    "title": "תיק מנהלים",
+    "imageUrl": "/staged_images/pool/new_135_executive_briefcase.jpg",
+    "keywords": [
+      "עבודה",
+      "פגישה",
+      "עסקים",
+      "משרד",
+      "משפט"
+    ],
+    "association": "עבודה, פגישה, עסקים, משרד, משפט",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001135
+  },
+  {
+    "id": "new_136_living_room_sofa",
+    "name": "ספה בסלון",
+    "title": "ספה בסלון",
+    "imageUrl": "/staged_images/pool/new_136_living_room_sofa.jpg",
+    "keywords": [
+      "מנוחה",
+      "בית",
+      "רהיטים",
+      "טלוויזיה",
+      "אירוח"
+    ],
+    "association": "מנוחה, בית, רהיטים, טלוויזיה, אירוח",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001136
+  },
+  {
+    "id": "new_137_double_bed",
+    "name": "מיטה זוגית מוצעת",
+    "title": "מיטה זוגית מוצעת",
+    "imageUrl": "/staged_images/pool/new_137_double_bed.jpg",
+    "keywords": [
+      "שינה",
+      "לילה",
+      "מנוחה",
+      "רהיטים",
+      "מלון"
+    ],
+    "association": "שינה, לילה, מנוחה, רהיטים, מלון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001137
+  },
+  {
+    "id": "new_138_shower_head",
+    "name": "ראש מקלחת זורם",
+    "title": "ראש מקלחת זורם",
+    "imageUrl": "/staged_images/pool/new_138_shower_head.jpg",
+    "keywords": [
+      "אמבטיה",
+      "מים",
+      "ניקיון",
+      "בוקר",
+      "סבון"
+    ],
+    "association": "אמבטיה, מים, ניקיון, בוקר, סבון",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001138
+  },
+  {
+    "id": "new_139_bubble_bathtub",
+    "name": "אמבטיה מלאה קצף",
+    "title": "אמבטיה מלאה קצף",
+    "imageUrl": "/staged_images/pool/new_139_bubble_bathtub.jpg",
+    "keywords": [
+      "מקלחת",
+      "רוגע",
+      "מים",
+      "סבון",
+      "ילדים"
+    ],
+    "association": "מקלחת, רוגע, מים, סבון, ילדים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001139
+  },
+  {
+    "id": "new_140_standing_fan",
+    "name": "מאוורר עמוד",
+    "title": "מאוורר עמוד",
+    "imageUrl": "/staged_images/pool/new_140_standing_fan.jpg",
+    "keywords": [
+      "חום",
+      "קיץ",
+      "אוורור",
+      "רוח",
+      "חשמל"
+    ],
+    "association": "חום, קיץ, אוורור, רוח, חשמל",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001140
+  },
+  {
+    "id": "new_141_radiator_heater",
+    "name": "רדיאטור חימום",
+    "title": "רדיאטור חימום",
+    "imageUrl": "/staged_images/pool/new_141_radiator_heater.jpg",
+    "keywords": [
+      "חורף",
+      "קור",
+      "חום",
+      "חשמל",
+      "בית"
+    ],
+    "association": "חורף, קור, חום, חשמל, בית",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001141
+  },
+  {
+    "id": "new_142_lawn_mower",
+    "name": "מכסחת דשא",
+    "title": "מכסחת דשא",
+    "imageUrl": "/staged_images/pool/new_142_lawn_mower.jpg",
+    "keywords": [
+      "גינה",
+      "גיזום",
+      "חצר",
+      "ניקיון",
+      "קיץ"
+    ],
+    "association": "גינה, גיזום, חצר, ניקיון, קיץ",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001142
+  },
+  {
+    "id": "new_143_pruning_shears",
+    "name": "מזמרת גינון",
+    "title": "מזמרת גינון",
+    "imageUrl": "/staged_images/pool/new_143_pruning_shears.jpg",
+    "keywords": [
+      "גיזום",
+      "גינה",
+      "צמחים",
+      "עצים",
+      "פרחים"
+    ],
+    "association": "גיזום, גינה, צמחים, עצים, פרחים",
+    "domain": "daily_life",
+    "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001143
+  },
+  {
+    "id": "new_144_paint_palette",
+    "name": "פלטת צבעים ומכחול",
+    "title": "פלטת צבעים ומכחול",
+    "imageUrl": "/staged_images/pool/new_144_paint_palette.jpg",
+    "keywords": [
+      "ציור",
+      "אמנות",
+      "יצירה",
+      "חוג",
+      "צביעה"
+    ],
+    "association": "ציור, אמנות, יצירה, חוג, צביעה",
+    "domain": "daily_life",
+    "category": "🎨 3. יצירות אמנות וארכיאולוגיה (101–150)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001144
+  },
+  {
+    "id": "new_145_clapperboard",
+    "name": "קלאפר קולנוע",
+    "title": "קלאפר קולנוע",
+    "imageUrl": "/staged_images/pool/new_145_clapperboard.jpg",
+    "keywords": [
+      "סרט",
+      "צילום",
+      "הופעה",
+      "סדרה",
+      "בימוי"
+    ],
+    "association": "סרט, צילום, הופעה, סדרה, בימוי",
+    "domain": "daily_life",
+    "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001145
+  },
+  {
+    "id": "new_146_game_controller",
+    "name": "שלט קונסולת משחקים",
+    "title": "שלט קונסולת משחקים",
+    "imageUrl": "/staged_images/pool/new_146_game_controller.jpg",
+    "keywords": [
+      "טורניר",
+      "מסך",
+      "כפתור",
+      "פנאי",
+      "גיימינג"
+    ],
+    "association": "טורניר, מסך, כפתור, פנאי, גיימינג",
+    "domain": "daily_life",
+    "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001146
+  },
+  {
+    "id": "new_147_museum_facade",
+    "name": "חזית מוזיאון עם עמודים",
+    "title": "חזית מוזיאון עם עמודים",
+    "imageUrl": "/staged_images/pool/new_147_museum_facade.jpg",
+    "keywords": [
+      "אמנות",
+      "היסטוריה",
+      "תיירות",
+      "טיול",
+      "תרבות"
+    ],
+    "association": "אמנות, היסטוריה, תיירות, טיול, תרבות",
+    "domain": "daily_life",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001147
+  },
+  {
+    "id": "new_148_bookshelf",
+    "name": "כוננית ספרים עמוסה",
+    "title": "כוננית ספרים עמוסה",
+    "imageUrl": "/staged_images/pool/new_148_bookshelf.jpg",
+    "keywords": [
+      "קריאה",
+      "לימודים",
+      "ספרייה",
+      "סדר",
+      "אקדמיה"
+    ],
+    "association": "קריאה, לימודים, ספרייה, סדר, אקדמיה",
+    "domain": "daily_life",
+    "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001148
+  },
+  {
+    "id": "new_149_graduation_diploma",
+    "name": "תעודת סיום מגולגלת בסרט",
+    "title": "תעודת סיום מגולגלת בסרט",
+    "imageUrl": "/staged_images/pool/new_149_graduation_diploma.jpg",
+    "keywords": [
+      "תואר",
+      "לימודים",
+      "אוניברסיטה",
+      "הצלחה",
+      "טקס"
+    ],
+    "association": "תואר, לימודים, אוניברסיטה, הצלחה, טקס",
+    "domain": "daily_life",
+    "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001149
+  },
+  {
+    "id": "new_150_charity_box",
+    "name": "קופת צדקה",
+    "title": "קופת צדקה",
+    "imageUrl": "/staged_images/pool/new_150_charity_box.jpg",
+    "keywords": [
+      "תרומה",
+      "עזרה",
+      "כסף",
+      "מטבעות",
+      "חסד"
+    ],
+    "association": "תרומה, עזרה, כסף, מטבעות, חסד",
+    "domain": "daily_life",
+    "category": "🔱 סמלים דתיים, מיתולוגיים ורוחניים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001150
   }
 ];
 
