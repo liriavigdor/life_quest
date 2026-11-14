@@ -1,5 +1,615 @@
 [
   {
+    "id": "approved_1794669675178",
+    "title": "וולברין",
+    "name": "וולברין",
+    "imageUrl": "/staged_images/pool/wolverine_logan.jpg",
+    "keywords": [
+      "סכין",
+      "ולברין",
+      "וולברין"
+    ],
+    "associatedTasks": [
+      "סכין",
+      "וולברין"
+    ],
+    "caption": "וולברין בארמון",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T15:21:15.178Z"
+  },
+  {
+    "id": "approved_1794669650350",
+    "title": "שריר זרוע",
+    "name": "שריר זרוע",
+    "imageUrl": "/staged_images/pool/item_171_שריר_זרוע_נפוח_ומכופף__אמוג_י_שריר___מסמל.jpg",
+    "keywords": [
+      "כוח",
+      "שריר",
+      "זרוע",
+      "שריר זרוע"
+    ],
+    "associatedTasks": [
+      "כוח",
+      "שריר זרוע"
+    ],
+    "caption": "שריר זרוע בארמון",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T15:20:50.350Z"
+  },
+  {
+    "id": "ingested_1794668183808",
+    "title": "קסדה",
+    "name": "קסדה",
+    "imageUrl": "/staged_images/pool/ingested_קסדה_1794668183790.jpg",
+    "keywords": [
+      "קסדה",
+      "ביטחון"
+    ],
+    "associatedTasks": [
+      "ביטחון",
+      "קסדה"
+    ],
+    "caption": "שמירה על הראש",
+    "emoji": "🪖",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-14T14:56:23.808Z"
+  },
+  {
+    "id": "ingested_1794668158294",
+    "title": "קסדה",
+    "name": "קסדה",
+    "imageUrl": "/staged_images/pool/ingested_קסדה_1794668158275.jpg",
+    "keywords": [
+      "קסדה",
+      "קסדה"
+    ],
+    "associatedTasks": [
+      "קסדה",
+      "קסדה"
+    ],
+    "caption": "Howsafe| Safety helmets, bump caps, visors and accessories",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-14T14:55:58.294Z"
+  },
+  {
+    "id": "ingested_1794668156704",
+    "title": "כספת",
+    "name": "כספת",
+    "imageUrl": "/staged_images/pool/ingested_כספת_1794668156690.jpg",
+    "keywords": [
+      "כספת",
+      "ביטחון"
+    ],
+    "associatedTasks": [
+      "ביטחון",
+      "כספת"
+    ],
+    "caption": "שמירה על חפצים יקרים",
+    "emoji": "🏦",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-14T14:55:56.704Z"
+  },
+  {
+    "id": "ingested_1794668134620",
+    "title": "אפוד מגן",
+    "name": "אפוד מגן",
+    "imageUrl": "/staged_images/pool/ingested_אפוד_מגן_1794668134602.jpg",
+    "keywords": [
+      "אפוד מגן",
+      "ביטחון"
+    ],
+    "associatedTasks": [
+      "ביטחון",
+      "אפוד מגן"
+    ],
+    "caption": "הגנה אישית וביטחון",
+    "emoji": "🦺",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-14T14:55:34.620Z"
+  },
+  {
+    "id": "ingested_1794668131173",
+    "title": "כספת",
+    "name": "כספת",
+    "imageUrl": "/staged_images/pool/ingested_כספת_1794668131158.jpg",
+    "keywords": [
+      "כספת",
+      "כספת"
+    ],
+    "associatedTasks": [
+      "כספת",
+      "כספת"
+    ],
+    "caption": "Dahua IPC‑HFW2441DG‑4G‑SP‑B‑MAX – 4MP Solar 4G Smart Dual Light Camera ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-14T14:55:31.173Z"
+  },
+  {
+    "id": "ingested_1794668124113",
+    "title": "אפוד מגן",
+    "name": "אפוד מגן",
+    "imageUrl": "/staged_images/pool/ingested_אפוד_מגן_1794668124081.jpg",
+    "keywords": [
+      "אפוד מגן",
+      "אפוד מגן"
+    ],
+    "associatedTasks": [
+      "אפוד מגן",
+      "אפוד מגן"
+    ],
+    "caption": "Buffalo shooting renews calls for body armor regulation - ABC News",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-14T14:55:24.113Z"
+  },
+  {
+    "id": "approved_1794665129737",
+    "title": "כרכרת סוסים",
+    "name": "כרכרת סוסים",
+    "imageUrl": "/staged_images/pool/item_217_כרכרת_סוסים_מלכותית.jpg",
+    "keywords": [
+      "פאר",
+      "כרכרת",
+      "סוסים",
+      "כרכרת סוסים"
+    ],
+    "associatedTasks": [
+      "פאר",
+      "כרכרת סוסים"
+    ],
+    "caption": "כרכרת סוסים בארמון",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T14:05:29.737Z"
+  },
+  {
+    "id": "approved_1794665116901",
+    "title": "גלגל שיניים",
+    "name": "גלגל שיניים",
+    "imageUrl": "/staged_images/pool/approved_1794665116877.jpg",
+    "keywords": [
+      "שינוע",
+      "גלגל",
+      "שיניים",
+      "גלגל שיניים"
+    ],
+    "associatedTasks": [
+      "שינוע",
+      "גלגל שיניים"
+    ],
+    "caption": "מנגנון תנועה מכני",
+    "emoji": "⚙️",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T14:05:16.902Z"
+  },
+  {
+    "id": "ingested_1794665080972",
+    "title": "הר",
+    "name": "הר",
+    "imageUrl": "/staged_images/pool/ingested_הר_1794665080942.jpg",
+    "keywords": [
+      "הר",
+      "גיא"
+    ],
+    "associatedTasks": [
+      "גיא",
+      "הר"
+    ],
+    "caption": "טופוגרפיה ונוף פתוח",
+    "emoji": "⛰️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-14T14:04:40.972Z"
+  },
+  {
+    "id": "ingested_1794665078425",
+    "title": "הר",
+    "name": "הר",
+    "imageUrl": "/staged_images/pool/ingested_הר_1794665078409.jpg",
+    "keywords": [
+      "הר",
+      "הר"
+    ],
+    "associatedTasks": [
+      "הר",
+      "הר"
+    ],
+    "caption": "200,000+ Free Snow Capped Mountains & Snow Images - Pixabay",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T14:04:38.425Z"
+  },
+  {
+    "id": "ingested_1794665072302",
+    "title": "מפה",
+    "name": "מפה",
+    "imageUrl": "/staged_images/pool/ingested_מפה_1794665072267.jpg",
+    "keywords": [
+      "מפה",
+      "מפה"
+    ],
+    "associatedTasks": [
+      "מפה",
+      "מפה"
+    ],
+    "caption": "The Enduring Appeal Of Paper World Maps - Pittsburgh City Map – Streets ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T14:04:32.302Z"
+  },
+  {
+    "id": "ingested_1794665067413",
+    "title": "גלובוס",
+    "name": "גלובוס",
+    "imageUrl": "/staged_images/pool/ingested_גלובוס_1794665067396.jpg",
+    "keywords": [
+      "גלובוס",
+      "גיא"
+    ],
+    "associatedTasks": [
+      "גיא",
+      "גלובוס"
+    ],
+    "caption": "גיאוגרפיה וכדור הארץ",
+    "emoji": "🌍",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T14:04:27.413Z"
+  },
+  {
+    "id": "ingested_1794665064747",
+    "title": "גלובוס",
+    "name": "גלובוס",
+    "imageUrl": "/staged_images/pool/ingested_גלובוס_1794665064732.jpg",
+    "keywords": [
+      "גלובוס",
+      "גלובוס"
+    ],
+    "associatedTasks": [
+      "גלובוס",
+      "גלובוס"
+    ],
+    "caption": "Free Images : circle, globe, earth, sphere, planet, shape, global, map ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T14:04:24.747Z"
+  },
+  {
+    "id": "ingested_1794665064007",
+    "title": "לב אדום",
+    "name": "לב אדום",
+    "imageUrl": "/staged_images/pool/ingested_לב_אדום_1794665063950.jpg",
+    "keywords": [
+      "לב אדום",
+      "לב אדום"
+    ],
+    "associatedTasks": [
+      "לב אדום",
+      "לב אדום"
+    ],
+    "caption": "[1300+] Red Heart Wallpapers | Wallpapers.com",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T14:04:24.007Z"
+  },
+  {
+    "id": "ingested_1794663088275",
+    "title": "חרוט אזהרה",
+    "name": "חרוט אזהרה",
+    "imageUrl": "/staged_images/pool/ingested_חרוט_אזהרה_1794663088247.jpg",
+    "keywords": [
+      "חרוט אזהרה",
+      "תאונה"
+    ],
+    "associatedTasks": [
+      "תאונה",
+      "חרוט אזהרה"
+    ],
+    "caption": "סימון סכנה בדרך",
+    "emoji": "🚧",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T13:31:28.275Z"
+  },
+  {
+    "id": "ingested_1794663087646",
+    "title": "מנקש עשבים",
+    "name": "מנקש עשבים",
+    "imageUrl": "/staged_images/pool/ingested_מנקש_עשבים_1794663087624.jpg",
+    "keywords": [
+      "מנקש עשבים",
+      "מנקש עשבים"
+    ],
+    "associatedTasks": [
+      "מנקש עשבים",
+      "מנקש עשבים"
+    ],
+    "caption": "Soliva sessilis",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T13:31:27.646Z"
+  },
+  {
+    "id": "ingested_1794663086764",
+    "title": "אבן גרניט",
+    "name": "אבן גרניט",
+    "imageUrl": "/staged_images/pool/ingested_אבן_גרניט_1794663086756.jpg",
+    "keywords": [
+      "אבן גרניט",
+      "עמיד"
+    ],
+    "associatedTasks": [
+      "עמיד",
+      "אבן גרניט"
+    ],
+    "caption": "חומר קשה וחזק",
+    "emoji": "🪨",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T13:31:26.764Z"
+  },
+  {
+    "id": "ingested_1794663085885",
+    "title": "מטאור נוחת",
+    "name": "מטאור נוחת",
+    "imageUrl": "/staged_images/pool/ingested_מטאור_נוחת_1794663085859.jpg",
+    "keywords": [
+      "מטאור נוחת",
+      "התנגשות"
+    ],
+    "associatedTasks": [
+      "התנגשות",
+      "מטאור נוחת"
+    ],
+    "caption": "פגיעה קוסמית אדירה",
+    "emoji": "☄️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T13:31:25.885Z"
+  },
+  {
+    "id": "ingested_1794663084645",
+    "title": "חרוט אזהרה",
+    "name": "חרוט אזהרה",
+    "imageUrl": "/staged_images/pool/ingested_חרוט_אזהרה_1794663084638.jpg",
+    "keywords": [
+      "חרוט אזהרה",
+      "חרוט אזהרה"
+    ],
+    "associatedTasks": [
+      "חרוט אזהרה",
+      "חרוט אזהרה"
+    ],
+    "caption": "What Makes Traffic Cones Essential for Road Work and Public Safety",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T13:31:24.645Z"
+  },
+  {
+    "id": "ingested_1794663084438",
+    "title": "אבן גרניט",
+    "name": "אבן גרניט",
+    "imageUrl": "/staged_images/pool/ingested_אבן_גרניט_1794663084429.jpg",
+    "keywords": [
+      "אבן גרניט",
+      "אבן גרניט"
+    ],
+    "associatedTasks": [
+      "אבן גרניט",
+      "אבן גרניט"
+    ],
+    "caption": "60,000+ Free Granite Rocks & Granite Images - Pixabay",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T13:31:24.438Z"
+  },
+  {
+    "id": "ingested_1794663083920",
+    "title": "מטאור נוחת",
+    "name": "מטאור נוחת",
+    "imageUrl": "/staged_images/pool/ingested_מטאור_נוחת_1794663083867.jpg",
+    "keywords": [
+      "מטאור נוחת",
+      "מטאור נוחת"
+    ],
+    "associatedTasks": [
+      "מטאור נוחת",
+      "מטאור נוחת"
+    ],
+    "caption": "Asteroid Impacts:10 Biggest Known Hits",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T13:31:23.920Z"
+  },
+  {
+    "id": "approved_1794659496886",
+    "title": "דרקולה",
+    "name": "דרקולה",
+    "imageUrl": "/staged_images/pool/authentic_dracula.jpg",
+    "keywords": [
+      "ערפד",
+      "דרקולה"
+    ],
+    "associatedTasks": [
+      "ערפד",
+      "דרקולה"
+    ],
+    "caption": "עוגן חזותי מהמאגר שלך: דרקולה (דרקולה, ערפד, עטלף, טירה)",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T12:31:36.886Z"
+  },
+  {
+    "id": "approved_1794659454106",
+    "title": "לב אדום שבור",
+    "name": "לב אדום שבור",
+    "imageUrl": "/staged_images/pool/item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל.jpg",
+    "keywords": [
+      "אסון",
+      "לב",
+      "אדום",
+      "שבור",
+      "לב אדום שבור"
+    ],
+    "associatedTasks": [
+      "אסון",
+      "לב אדום שבור"
+    ],
+    "caption": "עוגן שורש מהמאגר: לב אדום שבור",
+    "emoji": "🌉",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T12:30:54.106Z"
+  },
+  {
+    "id": "approved_1794659429463",
+    "title": "חמניות",
+    "name": "חמניות",
+    "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg",
+    "keywords": [
+      "שמש",
+      "חמניות"
+    ],
+    "associatedTasks": [
+      "שמש",
+      "חמניות"
+    ],
+    "caption": "עוגן חזותי מהמאגר שלך: חמניות (פרחים, צהוב, שמש, גרעינים)",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T12:30:29.464Z"
+  },
+  {
+    "id": "ingested_1794659369571",
+    "title": "מעקה מדרגות",
+    "name": "מעקה מדרגות",
+    "imageUrl": "/staged_images/pool/ingested_מעקה_מדרגות_1794659369547.jpg",
+    "keywords": [
+      "מעקה מדרגות",
+      "מעקה מדרגות"
+    ],
+    "associatedTasks": [
+      "מעקה מדרגות",
+      "מעקה מדרגות"
+    ],
+    "caption": "How to Build An Outdoor Wood Stair Railing",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-14T12:29:29.571Z"
+  },
+  {
+    "id": "ingested_1794659362823",
+    "title": "זברה פראית",
+    "name": "זברה פראית",
+    "imageUrl": "/staged_images/pool/ingested_זברה_פראית_1794659362797.jpg",
+    "keywords": [
+      "זברה פראית",
+      "פסנתר"
+    ],
+    "associatedTasks": [
+      "פסנתר",
+      "זברה פראית"
+    ],
+    "caption": "עוגן עבור זברה פראית",
+    "emoji": "🦓",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-14T12:29:22.823Z"
+  },
+  {
+    "id": "ingested_1794659356367",
+    "title": "מטאור בוער",
+    "name": "מטאור בוער",
+    "imageUrl": "/staged_images/pool/ingested_מטאור_בוער_1794659356344.jpg",
+    "keywords": [
+      "מטאור בוער",
+      "מטאור בוער"
+    ],
+    "associatedTasks": [
+      "מטאור בוער",
+      "מטאור בוער"
+    ],
+    "caption": "[200+] Atmosphere Wallpapers | Wallpapers.com",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T12:29:16.367Z"
+  },
+  {
+    "id": "ingested_1794659351503",
+    "title": "זברה פראית",
+    "name": "זברה פראית",
+    "imageUrl": "/staged_images/pool/ingested_זברה_פראית_1794659351479.jpg",
+    "keywords": [
+      "זברה פראית",
+      "זברה פראית"
+    ],
+    "associatedTasks": [
+      "זברה פראית",
+      "זברה פראית"
+    ],
+    "caption": "For Zebras on the Run, Stripes May Provide Protection | National Geographic",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T12:29:11.503Z"
+  },
+  {
     "id": "approved_1794552699595",
     "title": "תרנגול",
     "name": "תרנגול",

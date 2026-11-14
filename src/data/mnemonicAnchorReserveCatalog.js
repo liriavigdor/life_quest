@@ -1,4 +1,124 @@
 export const MNEMONIC_ANCHOR_CATALOG = {
+  // מטבח / בישול / קולינריה
+  'מטבח': {
+    concept: 'מטבח',
+    synonyms: ['מטבח', 'בישול', 'לבשל', 'שף', 'סיר', 'מחבת'],
+    associations: [
+      {
+        anchorName: 'מחבת ברזל לוהטת 🍳🔥',
+        searchQuery: 'מחבת ברזל',
+        englishQuery: 'cast iron skillet pan cooking photography',
+        emoji: '🍳',
+        explanation: 'מחבת ברזל כבדה על הכיריים במטבח!',
+        imageUrl: '/staged_images/pool/cast_iron_pan.jpg'
+      },
+      {
+        anchorName: 'סכין שף מקצועית 🔪🥕',
+        searchQuery: 'סכין שף מטבח',
+        englishQuery: 'chef knife cutting board kitchen photography',
+        emoji: '🔪',
+        explanation: 'סכין שף חדה על קרש חיתוך במטבח!',
+        imageUrl: '/staged_images/pool/authentic_item_354_סכין_שף.jpg'
+      }
+    ]
+  },
+
+  // עבודה / משרד / שיפוץ
+  'עבודה': {
+    concept: 'עבודה',
+    synonyms: ['עבודה', 'לעבוד', 'כלי עבודה', 'פועל', 'מלאכה'],
+    associations: [
+      {
+        anchorName: 'ארגז כלים אדום 🧰🔨',
+        searchQuery: 'ארגז כלים עבודה',
+        englishQuery: 'red metal toolbox with tools photography',
+        emoji: '🧰',
+        explanation: 'ארגז כלי עבודה עמוס במפתחות וברגים!',
+        imageUrl: '/staged_images/pool/item_396_ארגז_כלים_אדום.jpg'
+      },
+      {
+        anchorName: 'פטיש שופטים או פטיש עבודה ⚒️',
+        searchQuery: 'פטיש עבודה',
+        englishQuery: 'hammer and sickle construction tools photography',
+        emoji: '⚒️',
+        explanation: 'סמל הפטיש וכלי העבודה המובהק!',
+        imageUrl: '/staged_images/pool/item_451_הפטיש_והמגל.jpg'
+      }
+    ]
+  },
+
+  // תקלה / קלקול / שגיאה / אזהרה
+  'תקלה': {
+    concept: 'תקלה',
+    synonyms: ['תקלה', 'קלקול', 'התקלקל', 'אזהרה', 'נורה', 'לתקן', 'שגיאה'],
+    associations: [
+      {
+        anchorName: 'משולש אזהרה צהוב ⚠️',
+        searchQuery: 'משולש אזהרה תקלה',
+        englishQuery: 'yellow warning hazard sign triangle photography',
+        emoji: '⚠️',
+        explanation: 'סימן קריאה ומשולש אזהרה המסמל תקלה מידית!',
+        imageUrl: '/staged_images/pool/item_177_סימן_קריאה_בתוך_משולש_צהוב__מסמל.jpg'
+      },
+      {
+        anchorName: 'מפתח שוודי לתיקון תקלות 🔧',
+        searchQuery: 'מפתח שוודי תיקון תקלה',
+        englishQuery: 'adjustable wrench repair tool photography',
+        emoji: '🔧',
+        explanation: 'מפתח שוודי ממתכת לתיקון תקלות וברגים!',
+        imageUrl: '/staged_images/pool/item_419_מפתח_שוודי___מפתח_ברגים.jpg'
+      }
+    ]
+  },
+
+  // פרצה / פריצה / אבטחה
+  'פרצה': {
+    concept: 'פרצה',
+    synonyms: ['פרצה', 'פריצה', 'לפרוץ', 'מנעול', 'גדר', 'חדירה'],
+    associations: [
+      {
+        anchorName: 'מנעול פלדה ומפתח 🔒🔑',
+        searchQuery: 'מנעול פלדה מפתח',
+        englishQuery: 'heavy padlock with brass key security photography',
+        emoji: '🔒',
+        explanation: 'מנעול פלדה שנפרץ או ננעל מחדש!',
+        imageUrl: '/staged_images/pool/authentic_item_172_מנעול_סגור__ומפתח_בצד___מסמל.jpg'
+      },
+      {
+        anchorName: 'אזיקים סגורים ⛓️',
+        searchQuery: 'אזיקים פריצה',
+        englishQuery: 'metal handcuffs security police photography',
+        emoji: '⛓️',
+        explanation: 'אזיקי פלדה שמסמלים לכידה בעקבות פריצה!',
+        imageUrl: '/staged_images/pool/item_175_אזיקים_סגורים__מסמל_מאסר__חוסר.jpg'
+      }
+    ]
+  },
+
+  // שימוש / להשתמש / תפעול
+  'שימוש': {
+    concept: 'שימוש',
+    synonyms: ['שימוש', 'להשתמש', 'שימושי', 'כלי', 'הפעלה'],
+    associations: [
+      {
+        anchorName: 'מפתח שוודי רב-שימושי 🔧',
+        searchQuery: 'מפתח שוודי כלי שימושי',
+        englishQuery: 'steel wrench utility tool photography',
+        emoji: '🔧',
+        explanation: 'כלי שימושי שנועד לכל צורך ותפעול!',
+        imageUrl: '/staged_images/pool/item_419_מפתח_שוודי___מפתח_ברגים.jpg'
+      },
+      {
+        anchorName: 'סלוטייפ שימושי להדבקה 📦',
+        searchQuery: 'סלוטייפ סרט הדבקה',
+        englishQuery: 'clear adhesive tape roll photography',
+        emoji: '📦',
+        explanation: 'סרט הדבקה שימושי שמשתמשים בו בכל בית ומשרד!',
+        imageUrl: '/staged_images/pool/item_395_סלוטייפ___סרט_הדבקה_שקוף.jpg'
+      }
+    ]
+  },
+
   // איטריות / אטריות / נודלס / ראמן
   'איטריות': {
     concept: 'איטריות',
@@ -130,6 +250,54 @@ export const MNEMONIC_ANCHOR_CATALOG = {
         emoji: '✂️',
         explanation: 'ספר מקצועי מניף מספריים מעל כיסא עור במספרת וינטג\' קלאסית!',
         imageUrl: '/staged_images/pool/barber_classic_shears.jpg'
+      }
+    ]
+  },
+
+  // הילה / זוהר / עטרה
+  'הילה': {
+    concept: 'הילה',
+    synonyms: ['הילה', 'עטרה', 'זוהר', 'קרני אור', 'אאורה'],
+    associations: [
+      {
+        anchorName: 'מלאך עם הילה מוזהבת 👼✨',
+        searchQuery: 'מלאך הילה מוזהבת אור',
+        englishQuery: 'golden glowing halo angel authentic photography',
+        emoji: '👼',
+        explanation: 'הילת אור וקדושה מוזהבת סביב ראש המלאך',
+        imageUrl: '/staged_images/pool/item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל.jpg'
+      },
+      {
+        anchorName: 'נורת חשמל זוהרת 💡✨',
+        searchQuery: 'נורת להט מאירה זוהר',
+        englishQuery: 'glowing incandescent light bulb authentic photography',
+        emoji: '💡',
+        explanation: 'אור בוהק והילה מאירה',
+        imageUrl: '/staged_images/pool/light_bulb.jpg'
+      }
+    ]
+  },
+
+  // שומר / מאבטח / שמירה
+  'שומר': {
+    concept: 'שומר',
+    synonyms: ['שומר', 'מאבטח', 'שמירה', 'אבטחה', 'שומר ראש', 'לשמור'],
+    associations: [
+      {
+        anchorName: 'מנעול ומפתח פלדה 🔒🔑',
+        searchQuery: 'מנעול ומפתח פלדה אבטחה',
+        englishQuery: 'heavy steel padlock with key authentic photography',
+        emoji: '🔒',
+        explanation: '',
+        imageUrl: '/staged_images/pool/item_443_מנעול_ומפתח.jpg'
+      },
+      {
+        anchorName: 'רובוקופ שוטר עתידני 👮‍♂️🤖',
+        searchQuery: 'רובוקופ שוטר אבטחה',
+        englishQuery: 'robocop security guard authentic photography',
+        emoji: '👮‍♂️',
+        explanation: '',
+        imageUrl: '/staged_images/pool/robocop.jpg'
       }
     ]
   },

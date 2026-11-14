@@ -18,6 +18,7 @@ import { MASTER_MNEMONIC_ARSENAL } from '../data/masterMnemonicArsenal1000.js';
 import { STAGED_TRIPLET_POOL } from '../data/stagedTripletPool.js';
 import { CURATED_USER_REPOSITORY_SEED, DISCARDED_STAGED_IDS } from '../data/curatedUserRepositorySeed.js';
 import { getAssociativeLeapBridges } from './associativeLeapGraph.js';
+import { getHebrewSynonyms } from './hebrewSynonymThesaurus.js';
 
 const CURATED_SEED_BY_ID = new Map(
   (Array.isArray(CURATED_USER_REPOSITORY_SEED) ? CURATED_USER_REPOSITORY_SEED : []).map(item => [item.id, item])
@@ -32,7 +33,7 @@ const FIRESTORE_COLLECTION = 'user_mnemonic_images';
 // Global canonical map for few, ultra-accurate everyday single-word associations
 const CANONICAL_KEYWORDS_MAP = new Map();
 
-function toCanonicalKey(str) {
+export function toCanonicalKey(str) {
   if (!str) return '';
   return String(str)
     .trim()
@@ -480,6 +481,22 @@ export function getCloudSyncStatus() {
     error: cloudSyncError,
     count: cachedUserImages.length
   };
+}
+
+/**
+ * Return a clean, unique list of root archetype titles currently active in the palace repository.
+ * Used to guide the AI to prefer in-palace assets whenever possible.
+ */
+export function getCuratedArchetypeTitles() {
+  const titles = new Set();
+  for (const img of cachedUserImages) {
+    if (!img || !img.imageUrl || img.imageUrl.startsWith('data:image/svg')) continue;
+    const t = String(img.title || img.name || '').trim();
+    if (t && !t.includes('תמונה') && t.length >= 2 && t.length <= 16 && !t.includes('---')) {
+      titles.add(t);
+    }
+  }
+  return Array.from(titles);
 }
 
 /**
@@ -1067,12 +1084,15 @@ export function containsCompoundPhrase(text = '', compoundPhrase = '') {
     for (let j = 0; j < compWords.length; j++) {
       const cw = compWords[j];
       let tw = textWords[i + j];
-      while (tw.length > cw.length && ['ל', 'ב', 'מ', 'ה', 'ו'].includes(tw[0])) {
-        tw = tw.slice(1);
-      }
       if (tw !== cw) {
-        match = false;
-        break;
+        if (tw.length === cw.length + 1 && ['ל', 'ב', 'מ', 'ה', 'ו'].includes(tw[0]) && tw.slice(1) === cw) {
+          // התאמה מדויקת עם אות יחס פותחת אחת (למשל "לבית" עבור "בית")
+        } else if (tw.length === cw.length + 2 && ['וה', 'ול', 'וב', 'ומ'].includes(tw.slice(0, 2)) && tw.slice(2) === cw) {
+          // התאמה מדויקת עם שתי אותיות יחס (למשל "ולבית" עבור "בית")
+        } else {
+          match = false;
+          break;
+        }
       }
     }
     if (match) return true;
@@ -1089,12 +1109,11 @@ export function extractSignificantTokens(phrase = '') {
   const raw = String(phrase).trim();
   
   const BANNED_PERSON_AND_VERBS = new Set([
-    'אמיר', 'יהושוע', 'יהושע', 'אמיתי', 'יוסי', 'דני', 'רונה', 'שרה', 'אברהם',
     'יום', 'ביום', 'רביעי', 'חמישי', 'שלישי', 'שני', 'ראשון', 'שישי', 'שבת',
     'להחזיר', 'החזיר', 'להביא', 'הביא', 'לקנות', 'קנה', 'קנות', 'לרכוש', 'רכש', 'רכוש',
     'לקחת', 'לקח', 'למסור', 'מסר', 'לסדר', 'סידר', 'לנקות', 'ניקה', 'לשטוף', 'שטף',
-    'לכנס', 'כנס', 'השתתף', 'להשתתף', 'בטורניר', 'טורניר', 'לצבור', 'צבר', 'צבור', 'לשחות', 'שחה', 'שחות',
-    'לשחק', 'שיחק', 'שחק', 'לטפס', 'טיפס', 'טפס', 'לנסוע', 'נסע', 'לטייל', 'טייל', 'לרדת', 'ירד',
+    'לצבור', 'צבר', 'צבור',
+    'לטפס', 'טיפס', 'טפס', 'לנסוע', 'נסע', 'לטייל', 'טייל', 'לרדת', 'ירד',
     'לצאת', 'יצא', 'להזמין', 'הזמין', 'לבדוק', 'בדק', 'לתת', 'נתן', 'לעזור', 'עזר'
   ]);
 
@@ -1116,15 +1135,8 @@ export function extractSignificantTokens(phrase = '') {
     if (BANNED_PERSON_AND_VERBS.has(cleanTok)) continue;
     if (HEBREW_STOP_WORDS.has(cleanTok)) continue;
 
-    // Remove single 'ה' or 'ו' prefix ONLY if word is long enough and not a root letter
-    let base = cleanTok;
-    if ((cleanTok.startsWith('ה') || cleanTok.startsWith('ו')) && cleanTok.length >= 4) {
-      const stripped = cleanTok.slice(1);
-      if (!BANNED_PERSON_AND_VERBS.has(stripped) && !HEBREW_STOP_WORDS.has(stripped)) {
-        base = stripped;
-      }
-    }
-    // לעולם לא לקצוץ אותיות כ', ש', ב', מ', ל' משורש מילה (כמו כדורגל, שוקולד, בייבלייד, מגן, ליאו)!
+    // שמירה על שלמות המילה ללא גזירת אותיות שורש נאיבית
+    const base = cleanTok;
 
     if (BANNED_PERSON_AND_VERBS.has(base) || HEBREW_STOP_WORDS.has(base)) continue;
     if (HEBREW_GENERIC_CONTAINER_NOUNS.has(base)) continue;
@@ -1183,7 +1195,7 @@ export function hebrewWordMatches(searchWord = '', targetText = '') {
   // If target has multiple words, prevent matching if the only match is a generic container noun (e.g. "בית")
   if (rawTarget.includes(' ')) {
     const targetNormTokens = rawTarget.split(/[,\s+./\-]+/).map(normalizeHebrewLetters).filter(Boolean);
-    const searchBase = normSearch.startsWith('ל') && normSearch.length >= 4 ? normSearch.slice(1) : normSearch;
+    const searchBase = (normSearch === 'לבית' || normSearch === 'לחדר' || normSearch === 'לאולם') ? normSearch.slice(1) : normSearch;
     if (HEBREW_GENERIC_CONTAINER_NOUNS.has(searchBase)) {
       // "בית" matching "בית האופרה של סידני" is NOT allowed unless exact full title!
       return false;
@@ -1214,18 +1226,8 @@ export function hebrewWordMatches(searchWord = '', targetText = '') {
     if (normSearch === n2 && targetTokens.some(t => normalizeHebrewLetters(t) === n1)) return true;
   }
 
-  // Search prefixes
-  const searchPrefixes = ['וה', 'שב', 'של', 'מה', 'וכ', 'וב', 'ול', 'ה', 'ו', 'ב', 'ל', 'כ', 'ש'];
-
-  // Search variants (in normalized form)
+  // Search variants (in normalized form) - ללא גזירת אותיות שורש נאיבית שמשחיתה מילים
   const searchVariants = new Set([normSearch]);
-  
-  for (const p of searchPrefixes) {
-    const normP = normalizeHebrewLetters(p);
-    if (normSearch.startsWith(normP) && normSearch.length - normP.length >= 3) {
-      searchVariants.add(normSearch.slice(normP.length));
-    }
-  }
 
   // Construct ending ה <-> ת (דמעה <-> דמעת)
   if (normSearch.endsWith('ה') && normSearch.length >= 3) {
@@ -1390,29 +1392,24 @@ export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}
     if (!normTok || normTok.length < 1) continue;
     if (HEBREW_STOP_WORDS.has(normTok) || MODAL_AUXILIARY_WORDS.has(normTok)) continue;
 
-    // הסרת ה' הידיעה או ו' החיבור
-    let stripped = tok;
-    if ((tok.startsWith('ה') || tok.startsWith('ו') || tok.startsWith('ל') || tok.startsWith('ב')) && tok.length >= 4) {
-      const sub = tok.slice(1);
-      if (!MODAL_AUXILIARY_WORDS.has(normalizeHebrewLetters(sub))) {
-        stripped = sub;
-      }
-    }
-    const normStripped = normalizeHebrewLetters(stripped);
+    // שמירה מלאה על המילה ללא גזירת אותיות שורש
+    const normStripped = normTok;
     if (MODAL_AUXILIARY_WORDS.has(normStripped) && rawTokens.length > 1) continue;
 
-    const variants = new Set([tok, stripped]);
+    const variants = new Set([tok]);
     if (SEMANTIC_CONCEPT_EXPANSIONS[normTok]) {
       for (const v of SEMANTIC_CONCEPT_EXPANSIONS[normTok]) variants.add(v);
     }
-    if (SEMANTIC_CONCEPT_EXPANSIONS[normStripped]) {
-      for (const v of SEMANTIC_CONCEPT_EXPANSIONS[normStripped]) variants.add(v);
+    // הרחבה סמנטית עשירה ממילון המילים הנרדפות (Thesaurus)
+    const syns = getHebrewSynonyms(tok);
+    for (const s of syns) {
+      if (s) variants.add(s);
     }
 
     // משקל גבוה יותר למילת הפעולה/המושא העיקרית במשפט (למשל "לאכול" ב"הילד צריך לאכול", או "חביתה" ב"להכין חביתה")
-    const isPredicateOrObject = i === rawTokens.length - 1 || Boolean(SEMANTIC_CONCEPT_EXPANSIONS[normTok] || SEMANTIC_CONCEPT_EXPANSIONS[normStripped]);
+    const isPredicateOrObject = i === rawTokens.length - 1 || Boolean(SEMANTIC_CONCEPT_EXPANSIONS[normTok] || syns.length > 0);
     conceptGroups.push({
-      original: stripped,
+      original: tok,
       weight: isPredicateOrObject ? 1.5 : 1.0,
       variants: Array.from(variants)
     });

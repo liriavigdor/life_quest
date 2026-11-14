@@ -164,16 +164,21 @@ function withDefiniteArticle(label) {
 }
 
 function withPrefix(prep, label) {
-  const def = withDefiniteArticle(label);
+  if (!label) return '';
+  // איסור מוחלט על קיצוץ ה' (הילה ➔ להילה, הגה ➔ בהגה, ללא חיתוך אותיות!)
+  if (label.startsWith('ה')) {
+    return `${prep}${label}`;
+  }
+  if (label.startsWith(prep)) {
+    return label;
+  }
   if (prep === 'ב' || prep === 'ל') {
-    if (def.startsWith('ה')) return `${prep}${def.slice(1)}`;
-    return `${prep}${def}`;
+    return `${prep}${label}`;
   }
   if (prep === 'מ') {
-    if (def.startsWith('ה')) return `מה${def.slice(1)}`;
-    return `מ${def}`;
+    return `מה${label}`;
   }
-  return `${prep}${def}`;
+  return `${prep}${label}`;
 }
 
 function attachAdjective(nounLabel, adjRule) {

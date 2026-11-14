@@ -28,10 +28,14 @@ import {
   findBestUserImagesForTask,
   approveAndSaveMnemonicImage, 
   dislikeAndRemoveMnemonicImage,
-  isAssociationDisliked 
+  isAssociationDisliked,
+  toCanonicalKey,
+  getCuratedArchetypeTitles
 } from './userImageRepository.js';
 import { generateDynamicFallbackCard } from './deterministicStoryEngine.js';
 import { authorWeaveStory } from './theAuthorStoryEngine.js';
+import { getHebrewSynonyms } from './hebrewSynonymThesaurus.js';
+import { getSafeMorphologicalFamily } from './hebrewLinguisticsEngine.js';
 
 // ============================================================================
 // עובד 1: מאגר אסוציאציות עוגנים מנמוניים (Mnemonic Anchor Specialist)
@@ -48,9 +52,16 @@ export function extractTaskBranchKeyword(rawText = '') {
 
   const lowerRaw = clean.toLowerCase();
 
+  // 0. ביטויי שמירה, הקפדה, דאגה, אחריות וניהול: הליבה הסמנטית היא מושא הפעולה (לא הפועל המשני!)
+  // למשל: "שומר על הסדר" -> "סדר", "שומר על הבריאות" -> "בריאות", "דואג לילדים" -> "ילדים"
+  const maintainMatch = clean.match(/^(?:לשמור|שומר|שומרת|שמירה|להקפיד|מקפיד|מקפידה|הקפדה|לדאוג|דואג|דואגת|אחראי|אחראית|שומרים|מקפידים|דואגים|עושה|לעשות)\s+(?:על\s+(?:ה|זה\s+ש)?|ל(?:ה|זה\s+ש)?|את\s+(?:ה)?|ב)?\s*(.+)$/i);
+  if (maintainMatch && maintainMatch[1]) {
+    clean = maintainMatch[1].trim();
+  }
+
   // 1. מיפוי פעולות בית, סדר והיגיינה שבהן המהות היא פעולת הניקיון/סדר
   if (/(לנקות|ניקיון|ספונג'?ה?|לשטוף\s+רצפה|לקרצף)/.test(lowerRaw)) return 'ניקיון';
-  if (/(לסדר\s+(את\s+)?(ה)?(חדר|בית|ארון|מגירה|בלגן)|סדר\s+ב(חדר|בית)|לסדר\s+את\s+החדר)/.test(lowerRaw)) return 'סדר';
+  if (/(?:^|\s)סדר(?:$|\s)|(?:לסדר|סדר\s+ב|סידור)/.test(lowerRaw) || /(?:^|\s)סדר(?:$|\s)/.test(clean)) return 'סדר';
   if (/(כביסה|לכבס|לתלות\s+כביסה|לקפל\s+כביסה)/.test(lowerRaw)) return 'כביסה';
   if (/(מדיח|לשטוף\s+כלים|להדיח\s+כלים)/.test(lowerRaw)) return 'כלים';
 
@@ -95,31 +106,28 @@ export function extractTaskBranchKeyword(rawText = '') {
     .replace(/\s+(?:לבסיס|הביתה|לעבודה|למשרד|לגן|לבית\s*ספר|לחדר|לסלון|למטבח|בחוץ|ברחוב|למטה|דחוף)\b/gi, '')
     .trim();
 
-  // הסרת ה' הידיעה (אך ורק אם המילה ארוכה מ-3 אותיות ואינה מתחילה ב-ה' שהיא שורש)
-  function stripDefiniteArticle(w) {
-    if (w.startsWith('ה') && w.length >= 4 && !/^(הודעה|הליכון|הסכם|הזמנה|היפופוטם|הגה|הר)/.test(w)) {
-      return w.slice(1);
-    }
-    return w;
-  }
+  // 6. סילוק ביטויי כמות פותחים (זוג גרביים ➔ גרביים, שלושה כדורים ➔ כדורים)
+  clean = clean.replace(/^(?:זוג|שתי|שני|שלוש|שלושה|ארבע|ארבעה|חמש|חמישה|שש|שישה|שבע|שבעה|שמונה|תשע|תשעה|עשר|עשרה|קילו|חבילת|שקית)\s+/i, '').trim();
 
-  clean = stripDefiniteArticle(clean);
-
-  // אם נותרו מספר מילים, נחלץ את הגרעין הראשי
-  const words = clean.split(/\s+/).filter(Boolean);
-  if (words.length > 1) {
-    if (/^(זוג|שתי|שני|שלוש|שלושה|קילו|חבילת|בקבוק|שקית|חשבון)$/i.test(words[0]) && words[1]) {
-      return stripDefiniteArticle(words[1]);
-    }
-    return stripDefiniteArticle(words[0]);
-  }
-
+  // שמירה מלאה על שלמות המילה והביטוי — איסור מוחלט על גזירת אותיות (הילה ➔ הילה, משקולת יד ➔ משקולת יד)
   return clean;
 }
 
 // ============================================================================
 // עובד 1: מנוע AI חי בזמן אמת (Gemini Live Dynamic Associations)
 // ============================================================================
+function isStrongRootMatch(targetName = '', repoItem = null) {
+  if (!targetName || !repoItem) return false;
+  const tNorm = toCanonicalKey(targetName);
+  const rNorm = toCanonicalKey(repoItem.title || repoItem.name);
+  if (!tNorm || !rNorm) return false;
+  if (tNorm === rNorm) return true;
+  if (tNorm.length >= 3 && rNorm.length >= 3) {
+    if (tNorm.includes(rNorm) || rNorm.includes(tNorm)) return true;
+  }
+  return false;
+}
+
 export async function fetchGeminiLiveAssociations(taskText = '', neededCount = 5, existingAnchors = []) {
   const apiKey = getGeminiApiKey();
   if (!apiKey || apiKey.length < 10) return null;
@@ -129,17 +137,35 @@ export async function fetchGeminiLiveAssociations(taskText = '', neededCount = 5
     ? `עוגנים שכבר קיימים במאגר עבור משימה זו (איסור לחזור עליהם!): ${existingList.join(', ')}.`
     : '';
 
-  const prompt = `אתה סוכן מס' 1: מומחה עוגני משימות ואסוציאציות יומיומיות (LifeQuest Mnemonic Anchor Specialist).
-משימת המשתמש לשינון: "${taskText}".
+  const cleanTask = String(taskText || '').trim();
+  const branchKeyword = extractTaskBranchKeyword(cleanTask);
+  const coreClarification = branchKeyword && branchKeyword !== cleanTask 
+    ? ` (מושא הליבה של המשפט הוא: "${branchKeyword}", אל תתמקד בפעלים משניים כמו שומר/דואג/מקפיד!)` 
+    : '';
+
+  const palaceRoots = getCuratedArchetypeTitles();
+  const rootsSample = palaceRoots.slice(0, 300).join(', ');
+
+  const prompt = `אתה סוכן מס' 1: מומחה עוגני משימות ואסוציאציות (LifeQuest Mnemonic Anchor Specialist).
+משימת המשתמש לשינון: "${cleanTask}"${coreClarification}.
 ${existingClause}
 
-הנחיות ברזל קוגניטיביות חובה:
-1. עליך להמציא בדיוק ${count} אסוציאציות חזותיות מוחשיות, מקוריות, חיות וחושיות עבור המשימה (לעולם לא החפץ המשעמם עצמו!).
-2. **חוק האסוציאציה החד/דו-מילתית (Strict 1-2 Words Rule):**
+רשימת עוגנים וחפצים שקיימים כבר בארמון הזיכרון שלנו:
+${rootsSample}
+
+הנחיות ברזל קוגניטיביות (מודל משולב - Hybrid Mnemonic Model):
+1. **עדיפות לעוגנים קיימים בארמון (אך ורק אם הקשר טבעי, חזק ומשכנע מיד!):**
+   בדוק את רשימת העוגנים הקיימים בארמון לעיל. בחר עוגן מהארמון אך ורק אם קיים חיבור אסוציאטיבי טבעי ומשכנע שכל אדם יבין ברגע (כגון "פסנתר" ➔ "שוקולד" / "שחמט", "תאונה" ➔ "אמבולנס" / "קסדה").
+   **איסור מוחלט על קפיצות מאולצות או קלושות:** לעולם אל תאנוס עוגן מהרשימה אם אין קשר ישיר ומשכנע! (לדוגמה: איסור מוחלט לבחור "כרטיס אדום" עבור תקלה, "מסור" עבור פרצה, או "עט" עבור שימוש).
+   אם אין עוגן מתאים ומשכנע ברשימה — צא מיד החוצה ובחר עוגן ארכיטיפי קונקרטי חדש לחלוטין שמייצג את המושג בבהירות (כגון "תקלה" ➔ "משולש אזהרה" / "מנוע מעשן"; "פרצה" ➔ "מנעול פרוץ" / "גדר תיל"; "שימוש" ➔ "שלט רחוק" / "מתג חשמל")!
+2. **חופש פריצה מבוקר (Controlled Out-of-Palace Expansion):**
+   אם אף עוגן מהרשימה אינו מתאים בצורה טבעית, מותר לך להציע עוגן חדש לגמרי, **אך ורק בתנאי שהוא אובייקט ארכיטיפי מוחשי ויחיד** (עצם פיזי נקי, כלי, פריט לבוש, חיה, או דמות מובהקת — לעולם לא סצנה מופשטת או נדירה כמו "מתקן התנגשות מים" או "תמרור דרך הרוס").
+3. **חוק האסוציאציה החד/דו-מילתית (Strict 1-2 Words Rule):**
    - כל שם עוגן (anchorName) חייב להכיל **בדיוק מילה אחת או שתיים בלבד!**
-   - איסור מוחלט על משפטים, פיוטים, תיאורי פעולה ארוכים או תוספות מילוליות.
-   - דוגמאות נכונות: "קליפבורד", "תיבת קלפי", "מדגם בחירות", "שאלון", "כרטיס אדום", "ווילי וונקה", "מחליק על הקרח".
-3. **חיפוש תמונות מדויק ונקי (2-3 מילים באנגלית!):** englishQuery חייב להכיל אך ורק את האובייקט החזותי באנגלית ב-2 עד 3 מילים, ללא מילות סרק.
+   - דוגמאות נכונות: "אמבולנס", "רמזור", "שוקולד", "סולם", "קסדה", "קונוס תנועה", "כרטיס אדום", "ווילי וונקה".
+4. **חיפוש תמונות מדויק ונקי (2-3 מילים באנגלית!):** englishQuery חייב להכיל אך ורק את האובייקט החזותי באנגלית ב-2 עד 3 מילים, ללא מילות סרק (למשל: "traffic light", "ambulance vehicle", "chocolate bar", "wooden ladder").
+5. **הסבר תמציתי ומדויק בלבד (explanation):** הסבר קצרצר של 2 עד 4 מילים בלבד מדוע בחרת בעוגן זה עבור המשימה (למשל: "אור אדום לעצירה", "רכב חירום", "צבע: שחור ולבן", "סולם צלילים").
+   אם העוגן מייצג ישירות את המושג ומובן מאליו לכל אדם (למשל "כוח" ➔ "שריר זרוע", "אהבה" ➔ "לב", "זמן" ➔ "שעון", "כסף" ➔ "מטבעות") — החזר מחרוזת ריקה "" בשדה explanation!
 
 החזר אך ורק אובייקט JSON תקין (ללא שום markdown וללא טקסט עודף):
 {
@@ -148,13 +174,14 @@ ${existingClause}
     {
       "anchorName": "מילה אחת או שתיים בלבד בעברית",
       "englishQuery": "2 to 3 words in english",
-      "emoji": "אימוג'י יחיד"
+      "emoji": "אימוג'י יחיד",
+      "explanation": "הסבר מדויק ב-2 עד 4 מילים (או מחרוזת ריקה אם מובן מאליו)"
     }
   ]
 }
 חובה לייצר בדיוק ${count} אסוציאציות שונות ומוחשיות.`;
 
-  const models = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-3.8-flash'];
+  const models = ['gemini-3.5-flash-lite', 'gemini-flash-lite-latest', 'gemini-3.8-flash', 'gemini-3.5-flash'];
   for (const model of models) {
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -200,14 +227,6 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
   for (const sw of STOP_WORDS) {
     branchTokens.delete(sw);
   }
-  for (const t of Array.from(branchTokens)) {
-    if (t.length >= 4 && t.startsWith('ה')) {
-      const stripped = t.slice(1);
-      if (!STOP_WORDS.has(stripped)) {
-        branchTokens.add(stripped);
-      }
-    }
-  }
 
   // 1. חיפוש ראשוני ומיידי ב"המאגר שלי" (433 תמונות מאומתות) לפני פנייה ל-Gemini!
   const branchCandidates = [];
@@ -227,7 +246,7 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
           anchorName: userMatch.title || branchKeyword,
           imageUrl: userMatch.imageUrl,
           emoji: userMatch.emoji || '⭐',
-          explanation: userMatch.caption || `עוגן חזותי מהמאגר שלך: ${userMatch.title} (${(userMatch.keywords || []).slice(0, 4).join(', ')})`,
+          explanation: '', // עוגן ישיר מהמאגר ללא מעורבות AI - אין הסבר מיותר
           fromPool: true,
           source: 'user_approved'
         });
@@ -253,10 +272,39 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
             anchorName: assoc.anchorName,
             imageUrl: assoc.imageUrl,
             emoji: assoc.emoji || '⭐',
-            explanation: `עוגן זיכרון: ${assoc.anchorName}`,
+            explanation: assoc.explanation || '',
             fromPool: true,
             source: 'catalog_branch'
           });
+        }
+      }
+    }
+  }
+
+  // 2.5. הרחבה דטרמיניסטית בטוחה: שורש מורפולוגי ומילים נרדפות קונקרטיות (ללא גלישה מטאפורית!)
+  // מחבר פעלים לשמות פעולה (לרעוד ➔ רעידה) ושומר על הומוגניות סמנטית קפדנית
+  if (branchCandidates.length < 5) {
+    const morphFamily = getSafeMorphologicalFamily(branchKeyword);
+    const synonyms = getHebrewSynonyms(branchKeyword);
+    const safeExpansions = Array.from(new Set([...morphFamily, ...synonyms])).filter(w => w !== branchKeyword);
+
+    for (const syn of safeExpansions) {
+      if (branchCandidates.length >= 5) break;
+      const synMatches = findBestUserImagesForTask(syn, 3, { mode: 'branches' });
+      for (const m of synMatches) {
+        if (branchCandidates.length >= 5) break;
+        if (m && m.imageUrl && !m.imageUrl.startsWith('data:image/svg') && !seenUrls.has(m.imageUrl)) {
+          if (!isAssociationDisliked(cleanTask, m.imageUrl)) {
+            seenUrls.add(m.imageUrl);
+            branchCandidates.push({
+              anchorName: m.title || syn,
+              imageUrl: m.imageUrl,
+              emoji: m.emoji || '⭐',
+              explanation: '', // עוגן דטרמיניסטי טהור מהמאגר - 0 רעש
+              fromPool: true,
+              source: 'thesaurus_synonym'
+            });
+          }
         }
       }
     }
@@ -286,15 +334,16 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
           const candidateAssoc = reserveAssociations[i];
           const repoHits = findBestUserImagesForTask(candidateAssoc.anchorName, 1, { mode: 'roots' });
           const hit = repoHits[0];
-          if (hit && hit.imageUrl && !seenUrls.has(hit.imageUrl) && !isAssociationDisliked(cleanTask, hit.imageUrl)) {
+          // התאמת שורש אמיתית ומדויקת בלבד — איסור מוחלט על שידוך תמונה של מושג אחר!
+          if (hit && hit.imageUrl && isStrongRootMatch(candidateAssoc.anchorName, hit) && !seenUrls.has(hit.imageUrl) && !isAssociationDisliked(cleanTask, hit.imageUrl)) {
             seenUrls.add(hit.imageUrl);
             branchCandidates.push({
               anchorName: hit.title || candidateAssoc.anchorName,
               imageUrl: hit.imageUrl,
               emoji: candidateAssoc.emoji || hit.emoji || '⭐',
-              explanation: `עוגן שורש מהמאגר: ${hit.title || candidateAssoc.anchorName}`,
+              explanation: candidateAssoc.explanation || '',
               fromPool: true,
-              source: 'user_approved'
+              source: 'in_palace_ai_match'
             });
             reserveAssociations.splice(i, 1);
           }
@@ -310,7 +359,7 @@ export async function agent1ExtractBranchesAndSearch(taskText = '') {
         searchQuery: branchKeyword,
         englishQuery: mappedEn,
         emoji: '💡',
-        explanation: `עוגן עבור ${branchKeyword}`
+        explanation: ''
       });
     }
   }
@@ -346,15 +395,16 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
 
     const repoMatches = findBestUserImagesForTask(assoc.anchorName || '', 1, { mode: 'roots' });
     const repoHit = repoMatches[0];
-    if (repoHit && repoHit.imageUrl && !seenUrls.has(repoHit.imageUrl) && !isAssociationDisliked(cleanTask, repoHit.imageUrl)) {
+    // התאמת שורש מדויקת בלבד במאגר — אם אין התאמה אמיתית, משאירים להורדה מהרשת
+    if (repoHit && repoHit.imageUrl && isStrongRootMatch(assoc.anchorName, repoHit) && !seenUrls.has(repoHit.imageUrl) && !isAssociationDisliked(cleanTask, repoHit.imageUrl)) {
       seenUrls.add(repoHit.imageUrl);
       candidates.push({
         anchorName: repoHit.title || assoc.anchorName,
         imageUrl: repoHit.imageUrl,
         emoji: assoc.emoji || '⭐',
-        explanation: `עוגן שורש מהמאגר: ${repoHit.title || assoc.anchorName}`,
+        explanation: assoc.explanation || '',
         fromPool: true,
-        source: 'user_approved'
+        source: 'in_palace_ai_match'
       });
       pendingAssociations.splice(i, 1);
       continue;
@@ -366,7 +416,7 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
         anchorName: assoc.anchorName,
         imageUrl: assoc.imageUrl,
         emoji: assoc.emoji || '💡',
-        explanation: `עוגן שורש: ${assoc.anchorName}`,
+        explanation: assoc.explanation || '',
         fromPool: true,
         source: 'root_catalog'
       });
@@ -396,7 +446,7 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
             imageUrl: webImg,
             anchorName: missingAssoc.anchorName,
             coreConcept: cleanTask,
-            explanation: `עוגן עבור ${missingAssoc.anchorName}`,
+            explanation: missingAssoc.explanation || '',
             emoji: missingAssoc.emoji || '🌐'
           });
 
@@ -419,7 +469,7 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
           anchorName: missingAssoc.anchorName,
           imageUrl: finalImageUrl,
           emoji: missingAssoc.emoji || '🌐',
-          explanation: `עוגן צילום: ${missingAssoc.anchorName}`,
+          explanation: missingAssoc.explanation || '',
           fromPool: finalImageUrl.includes('/staged_images/pool/'),
           source: finalImageUrl.includes('/staged_images/pool/') ? 'ingested_permanent' : 'web_search'
         });
@@ -434,7 +484,7 @@ export async function agent2SearchRootAndCompleteFromWeb(agent1Result, rawTaskTe
       anchorName: cleanTask,
       imageUrl: fallbackCard,
       emoji: '📌',
-      explanation: `עוגן זיכרון בארמון עבור ${cleanTask}`,
+      explanation: '',
       fromPool: false,
       source: 'fallback_card'
     });
@@ -537,7 +587,7 @@ export async function processTaskListWithSynergy(rawItems = []) {
       anchorName: taskText,
       imageUrl: generateDynamicFallbackCard(taskText),
       emoji: '📌',
-      explanation: `עוגן זיכרון בארמון עבור ${taskText}`
+      explanation: ''
     };
     if (primary.imageUrl) usedPrimaryUrls.add(primary.imageUrl);
 
@@ -550,7 +600,8 @@ export async function processTaskListWithSynergy(rawItems = []) {
       imageUrl: primary.imageUrl,
       celebrationImage: primary.imageUrl,
       emoji: primary.emoji || '⭐',
-      story: primary.explanation,
+      story: primary.explanation || '',
+      explanation: primary.explanation || '',
       hasRepositoryImage: Boolean(primary.imageUrl && !primary.imageUrl.startsWith('data:image/svg')),
       candidates,
       currentCandidateIndex: chosenIdx,

@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>שולחן תיוק ארכיטיפים - שלב 2 (הגדרת שורשים)</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --primary: #3b82f6;
+      --success: #10b981;
+      --danger: #ef4444;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .header {
+      max-width: 1400px;
+      margin: 0 auto 24px;
+      background: #1e293b;
+      padding: 20px 28px;
+      border-radius: 14px;
+      border: 1px solid #334155;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .title h1 { font-size: 22px; font-weight: 800; color: #60a5fa; }
+    .title p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .stats {
+      display: flex;
+      gap: 12px;
+      font-weight: 700;
+    }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: #0f172a;
+      border: 1px solid #334155;
+    }
+    .badge-approved { background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: #059669; }
+    .badge-rejected { background: rgba(239, 68, 68, 0.2); color: #f87171; border-color: #dc2626; }
+    .badge-pending { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border-color: #2563eb; }
+    
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-export { background: var(--success); color: #fff; }
+    .btn-export:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { border-color: #3b82f6; }
+    .card.approved { border-color: #10b981; box-shadow: 0 0 16px rgba(16, 185, 129, 0.2); }
+    .card.rejected { border-color: #ef4444; opacity: 0.35; filter: grayscale(80%); }
+
+    .img-wrap {
+      width: 100%;
+      height: 240px;
+      background: #000;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0b0f19;
+    }
+    .img-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #93c5fd;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .concept-en {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .root-input-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .root-input-wrap label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #cbd5e1;
+    }
+    .root-input {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .root-input:focus { border-color: var(--primary); }
+    
+    .card-btns {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .btn-approve {
+      flex: 2;
+      background: #065f46;
+      color: #6ee7b7;
+      border: 1px solid #059669;
+      padding: 9px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-approve:hover { background: #047857; color: #fff; }
+    .btn-reject {
+      flex: 1;
+      background: #450a0a;
+      color: #fca5a5;
+      border: 1px solid #991b1b;
+      padding: 9px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-reject:hover { background: #7f1d1d; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">
+      <h1>⚡ שולחן תיוק ארכיטיפים (שלב 2: הגדרת שורשים)</h1>
+      <p>התמונות נבחרו בקפידה לפי ארכיטיפ תרבותי מובהק. הגדר לכל תמונה את השורש המדויק שהיא מעוררת בך, ואז שלח אליי ליצירת ענפים עשירים!</p>
+    </div>
+    <div class="stats">
+      <span class="badge badge-pending" id="stat-total">סה"כ: 40</span>
+      <span class="badge badge-approved" id="stat-approved">אושרו: 0</span>
+      <span class="badge badge-rejected" id="stat-rejected">נפסלו: 0</span>
+    </div>
+    <div class="actions">
+      <button class="btn btn-export" onclick="exportApproved()">💾 סיים והעתק שורשים לשלב 3</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid">
+    
+      <div class="card" id="card-arch_swiss_army_knife" data-id="arch_swiss_army_knife">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_swiss_army_knife.jpg" alt="Swiss Army knife" loading="lazy" />
+          <span class="img-tag">#1</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Swiss Army knife • 125.8 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_swiss_army_knife">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_swiss_army_knife" 
+              class="root-input" 
+              value="סכין שוויצרית רב-תכליתית" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_swiss_army_knife')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_swiss_army_knife')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_swiss_army_knife')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_hourglass" data-id="arch_hourglass">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_hourglass.jpg" alt="Hourglass" loading="lazy" />
+          <span class="img-tag">#2</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Hourglass • 74.6 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_hourglass">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_hourglass" 
+              class="root-input" 
+              value="שעון חול עתיק" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_hourglass')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_hourglass')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_hourglass')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_pocket_watch" data-id="arch_pocket_watch">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_pocket_watch.jpg" alt="Pocket watch" loading="lazy" />
+          <span class="img-tag">#3</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Pocket watch • 129.4 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_pocket_watch">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_pocket_watch" 
+              class="root-input" 
+              value="שעון כיס עם שרשרת" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_pocket_watch')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_pocket_watch')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_pocket_watch')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_compass" data-id="arch_compass">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_compass.jpg" alt="Compass" loading="lazy" />
+          <span class="img-tag">#4</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Compass • 103.6 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_compass">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_compass" 
+              class="root-input" 
+              value="מצפן ניווט ממתכת" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_compass')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_compass')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_compass')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_magnifying_glass" data-id="arch_magnifying_glass">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_magnifying_glass.jpg" alt="Magnifying glass" loading="lazy" />
+          <span class="img-tag">#5</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Magnifying glass • 31.9 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_magnifying_glass">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_magnifying_glass" 
+              class="root-input" 
+              value="זכוכית מגדלת עגולה" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_magnifying_glass')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_magnifying_glass')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_magnifying_glass')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_gramophone" data-id="arch_gramophone">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_gramophone.jpg" alt="Gramophone" loading="lazy" />
+          <span class="img-tag">#6</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Gramophone • 178.9 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_gramophone">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_gramophone" 
+              class="root-input" 
+              value="גרמופון עם שופר פליז" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_gramophone')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_gramophone')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_gramophone')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_typewriter" data-id="arch_typewriter">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_typewriter.jpg" alt="Typewriter" loading="lazy" />
+          <span class="img-tag">#7</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Typewriter • 185.3 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_typewriter">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_typewriter" 
+              class="root-input" 
+              value="מכונת כתיבה מכנית" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_typewriter')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_typewriter')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_typewriter')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_rotary_phone" data-id="arch_rotary_phone">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_rotary_phone.jpg" alt="Rotary phone" loading="lazy" />
+          <span class="img-tag">#8</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Rotary phone • 222.5 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_rotary_phone">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_rotary_phone" 
+              class="root-input" 
+              value="טלפון חוגה קלאסי" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_rotary_phone')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_rotary_phone')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_rotary_phone')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_safety_pin" data-id="arch_safety_pin">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_safety_pin.jpg" alt="Safety pin" loading="lazy" />
+          <span class="img-tag">#9</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Safety pin • 51.1 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_safety_pin">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_safety_pin" 
+              class="root-input" 
+              value="סיכת ביטחון" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_safety_pin')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_safety_pin')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_safety_pin')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_zippo" data-id="arch_zippo">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_zippo.jpg" alt="Zippo lighter" loading="lazy" />
+          <span class="img-tag">#10</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Zippo lighter • 136.9 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_zippo">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_zippo" 
+              class="root-input" 
+              value="מצית זיפו ממתכת" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_zippo')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_zippo')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_zippo')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_padlock" data-id="arch_padlock">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_padlock.jpg" alt="Padlock" loading="lazy" />
+          <span class="img-tag">#11</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Padlock • 32.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_padlock">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_padlock" 
+              class="root-input" 
+              value="מנעול תלייה מברזל" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_padlock')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_padlock')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_padlock')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_anvil" data-id="arch_anvil">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_anvil.jpg" alt="Anvil" loading="lazy" />
+          <span class="img-tag">#12</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Anvil • 107.1 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_anvil">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_anvil" 
+              class="root-input" 
+              value="סדן נפחים כבד" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_anvil')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_anvil')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_anvil')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_claw_hammer" data-id="arch_claw_hammer">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_claw_hammer.jpg" alt="Claw hammer" loading="lazy" />
+          <span class="img-tag">#13</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Claw hammer • 169.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_claw_hammer">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_claw_hammer" 
+              class="root-input" 
+              value="פטיש טפסרים" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_claw_hammer')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_claw_hammer')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_claw_hammer')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_sledgehammer" data-id="arch_sledgehammer">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_sledgehammer.jpg" alt="Sledgehammer" loading="lazy" />
+          <span class="img-tag">#14</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Sledgehammer • 261.3 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_sledgehammer">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_sledgehammer" 
+              class="root-input" 
+              value="פטיש 5 קילו / קורנס" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_sledgehammer')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_sledgehammer')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_sledgehammer')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_handsaw" data-id="arch_handsaw">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_handsaw.jpg" alt="Handsaw" loading="lazy" />
+          <span class="img-tag">#15</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Handsaw • 246.6 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_handsaw">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_handsaw" 
+              class="root-input" 
+              value="מסור יד לנגרות" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_handsaw')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_handsaw')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_handsaw')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_pipe_wrench" data-id="arch_pipe_wrench">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_pipe_wrench.jpg" alt="Pipe wrench" loading="lazy" />
+          <span class="img-tag">#16</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Pipe wrench • 663.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_pipe_wrench">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_pipe_wrench" 
+              class="root-input" 
+              value="מפתח צינורות שוודי" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_pipe_wrench')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_pipe_wrench')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_pipe_wrench')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_blowtorch" data-id="arch_blowtorch">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_blowtorch.jpg" alt="Blowtorch" loading="lazy" />
+          <span class="img-tag">#17</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Blowtorch • 161.8 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_blowtorch">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_blowtorch" 
+              class="root-input" 
+              value="מבער גז / ברנר" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_blowtorch')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_blowtorch')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_blowtorch')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_stethoscope" data-id="arch_stethoscope">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_stethoscope.jpg" alt="Stethoscope" loading="lazy" />
+          <span class="img-tag">#18</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Stethoscope • 120.6 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_stethoscope">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_stethoscope" 
+              class="root-input" 
+              value="סטטוסקופ רפואי" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_stethoscope')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_stethoscope')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_stethoscope')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_syringe" data-id="arch_syringe">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_syringe.jpg" alt="Syringe" loading="lazy" />
+          <span class="img-tag">#19</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Syringe • 79.2 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_syringe">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_syringe" 
+              class="root-input" 
+              value="מזרק רפואי" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_syringe')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_syringe')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_syringe')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_tuning_fork" data-id="arch_tuning_fork">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_tuning_fork.jpg" alt="Tuning fork" loading="lazy" />
+          <span class="img-tag">#20</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Tuning fork • 92.1 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_tuning_fork">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_tuning_fork" 
+              class="root-input" 
+              value="קולן מתכת" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_tuning_fork')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_tuning_fork')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_tuning_fork')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_metronome" data-id="arch_metronome">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_metronome.jpg" alt="Metronome" loading="lazy" />
+          <span class="img-tag">#21</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Metronome • 60.5 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_metronome">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_metronome" 
+              class="root-input" 
+              value="מטרונום מכני" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_metronome')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_metronome')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_metronome')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_prism" data-id="arch_prism">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_prism.jpg" alt="Prism" loading="lazy" />
+          <span class="img-tag">#22</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Prism • 21.6 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_prism">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_prism" 
+              class="root-input" 
+              value="מנסרה אופטית שוברת אור" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_prism')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_prism')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_prism')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_newtons_cradle" data-id="arch_newtons_cradle">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_newtons_cradle.jpg" alt="Newton's cradle" loading="lazy" />
+          <span class="img-tag">#23</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Newton's cradle • 300.9 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_newtons_cradle">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_newtons_cradle" 
+              class="root-input" 
+              value="מטוטלת כדורי ניוטון" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_newtons_cradle')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_newtons_cradle')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_newtons_cradle')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_megaphone" data-id="arch_megaphone">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_megaphone.jpg" alt="Megaphone" loading="lazy" />
+          <span class="img-tag">#24</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Megaphone • 7.5 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_megaphone">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_megaphone" 
+              class="root-input" 
+              value="מגפון כריזה ידני" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_megaphone')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_megaphone')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_megaphone')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_film_reel" data-id="arch_film_reel">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_film_reel.jpg" alt="Film reel" loading="lazy" />
+          <span class="img-tag">#25</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Film reel • 575.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_film_reel">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_film_reel" 
+              class="root-input" 
+              value="גלגל סרט קולנוע" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_film_reel')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_film_reel')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_film_reel')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_cassette_tape" data-id="arch_cassette_tape">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_cassette_tape.jpg" alt="Cassette tape" loading="lazy" />
+          <span class="img-tag">#26</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Cassette tape • 213.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_cassette_tape">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_cassette_tape" 
+              class="root-input" 
+              value="קלטת שמע קומפקטית" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_cassette_tape')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_cassette_tape')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_cassette_tape')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_binoculars" data-id="arch_binoculars">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_binoculars.jpg" alt="Binoculars" loading="lazy" />
+          <span class="img-tag">#27</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Binoculars • 66.9 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_binoculars">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_binoculars" 
+              class="root-input" 
+              value="משקפת שדה שחורה" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_binoculars')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_binoculars')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_binoculars')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_spyglass" data-id="arch_spyglass">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_spyglass.jpg" alt="Spyglass" loading="lazy" />
+          <span class="img-tag">#28</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Spyglass • 44.5 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_spyglass">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_spyglass" 
+              class="root-input" 
+              value="טלסקופ ימי נשלף" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_spyglass')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_spyglass')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_spyglass')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_corkscrew" data-id="arch_corkscrew">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_corkscrew.jpg" alt="Corkscrew" loading="lazy" />
+          <span class="img-tag">#29</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Corkscrew • 106.8 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_corkscrew">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_corkscrew" 
+              class="root-input" 
+              value="פותחן בקבוקי יין" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_corkscrew')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_corkscrew')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_corkscrew')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_mortar_pestle" data-id="arch_mortar_pestle">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_mortar_pestle.jpg" alt="Mortar and pestle" loading="lazy" />
+          <span class="img-tag">#30</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Mortar and pestle • 88.8 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_mortar_pestle">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_mortar_pestle" 
+              class="root-input" 
+              value="מכתש ועלי מאבן" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_mortar_pestle')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_mortar_pestle')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_mortar_pestle')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_chef_knife" data-id="arch_chef_knife">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_chef_knife.jpg" alt="Chef's knife" loading="lazy" />
+          <span class="img-tag">#31</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Chef's knife • 288.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_chef_knife">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_chef_knife" 
+              class="root-input" 
+              value="סכין שף גדולה" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_chef_knife')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_chef_knife')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_chef_knife')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_cast_iron_skillet" data-id="arch_cast_iron_skillet">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_cast_iron_skillet.jpg" alt="Cast iron skillet" loading="lazy" />
+          <span class="img-tag">#32</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Cast iron skillet • 49.4 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_cast_iron_skillet">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_cast_iron_skillet" 
+              class="root-input" 
+              value="מחבת ברזל יצוקה" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_cast_iron_skillet')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_cast_iron_skillet')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_cast_iron_skillet')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_tetsubin_teapot" data-id="arch_tetsubin_teapot">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_tetsubin_teapot.jpg" alt="Teapot" loading="lazy" />
+          <span class="img-tag">#33</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Teapot • 380.0 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_tetsubin_teapot">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_tetsubin_teapot" 
+              class="root-input" 
+              value="קומקום תה מברזל" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_tetsubin_teapot')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_tetsubin_teapot')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_tetsubin_teapot')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_lifebuoy" data-id="arch_lifebuoy">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_lifebuoy.jpg" alt="Lifebuoy" loading="lazy" />
+          <span class="img-tag">#34</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Lifebuoy • 260.0 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_lifebuoy">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_lifebuoy" 
+              class="root-input" 
+              value="גלגל הצלה ימי" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_lifebuoy')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_lifebuoy')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_lifebuoy')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_anchor" data-id="arch_anchor">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_anchor.jpg" alt="Anchor" loading="lazy" />
+          <span class="img-tag">#35</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Anchor • 185.6 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_anchor">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_anchor" 
+              class="root-input" 
+              value="עוגן ספינה כבד" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_anchor')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_anchor')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_anchor')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_traffic_cone" data-id="arch_traffic_cone">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_traffic_cone.jpg" alt="Traffic cone" loading="lazy" />
+          <span class="img-tag">#36</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Traffic cone • 57.1 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_traffic_cone">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_traffic_cone" 
+              class="root-input" 
+              value="קונוס תנועה כתום" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_traffic_cone')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_traffic_cone')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_traffic_cone')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_fire_extinguisher" data-id="arch_fire_extinguisher">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_fire_extinguisher.jpg" alt="Fire extinguisher" loading="lazy" />
+          <span class="img-tag">#37</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Fire extinguisher • 321.7 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_fire_extinguisher">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_fire_extinguisher" 
+              class="root-input" 
+              value="מטפה כיבוי אש אדום" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_fire_extinguisher')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_fire_extinguisher')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_fire_extinguisher')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_handcuffs" data-id="arch_handcuffs">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_handcuffs.jpg" alt="Handcuffs" loading="lazy" />
+          <span class="img-tag">#38</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Handcuffs • 119.3 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_handcuffs">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_handcuffs" 
+              class="root-input" 
+              value="אזיקי פלדה למעצר" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_handcuffs')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_handcuffs')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_handcuffs')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_gas_mask" data-id="arch_gas_mask">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_gas_mask.jpg" alt="Gas mask" loading="lazy" />
+          <span class="img-tag">#39</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Gas mask • 129.3 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_gas_mask">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_gas_mask" 
+              class="root-input" 
+              value="מסכת אב"כ צבאית" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_gas_mask')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_gas_mask')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_gas_mask')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card" id="card-arch_welding_mask" data-id="arch_welding_mask">
+        <div class="img-wrap">
+          <img src="/staged_images/archetypes/arch_welding_mask.jpg" alt="Welding helmet" loading="lazy" />
+          <span class="img-tag">#40</span>
+        </div>
+        <div class="card-body">
+          <div class="concept-en">🏛️ Welding helmet • 132.9 KB</div>
+          <div class="root-input-wrap">
+            <label for="input-arch_welding_mask">הגדר שורש בעברית:</label>
+            <input 
+              type="text" 
+              id="input-arch_welding_mask" 
+              class="root-input" 
+              value="מסכת ריתוך מגינה" 
+              placeholder="הקלד שורש אסוציאטיבי..." 
+              onkeydown="handleKey(event, 'arch_welding_mask')"
+            />
+          </div>
+          <div class="card-btns">
+            <button class="btn-approve" onclick="approveItem('arch_welding_mask')">✅ אשר שורש (Enter)</button>
+            <button class="btn-reject" onclick="rejectItem('arch_welding_mask')">❌ פסול</button>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <script>
+    const state = {
+      approved: {},
+      rejected: {}
+    };
+
+    function updateStats() {
+      document.getElementById('stat-approved').textContent = 'אושרו: ' + Object.keys(state.approved).length;
+      document.getElementById('stat-rejected').textContent = 'נפסלו: ' + Object.keys(state.rejected).length;
+    }
+
+    function approveItem(id) {
+      const input = document.getElementById('input-' + id);
+      const val = input.value.trim();
+      if (!val) {
+        alert('אנא הקלד שורש בעברית לפני האישור');
+        input.focus();
+        return;
+      }
+      delete state.rejected[id];
+      state.approved[id] = val;
+      const card = document.getElementById('card-' + id);
+      card.classList.remove('rejected');
+      card.classList.add('approved');
+      updateStats();
+    }
+
+    function rejectItem(id) {
+      delete state.approved[id];
+      state.rejected[id] = true;
+      const card = document.getElementById('card-' + id);
+      card.classList.remove('approved');
+      card.classList.add('rejected');
+      updateStats();
+    }
+
+    function handleKey(e, id) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        approveItem(id);
+      }
+    }
+
+    function exportApproved() {
+      const approvedList = Object.entries(state.approved).map(([id, rootTitle]) => ({
+        id,
+        rootTitle,
+        imageUrl: document.querySelector('#card-' + id + ' img').src
+      }));
+
+      if (approvedList.length === 0) {
+        alert('טרם אישרת פריטים! אשר לפחות פריט אחד.');
+        return;
+      }
+
+      const json = JSON.stringify(approvedList, null, 2);
+      navigator.clipboard.writeText(json).then(() => {
+        alert('מעולה! הועתקו ללוח ' + approvedList.length + ' שורשים מאושרים.\nכעת הדבק בצ'אט כדי שאיצור עבורם מיד את הענפים!');
+      });
+      console.log('Approved Archetypes:', approvedList);
+    }
+  </script>
+</body>
+</html>

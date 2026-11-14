@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-11-13T08:57:34.138Z",
+  "savedAt": "2026-11-14T16:39:58.754Z",
   "discardedIds": [
     "newtons_cradle",
     "sherlock_holmes",
@@ -87,7 +87,9 @@
     "alexander_graham_bell",
     "item_452_צלב_הקרס__swastika_",
     "item_412_שרלוק_הולמס",
-    "item_411_הארי_פוטר"
+    "item_411_הארי_פוטר",
+    "new_147_museum_facade",
+    "item_315_משקולת_ברזל_קלאסית"
   ],
   "flaggedBadMap": {},
   "localEdits": {
@@ -218,7 +220,8 @@
         "כושר",
         "זעם",
         "הובלות",
-        "שרירים"
+        "שרירים",
+        "כוח"
       ],
       "isModified": true
     },
@@ -289,7 +292,8 @@
         "אימון",
         "ירקות",
         "שרירים",
-        "חלבון"
+        "חלבון",
+        "כוח"
       ],
       "isModified": true
     },
@@ -872,12 +876,11 @@
     },
     "item_192_פח_אשפה_עם_מכסה_חצי_פתוח__מסמל": {
       "keywords": [
-        "אשפה",
-        "ניקיון",
         "זבל",
         "גרוע"
       ],
-      "isModified": true
+      "isModified": true,
+      "title": "פח"
     },
     "item_194_כדור_בדולח_על_מפה_כהה__מסמל": {
       "keywords": [
@@ -971,7 +974,6 @@
     },
     "item_264_קורי_עכביש": {
       "keywords": [
-        "ניקיון",
         "אבק",
         "פינה",
         "הדברה"
@@ -991,7 +993,6 @@
     "farm_pig": {
       "keywords": [
         "בוץ",
-        "חיסכון",
         "ורוד",
         "דיר"
       ],
@@ -1005,8 +1006,159 @@
         "טבעת"
       ],
       "isModified": true
+    },
+    "new_142_lawn_mower": {
+      "keywords": [
+        "גינה",
+        "גיזום",
+        "חצר",
+        "קיץ"
+      ],
+      "isModified": true
+    },
+    "new_108_wall_e": {
+      "keywords": [
+        "מחזור",
+        "אשפה",
+        "עתיד",
+        "אנימציה"
+      ],
+      "isModified": true
+    },
+    "new_107_mary_poppins": {
+      "keywords": [
+        "בייביסיטר",
+        "ילדים",
+        "מטרייה",
+        "סדר"
+      ],
+      "isModified": true
+    },
+    "new_100_recycling_bin": {
+      "keywords": [
+        "מחזור",
+        "נייר",
+        "קרטון",
+        "סביבה"
+      ],
+      "isModified": true
+    },
+    "new_069_cat_litter_box": {
+      "keywords": [
+        "וטרינר",
+        "בית",
+        "קניות",
+        "סופרמרקט"
+      ],
+      "isModified": true
+    },
+    "new_099_trash_bag": {
+      "keywords": [
+        "מיחזור",
+        "זבל",
+        "פח",
+        "סדר"
+      ],
+      "isModified": true
+    },
+    "new_138_shower_head": {
+      "keywords": [
+        "אמבטיה",
+        "מים",
+        "בוקר",
+        "סבון"
+      ],
+      "isModified": true
+    },
+    "new_025_washing_machine": {
+      "keywords": [
+        "תלייה",
+        "בגדים",
+        "אבקה",
+        "סחיטה"
+      ],
+      "isModified": true
+    },
+    "item_463_קורי_עכביש": {
+      "keywords": [
+        "רשת",
+        "אבק",
+        "חרקים"
+      ],
+      "isModified": true
+    },
+    "item_392_מגרפה_לגינה": {
+      "keywords": [
+        "גינה",
+        "עלים",
+        "חצר"
+      ],
+      "isModified": true
+    },
+    "item_389_סל_כביסה_פלסטיק": {
+      "keywords": [
+        "בגדים",
+        "מכונה",
+        "קיפול"
+      ],
+      "isModified": true
+    },
+    "item_370_נייר_טואלט": {
+      "keywords": [
+        "שירותים",
+        "קניות",
+        "סופרמרקט"
+      ],
+      "isModified": true
+    },
+    "item_221_משאית_זבל": {
+      "keywords": [
+        "אשפה",
+        "מחזור",
+        "פח"
+      ],
+      "isModified": true
+    },
+    "item_256_פיל_אפריקאי": {
+      "keywords": [
+        "חדק",
+        "אפריקה",
+        "גדול",
+        "אוזניים",
+        "מחטים"
+      ],
+      "isModified": true,
+      "title": "פיל"
+    },
+    "user_img_1794653770964_qngxz": {
+      "keywords": [
+        "חטיבה",
+        "עצים",
+        "ביקוע",
+        "עץ"
+      ],
+      "isModified": true
+    },
+    "user_img_1794654040680_6wean": {
+      "title": "גליל פצפצים שקוף",
+      "isModified": true,
+      "keywords": []
+    },
+    "item_318_כרטיס_אדום_וצהוב": {
+      "title": "כרטיס צהוב",
+      "isModified": true
+    },
+    "item_422_כרטיס_אדום": {
+      "keywords": [
+        "כדורגל",
+        "עונש",
+        "חמור",
+        "הרחקה"
+      ],
+      "isModified": true,
+      "title": "כרטיס אדום"
     }
   },
   "totalItems": 670,
-  "timestamp": 1794560254060
+  "timestamp": 1794674398317
 }

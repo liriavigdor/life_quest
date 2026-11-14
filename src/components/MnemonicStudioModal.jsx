@@ -24,7 +24,8 @@ import {
   User,
   Users,
   ShieldCheck,
-  LayoutGrid
+  LayoutGrid,
+  FlaskConical
 } from 'lucide-react';
 import { 
   getUserImagesSync, 
@@ -42,9 +43,11 @@ import {
 import { THEMATIC_DOMAINS } from '../data/mnemonicAssociativeCatalog';
 import { RapidFilingDesk } from './RapidFilingDesk';
 import { BulkImageCurationDesk } from './BulkImageCurationDesk';
+import { CreationStudioDesk } from './CreationStudioDesk';
 import { STAGED_IMAGES_POOL } from '../data/stagedImagesPool';
 import { AuditedMnemonicPoolView } from './AuditedMnemonicPoolView';
 import { AUDITED_VERIFIED_POOL, AUDITED_REJECTED_POOL } from '../data/auditedImagesPool';
+import { VisualSearchExperimentDesk } from './VisualSearchExperimentDesk';
 
 export function MnemonicStudioModal({ isOpen, onClose }) {
   // Navigation tabs: 'grid' | 'filing' | 'gallery' | 'upload' | 'sandbox' | 'audited' | 'rejected'
@@ -553,6 +556,50 @@ export function MnemonicStudioModal({ isOpen, onClose }) {
             </button>
 
             <button
+              onClick={() => setActiveTab('creation')}
+              style={{
+                backgroundColor: activeTab === 'creation' ? '#059669' : '#1e293b',
+                color: activeTab === 'creation' ? '#ffffff' : '#94a3b8',
+                border: activeTab === 'creation' ? '1px solid #10b981' : '1px solid #334155',
+                borderRadius: '10px',
+                padding: '8px 18px',
+                fontSize: '0.9rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'all 0.15s ease',
+                boxShadow: activeTab === 'creation' ? '0 0 15px rgba(16, 185, 129, 0.3)' : 'none'
+              }}
+            >
+              <Upload size={17} />
+              <span>🎨 סטודיו יצירה (גרירה מהירה)</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('experiments')}
+              style={{
+                backgroundColor: activeTab === 'experiments' ? '#6366f1' : '#1e293b',
+                color: activeTab === 'experiments' ? '#ffffff' : '#94a3b8',
+                border: activeTab === 'experiments' ? '1px solid #818cf8' : '1px solid #334155',
+                borderRadius: '10px',
+                padding: '8px 18px',
+                fontSize: '0.9rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'all 0.15s ease',
+                boxShadow: activeTab === 'experiments' ? '0 0 15px rgba(99, 102, 241, 0.4)' : 'none'
+              }}
+            >
+              <FlaskConical size={17} />
+              <span>🧪 ניסויים (כיול סגנון)</span>
+            </button>
+
+            <button
               onClick={() => setActiveTab('sandbox')}
               style={{
                 backgroundColor: activeTab === 'sandbox' ? '#8b5cf6' : '#1e293b',
@@ -588,7 +635,22 @@ export function MnemonicStudioModal({ isOpen, onClose }) {
             />
           )}
 
-          {/* TAB 2: SANDBOX (בדיקת התאמות) */}
+          {/* TAB 2: CREATION STUDIO DESK (סטודיו יצירה וגרירה ללא תמונות) */}
+          {activeTab === 'creation' && (
+            <CreationStudioDesk
+              onSwitchTab={(tab) => setActiveTab(tab)}
+              onImageAdded={() => {
+                // Instantly re-fetch or rely on Firestore/IndexedDB listeners
+              }}
+            />
+          )}
+
+          {/* TAB: EXPERIMENTS (מעבדת ניסויי חיפוש וסגנון) */}
+          {activeTab === 'experiments' && (
+            <VisualSearchExperimentDesk />
+          )}
+
+          {/* TAB 3: SANDBOX (בדיקת התאמות) */}
           {activeTab === 'sandbox' && (
             <div style={{ maxWidth: '750px', margin: '0 auto' }}>
               <div 

@@ -269,7 +269,7 @@ export function synthesizeVividMnemonicStory(items = []) {
   // If we have at least 2 personified characters or 1 character with actions
   if (char1 && char2) {
     const actor1 = modifier1 ? `${char1} ${modifier1}` : char1;
-    const actor2 = char2.startsWith('ה') ? `ל${char2.slice(1)}` : (char2.startsWith('ל') ? char2 : `ל${char2}`);
+    const actor2 = char2.startsWith('ל') ? char2 : `ל${char2}`;
     const callPart = commAction ? `${commAction} ${actor2}` : `פגש את ${char2}`;
     const meetPart = meetAction ? `, ${meetAction}` : '';
     const remPart = remaining.length ? ` (בזמן שארגנו ${remaining.join(' ו-')})` : '';

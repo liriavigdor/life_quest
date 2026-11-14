@@ -94,7 +94,7 @@ ${JSON.stringify(cleanList, null, 2)}
    - searchQuery: ביטוי חיפוש מדויק בעברית עבור האסוציאציה
    - englishQuery: ביטוי חיפוש ישיר ברשת שמביא צילום מעולה של האסוציאציה (חובה באנגלית בלבד ללא אותיות עבריות! למשל: "chocolate pudding whipped cream dessert glass photography", "tap dancer performance", "figure skater ice skating")
    - emoji: אימוג'י יחיד מתאים
-   - explanation: הסבר קוגניטיבי הגיוני, קצר ומשכנע שמחבר בבירור בין המשימה של הלקוח לבין האסוציאציה
+   - explanation: הסבר תמציתי ומדויק בלבד של 2 עד 4 מילים מדוע בחרת בעוגן (למשל: "צבע: שחור ולבן", "סולם צלילים"). אם העוגן מייצג ישירות את המושג ומובן מאליו לכל אדם (כגון "כוח" ➔ "שריר זרוע", "אהבה" ➔ "לב", "זמן" ➔ "שעון") — החזר מחרוזת ריקה "" בשדה explanation!
 
 4. **חבר משפט עלילתי אחד קצרצר, קולח והגיוני שמחבר את האסוציאציות המובילות להרפתקה אחת בארמון.**
 
@@ -110,35 +110,35 @@ ${JSON.stringify(cleanList, null, 2)}
           "searchQuery": "רקדן סטפס",
           "englishQuery": "tap dancer performance",
           "emoji": "👞",
-          "explanation": "רקדן הסטפס מתופף ברגליו וממחיש מיד את רעש ונעילת הנעליים"
+          "explanation": "נעלי סטפס מתופפות"
         },
         {
           "anchorName": "מחליק על הקרח",
           "searchQuery": "מחליק על הקרח",
           "englishQuery": "figure skater ice skating",
           "emoji": "⛸️",
-          "explanation": "להבי נעלי ההחלקרח החדים חותכים את הקרח ומזכירים את הנעליים"
+          "explanation": "נעלי החלקרח על הקרח"
         },
         {
           "anchorName": "שחקן כדורגל בועט",
           "searchQuery": "שחקן כדורגל בועט",
           "englishQuery": "soccer player kicking ball",
           "emoji": "⚽",
-          "explanation": "נעלי הפקקים של שחקן הכדורגל בועטות בעוצמה בכדור"
+          "explanation": "נעלי פקקים לכדורגל"
         },
         {
           "anchorName": "רקדנית בלט",
           "searchQuery": "רקדנית בלט פוינט",
           "englishQuery": "ballerina pointe shoes",
           "emoji": "🩰",
-          "explanation": "נעלי הפוינט של רקדנית הבלט נעמדות בדיוק על קצות האצבעות"
+          "explanation": "נעלי פוינט לבלט"
         },
         {
           "anchorName": "צועד יחף על גחלים",
           "searchQuery": "הליכה על גחלים",
           "englishQuery": "firewalking barefoot",
           "emoji": "🔥",
-          "explanation": "ההליכה היחפה על גחלים לוהטים ממחישה כמה אתה חייב נעליים חדשות"
+          "explanation": "הליכה יחפה (צורך בנעליים)"
         }
       ],
       "actionInStory": "הפעולה בסיפור"
@@ -148,7 +148,7 @@ ${JSON.stringify(cleanList, null, 2)}
 }`;
 
   // Call Gemini API (Active supported production models with fast fallback)
-  const models = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-3.8-flash'];
+  const models = ['gemini-3.5-flash-lite', 'gemini-flash-lite-latest', 'gemini-3.8-flash', 'gemini-3.5-flash'];
   let jsonResponse = null;
   let lastErr = null;
 

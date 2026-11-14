@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Sparkles, Brain, Check, Upload, Image as ImageIcon, CheckCircle2, FolderOpen, ThumbsUp, ThumbsDown } from 'lucide-react';
+import { X, Sparkles, Brain, Check, Upload, Image as ImageIcon, CheckCircle2, FolderOpen, ThumbsUp, ThumbsDown, Lightbulb } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { generateDynamicFallbackCard } from '../utils/deterministicStoryEngine';
 import { saveUserImage, approveAndSaveMnemonicImage, optimizeImage, dislikeAndRemoveMnemonicImage } from '../utils/userImageRepository';
@@ -38,7 +38,7 @@ export function LociItemInspectionModal({
           associationWord: item?.associationWord || item?.title || '',
           coreConcept: item?.coreConcept || '',
           imageUrl: currentImg,
-          explanation: item?.story || '',
+          explanation: item?.explanation || '',
           emoji: item?.emoji || '⭐'
         });
         if (savedRecord && savedRecord.imageUrl) {
@@ -91,9 +91,11 @@ export function LociItemInspectionModal({
             item.card.name = res.associationWord;
           }
         }
-        if (res.story) {
-          setCurrentStory(res.story);
-          item.story = res.story;
+        if (res.explanation || res.story) {
+          const exp = res.explanation || res.story;
+          setCurrentStory(exp);
+          item.explanation = exp;
+          item.story = exp;
         }
         setRegenerationMessage(`עברת לעוגן הבא: ${res.associationWord || 'עוגן חדש'}! 🎨✨`);
         sounds.playTap?.();
@@ -131,6 +133,14 @@ export function LociItemInspectionModal({
       setIsExplanationOpen(false);
     }
   }, [item]);
+
+  const connectionExplanation = getMnemonicConnectionExplanation(
+    item?.title || '',
+    currentAnchor || item?.associationWord || '',
+    item?.card?.name || '',
+    currentImg || '',
+    item?.explanation || item?.story || ''
+  );
 
   if (!isOpen || !item) return null;
 
@@ -386,6 +396,27 @@ export function LociItemInspectionModal({
               </button>
             </div>
           </div>
+
+          {/* Mnemonic Cognitive Bridge (גשר הזיכרון - למה זה קשור?) */}
+          {connectionExplanation && (
+            <div style={{
+              backgroundColor: 'rgba(245, 158, 11, 0.08)',
+              border: '1.5px solid rgba(245, 158, 11, 0.35)',
+              borderRadius: '14px',
+              padding: '12px 16px',
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: '12px',
+              boxShadow: '0 4px 14px rgba(0,0,0,0.25)',
+              animation: 'fadeIn 0.25s ease'
+            }}>
+              <Lightbulb size={20} color="#fbbf24" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <div style={{ fontSize: '0.88rem', color: '#fef3c7', lineHeight: 1.5 }}>
+                <span style={{ fontWeight: 800, color: '#fde047' }}>💡 למה זה קשור?: </span>
+                <span>{connectionExplanation}</span>
+              </div>
+            </div>
+          )}
 
           {/* Autonomous AI Regeneration Status Banner */}
           {regenerationMessage && (

@@ -967,7 +967,13 @@ export function BulkImageCurationDesk({
                   }}
                 >
                   <img 
-                    src={item.imageUrl ? `${item.imageUrl}${item.imageUrl.includes('?') ? '&' : '?'}v=clean_v3` : ''} 
+                    src={
+                      item.imageUrl 
+                        ? (item.imageUrl.startsWith('data:') || item.imageUrl.startsWith('blob:')
+                            ? item.imageUrl 
+                            : `${item.imageUrl}${item.imageUrl.includes('?') ? '&' : '?'}v=clean_v3`)
+                        : ''
+                    } 
                     alt={item.title}
                     loading="lazy"
                     onError={(e) => {
@@ -1004,7 +1010,7 @@ export function BulkImageCurationDesk({
                       ⚠️ תמונה חסרה (placeholder) בתיקייה
                     </span>
                     <span style={{ fontSize: '0.68rem', color: '#94a3b8', direction: 'ltr', wordBreak: 'break-all', maxWidth: '90%' }}>
-                      {item.imageUrl ? item.imageUrl.split('/').pop() : item.id}
+                      {item.imageUrl ? (item.imageUrl.startsWith('data:') ? 'תמונה שמורה (Base64)' : item.imageUrl.split('/').pop()) : item.id}
                     </span>
                   </div>
 

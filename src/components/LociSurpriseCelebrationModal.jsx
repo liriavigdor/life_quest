@@ -37,7 +37,7 @@ export function LociSurpriseCelebrationModal({
           associationWord: data?.associationWord || data?.title || '',
           coreConcept: data?.coreConcept || '',
           imageUrl: currentImg,
-          explanation: data?.story || data?.quote || '',
+          explanation: data?.explanation || '',
           emoji: data?.emoji || '⭐'
         });
         if (savedRecord && savedRecord.imageUrl) {

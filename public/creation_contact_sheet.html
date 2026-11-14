@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Sheet - סקירת תמונות שטוייבו אוטומטית (81 פריטים)</title>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f8fafc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+    }
+    .header {
+      background-color: #131c2e;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 20px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    h1 { margin: 0 0 6px 0; font-size: 1.4rem; color: #38bdf8; }
+    p { margin: 0; color: #94a3b8; font-size: 0.9rem; }
+    .stats {
+      display: flex;
+      gap: 12px;
+    }
+    .stat-badge {
+      background-color: #1e293b;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: 1px solid #334155;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background-color: #131c2e;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.15s ease;
+    }
+    .card.success { border-color: #10b981; }
+    .card.failed { border-color: #ef4444; }
+    .card.approved { opacity: 0.6; border-color: #059669; }
+    .card.rejected { opacity: 0.35; border-color: #dc2626; text-decoration: line-through; }
+    .card-header {
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+    }
+    .idx { font-weight: 800; color: #38bdf8; }
+    .img-box {
+      height: 180px;
+      background-color: #060911;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .missing { color: #f87171; font-weight: 700; font-size: 0.85rem; }
+    .content {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .title { font-weight: 800; font-size: 1rem; color: #f8fafc; }
+    .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .chip {
+      background-color: #0f172a;
+      border: 1px solid #1e293b;
+      color: #38bdf8;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .meta { font-size: 0.68rem; color: #64748b; direction: ltr; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .actions {
+      display: flex;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+    .btn {
+      flex: 1;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn.approve { background-color: #059669; color: #fff; }
+    .btn.reject { background-color: #dc2626; color: #fff; }
+    .btn.search { background-color: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
+  </style>
+  <script>
+    function markCard(id, approved) {
+      const el = document.getElementById('card_' + id);
+      if (!el) return;
+      el.classList.remove('approved', 'rejected');
+      el.classList.add(approved ? 'approved' : 'rejected');
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>📋 לוח בקרת איכות תמונות (Human Review Contact Sheet)</h1>
+      <p>כל התמונות הורדו ישירות ברזולוציה גבוהה מ-Wikimedia/Wikipedia ב-0 טוקנים. עין אנושית סורקת ב-30 שניות!</p>
+    </div>
+    <div class="stats">
+      <div class="stat-badge" style="color: #10b981;">הורדו בהצלחה: 81</div>
+      <div class="stat-badge" style="color: #f87171;">דורשים בדיקה: 0</div>
+      <div class="stat-badge" style="color: #38bdf8;">סה״כ: 81</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    
+      <div class="card success" id="card_draft_radar_screen">
+        <div class="card-header">
+          <span class="idx">#1</span>
+          <span class="category">טכנולוגיה ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_radar_screen.jpg" alt="מסך מכ"ם ירוק" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מסך מכ"ם ירוק</div>
+          <div class="chips"><span class="chip">#סונאר</span> <span class="chip">#רדאר</span> <span class="chip">#סריקה</span> <span class="chip">#איתור</span> <span class="chip">#גילוי</span></div>
+          <div class="meta">green circular radar screen sweep scope display</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_radar_screen', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_radar_screen', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=green%20circular%20radar%20screen%20sweep%20scope%20display" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_1_קומקומשורקישנ">
+        <div class="card-header">
+          <span class="idx">#2</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_1_קומקומשורקישנ.jpg" alt="קומקום שורק ישן" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">קומקום שורק ישן</div>
+          <div class="chips"><span class="chip">#הרתחה</span> <span class="chip">#חליטה</span></div>
+          <div class="meta">vintage whistling tea kettle boiling water stove</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_1_קומקומשורקישנ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_1_קומקומשורקישנ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=vintage%20whistling%20tea%20kettle%20boiling%20water%20stove" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_2_סירלחצמנירוסטה">
+        <div class="card-header">
+          <span class="idx">#3</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_2_סירלחצמנירוסטה.jpg" alt="סיר לחץ מנירוסטה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סיר לחץ מנירוסטה</div>
+          <div class="chips"><span class="chip">#תבשיל</span> <span class="chip">#רוטב</span></div>
+          <div class="meta">stainless steel pressure cooker stove</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_2_סירלחצמנירוסטה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_2_סירלחצמנירוסטה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=stainless%20steel%20pressure%20cooker%20stove" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_3_ווקלהקפצהאסיאתי">
+        <div class="card-header">
+          <span class="idx">#4</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_3_ווקלהקפצהאסיאתי.jpg" alt="ווק להקפצה אסיאתית" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">ווק להקפצה אסיאתית</div>
+          <div class="chips"><span class="chip">#נודלס</span> <span class="chip">#סויה</span></div>
+          <div class="meta">carbon steel wok stir fry cooking flame</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_3_ווקלהקפצהאסיאתי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_3_ווקלהקפצהאסיאתי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=carbon%20steel%20wok%20stir%20fry%20cooking%20flame" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_4_טוסטרלחיצהכסופ">
+        <div class="card-header">
+          <span class="idx">#5</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_4_טוסטרלחיצהכסופ.jpg" alt="טוסטר לחיצה כסוף" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">טוסטר לחיצה כסוף</div>
+          <div class="chips"><span class="chip">#פריכות</span> <span class="chip">#טוסטים</span></div>
+          <div class="meta">two slice stainless chrome bread toaster</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_4_טוסטרלחיצהכסופ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_4_טוסטרלחיצהכסופ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=two%20slice%20stainless%20chrome%20bread%20toaster" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_5_פומפייהמרובעתממ">
+        <div class="card-header">
+          <span class="idx">#6</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_5_פומפייהמרובעתממ.jpg" alt="פומפייה מרובעת ממתכת" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">פומפייה מרובעת ממתכת</div>
+          <div class="chips"><span class="chip">#גירור</span> <span class="chip">#זסטר</span></div>
+          <div class="meta">classic metal four sided box cheese grater</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_5_פומפייהמרובעתממ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_5_פומפייהמרובעתממ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=classic%20metal%20four%20sided%20box%20cheese%20grater" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_6_קולפנירקותשוויצ">
+        <div class="card-header">
+          <span class="idx">#7</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_6_קולפנירקותשוויצ.jpg" alt="קולפן ירקות שוויצרי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">קולפן ירקות שוויצרי</div>
+          <div class="chips"><span class="chip">#קילוף</span> <span class="chip">#רצועות</span></div>
+          <div class="meta">swiss vegetable peeler sharp blade carrot</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_6_קולפנירקותשוויצ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_6_קולפנירקותשוויצ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=swiss%20vegetable%20peeler%20sharp%20blade%20carrot" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_7_מסננתנירוסטהלפס">
+        <div class="card-header">
+          <span class="idx">#8</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_7_מסננתנירוסטהלפס.jpg" alt="מסננת נירוסטה לפסטה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מסננת נירוסטה לפסטה</div>
+          <div class="chips"><span class="chip">#סינון</span> <span class="chip">#ניקוז</span></div>
+          <div class="meta">stainless steel pasta colander strainer sink</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_7_מסננתנירוסטהלפס', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_7_מסננתנירוסטהלפס', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=stainless%20steel%20pasta%20colander%20strainer%20sink" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_8_סינרשפמבדכהה">
+        <div class="card-header">
+          <span class="idx">#9</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_8_סינרשפמבדכהה.jpg" alt="סינר שף מבד כהה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סינר שף מבד כהה</div>
+          <div class="chips"><span class="chip">#התזה</span> <span class="chip">#טבח</span></div>
+          <div class="meta">professional dark canvas chef cooking apron</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_8_סינרשפמבדכהה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_8_סינרשפמבדכהה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=professional%20dark%20canvas%20chef%20cooking%20apron" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_9_צנצנתמקלותקינמו">
+        <div class="card-header">
+          <span class="idx">#10</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_9_צנצנתמקלותקינמו.jpg" alt="צנצנת מקלות קינמון" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">צנצנת מקלות קינמון</div>
+          <div class="chips"><span class="chip">#תבלינים</span> <span class="chip">#פפריקה</span></div>
+          <div class="meta">glass jar with cinnamon sticks spices kitchen</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_9_צנצנתמקלותקינמו', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_9_צנצנתמקלותקינמו', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=glass%20jar%20with%20cinnamon%20sticks%20spices%20kitchen" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_10_שקיתקטניותיבשות">
+        <div class="card-header">
+          <span class="idx">#11</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_10_שקיתקטניותיבשות.jpg" alt="שקית קטניות יבשות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">שקית קטניות יבשות</div>
+          <div class="chips"><span class="chip">#אורז</span> <span class="chip">#שעועית</span> <span class="chip">#עדשים</span></div>
+          <div class="meta">rustic burlap sack dry legumes lentils beans</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_10_שקיתקטניותיבשות', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_10_שקיתקטניותיבשות', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=rustic%20burlap%20sack%20dry%20legumes%20lentils%20beans" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_11_צנצנתממרחשומשומ">
+        <div class="card-header">
+          <span class="idx">#12</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_11_צנצנתממרחשומשומ.jpg" alt="צנצנת ממרח שומשום" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">צנצנת ממרח שומשום</div>
+          <div class="chips"><span class="chip">#טחינה</span> <span class="chip">#מטבל</span></div>
+          <div class="meta">jar of creamy pure sesame tahini paste</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_11_צנצנתממרחשומשומ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_11_צנצנתממרחשומשומ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=jar%20of%20creamy%20pure%20sesame%20tahini%20paste" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_12_בקבוקירטבימולחי">
+        <div class="card-header">
+          <span class="idx">#13</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_12_בקבוקירטבימולחי.jpg" alt="בקבוקי רטבים ולחיצה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">בקבוקי רטבים ולחיצה</div>
+          <div class="chips"><span class="chip">#קטשופ</span> <span class="chip">#מיונז</span> <span class="chip">#חרדל</span></div>
+          <div class="meta">condiment squeeze bottles ketchup mustard red yellow</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_12_בקבוקירטבימולחי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_12_בקבוקירטבימולחי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=condiment%20squeeze%20bottles%20ketchup%20mustard%20red%20yellow" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_13_בקבוקחומצתפוחימ">
+        <div class="card-header">
+          <span class="idx">#14</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_13_בקבוקחומצתפוחימ.jpg" alt="בקבוק חומץ תפוחים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">בקבוק חומץ תפוחים</div>
+          <div class="chips"><span class="chip">#החמצה</span> <span class="chip">#תסיסה</span></div>
+          <div class="meta">amber glass bottle of apple cider vinegar</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_13_בקבוקחומצתפוחימ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_13_בקבוקחומצתפוחימ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=amber%20glass%20bottle%20of%20apple%20cider%20vinegar" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_14_תבניתאפייהעמשקע">
+        <div class="card-header">
+          <span class="idx">#15</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_14_תבניתאפייהעמשקע.jpg" alt="תבנית אפייה עם שקעים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">תבנית אפייה עם שקעים</div>
+          <div class="chips"><span class="chip">#מאפינס</span> <span class="chip">#בלילה</span></div>
+          <div class="meta">nonstick muffin cupcake baking pan tray</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_14_תבניתאפייהעמשקע', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_14_תבניתאפייהעמשקע', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=nonstick%20muffin%20cupcake%20baking%20pan%20tray" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_15_מערוכעצלעוגיות">
+        <div class="card-header">
+          <span class="idx">#16</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_15_מערוכעצלעוגיות.jpg" alt="מערוך עץ לעוגיות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מערוך עץ לעוגיות</div>
+          <div class="chips"><span class="chip">#רידוד</span> <span class="chip">#קימוח</span></div>
+          <div class="meta">wooden rolling pin with flour dough pastry</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_15_מערוכעצלעוגיות', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_15_מערוכעצלעוגיות', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=wooden%20rolling%20pin%20with%20flour%20dough%20pastry" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_16_מצקתמרקמבריקה">
+        <div class="card-header">
+          <span class="idx">#17</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_16_מצקתמרקמבריקה.jpg" alt="מצקת מרק מבריקה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מצקת מרק מבריקה</div>
+          <div class="chips"><span class="chip">#תרווד</span> <span class="chip">#בחישה</span></div>
+          <div class="meta">shiny stainless steel soup serving ladle</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_16_מצקתמרקמבריקה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_16_מצקתמרקמבריקה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=shiny%20stainless%20steel%20soup%20serving%20ladle" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_17_בלנדרחשמליעלשיש">
+        <div class="card-header">
+          <span class="idx">#18</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_17_בלנדרחשמליעלשיש.jpg" alt="בלנדר חשמלי על שיש" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">בלנדר חשמלי על שיש</div>
+          <div class="chips"><span class="chip">#שייק</span> <span class="chip">#ריסוק</span></div>
+          <div class="meta">glass countertop blender smoothie kitchen appliance</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_17_בלנדרחשמליעלשיש', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_17_בלנדרחשמליעלשיש', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=glass%20countertop%20blender%20smoothie%20kitchen%20appliance" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_18_מיקסרשולחנילקמח">
+        <div class="card-header">
+          <span class="idx">#19</span>
+          <span class="category">מטבח, בישול ומזון</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_18_מיקסרשולחנילקמח.jpg" alt="מיקסר שולחני לקמח" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מיקסר שולחני לקמח</div>
+          <div class="chips"><span class="chip">#לישה</span> <span class="chip">#קצפת</span></div>
+          <div class="meta">kitchen stand mixer dough hook baking bowl</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_18_מיקסרשולחנילקמח', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_18_מיקסרשולחנילקמח', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=kitchen%20stand%20mixer%20dough%20hook%20baking%20bowl" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_19_סמרטוטלניקויאבק">
+        <div class="card-header">
+          <span class="idx">#20</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_19_סמרטוטלניקויאבק.jpg" alt="סמרטוט לניקוי אבק" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סמרטוט לניקוי אבק</div>
+          <div class="chips"><span class="chip">#מיקרופייבר</span> <span class="chip">#סיבים</span></div>
+          <div class="meta">yellow microfiber dust cloth surface cleaning</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_19_סמרטוטלניקויאבק', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_19_סמרטוטלניקויאבק', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=yellow%20microfiber%20dust%20cloth%20surface%20cleaning" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_20_כפפותלטקסצהובות">
+        <div class="card-header">
+          <span class="idx">#21</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_20_כפפותלטקסצהובות.jpg" alt="כפפות לטקס צהובות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">כפפות לטקס צהובות</div>
+          <div class="chips"><span class="chip">#גומי</span> <span class="chip">#אטימה</span></div>
+          <div class="meta">yellow rubber cleaning household protective gloves</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_20_כפפותלטקסצהובות', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_20_כפפותלטקסצהובות', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=yellow%20rubber%20cleaning%20household%20protective%20gloves" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_21_ספוגלקרצופצלחות">
+        <div class="card-header">
+          <span class="idx">#22</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_21_ספוגלקרצופצלחות.jpg" alt="ספוג לקרצוף צלחות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">ספוג לקרצוף צלחות</div>
+          <div class="chips"><span class="chip">#סקוץ</span> <span class="chip">#הקצפה</span></div>
+          <div class="meta">yellow green dishwashing foam scrub sponge</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_21_ספוגלקרצופצלחות', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_21_ספוגלקרצופצלחות', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=yellow%20green%20dishwashing%20foam%20scrub%20sponge" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_22_תרסיסלניקויכירי">
+        <div class="card-header">
+          <span class="idx">#23</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_22_תרסיסלניקויכירי.jpg" alt="תרסיס לניקוי כיריים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">תרסיס לניקוי כיריים</div>
+          <div class="chips"><span class="chip">#שומנים</span> <span class="chip">#ריסוס</span></div>
+          <div class="meta">trigger spray bottle heavy kitchen surface cleaner</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_22_תרסיסלניקויכירי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_22_תרסיסלניקויכירי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=trigger%20spray%20bottle%20heavy%20kitchen%20surface%20cleaner" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_23_מיכלנוזלרצפותמב">
+        <div class="card-header">
+          <span class="idx">#24</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_23_מיכלנוזלרצפותמב.jpg" alt="מיכל נוזל רצפות מבושם" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מיכל נוזל רצפות מבושם</div>
+          <div class="chips"><span class="chip">#אקונומיקה</span> <span class="chip">#הלבנה</span></div>
+          <div class="meta">plastic bottle disinfectant floor cleaning detergent</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_23_מיכלנוזלרצפותמב', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_23_מיכלנוזלרצפותמב', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=plastic%20bottle%20disinfectant%20floor%20cleaning%20detergent" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_24_מטאטאעצלחצר">
+        <div class="card-header">
+          <span class="idx">#25</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_24_מטאטאעצלחצר.jpg" alt="מטאטא עץ לחצר" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מטאטא עץ לחצר</div>
+          <div class="chips"><span class="chip">#מגרדת</span> <span class="chip">#שערות</span></div>
+          <div class="meta">outdoor yard sweep push broom coarse bristles</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_24_מטאטאעצלחצר', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_24_מטאטאעצלחצר', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=outdoor%20yard%20sweep%20push%20broom%20coarse%20bristles" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_25_שפכטלמתכתלקיר">
+        <div class="card-header">
+          <span class="idx">#26</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_25_שפכטלמתכתלקיר.jpg" alt="שפכטל מתכת לקיר" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">שפכטל מתכת לקיר</div>
+          <div class="chips"><span class="chip">#טיח</span> <span class="chip">#איטום</span></div>
+          <div class="meta">drywall joint putty knife metal scraper</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_25_שפכטלמתכתלקיר', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_25_שפכטלמתכתלקיר', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=drywall%20joint%20putty%20knife%20metal%20scraper" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_26_גלגלתצבעלקירות">
+        <div class="card-header">
+          <span class="idx">#27</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_26_גלגלתצבעלקירות.jpg" alt="גלגלת צבע לקירות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">גלגלת צבע לקירות</div>
+          <div class="chips"><span class="chip">#רולר</span> <span class="chip">#טמבור</span></div>
+          <div class="meta">paint roller tray handle wall renovation</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_26_גלגלתצבעלקירות', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_26_גלגלתצבעלקירות', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=paint%20roller%20tray%20handle%20wall%20renovation" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_27_מקדחהרוטטתלבטונ">
+        <div class="card-header">
+          <span class="idx">#28</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_27_מקדחהרוטטתלבטונ.jpg" alt="מקדחה רוטטת לבטון" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מקדחה רוטטת לבטון</div>
+          <div class="chips"><span class="chip">#פטישון</span> <span class="chip">#דיבל</span></div>
+          <div class="meta">rotary hammer heavy drill power tool concrete</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_27_מקדחהרוטטתלבטונ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_27_מקדחהרוטטתלבטונ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=rotary%20hammer%20heavy%20drill%20power%20tool%20concrete" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_28_קאטרלחיתוכחוטיח">
+        <div class="card-header">
+          <span class="idx">#29</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_28_קאטרלחיתוכחוטיח.jpg" alt="קאטר לחיתוך חוטי חשמל" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">קאטר לחיתוך חוטי חשמל</div>
+          <div class="chips"><span class="chip">#פלייר</span> <span class="chip">#בידוד</span></div>
+          <div class="meta">diagonal wire cutting pliers insulated grips</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_28_קאטרלחיתוכחוטיח', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_28_קאטרלחיתוכחוטיח', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=diagonal%20wire%20cutting%20pliers%20insulated%20grips" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_29_סרטמידהצהובונגל">
+        <div class="card-header">
+          <span class="idx">#30</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_29_סרטמידהצהובונגל.jpg" alt="סרט מידה צהוב ונגלל" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סרט מידה צהוב ונגלל</div>
+          <div class="chips"><span class="chip">#מטר</span> <span class="chip">#מדידה</span></div>
+          <div class="meta">yellow retractable steel measuring tape</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_29_סרטמידהצהובונגל', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_29_סרטמידהצהובונגל', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=yellow%20retractable%20steel%20measuring%20tape" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_30_סלילדבקמבודד">
+        <div class="card-header">
+          <span class="idx">#31</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_30_סלילדבקמבודד.jpg" alt="סליל דבק מבודד" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סליל דבק מבודד</div>
+          <div class="chips"><span class="chip">#איזולירבנד</span> <span class="chip">#לפוף</span></div>
+          <div class="meta">black vinyl electrical insulation tape roll</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_30_סלילדבקמבודד', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_30_סלילדבקמבודד', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=black%20vinyl%20electrical%20insulation%20tape%20roll" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_31_מפתחברגיממשושה">
+        <div class="card-header">
+          <span class="idx">#32</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_31_מפתחברגיממשושה.jpg" alt="מפתח ברגים משושה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מפתח ברגים משושה</div>
+          <div class="chips"><span class="chip">#אלן</span> <span class="chip">#הברגה</span></div>
+          <div class="meta">set of steel hex key allen wrenches</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_31_מפתחברגיממשושה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_31_מפתחברגיממשושה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=set%20of%20steel%20hex%20key%20allen%20wrenches" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_32_מלחציימידניותממ">
+        <div class="card-header">
+          <span class="idx">#33</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_32_מלחציימידניותממ.jpg" alt="מלחציים ידניות ממתכת" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מלחציים ידניות ממתכת</div>
+          <div class="chips"><span class="chip">#פטנט</span> <span class="chip">#לפיתה</span></div>
+          <div class="meta">vise grip locking pliers hand clamping tool</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_32_מלחציימידניותממ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_32_מלחציימידניותממ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=vise%20grip%20locking%20pliers%20hand%20clamping%20tool" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_33_עציצחרסעמאדמה">
+        <div class="card-header">
+          <span class="idx">#34</span>
+          <span class="category">גינה ומרפסת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_33_עציצחרסעמאדמה.jpg" alt="עציץ חרס עם אדמה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">עציץ חרס עם אדמה</div>
+          <div class="chips"><span class="chip">#אדנית</span> <span class="chip">#תערובת</span></div>
+          <div class="meta">terracotta flower planter pot fresh soil</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_33_עציצחרסעמאדמה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_33_עציצחרסעמאדמה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=terracotta%20flower%20planter%20pot%20fresh%20soil" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_34_מתזמיממסתובבלדש">
+        <div class="card-header">
+          <span class="idx">#35</span>
+          <span class="category">גינה ומרפסת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_34_מתזמיממסתובבלדש.jpg" alt="מתז מים מסתובב לדשא" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מתז מים מסתובב לדשא</div>
+          <div class="chips"><span class="chip">#ממטרה</span> <span class="chip">#טפטפת</span> <span class="chip">#המטרה</span></div>
+          <div class="meta">rotating lawn water sprinkler spray green grass</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_34_מתזמיממסתובבלדש', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_34_מתזמיממסתובבלדש', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=rotating%20lawn%20water%20sprinkler%20spray%20green%20grass" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_35_שקחומראורגנילאד">
+        <div class="card-header">
+          <span class="idx">#36</span>
+          <span class="category">גינה ומרפסת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_35_שקחומראורגנילאד.jpg" alt="שק חומר אורגני לאדמה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">שק חומר אורגני לאדמה</div>
+          <div class="chips"><span class="chip">#דשן</span> <span class="chip">#קומפוסט</span> <span class="chip">#דישון</span></div>
+          <div class="meta">organic compost soil fertilizer sack garden</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_35_שקחומראורגנילאד', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_35_שקחומראורגנילאד', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=organic%20compost%20soil%20fertilizer%20sack%20garden" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_36_מספריימלענפימיב">
+        <div class="card-header">
+          <span class="idx">#37</span>
+          <span class="category">גינה ומרפסת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_36_מספריימלענפימיב.jpg" alt="מספריים לענפים יבשים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מספריים לענפים יבשים</div>
+          <div class="chips"><span class="chip">#מזמרה</span> <span class="chip">#שריג</span></div>
+          <div class="meta">garden bypass pruning shears cutting dry branch</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_36_מספריימלענפימיב', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_36_מספריימלענפימיב', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=garden%20bypass%20pruning%20shears%20cutting%20dry%20branch" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_37_חרמשמכנילגינה">
+        <div class="card-header">
+          <span class="idx">#38</span>
+          <span class="category">גינה ומרפסת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_37_חרמשמכנילגינה.jpg" alt="חרמש מכני לגינה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">חרמש מכני לגינה</div>
+          <div class="chips"><span class="chip">#כיסוח</span> <span class="chip">#עשבייה</span></div>
+          <div class="meta">cordless grass string trimmer garden lawn</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_37_חרמשמכנילגינה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_37_חרמשמכנילגינה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=cordless%20grass%20string%20trimmer%20garden%20lawn" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_38_נתבאינטרנטביתי">
+        <div class="card-header">
+          <span class="idx">#39</span>
+          <span class="category">מחשוב ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_38_נתבאינטרנטביתי.jpg" alt="נתב אינטרנט ביתי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">נתב אינטרנט ביתי</div>
+          <div class="chips"><span class="chip">#ראוטר</span> <span class="chip">#מודם</span> <span class="chip">#וייפיי</span></div>
+          <div class="meta">wireless dual band home internet wifi router</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_38_נתבאינטרנטביתי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_38_נתבאינטרנטביתי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=wireless%20dual%20band%20home%20internet%20wifi%20router" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_39_סוללהניידתלסמאר">
+        <div class="card-header">
+          <span class="idx">#40</span>
+          <span class="category">מחשוב ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_39_סוללהניידתלסמאר.jpg" alt="סוללה ניידת לסמארטפון" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סוללה ניידת לסמארטפון</div>
+          <div class="chips"><span class="chip">#פאוור-בנק</span> <span class="chip">#הטענה</span></div>
+          <div class="meta">portable external battery power bank charging cable</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_39_סוללהניידתלסמאר', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_39_סוללהניידתלסמאר', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=portable%20external%20battery%20power%20bank%20charging%20cable" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_40_שלוחתשקעימעמכבל">
+        <div class="card-header">
+          <span class="idx">#41</span>
+          <span class="category">מחשוב ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_40_שלוחתשקעימעמכבל.jpg" alt="שלוחת שקעים עם כבל" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">שלוחת שקעים עם כבל</div>
+          <div class="chips"><span class="chip">#מפצל</span> <span class="chip">#תקע</span></div>
+          <div class="meta">white multiple outlet power strip extension cord</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_40_שלוחתשקעימעמכבל', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_40_שלוחתשקעימעמכבל', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=white%20multiple%20outlet%20power%20strip%20extension%20cord" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_41_מחסניתדיויבשלמד">
+        <div class="card-header">
+          <span class="idx">#42</span>
+          <span class="category">מחשוב ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_41_מחסניתדיויבשלמד.jpg" alt="מחסנית דיו יבש למדפסת" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מחסנית דיו יבש למדפסת</div>
+          <div class="chips"><span class="chip">#טונר</span> <span class="chip">#פלט</span></div>
+          <div class="meta">laser printer black toner cartridge replacement</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_41_מחסניתדיויבשלמד', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_41_מחסניתדיויבשלמד', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=laser%20printer%20black%20toner%20cartridge%20replacement" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_42_לוחמקשיממואר">
+        <div class="card-header">
+          <span class="idx">#43</span>
+          <span class="category">מחשוב ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_42_לוחמקשיממואר.jpg" alt="לוח מקשים מואר" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">לוח מקשים מואר</div>
+          <div class="chips"><span class="chip">#מקלדת</span> <span class="chip">#הקלדה</span></div>
+          <div class="meta">computer mechanical typing keyboard desk</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_42_לוחמקשיממואר', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_42_לוחמקשיממואר', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=computer%20mechanical%20typing%20keyboard%20desk" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_43_התקנזיכרונניידמ">
+        <div class="card-header">
+          <span class="idx">#44</span>
+          <span class="category">מחשוב ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_43_התקנזיכרונניידמ.jpg" alt="התקן זיכרון נייד ממתכת" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">התקן זיכרון נייד ממתכת</div>
+          <div class="chips"><span class="chip">#דיסק-און-קי</span> <span class="chip">#אחסון</span></div>
+          <div class="meta">silver metallic usb flash drive stick drive</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_43_התקנזיכרונניידמ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_43_התקנזיכרונניידמ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=silver%20metallic%20usb%20flash%20drive%20stick%20drive" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_44_מגפיבוצצהובימ">
+        <div class="card-header">
+          <span class="idx">#45</span>
+          <span class="category">ביגוד והנעלה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_44_מגפיבוצצהובימ.jpg" alt="מגפי בוץ צהובים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מגפי בוץ צהובים</div>
+          <div class="chips"><span class="chip">#מגפיים</span> <span class="chip">#שלולית</span> <span class="chip">#טינופת</span></div>
+          <div class="meta">pair of yellow rubber wellington rain boots</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_44_מגפיבוצצהובימ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_44_מגפיבוצצהובימ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=pair%20of%20yellow%20rubber%20wellington%20rain%20boots" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_45_חלוקרחצהמכותנה">
+        <div class="card-header">
+          <span class="idx">#46</span>
+          <span class="category">ביגוד והנעלה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_45_חלוקרחצהמכותנה.jpg" alt="חלוק רחצה מכותנה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">חלוק רחצה מכותנה</div>
+          <div class="chips"><span class="chip">#מגבת</span> <span class="chip">#ניגוב</span></div>
+          <div class="meta">white luxury cotton terry bath robe hanging</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_45_חלוקרחצהמכותנה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_45_חלוקרחצהמכותנה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=white%20luxury%20cotton%20terry%20bath%20robe%20hanging" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_46_מיכלדאודורנטרול">
+        <div class="card-header">
+          <span class="idx">#47</span>
+          <span class="category">פארם וטיפוח</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_46_מיכלדאודורנטרול.jpg" alt="מיכל דאודורנט רול-און" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מיכל דאודורנט רול-און</div>
+          <div class="chips"><span class="chip">#הזעה</span> <span class="chip">#רעננות</span></div>
+          <div class="meta">roll on antiperspirant deodorant bottle cosmetic</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_46_מיכלדאודורנטרול', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_46_מיכלדאודורנטרול', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=roll%20on%20antiperspirant%20deodorant%20bottle%20cosmetic" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_47_פינצטהמפלדתאלחל">
+        <div class="card-header">
+          <span class="idx">#48</span>
+          <span class="category">פארם וטיפוח</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_47_פינצטהמפלדתאלחל.jpg" alt="פינצטה מפלדת אל-חלד" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">פינצטה מפלדת אל-חלד</div>
+          <div class="chips"><span class="chip">#מריטה</span> <span class="chip">#עיצוב</span></div>
+          <div class="meta">precision slanted metal cosmetic tweezers</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_47_פינצטהמפלדתאלחל', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_47_פינצטהמפלדתאלחל', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=precision%20slanted%20metal%20cosmetic%20tweezers" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_48_סלילחוטדנטליבכי">
+        <div class="card-header">
+          <span class="idx">#49</span>
+          <span class="category">פארם וטיפוח</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_48_סלילחוטדנטליבכי.jpg" alt="סליל חוט דנטלי בכיסוי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סליל חוט דנטלי בכיסוי</div>
+          <div class="chips"><span class="chip">#קיסם</span> <span class="chip">#חניכיים</span></div>
+          <div class="meta">dental floss container oral hygiene bathroom</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_48_סלילחוטדנטליבכי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_48_סלילחוטדנטליבכי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=dental%20floss%20container%20oral%20hygiene%20bathroom" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_49_פנקסקבלותמסחרי">
+        <div class="card-header">
+          <span class="idx">#50</span>
+          <span class="category">כספים ובירוקרטיה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_49_פנקסקבלותמסחרי.jpg" alt="פנקס קבלות מסחרי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">פנקס קבלות מסחרי</div>
+          <div class="chips"><span class="chip">#חשבונית</span> <span class="chip">#מעמ</span></div>
+          <div class="meta">duplicate printed paper invoice receipt order book</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_49_פנקסקבלותמסחרי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_49_פנקסקבלותמסחרי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=duplicate%20printed%20paper%20invoice%20receipt%20order%20book" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_50_מצברפריקהמהירה">
+        <div class="card-header">
+          <span class="idx">#51</span>
+          <span class="category">רכב ותחבורה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_50_מצברפריקהמהירה.jpg" alt="מצבר פריקה מהירה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מצבר פריקה מהירה</div>
+          <div class="chips"><span class="chip">#הנעה</span> <span class="chip">#תנינים</span></div>
+          <div class="meta">car battery terminal jumper cables clip</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_50_מצברפריקהמהירה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_50_מצברפריקהמהירה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=car%20battery%20terminal%20jumper%20cables%20clip" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_1_עמדתעבודהמתכוונ">
+        <div class="card-header">
+          <span class="idx">#52</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_1_עמדתעבודהמתכוונ.jpg" alt="עמדת עבודה מתכווננת" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">עמדת עבודה מתכווננת</div>
+          <div class="chips"><span class="chip">#עמידה</span> <span class="chip">#יציבה</span> <span class="chip">#ארגונומיה</span></div>
+          <div class="meta">adjustable standing desk office worker ergonomics computer</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_1_עמדתעבודהמתכוונ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_1_עמדתעבודהמתכוונ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=adjustable%20standing%20desk%20office%20worker%20ergonomics%20computer" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_2_סורקמסמכימשולחנ">
+        <div class="card-header">
+          <span class="idx">#53</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_2_סורקמסמכימשולחנ.jpg" alt="סורק מסמכים שולחני" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סורק מסמכים שולחני</div>
+          <div class="chips"><span class="chip">#סריקה</span> <span class="chip">#ברקוד</span> <span class="chip">#דיגיטציה</span></div>
+          <div class="meta">flatbed desktop document scanner office digitization</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_2_סורקמסמכימשולחנ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_2_סורקמסמכימשולחנ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=flatbed%20desktop%20document%20scanner%20office%20digitization" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_3_סרגלשרטוטמפלדה">
+        <div class="card-header">
+          <span class="idx">#54</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_3_סרגלשרטוטמפלדה.jpg" alt="סרגל שרטוט מפלדה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סרגל שרטוט מפלדה</div>
+          <div class="chips"><span class="chip">#סרגל</span> <span class="chip">#כיול</span> <span class="chip">#מדידה</span></div>
+          <div class="meta">stainless steel precision ruler drafting table</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_3_סרגלשרטוטמפלדה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_3_סרגלשרטוטמפלדה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=stainless%20steel%20precision%20ruler%20drafting%20table" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_4_יומנפגישותמעור">
+        <div class="card-header">
+          <span class="idx">#55</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_4_יומנפגישותמעור.jpg" alt="יומן פגישות מעור" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">יומן פגישות מעור</div>
+          <div class="chips"><span class="chip">#יומן</span> <span class="chip">#לוז</span> <span class="chip">#שבועי</span></div>
+          <div class="meta">leather daily appointment planner organizer open desk</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_4_יומנפגישותמעור', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_4_יומנפגישותמעור', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=leather%20daily%20appointment%20planner%20organizer%20open%20desk" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_5_קלסרמשרדיעמשמרד">
+        <div class="card-header">
+          <span class="idx">#56</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_5_קלסרמשרדיעמשמרד.jpg" alt="קלסר משרדי עם שמרדפים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">קלסר משרדי עם שמרדפים</div>
+          <div class="chips"><span class="chip">#שמרדף</span> <span class="chip">#חוצץ</span> <span class="chip">#ארכיון</span></div>
+          <div class="meta">ring binder with transparent sheet protector sleeves</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_5_קלסרמשרדיעמשמרד', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_5_קלסרמשרדיעמשמרד', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=ring%20binder%20with%20transparent%20sheet%20protector%20sleeves" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_6_מיקרופונפודקאסט">
+        <div class="card-header">
+          <span class="idx">#57</span>
+          <span class="category">טכנולוגיה ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_6_מיקרופונפודקאסט.jpg" alt="מיקרופון פודקאסט מקצועי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מיקרופון פודקאסט מקצועי</div>
+          <div class="chips"><span class="chip">#הקלטה</span> <span class="chip">#פודקאסט</span> <span class="chip">#שמע</span></div>
+          <div class="meta">studio podcast usb condenser microphone boom arm</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_6_מיקרופונפודקאסט', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_6_מיקרופונפודקאסט', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=studio%20podcast%20usb%20condenser%20microphone%20boom%20arm" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_7_מתאמתקעימבינלאו">
+        <div class="card-header">
+          <span class="idx">#58</span>
+          <span class="category">טכנולוגיה ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_7_מתאמתקעימבינלאו.jpg" alt="מתאם תקעים בינלאומי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מתאם תקעים בינלאומי</div>
+          <div class="chips"><span class="chip">#מתאם</span> <span class="chip">#שקע</span> <span class="chip">#תאימות</span></div>
+          <div class="meta">all in one universal travel power adapter plug</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_7_מתאמתקעימבינלאו', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_7_מתאמתקעימבינלאו', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=all%20in%20one%20universal%20travel%20power%20adapter%20plug" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_8_אוזניותקשתאלחוט">
+        <div class="card-header">
+          <span class="idx">#59</span>
+          <span class="category">טכנולוגיה ותקשורת</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_8_אוזניותקשתאלחוט.jpg" alt="אוזניות קשת אלחוטיות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">אוזניות קשת אלחוטיות</div>
+          <div class="chips"><span class="chip">#ווליום</span> <span class="chip">#אוזניות</span> <span class="chip">#רעש</span></div>
+          <div class="meta">wireless over ear headphones on wooden desk</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_8_אוזניותקשתאלחוט', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_8_אוזניותקשתאלחוט', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=wireless%20over%20ear%20headphones%20on%20wooden%20desk" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_9_שוברזיכוימקופאי">
+        <div class="card-header">
+          <span class="idx">#60</span>
+          <span class="category">סידורים, כספים ובירוקרטיה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_9_שוברזיכוימקופאי.jpg" alt="שובר זיכוי מקופאי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">שובר זיכוי מקופאי</div>
+          <div class="chips"><span class="chip">#זיכוי</span> <span class="chip">#החזרה</span> <span class="chip">#קופה</span></div>
+          <div class="meta">store return credit slip receipt paper counter</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_9_שוברזיכוימקופאי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_9_שוברזיכוימקופאי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=store%20return%20credit%20slip%20receipt%20paper%20counter" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_10_זרועמחסומבכניסה">
+        <div class="card-header">
+          <span class="idx">#61</span>
+          <span class="category">סידורים, כספים ובירוקרטיה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_10_זרועמחסומבכניסה.jpg" alt="זרוע מחסום בכניסה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">זרוע מחסום בכניסה</div>
+          <div class="chips"><span class="chip">#מחסום</span> <span class="chip">#חניון</span> <span class="chip">#כרטיס</span></div>
+          <div class="meta">automatic parking barrier gate arm boom gate</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_10_זרועמחסומבכניסה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_10_זרועמחסומבכניסה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=automatic%20parking%20barrier%20gate%20arm%20boom%20gate" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_11_רמקולכריזהעלעמו">
+        <div class="card-header">
+          <span class="idx">#62</span>
+          <span class="category">סידורים, כספים ובירוקרטיה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_11_רמקולכריזהעלעמו.jpg" alt="רמקול כריזה על עמוד" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">רמקול כריזה על עמוד</div>
+          <div class="chips"><span class="chip">#כריזה</span> <span class="chip">#הודעות</span> <span class="chip">#שמע</span></div>
+          <div class="meta">public address horn loudspeaker on pole outdoor</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_11_רמקולכריזהעלעמו', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_11_רמקולכריזהעלעמו', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=public%20address%20horn%20loudspeaker%20on%20pole%20outdoor" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_12_בלוקשיופוניירלט">
+        <div class="card-header">
+          <span class="idx">#63</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_12_בלוקשיופוניירלט.jpg" alt="בלוק שיוף ונייר לטש" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">בלוק שיוף ונייר לטש</div>
+          <div class="chips"><span class="chip">#שיוף</span> <span class="chip">#נייר-זכוכית</span> <span class="chip">#החלקה</span></div>
+          <div class="meta">wooden hand sanding block with sandpaper woodworking</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_12_בלוקשיופוניירלט', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_12_בלוקשיופוניירלט', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=wooden%20hand%20sanding%20block%20with%20sandpaper%20woodworking" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_13_מדריכהוראותהרכב">
+        <div class="card-header">
+          <span class="idx">#64</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_13_מדריכהוראותהרכב.jpg" alt="מדריך הוראות הרכבה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מדריך הוראות הרכבה</div>
+          <div class="chips"><span class="chip">#הוראות</span> <span class="chip">#איקאה</span> <span class="chip">#פירוק</span></div>
+          <div class="meta">furniture assembly instruction diagram manual paper</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_13_מדריכהוראותהרכב', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_13_מדריכהוראותהרכב', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=furniture%20assembly%20instruction%20diagram%20manual%20paper" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_14_ארגזפלסטיקלחלקי">
+        <div class="card-header">
+          <span class="idx">#65</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_14_ארגזפלסטיקלחלקי.jpg" alt="ארגז פלסטיק לחלקיקים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">ארגז פלסטיק לחלקיקים</div>
+          <div class="chips"><span class="chip">#חלפים</span> <span class="chip">#מיון</span> <span class="chip">#ארגז</span></div>
+          <div class="meta">compartment storage hardware organizer box drawers</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_14_ארגזפלסטיקלחלקי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_14_ארגזפלסטיקלחלקי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=compartment%20storage%20hardware%20organizer%20box%20drawers" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_15_גלילפצפצימשקופ">
+        <div class="card-header">
+          <span class="idx">#66</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_15_גלילפצפצימשקופ.jpg" alt="גליל פצפצים שקוף" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">גליל פצפצים שקוף</div>
+          <div class="chips"><span class="chip">#פצפצים</span> <span class="chip">#מסקינטייפ</span> <span class="chip">#עטיפה</span></div>
+          <div class="meta">large roll of plastic bubble wrap packaging cushioning</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_15_גלילפצפצימשקופ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_15_גלילפצפצימשקופ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=large%20roll%20of%20plastic%20bubble%20wrap%20packaging%20cushioning" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_16_עגלתמשאלשקימ">
+        <div class="card-header">
+          <span class="idx">#67</span>
+          <span class="category">תיקונים וכלי עבודה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_16_עגלתמשאלשקימ.jpg" alt="עגלת משא לשקים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">עגלת משא לשקים</div>
+          <div class="chips"><span class="chip">#עגלת-משא</span> <span class="chip">#סבל</span> <span class="chip">#העמסה</span></div>
+          <div class="meta">heavy duty two wheel upright hand truck dolly</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_16_עגלתמשאלשקימ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_16_עגלתמשאלשקימ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=heavy%20duty%20two%20wheel%20upright%20hand%20truck%20dolly" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_17_מדידשמנמתכתי">
+        <div class="card-header">
+          <span class="idx">#68</span>
+          <span class="category">רכב ותחבורה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_17_מדידשמנמתכתי.jpg" alt="מדיד שמן מתכתי" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מדיד שמן מתכתי</div>
+          <div class="chips"><span class="chip">#מדיד</span> <span class="chip">#מילוי</span> <span class="chip">#שמנים</span></div>
+          <div class="meta">checking automotive oil dipstick clean level engine</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_17_מדידשמנמתכתי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_17_מדידשמנמתכתי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=checking%20automotive%20oil%20dipstick%20clean%20level%20engine" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_18_מאווררתקרהמעצ">
+        <div class="card-header">
+          <span class="idx">#69</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_18_מאווררתקרהמעצ.jpg" alt="מאוורר תקרה מעץ" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מאוורר תקרה מעץ</div>
+          <div class="chips"><span class="chip">#מאוורר</span> <span class="chip">#צינון</span> <span class="chip">#משב</span></div>
+          <div class="meta">stylish wooden ceiling fan spinning indoor living room</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_18_מאווררתקרהמעצ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_18_מאווררתקרהמעצ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=stylish%20wooden%20ceiling%20fan%20spinning%20indoor%20living%20room" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_19_תריסשלבימלבנ">
+        <div class="card-header">
+          <span class="idx">#70</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_19_תריסשלבימלבנ.jpg" alt="תריס שלבים לבן" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">תריס שלבים לבן</div>
+          <div class="chips"><span class="chip">#תריס</span> <span class="chip">#חלון</span> <span class="chip">#הצללה</span></div>
+          <div class="meta">white horizontal window louvers venetian blinds</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_19_תריסשלבימלבנ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_19_תריסשלבימלבנ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=white%20horizontal%20window%20louvers%20venetian%20blinds" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_20_מגשארגוניתשקופ">
+        <div class="card-header">
+          <span class="idx">#71</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_20_מגשארגוניתשקופ.jpg" alt="מגש ארגונית שקוף" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מגש ארגונית שקוף</div>
+          <div class="chips"><span class="chip">#ארגונית</span> <span class="chip">#מגירה</span> <span class="chip">#מדף</span></div>
+          <div class="meta">acrylic drawer organizer tidy stationary cutlery</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_20_מגשארגוניתשקופ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_20_מגשארגוניתשקופ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=acrylic%20drawer%20organizer%20tidy%20stationary%20cutlery" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_21_מברשתסירוקלכלבי">
+        <div class="card-header">
+          <span class="idx">#72</span>
+          <span class="category">חיות מחמד ומשפחה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_21_מברשתסירוקלכלבי.jpg" alt="מברשת סירוק לכלבים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מברשת סירוק לכלבים</div>
+          <div class="chips"><span class="chip">#הברשה</span> <span class="chip">#פרווה</span> <span class="chip">#סירוק</span></div>
+          <div class="meta">pet grooming slicker brush with removed dog fur</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_21_מברשתסירוקלכלבי', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_21_מברשתסירוקלכלבי', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=pet%20grooming%20slicker%20brush%20with%20removed%20dog%20fur" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_22_קערתנירוסטהלבונ">
+        <div class="card-header">
+          <span class="idx">#73</span>
+          <span class="category">חיות מחמד ומשפחה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_22_קערתנירוסטהלבונ.jpg" alt="קערת נירוסטה לבונזו" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">קערת נירוסטה לבונזו</div>
+          <div class="chips"><span class="chip">#בונזו</span> <span class="chip">#גרגירים</span> <span class="chip">#קערה</span></div>
+          <div class="meta">stainless steel pet feeding bowl with dry dog food</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_22_קערתנירוסטהלבונ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_22_קערתנירוסטהלבונ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=stainless%20steel%20pet%20feeding%20bowl%20with%20dry%20dog%20food" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_23_פחיתמשחתפוליש">
+        <div class="card-header">
+          <span class="idx">#74</span>
+          <span class="category">רכב ותחבורה</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_23_פחיתמשחתפוליש.jpg" alt="פחית משחת פוליש" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">פחית משחת פוליש</div>
+          <div class="chips"><span class="chip">#פוליש</span> <span class="chip">#ווקס</span> <span class="chip">#הברקה</span></div>
+          <div class="meta">tin can of paste car wax polish paste detailing</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_23_פחיתמשחתפוליש', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_23_פחיתמשחתפוליש', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=tin%20can%20of%20paste%20car%20wax%20polish%20paste%20detailing" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_24_פלטתחימומלשבת">
+        <div class="card-header">
+          <span class="idx">#75</span>
+          <span class="category">מטבח ובישול</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_24_פלטתחימומלשבת.jpg" alt="פלטת חימום לשבת" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">פלטת חימום לשבת</div>
+          <div class="chips"><span class="chip">#פלטה</span> <span class="chip">#חימום</span> <span class="chip">#השהיה</span></div>
+          <div class="meta">electric warming tray hot plate food kitchen</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_24_פלטתחימומלשבת', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_24_פלטתחימומלשבת', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=electric%20warming%20tray%20hot%20plate%20food%20kitchen" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_25_אקדחקיטורחמ">
+        <div class="card-header">
+          <span class="idx">#76</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_25_אקדחקיטורחמ.jpg" alt="אקדח קיטור חם" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">אקדח קיטור חם</div>
+          <div class="chips"><span class="chip">#קיטור</span> <span class="chip">#אדים</span> <span class="chip">#הסרה</span></div>
+          <div class="meta">handheld steam cleaner nozzle cleaning tile grout</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_25_אקדחקיטורחמ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_25_אקדחקיטורחמ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=handheld%20steam%20cleaner%20nozzle%20cleaning%20tile%20grout" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_26_פתקיותממוצהובות">
+        <div class="card-header">
+          <span class="idx">#77</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_26_פתקיותממוצהובות.jpg" alt="פתקיות ממו צהובות" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">פתקיות ממו צהובות</div>
+          <div class="chips"><span class="chip">#פתקיות</span> <span class="chip">#הדבקה</span> <span class="chip">#סימון</span></div>
+          <div class="meta">yellow sticky notes pad on office desk with pen</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_26_פתקיותממוצהובות', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_26_פתקיותממוצהובות', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=yellow%20sticky%20notes%20pad%20on%20office%20desk%20with%20pen" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_27_שדכנשולחניכבד">
+        <div class="card-header">
+          <span class="idx">#78</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_27_שדכנשולחניכבד.jpg" alt="שדכן שולחני כבד" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">שדכן שולחני כבד</div>
+          <div class="chips"><span class="chip">#שדכן</span> <span class="chip">#סיכות</span> <span class="chip">#הידוק</span></div>
+          <div class="meta">heavy duty black office paper stapler on desk</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_27_שדכנשולחניכבד', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_27_שדכנשולחניכבד', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=heavy%20duty%20black%20office%20paper%20stapler%20on%20desk" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_28_מנקבשניחורימ">
+        <div class="card-header">
+          <span class="idx">#79</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_28_מנקבשניחורימ.jpg" alt="מנקב שני חורים" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מנקב שני חורים</div>
+          <div class="chips"><span class="chip">#מנקב</span> <span class="chip">#ניקוב</span> <span class="chip">#חורים</span></div>
+          <div class="meta">two hole metal paper punch tool binder office</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_28_מנקבשניחורימ', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_28_מנקבשניחורימ', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=two%20hole%20metal%20paper%20punch%20tool%20binder%20office" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_29_מגרסתמסמכימשקטה">
+        <div class="card-header">
+          <span class="idx">#80</span>
+          <span class="category">משרד ולימודים</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_29_מגרסתמסמכימשקטה.jpg" alt="מגרסת מסמכים שקטה" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">מגרסת מסמכים שקטה</div>
+          <div class="chips"><span class="chip">#מגרסה</span> <span class="chip">#גריסה</span> <span class="chip">#השמדה</span></div>
+          <div class="meta">cross cut paper shredder shredding private document</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_29_מגרסתמסמכימשקטה', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_29_מגרסתמסמכימשקטה', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=cross%20cut%20paper%20shredder%20shredding%20private%20document" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="card success" id="card_draft_batch2_30_סלכביסהעגולמקש">
+        <div class="card-header">
+          <span class="idx">#81</span>
+          <span class="category">ניקיון ותחזוקת הבית</span>
+        </div>
+        <div class="img-box">
+          <img src="/staged_images/pool/draft_batch2_30_סלכביסהעגולמקש.jpg" alt="סל כביסה עגול מקש" loading="lazy" />
+        </div>
+        <div class="content">
+          <div class="title">סל כביסה עגול מקש</div>
+          <div class="chips"><span class="chip">#כביסות</span> <span class="chip">#איסוף</span> <span class="chip">#קש</span></div>
+          <div class="meta">round woven wicker laundry basket hamper room</div>
+          <div class="actions">
+            <button class="btn approve" onclick="markCard('draft_batch2_30_סלכביסהעגולמקש', true)">✅ אשר</button>
+            <button class="btn reject" onclick="markCard('draft_batch2_30_סלכביסהעגולמקש', false)">❌ פסול</button>
+            <a href="https://www.google.com/search?tbm=isch&q=round%20woven%20wicker%20laundry%20basket%20hamper%20room" target="_blank" class="btn search">🔍 חפש</a>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</body>
+</html>
