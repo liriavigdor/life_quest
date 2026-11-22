@@ -315,6 +315,7 @@ export function StardewInstitutionComplex({
 
   // Key Method State (שיטת המפתחות)
   const [selectedLociItem, setSelectedLociItem] = useState(null);
+  const lastAutoOpenedPhotoRoomRef = useRef(null);
   const [discoveredPhotoRooms, setDiscoveredPhotoRooms] = useState(() => {
     try {
       const saved = localStorage.getItem('lifequest_discovered_photos');
@@ -690,16 +691,32 @@ export function StardewInstitutionComplex({
     }
   };
 
-  // חשיפה אוטומטית של תמונת הקיר ברגע שהדמות מתקרבת למסגרת (Proximity Reveal)
+  // חשיפה ופתיחה אוטומטית של תמונת הקיר ב-Full Display ברגע שהדמות מתקרבת למסגרת (Proximity Auto Full Display)
   useEffect(() => {
     if (nearObjectId && nearObjectId.startsWith('photo_')) {
       const roomId = nearObjectId.replace('photo_', '');
-      const station = activePracticeStations.find(s => s.roomId === roomId);
-      if (roomId && !station?.isLoading && !discoveredPhotoRooms.includes(roomId)) {
-        markPhotoDiscovered(roomId);
+      const lociItem = activePracticeStations.find(item => item.roomId === roomId) || LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
+      const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
+      const activeItem = lociItem || photoDeposit;
+
+      if (roomId && activeItem && !activeItem.isLoading) {
+        if (!discoveredPhotoRooms.includes(roomId)) {
+          markPhotoDiscovered(roomId);
+        }
+        if (lastAutoOpenedPhotoRoomRef.current !== roomId) {
+          lastAutoOpenedPhotoRoomRef.current = roomId;
+          heldKeysRef.current.clear();
+          playerTargetRef.current = null;
+          routeRef.current = [];
+          sounds.playTap?.();
+          setSelectedLociItem(activeItem);
+        }
       }
+    } else {
+      // כשהדמות מתרחקת מהמסגרת מאפסים את המעקב כדי שתוכל להיפתח שוב אם תחזור
+      lastAutoOpenedPhotoRoomRef.current = null;
     }
-  }, [nearObjectId, activePracticeStations, discoveredPhotoRooms]);
+  }, [nearObjectId, activePracticeStations, storedDeposits, discoveredPhotoRooms]);
 
   // Update station image when client uploads custom image or AI regenerates
   const handleUpdateStationImage = (targetItem, newImageUrl, newAssociationWord = null) => {
@@ -779,6 +796,7 @@ export function StardewInstitutionComplex({
 
     const handleKeyDown = (e) => {
       if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+      if (selectedLociItem || celebrationData) return;
 
       if (e.code === 'Space' || e.code === 'Enter') {
         checkProximityInteraction();
@@ -819,7 +837,7 @@ export function StardewInstitutionComplex({
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, [editingLocusKey, isAddingCustomAnchor, onClose]);
+  }, [editingLocusKey, isAddingCustomAnchor, onClose, selectedLociItem, celebrationData]);
 
   // Responsive fluid Click-to-move pathfinding + keyboard navigation
   const handleFloorClick = (e) => {

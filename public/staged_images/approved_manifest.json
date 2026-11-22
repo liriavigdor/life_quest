@@ -1,5 +1,65 @@
 [
   {
+    "id": "ingested_1795332448530",
+    "title": "סל קניות",
+    "name": "סל קניות",
+    "imageUrl": "/staged_images/pool/ingested_סל_קניות_1795332448493.jpg",
+    "keywords": [
+      "סל קניות",
+      "סל כביסה"
+    ],
+    "associatedTasks": [
+      "סל כביסה",
+      "סל קניות"
+    ],
+    "caption": "אמצעי לאיסוף בגדים מלוכלכים",
+    "emoji": "🪣",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-22T07:27:28.530Z"
+  },
+  {
+    "id": "ingested_1795332407747",
+    "title": "אבקת סבון",
+    "name": "אבקת סבון",
+    "imageUrl": "/staged_images/pool/ingested_אבקת_סבון_1795332411732.jpg",
+    "keywords": [
+      "אבקת סבון",
+      "סל כביסה"
+    ],
+    "associatedTasks": [
+      "אבקת סבון",
+      "סל כביסה"
+    ],
+    "caption": "חומר ניקוי המסיר לכלוך",
+    "emoji": "🧼",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-22T07:26:51.759Z"
+  },
+  {
+    "id": "ingested_1795332283034",
+    "title": "מגירה",
+    "name": "מגירה",
+    "imageUrl": "/staged_images/pool/ingested_מגירה_1795332323119.jpg",
+    "keywords": [
+      "מגירה",
+      "גרביים"
+    ],
+    "associatedTasks": [
+      "מגירה",
+      "גרביים"
+    ],
+    "caption": "מקום האחסון הקבוע לגרביים",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-22T07:27:20.102Z"
+  },
+  {
     "id": "approved_1795330103444",
     "title": "רונלד מקדונלד",
     "name": "רונלד מקדונלד",
