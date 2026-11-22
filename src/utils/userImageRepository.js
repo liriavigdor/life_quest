@@ -792,6 +792,53 @@ export async function approveAndSaveMnemonicImage({
 }
 
 /**
+ * רישום ושימור הסבר אסוציאטיבי מנמוני (contextExplanation) עבור תמונה ומשימה,
+ * כך שההסבר יישמר גם לסשן הנוכחי וגם לכל הסשנים העתידיים שבהם התמונה תופיע באותו קונטקסט.
+ */
+export function recordContextExplanation(imageUrlOrId, taskOrContext, explanation, anchorTitle = '') {
+  if (!imageUrlOrId || !taskOrContext || !explanation) return;
+  const cleanTask = String(taskOrContext).trim();
+  const cleanExp = String(explanation).trim();
+  if (!cleanTask || !cleanExp) return;
+
+  const target = cachedUserImages.find(img => 
+    img.id === imageUrlOrId || 
+    img.imageUrl === imageUrlOrId || 
+    (anchorTitle && img.title && toCanonicalKey(img.title) === toCanonicalKey(anchorTitle))
+  );
+
+  if (!target) return;
+
+  if (!target.contextExplanations) {
+    target.contextExplanations = {};
+  }
+  const canonTask = toCanonicalKey(cleanTask);
+  target.contextExplanations[canonTask] = cleanExp;
+  target.contextExplanations[cleanTask] = cleanExp;
+
+  const sigTokens = extractSignificantTokens(cleanTask);
+  for (const tok of sigTokens) {
+    if (tok && tok.length > 2) {
+      target.contextExplanations[toCanonicalKey(tok)] = cleanExp;
+    }
+  }
+
+  if (typeof localStorage !== 'undefined') {
+    try {
+      const rawEdits = localStorage.getItem('lifequest_staged_local_edits');
+      const editsMap = rawEdits ? JSON.parse(rawEdits) : {};
+      editsMap[target.id] = {
+        title: target.title,
+        keywords: target.keywords,
+        contextExplanations: target.contextExplanations,
+        isModified: true
+      };
+      localStorage.setItem('lifequest_staged_local_edits', JSON.stringify(editsMap));
+    } catch (_) {}
+  }
+}
+
+/**
  * Delete a user image (locally and from cloud)
  */
 export async function deleteUserImage(id) {
