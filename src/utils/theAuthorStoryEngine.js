@@ -12,6 +12,8 @@
  * 4. היתוך תנועה+זירה (Motion-Location Fusion): "דרכון/מטוס" + "מגדל פיזה" -> "טס לפיזה" במקום שני משפטים נפרדים.
  */
 
+import { getGeminiApiKey } from './geminiLiveEngine.js';
+
 const COMPOUND_KEEP_REGEX = /סדרת אנימציה|בדיקת דם|בית חולים|הבית הלבן|שק כסף|לחיצת ידיים|קפה חם|פחית קולה|כיכר לחם|כרטיס אשראי|פנקס המחאות|מגדל פיזה|מגדל אייפל|הכותל המערבי|החומה הסינית|מכונת כביסה|מכונת תפירה|משאבת דלק|סכין גילוח|שקע חשמל|רולר צביעה|שעון מעורר|שעון חול|שטיח אדום|גביע זהב|שלט עצור|סימן שאלה|בועת מחשבה|לב שבור|בוגר אוניברסיטה|ארגז כלים|מברשת שיניים|מפתח ברגים|מד חום|אופנוע הארלי|מטוס ג'מבו|כדור פורח|גולגולת ועצמות|נייר דבק|חכת דיג|שק שינה|סופר מריו|הענק הירוק|מר בין|צ'רלי צ'פלין|מייקל ג'ורדן|פרדי מרקיורי|ביל גייטס|בובספוג|פו הדב|מיקי מאוס|דונלד דאק|קפטן אמריקה|איירון מן|הומר סימפסון|איש העטלף|איש הפלדה|הר פוג'י|פסל דוד|פסל החושב/;
 
 export function simplifyMnemonicTerm(raw = '') {
@@ -49,7 +51,13 @@ export function simplifyMnemonicTerm(raw = '') {
   }
 
   const words = text.split(/\s+/).filter(Boolean);
-  return words.slice(0, 2).join(' ');
+  const sliced = words.slice(0, 2);
+  // לעולם לא לחתוך ביטוי כך שיסתיים במילת יחס תלויה (כמו "פאזל עם" מתוך "פאזל עם חתיכה חסרה")!
+  const DANGLING_PREPS = new Set(['עם', 'של', 'על', 'את', 'אל', 'מן', 'ללא', 'בלי', 'בתוך', 'ליד', 'בין', 'תחת', 'מעל', 'מול', 'אצל', 'כמו']);
+  if (sliced.length === 2 && DANGLING_PREPS.has(sliced[1])) {
+    return sliced[0];
+  }
+  return sliced.join(' ');
 }
 
 function extractStationNode(item) {
@@ -107,7 +115,7 @@ const VEHICLE_LAND_REGEX = /מכונית|רכב|אופנוע|אופניים|רכ
 
 const LOCATION_REGEX = /(?:^|\s)(?:פירמידות|הבית\s*הלבן|פיזה|אייפל|קוליסאום|הכותל|חומה\s*הסינית|צ'יצ'ן\s*איצה|עזריאלי|הר\s*פוג'י|כנסיית|טירת|טירה|ארמון|מוסך|בנק|מרפאה|בית\s*חולים|סופר|מספרה|חוף|מדבר|יער|ג'ונגל|גינה|ים|קרח|מגדלור|גשר|הר\s*געש|מפלי\s*מים|מסעדה|מאפייה)(?:\s|$)/;
 
-const FOOD_DRINK_REGEX = /קפה|אספרסו|לחם|חלה|פיצה|המבורגר|פסטה|ספגטי|שניצל|עוגה|מרק|פחית|שוקולד|גלידה|תפוח|בננה|דונאט|סלט|גבינה|יין|בירה|מים|תה|קולה/;
+const FOOD_DRINK_REGEX = /(?:^|\s)(?:קפה|אספרסו|לחם|חלה|פיצה|המבורגר|פסטה|ספגטי|שניצל|עוגה|מרק|פחית|שוקולד|גלידה|תפוח|בננה|דונאט|סלט|גבינה|יין|בירה|מים|תה|קולה)(?:\s|$)/;
 
 // מילון הפיכת חפץ/תופעה לשם תואר (מתלבש על חפץ או על גיבור!)
 const ADJECTIVE_FUSION_MAP = [
@@ -563,6 +571,99 @@ export function authorWeaveStory(items = []) {
   const head = clauses.slice(0, -1).join(', ');
   const tail = clauses[clauses.length - 1];
   return `${subjectText} ${head}, ו${tail}.`;
+}
+
+let lastStoryReasoning = '';
+
+export function getLastStoryReasoning() {
+  return lastStoryReasoning;
+}
+
+/**
+ * הסופר ההיברידי (The Author Live AI + Deterministic Fallback)
+ * תופר את כל העוגנים שנבחרו בפועל למשפט עלילתי אחד: קצר, חי, קולח ובלתי נשכח.
+ */
+export async function authorWeaveStoryWithGemini(items = []) {
+  lastStoryReasoning = '';
+  const fallback = authorWeaveStory(items);
+  if (!Array.isArray(items) || items.length < 2) return fallback;
+
+  const apiKey = getGeminiApiKey();
+  if (!apiKey || apiKey.length < 10) return fallback;
+
+  const nodes = [];
+  const seenLabels = new Set();
+  for (const item of items) {
+    const node = extractStationNode(item);
+    if (node && !seenLabels.has(node.label)) {
+      seenLabels.add(node.label);
+      nodes.push(node.label);
+    }
+  }
+  if (nodes.length < 2) return fallback;
+
+  const maxWords = Math.min(18, Math.max(9, nodes.length * 3 + 2));
+
+  const prompt = `אתה "הסופר" (The Author) — אמן תפירת סיפורי זיכרון קצרים ובלתי נשכחים בעברית.
+קיבלת את רשימת העוגנים החזותיים שנבחרו בארמון הזיכרון (בסדר התחנות):
+${nodes.map((n, i) => `${i + 1}. ${n}`).join('\n')}
+
+חוקי ברזל מוחלטים:
+1. **משפט אחד בלבד!** קצר, הדוק וקולח (עד ${maxWords} מילים סה"כ).
+2. **חובה לשלב את כל ${nodes.length} העוגנים** בתוך המשפט בצורה טבעית ומזוהה (מותר להטות דקדוקית או להוסיף אותיות יחס ב/ל/מ/ה/ו, אבל אסור להשמיט אף עוגן!).
+3. **איסור מוחלט על "רשימת מכולת" או שרשור פעלים מכני** (אסור: "הוא לקח את X, בדק את Y, סידר את Z").
+4. **איסור מוחלט להמציא דמות או חיה שלא הופיעה בעוגנים!** (למשל אסור להמציא "חתול רחוב" או "ילד" אם הם לא ברשימה — זה מוסיף עוגן מזויף לזיכרון!). אם יש דמות/חיה בעוגנים — היא הגיבור; אם אין — כתוב בגוף ראשון קצר וחי ("תלשתי...", "שחיתי...") או הפוך אחד מהחפצים לנושא פעיל.
+5. **עברית טבעית, תקנית ומדויקת** (אותיות עבריות א-ת בלבד — אסור לערבב אותיות זרות, ללא אימוג'ים, ללא מירכאות מיותרות).
+
+החזר אך ורק JSON תקין:
+{
+  "reasoning": "משפט קצר (8-12 מילים) איך לשזור את כל העוגנים בצורה טבעית בלי להמציא דמויות חיצוניות",
+  "story": "המשפט העלילתי המהודק בעברית בלבד."
+}`;
+
+  const models = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-flash-lite-latest', 'gemini-3.8-flash'];
+  for (const model of models) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              temperature: 0.45,
+              responseMimeType: 'application/json'
+            }
+          }),
+          signal: AbortSignal.timeout(25000)
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          const raw = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (raw) {
+            const parsed = JSON.parse(raw.replace(/```json/g, '').replace(/```/g, '').trim());
+            const story = String(parsed.story || '').replace(/\s+/g, ' ').trim();
+            // ולידציה: טקסט עברי נקי ללא אותיות זרות (ערבית/קירילית/סינית) ולא ארוך מדי
+            const hasForeignScript = /[\u0400-\u04FF\u0600-\u06FF\u4E00-\u9FFF]/.test(story);
+            if (!hasForeignScript && story.length >= 8 && story.length <= 220 && /[\u0590-\u05FF]/.test(story)) {
+              lastStoryReasoning = String(parsed.reasoning || '').trim();
+              return story.endsWith('.') || story.endsWith('!') ? story : `${story}.`;
+            }
+          }
+        } else if (res.status === 429 || res.status === 503) {
+          await new Promise(r => setTimeout(r, 1200));
+          continue;
+        }
+        break;
+      } catch (_) {
+        break;
+      }
+    }
+  }
+
+  return fallback;
 }
 
 export default authorWeaveStory;

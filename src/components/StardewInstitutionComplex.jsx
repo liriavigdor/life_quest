@@ -33,6 +33,8 @@ import { LociItemInspectionModal } from './LociItemInspectionModal';
 import { LociSurpriseCelebrationModal } from './LociSurpriseCelebrationModal';
 import { QuickListInputModal } from './QuickListInputModal';
 import { MnemonicStudioModal } from './MnemonicStudioModal';
+import { authorWeaveStoryWithGemini } from '../utils/theAuthorStoryEngine';
+import { logSessionEvent } from '../utils/sessionLogger';
 import { subscribeToUserImages, findUserImageByKeyword } from '../utils/userImageRepository';
 // (Legacy get5MnemonicAssociationsForTask removed to prevent destructive overwriting of curated stations)
 import { weaveDeterministicStory, generateDynamicFallbackCard, composeCodexNarrativeSentence } from '../utils/deterministicStoryEngine';
@@ -46,6 +48,7 @@ import { MemoryHierarchyTreeModal } from './MemoryHierarchyTreeModal';
 import { ActiveRecallLocker } from './ActiveRecallLocker';
 import { ActiveRecallSingle } from './ActiveRecallSingle';
 import { BizarreSortChallengeModal } from './BizarreSortChallengeModal';
+import { getRetentionVisualBadge } from '../utils/spacedRepetitionEngine';
 import { 
   getChamberForPosition, 
   HOUSE_CHAMBERS, 
@@ -103,6 +106,8 @@ function buildCustomPracticeStations(input = DEFAULT_STATION_ANCHORS, forcedStor
         candidates: Array.isArray(s.candidates) ? s.candidates : [],
         currentCandidateIndex: typeof s.currentCandidateIndex === 'number' ? s.currentCandidateIndex : 0,
         imageUrl: s.imageUrl,
+        isLoading: Boolean(s.isLoading),
+        explanation: s.explanation || s.story || '',
         roomSensoryGuidedPrompt: s.story || `${s.associationWord || s.title} בארמון`,
         roomQuote: s.story || `${s.associationWord || s.title} בארמון`
       })),
@@ -115,6 +120,11 @@ function buildCustomPracticeStations(input = DEFAULT_STATION_ANCHORS, forcedStor
   }
 
   if (!storyResult?.stations) return LOCI_WORK_PRACTICE_ITEMS;
+
+  const initialStorySig = storyResult.stations
+    .map(st => st.associationWord || st.card?.name || st.itemTitle || '')
+    .filter(Boolean)
+    .join(' | ');
 
   return storyResult.stations.map((st, idx) => {
     const room = ROOM_SEQUENCE[idx] || ROOM_SEQUENCE[ROOM_SEQUENCE.length - 1];
@@ -132,8 +142,8 @@ function buildCustomPracticeStations(input = DEFAULT_STATION_ANCHORS, forcedStor
     let finalEmoji = st.card?.emoji || srcObj?.emoji || st.celebrity?.emoji || '📌';
     let finalStory = srcObj?.story || st.roomSensoryGuidedPrompt;
 
-    // Self-healing: If station has an SVG fallback or mismatched cutlery for eggs, retrieve optimal anchor from repository
-    if (!finalImageUrl || finalImageUrl.startsWith('data:image/svg') || (st.itemTitle === 'ביצים' && finalImageUrl.includes('360'))) {
+    // Self-healing: If station has an SVG fallback or mismatched cutlery for eggs, retrieve optimal anchor from repository (skip while streaming!)
+    if (!st.isLoading && (!finalImageUrl || finalImageUrl.startsWith('data:image/svg') || (st.itemTitle === 'ביצים' && finalImageUrl.includes('360')))) {
       const match = findUserImageByKeyword(st.itemTitle);
       if (match && match.imageUrl && !match.imageUrl.startsWith('data:image/svg')) {
         finalImageUrl = match.imageUrl;
@@ -164,10 +174,14 @@ function buildCustomPracticeStations(input = DEFAULT_STATION_ANCHORS, forcedStor
       emoji: finalEmoji,
       associationWord: finalAssocWord,
       story: finalStory,
+      explanation: st.explanation || srcObj?.explanation || '',
       roomQuote: finalStory || st.roomQuote,
       memoryAnchor: `עוגן ${idx + 1}: ${st.itemTitle}`,
       hint: finalStory,
       imageUrl: finalImageUrl,
+      isLoading: Boolean(st.isLoading),
+      grandFinaleStory: finalGrand || '',
+      _storySignature: customGrandStory ? initialStorySig : '',
       celebrationTitle: isLastIndex ? (storyResult.headline || 'סיום המסלול 📜✨') : `תחנה ${idx + 1}: ${st.itemTitle}`,
       celebrationSubtitle: isLastIndex ? 'משפט הזיכרון המזוקק שנחרט לנצח:' : finalStory,
       celebrationImage: finalImageUrl,
@@ -412,11 +426,62 @@ export function StardewInstitutionComplex({
     return unsubscribe;
   }, []);
 
-  // Dynamic Journey Story for the active palace practice (woven from the exact visual anchors shown to the user)
-  const grandPalaceStory = useMemo(() => {
+  // Dynamic Journey Story for the active palace practice (Hybrid: Gemini Live Author + instant deterministic fallback)
+  const fallbackPalaceStory = useMemo(() => {
     const storyRes = weaveDeterministicStory(activePracticeStations);
     return storyRes?.grandFinaleStory || composeCodexNarrativeSentence([], activePracticeStations);
   }, [activePracticeStations]);
+
+  const anchorSignature = useMemo(() => {
+    return (activePracticeStations || [])
+      .map(st => st?.associationWord || st?.title || '')
+      .filter(Boolean)
+      .join(' | ');
+  }, [activePracticeStations]);
+
+  const [aiPalaceStory, setAiPalaceStory] = useState(() => {
+    const preset = activePracticeStations?.[0]?.grandFinaleStory;
+    return preset || '';
+  });
+
+  useEffect(() => {
+    if (!activePracticeStations || activePracticeStations.length < 2) {
+      setAiPalaceStory('');
+      return;
+    }
+    // ממתינים לסיום הטעינה הכרונולוגית של כל התחנות לפני אריגת הסיפור
+    if (activePracticeStations.some(st => st?.isLoading)) {
+      return;
+    }
+    // אם הרשימה הגיעה זה עתה מצינור הסינרגיה עם סיפור שנארג במיוחד עבורה, משתמשים בו מיד
+    const prewoven = activePracticeStations[0]?.grandFinaleStory;
+    if (prewoven && activePracticeStations[0]?._storySignature === anchorSignature) {
+      setAiPalaceStory(prewoven);
+      return;
+    }
+
+    let cancelled = false;
+    // Debounce קצר של 1.2 שניות כדי שהחלפות מהירות ברצף לא יציפו את ה-API ויחטפו 429
+    const timerId = setTimeout(() => {
+      authorWeaveStoryWithGemini(activePracticeStations).then((woven) => {
+        if (!cancelled && woven) {
+          setAiPalaceStory(woven);
+          logSessionEvent({
+            type: 'story_updated',
+            story: woven,
+            anchors: activePracticeStations.map(st => st?.associationWord || st?.title || '').filter(Boolean)
+          }).catch(() => {});
+        }
+      }).catch(() => {});
+    }, 1200);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timerId);
+    };
+  }, [anchorSignature]);
+
+  const grandPalaceStory = aiPalaceStory || fallbackPalaceStory;
 
   // Stardew Valley Proximity Discovery State:
   // Contents of lockers and wall frames remain concealed until the player approaches!
@@ -551,11 +616,12 @@ export function StardewInstitutionComplex({
     showToast('החדרים ננעלו מחדש! כעת ניתן לתרגל שוב את שרשרת הזיכרון מתחילתה 🏰🔒');
   };
 
-  // Autonomous Behind-the-Scenes Memory Engine
+  // Autonomous Behind-the-Scenes Memory Engine (Progressive Chronological Streaming)
   const handleGenerateQuickList = (parsedItems) => {
     sounds.playLevelUp?.();
     const newStations = buildCustomPracticeStations(parsedItems);
     setActivePracticeStations(newStations);
+    setAiPalaceStory('');
     try {
       localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(newStations));
     } catch (_) {}
@@ -571,13 +637,69 @@ export function StardewInstitutionComplex({
         door_east_south: false
       }
     });
-    setDiscoveredPhotoRooms(allChambers);
+    // כל המסגרות מתחילות מוסתרות ונחשפות רק כשהדמות מתקרבת אליהן (הפתעה + קושי רצוי + טעינה ברקע!)
+    setDiscoveredPhotoRooms([]);
     try {
-      localStorage.setItem('lifequest_discovered_photos', JSON.stringify(allChambers));
+      localStorage.setItem('lifequest_discovered_photos', JSON.stringify([]));
     } catch (_) {}
 
-    showToast(`הרשימה שובצה אוטומטית ב-${newStations.length} חדרי הבית! צא לדרך 🏰💡`);
+    const readyCount = newStations.filter(s => !s.isLoading).length;
+    showToast(readyCount < newStations.length
+      ? `תחנה #1 מוכנה! צא לדרך — שאר החדרים נטענים ברקע 🏰✨`
+      : `הרשימה שובצה אוטומטית ב-${newStations.length} חדרי הבית! צא לדרך 🏰💡`
+    );
   };
+
+  // עדכון חי של תחנות 2..5 כשהן מסיימות להיטען כרונולוגית ברקע
+  const handleStreamStationUpdate = (resolvedStation, idx) => {
+    if (!resolvedStation) return;
+    setActivePracticeStations((prev) => {
+      const updated = prev.map((st, i) => {
+        if (i !== idx && st.order !== resolvedStation.order) return st;
+        const img = resolvedStation.imageUrl || st.imageUrl;
+        const assoc = resolvedStation.associationWord || st.associationWord;
+        const exp = resolvedStation.explanation || resolvedStation.story || '';
+        return {
+          ...st,
+          isLoading: false,
+          coreConcept: resolvedStation.coreConcept || st.coreConcept,
+          associationWord: assoc,
+          imageUrl: img,
+          celebrationImage: img,
+          emoji: resolvedStation.emoji || st.emoji,
+          explanation: exp,
+          story: exp,
+          roomQuote: exp || st.roomQuote,
+          hint: exp || st.hint,
+          hasRepositoryImage: Boolean(img && !img.startsWith('data:image/svg')),
+          candidates: Array.isArray(resolvedStation.candidates) ? resolvedStation.candidates : st.candidates,
+          currentCandidateIndex: typeof resolvedStation.currentCandidateIndex === 'number' ? resolvedStation.currentCandidateIndex : 0
+        };
+      });
+      try {
+        localStorage.setItem('lifequest_active_practice_stations', JSON.stringify(updated));
+      } catch (_) {}
+      return updated;
+    });
+  };
+
+  // עדכון סופי של הסיפור המלא לאחר שכל התחנות הסתיימו ברקע
+  const handleAllStationsReady = (finalPayload) => {
+    if (finalPayload?.grandFinaleStory) {
+      setAiPalaceStory(finalPayload.grandFinaleStory);
+    }
+  };
+
+  // חשיפה אוטומטית של תמונת הקיר ברגע שהדמות מתקרבת למסגרת (Proximity Reveal)
+  useEffect(() => {
+    if (nearObjectId && nearObjectId.startsWith('photo_')) {
+      const roomId = nearObjectId.replace('photo_', '');
+      const station = activePracticeStations.find(s => s.roomId === roomId);
+      if (roomId && !station?.isLoading && !discoveredPhotoRooms.includes(roomId)) {
+        markPhotoDiscovered(roomId);
+      }
+    }
+  }, [nearObjectId, activePracticeStations, discoveredPhotoRooms]);
 
   // Update station image when client uploads custom image or AI regenerates
   const handleUpdateStationImage = (targetItem, newImageUrl, newAssociationWord = null) => {
@@ -986,7 +1108,7 @@ export function StardewInstitutionComplex({
 
       if (near.startsWith('photo_')) {
         const roomId = near.replace('photo_', '');
-        const lociItem = LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
+        const lociItem = activePracticeStations.find(item => item.roomId === roomId) || LOCI_WORK_PRACTICE_ITEMS.find(item => item.roomId === roomId);
         const photoDeposit = storedDeposits.find(d => d.roomId === roomId && d.type === 'photo');
         const activeItem = lociItem || photoDeposit;
         sounds.playTap?.();
@@ -1421,8 +1543,9 @@ export function StardewInstitutionComplex({
           // Always guarantee the exact 5 items requested for Loci Memory Palace practice
           const activeItem = lociItem || photoDeposit;
           const isNear = nearObjectId === `photo_${roomId}` || hoveredObjectId === `photo_${roomId}`;
-
-          const isDiscovered = true; // Always display the real associative memory image in the wall picture frame!
+          const isStationLoading = Boolean(activeItem?.isLoading);
+          const isDiscovered = !isStationLoading && (discoveredPhotoRooms.includes(roomId) || nearObjectId === `photo_${roomId}`);
+          const srsBadge = (activeItem && isDiscovered) ? getRetentionVisualBadge(activeItem) : null;
 
           return (
             <div
@@ -1434,7 +1557,7 @@ export function StardewInstitutionComplex({
                 top: `${pos.y}px`,
                 zIndex: 18,
                 transform: 'translate(-50%, -50%)',
-                cursor: 'pointer',
+                cursor: isStationLoading ? 'wait' : 'pointer',
                 transition: 'transform 0.18s ease'
               }}
               onMouseEnter={() => setHoveredObjectId(`photo_${roomId}`)}
@@ -1442,12 +1565,18 @@ export function StardewInstitutionComplex({
               onClick={(e) => {
                 e.stopPropagation();
                 sounds.playTap?.();
+                if (isStationLoading) {
+                  showToast('העוגן לחדר זה נטען כעת ברקע... בעוד רגע מוכן! ⏳');
+                  return;
+                }
                 markPhotoDiscovered(roomId);
                 setSelectedLociItem(activeItem);
               }}
-              title={isDiscovered 
-                ? `תמונת ארמון הזיכרון: ${activeItem?.order ? `${activeItem.order}. ` : ''}${activeItem?.title} ${activeItem?.emoji || ''} — לחץ לצפייה מוגדלת ולמידה`
-                : `תמונה נסתרת בחדר — לחץ כדי לגלות וללמוד את העוגן! ❓`}
+              title={isStationLoading
+                ? `טוען עוגן זיכרון לחדר ברקע... ⏳`
+                : isDiscovered 
+                  ? `תמונת ארמון הזיכרון: ${activeItem?.order ? `${activeItem.order}. ` : ''}${activeItem?.title} ${activeItem?.emoji || ''} ${srsBadge?.label ? `[${srsBadge.label}]` : ''} — לחץ לצפייה מוגדלת ולמידה`
+                  : `תמונה מוסתרת — התקרב עם הדמות כדי לחשוף את העוגן! ❓`}
             >
               {/* Authentic 2.5D Wooden Beveled Picture Frame (Enlarged & Focused Display) */}
               <div
@@ -1457,11 +1586,11 @@ export function StardewInstitutionComplex({
                   backgroundColor: isDiscovered ? '#3b1c09' : '#27272a',
                   border: isNear 
                     ? '2.5px solid #fbbf24' 
-                    : isDiscovered ? '2px solid #d97706' : '2px solid #71717a',
+                    : (srsBadge?.borderColor ? `2px solid ${srsBadge.borderColor}` : (isDiscovered ? '2px solid #d97706' : '2px solid #71717a')),
                   borderRadius: '6px',
                   boxShadow: isNear 
                     ? '0 4px 14px rgba(0, 0, 0, 0.8), 0 0 16px rgba(245, 158, 11, 0.6)' 
-                    : '0 3px 8px rgba(0, 0, 0, 0.55)',
+                    : (srsBadge?.glow || '0 3px 8px rgba(0, 0, 0, 0.55)'),
                   padding: '3px',
                   display: 'flex',
                   alignItems: 'center',
@@ -1471,6 +1600,27 @@ export function StardewInstitutionComplex({
                   transition: 'all 0.18s ease'
                 }}
               >
+                {/* SRS Status Indicator Badge */}
+                {srsBadge?.status === 'due' && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '2px',
+                    right: '3px',
+                    fontSize: '11px',
+                    zIndex: 25,
+                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.9))'
+                  }} title="מועד לשליפה פעילה!">🔔</div>
+                )}
+                {srsBadge?.status === 'mastered' && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '2px',
+                    right: '3px',
+                    fontSize: '10px',
+                    zIndex: 25,
+                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.9))'
+                  }} title="מקובע היטב בזיכרון">🌟</div>
+                )}
                 {/* Inner Frame */}
                 <div
                   style={{
@@ -1502,8 +1652,7 @@ export function StardewInstitutionComplex({
                         }}
                         onError={(e) => {
                           e.target.onerror = null;
-                          const fallbackUrl = activeItem?.candidates?.find(c => c.imageUrl && c.imageUrl !== e.target.src)?.imageUrl;
-                          e.target.src = fallbackUrl || generateDynamicFallbackCard(activeItem?.title || 'עוגן זיכרון');
+                          e.target.src = generateDynamicFallbackCard(activeItem?.title || 'עוגן זיכרון');
                         }}
                       />
                       {/* Gentle Oil-Painting Glaze */}
@@ -2163,6 +2312,8 @@ export function StardewInstitutionComplex({
         isOpen={isQuickListModalOpen}
         onClose={() => setIsQuickListModalOpen(false)}
         onGenerateList={handleGenerateQuickList}
+        onStreamStationUpdate={handleStreamStationUpdate}
+        onAllStationsReady={handleAllStationsReady}
       />
 
       {/* 14. Mnemonic Quality Studio & Visual Inspector */}

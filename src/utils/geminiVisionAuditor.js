@@ -10,9 +10,9 @@ import { getGeminiApiKey } from './geminiLiveEngine.js';
 
 // רשימת מודלי הראייה (Multimodal Vision) הפעילים לפי סדר עדיפויות
 export const VISION_MODELS = [
-  'gemini-3.5-flash-lite',
-  'gemini-3.5-flash',
-  'gemini-3.8-flash'
+  'gemini-flash-lite-latest',
+  'gemini-3-flash-preview',
+  'gemini-flash-latest'
 ];
 
 /**
@@ -33,7 +33,8 @@ export async function fetchImageAsBase64(imageUrl, timeoutMs = 6000) {
   try {
     const res = await fetch(imageUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LifeQuestVision/1.0'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
       },
       signal: AbortSignal.timeout(timeoutMs)
     });
@@ -125,11 +126,11 @@ export async function auditImageWithGeminiVision({
   const prompt = `אתה מבקר איכות צילום קוגניטיבי של ארמון הזיכרון (LifeQuest Visual Quality & Cognitive Anchor Auditor).
 עליך להביט בתמונה המצורפת בעיון ולבחון אותה לפי קריטריוני הברזל הבאים:
 
-1. **התאמה לעוגן המבוקש (Anchor Alignment):**
-   - העוגן המבוקש: "${anchorName || coreConcept}"
-   - נושא הענף: "${coreConcept || anchorName}"
+1. **התאמה לעוגן החזותי המבוקש (Anchor Alignment):**
+   - העוגן החזותי המבוקש: "${anchorName || coreConcept}"
    - שאילתת החיפוש המקורית: "${englishQuery || anchorName}"
-   - האם התמונה הזו אכן ממחישה בצורה ברורה, ישירה ומובהקת את העוגן המבוקש? (אם התמונה מציגה משהו אחר לחלוטין – פסול מיד!).
+   - שים לב: זהו ארמון זיכרון מנמוני! התמונה חייבת להתאים אך ורק לעוגן החזותי "${anchorName || coreConcept}". אין לפסול בשום אופן על בסיס חוסר התאמה למשימת המשתמש המקורית!
+   - האם התמונה הזו אכן ממחישה בצורה ברורה, ישירה ומובהקת את העוגן החזותי המבוקש? (אם התמונה מציגה משהו אחר לחלוטין – פסול מיד!).
 
 2. **דרישות צילום איכותי (תמונה טובה):**
    - צילום אותנטי, חי, צבעוני, ברור, מואר היטב ומקצועי (או ייצוג מותגי מובהק של דמות תרבותית מוכרת).
@@ -176,7 +177,7 @@ export async function auditImageWithGeminiVision({
             responseMimeType: 'application/json'
           }
         }),
-        signal: AbortSignal.timeout(16000)
+        signal: AbortSignal.timeout(22000)
       });
 
       if (!res.ok) {
@@ -230,7 +231,7 @@ export async function ingestImagePermanently({
     return { ok: false, error: 'Invalid or fallback image URL' };
   }
 
-  // 1. קריאה ל-API הפנימי של השרת (/api/ingest-image) להורדה ואחסון קבוע
+  // 1. קריאה ל-API הפנימי של השרת (/api/ingest-image) להורדה, ביקורת Vision ואחסון קבוע
   try {
     const res = await fetch('/api/ingest-image', {
       method: 'POST',
@@ -243,11 +244,19 @@ export async function ingestImagePermanently({
         emoji,
         apiKey: apiKey || getGeminiApiKey()
       }),
-      signal: AbortSignal.timeout(9000)
+      signal: AbortSignal.timeout(30000)
     });
 
     if (res.ok) {
       const data = await res.json();
+      // אם ביקורת ה-Vision פסלה את התמונה — חובה להעביר את הפסילה הלאה ולעולם לא לאשר אותה!
+      if (data && data.rejected) {
+        return {
+          ok: false,
+          rejected: true,
+          audit: data.audit || { approved: false, score: 0, reason: 'נפסל בביקורת ראייה' }
+        };
+      }
       if (data && data.ok && data.localImageUrl) {
         return {
           ok: true,
@@ -256,16 +265,22 @@ export async function ingestImagePermanently({
           source: 'ingested_permanent'
         };
       }
+      // אם ההורדה או הבדיקה נכשלו בשרת — לא מתפשרים ולא מחזירים תמונה לא מאומתת
+      return {
+        ok: false,
+        rejected: true,
+        audit: data?.audit || { approved: false, score: 0, reason: data?.error || 'הורדת התמונה לבדיקה נכשלה' }
+      };
     }
   } catch (err) {
-    console.warn('Server-side ingestion endpoint unreachable:', err);
+    console.warn('Server-side ingestion endpoint unreachable or timed out:', err);
   }
 
-  // 2. אם השרת המקומי אינו פעיל (Static Build), נחזיר את הכתובת הקיימת
+  // 2. אם השרת המקומי אינו זמין (למשל Static Build) — לא מאשרים אוטומטית בלי בדיקה
   return {
-    ok: true,
-    localImageUrl: imageUrl,
-    source: 'remote_fallback'
+    ok: false,
+    rejected: true,
+    audit: { approved: false, score: 0, reason: 'שרת ביקורת הראייה לא היה זמין' }
   };
 }
 

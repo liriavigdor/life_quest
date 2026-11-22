@@ -1,5 +1,3915 @@
 [
   {
+    "id": "approved_1795330103444",
+    "title": "רונלד מקדונלד",
+    "name": "רונלד מקדונלד",
+    "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg",
+    "keywords": [
+      "לאכול",
+      "הכריך",
+      "רונלד",
+      "מקדונלד",
+      "כריך",
+      "רונלד מקדונלד"
+    ],
+    "associatedTasks": [
+      "לאכול את הכריך",
+      "רונלד מקדונלד"
+    ],
+    "caption": "לאכול את הכריך",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-22T06:48:23.444Z"
+  },
+  {
+    "id": "approved_1795329679102",
+    "title": "מטוס נייר מקופל",
+    "name": "מטוס נייר מקופל",
+    "imageUrl": "/staged_images/pool/item_179_מטוס_נייר_מקופל__מסמל.jpg",
+    "keywords": [
+      "לשלוח",
+      "לליאל",
+      "ההודעות",
+      "מטוס",
+      "נייר",
+      "מקופל",
+      "הודעות",
+      "מטוס נייר מקופל"
+    ],
+    "associatedTasks": [
+      "לשלוח לליאל את ההודעות",
+      "מטוס נייר מקופל"
+    ],
+    "caption": "לשלוח לליאל את ההודעות",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-22T06:41:19.102Z"
+  },
+  {
+    "id": "approved_1795329451485",
+    "title": "וולי",
+    "name": "וולי",
+    "imageUrl": "/staged_images/pool/new_108_wall_e.jpg",
+    "keywords": [
+      "לוודא",
+      "המחזוריות",
+      "וולי",
+      "לוודא את המחזוריות"
+    ],
+    "associatedTasks": [
+      "לוודא את המחזוריות",
+      "וולי"
+    ],
+    "caption": "לוודא את המחזוריות",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-22T06:37:31.488Z"
+  },
+  {
+    "id": "ingested_1795194408167",
+    "title": "הוריקן",
+    "name": "הוריקן",
+    "imageUrl": "/staged_images/pool/ingested_הוריקן_1795194408146.jpg",
+    "keywords": [
+      "הוריקן"
+    ],
+    "associatedTasks": [
+      "הוריקן"
+    ],
+    "caption": "סופה טרופית",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T17:06:48.167Z"
+  },
+  {
+    "id": "approved_1795194370818",
+    "title": "משקפת",
+    "name": "משקפת",
+    "imageUrl": "/staged_images/pool/approved_1795194372925.jpg",
+    "keywords": [
+      "משקפת"
+    ],
+    "associatedTasks": [
+      "משקפת"
+    ],
+    "caption": "משקפת",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T17:06:12.942Z"
+  },
+  {
+    "id": "ingested_1795194368080",
+    "title": "מפלצת עוגיות",
+    "name": "מפלצת עוגיות",
+    "imageUrl": "/staged_images/pool/ingested_מפלצת_עוגיות_1795194402972.jpg",
+    "keywords": [
+      "מפלצת עוגיות",
+      "בלאגן"
+    ],
+    "associatedTasks": [
+      "מפלצת עוגיות",
+      "בלאגן"
+    ],
+    "caption": "פיזור פירורים מטורף ואוכל",
+    "emoji": "🍪",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T17:06:42.997Z"
+  },
+  {
+    "id": "approved_1795194352498",
+    "title": "כריש",
+    "name": "כריש",
+    "imageUrl": "/staged_images/pool/item_253_כריש_לבן.jpg",
+    "keywords": [
+      "שיניים",
+      "כריש"
+    ],
+    "associatedTasks": [
+      "שיניים",
+      "כריש"
+    ],
+    "caption": "שיניים",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T17:05:52.498Z"
+  },
+  {
+    "id": "ingested_1795194327072",
+    "title": "צפר מדושן",
+    "name": "צפר מדושן",
+    "imageUrl": "/staged_images/pool/ingested_צפר_מדושן_1795194327017.jpg",
+    "keywords": [
+      "צפר מדושן",
+      "משקפת"
+    ],
+    "associatedTasks": [
+      "משקפת",
+      "צפר מדושן"
+    ],
+    "caption": "חוקר ציפורים בשטח פתוח",
+    "emoji": "🐦",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-20T17:05:27.072Z"
+  },
+  {
+    "id": "approved_1795191824344",
+    "title": "הבית הלבן",
+    "name": "הבית הלבן",
+    "imageUrl": "/staged_images/pool/item_445_הבית_הלבן.jpg",
+    "keywords": [
+      "אמריקה",
+      "הבית",
+      "הלבן",
+      "הבית הלבן"
+    ],
+    "associatedTasks": [
+      "אמריקה",
+      "הבית הלבן"
+    ],
+    "caption": "אמריקה",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T16:23:44.344Z"
+  },
+  {
+    "id": "ingested_1795174629434",
+    "title": "פחית פופקורן",
+    "name": "פחית פופקורן",
+    "imageUrl": "/staged_images/pool/ingested_פחית_פופקורן_1795174629417.jpg",
+    "keywords": [
+      "פחית פופקורן"
+    ],
+    "associatedTasks": [
+      "פחית פופקורן"
+    ],
+    "caption": "Free Buttery Cinema Treat Image - Popcorn, Cinema, Theater | Download ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-20T11:37:09.434Z"
+  },
+  {
+    "id": "ingested_1795172514929",
+    "title": "מסור חשמלי",
+    "name": "מסור חשמלי",
+    "imageUrl": "/staged_images/pool/ingested_מסור_חשמלי_1795172521015.jpg",
+    "keywords": [
+      "מסור חשמלי",
+      "קליפה של אבטיח"
+    ],
+    "associatedTasks": [
+      "מסור חשמלי",
+      "קליפה של אבטיח"
+    ],
+    "caption": "כלי חד שחוצה את הקליפה",
+    "emoji": "🪚",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-20T11:02:01.042Z"
+  },
+  {
+    "id": "ingested_1795172510303",
+    "title": "שрек",
+    "name": "שрек",
+    "imageUrl": "/staged_images/pool/ingested_ש__1795172510279.jpg",
+    "keywords": [
+      "שрек"
+    ],
+    "associatedTasks": [
+      "שрек"
+    ],
+    "caption": "Download Green Ogre Shrek (Character) Movie Shrek 2 8k Ultra HD ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T11:01:50.303Z"
+  },
+  {
+    "id": "ingested_1795172392231",
+    "title": "מזרון ברצפה",
+    "name": "מזרון ברצפה",
+    "imageUrl": "/staged_images/pool/ingested_מזרון_ברצפה_1795172392211.webp",
+    "keywords": [
+      "מזרון ברצפה",
+      "יושבים אצל אבישי בית ריק"
+    ],
+    "associatedTasks": [
+      "יושבים אצל אבישי בית ריק",
+      "מזרון ברצפה"
+    ],
+    "caption": "אין עדיין רהיטים בבית",
+    "emoji": "🛏️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-20T10:59:52.231Z"
+  },
+  {
+    "id": "ingested_1795172361649",
+    "title": "דירת קרטונים",
+    "name": "דירת קרטונים",
+    "imageUrl": "/staged_images/pool/ingested_דירת_קרטונים_1795172365631.jpg",
+    "keywords": [
+      "דירת קרטונים",
+      "יושבים אצל אבישי בית ריק"
+    ],
+    "associatedTasks": [
+      "דירת קרטונים",
+      "יושבים אצל אבישי בית ריק"
+    ],
+    "caption": "נכנסים או יוצאים מהדירה",
+    "emoji": "📦",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-20T10:59:25.666Z"
+  },
+  {
+    "id": "ingested_1795171489997",
+    "title": "מקרר ריק",
+    "name": "מקרר ריק",
+    "imageUrl": "/staged_images/pool/ingested_מקרר_ריק_1795171489971.jpg",
+    "keywords": [
+      "מקרר ריק"
+    ],
+    "associatedTasks": [
+      "מקרר ריק"
+    ],
+    "caption": "Empty Refrigerator Interior | Premium Photo | Open refrigerator drawing ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:44:49.997Z"
+  },
+  {
+    "id": "ingested_1795171464155",
+    "title": "פלטת שבת",
+    "name": "פלטת שבת",
+    "imageUrl": "/staged_images/pool/ingested_פלטת_שבת_1795171472015.jpg",
+    "keywords": [
+      "פלטת שבת",
+      "ארוחת שישי"
+    ],
+    "associatedTasks": [
+      "פלטת שבת",
+      "ארוחת שישי"
+    ],
+    "caption": "מחמם את האוכל בחג",
+    "emoji": "🔌",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-20T10:44:32.047Z"
+  },
+  {
+    "id": "ingested_1795171460831",
+    "title": "חלה קולעת",
+    "name": "חלה קולעת",
+    "imageUrl": "/staged_images/pool/ingested_חלה_קולעת_1795171476921.jpg",
+    "keywords": [
+      "חלה קולעת",
+      "ארוחת שישי"
+    ],
+    "associatedTasks": [
+      "ארוחת שישי",
+      "חלה קולעת"
+    ],
+    "caption": "Braided Sabbath (3-Egg Challah) Bread Recipe",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:44:36.955Z"
+  },
+  {
+    "id": "ingested_1795171423259",
+    "title": "שלט רחוק",
+    "name": "שלט רחוק",
+    "imageUrl": "/staged_images/pool/ingested_שלט_רחוק_1795171433837.jpg",
+    "keywords": [
+      "שלט רחוק",
+      "יושבים אצל אבישי בית ריק"
+    ],
+    "associatedTasks": [
+      "שלט רחוק",
+      "יושבים אצל אבישי בית ריק"
+    ],
+    "caption": "חפץ ראשון שתופסים בסלון ריק",
+    "emoji": "📱",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:43:53.859Z"
+  },
+  {
+    "id": "ingested_1795171419433",
+    "title": "ספה ריקה",
+    "name": "ספה ריקה",
+    "imageUrl": "/staged_images/pool/ingested_ספה_ריקה_1795171419407.jpg",
+    "keywords": [
+      "ספה ריקה"
+    ],
+    "associatedTasks": [
+      "ספה ריקה"
+    ],
+    "caption": "What to do With Empty Space in Living Room? - roomdsign.com",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-20T10:43:39.433Z"
+  },
+  {
+    "id": "ingested_1795171398895",
+    "title": "שחקן מקצוען",
+    "name": "שחקן מקצוען",
+    "imageUrl": "/staged_images/pool/ingested_שחקן_מקצוען_1795171427219.jpg",
+    "keywords": [
+      "שחקן מקצוען",
+      "פאדל עם איתן"
+    ],
+    "associatedTasks": [
+      "שחקן מקצוען",
+      "פאדל עם איתן"
+    ],
+    "caption": "דמות ספורטיבית על המגרש",
+    "emoji": "🏃‍♂️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-20T10:43:47.285Z"
+  },
+  {
+    "id": "ingested_1795171371861",
+    "title": "מגרש זכוכית",
+    "name": "מגרש זכוכית",
+    "imageUrl": "/staged_images/pool/ingested_מגרש_זכוכית_1795171387874.jpg",
+    "keywords": [
+      "מגרש זכוכית",
+      "פאדל עם איתן"
+    ],
+    "associatedTasks": [
+      "מגרש זכוכית",
+      "פאדל עם איתן"
+    ],
+    "caption": "קירות הזכוכית הייחודיים למשחק",
+    "emoji": "🪟",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-20T10:43:07.898Z"
+  },
+  {
+    "id": "ingested_1795171321871",
+    "title": "מנגל נייד",
+    "name": "מנגל נייד",
+    "imageUrl": "/staged_images/pool/ingested_מנגל_נייד_1795171324912.jpg",
+    "keywords": [
+      "מנגל נייד",
+      "לשחק עם החברים"
+    ],
+    "associatedTasks": [
+      "מנגל נייד",
+      "לשחק עם החברים"
+    ],
+    "caption": "על האש עם חברים",
+    "emoji": "🥩",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:42:04.950Z"
+  },
+  {
+    "id": "ingested_1795171320440",
+    "title": "מלכה שחורה",
+    "name": "מלכה שחורה",
+    "imageUrl": "/staged_images/pool/ingested_מלכה_שחורה_1795171349904.webp",
+    "keywords": [
+      "מלכה שחורה",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "associatedTasks": [
+      "מלכה שחורה",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "caption": "הכלי החזק ביותר על הלוח",
+    "emoji": "♛",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-20T10:42:30.021Z"
+  },
+  {
+    "id": "ingested_1795171309175",
+    "title": "שולחן פוקר",
+    "name": "שולחן פוקר",
+    "imageUrl": "/staged_images/pool/ingested_שולחן_פוקר_1795171317118.jpg",
+    "keywords": [
+      "שולחן פוקר",
+      "לשחק עם החברים"
+    ],
+    "associatedTasks": [
+      "שולחן פוקר",
+      "לשחק עם החברים"
+    ],
+    "caption": "בילוי לילי סביב השולחן",
+    "emoji": "🃏",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-20T10:41:57.148Z"
+  },
+  {
+    "id": "ingested_1795171290062",
+    "title": "מקלדת",
+    "name": "מקלדת",
+    "imageUrl": "/staged_images/pool/ingested_מקלדת_1795171295299.jpg",
+    "keywords": [
+      "מקלדת",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "מקלדת",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "כלי הכתיבה של שפת הקידוד",
+    "emoji": "⌨️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-20T10:41:35.325Z"
+  },
+  {
+    "id": "ingested_1795171279743",
+    "title": "אנאקונדה",
+    "name": "אנאקונדה",
+    "imageUrl": "/staged_images/pool/ingested_אנאקונדה_1795171285102.jpg",
+    "keywords": [
+      "אנאקונדה",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "אנאקונדה",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "נחש ענק וחזק במיוחד",
+    "emoji": "🐍",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:41:25.123Z"
+  },
+  {
+    "id": "ingested_1795171272817",
+    "title": "גביע קידוש",
+    "name": "גביע קידוש",
+    "imageUrl": "/staged_images/pool/ingested_גביע_קידוש_1795171277088.jpg",
+    "keywords": [
+      "גביע קידוש",
+      "ארוחת שישי",
+      "ארוחת",
+      "גביע",
+      "קידוש"
+    ],
+    "associatedTasks": [
+      "גביע קידוש",
+      "ארוחת שישי"
+    ],
+    "caption": "ברכת היין בפתיחת הארוחה",
+    "emoji": "🍷",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:42:49.026Z"
+  },
+  {
+    "id": "ingested_1795171208604",
+    "title": "גונדולייר ונציה",
+    "name": "גונדולייר ונציה",
+    "imageUrl": "/staged_images/pool/ingested_גונדולייר_ונציה_1795171208579.jpg",
+    "keywords": [
+      "גונדולייר ונציה"
+    ],
+    "associatedTasks": [
+      "גונדולייר ונציה"
+    ],
+    "caption": "The History of the Gondola | When in Venice",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 70,
+    "approvedAt": "2026-11-20T10:40:08.604Z"
+  },
+  {
+    "id": "approved_1795126320991",
+    "title": "פדינגטון הדב מחכה עם מזוודה ליד שער הגן 🐻🧳",
+    "name": "פדינגטון הדב מחכה עם מזוודה ליד שער הגן 🐻🧳",
+    "imageUrl": "/staged_images/pool/paddington_bear_marmalade.jpg",
+    "keywords": [
+      "ילדה",
+      "מטורפת",
+      "פדינגטון",
+      "הדב",
+      "מחכה",
+      "עם",
+      "מזוודה",
+      "שער",
+      "הגן",
+      "🐻🧳",
+      "ילדה מטורפת",
+      "פדינגטון הדב מחכה עם מזוודה ליד שער הגן 🐻🧳"
+    ],
+    "associatedTasks": [
+      "ילדה מטורפת",
+      "פדינגטון הדב מחכה עם מזוודה ליד שער הגן 🐻🧳"
+    ],
+    "caption": "פדינגטון הדב החמוד עם מגפיו ומזוודתו הקטנה מחכה בסבלנות ליד שער הגן!",
+    "emoji": "☂️",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:12:00.991Z"
+  },
+  {
+    "id": "approved_1795126279952",
+    "title": "קופידון מלאך האהבה",
+    "name": "קופידון מלאך האהבה",
+    "imageUrl": "/staged_images/pool/item_184_מלאך_קטן_עם_חץ_וקשת__קופידון___מסמל.jpg",
+    "keywords": [
+      "אהבה",
+      "קצרה",
+      "קופידון",
+      "מלאך",
+      "האהבה",
+      "אהבה קצרה",
+      "קופידון מלאך האהבה"
+    ],
+    "associatedTasks": [
+      "אהבה קצרה",
+      "קופידון מלאך האהבה"
+    ],
+    "caption": "אהבה קצרה",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:11:19.952Z"
+  },
+  {
+    "id": "ingested_1795126155694",
+    "title": "קמטים בפנים",
+    "name": "קמטים בפנים",
+    "imageUrl": "/staged_images/pool/ingested_קמטים_בפנים_1795126155659.jpg",
+    "keywords": [
+      "קמטים בפנים"
+    ],
+    "associatedTasks": [
+      "קמטים בפנים"
+    ],
+    "caption": "Old age",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T22:09:15.694Z"
+  },
+  {
+    "id": "ingested_1795126132552",
+    "title": "שעון נמס",
+    "name": "שעון נמס",
+    "imageUrl": "/staged_images/pool/ingested_שעון_נמס_1795126135961.jpg",
+    "keywords": [
+      "שעון נמס",
+      "חיים בתוך חלום"
+    ],
+    "associatedTasks": [
+      "שעון נמס",
+      "חיים בתוך חלום"
+    ],
+    "caption": "סממן בולט של עיוות הזמן בחלום",
+    "emoji": "🕰️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:08:55.984Z"
+  },
+  {
+    "id": "ingested_1795126125193",
+    "title": "חד קרן",
+    "name": "חד קרן",
+    "imageUrl": "/staged_images/pool/ingested_חד_קרן_1795126128452.jpg",
+    "keywords": [
+      "חד קרן",
+      "חיים בתוך חלום"
+    ],
+    "associatedTasks": [
+      "חד קרן",
+      "חיים בתוך חלום"
+    ],
+    "caption": "יצור פלאי מעולמות האגדה",
+    "emoji": "🦄",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T22:08:48.657Z"
+  },
+  {
+    "id": "ingested_1795126100768",
+    "title": "ג'יני",
+    "name": "ג'יני",
+    "imageUrl": "/staged_images/pool/ingested_ג_יני_1795126104777.jpg",
+    "keywords": [
+      "ג'יני",
+      "לחיות לנצח"
+    ],
+    "associatedTasks": [
+      "ג'יני",
+      "לחיות לנצח"
+    ],
+    "caption": "יצור קסום שחי לנצח",
+    "emoji": "🧞",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T22:08:24.806Z"
+  },
+  {
+    "id": "ingested_1795126089191",
+    "title": "ארנב מהאגדות",
+    "name": "ארנב מהאגדות",
+    "imageUrl": "/staged_images/pool/ingested_ארנב_מהאגדות_1795126089173.jpg",
+    "keywords": [
+      "ארנב מהאגדות",
+      "סימני הזמן",
+      "סימני",
+      "הזמן",
+      "ארנב",
+      "מהאגדות"
+    ],
+    "associatedTasks": [
+      "סימני הזמן",
+      "ארנב מהאגדות"
+    ],
+    "caption": "ממהר עם שעון כיס",
+    "emoji": "🐇",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:10:50.537Z"
+  },
+  {
+    "id": "ingested_1795126067348",
+    "title": "אליס בארץ",
+    "name": "אליס בארץ",
+    "imageUrl": "/staged_images/pool/ingested_אליס_בארץ_1795126069395.jpg",
+    "keywords": [
+      "אליס בארץ",
+      "חיים בתוך חלום",
+      "חיים",
+      "בתוך",
+      "חלום",
+      "אליס",
+      "בארץ"
+    ],
+    "associatedTasks": [
+      "אליס בארץ",
+      "חיים בתוך חלום"
+    ],
+    "caption": "דמות קלאסית שנופלת לתוך עולם הזויי",
+    "emoji": "🕳️",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:10:22.629Z"
+  },
+  {
+    "id": "ingested_1795125954124",
+    "title": "מרצה קפדן",
+    "name": "מרצה קפדן",
+    "imageUrl": "/staged_images/pool/ingested_מרצה_קפדן_1795125956669.jpg",
+    "keywords": [
+      "מרצה קפדן",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "associatedTasks": [
+      "מרצה קפדן",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "caption": "הבודק הקשוח של העבודה",
+    "emoji": "👨‍🏫",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-19T22:05:56.689Z"
+  },
+  {
+    "id": "ingested_1795125941987",
+    "title": "מלכה",
+    "name": "מלכה",
+    "imageUrl": "/staged_images/pool/ingested_מלכה_1795125945108.jpg",
+    "keywords": [
+      "מלכה",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "associatedTasks": [
+      "מלכה",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "caption": "הכלי החזק ביותר על הלוח",
+    "emoji": "♕",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:05:45.180Z"
+  },
+  {
+    "id": "ingested_1795125927823",
+    "title": "מקלדת מחשב",
+    "name": "מקלדת מחשב",
+    "imageUrl": "/staged_images/pool/ingested_מקלדת_מחשב_1795125930834.jpg",
+    "keywords": [
+      "מקלדת מחשב",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "מקלדת מחשב",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "הכלי שבו כותבים קוד",
+    "emoji": "⌨️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:05:30.865Z"
+  },
+  {
+    "id": "ingested_1795125904157",
+    "title": "ארנק",
+    "name": "ארנק",
+    "imageUrl": "/staged_images/pool/ingested_ארנק_1795125906047.jpg",
+    "keywords": [
+      "ארנק",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "associatedTasks": [
+      "ארנק",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "caption": "אביזר לשמירת שטרות וכסף",
+    "emoji": "👛",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:05:06.100Z"
+  },
+  {
+    "id": "approved_1795125730579",
+    "title": "בילבו בגינס",
+    "name": "בילבו בגינס",
+    "imageUrl": "/staged_images/pool/authentic_bilbo_baggins.jpg",
+    "keywords": [
+      "קבעתי",
+      "ארוחה",
+      "עם",
+      "סבתא",
+      "בילבו",
+      "בגינס",
+      "קבעתי ארוחה עם סבתא",
+      "בילבו בגינס"
+    ],
+    "associatedTasks": [
+      "קבעתי ארוחה עם סבתא",
+      "בילבו בגינס"
+    ],
+    "caption": "בילבו בגינס בארמון",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:02:10.579Z"
+  },
+  {
+    "id": "approved_1795125678270",
+    "title": "קלאפר קולנוע",
+    "name": "קלאפר קולנוע",
+    "imageUrl": "/staged_images/pool/new_145_clapperboard.jpg",
+    "keywords": [
+      "סרט",
+      "עם",
+      "אמא",
+      "קלאפר",
+      "קולנוע",
+      "סרט עם אמא",
+      "קלאפר קולנוע"
+    ],
+    "associatedTasks": [
+      "לראות סרט עם אמא",
+      "קלאפר קולנוע"
+    ],
+    "caption": "לראות סרט עם אמא",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T22:01:18.270Z"
+  },
+  {
+    "id": "ingested_1795125538428",
+    "title": "פחית קולה",
+    "name": "פחית קולה",
+    "imageUrl": "/staged_images/pool/ingested_פחית_קולה_1795125540659.jpg",
+    "keywords": [
+      "פחית קולה",
+      "זה לא יהיה רע כל כך"
+    ],
+    "associatedTasks": [
+      "פחית קולה",
+      "זה לא יהיה רע כל כך"
+    ],
+    "caption": "מרענן ומשחרר את כל המתח",
+    "emoji": "🥤",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:59:00.682Z"
+  },
+  {
+    "id": "ingested_1795125533943",
+    "title": "שמש זורחת",
+    "name": "שמש זורחת",
+    "imageUrl": "/staged_images/pool/ingested_שמש_זורחת_1795125535839.jpg",
+    "keywords": [
+      "שמש זורחת",
+      "זה לא יהיה רע כל כך"
+    ],
+    "associatedTasks": [
+      "שמש זורחת",
+      "זה לא יהיה רע כל כך"
+    ],
+    "caption": "היום הופך לטוב יותר מיד",
+    "emoji": "☀️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:58:55.855Z"
+  },
+  {
+    "id": "ingested_1795125503005",
+    "title": "חתול במגפיים",
+    "name": "חתול במגפיים",
+    "imageUrl": "/staged_images/pool/ingested_חתול_במגפיים_1795125502990.jpg",
+    "keywords": [
+      "חתול במגפיים"
+    ],
+    "associatedTasks": [
+      "חתול במגפיים"
+    ],
+    "caption": "Puss In Boots Cute Eyes at Tayla Mein blog",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:58:23.005Z"
+  },
+  {
+    "id": "ingested_1795125490022",
+    "title": "גלדיאטור",
+    "name": "גלדיאטור",
+    "imageUrl": "/staged_images/pool/ingested_גלדיאטור_1795125492211.jpg",
+    "keywords": [
+      "גלדיאטור",
+      "הארנק בקיסריה"
+    ],
+    "associatedTasks": [
+      "גלדיאטור",
+      "הארנק בקיסריה"
+    ],
+    "caption": "לוחם מהאמפיתיאטרון בקיסריה",
+    "emoji": "⚔️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:58:12.254Z"
+  },
+  {
+    "id": "ingested_1795125484909",
+    "title": "מטבע עתיק",
+    "name": "מטבע עתיק",
+    "imageUrl": "/staged_images/pool/ingested_מטבע_עתיק_1795125487105.jpg",
+    "keywords": [
+      "מטבע עתיק",
+      "הארנק בקיסריה"
+    ],
+    "associatedTasks": [
+      "מטבע עתיק",
+      "הארנק בקיסריה"
+    ],
+    "caption": "אוצר עתיק שנשמר בארנק",
+    "emoji": "🪙",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T21:58:07.170Z"
+  },
+  {
+    "id": "ingested_1795125479161",
+    "title": "קלאופטרה",
+    "name": "קלאופטרה",
+    "imageUrl": "/staged_images/pool/ingested_קלאופטרה_1795125481119.jpg",
+    "keywords": [
+      "קלאופטרה",
+      "הארנק בקיסריה"
+    ],
+    "associatedTasks": [
+      "קלאופטרה",
+      "הארנק בקיסריה"
+    ],
+    "caption": "מלכה עתיקה מקיסריה הקדומה",
+    "emoji": "👑",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:58:01.171Z"
+  },
+  {
+    "id": "ingested_1795125454285",
+    "title": "ספיר חופשי",
+    "name": "ספיר חופשי",
+    "imageUrl": "/staged_images/pool/ingested_ספיר_חופשי_1795125458889.jpg",
+    "keywords": [
+      "ספיר חופשי",
+      "לשבור שורות"
+    ],
+    "associatedTasks": [
+      "ספיר חופשי",
+      "לשבור שורות"
+    ],
+    "caption": "לוחם ששובר את השורות",
+    "emoji": "⚔️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:57:38.907Z"
+  },
+  {
+    "id": "ingested_1795125448016",
+    "title": "חומת ברלין",
+    "name": "חומת ברלין",
+    "imageUrl": "/staged_images/pool/ingested_חומת_ברלין_1795125450661.jpg",
+    "keywords": [
+      "חומת ברלין",
+      "לשבור שורות"
+    ],
+    "associatedTasks": [
+      "חומת ברלין",
+      "לשבור שורות"
+    ],
+    "caption": "קיר ענק שנשבר לרסיסים",
+    "emoji": "🧱",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T21:57:30.678Z"
+  },
+  {
+    "id": "ingested_1795125039914",
+    "title": "מרקר צהוב",
+    "name": "מרקר צהוב",
+    "imageUrl": "/staged_images/pool/ingested_מרקר_צהוב_1795125039867.jpg",
+    "keywords": [
+      "מרקר צהוב",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "associatedTasks": [
+      "להגיש סמינריון מודפס למרצה",
+      "מרקר צהוב"
+    ],
+    "caption": "מדגישים איתו פסקאות מפתח בעבודה",
+    "emoji": "🖍️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T21:50:39.914Z"
+  },
+  {
+    "id": "ingested_1795125022899",
+    "title": "סוס אביר",
+    "name": "סוס אביר",
+    "imageUrl": "/staged_images/pool/ingested_סוס_אביר_1795125024793.jpg",
+    "keywords": [
+      "סוס אביר",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "associatedTasks": [
+      "סוס אביר",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "caption": "כלי הסוס שזז בצורת האות ל",
+    "emoji": "🐴",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T21:50:24.862Z"
+  },
+  {
+    "id": "ingested_1795124943364",
+    "title": "מגלשה ענקית",
+    "name": "מגלשה ענקית",
+    "imageUrl": "/staged_images/pool/ingested_מגלשה_ענקית_1795124943304.jpg",
+    "keywords": [
+      "מגלשה ענקית"
+    ],
+    "associatedTasks": [
+      "מגלשה ענקית"
+    ],
+    "caption": "Turbo Space Saver Tube Slide | Playground One",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:49:03.364Z"
+  },
+  {
+    "id": "ingested_1795124865172",
+    "title": "כספת בנק",
+    "name": "כספת בנק",
+    "imageUrl": "/staged_images/pool/ingested_כספת_בנק_1795171205616.jpg",
+    "keywords": [
+      "כספת בנק",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "associatedTasks": [
+      "כספת בנק",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "caption": "Bank vault steel open door. Generate Ai (3309997)",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:40:05.650Z"
+  },
+  {
+    "id": "ingested_1795124860231",
+    "title": "גטסבי הגדול",
+    "name": "גטסבי הגדול",
+    "imageUrl": "/staged_images/pool/ingested_גטסבי_הגדול_1795124862444.jpg",
+    "keywords": [
+      "גטסבי הגדול",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "associatedTasks": [
+      "גטסבי הגדול",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "caption": "מסיבת ענק של מיליונר",
+    "emoji": "🥂",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T21:47:42.540Z"
+  },
+  {
+    "id": "ingested_1795124710994",
+    "title": "חותמת גבול",
+    "name": "חותמת גבול",
+    "imageUrl": "/staged_images/pool/ingested_חותמת_גבול_1795171137220.jpg",
+    "keywords": [
+      "חותמת גבול",
+      "להוציא דרכון ביומטרי במשרד הפנים"
+    ],
+    "associatedTasks": [
+      "חותמת גבול",
+      "להוציא דרכון ביומטרי במשרד הפנים"
+    ],
+    "caption": "חותמת הדיו המוטבעת בעמודי המסמך",
+    "emoji": "🛂",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-20T10:38:57.243Z"
+  },
+  {
+    "id": "ingested_1795124441531",
+    "title": "מבחנה",
+    "name": "מבחנה",
+    "imageUrl": "/staged_images/pool/ingested_מבחנה_1795124441487.jpg",
+    "keywords": [
+      "מבחנה"
+    ],
+    "associatedTasks": [
+      "מבחנה"
+    ],
+    "caption": "test in which venous blood is clotted in a test tube - Captions Prince",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 70,
+    "approvedAt": "2026-11-19T21:40:41.531Z"
+  },
+  {
+    "id": "ingested_1795117132791",
+    "title": "לוח משבצות",
+    "name": "לוח משבצות",
+    "imageUrl": "/staged_images/pool/ingested_לוח_משבצות_1795171360970.jpg",
+    "keywords": [
+      "לוח משבצות",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "associatedTasks": [
+      "לוח משבצות",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "caption": "הזירה שעליה מתנהל הקרב",
+    "emoji": "🏁",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-20T10:42:41.013Z"
+  },
+  {
+    "id": "ingested_1795117112965",
+    "title": "משקולת ברזל",
+    "name": "משקולת ברזל",
+    "imageUrl": "/staged_images/pool/ingested_משקולת_ברזל_1795117114632.jpg",
+    "keywords": [
+      "משקולת ברזל",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "משקולת ברזל",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "מסמל את כוח החניקה העצום",
+    "emoji": "🏋️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:38:34.724Z"
+  },
+  {
+    "id": "ingested_1795117106649",
+    "title": "ג'ונגל עבות",
+    "name": "ג'ונגל עבות",
+    "imageUrl": "/staged_images/pool/ingested_ג_ונגל_עבות_1795117108726.jpg",
+    "keywords": [
+      "ג'ונגל עבות",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "ג'ונגל עבות",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "בית הגידול הטבעי של הנחש",
+    "emoji": "🌴",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:38:28.760Z"
+  },
+  {
+    "id": "ingested_1795117084934",
+    "title": "שטר כסף",
+    "name": "שטר כסף",
+    "imageUrl": "/staged_images/pool/ingested_שטר_כסף_1795117086902.jpg",
+    "keywords": [
+      "שטר כסף",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "associatedTasks": [
+      "שטר כסף",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "caption": "הכסף שנכנס לחשבון הבנק",
+    "emoji": "💵",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:38:06.997Z"
+  },
+  {
+    "id": "ingested_1795117060919",
+    "title": "מבחנת דם",
+    "name": "מבחנת דם",
+    "imageUrl": "/staged_images/pool/ingested_מבחנת_דם_1795117063185.jpg",
+    "keywords": [
+      "מבחנת דם",
+      "תור לבדיקת דם בקופת חולים"
+    ],
+    "associatedTasks": [
+      "מבחנת דם",
+      "תור לבדיקת דם בקופת חולים"
+    ],
+    "caption": "מיכל איסוף הדם לבדיקה",
+    "emoji": "🧪",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-19T19:37:43.273Z"
+  },
+  {
+    "id": "ingested_1795117056027",
+    "title": "מזרק רפואי",
+    "name": "מזרק רפואי",
+    "imageUrl": "/staged_images/pool/ingested_מזרק_רפואי_1795117057527.jpg",
+    "keywords": [
+      "מזרק רפואי",
+      "תור לבדיקת דם בקופת חולים"
+    ],
+    "associatedTasks": [
+      "מזרק רפואי",
+      "תור לבדיקת דם בקופת חולים"
+    ],
+    "caption": "כלי שואב דם ישיר",
+    "emoji": "💉",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:37:37.570Z"
+  },
+  {
+    "id": "ingested_1795116987964",
+    "title": "פרופסור מפוזר",
+    "name": "פרופסור מפוזר",
+    "imageUrl": "/staged_images/pool/ingested_פרופסור_מפוזר_1795116987929.jpg",
+    "keywords": [
+      "פרופסור מפוזר"
+    ],
+    "associatedTasks": [
+      "פרופסור מפוזר"
+    ],
+    "caption": "A mad scientist with wild hair and glasses mixes a bubbling potion in a ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:36:27.964Z"
+  },
+  {
+    "id": "ingested_1795116982063",
+    "title": "איינשטיין",
+    "name": "איינשטיין",
+    "imageUrl": "/staged_images/pool/ingested_איינשטיין_1795116984876.jpg",
+    "keywords": [
+      "איינשטיין",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "associatedTasks": [
+      "איינשטיין",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "caption": "גאון אקדמי שמסמל מחקר",
+    "emoji": "🧠",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:36:24.919Z"
+  },
+  {
+    "id": "ingested_1795116953866",
+    "title": "טרקטור קטרפילר",
+    "name": "טרקטור קטרפילר",
+    "imageUrl": "/staged_images/pool/ingested_טרקטור_קטרפילר_1795116958979.jpg",
+    "keywords": [
+      "טרקטור קטרפילר",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "טרקטור קטרפילר",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "כלי עבודה צהוב וענק",
+    "emoji": "🚜",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:35:58.994Z"
+  },
+  {
+    "id": "ingested_1795116926896",
+    "title": "חתימה",
+    "name": "חתימה",
+    "imageUrl": "/staged_images/pool/ingested_חתימה_1795116926853.jpg",
+    "keywords": [
+      "חתימה"
+    ],
+    "associatedTasks": [
+      "חתימה"
+    ],
+    "caption": "5 amazing famous signature facts - The Pen Company Blog",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:35:26.896Z"
+  },
+  {
+    "id": "ingested_1795116917808",
+    "title": "עט",
+    "name": "עט",
+    "imageUrl": "/staged_images/pool/ingested_עט_1795116917749.jpg",
+    "keywords": [
+      "עט"
+    ],
+    "associatedTasks": [
+      "עט"
+    ],
+    "caption": "File:Blue ink pen.jpg - Wikimedia Commons",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:35:17.808Z"
+  },
+  {
+    "id": "ingested_1795116893356",
+    "title": "כספת נעולה",
+    "name": "כספת נעולה",
+    "imageUrl": "/staged_images/pool/ingested_כספת_נעולה_1795117078962.jpg",
+    "keywords": [
+      "כספת נעולה",
+      "להוציא דרכון ביומטרי במשרד הפנים"
+    ],
+    "associatedTasks": [
+      "להוציא דרכון ביומטרי במשרד הפנים",
+      "כספת נעולה"
+    ],
+    "caption": "שמירת נתונים אישיים מאובטחים",
+    "emoji": "🔐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:37:58.995Z"
+  },
+  {
+    "id": "ingested_1795116843834",
+    "title": "מזרק רפואתי",
+    "name": "מזרק רפואתי",
+    "imageUrl": "/staged_images/pool/ingested_מזרק_רפואתי_1795116872445.jpg",
+    "keywords": [
+      "מזרק רפואתי",
+      "תור לבדיקת דם בקופת חולים"
+    ],
+    "associatedTasks": [
+      "מזרק רפואתי",
+      "תור לבדיקת דם בקופת חולים"
+    ],
+    "caption": "שואב דם למבחנה",
+    "emoji": "💉",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:34:32.507Z"
+  },
+  {
+    "id": "ingested_1795116773760",
+    "title": "כריכה קשה",
+    "name": "כריכה קשה",
+    "imageUrl": "/staged_images/pool/ingested_כריכה_קשה_1795116775515.jpg",
+    "keywords": [
+      "כריכה קשה",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "associatedTasks": [
+      "כריכה קשה",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "caption": "העבודה המודפסת והכרוכה",
+    "emoji": "📚",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:32:55.575Z"
+  },
+  {
+    "id": "ingested_1795116767968",
+    "title": "מכונת צילום",
+    "name": "מכונת צילום",
+    "imageUrl": "/staged_images/pool/ingested_מכונת_צילום_1795116770751.jpg",
+    "keywords": [
+      "מכונת צילום",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "associatedTasks": [
+      "מכונת צילום",
+      "להגיש סמינריון מודפס למרצה"
+    ],
+    "caption": "מדפיסים בה את הסמינריון",
+    "emoji": "🖨️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:32:50.819Z"
+  },
+  {
+    "id": "ingested_1795116758579",
+    "title": "פרופסור חכם",
+    "name": "פרופסור חכם",
+    "imageUrl": "/staged_images/pool/ingested_פרופסור_חכם_1795116758502.jpg",
+    "keywords": [
+      "פרופסור חכם"
+    ],
+    "associatedTasks": [
+      "פרופסור חכם"
+    ],
+    "caption": "Wise old man",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T19:32:38.579Z"
+  },
+  {
+    "id": "ingested_1795116745865",
+    "title": "גמביט המלכה",
+    "name": "גמביט המלכה",
+    "imageUrl": "/staged_images/pool/ingested_גמביט_המלכה_1795116745780.jpg",
+    "keywords": [
+      "גמביט המלכה",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "associatedTasks": [
+      "לרשום את הילד לחוג שחמט",
+      "גמביט המלכה"
+    ],
+    "caption": "סדרת השחמט המפורסמת ביותר בנטפליקס",
+    "emoji": "📺",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T19:32:25.865Z"
+  },
+  {
+    "id": "ingested_1795116725430",
+    "title": "גארי קספרוב",
+    "name": "גארי קספרוב",
+    "imageUrl": "/staged_images/pool/ingested_גארי_קספרוב_1795116728220.jpg",
+    "keywords": [
+      "גארי קספרוב",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "associatedTasks": [
+      "גארי קספרוב",
+      "לרשום את הילד לחוג שחמט"
+    ],
+    "caption": "אלוף העולם האגדי בשחמט",
+    "emoji": "👑",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:32:08.340Z"
+  },
+  {
+    "id": "ingested_1795116699519",
+    "title": "האקר ממוחשב",
+    "name": "האקר ממוחשב",
+    "imageUrl": "/staged_images/pool/ingested_האקר_ממוחשב_1795116699448.jpg",
+    "keywords": [
+      "האקר ממוחשב"
+    ],
+    "associatedTasks": [
+      "האקר ממוחשב"
+    ],
+    "caption": "Free Hacker typing code Image - Hacker, Coding, Technology | Download ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T19:31:39.519Z"
+  },
+  {
+    "id": "ingested_1795116694704",
+    "title": "נחש קונסטריקטור",
+    "name": "נחש קונסטריקטור",
+    "imageUrl": "/staged_images/pool/ingested_נחש_קונסטריקטור_1795116696282.jpg",
+    "keywords": [
+      "נחש קונסטריקטור",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "נחש קונסטריקטור",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "החיה שעל שמה נקראת השפה",
+    "emoji": "🐍",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:31:36.418Z"
+  },
+  {
+    "id": "ingested_1795116679679",
+    "title": "חותמת בנק",
+    "name": "חותמת בנק",
+    "imageUrl": "/staged_images/pool/ingested_חותמת_בנק_1795116679648.jpg",
+    "keywords": [
+      "חותמת בנק",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "associatedTasks": [
+      "להפקיד צ'ק בחשבון הבנק",
+      "חותמת בנק"
+    ],
+    "caption": "אישור הפקדה רשמי",
+    "emoji": "✒️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T19:31:19.679Z"
+  },
+  {
+    "id": "ingested_1795116667826",
+    "title": "שטרות כסף",
+    "name": "שטרות כסף",
+    "imageUrl": "/staged_images/pool/ingested_שטרות_כסף_1795116667758.jpg",
+    "keywords": [
+      "שטרות כסף"
+    ],
+    "associatedTasks": [
+      "שטרות כסף"
+    ],
+    "caption": "stack of cash money",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:31:07.826Z"
+  },
+  {
+    "id": "ingested_1795116657484",
+    "title": "כספת ענקית",
+    "name": "כספת ענקית",
+    "imageUrl": "/staged_images/pool/ingested_כספת_ענקית_1795116662297.jpg",
+    "keywords": [
+      "כספת ענקית",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "associatedTasks": [
+      "כספת ענקית",
+      "להפקיד צ'ק בחשבון הבנק"
+    ],
+    "caption": "כספת בנק שמורה היטב",
+    "emoji": "🏦",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:31:02.379Z"
+  },
+  {
+    "id": "ingested_1795116640160",
+    "title": "מצלמת פולארויד",
+    "name": "מצלמת פולארויד",
+    "imageUrl": "/staged_images/pool/ingested_מצלמת_פולארויד_1795116640106.jpg",
+    "keywords": [
+      "מצלמת פולארויד"
+    ],
+    "associatedTasks": [
+      "מצלמת פולארויד"
+    ],
+    "caption": "News and Reviews on the Latest from Polaroid in 2026 | Digital Camera World",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-19T19:30:40.160Z"
+  },
+  {
+    "id": "ingested_1795114491610",
+    "title": "מקלות תיפוף",
+    "name": "מקלות תיפוף",
+    "imageUrl": "/staged_images/pool/ingested_מקלות_תיפוף_1795114494207.jpg",
+    "keywords": [
+      "מקלות תיפוף",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "associatedTasks": [
+      "מקלות תיפוף",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "caption": "יוצרים את הקצב בהופעה חיה",
+    "emoji": "🥁",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T18:54:54.274Z"
+  },
+  {
+    "id": "ingested_1795114484007",
+    "title": "מיקרופון זהב",
+    "name": "מיקרופון זהב",
+    "imageUrl": "/staged_images/pool/ingested_מיקרופון_זהב_1795114488160.jpg",
+    "keywords": [
+      "מיקרופון זהב",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "associatedTasks": [
+      "מיקרופון זהב",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "caption": "כלי הנגשה מרכזי של הזמר",
+    "emoji": "🎤",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T18:54:48.231Z"
+  },
+  {
+    "id": "ingested_1795114445974",
+    "title": "אצטדיון ענק",
+    "name": "אצטדיון ענק",
+    "imageUrl": "/staged_images/pool/ingested_אצטדיון_ענק_1795114447989.jpg",
+    "keywords": [
+      "אצטדיון ענק",
+      "להזמין כרטיסים להופעה של עומר אדם",
+      "כדורגל",
+      "בניצני",
+      "עוז",
+      "אצטדיון",
+      "ענק",
+      "כדורגל בניצני עוז"
+    ],
+    "associatedTasks": [
+      "אצטדיון ענק",
+      "להזמין כרטיסים להופעה של עומר אדם",
+      "כדורגל בניצני עוז"
+    ],
+    "caption": "כדורגל בניצני עוז",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:42:31.037Z"
+  },
+  {
+    "id": "ingested_1795114443042",
+    "title": "טישרט מעריצים",
+    "name": "טישרט מעריצים",
+    "imageUrl": "/staged_images/pool/ingested_טישרט_מעריצים_1795114442988.jpg",
+    "keywords": [
+      "טישרט מעריצים",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "associatedTasks": [
+      "להזמין כרטיסים להופעה של עומר אדם",
+      "טישרט מעריצים"
+    ],
+    "caption": "חולצת מרצ'נדייז רשמית של הופעה",
+    "emoji": "👕",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T18:54:03.043Z"
+  },
+  {
+    "id": "ingested_1795114421459",
+    "title": "מדונה",
+    "name": "מדונה",
+    "imageUrl": "/staged_images/pool/ingested_מדונה_1795114430899.jpg",
+    "keywords": [
+      "מדונה",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "associatedTasks": [
+      "מדונה",
+      "להזמין כרטיסים להופעה של עומר אדם"
+    ],
+    "caption": "מלכת הפופ על הבמה",
+    "emoji": "🎤",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T18:53:50.983Z"
+  },
+  {
+    "id": "ingested_1795108456019",
+    "title": "פקק ירוק",
+    "name": "פקק ירוק",
+    "imageUrl": "/staged_images/pool/ingested_פקק_ירוק_1795108459543.jpg",
+    "keywords": [
+      "פקק ירוק",
+      "מילוי סולר"
+    ],
+    "associatedTasks": [
+      "פקק ירוק",
+      "מילוי סולר"
+    ],
+    "caption": "הפקק של מיכל הסולר",
+    "emoji": "🟢",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T17:14:19.578Z"
+  },
+  {
+    "id": "ingested_1795108451413",
+    "title": "טרקטור צהוב",
+    "name": "טרקטור צהוב",
+    "imageUrl": "/staged_images/pool/ingested_טרקטור_צהוב_1795108452509.jpg",
+    "keywords": [
+      "טרקטור צהוב",
+      "מילוי סולר"
+    ],
+    "associatedTasks": [
+      "טרקטור צהוב",
+      "מילוי סולר"
+    ],
+    "caption": "כלי רכב כבד שצורך סולר",
+    "emoji": "🚜",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T17:14:12.538Z"
+  },
+  {
+    "id": "approved_1795105485189",
+    "title": "שליחות קטלנית",
+    "name": "שליחות קטלנית",
+    "imageUrl": "/staged_images/pool/arnold_terminator.jpg",
+    "keywords": [
+      "המשקפיים",
+      "שליחות",
+      "קטלנית",
+      "משקפיים",
+      "שליחות קטלנית"
+    ],
+    "associatedTasks": [
+      "להביא את המשקפיים",
+      "שליחות קטלנית"
+    ],
+    "caption": "להביא את המשקפיים",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T16:24:45.189Z"
+  },
+  {
+    "id": "approved_1795105471695",
+    "title": "קופת צדקה",
+    "name": "קופת צדקה",
+    "imageUrl": "/staged_images/pool/new_150_charity_box.jpg",
+    "keywords": [
+      "ארנק",
+      "חדש",
+      "קופת",
+      "צדקה",
+      "ארנק חדש",
+      "קופת צדקה"
+    ],
+    "associatedTasks": [
+      "לקנות ארנק חדש",
+      "קופת צדקה"
+    ],
+    "caption": "איסוף כסף מזומן",
+    "emoji": "🪙",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T16:24:31.695Z"
+  },
+  {
+    "id": "ingested_1795105467781",
+    "title": "מצנפת המצנח",
+    "name": "מצנפת המצנח",
+    "imageUrl": "/staged_images/pool/ingested_מצנפת_המצנח_1795105506885.jpg",
+    "keywords": [
+      "מצנפת המצנח",
+      "להשתמש בשרביט הבכור"
+    ],
+    "associatedTasks": [
+      "מצנפת המצנח",
+      "להשתמש בשרביט הבכור"
+    ],
+    "caption": "פריט קסום הוגוורטס מוכר",
+    "emoji": "🎩",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T16:25:06.907Z"
+  },
+  {
+    "id": "ingested_1795105333182",
+    "title": "דמבלדור",
+    "name": "דמבלדור",
+    "imageUrl": "/staged_images/pool/ingested_דמבלדור_1795105436530.jpg",
+    "keywords": [
+      "דמבלדור"
+    ],
+    "associatedTasks": [
+      "דמבלדור"
+    ],
+    "caption": "Dumbledore Wallpapers | Wallpapers.com",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T16:23:56.553Z"
+  },
+  {
+    "id": "ingested_1795105281665",
+    "title": "מדען מטורף",
+    "name": "מדען מטורף",
+    "imageUrl": "/staged_images/pool/ingested_מדען_מטורף_1795105288120.jpg",
+    "keywords": [
+      "מדען מטורף",
+      "להביא את המשקפיים"
+    ],
+    "associatedTasks": [
+      "להביא את המשקפיים",
+      "מדען מטורף"
+    ],
+    "caption": "A mad scientist with wild hair and glasses mixes a bubbling potion in a ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T16:21:28.143Z"
+  },
+  {
+    "id": "ingested_1795105216905",
+    "title": "קופסת מתנה",
+    "name": "קופסת מתנה",
+    "imageUrl": "/staged_images/pool/ingested_קופסת_מתנה_1795105240605.jpg",
+    "keywords": [
+      "קופסת מתנה",
+      "לקנות ארנק חדש"
+    ],
+    "associatedTasks": [
+      "קופסת מתנה",
+      "לקנות ארנק חדש"
+    ],
+    "caption": "מוצר נוצץ חדש בקופסה",
+    "emoji": "🎁",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T16:20:40.625Z"
+  },
+  {
+    "id": "ingested_1795105195134",
+    "title": "ג'יימס בונד",
+    "name": "ג'יימס בונד",
+    "imageUrl": "/staged_images/pool/ingested_ג_יימס_בונד_1795105206128.jpg",
+    "keywords": [
+      "ג'יימס בונד",
+      "לקנות ארנק חדש"
+    ],
+    "associatedTasks": [
+      "ג'יימס בונד",
+      "לקנות ארנק חדש"
+    ],
+    "caption": "סוכן חשאי שולף ארנק עור",
+    "emoji": "💼",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T16:20:06.152Z"
+  },
+  {
+    "id": "approved_1795103645779",
+    "title": "ערימת מגבות נקיות",
+    "name": "ערימת מגבות נקיות",
+    "imageUrl": "/staged_images/pool/new_098_towel_stack.jpg",
+    "keywords": [
+      "כביסה",
+      "בדחיפות",
+      "ערימת",
+      "מגבות",
+      "נקיות",
+      "ערימת מגבות נקיות"
+    ],
+    "associatedTasks": [
+      "כביסה בדחיפות",
+      "ערימת מגבות נקיות"
+    ],
+    "caption": "כביסה בדחיפות",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T15:54:05.779Z"
+  },
+  {
+    "id": "approved_1795103633831",
+    "title": "סליל חוטים צבעוני",
+    "name": "סליל חוטים צבעוני",
+    "imageUrl": "/staged_images/pool/new_090_thread_spool.jpg",
+    "keywords": [
+      "בגדים",
+      "חדשים",
+      "סליל",
+      "חוטים",
+      "צבעוני",
+      "בגדים חדשים",
+      "סליל חוטים צבעוני"
+    ],
+    "associatedTasks": [
+      "בגדים חדשים",
+      "סליל חוטים צבעוני"
+    ],
+    "caption": "בגדים חדשים",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T15:53:53.831Z"
+  },
+  {
+    "id": "ingested_1795103394399",
+    "title": "לוח פינקו",
+    "name": "לוח פינקו",
+    "imageUrl": "/staged_images/pool/ingested_לוח_פינקו_1795103401847.jpg",
+    "keywords": [
+      "לוח פינקו",
+      "להכפיל"
+    ],
+    "associatedTasks": [
+      "לוח פינקו",
+      "להכפיל"
+    ],
+    "caption": "הכדורים מתפצלים ומתרבים למטה",
+    "emoji": "🎯",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T15:50:01.871Z"
+  },
+  {
+    "id": "ingested_1795103370335",
+    "title": "מראות",
+    "name": "מראות",
+    "imageUrl": "/staged_images/pool/ingested_מראות_1795103375056.jpg",
+    "keywords": [
+      "מראות",
+      "להכפיל"
+    ],
+    "associatedTasks": [
+      "מראות",
+      "להכפיל"
+    ],
+    "caption": "יוצרות אינסוף העתקים חזותיים",
+    "emoji": "🪞",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T15:49:35.077Z"
+  },
+  {
+    "id": "ingested_1795103341807",
+    "title": "אמבה",
+    "name": "אמבה",
+    "imageUrl": "/staged_images/pool/ingested_אמבה_1795103368754.jpg",
+    "keywords": [
+      "אמבה",
+      "להכפיל"
+    ],
+    "associatedTasks": [
+      "אמבה",
+      "להכפיל"
+    ],
+    "caption": "מתחלקת לשניים כל הזמן",
+    "emoji": "🦠",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T15:49:28.782Z"
+  },
+  {
+    "id": "ingested_1795103339472",
+    "title": "מכונת הדפסה",
+    "name": "מכונת הדפסה",
+    "imageUrl": "/staged_images/pool/ingested_מכונת_הדפסה_1795103351117.png",
+    "keywords": [
+      "מכונת הדפסה",
+      "להכפיל"
+    ],
+    "associatedTasks": [
+      "מכונת הדפסה",
+      "להכפיל"
+    ],
+    "caption": "מייצרת עותקים רבים ברגע",
+    "emoji": "🖨️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T15:49:11.142Z"
+  },
+  {
+    "id": "ingested_1795103326175",
+    "title": "ארנב",
+    "name": "ארנב",
+    "imageUrl": "/staged_images/pool/ingested_ארנב_1795103326144.jpg",
+    "keywords": [
+      "ארנב"
+    ],
+    "associatedTasks": [
+      "ארנב"
+    ],
+    "caption": "New Zealand White Bunny Rabbit Eating Carrot | Rabbit pictures, Rabbit ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T15:48:46.175Z"
+  },
+  {
+    "id": "approved_1795100393194",
+    "title": "שק כסף",
+    "name": "שק כסף",
+    "imageUrl": "/staged_images/pool/item_157_שק_כסף_שקשור_בחוט_עם_סימן____מסמל.jpg",
+    "keywords": [
+      "לעבור",
+      "הצעה",
+      "לחיסכון",
+      "שק",
+      "כסף",
+      "לעבור על הצעה לחיסכון",
+      "שק כסף"
+    ],
+    "associatedTasks": [
+      "לעבור על הצעה לחיסכון",
+      "שק כסף"
+    ],
+    "caption": "לעבור על הצעה לחיסכון",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T14:59:53.194Z"
+  },
+  {
+    "id": "ingested_1795100300406",
+    "title": "מטוס סילון",
+    "name": "מטוס סילון",
+    "imageUrl": "/staged_images/pool/ingested_מטוס_סילון_1795100307001.jpg",
+    "keywords": [
+      "מטוס סילון",
+      "להזמין את ארצי"
+    ],
+    "associatedTasks": [
+      "מטוס סילון",
+      "להזמין את ארצי"
+    ],
+    "caption": "טס למרחקים ארוכים מעבר לים",
+    "emoji": "✈️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T14:58:27.019Z"
+  },
+  {
+    "id": "ingested_1795100289490",
+    "title": "אינדיאנה ג'ונס",
+    "name": "אינדיאנה ג'ונס",
+    "imageUrl": "/staged_images/pool/ingested_אינדיאנה_ג_ונס_1795172497070.jpg",
+    "keywords": [
+      "אינדיאנה ג'ונס",
+      "להזמין את ארצי",
+      "לסיים פרויקט גמר בפייתון",
+      "לחפש אוצרות"
+    ],
+    "associatedTasks": [
+      "להזמין את ארצי",
+      "אינדיאנה ג'ונס",
+      "לסיים פרויקט גמר בפייתון",
+      "לחפש אוצרות"
+    ],
+    "caption": "הרפתקן שמחפש עתיקות",
+    "emoji": "🤠",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T11:01:37.100Z"
+  },
+  {
+    "id": "approved_1795095479846",
+    "title": "ג'ויסטיק",
+    "name": "ג'ויסטיק",
+    "imageUrl": "/staged_images/pool/item_347_ג_ויסטיק.jpg",
+    "keywords": [
+      "עם",
+      "אבא",
+      "אם",
+      "הוא",
+      "שיחק",
+      "גי",
+      "טי",
+      "איי",
+      "ויסטיק",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\"",
+      "ג'ויסטיק"
+    ],
+    "associatedTasks": [
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\"",
+      "ג'ויסטיק"
+    ],
+    "caption": "ידית הפעלה קלאסית למשחקים",
+    "emoji": "🕹️",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:37:59.846Z"
+  },
+  {
+    "id": "approved_1795095464540",
+    "title": "כרטיס אדום",
+    "name": "כרטיס אדום",
+    "imageUrl": "/staged_images/pool/item_422_כרטיס_אדום.jpg",
+    "keywords": [
+      "לשחק",
+      "מחר",
+      "כדורגל",
+      "כרטיס",
+      "אדום",
+      "מחר כדורגל",
+      "כרטיס אדום"
+    ],
+    "associatedTasks": [
+      "לשחק מחר כדורגל",
+      "כרטיס אדום"
+    ],
+    "caption": "לשחק מחר כדורגל",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:37:44.540Z"
+  },
+  {
+    "id": "approved_1795095446747",
+    "title": "לוח שנה",
+    "name": "לוח שנה",
+    "imageUrl": "/staged_images/pool/new_011_wall_calendar.jpg",
+    "keywords": [
+      "לתאם",
+      "משמרות",
+      "עם",
+      "גפן",
+      "לוח",
+      "שנה",
+      "לתאם משמרות עם גפן",
+      "לוח שנה"
+    ],
+    "associatedTasks": [
+      "לתאם משמרות עם גפן",
+      "לוח שנה"
+    ],
+    "caption": "תכנון תאריכים וימים פנויים",
+    "emoji": "📅",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:37:26.747Z"
+  },
+  {
+    "id": "ingested_1795095409134",
+    "title": "אוזניות גיימינג",
+    "name": "אוזניות גיימינג",
+    "imageUrl": "/staged_images/pool/ingested_אוזניות_גיימינג_1795095418554.png",
+    "keywords": [
+      "אוזניות גיימינג",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\""
+    ],
+    "associatedTasks": [
+      "אוזניות גיימינג",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\""
+    ],
+    "caption": "ציוד שמע לשחקנים מול המסך",
+    "emoji": "🎧",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:36:58.569Z"
+  },
+  {
+    "id": "ingested_1795095390319",
+    "title": "אשכול ענבים",
+    "name": "אשכול ענבים",
+    "imageUrl": "/staged_images/pool/ingested_אשכול_ענבים_1795095404730.jpg",
+    "keywords": [
+      "אשכול ענבים",
+      "לתאם משמרות עם גפן"
+    ],
+    "associatedTasks": [
+      "אשכול ענבים",
+      "לתאם משמרות עם גפן"
+    ],
+    "caption": "קשר ישיר לשם גפן",
+    "emoji": "🍇",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:36:44.755Z"
+  },
+  {
+    "id": "ingested_1795095374030",
+    "title": "מחשב גיימינג",
+    "name": "מחשב גיימינג",
+    "imageUrl": "/staged_images/pool/ingested_מחשב_גיימינג_1795095383228.jpg",
+    "keywords": [
+      "מחשב גיימינג",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\""
+    ],
+    "associatedTasks": [
+      "מחשב גיימינג",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\""
+    ],
+    "caption": "מערכת חזקה להפעלת משחקים",
+    "emoji": "🖥️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:36:23.257Z"
+  },
+  {
+    "id": "ingested_1795095372509",
+    "title": "מיינקראפט",
+    "name": "מיינקראפט",
+    "imageUrl": "/staged_images/pool/ingested_מיינקראפט_1795116718232.jpg",
+    "keywords": [
+      "מיינקראפט",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "associatedTasks": [
+      "מיינקראפט",
+      "לסיים פרויקט גמר בפייתון"
+    ],
+    "caption": "בנייה מודולרית של פרויקט ענק",
+    "emoji": "🧱",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T19:31:58.368Z"
+  },
+  {
+    "id": "ingested_1795095372092",
+    "title": "אפוד זוהר",
+    "name": "אפוד זוהר",
+    "imageUrl": "/staged_images/pool/ingested_אפוד_זוהר_1795095397766.jpg",
+    "keywords": [
+      "אפוד זוהר",
+      "לתאם משמרות עם גפן"
+    ],
+    "associatedTasks": [
+      "אפוד זוהר",
+      "לתאם משמרות עם גפן"
+    ],
+    "caption": "ציוד חובה לעבודה במשמרת",
+    "emoji": "🦺",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:36:37.792Z"
+  },
+  {
+    "id": "ingested_1795095360714",
+    "title": "שעון נוכחות",
+    "name": "שעון נוכחות",
+    "imageUrl": "/staged_images/pool/ingested_שעון_נוכחות_1795095361944.jpg",
+    "keywords": [
+      "שעון נוכחות",
+      "לתאם משמרות עם גפן"
+    ],
+    "associatedTasks": [
+      "שעון נוכחות",
+      "לתאם משמרות עם גפן"
+    ],
+    "caption": "רישום שעות תחילת וסיום",
+    "emoji": "⏱️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T13:36:01.962Z"
+  },
+  {
+    "id": "ingested_1795095352320",
+    "title": "שלט פלייסטיישן",
+    "name": "שלט פלייסטיישן",
+    "imageUrl": "/staged_images/pool/ingested_שלט_פלייסטיישן_1795171336885.jpg",
+    "keywords": [
+      "שלט פלייסטיישן",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\""
+    ],
+    "associatedTasks": [
+      "שלט פלייסטיישן",
+      "\"לבדוק עם אבא אם הוא שיחק גי טי איי 6\""
+    ],
+    "caption": "The best PlayStation 2 games still worth playing today | Stuff",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-20T10:42:16.908Z"
+  },
+  {
+    "id": "ingested_1795093511487",
+    "title": "פנקס קנסות",
+    "name": "פנקס קנסות",
+    "imageUrl": "/staged_images/pool/ingested_פנקס_קנסות_1795093511471.jpg",
+    "keywords": [
+      "פנקס קנסות",
+      "דוח 1"
+    ],
+    "associatedTasks": [
+      "דוח 1",
+      "פנקס קנסות"
+    ],
+    "caption": "כלי שבו רושמים דו",
+    "emoji": "📖",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:05:11.487Z"
+  },
+  {
+    "id": "ingested_1795093495322",
+    "title": "פנקס קנסות",
+    "name": "פנקס קנסות",
+    "imageUrl": "/staged_images/pool/ingested_פנקס_קנסות_1795093495294.jpg",
+    "keywords": [
+      "פנקס קנסות",
+      "פנקס קנסות"
+    ],
+    "associatedTasks": [
+      "פנקס קנסות",
+      "פנקס קנסות"
+    ],
+    "caption": "Do police really write tickets to make money? | HowStuffWorks",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T13:04:55.322Z"
+  },
+  {
+    "id": "ingested_1795093493162",
+    "title": "מס הכנסה",
+    "name": "מס הכנסה",
+    "imageUrl": "/staged_images/pool/ingested_מס_הכנסה_1795093493143.jpg",
+    "keywords": [
+      "מס הכנסה",
+      "דוח 1"
+    ],
+    "associatedTasks": [
+      "דוח 1",
+      "מס הכנסה"
+    ],
+    "caption": "גוף שדורש דיווח כספי",
+    "emoji": "💼",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 850,
+    "approvedAt": "2026-11-19T13:04:53.162Z"
+  },
+  {
+    "id": "ingested_1795093482509",
+    "title": "מס הכנסה",
+    "name": "מס הכנסה",
+    "imageUrl": "/staged_images/pool/ingested_מס_הכנסה_1795093482492.jpg",
+    "keywords": [
+      "מס הכנסה",
+      "מס הכנסה"
+    ],
+    "associatedTasks": [
+      "מס הכנסה",
+      "מס הכנסה"
+    ],
+    "caption": "State Tax Audit Explained: Key Process and Steps",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:04:42.509Z"
+  },
+  {
+    "id": "ingested_1795093472003",
+    "title": "פסנתר כנף",
+    "name": "פסנתר כנף",
+    "imageUrl": "/staged_images/pool/ingested_פסנתר_כנף_1795093471981.jpg",
+    "keywords": [
+      "פסנתר כנף",
+      "להיפגש עם שטדלר"
+    ],
+    "associatedTasks": [
+      "להיפגש עם שטדלר",
+      "פסנתר כנף"
+    ],
+    "caption": "כלי נגינה מרכזי להופעה",
+    "emoji": "🎹",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:04:32.003Z"
+  },
+  {
+    "id": "ingested_1795093468896",
+    "title": "מנצח מקהלה",
+    "name": "מנצח מקהלה",
+    "imageUrl": "/staged_images/pool/ingested_מנצח_מקהלה_1795093468876.jpg",
+    "keywords": [
+      "מנצח מקהלה",
+      "מנצח מקהלה"
+    ],
+    "associatedTasks": [
+      "מנצח מקהלה",
+      "מנצח מקהלה"
+    ],
+    "caption": "Mastering the Art of Gesture: Choosing Your Music Conductor Baton ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T13:04:28.896Z"
+  },
+  {
+    "id": "ingested_1795093461418",
+    "title": "פסנתר כנף",
+    "name": "פסנתר כנף",
+    "imageUrl": "/staged_images/pool/ingested_פסנתר_כנף_1795093461401.jpg",
+    "keywords": [
+      "פסנתר כנף",
+      "פסנתר כנף"
+    ],
+    "associatedTasks": [
+      "פסנתר כנף",
+      "פסנתר כנף"
+    ],
+    "caption": "grand piano, keyboard, musical equipment, black, key, music, piano ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-19T13:04:21.418Z"
+  },
+  {
+    "id": "ingested_1795093448729",
+    "title": "מוצרט",
+    "name": "מוצרט",
+    "imageUrl": "/staged_images/pool/ingested_מוצרט_1795093448703.jpg",
+    "keywords": [
+      "מוצרט",
+      "להיפגש עם שטדלר"
+    ],
+    "associatedTasks": [
+      "להיפגש עם שטדלר",
+      "מוצרט"
+    ],
+    "caption": "מלחין קלאסי באותה משפחה",
+    "emoji": "🎼",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T13:04:08.729Z"
+  },
+  {
+    "id": "ingested_1795093445653",
+    "title": "מוצרט",
+    "name": "מוצרט",
+    "imageUrl": "/staged_images/pool/ingested_מוצרט_1795093445632.jpg",
+    "keywords": [
+      "מוצרט",
+      "מוצרט"
+    ],
+    "associatedTasks": [
+      "מוצרט",
+      "מוצרט"
+    ],
+    "caption": "Composer of the Week: Mozart’s Influences - The New Classical FM",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T13:04:05.653Z"
+  },
+  {
+    "id": "approved_1795093296975",
+    "title": "תיק מנהלים",
+    "name": "תיק מנהלים",
+    "imageUrl": "/staged_images/pool/new_135_executive_briefcase.jpg",
+    "keywords": [
+      "ראיון",
+      "עבודה",
+      "תיק",
+      "מנהלים",
+      "ראיון עבודה",
+      "תיק מנהלים"
+    ],
+    "associatedTasks": [
+      "ראיון עבודה",
+      "תיק מנהלים"
+    ],
+    "caption": "ראיון עבודה",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:01:36.975Z"
+  },
+  {
+    "id": "ingested_1795093250697",
+    "title": "שרביט קסמים",
+    "name": "שרביט קסמים",
+    "imageUrl": "/staged_images/pool/ingested_שרביט_קסמים_1795093250673.jpg",
+    "keywords": [
+      "שרביט קסמים",
+      "שרביט קסמים"
+    ],
+    "associatedTasks": [
+      "שרביט קסמים",
+      "שרביט קסמים"
+    ],
+    "caption": "Enchanting Light Effects A Magical Wand Unleashing Sparkling Glitter ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T13:00:50.697Z"
+  },
+  {
+    "id": "ingested_1795093247229",
+    "title": "בלון הליום",
+    "name": "בלון הליום",
+    "imageUrl": "/staged_images/pool/ingested_בלון_הליום_1795093247193.jpg",
+    "keywords": [
+      "בלון הליום",
+      "יום הולדת לכוכב"
+    ],
+    "associatedTasks": [
+      "יום הולדת לכוכב",
+      "בלון הליום"
+    ],
+    "caption": "קישוט צבעוני למסיבה",
+    "emoji": "🎈",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:00:47.229Z"
+  },
+  {
+    "id": "ingested_1795093244297",
+    "title": "בלון הליום",
+    "name": "בלון הליום",
+    "imageUrl": "/staged_images/pool/ingested_בלון_הליום_1795093244236.jpg",
+    "keywords": [
+      "בלון הליום",
+      "בלון הליום"
+    ],
+    "associatedTasks": [
+      "בלון הליום",
+      "בלון הליום"
+    ],
+    "caption": "Shiny Balloons In Gold And Silver Celebrating Happy Birthday And ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:00:44.297Z"
+  },
+  {
+    "id": "ingested_1795093242807",
+    "title": "עוגת שכבות",
+    "name": "עוגת שכבות",
+    "imageUrl": "/staged_images/pool/approved_1795093553346.jpg",
+    "keywords": [
+      "עוגת שכבות",
+      "יום הולדת לכוכב",
+      "הולדת",
+      "לכוכב",
+      "עוגת",
+      "שכבות"
+    ],
+    "associatedTasks": [
+      "יום הולדת לכוכב",
+      "עוגת שכבות"
+    ],
+    "caption": "מאפה חגיגי עם נרות",
+    "emoji": "🔴",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:05:53.660Z"
+  },
+  {
+    "id": "ingested_1795093240341",
+    "title": "ארגזי קרטון",
+    "name": "ארגזי קרטון",
+    "imageUrl": "/staged_images/pool/approved_1795093417584.jpg",
+    "keywords": [
+      "ארגזי קרטון",
+      "לבדוק מקומות להשכיר",
+      "מקומות",
+      "להשכיר",
+      "ארגזי",
+      "קרטון",
+      "מקומות להשכיר"
+    ],
+    "associatedTasks": [
+      "לבדוק מקומות להשכיר",
+      "ארגזי קרטון"
+    ],
+    "caption": "אורזים בהם לקראת המעבר לדירה",
+    "emoji": "🔑",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:03:37.607Z"
+  },
+  {
+    "id": "ingested_1795093224536",
+    "title": "ארגזי קרטון",
+    "name": "ארגזי קרטון",
+    "imageUrl": "/staged_images/pool/ingested_ארגזי_קרטון_1795093224449.jpg",
+    "keywords": [
+      "ארגזי קרטון",
+      "ארגזי קרטון"
+    ],
+    "associatedTasks": [
+      "ארגזי קרטון",
+      "ארגזי קרטון"
+    ],
+    "caption": "Plastic Bins vs. Cardboard Moving Boxes - Choosing the Right Moving ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T13:00:24.536Z"
+  },
+  {
+    "id": "ingested_1795093208599",
+    "title": "מריו",
+    "name": "מריו",
+    "imageUrl": "/staged_images/pool/ingested_מריו_1795093208579.jpg",
+    "keywords": [
+      "מריו",
+      "יום הולדת לכוכב"
+    ],
+    "associatedTasks": [
+      "יום הולדת לכוכב",
+      "מריו"
+    ],
+    "caption": "דמות מקבלת כוכב זוהר",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T13:00:08.599Z"
+  },
+  {
+    "id": "ingested_1795093201368",
+    "title": "מריו",
+    "name": "מריו",
+    "imageUrl": "/staged_images/pool/ingested_מריו_1795093201358.jpg",
+    "keywords": [
+      "מריו",
+      "מריו"
+    ],
+    "associatedTasks": [
+      "מריו",
+      "מריו"
+    ],
+    "caption": "Mortal Kombat Scorpion Epic Wallpaper - Download in HD & 4K",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T13:00:01.368Z"
+  },
+  {
+    "id": "ingested_1795093200829",
+    "title": "מובי דיק",
+    "name": "מובי דיק",
+    "imageUrl": "/staged_images/pool/ingested_מובי_דיק_1795093200760.jpg",
+    "keywords": [
+      "מובי דיק",
+      "מובי דיק"
+    ],
+    "associatedTasks": [
+      "מובי דיק",
+      "מובי דיק"
+    ],
+    "caption": "Whales and the DNA That Made Them Giants - The New York Times",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-19T13:00:00.829Z"
+  },
+  {
+    "id": "approved_1795083974686",
+    "title": "קולפן ירקות שוויצרי",
+    "name": "קולפן ירקות שוויצרי",
+    "imageUrl": "/staged_images/pool/approved_1795083974662.jpg",
+    "keywords": [
+      "לאסור",
+      "קילוף",
+      "קולפן",
+      "ירקות",
+      "שוויצרי",
+      "לאסור על קילוף",
+      "קולפן ירקות שוויצרי"
+    ],
+    "associatedTasks": [
+      "לאסור על קילוף",
+      "קולפן ירקות שוויצרי"
+    ],
+    "caption": "לאסור על קילוף",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T10:26:14.687Z"
+  },
+  {
+    "id": "approved_1795083947554",
+    "title": "שעון מעורר",
+    "name": "שעון מעורר",
+    "imageUrl": "/staged_images/pool/item_374_שעון_מעורר_קלאסי.jpg",
+    "keywords": [
+      "הרגל",
+      "שעון",
+      "מעורר",
+      "שעון מעורר"
+    ],
+    "associatedTasks": [
+      "הרגל",
+      "שעון מעורר"
+    ],
+    "caption": "מפעיל את שגרת הבוקר הקבועה",
+    "emoji": "⏰",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T10:25:47.554Z"
+  },
+  {
+    "id": "approved_1795083937494",
+    "title": "סטטוסקופ",
+    "name": "סטטוסקופ",
+    "imageUrl": "/staged_images/pool/item_420_סטטוסקופ.jpg",
+    "keywords": [
+      "פעימה",
+      "סטטוסקופ"
+    ],
+    "associatedTasks": [
+      "פעימה",
+      "סטטוסקופ"
+    ],
+    "caption": "כלי האזנה לקצב הלב",
+    "emoji": "🩺",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T10:25:37.495Z"
+  },
+  {
+    "id": "ingested_1795083932209",
+    "title": "שביל חרוש",
+    "name": "שביל חרוש",
+    "imageUrl": "/staged_images/pool/ingested_שביל_חרוש_1795083932191.jpg",
+    "keywords": [
+      "שביל חרוש",
+      "הרגל"
+    ],
+    "associatedTasks": [
+      "הרגל",
+      "שביל חרוש"
+    ],
+    "caption": "דרך שנחרשה בקרקע מרוב מעבר",
+    "emoji": "🛤️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:32.209Z"
+  },
+  {
+    "id": "ingested_1795083919068",
+    "title": "שביל חרוש",
+    "name": "שביל חרוש",
+    "imageUrl": "/staged_images/pool/ingested_שביל_חרוש_1795083919038.jpg",
+    "keywords": [
+      "שביל חרוש",
+      "שביל חרוש"
+    ],
+    "associatedTasks": [
+      "שביל חרוש",
+      "שביל חרוש"
+    ],
+    "caption": "Worn path through a forest — Photo — Lightstock",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:19.068Z"
+  },
+  {
+    "id": "ingested_1795083916627",
+    "title": "טייס אוטומטי",
+    "name": "טייס אוטומטי",
+    "imageUrl": "/staged_images/pool/ingested_טייס_אוטומטי_1795083916624.jpg",
+    "keywords": [
+      "טייס אוטומטי",
+      "הרגל"
+    ],
+    "associatedTasks": [
+      "הרגל",
+      "טייס אוטומטי"
+    ],
+    "caption": "פועל לבד בלי לחשוב בכלל",
+    "emoji": "✈️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:16.627Z"
+  },
+  {
+    "id": "ingested_1795083916620",
+    "title": "רמקול בס",
+    "name": "רמקול בס",
+    "imageUrl": "/staged_images/pool/ingested_רמקול_בס_1795083916594.jpg",
+    "keywords": [
+      "רמקול בס",
+      "פעימה"
+    ],
+    "associatedTasks": [
+      "פעימה",
+      "רמקול בס"
+    ],
+    "caption": "רוטט בעוצמת המוזיקה",
+    "emoji": "🔊",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:16.620Z"
+  },
+  {
+    "id": "ingested_1795083914380",
+    "title": "רמקול בס",
+    "name": "רמקול בס",
+    "imageUrl": "/staged_images/pool/ingested_רמקול_בס_1795083914376.jpg",
+    "keywords": [
+      "רמקול בס",
+      "רמקול בס"
+    ],
+    "associatedTasks": [
+      "רמקול בס",
+      "רמקול בס"
+    ],
+    "caption": "Double 18 Inch Waterproof Heavy Bass Passive, Professional Speaker ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:14.380Z"
+  },
+  {
+    "id": "ingested_1795083914372",
+    "title": "טייס אוטומטי",
+    "name": "טייס אוטומטי",
+    "imageUrl": "/staged_images/pool/ingested_טייס_אוטומטי_1795083914346.jpg",
+    "keywords": [
+      "טייס אוטומטי",
+      "טייס אוטומטי"
+    ],
+    "associatedTasks": [
+      "טייס אוטומטי",
+      "טייס אוטומטי"
+    ],
+    "caption": "Autopilot: A Complete Guide",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:14.372Z"
+  },
+  {
+    "id": "ingested_1795083912260",
+    "title": "מטרונום",
+    "name": "מטרונום",
+    "imageUrl": "/staged_images/pool/ingested_מטרונום_1795083912250.jpg",
+    "keywords": [
+      "מטרונום",
+      "פעימה"
+    ],
+    "associatedTasks": [
+      "פעימה",
+      "מטרונום"
+    ],
+    "caption": "מתקתק קצב קבוע במוזיקה",
+    "emoji": "⏱️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:12.260Z"
+  },
+  {
+    "id": "ingested_1795083911764",
+    "title": "תוף מרים",
+    "name": "תוף מרים",
+    "imageUrl": "/staged_images/pool/ingested_תוף_מרים_1795083911756.jpg",
+    "keywords": [
+      "תוף מרים",
+      "פעימה"
+    ],
+    "associatedTasks": [
+      "פעימה",
+      "תוף מרים"
+    ],
+    "caption": "מכה קצבית יוצרת צליל",
+    "emoji": "🪘",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:11.764Z"
+  },
+  {
+    "id": "ingested_1795083911357",
+    "title": "מסלול ריצה",
+    "name": "מסלול ריצה",
+    "imageUrl": "/staged_images/pool/ingested_מסלול_ריצה_1795083911337.jpg",
+    "keywords": [
+      "מסלול ריצה",
+      "הרגל"
+    ],
+    "associatedTasks": [
+      "הרגל",
+      "מסלול ריצה"
+    ],
+    "caption": "חוזרים בדיוק על אותו מעגל",
+    "emoji": "🔄",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:11.357Z"
+  },
+  {
+    "id": "ingested_1795083909861",
+    "title": "מסלול ריצה",
+    "name": "מסלול ריצה",
+    "imageUrl": "/staged_images/pool/ingested_מסלול_ריצה_1795083909858.jpg",
+    "keywords": [
+      "מסלול ריצה",
+      "מסלול ריצה"
+    ],
+    "associatedTasks": [
+      "מסלול ריצה",
+      "מסלול ריצה"
+    ],
+    "caption": "The Ultra Loop (Track Edition) - Run Ultra",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:09.861Z"
+  },
+  {
+    "id": "ingested_1795083909854",
+    "title": "תוף מרים",
+    "name": "תוף מרים",
+    "imageUrl": "/staged_images/pool/ingested_תוף_מרים_1795083909830.jpg",
+    "keywords": [
+      "תוף מרים",
+      "תוף מרים"
+    ],
+    "associatedTasks": [
+      "תוף מרים",
+      "תוף מרים"
+    ],
+    "caption": "Hand Musical Instruments: Look Ma, Only Hands! – Sound Adventurer ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:09.854Z"
+  },
+  {
+    "id": "ingested_1795083903928",
+    "title": "סיר לחץ",
+    "name": "סיר לחץ",
+    "imageUrl": "/staged_images/pool/ingested_סיר_לחץ_1795083903894.jpg",
+    "keywords": [
+      "סיר לחץ",
+      "לחמם את המרק"
+    ],
+    "associatedTasks": [
+      "לחמם את המרק",
+      "סיר לחץ"
+    ],
+    "caption": "מבשל ומחמם חם מאוד",
+    "emoji": "🍳",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:03.928Z"
+  },
+  {
+    "id": "ingested_1795083902396",
+    "title": "מפעל אוטומטי",
+    "name": "מפעל אוטומטי",
+    "imageUrl": "/staged_images/pool/ingested_מפעל_אוטומטי_1795083902385.jpg",
+    "keywords": [
+      "מפעל אוטומטי",
+      "הרגל"
+    ],
+    "associatedTasks": [
+      "הרגל",
+      "מפעל אוטומטי"
+    ],
+    "caption": "עבודה שנעשית באופן אוטומטי לחלוטין",
+    "emoji": "🏭",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T10:25:02.396Z"
+  },
+  {
+    "id": "ingested_1795083901982",
+    "title": "סיר לחץ",
+    "name": "סיר לחץ",
+    "imageUrl": "/staged_images/pool/ingested_סיר_לחץ_1795083901961.jpg",
+    "keywords": [
+      "סיר לחץ",
+      "סיר לחץ"
+    ],
+    "associatedTasks": [
+      "סיר לחץ",
+      "סיר לחץ"
+    ],
+    "caption": "How To Know When The Pressure Cooker Is Done: Quick Signs - kitchenadvises",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:25:01.982Z"
+  },
+  {
+    "id": "ingested_1795083898575",
+    "title": "שף צרפתי",
+    "name": "שף צרפתי",
+    "imageUrl": "/staged_images/pool/ingested_שף_צרפתי_1795083898565.jpg",
+    "keywords": [
+      "שף צרפתי",
+      "לחמם את המרק"
+    ],
+    "associatedTasks": [
+      "לחמם את המרק",
+      "שף צרפתי"
+    ],
+    "caption": "טועם את המרק הרותח",
+    "emoji": "👨‍🍳",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T10:24:58.575Z"
+  },
+  {
+    "id": "ingested_1795083897962",
+    "title": "מטרונום",
+    "name": "מטרונום",
+    "imageUrl": "/staged_images/pool/ingested_מטרונום_1795083897945.jpg",
+    "keywords": [
+      "מטרונום",
+      "מטרונום"
+    ],
+    "associatedTasks": [
+      "מטרונום",
+      "מטרונום"
+    ],
+    "caption": "A Beginner's Guide To Using A Metronome For Musical Practice | Long ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 1000,
+    "approvedAt": "2026-11-19T10:24:57.962Z"
+  },
+  {
+    "id": "ingested_1795083894254",
+    "title": "מפעל אוטומטי",
+    "name": "מפעל אוטומטי",
+    "imageUrl": "/staged_images/pool/ingested_מפעל_אוטומטי_1795083894238.jpg",
+    "keywords": [
+      "מפעל אוטומטי",
+      "מפעל אוטומטי"
+    ],
+    "associatedTasks": [
+      "מפעל אוטומטי",
+      "מפעל אוטומטי"
+    ],
+    "caption": "Automated Conveyor Systems | Industrial Procurement Services",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T10:24:54.254Z"
+  },
+  {
+    "id": "ingested_1795083892097",
+    "title": "שף צרפתי",
+    "name": "שף צרפתי",
+    "imageUrl": "/staged_images/pool/ingested_שף_צרפתי_1795083892062.jpg",
+    "keywords": [
+      "שף צרפתי",
+      "שף צרפתי"
+    ],
+    "associatedTasks": [
+      "שף צרפתי",
+      "שף צרפתי"
+    ],
+    "caption": "French Recipes for Soups | Discover French Soup Recipes Today ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:24:52.097Z"
+  },
+  {
+    "id": "ingested_1795083891010",
+    "title": "מוניטור לב",
+    "name": "מוניטור לב",
+    "imageUrl": "/staged_images/pool/ingested_מוניטור_לב_1795083890991.jpg",
+    "keywords": [
+      "מוניטור לב",
+      "מוניטור לב"
+    ],
+    "associatedTasks": [
+      "מוניטור לב",
+      "מוניטור לב"
+    ],
+    "caption": "Hospital heart rate monitor screen | Ecg monitor in hospital, Medical ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T10:24:51.010Z"
+  },
+  {
+    "id": "ingested_1795083085929",
+    "title": "סוללה ריקה",
+    "name": "סוללה ריקה",
+    "imageUrl": "/staged_images/pool/ingested_סוללה_ריקה_1795083085914.jpg",
+    "keywords": [
+      "סוללה ריקה",
+      "סוללה ריקה"
+    ],
+    "associatedTasks": [
+      "סוללה ריקה",
+      "סוללה ריקה"
+    ],
+    "caption": "Don't Fall for These 10 iPhone Charging Myths",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-19T10:11:25.929Z"
+  },
+  {
+    "id": "ingested_1795083082424",
+    "title": "גלידה שנפלה",
+    "name": "גלידה שנפלה",
+    "imageUrl": "/staged_images/pool/ingested_גלידה_שנפלה_1795083082400.jpg",
+    "keywords": [
+      "גלידה שנפלה",
+      "אכזבה"
+    ],
+    "associatedTasks": [
+      "אכזבה",
+      "גלידה שנפלה"
+    ],
+    "caption": "כדור טעים שנוחת באדמה",
+    "emoji": "🍦",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:11:22.424Z"
+  },
+  {
+    "id": "ingested_1795083078380",
+    "title": "שור זועם",
+    "name": "שור זועם",
+    "imageUrl": "/staged_images/pool/ingested_שור_זועם_1795083078360.jpg",
+    "keywords": [
+      "שור זועם",
+      "שור זועם"
+    ],
+    "associatedTasks": [
+      "שור זועם",
+      "שור זועם"
+    ],
+    "caption": "Do Bulls Really Get Angry At The Color Red? - The Fact Site",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:11:18.380Z"
+  },
+  {
+    "id": "ingested_1795083072235",
+    "title": "שד Tasmanian",
+    "name": "שד Tasmanian",
+    "imageUrl": "/staged_images/pool/ingested_שד_Tasmanian_1795083072182.png",
+    "keywords": [
+      "שד Tasmanian",
+      "זעם"
+    ],
+    "associatedTasks": [
+      "זעם",
+      "שד Tasmanian"
+    ],
+    "caption": "סופה משתוללת של עצבים",
+    "emoji": "🌪️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:11:12.235Z"
+  },
+  {
+    "id": "ingested_1795083071207",
+    "title": "זומבי",
+    "name": "זומבי",
+    "imageUrl": "/staged_images/pool/ingested_זומבי_1795083071191.png",
+    "keywords": [
+      "זומבי",
+      "רעב"
+    ],
+    "associatedTasks": [
+      "רעב",
+      "זומבי"
+    ],
+    "caption": "מחפש בטירוף בשר טרי",
+    "emoji": "🧟",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:11:11.207Z"
+  },
+  {
+    "id": "ingested_1795083061693",
+    "title": "זומבי",
+    "name": "זומבי",
+    "imageUrl": "/staged_images/pool/ingested_זומבי_1795083061676.jpg",
+    "keywords": [
+      "זומבי",
+      "זומבי"
+    ],
+    "associatedTasks": [
+      "זומבי",
+      "זומבי"
+    ],
+    "caption": "Outrun Brain-Hungry Zombies At This Evansville 5K in October",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:11:01.693Z"
+  },
+  {
+    "id": "ingested_1795083051402",
+    "title": "מוזיאון עתיקות",
+    "name": "מוזיאון עתיקות",
+    "imageUrl": "/staged_images/pool/ingested_מוזיאון_עתיקות_1795083051385.jpg",
+    "keywords": [
+      "מוזיאון עתיקות",
+      "מוזיאון עתיקות"
+    ],
+    "associatedTasks": [
+      "מוזיאון עתיקות",
+      "מוזיאון עתיקות"
+    ],
+    "caption": "Archaeologist Discovers Ancient Artifacts at Dusty Excavation Site ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:10:51.402Z"
+  },
+  {
+    "id": "ingested_1795083044900",
+    "title": "שד Tasmanian",
+    "name": "שד Tasmanian",
+    "imageUrl": "/staged_images/pool/ingested_שד_Tasmanian_1795083044892.jpg",
+    "keywords": [
+      "שד Tasmanian",
+      "שד Tasmanian"
+    ],
+    "associatedTasks": [
+      "שד Tasmanian",
+      "שד Tasmanian"
+    ],
+    "caption": "[100+] Tasmanian Devil Pictures | Wallpapers.com",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:10:44.900Z"
+  },
+  {
+    "id": "ingested_1795083043925",
+    "title": "בלון מנופח",
+    "name": "בלון מנופח",
+    "imageUrl": "/staged_images/pool/ingested_בלון_מנופח_1795083043874.jpg",
+    "keywords": [
+      "בלון מנופח",
+      "בלון מנופח"
+    ],
+    "associatedTasks": [
+      "בלון מנופח",
+      "בלון מנופח"
+    ],
+    "caption": "Deflated Balloons Rubber Fair Blue, Fair, Close Up, Birthday PNG ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 60,
+    "approvedAt": "2026-11-19T10:10:43.925Z"
+  },
+  {
+    "id": "approved_1795078719624",
+    "title": "משאית גרר",
+    "name": "משאית גרר",
+    "imageUrl": "/staged_images/pool/new_122_tow_truck.jpg",
+    "keywords": [
+      "טרמפ",
+      "משאית",
+      "גרר",
+      "משאית גרר"
+    ],
+    "associatedTasks": [
+      "טרמפ",
+      "משאית גרר"
+    ],
+    "caption": "טרמפ",
+    "emoji": "🚛",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T08:58:39.625Z"
+  },
+  {
+    "id": "approved_1795078703583",
+    "title": "האלק",
+    "name": "האלק",
+    "imageUrl": "/staged_images/pool/hulk_bruce_banner.jpg",
+    "keywords": [
+      "כעס",
+      "האלק"
+    ],
+    "associatedTasks": [
+      "כעס",
+      "האלק"
+    ],
+    "caption": "כעס",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T08:58:23.584Z"
+  },
+  {
+    "id": "approved_1794681500153",
+    "title": "תמנון",
+    "name": "תמנון",
+    "imageUrl": "/staged_images/pool/item_294_תמנון.jpg",
+    "keywords": [
+      "זרועות",
+      "תמנון",
+      "זרועות תמנון"
+    ],
+    "associatedTasks": [
+      "זרועות תמנון",
+      "תמנון"
+    ],
+    "caption": "זרועות תמנון",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T18:38:20.153Z"
+  },
+  {
+    "id": "approved_1794681484324",
+    "title": "פינוקיו",
+    "name": "פינוקיו",
+    "imageUrl": "/staged_images/pool/authentic_pinocchio.jpg",
+    "keywords": [
+      "לתקן",
+      "הידית",
+      "פינוקיו",
+      "ידית",
+      "הפרקט",
+      "פרקט"
+    ],
+    "associatedTasks": [
+      "לתקן את הידית",
+      "פינוקיו",
+      "לתקן את הפרקט"
+    ],
+    "caption": "לתקן את הפרקט",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T16:24:18.261Z"
+  },
+  {
+    "id": "approved_1794681475676",
+    "title": "אלזה מלכת השלג",
+    "name": "אלזה מלכת השלג",
+    "imageUrl": "/staged_images/pool/new_105_elsa_frozen.jpg",
+    "keywords": [
+      "כפפות",
+      "חורף",
+      "אלזה",
+      "מלכת",
+      "השלג",
+      "כפפות חורף",
+      "אלזה מלכת השלג"
+    ],
+    "associatedTasks": [
+      "כפפות חורף",
+      "אלזה מלכת השלג"
+    ],
+    "caption": "עוגן זיכרון בארמון: אלזה מלכת השלג",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T18:37:55.676Z"
+  },
+  {
+    "id": "ingested_1794681325407",
+    "title": "כובע שף",
+    "name": "כובע שף",
+    "imageUrl": "/staged_images/pool/approved_1794681457504.jpg",
+    "keywords": [
+      "כובע שף",
+      "לערבב",
+      "המרק",
+      "כובע",
+      "שף",
+      "לערבב את המרק",
+      "לחמם",
+      "לחמם את המרק"
+    ],
+    "associatedTasks": [
+      "כובע שף",
+      "לערבב את המרק",
+      "לחמם את המרק"
+    ],
+    "caption": "לחמם את המרק",
+    "emoji": "🫒",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T10:26:09.352Z"
+  },
+  {
+    "id": "approved_1794678984989",
+    "title": "אופני הרים",
+    "name": "אופני הרים",
+    "imageUrl": "/staged_images/pool/new_120_mountain_bike.jpg",
+    "keywords": [
+      "לא",
+      "לשבת",
+      "בבית",
+      "אופני",
+      "הרים",
+      "לא לשבת בבית",
+      "אופני הרים"
+    ],
+    "associatedTasks": [
+      "לא לשבת בבית",
+      "אופני הרים"
+    ],
+    "caption": "תנועה ורכיבה בחוץ",
+    "emoji": "🔧",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:59:56.758Z"
+  },
+  {
+    "id": "approved_1794678918508",
+    "title": "גשר שער הזהב",
+    "name": "גשר שער הזהב",
+    "imageUrl": "/staged_images/pool/item_448_גשר_שער_הזהב.jpg",
+    "keywords": [
+      "לפתח",
+      "קשרים",
+      "גשר",
+      "שער",
+      "הזהב",
+      "לפתח קשרים",
+      "גשר שער הזהב"
+    ],
+    "associatedTasks": [
+      "לפתח קשרים",
+      "גשר שער הזהב"
+    ],
+    "caption": "מחבר בין שני צדדים",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:59:07.117Z"
+  },
+  {
+    "id": "approved_1794678757339",
+    "title": "נוצה מוזהבת וקסת דיו עתיקה של סופרים 🪶📜",
+    "name": "נוצה מוזהבת וקסת דיו עתיקה של סופרים 🪶📜",
+    "imageUrl": "/staged_images/pool/feather_quill_inkwell.jpg",
+    "keywords": [
+      "להשתדל",
+      "לכתוב",
+      "נוצה",
+      "מוזהבת",
+      "וקסת",
+      "דיו",
+      "עתיקה",
+      "סופרים",
+      "🪶📜",
+      "להשתדל לכתוב",
+      "נוצה מוזהבת וקסת דיו עתיקה של סופרים 🪶📜"
+    ],
+    "associatedTasks": [
+      "להשתדל לכתוב",
+      "נוצה מוזהבת וקסת דיו עתיקה של סופרים 🪶📜"
+    ],
+    "caption": "להשתדל לכתוב",
+    "emoji": "🪶",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:52:37.340Z"
+  },
+  {
+    "id": "ingested_1794678713531",
+    "title": "גינה ציבורית",
+    "name": "גינה ציבורית",
+    "imageUrl": "/staged_images/pool/ingested_גינה_ציבורית_1794678713497.jpg",
+    "keywords": [
+      "גינה ציבורית",
+      "להיפגש עם חברים"
+    ],
+    "associatedTasks": [
+      "להיפגש עם חברים",
+      "גינה ציבורית"
+    ],
+    "caption": "מקום מפגש",
+    "emoji": "🌳",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T17:51:53.531Z"
+  },
+  {
+    "id": "ingested_1794678705817",
+    "title": "גינה ציבורית",
+    "name": "גינה ציבורית",
+    "imageUrl": "/staged_images/pool/ingested_גינה_ציבורית_1794678705785.jpg",
+    "keywords": [
+      "גינה ציבורית",
+      "גינה ציבורית"
+    ],
+    "associatedTasks": [
+      "גינה ציבורית",
+      "גינה ציבורית"
+    ],
+    "caption": "Urban Green Spaces: The Incredible Impact of Parks, Gardens, and Green ...",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:51:45.817Z"
+  },
+  {
+    "id": "ingested_1794678698787",
+    "title": "דלת כניסה",
+    "name": "דלת כניסה",
+    "imageUrl": "/staged_images/pool/ingested_דלת_כניסה_1794678698744.jpg",
+    "keywords": [
+      "דלת כניסה",
+      "דלת כניסה"
+    ],
+    "associatedTasks": [
+      "דלת כניסה",
+      "דלת כניסה"
+    ],
+    "caption": "Custom Front Door 004 Classic",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:51:38.787Z"
+  },
+  {
+    "id": "ingested_1794678697489",
+    "title": "טלפון נייד",
+    "name": "טלפון נייד",
+    "imageUrl": "/staged_images/pool/ingested_טלפון_נייד_1794678697468.jpg",
+    "keywords": [
+      "טלפון נייד",
+      "טלפון נייד"
+    ],
+    "associatedTasks": [
+      "טלפון נייד",
+      "טלפון נייד"
+    ],
+    "caption": "File:Mobile phone PHS Japan 1997-2003.jpg",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:51:37.489Z"
+  },
+  {
+    "id": "ingested_1794678691210",
+    "title": "נעלי הרים",
+    "name": "נעלי הרים",
+    "imageUrl": "/staged_images/pool/ingested_נעלי_הרים_1794678691134.jpg",
+    "keywords": [
+      "נעלי הרים",
+      "לא לשבת בבית"
+    ],
+    "associatedTasks": [
+      "לא לשבת בבית",
+      "נעלי הרים"
+    ],
+    "caption": "יוצאים החוצה להליכה",
+    "emoji": "🥾",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:51:31.210Z"
+  },
+  {
+    "id": "ingested_1794678688576",
+    "title": "שולחן קפה",
+    "name": "שולחן קפה",
+    "imageUrl": "/staged_images/pool/ingested_שולחן_קפה_1794678688549.jpg",
+    "keywords": [
+      "שולחן קפה",
+      "להיפגש עם חברים",
+      "להיפגש",
+      "עם",
+      "חברים",
+      "שולחן",
+      "קפה"
+    ],
+    "associatedTasks": [
+      "להיפגש עם חברים",
+      "שולחן קפה"
+    ],
+    "caption": "ישיבה משותפת",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "user_positive_feedback",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:54:30.948Z"
+  },
+  {
+    "id": "ingested_1794678686286",
+    "title": "נעלי הרים",
+    "name": "נעלי הרים",
+    "imageUrl": "/staged_images/pool/ingested_נעלי_הרים_1794678686275.jpg",
+    "keywords": [
+      "נעלי הרים",
+      "נעלי הרים"
+    ],
+    "associatedTasks": [
+      "נעלי הרים",
+      "נעלי הרים"
+    ],
+    "caption": "The 3 Best Hiking Boots 2021 | Reviews by Wirecutter",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:51:26.286Z"
+  },
+  {
+    "id": "ingested_1794678685450",
+    "title": "שולחן קפה",
+    "name": "שולחן קפה",
+    "imageUrl": "/staged_images/pool/ingested_שולחן_קפה_1794678685411.jpg",
+    "keywords": [
+      "שולחן קפה",
+      "שולחן קפה"
+    ],
+    "associatedTasks": [
+      "שולחן קפה",
+      "שולחן קפה"
+    ],
+    "caption": "What Is A Coffee Table? - Coffee Table Decor",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T17:51:25.450Z"
+  },
+  {
+    "id": "ingested_1794675495264",
+    "title": "מזוודה",
+    "name": "מזוודה",
+    "imageUrl": "/staged_images/pool/ingested_מזוודה_1795125893859.jpg",
+    "keywords": [
+      "מזוודה",
+      "הרחקה",
+      "להוציא דרכון ביומטרי במשרד הפנים"
+    ],
+    "associatedTasks": [
+      "הרחקה",
+      "מזוודה",
+      "להוציא דרכון ביומטרי במשרד הפנים"
+    ],
+    "caption": "תיק נסיעות לחופשה בחוץ לארץ",
+    "emoji": "🧳",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-19T22:04:53.875Z"
+  },
+  {
+    "id": "ingested_1794675490187",
+    "title": "מזוודה",
+    "name": "מזוודה",
+    "imageUrl": "/staged_images/pool/ingested_מזוודה_1794675490144.jpg",
+    "keywords": [
+      "מזוודה",
+      "מזוודה"
+    ],
+    "associatedTasks": [
+      "מזוודה",
+      "מזוודה"
+    ],
+    "caption": "Travel right in 2025: Carry-on luggage size and weight guide",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T16:58:10.187Z"
+  },
+  {
+    "id": "ingested_1794675483182",
+    "title": "שער ברזל",
+    "name": "שער ברזל",
+    "imageUrl": "/staged_images/pool/ingested_שער_ברזל_1794675483135.jpg",
+    "keywords": [
+      "שער ברזל",
+      "הרחקה"
+    ],
+    "associatedTasks": [
+      "הרחקה",
+      "שער ברזל"
+    ],
+    "caption": "גבול וסגירת מעבר",
+    "emoji": "⛩️",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 950,
+    "approvedAt": "2026-11-14T16:58:03.182Z"
+  },
+  {
+    "id": "ingested_1794675478816",
+    "title": "שער ברזל",
+    "name": "שער ברזל",
+    "imageUrl": "/staged_images/pool/ingested_שער_ברזל_1794675478788.jpg",
+    "keywords": [
+      "שער ברזל",
+      "שער ברזל"
+    ],
+    "associatedTasks": [
+      "שער ברזל",
+      "שער ברזל"
+    ],
+    "caption": "Types Of Wrought Iron Gates - Design Talk",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T16:57:58.816Z"
+  },
+  {
+    "id": "ingested_1794675473587",
+    "title": "גדר תיל",
+    "name": "גדר תיל",
+    "imageUrl": "/staged_images/pool/ingested_גדר_תיל_1794675473580.jpg",
+    "keywords": [
+      "גדר תיל",
+      "פרצה"
+    ],
+    "associatedTasks": [
+      "פרצה",
+      "גדר תיל"
+    ],
+    "caption": "מכשול שנפרץ",
+    "emoji": "🧶",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 90,
+    "approvedAt": "2026-11-14T16:57:53.587Z"
+  },
+  {
+    "id": "ingested_1794675472599",
+    "title": "מנעול פרוץ",
+    "name": "מנעול פרוץ",
+    "imageUrl": "/staged_images/pool/ingested_מנעול_פרוץ_1794675472580.jpg",
+    "keywords": [
+      "מנעול פרוץ",
+      "מנעול פרוץ"
+    ],
+    "associatedTasks": [
+      "מנעול פרוץ",
+      "מנעול פרוץ"
+    ],
+    "caption": "How to Remove a Broken Padlock",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 900,
+    "approvedAt": "2026-11-14T16:57:52.599Z"
+  },
+  {
+    "id": "ingested_1794675469618",
+    "title": "גדר תיל",
+    "name": "גדר תיל",
+    "imageUrl": "/staged_images/pool/ingested_גדר_תיל_1794675469574.jpg",
+    "keywords": [
+      "גדר תיל",
+      "גדר תיל"
+    ],
+    "associatedTasks": [
+      "גדר תיל",
+      "גדר תיל"
+    ],
+    "caption": "Barbed wire fence installation online",
+    "emoji": "⭐",
+    "isUserApproved": true,
+    "source": "vision_ingested_permanent",
+    "qualityScore": 100,
+    "approvedAt": "2026-11-14T16:57:49.618Z"
+  },
+  {
     "id": "approved_1794669675178",
     "title": "וולברין",
     "name": "וולברין",
@@ -86,21 +3996,23 @@
     "id": "ingested_1794668156704",
     "title": "כספת",
     "name": "כספת",
-    "imageUrl": "/staged_images/pool/ingested_כספת_1794668156690.jpg",
+    "imageUrl": "/staged_images/pool/ingested_כספת_1795117093903.jpg",
     "keywords": [
       "כספת",
-      "ביטחון"
+      "ביטחון",
+      "להפקיד צ'ק בחשבון הבנק"
     ],
     "associatedTasks": [
       "ביטחון",
-      "כספת"
+      "כספת",
+      "להפקיד צ'ק בחשבון הבנק"
     ],
-    "caption": "שמירה על חפצים יקרים",
+    "caption": "אחסון בטוח לכספי הבנק",
     "emoji": "🏦",
     "isUserApproved": true,
     "source": "vision_ingested_permanent",
-    "qualityScore": 60,
-    "approvedAt": "2026-11-14T14:55:56.704Z"
+    "qualityScore": 100,
+    "approvedAt": "2026-11-19T19:38:13.926Z"
   },
   {
     "id": "ingested_1794668134620",
@@ -488,26 +4400,32 @@
   },
   {
     "id": "approved_1794659454106",
-    "title": "לב אדום שבור",
-    "name": "לב אדום שבור",
+    "title": "לב שבור",
+    "name": "לב שבור",
     "imageUrl": "/staged_images/pool/item_160_לב_אדום_סימטרי__שבור_בחצי___מסמל.jpg",
     "keywords": [
       "אסון",
       "לב",
       "אדום",
       "שבור",
-      "לב אדום שבור"
+      "לב אדום שבור",
+      "המסך",
+      "הלפטופ",
+      "המסך של הלפטופ שבור",
+      "לב שבור"
     ],
     "associatedTasks": [
       "אסון",
-      "לב אדום שבור"
+      "לב אדום שבור",
+      "המסך של הלפטופ שבור",
+      "לב שבור"
     ],
-    "caption": "עוגן שורש מהמאגר: לב אדום שבור",
-    "emoji": "🌉",
+    "caption": "תחושת פגם או הרס",
+    "emoji": "📋",
     "isUserApproved": true,
     "source": "user_positive_feedback",
     "qualityScore": 100,
-    "approvedAt": "2026-11-14T12:30:54.106Z"
+    "approvedAt": "2026-11-14T18:38:13.447Z"
   },
   {
     "id": "approved_1794659429463",
@@ -516,18 +4434,25 @@
     "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg",
     "keywords": [
       "שמש",
-      "חמניות"
+      "חמניות",
+      "לוודא",
+      "שאני",
+      "יוצא",
+      "ליום",
+      "חופש",
+      "לוודא שאני יוצא ליום חופש"
     ],
     "associatedTasks": [
       "שמש",
-      "חמניות"
+      "חמניות",
+      "לוודא שאני יוצא ליום חופש"
     ],
-    "caption": "עוגן חזותי מהמאגר שלך: חמניות (פרחים, צהוב, שמש, גרעינים)",
+    "caption": "לוודא שאני יוצא ליום חופש",
     "emoji": "⭐",
     "isUserApproved": true,
     "source": "user_positive_feedback",
     "qualityScore": 100,
-    "approvedAt": "2026-11-14T12:30:29.464Z"
+    "approvedAt": "2026-11-22T06:50:27.613Z"
   },
   {
     "id": "ingested_1794659369571",

@@ -1,0 +1,171 @@
+{
+  "timestamp": "2026-11-20T10:35:45.262Z",
+  "totalDomainsTested": 4,
+  "suites": [
+    {
+      "domain": "🏥 בריאות, רפואה ורוקחות (Health & Medicine)",
+      "firstReadyMs": 6845,
+      "totalElapsedMs": 63073,
+      "score": 85,
+      "flaws": [
+        "Station 1 streamed in 6845ms (exceeds 6s target)"
+      ],
+      "story": "דרקולה בלע סירופ, משך חוט דנטלי, הרכיב משקפי ראייה והקשיב בסטטוסקופ רפואי.",
+      "stations": [
+        {
+          "title": "תור לבדיקת דם בקופת חולים",
+          "anchor": "דרקולה",
+          "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לקנות אקמול וטיפות עיניים בבית מרקחת",
+          "anchor": "בקבוק סירופ רפואי",
+          "imageUrl": "/staged_images/pool/new_045_cough_syrup.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "שיננית וניקוי אבנית בשעה 14:00",
+          "anchor": "חוט דנטלי",
+          "imageUrl": "/staged_images/pool/new_050_dental_floss.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "בדיקת ראייה וחידוש מספר למשקפיים",
+          "anchor": "משקפי ראייה",
+          "imageUrl": "/staged_images/pool/nerd_geek_glasses.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "להזריק חיסון שפעת עונתי",
+          "anchor": "סטטוסקופ רפואי",
+          "imageUrl": "/staged_images/pool/stethoscope_medical.jpg",
+          "fromPool": true
+        }
+      ]
+    },
+    {
+      "domain": "💼 בירוקרטיה, כספים ומשפטים (Bureaucracy, Finance & Legal)",
+      "firstReadyMs": 8629,
+      "totalElapsedMs": 238541,
+      "score": 85,
+      "flaws": [
+        "Station 1 streamed in 8629ms (exceeds 6s target)"
+      ],
+      "story": "ליד מדחן חניה ירה ג'יימס בונד בעזרת עט נוצה צ'קים לעבר מטריית מרי.",
+      "stations": [
+        {
+          "title": "לשלם דוח חניה של העירייה",
+          "anchor": "מדחן חניה",
+          "imageUrl": "/staged_images/pool/new_055_parking_meter.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "להוציא דרכון ביומטרי במשרד הפנים",
+          "anchor": "ג'יימס בונד",
+          "imageUrl": "/staged_images/pool/ingested_ג_יימס_בונד_1795105206128.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לחתום על חוזה שכירות אצל עורך דין",
+          "anchor": "עט נוצה ודיו",
+          "imageUrl": "/staged_images/pool/feather_quill_inkwell.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "להפקיד צ'ק בחשבון הבנק",
+          "anchor": "פנקס המחאות",
+          "imageUrl": "/staged_images/pool/new_003_bank_checkbook.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לחדש ביטוח מקיף לרכב",
+          "anchor": "מטריית מרי פופינס",
+          "imageUrl": "/staged_images/pool/mary_poppins_umbrella.jpg",
+          "fromPool": true
+        }
+      ]
+    },
+    {
+      "domain": "🎓 לימודים, פיתוח ותכנות (Academic, Coding & Studies)",
+      "firstReadyMs": 1025,
+      "totalElapsedMs": 160070,
+      "score": 100,
+      "flaws": [],
+      "story": "נחש קונסטריקטור כרך כספת ברזל, ייבש שיער, אתגר את גארי קספרוב וצילם מכונת צילום.",
+      "stations": [
+        {
+          "title": "לסיים פרויקט גמר בפייתון",
+          "anchor": "נחש קונסטריקטור",
+          "imageUrl": "/staged_images/pool/ingested_נחש_קונסטריקטור_1795116719888.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "ללמוד למבחן במיקרו כלכלה",
+          "anchor": "כספת ברזל מאובטחת",
+          "imageUrl": "/staged_images/pool/new_086_safe_box.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "להחזיר 3 ספרים לספרייה העירונית",
+          "anchor": "מייבש שיער",
+          "imageUrl": "/staged_images/pool/new_071_hair_dryer.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לרשום את הילד לחוג שחמט",
+          "anchor": "גארי קספרוב",
+          "imageUrl": "/staged_images/pool/ingested_גארי_קספרוב_1795116723223.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "להגיש סמינריון מודפס למרצה",
+          "anchor": "מכונת צילום",
+          "imageUrl": "/staged_images/pool/ingested_מכונת_צילום_1795116772714.jpg",
+          "fromPool": true
+        }
+      ]
+    },
+    {
+      "domain": "🏡 סידורים ותחזוקת הבית (Home Chores & Maintenance)",
+      "firstReadyMs": 2114,
+      "totalElapsedMs": 35518,
+      "score": 100,
+      "flaws": [],
+      "story": "הצמדתי פומפה למזוודת טרולי לצד סנופי הכלב שעמד על מדף ספרים ומכסחת דשא.",
+      "stations": [
+        {
+          "title": "לתקן סתימה בכיור במטבח",
+          "anchor": "פומפה",
+          "imageUrl": "/staged_images/pool/new_022_rubber_plunger.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לקנות קרטונים וחומרי אריזה למעבר דירה",
+          "anchor": "מזוודת טרולי על גלגלים",
+          "imageUrl": "/staged_images/pool/new_128_trolley_suitcase.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "להזמין שק אוכל יבש לכלב",
+          "anchor": "סנופי הכלב",
+          "imageUrl": "/staged_images/pool/snoopy_doghouse_peanuts.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לתלות מדף עץ מעל הטלוויזיה",
+          "anchor": "מדף ספרים",
+          "imageUrl": "/staged_images/pool/new_148_bookshelf.jpg",
+          "fromPool": true
+        },
+        {
+          "title": "לשטוף את הרצפה עם סמרטוט ריחני",
+          "anchor": "מכסחת דשא",
+          "imageUrl": "/staged_images/pool/new_142_lawn_mower.jpg",
+          "fromPool": true
+        }
+      ]
+    }
+  ],
+  "overallAverageScore": 93
+}

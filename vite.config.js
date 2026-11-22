@@ -176,23 +176,29 @@ export default defineConfig({
           }
 
           const b64 = buffer.toString('base64');
-          const prompt = `אתה מבקר איכות צילום קוגניטיבי של ארמון הזיכרון (LifeQuest).
-העוגן המבוקש הוא: "${anchorName || coreConcept}".
-נושא הענף: "${coreConcept || anchorName}".
+          const prompt = `אתה מבקר איכות צילום קוגניטיבי מחמיר של ארמון הזיכרון (LifeQuest).
+העוגן החזותי המבוקש הוא: "${anchorName || coreConcept}".
+שים לב היטב: זהו ארמון זיכרון מנמוני! התמונה חייבת להתאים במדויק אך ורק לעוגן החזותי "${anchorName || coreConcept}" (למשל: מצלמת פולארויד, כספת, ג'יימס בונד).
+אל תפסול בשום אופן על בסיס חוסר התאמה למשימה המקורית של המשתמש — התמונה צריכה לייצג אך ורק את העוגן החזותי הנ"ל!
 
-הבט בתמונה המצורפת ובדוק:
-1. האם זו תמונה חיה, אמיתית, צבעונית ומוארת היטב שמתאימה ישירות לעוגן המבוקש? (אם זה משהו אחר לגמרי - פסול מיד!).
-2. פסול מיד: דיאגרמות, תרשימים, עצי תהליך, סכמות, גרפים, סריקות מסמכים/ספרים, שחור-לבן מטושטש, וקטורים זולים/קליפארט, סימני מים של חברות סטוק או איור פרימיטיבי.
+הבט בתמונה המצורפת ובדוק בקפדנות:
+1. **התאמה מדויקת וחד-משמעית לעוגן (isAnchorMatch):**
+   - האם העצם/הדמות "${anchorName || coreConcept}" הוא הנושא המרכזי, הברור והבולט ביותר בתמונה?
+   - אם התמונה מציגה משהו אחר, סצנה עמוסה מדי שלא ברור מה הנושא שלה, או אובייקט רחוק/מטושטש — פסול מיד (approved: false, isAnchorMatch: false)!
+2. **איכות צילום (isRealPhoto):**
+   - צילום אמיתי, חד, צבעוני, מואר היטב וקומפוזיציה נקייה (או תמונה רשמית/אייקונית ברורה של דמות מוכרת).
+   - פסול מיד: קולאז'ים, תרשימים, דיאגרמות, מפות, סריקות מסמכים/ספרים, שחור-לבן מטושטש, קליפארט/וקטורים זולים, טקסט שיווקי/מודעות, סימני מים או ממים.
 
-החזר אך ורק JSON:
+החזר אך ורק JSON תקין:
 {
   "approved": boolean,
   "score": number,
-  "reason": "נימוק קצר וחד בעברית",
-  "isRealPhoto": boolean
+  "reason": "נימוק קצר וחד בעברית מה רואים בתמונה ולמה אושרה או נפסלה ביחס לעוגן",
+  "isRealPhoto": boolean,
+  "isAnchorMatch": boolean
 }`;
 
-          const visionModels = ['gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-3.8-flash'];
+          const visionModels = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-3.8-flash'];
           for (const model of visionModels) {
             try {
               const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
@@ -211,7 +217,7 @@ export default defineConfig({
                     responseMimeType: 'application/json'
                   }
                 }),
-                signal: AbortSignal.timeout(16000)
+                signal: AbortSignal.timeout(25000)
               });
 
               if (gRes.ok) {
@@ -219,17 +225,21 @@ export default defineConfig({
                 const text = gData.candidates?.[0]?.content?.parts?.[0]?.text;
                 if (text) {
                   const parsed = JSON.parse(text.replace(/```json/g, '').replace(/```/g, '').trim());
+                  const isMatch = parsed.isAnchorMatch !== false;
+                  const isPhoto = parsed.isRealPhoto !== false;
+                  const numScore = Number(parsed.score) || 5;
                   return {
-                    approved: Boolean(parsed.approved && Number(parsed.score) >= 7),
-                    score: Number(parsed.score) || 5,
+                    approved: Boolean(parsed.approved && isMatch && isPhoto && numScore >= 7),
+                    score: numScore,
                     reason: parsed.reason || '',
-                    isRealPhoto: Boolean(parsed.isRealPhoto)
+                    isRealPhoto: isPhoto,
+                    isAnchorMatch: isMatch
                   };
                 }
               }
             } catch (_) {}
           }
-          return { approved: true, score: 6, reason: 'ביקורת ראייה השהתה מענה - אושר כרזרבה' };
+          return { approved: false, score: 0, reason: 'ביקורת ראייה השהתה מענה או נכשלה - נפסל למניעת שגיאות תמונה', isRealPhoto: false, isAnchorMatch: false };
         }
 
         /**
@@ -249,7 +259,10 @@ export default defineConfig({
 
           if (/^https?:\/\//i.test(imageUrl)) {
             const dlRes = await fetch(imageUrl, {
-              headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) LifeQuestIngestBot/1.0' },
+              headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+              },
               signal: AbortSignal.timeout(7500)
             });
             if (!dlRes.ok) return { ok: false, error: `Download failed HTTP ${dlRes.status}` };
@@ -290,27 +303,46 @@ export default defineConfig({
           fs.writeFileSync(filePath, buffer);
           const localImageUrl = `/staged_images/pool/${fileName}`;
 
-          // עדכון approved_manifest.json
+          // עדכון approved_manifest.json ללא כפילויות לפי כותרת/תמונה
           try {
             const manifestPath = path.resolve(process.cwd(), 'public', 'staged_images', 'approved_manifest.json');
             let manifest = [];
             if (fs.existsSync(manifestPath)) {
               manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8') || '[]');
             }
-            manifest.unshift({
+            const resolvedTitle = (anchorName || coreConcept || '').trim();
+            const existingIdx = manifest.findIndex(item =>
+              item.imageUrl === localImageUrl ||
+              (resolvedTitle && item.title === resolvedTitle && item.source === 'vision_ingested_permanent')
+            );
+            const newKeywords = Array.from(new Set([anchorName, coreConcept].filter(Boolean)));
+            const newTasks = Array.from(new Set([coreConcept, anchorName].filter(Boolean)));
+            const entry = {
               id: `ingested_${Date.now()}`,
-              title: anchorName || coreConcept,
-              name: anchorName || coreConcept,
+              title: resolvedTitle,
+              name: resolvedTitle,
               imageUrl: localImageUrl,
-              keywords: [anchorName, coreConcept].filter(Boolean),
-              associatedTasks: [coreConcept, anchorName].filter(Boolean),
+              keywords: newKeywords,
+              associatedTasks: newTasks,
               caption: explanation || audit.reason,
               emoji,
               isUserApproved: true,
               source: 'vision_ingested_permanent',
               qualityScore: audit.score * 10,
               approvedAt: new Date().toISOString()
-            });
+            };
+            if (existingIdx >= 0) {
+              const prev = manifest[existingIdx];
+              manifest[existingIdx] = {
+                ...prev,
+                ...entry,
+                id: prev.id || entry.id,
+                keywords: Array.from(new Set([...(prev.keywords || []), ...newKeywords])),
+                associatedTasks: Array.from(new Set([...(prev.associatedTasks || []), ...newTasks]))
+              };
+            } else {
+              manifest.unshift(entry);
+            }
             fs.writeFileSync(manifestPath, JSON.stringify(manifest.slice(0, 500), null, 2), 'utf8');
           } catch (_) {}
 
@@ -340,6 +372,63 @@ export default defineConfig({
           }
         });
 
+        // Ephemeral Current Session Log Endpoint (שומר רק את הסשן הפעיל הנוכחי, נמחק מיד לאחר ביקורת ותיקון)
+        server.middlewares.use('/api/session-log', async (req, res) => {
+          const dataDir = path.resolve(process.cwd(), 'public', 'data');
+          const sessionPath = path.join(dataDir, 'current_session_log.json');
+          res.setHeader('Content-Type', 'application/json');
+
+          if (req.method === 'GET') {
+            try {
+              if (!fs.existsSync(sessionPath)) {
+                res.statusCode = 200;
+                res.end(JSON.stringify({ ok: true, session: null }));
+                return;
+              }
+              const content = fs.readFileSync(sessionPath, 'utf8');
+              res.statusCode = 200;
+              res.end(JSON.stringify({ ok: true, session: JSON.parse(content || 'null') }));
+            } catch (err) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ ok: false, error: err.message }));
+            }
+            return;
+          }
+
+          if (req.method === 'DELETE') {
+            try {
+              if (fs.existsSync(sessionPath)) {
+                fs.unlinkSync(sessionPath);
+              }
+              res.statusCode = 200;
+              res.end(JSON.stringify({ ok: true, deleted: true }));
+            } catch (err) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ ok: false, error: err.message }));
+            }
+            return;
+          }
+
+          if (req.method === 'POST') {
+            try {
+              let body = '';
+              for await (const chunk of req) body += chunk;
+              const payload = JSON.parse(body || '{}');
+              fs.mkdirSync(dataDir, { recursive: true });
+              fs.writeFileSync(sessionPath, JSON.stringify(payload, null, 2), 'utf8');
+              res.statusCode = 200;
+              res.end(JSON.stringify({ ok: true, path: sessionPath }));
+            } catch (err) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ ok: false, error: err.message }));
+            }
+            return;
+          }
+
+          res.statusCode = 405;
+          res.end(JSON.stringify({ ok: false, error: 'Method not allowed' }));
+        });
+
         const SERVER_IMAGE_CACHE = new Map();
 
         // רשימה שחורה של אתרי תמונות בתשלום עם סימני מים, חנויות, קליפארט וממים באיכות נמוכה
@@ -362,7 +451,7 @@ export default defineConfig({
             .trim();
         }
 
-        function scoreCandidatePhoto({ imageUrl = '', pageUrl = '', title = '', width = 0, height = 0 }) {
+        function scoreCandidatePhoto({ imageUrl = '', pageUrl = '', title = '', width = 0, height = 0, query = '' }) {
           const lowImg = String(imageUrl || '').toLowerCase();
           const lowPage = String(pageUrl || '').toLowerCase();
           const lowTitle = String(title || '').toLowerCase();
@@ -393,6 +482,16 @@ export default defineConfig({
 
             if (w >= 800 && w <= 2500) score += 25;
             else if (w >= 600) score += 15;
+          }
+
+          // בונוס התאמה סמנטית בין כותרת/URL התמונה למילות השאילתה באנגלית
+          const qTokens = String(query || '').toLowerCase().split(/\s+/).filter(t => t.length >= 3);
+          if (qTokens.length > 0) {
+            const combinedMeta = `${lowTitle} ${lowImg} ${lowPage}`;
+            const hits = qTokens.filter(t => combinedMeta.includes(t)).length;
+            if (hits === qTokens.length) score += 40;
+            else if (hits > 0) score += 20;
+            else score -= 35;
           }
 
           // בונוס למקורות אנציקלופדיים וצילומיים איכותיים ונקיים מסימני מים
@@ -473,7 +572,8 @@ export default defineConfig({
                         pageUrl: purl,
                         title: cleanTitle,
                         width: 1200,
-                        height: 750
+                        height: 750,
+                        query: englishQuery
                       });
                       if (sc > 0 && (turl.startsWith('http') || murl.startsWith('http'))) {
                         const rankBonus = Math.max(0, 42 - validIdx * 3);

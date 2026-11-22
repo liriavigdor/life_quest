@@ -1,5 +1,284 @@
 export const CURATED_USER_REPOSITORY_SEED = [
   {
+    "id": "approved_python_snake",
+    "name": "נחש קונסטריקטור",
+    "title": "נחש קונסטריקטור",
+    "imageUrl": "/staged_images/pool/ingested_נחש_קונסטריקטור_1795116694685.jpg",
+    "keywords": [
+      "פייתון",
+      "נחש",
+      "תכנות",
+      "קוד",
+      "פרויקט"
+    ],
+    "association": "פייתון, נחש, תכנות, קוד",
+    "domain": "daily_life",
+    "category": "🐍 חיות וסמלים",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116827037
+  },
+  {
+    "id": "approved_garry_kasparov",
+    "name": "גארי קספרוב",
+    "title": "גארי קספרוב",
+    "imageUrl": "/staged_images/pool/ingested_גארי_קספרוב_1795116725400.jpg",
+    "keywords": [
+      "שחמט",
+      "לוח",
+      "אלוף",
+      "חוג",
+      "משחק",
+      "מלך"
+    ],
+    "association": "שחמט, לוח, אלוף, חוג",
+    "domain": "daily_life",
+    "category": "♟️ שחמט וחשיבה",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116827037
+  },
+  {
+    "id": "approved_photocopier",
+    "name": "מכונת צילום משרדית",
+    "title": "מכונת צילום",
+    "imageUrl": "/staged_images/pool/ingested_מכונת_צילום_1795116767917.jpg",
+    "keywords": [
+      "סמינריון",
+      "הדפסה",
+      "דפים",
+      "צילום",
+      "מרצה",
+      "אוניברסיטה"
+    ],
+    "association": "סמינריון, הדפסה, דפים, צילום",
+    "domain": "daily_life",
+    "category": "🖨️ משרד ולימודים",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116827037
+  },
+  {
+    "id": "approved_huge_safe_vault",
+    "name": "כספת ענקית",
+    "title": "כספת ענקית",
+    "imageUrl": "/staged_images/pool/ingested_כספת_ענקית_1795116662297.jpg",
+    "keywords": [
+      "בנק",
+      "כסף",
+      "צ'ק",
+      "הפקדה",
+      "חיסכון",
+      "אוצר"
+    ],
+    "association": "בנק, כסף, צ'ק, הפקדה",
+    "domain": "daily_life",
+    "category": "🏦 כספים ובנקאות",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116827037
+  },
+  {
+    "id": "approved_madonna",
+    "name": "מדונה",
+    "title": "מדונה",
+    "imageUrl": "/staged_images/pool/ingested_מדונה_1795114430899.jpg",
+    "keywords": [
+      "הופעה",
+      "זמרת",
+      "קונצרט",
+      "כרטיסים",
+      "מוזיקה",
+      "שיר",
+      "במה"
+    ],
+    "association": "הופעה, זמרת, קונצרט, כרטיסים, מוזיקה",
+    "domain": "daily_life",
+    "category": "🎤 תרבות ובמה",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_dumbledore",
+    "name": "דמבלדור",
+    "title": "דמבלדור",
+    "imageUrl": "/staged_images/pool/ingested_דמבלדור_1795105436530.jpg",
+    "keywords": [
+      "קסם",
+      "שרביט",
+      "הארי פוטר",
+      "חכמה",
+      "מבחן",
+      "לימודים"
+    ],
+    "association": "קסם, שרביט, הארי פוטר, חכמה, מבחן",
+    "domain": "daily_life",
+    "category": "🧙‍♂️ מיתולוגיה ופנטזיה",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_james_bond",
+    "name": "ג'יימס בונד",
+    "title": "ג'יימס בונד",
+    "imageUrl": "/staged_images/pool/ingested_ג_יימס_בונד_1795105206128.jpg",
+    "keywords": [
+      "ריגול",
+      "סודי",
+      "חליפה",
+      "מבצע",
+      "דרכון",
+      "סוכן"
+    ],
+    "association": "ריגול, סודי, חליפה, מבצע, דרכון",
+    "domain": "daily_life",
+    "category": "🕵️ דמויות וקולנוע",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_rabbit_speed",
+    "name": "ארנב",
+    "title": "ארנב",
+    "imageUrl": "/staged_images/pool/ingested_ארנב_1795103326144.jpg",
+    "keywords": [
+      "להכפיל",
+      "מהירות",
+      "ריבוי",
+      "ריצה",
+      "זריזות",
+      "טבע"
+    ],
+    "association": "להכפיל, מהירות, ריבוי, ריצה",
+    "domain": "daily_life",
+    "category": "🐰 טבע וחיות",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_gift_box_ribbon",
+    "name": "קופסת מתנה מהודרת",
+    "title": "קופסת מתנה",
+    "imageUrl": "/staged_images/pool/ingested_קופסת_מתנה_1795105240605.jpg",
+    "keywords": [
+      "מתנה",
+      "יום הולדת",
+      "הפתעה",
+      "סרט",
+      "אירוע",
+      "חגיגה"
+    ],
+    "association": "מתנה, יום הולדת, הפתעה, סרט",
+    "domain": "daily_life",
+    "category": "🎁 אירועים ושמחות",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_giant_stadium",
+    "name": "אצטדיון ענק",
+    "title": "אצטדיון ענק",
+    "imageUrl": "/staged_images/pool/ingested_אצטדיון_ענק_1795114447989.jpg",
+    "keywords": [
+      "הופעה",
+      "משחק",
+      "כדורגל",
+      "קהל",
+      "כרטיסים",
+      "אירוע"
+    ],
+    "association": "הופעה, משחק, כדורגל, קהל, כרטיסים",
+    "domain": "daily_life",
+    "category": "🏟️ אצטדיונים וספורט",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_drumsticks_percussion",
+    "name": "מקלות תיפוף",
+    "title": "מקלות תיפוף",
+    "imageUrl": "/staged_images/pool/ingested_מקלות_תיפוף_1795114494207.jpg",
+    "keywords": [
+      "קצב",
+      "תופים",
+      "הופעה",
+      "מוזיקה",
+      "אימון",
+      "להקה"
+    ],
+    "association": "קצב, תופים, הופעה, מוזיקה, אימון",
+    "domain": "daily_life",
+    "category": "🥁 כלי נגינה",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_green_cap_diesel",
+    "name": "פקק ירוק",
+    "title": "פקק ירוק",
+    "imageUrl": "/staged_images/pool/ingested_פקק_ירוק_1795108459543.jpg",
+    "keywords": [
+      "סולר",
+      "דיזל",
+      "דלק",
+      "תדלוק",
+      "משאבה",
+      "פקק דלק"
+    ],
+    "association": "סולר, דיזל, דלק, תדלוק, משאבה",
+    "domain": "daily_life",
+    "category": "⛽ תחבורה ודלק",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_safety_vest_glow",
+    "name": "אפוד זוהר",
+    "title": "אפוד זוהר",
+    "imageUrl": "/staged_images/pool/ingested_אפוד_זוהר_1795095372072.jpg",
+    "keywords": [
+      "טסט",
+      "רכב",
+      "בטיחות",
+      "בדיקה",
+      "בלמים",
+      "זהירות"
+    ],
+    "association": "טסט, רכב, בטיחות, בדיקה",
+    "domain": "daily_life",
+    "category": "🦺 בטיחות ורכב",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
+    "id": "approved_helium_balloon",
+    "name": "בלון הליום",
+    "title": "בלון הליום",
+    "imageUrl": "/staged_images/pool/ingested_בלון_הליום_1795093244236.jpg",
+    "keywords": [
+      "יום הולדת",
+      "חגיגה",
+      "מתנה",
+      "מסיבה",
+      "ילדים"
+    ],
+    "association": "יום הולדת, חגיגה, מתנה, מסיבה",
+    "domain": "daily_life",
+    "category": "🎈 אירועים",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1795116581804
+  },
+  {
     "id": "fresh_bread_loaf",
     "name": "כיכר לחם כפרי",
     "title": "כיכר לחם כפרי",
@@ -158,11 +437,11 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "imageUrl": "/staged_images/pool/authentic_sonic_the_hedgehog_v3.jpg",
     "keywords": [
       "מהירות",
-      "תספורת",
-      "מספרה",
-      "טבעות"
+      "זריזות",
+      "גיימינג",
+      "דחוף"
     ],
-    "association": "מהירות, תספורת, מספרה, טבעות",
+    "association": "מהירות, זריזות, גיימינג, דחוף",
     "domain": "daily_life",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
     "uploaderName": "חן (ידני)",
@@ -840,12 +1119,12 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "הגרינץ'",
     "imageUrl": "/staged_images/pool/the_grinch.jpg",
     "keywords": [
-      "ירוק",
-      "ערמומי",
-      "הר",
-      "חיוך"
+      "קמצנות",
+      "תקציב",
+      "ביטול",
+      "עצבני"
     ],
-    "association": "ירוק, ערמומי, הר, חיוך",
+    "association": "קמצנות, תקציב, ביטול, עצבני",
     "domain": "daily_life",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
     "uploaderName": "חן (ידני)",
@@ -1067,12 +1346,20 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "גשר הזהב בסן פרנסיסקו",
     "imageUrl": "/staged_images/pool/golden_gate_bridge_sf.jpg",
     "keywords": [
-      "ערפל",
-      "כתום",
-      "כבלים",
-      "מפרץ"
+      "סן פרנסיסקו",
+      "טיול",
+      "חיבור",
+      "מעבר",
+      "קשר",
+      "לחדש קשר",
+      "לפתח קשרים"
     ],
-    "association": "ערפל, כתום, כבלים, מפרץ",
+    "association": "חיבור, קשר, לחדש קשר, מעבר, סן פרנסיסקו",
+    "contextExplanations": {
+      "לחדש קשר": "גשר שמחבר בין שני צדדים ומחדש קשר",
+      "לפתח קשרים": "מחבר בין שני צדדים",
+      "קשרים": "מחבר בין שני צדדים"
+    },
     "domain": "daily_life",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
     "uploaderName": "חן (ידני)",
@@ -1257,12 +1544,12 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "פגודה אסייתית מסורתית",
     "imageUrl": "/staged_images/pool/chinese_pagoda.jpg",
     "keywords": [
-      "גגות",
+      "המזרח הרחוק",
       "מקדש",
-      "פעמונים",
-      "קומות"
+      "שלווה",
+      "אדריכלות"
     ],
-    "association": "גגות, מקדש, פעמונים, קומות",
+    "association": "המזרח הרחוק, מקדש, שלווה, אדריכלות",
     "domain": "daily_life",
     "category": "🏢 2. מבנים, אתרים וציוני דרך (51–100)",
     "uploaderName": "חן (ידני)",
@@ -2902,12 +3189,14 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "מכונית מרוץ",
     "imageUrl": "/staged_images/pool/item_224_מכונית_מרוץ_פורמולה_1.jpg",
     "keywords": [
+      "מכונית",
+      "רכב",
       "מהירות",
       "מסלול",
       "נהיגה",
       "אליפות"
     ],
-    "association": "מהירות, מסלול, נהיגה, אליפות",
+    "association": "מכונית, רכב, מהירות, מסלול",
     "domain": "daily_life",
     "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
     "uploaderName": "חן + AI",
@@ -3244,12 +3533,14 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "מכונית חיפושית",
     "imageUrl": "/staged_images/pool/item_242_מכונית_חיפושית.jpg",
     "keywords": [
+      "אוטו",
+      "רכב",
+      "מכונית",
       "פולקסווגן",
-      "מוסך",
       "אספנות",
-      "רטרו"
+      "מוסך"
     ],
-    "association": "פולקסווגן, מוסך, אספנות, רטרו",
+    "association": "אוטו, רכב, מכונית, פולקסווגן",
     "domain": "daily_life",
     "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
     "uploaderName": "חן + AI",
@@ -4079,12 +4370,12 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "סופת טורנדו",
     "imageUrl": "/staged_images/pool/item_286_סופת_טורנדו.jpg",
     "keywords": [
-      "סופה",
-      "מערבולת",
+      "בלגן",
+      "סערה",
       "רוח",
-      "משפך"
+      "דחופים"
     ],
-    "association": "סופה, מערבולת, רוח, משפך",
+    "association": "בלגן, סערה, רוח, דחופים",
     "domain": "daily_life",
     "category": "🌿 6. טבע, בעלי חיים וגיאוגרפיה (251–300)",
     "uploaderName": "חן (ידני)",
@@ -4681,16 +4972,16 @@ export const CURATED_USER_REPOSITORY_SEED = [
   },
   {
     "id": "item_318_כרטיס_אדום_וצהוב",
-    "name": "כרטיס אדום וצהוב",
-    "title": "כרטיס אדום וצהוב",
-    "imageUrl": "/staged_images/pool/item_318_כרטיס_אדום_וצהוב.jpg",
+    "name": "כרטיס צהוב",
+    "title": "כרטיס צהוב",
+    "imageUrl": "/staged_images/pool/item_318_כרטיס_צהוב.jpg",
     "keywords": [
-      "הרחקה",
-      "עבירה",
       "אזהרה",
-      "שיפוט"
+      "זהירות",
+      "עבירה",
+      "שופט"
     ],
-    "association": "הרחקה, עבירה, אזהרה, שיפוט",
+    "association": "אזהרה, זהירות, עבירה, שופט",
     "domain": "daily_life",
     "category": "⚽ 7. ספורט, משחקים ופנאי (301–350)",
     "uploaderName": "חן + AI",
@@ -5445,12 +5736,14 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "מטאטא ויעה",
     "imageUrl": "/staged_images/pool/item_358_מטאטא_ומגרוד.jpg",
     "keywords": [
+      "בלאגן",
+      "בלגן",
+      "סדר",
       "ניקיון",
-      "רצפה",
-      "בית",
+      "טאטוא",
       "אבק"
     ],
-    "association": "ניקיון, רצפה, בית, אבק",
+    "association": "בלאגן, בלגן, סדר, ניקיון, טאטוא",
     "domain": "daily_life",
     "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
     "uploaderName": "חן + AI",
@@ -6657,15 +6950,16 @@ export const CURATED_USER_REPOSITORY_SEED = [
   },
   {
     "id": "item_422_כרטיס_אדום",
-    "name": "כרטיס הרחקה",
-    "title": "כרטיס הרחקה",
+    "name": "כרטיס אדום",
+    "title": "כרטיס אדום",
     "imageUrl": "/staged_images/pool/item_422_כרטיס_אדום.jpg",
     "keywords": [
-      "עבירה",
-      "שיפוט",
-      "הפסקה"
+      "כדורגל",
+      "עונש",
+      "חמור",
+      "הרחקה"
     ],
-    "association": "עבירה, שיפוט, הפסקה",
+    "association": "כדורגל, עונש, חמור, הרחקה",
     "domain": "daily_life",
     "category": "🗂️ קלישאות ויזואליות, חפצים יומיומיים וסטריאוטיפים",
     "uploaderName": "חן + AI",
@@ -8137,10 +8431,10 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "createdAt": 1794400000428
   },
   {
-    "id": "item_500_שלדג",
+    "id": "item_500_יציאת_חירום",
     "name": "יציאת חירום",
     "title": "יציאת חירום",
-    "imageUrl": "/staged_images/pool/item_500_שלדג.jpg",
+    "imageUrl": "/staged_images/pool/item_500_יציאת_חירום.jpg",
     "keywords": [
       "דלת",
       "בטיחות",
@@ -8164,9 +8458,10 @@ export const CURATED_USER_REPOSITORY_SEED = [
       "הסכם",
       "חוזה",
       "פגישה",
-      "עסקים"
+      "עסקים",
+      "עבודה"
     ],
-    "association": "הסכם, חוזה, פגישה, עסקים",
+    "association": "הסכם, חוזה, פגישה, עסקים, עבודה",
     "domain": "daily_life",
     "category": "🤝 10. אינטראקציות חברתיות ומפגשים",
     "uploaderName": "חן + AI",
@@ -8180,12 +8475,12 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "משקפי ראייה",
     "imageUrl": "/staged_images/pool/nerd_geek_glasses.jpg",
     "keywords": [
-      "מסגרת",
-      "עדשות",
       "קריאה",
-      "אופטיקה"
+      "רופא עיניים",
+      "לימודים",
+      "בדיקה"
     ],
-    "association": "מסגרת, עדשות, קריאה, אופטיקה",
+    "association": "קריאה, רופא עיניים, לימודים, בדיקה",
     "domain": "daily_life",
     "category": "🎬 1. דמויות בדיוניות ותרבות פופ (1–50)",
     "uploaderName": "חן (ידני)",
@@ -8711,12 +9006,13 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "imageUrl": "/staged_images/pool/new_018_wall_light_switch.jpg",
     "keywords": [
       "כיבוי",
+      "הדלקה",
       "חשמל",
-      "חדר",
-      "בית",
-      "תיקון"
+      "תאורה",
+      "מנורה",
+      "אור"
     ],
-    "association": "כיבוי, חשמל, חדר, בית, תיקון",
+    "association": "כיבוי, הדלקה, חשמל, תאורה, מנורה",
     "domain": "daily_life",
     "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
     "uploaderName": "חן + AI",
@@ -8890,13 +9186,14 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "title": "שואב אבק",
     "imageUrl": "/staged_images/pool/new_027_vacuum_cleaner.jpg",
     "keywords": [
-      "ניקיון",
-      "רצפה",
-      "שטיח",
+      "בלאגן",
+      "בלגן",
       "סדר",
-      "בית"
+      "ניקיון",
+      "שטיח",
+      "אבק"
     ],
-    "association": "ניקיון, רצפה, שטיח, סדר, בית",
+    "association": "בלאגן, בלגן, סדר, ניקיון, שטיח",
     "domain": "daily_life",
     "category": "🛠️ 8. חפצים יומיומיים וכלים (351–400)",
     "uploaderName": "חן + AI",
@@ -10754,9 +11051,14 @@ export const CURATED_USER_REPOSITORY_SEED = [
       "אימון",
       "כושר",
       "טיול",
-      "פארק"
+      "פארק",
+      "לא לשבת בבית"
     ],
-    "association": "רכיבה, אימון, כושר, טיול, פארק",
+    "association": "רכיבה, אימון, כושר, טיול, פארק, לא לשבת בבית",
+    "contextExplanations": {
+      "לא לשבת בבית": "תנועה ורכיבה בחוץ",
+      "לשבת בבית": "תנועה ורכיבה בחוץ"
+    },
     "domain": "daily_life",
     "category": "🚗 5. כלי תחבורה מכל הזמנים (201–250)",
     "uploaderName": "חן + AI",
@@ -11363,6 +11665,216 @@ export const CURATED_USER_REPOSITORY_SEED = [
     "isUserApproved": true,
     "isCuratedSeed": true,
     "createdAt": 1794400001150
+  },
+  {
+    "id": "bela_lugosi_dracula_curated",
+    "name": "דרקולה",
+    "title": "דרקולה",
+    "imageUrl": "/staged_images/pool/bela_lugosi_dracula.jpg",
+    "keywords": ["בדיקת דם", "דם", "דרקולה", "ערפד", "מרפאה", "מעבדה"],
+    "association": "בדיקת דם, דם, דרקולה, ערפד, מרפאה",
+    "domain": "daily_life",
+    "category": "🎭 דמויות תרבות",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001151
+  },
+  {
+    "id": "new_044_medicine_capsule_curated",
+    "name": "קפסולת תרופה",
+    "title": "קפסולת תרופה",
+    "imageUrl": "/staged_images/pool/new_044_medicine_capsule.jpg",
+    "keywords": ["תרופות", "אקמול", "כדורים", "בית מרקחת", "רוקח", "טיפות עיניים", "חיסון"],
+    "association": "תרופות, אקמול, כדורים, בית מרקחת, רוקח",
+    "domain": "daily_life",
+    "category": "🏥 בריאות ורפואה",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001152
+  },
+  {
+    "id": "stethoscope_medical_curated",
+    "name": "סטטוסקופ רפואי",
+    "title": "סטטוסקופ רפואי",
+    "imageUrl": "/staged_images/pool/stethoscope_medical.jpg",
+    "keywords": ["רופא", "בדיקה", "חיסון", "זריקה", "מרפאה", "קופת חולים", "לב"],
+    "association": "רופא, בדיקה, חיסון, זריקה, מרפאה",
+    "domain": "daily_life",
+    "category": "🏥 בריאות ורפואה",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001153
+  },
+  {
+    "id": "nerd_geek_glasses_curated",
+    "name": "משקפי ראייה",
+    "title": "משקפי ראייה",
+    "imageUrl": "/staged_images/pool/nerd_geek_glasses.jpg",
+    "keywords": ["משקפיים", "ראייה", "בדיקת ראייה", "אופטומטריסט", "מספר"],
+    "association": "משקפיים, ראייה, בדיקת ראייה, אופטומטריסט",
+    "domain": "daily_life",
+    "category": "👓 אופנה ואביזרים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001154
+  },
+  {
+    "id": "new_055_parking_meter_curated",
+    "name": "מדחן חניה",
+    "title": "מדחן חניה",
+    "imageUrl": "/staged_images/pool/new_055_parking_meter.jpg",
+    "keywords": ["דוח חניה", "קנס", "חניה", "מדחן", "עירייה", "רכב"],
+    "association": "דוח חניה, קנס, חניה, מדחן, עירייה",
+    "domain": "daily_life",
+    "category": "🚗 רכב ותחבורה",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001155
+  },
+  {
+    "id": "new_007_passport_booklet_curated",
+    "name": "דרכון ביומטרי",
+    "title": "דרכון ביומטרי",
+    "imageUrl": "/staged_images/pool/new_007_passport_booklet.jpg",
+    "keywords": ["דרכון", "ביומטרי", "משרד הפנים", "נמל תעופה", "טיסה"],
+    "association": "דרכון, ביומטרי, משרד הפנים, נמל תעופה",
+    "domain": "daily_life",
+    "category": "🛂 מסמכים ובירוקרטיה",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001156
+  },
+  {
+    "id": "feather_quill_inkwell_curated",
+    "name": "עט נוצה ודיו",
+    "title": "עט נוצה ודיו",
+    "imageUrl": "/staged_images/pool/feather_quill_inkwell.jpg",
+    "keywords": ["חוזה", "שכירות", "עורך דין", "חתימה", "סמינריון", "מרצה", "מחקר"],
+    "association": "חוזה, שכירות, עורך דין, חתימה, סמינריון",
+    "domain": "daily_life",
+    "category": "📜 כתיבה ומשפט",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001157
+  },
+  {
+    "id": "new_003_bank_checkbook_curated",
+    "name": "פנקס המחאות",
+    "title": "פנקס המחאות",
+    "imageUrl": "/staged_images/pool/new_003_bank_checkbook.jpg",
+    "keywords": ["צ'ק", "צק", "צ'קים", "צקים", "המחאה", "הפקדה", "בנק", "חשבון בנק", "פנקס המחאות"],
+    "association": "צ'ק, צק, המחאה, הפקדה, בנק, חשבון בנק",
+    "domain": "daily_life",
+    "category": "💳 פיננסים ובנקאות",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001158
+  },
+  {
+    "id": "mary_poppins_umbrella_curated",
+    "name": "מטריית מרי פופינס",
+    "title": "מטריית מרי פופינס",
+    "imageUrl": "/staged_images/pool/mary_poppins_umbrella.jpg",
+    "keywords": ["ביטוח", "ביטוח מקיף", "פוליסה", "הגנה", "מטריה"],
+    "association": "ביטוח, ביטוח מקיף, פוליסה, הגנה, מטריה",
+    "domain": "daily_life",
+    "category": "🌂 אביזרים ומטאפורות",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001159
+  },
+  {
+    "id": "new_013_cardboard_box_curated",
+    "name": "קרטון אריזה",
+    "title": "קרטון אריזה",
+    "imageUrl": "/staged_images/pool/new_013_cardboard_box.jpg",
+    "keywords": ["אריזה", "קרטונים", "מעבר דירה", "הובלה", "קופסה"],
+    "association": "אריזה, קרטונים, מעבר דירה, הובלה",
+    "domain": "daily_life",
+    "category": "📦 תחזוקה ומעבר",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001160
+  },
+  {
+    "id": "snoopy_doghouse_peanuts_curated",
+    "name": "סנופי הכלב",
+    "title": "סנופי הכלב",
+    "imageUrl": "/staged_images/pool/snoopy_doghouse_peanuts.jpg",
+    "keywords": ["כלב", "אוכל לכלב", "סנופי", "חיית מחמד"],
+    "association": "כלב, אוכל לכלב, סנופי, חיית מחמד",
+    "domain": "daily_life",
+    "category": "🐾 בעלי חיים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001161
+  },
+  {
+    "id": "new_148_bookshelf_curated",
+    "name": "מדף ספרים",
+    "title": "מדף ספרים",
+    "imageUrl": "/staged_images/pool/new_148_bookshelf.jpg",
+    "keywords": ["מדף", "לתלות מדף", "ספרים", "עץ", "קיר"],
+    "association": "מדף, לתלות מדף, ספרים, עץ, קיר",
+    "domain": "daily_life",
+    "category": "🏡 בית וריהוט",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001162
+  },
+  {
+    "id": "new_086_safe_box_curated",
+    "name": "כספת ברזל מאובטחת",
+    "title": "כספת ברזל מאובטחת",
+    "imageUrl": "/staged_images/pool/new_086_safe_box.jpg",
+    "keywords": ["כלכלה", "מיקרו כלכלה", "בנק", "בחינה", "מבחן", "חיסכון"],
+    "association": "כלכלה, מיקרו כלכלה, בנק, בחינה, מבחן",
+    "domain": "daily_life",
+    "category": "🔒 פיננסים וביטחון",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001163
+  },
+  {
+    "id": "ingested_python_snake_curated",
+    "name": "נחש קונסטריקטור",
+    "title": "נחש קונסטריקטור",
+    "imageUrl": "/staged_images/pool/ingested_נחש_קונסטריקטור_1795116694685.jpg",
+    "keywords": ["פייתון", "פיתון", "תכנות", "קוד", "נחש", "קונסטריקטור"],
+    "association": "פייתון, פיתון, תכנות, קוד, נחש",
+    "domain": "daily_life",
+    "category": "🐾 בעלי חיים",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001164
+  },
+  {
+    "id": "ingested_white_rabbit_curated",
+    "name": "ארנב מהאגדות",
+    "title": "ארנב מהאגדות",
+    "imageUrl": "/staged_images/pool/ingested_ארנב_מהאגדות_1795126089173.jpg",
+    "keywords": ["זמן", "שעון", "איחור", "דקות", "ארנב", "שעון כיס", "אליס"],
+    "association": "זמן, שעון, איחור, דקות, ארנב, שעון כיס",
+    "domain": "daily_life",
+    "category": "🎭 דמויות תרבות",
+    "uploaderName": "חן + AI",
+    "isUserApproved": true,
+    "isCuratedSeed": true,
+    "createdAt": 1794400001165
   }
 ];
 

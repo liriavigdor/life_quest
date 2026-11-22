@@ -475,73 +475,119 @@ export async function regenerateAlternativeMnemonicImage(itemTitle = '', current
   clean = clean.replace(/\([^)]*\)/g, '').trim();
   if (!clean) return null;
 
-  // 1. מעבר נקי ומדויק בין המועמדים ברשימת האסוציאציות המוכנה (Rotation)
-  if (itemObject && Array.isArray(itemObject.candidates) && itemObject.candidates.length > 0) {
+  // 1. מעבר נקי ומדויק בין המועמדים ברשימת האסוציאציות המוכנה (Rotation) + יצירת גל חדש כשנגמרות החלופות
+  if (itemObject) {
+    if (!Array.isArray(itemObject.candidates)) {
+      itemObject.candidates = [];
+    }
+
     // סינון מוחלט של מועמדים שסומנו בדיסלייק כדי שלא יופיעו שוב לעולם!
-    const eligibleCandidates = itemObject.candidates.filter(c => 
-      c && (!c.imageUrl || (!isAssociationDisliked(clean, c.imageUrl) && c.imageUrl !== currentImageUrl))
+    let eligibleCandidates = itemObject.candidates.filter(c => 
+      c && c.imageUrl && !c.imageUrl.startsWith('data:image/svg') && !isAssociationDisliked(clean, c.imageUrl) && c.imageUrl !== currentImageUrl
     );
 
-    const poolToUse = eligibleCandidates.length > 0 ? eligibleCandidates : itemObject.candidates;
-    let nextIdx = 0;
-    if (typeof itemObject.currentCandidateIndex === 'number') {
-      nextIdx = (itemObject.currentCandidateIndex + 1) % poolToUse.length;
-    } else {
-      const currIdx = poolToUse.findIndex(c => c.imageUrl === currentImageUrl);
-      nextIdx = currIdx >= 0 ? (currIdx + 1) % poolToUse.length : 0;
-    }
-    itemObject.currentCandidateIndex = nextIdx;
-    const cand = poolToUse[nextIdx] || poolToUse[0];
-    let resolvedImg = cand.imageUrl;
-
-    // פתרון עצל (Lazy Resolution) של עוגנים חלופיים:
-    if (!resolvedImg || resolvedImg.startsWith('data:image/svg')) {
-      // 1. בדיקת מאגר מקומי מדויק לפי שורש
-      const anchorClean = (cand.anchorName || '').trim().toLowerCase();
-      const poolMatch = STAGED_IMAGES_POOL.find(p => {
-        if (p.theme === 'fictional_pop' || p.category?.includes('בדיוניות') || p.category?.includes('1. דמויות')) {
-          return false;
-        }
-        const pName = (p.name_he || p.name || p.suggestedName || '').trim().toLowerCase();
-        return pName && (pName === anchorClean || anchorClean === pName);
-      });
-      if (poolMatch && poolMatch.imageUrl) {
-        resolvedImg = poolMatch.imageUrl;
-        cand.imageUrl = resolvedImg;
-      }
-
-      // 2. פנייה לרשת אך ורק אם קיימת שאילתת צילום מאומתת באנגלית!
-      if ((!resolvedImg || resolvedImg.startsWith('data:image/svg')) && cand.englishQuery && !/[\u0590-\u05FF]/.test(cand.englishQuery)) {
-        const fetched = await searchPopularWebImages(cand.anchorName, 3, cand.englishQuery);
-        if (fetched && fetched[0]) {
-          let candidateUrl = fetched[0];
-          if (candidateUrl.startsWith('http') && !candidateUrl.includes('/staged_images/pool/')) {
-            try {
-              const ingestRes = await ingestImagePermanently({
-                imageUrl: candidateUrl,
-                anchorName: cand.anchorName,
-                coreConcept: clean,
-                explanation: cand.explanation || ''
-              });
-              if (ingestRes && ingestRes.ok && ingestRes.localImageUrl) {
-                candidateUrl = ingestRes.localImageUrl;
-              }
-            } catch (_) {}
+    // אם המשתמש מיצה או פסל את כל המועמדים הקיימים — מפיקים מיידית גל חלופות חדש ומדויק מ-AI + Vision!
+    if (eligibleCandidates.length === 0) {
+      try {
+        const { generateFreshSwapCandidates } = await import('./mnemonicPipelineOrchestrator.js');
+        const existingNames = Array.from(new Set([
+          ...itemObject.candidates.map(c => c?.anchorName).filter(Boolean),
+          itemObject.associationWord
+        ].filter(Boolean)));
+        const freshWave = await generateFreshSwapCandidates(clean, existingNames, 3);
+        if (Array.isArray(freshWave) && freshWave.length > 0) {
+          const seen = new Set(itemObject.candidates.map(c => c?.imageUrl).filter(Boolean));
+          const added = [];
+          for (const fw of freshWave) {
+            if (fw?.imageUrl && !seen.has(fw.imageUrl) && !isAssociationDisliked(clean, fw.imageUrl)) {
+              seen.add(fw.imageUrl);
+              itemObject.candidates.push(fw);
+              added.push(fw);
+            }
           }
-          resolvedImg = candidateUrl;
+          if (added.length > 0) {
+            eligibleCandidates = added;
+          }
+        }
+      } catch (err) {
+        console.warn('Fresh swap wave failed:', err);
+      }
+    }
+
+    if (eligibleCandidates.length > 0 || itemObject.candidates.length > 0) {
+      const poolToUse = eligibleCandidates.length > 0 ? eligibleCandidates : itemObject.candidates;
+      let nextIdx = 0;
+      if (eligibleCandidates.length > 0) {
+        // בוחרים את החלופה הראשונה הזמינה שלא נצפתה/נפסלה
+        nextIdx = 0;
+      } else if (typeof itemObject.currentCandidateIndex === 'number') {
+        nextIdx = (itemObject.currentCandidateIndex + 1) % poolToUse.length;
+      } else {
+        const currIdx = poolToUse.findIndex(c => c.imageUrl === currentImageUrl);
+        nextIdx = currIdx >= 0 ? (currIdx + 1) % poolToUse.length : 0;
+      }
+      const cand = poolToUse[nextIdx] || poolToUse[0];
+      const realIdx = itemObject.candidates.findIndex(c => c === cand);
+      itemObject.currentCandidateIndex = realIdx >= 0 ? realIdx : nextIdx;
+      let resolvedImg = cand.imageUrl;
+
+      // פתרון עצל (Lazy Resolution) של עוגנים חלופיים:
+      if (!resolvedImg || resolvedImg.startsWith('data:image/svg')) {
+        // 1. בדיקת מאגר מקומי מדויק לפי שורש
+        const anchorClean = (cand.anchorName || '').trim().toLowerCase();
+        const poolMatch = STAGED_IMAGES_POOL.find(p => {
+          if (p.theme === 'fictional_pop' || p.category?.includes('בדיוניות') || p.category?.includes('1. דמויות')) {
+            return false;
+          }
+          const pName = (p.name_he || p.name || p.suggestedName || '').trim().toLowerCase();
+          return pName && (pName === anchorClean || anchorClean === pName);
+        });
+        if (poolMatch && poolMatch.imageUrl) {
+          resolvedImg = poolMatch.imageUrl;
           cand.imageUrl = resolvedImg;
         }
+
+        // 2. פנייה לרשת אך ורק אם קיימת שאילתת צילום מאומתת באנגלית!
+        if ((!resolvedImg || resolvedImg.startsWith('data:image/svg')) && cand.englishQuery && !/[\u0590-\u05FF]/.test(cand.englishQuery)) {
+          const fetched = await searchPopularWebImages(cand.anchorName, 4, cand.englishQuery);
+          for (const candidateUrlRaw of (fetched || [])) {
+            let candidateUrl = candidateUrlRaw;
+            let visionOk = true;
+            if (candidateUrl.startsWith('http') && !candidateUrl.includes('/staged_images/pool/')) {
+              try {
+                const ingestRes = await ingestImagePermanently({
+                  imageUrl: candidateUrl,
+                  anchorName: cand.anchorName,
+                  coreConcept: clean,
+                  explanation: cand.explanation || ''
+                });
+                if (ingestRes?.rejected) {
+                  visionOk = false;
+                } else if (ingestRes && ingestRes.ok && ingestRes.localImageUrl) {
+                  candidateUrl = ingestRes.localImageUrl;
+                }
+              } catch (_) {}
+            }
+            if (visionOk) {
+              resolvedImg = candidateUrl;
+              cand.imageUrl = resolvedImg;
+              break;
+            }
+          }
+        }
       }
+
+      const finalImg = resolvedImg || generateDynamicFallbackCard(cand.anchorName || clean);
+
+      return {
+        imageUrl: finalImg,
+        associationWord: cand.anchorName || clean,
+        story: cand.explanation || '',
+        explanation: cand.explanation || '',
+        fromPool: Boolean(finalImg && finalImg.includes('/staged_images/pool/')),
+        updatedCandidates: [...itemObject.candidates]
+      };
     }
-
-    const finalImg = resolvedImg || generateDynamicFallbackCard(cand.anchorName || clean);
-
-    return {
-      imageUrl: finalImg,
-      associationWord: cand.anchorName || clean,
-      story: cand.explanation || `עוגן זיכרון בארמון: ${cand.anchorName || clean}`,
-      fromPool: Boolean(finalImg && finalImg.includes('/staged_images/pool/'))
-    };
   }
 
   // 2. שער ברזל: אסור בתוקף לחפש את מילת המשימה הגולמית של המשתמש ברשת!

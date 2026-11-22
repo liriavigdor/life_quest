@@ -16,7 +16,7 @@ export function getMnemonicConnectionExplanation(
 ) {
   const customExp = String(providedStoryOrExplanation || '').trim();
 
-  // אם ה-AI לא התערב (אין שום הסבר מה-AI) — לא מציגים שום הסבר!
+  // אם אין הסבר ייעודי שנשמר במאגר או הופק ע"י ה-AI — לא מציגים הסבר סתמי
   if (!customExp) {
     return '';
   }

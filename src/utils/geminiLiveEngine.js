@@ -148,7 +148,7 @@ ${JSON.stringify(cleanList, null, 2)}
 }`;
 
   // Call Gemini API (Active supported production models with fast fallback)
-  const models = ['gemini-3.5-flash-lite', 'gemini-flash-lite-latest', 'gemini-3.8-flash', 'gemini-3.5-flash'];
+  const models = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-flash-lite-latest', 'gemini-3.8-flash'];
   let jsonResponse = null;
   let lastErr = null;
 

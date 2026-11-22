@@ -215,13 +215,13 @@ export function AnimatedPalaceStoryBook({
 
             {/* Top Ornamental Header */}
             <div className="relative z-10 px-8 pt-8 pb-3 flex items-center justify-between border-b border-amber-900/20 text-center">
-              <span className="text-amber-800/40 text-sm font-serif select-none">❧ § ☙</span>
+              <span style={{ color: 'rgba(146, 64, 14, 0.55)', fontSize: '0.95rem', fontFamily: 'serif', userSelect: 'none' }}>❧ § ☙</span>
               <div className="flex items-center gap-2">
-                <span className="text-amber-900 font-black text-sm md:text-base tracking-widest uppercase">
+                <span style={{ color: '#78350f', fontWeight: 900, fontSize: '1rem', letterSpacing: '0.06em' }}>
                   📜 סיפור הדרך של הארמון
                 </span>
               </div>
-              <span className="text-amber-800/40 text-sm font-serif select-none">❧ § ☙</span>
+              <span style={{ color: 'rgba(146, 64, 14, 0.55)', fontSize: '0.95rem', fontFamily: 'serif', userSelect: 'none' }}>❧ § ☙</span>
             </div>
 
             {/* Core Center Area: THE STORY AND ONLY THE STORY */}
@@ -229,13 +229,13 @@ export function AnimatedPalaceStoryBook({
               className="relative z-10 my-auto px-6 md:px-16 py-8 text-center flex flex-col items-center justify-center"
               dir="rtl"
             >
-              <div className="text-amber-700/30 text-5xl md:text-6xl font-serif select-none leading-none mb-2">
+              <div style={{ color: 'rgba(180, 83, 9, 0.35)', fontSize: '3rem', fontFamily: 'serif', lineHeight: 1, marginBottom: '8px', userSelect: 'none' }}>
                 ❝
               </div>
 
               {/* The Grand Master Story */}
               <div 
-                className="font-extrabold leading-relaxed tracking-tight select-text text-stone-900"
+                className="font-extrabold leading-relaxed tracking-tight select-text"
                 style={{
                   fontSize: 'clamp(1.4rem, 2.9vw, 2.25rem)',
                   lineHeight: '1.7',
@@ -247,14 +247,14 @@ export function AnimatedPalaceStoryBook({
                 {storyText}
               </div>
 
-              <div className="text-amber-700/30 text-5xl md:text-6xl font-serif select-none leading-none mt-2">
+              <div style={{ color: 'rgba(180, 83, 9, 0.35)', fontSize: '3rem', fontFamily: 'serif', lineHeight: 1, marginTop: '8px', userSelect: 'none' }}>
                 ❞
               </div>
             </div>
 
             {/* Bottom Calligraphic Footer */}
             <div className="relative z-10 px-8 pb-6 pt-2 flex items-center justify-center border-t border-amber-900/15">
-              <span className="text-amber-800/60 font-serif text-xs md:text-sm tracking-widest select-none">
+              <span style={{ color: '#92400e', fontFamily: 'serif', fontSize: '0.88rem', fontWeight: 700, letterSpacing: '0.08em', userSelect: 'none' }}>
                 ~ חקוק בזיכרון לנצח כסרט חי ~
               </span>
             </div>

@@ -1,0 +1,190 @@
+{
+  "sessionId": "sess_1795329919143",
+  "startedAt": "2026-11-22T06:45:19.143Z",
+  "updatedAt": "2026-11-22T06:50:40.332Z",
+  "inputList": [
+    "לאכול את הכריך",
+    "להביא חיילת ללא נשק",
+    "לוודא שאני יוצא ליום חופש",
+    "בדיקה לגבי הכלי של יואב",
+    "להתחיל לבנות את היום הולדת של עדה"
+  ],
+  "initialStations": [
+    {
+      "order": 1,
+      "itemTitle": "לאכול את הכריך",
+      "coreConcept": "כריך",
+      "anchorName": "בילבו בגינס",
+      "imageUrl": "/staged_images/pool/authentic_bilbo_baggins.jpg",
+      "explanation": "",
+      "source": "user_approved",
+      "aiReasoning": "",
+      "visionAuditLog": [],
+      "candidatesCount": 3,
+      "candidateNames": [
+        "בילבו בגינס",
+        "רונלד מקדונלד",
+        "סנופי הכלב"
+      ]
+    },
+    {
+      "order": 2,
+      "itemTitle": "להביא חיילת ללא נשק",
+      "coreConcept": "חיילת ללא נשק",
+      "anchorName": "תרמילאי",
+      "imageUrl": "/staged_images/pool/hiking_trail_hiker.jpg",
+      "explanation": "",
+      "source": "frugal_root_lemma",
+      "aiReasoning": "",
+      "visionAuditLog": [],
+      "candidatesCount": 3,
+      "candidateNames": [
+        "תרמילאי",
+        "רוכסן",
+        "מחבט בייסבול"
+      ]
+    },
+    {
+      "order": 3,
+      "itemTitle": "לוודא שאני יוצא ליום חופש",
+      "coreConcept": "לוודא שאני יוצא ליום חופש",
+      "anchorName": "בקבוק קרם הגנה",
+      "imageUrl": "/staged_images/pool/new_126_sunscreen_bottle.jpg",
+      "explanation": "",
+      "source": "frugal_root_lemma",
+      "aiReasoning": "",
+      "visionAuditLog": [],
+      "candidatesCount": 3,
+      "candidateNames": [
+        "בקבוק קרם הגנה",
+        "חמניות",
+        "שקיעה"
+      ]
+    },
+    {
+      "order": 4,
+      "itemTitle": "בדיקה לגבי הכלי של יואב",
+      "coreConcept": "בדיקה לגבי הכלי של יואב",
+      "anchorName": "אפוד זוהר",
+      "imageUrl": "/staged_images/pool/ingested_אפוד_זוהר_1795095372072.jpg",
+      "explanation": "",
+      "source": "user_approved",
+      "aiReasoning": "",
+      "visionAuditLog": [],
+      "candidatesCount": 3,
+      "candidateNames": [
+        "אפוד זוהר",
+        "זכוכית מגדלת",
+        "סטטוסקופ רפואי"
+      ]
+    },
+    {
+      "order": 5,
+      "itemTitle": "להתחיל לבנות את היום הולדת של עדה",
+      "coreConcept": "יום הולדת",
+      "anchorName": "קופסת מתנה",
+      "imageUrl": "/staged_images/pool/ingested_קופסת_מתנה_1795105240605.jpg",
+      "explanation": "",
+      "source": "user_approved",
+      "aiReasoning": "",
+      "visionAuditLog": [],
+      "candidatesCount": 3,
+      "candidateNames": [
+        "קופסת מתנה",
+        "בלון הליום",
+        "עוגת שכבות"
+      ]
+    }
+  ],
+  "initialStory": "בילבו בגינס התרמילאי שלף בקבוק קרם מתוך אפוד זוהר שנעטף בקופסת מתנה.",
+  "initialStoryReasoning": "הגדרת בילבו בגינס כתרמילאי מאפשרת לשלב את שני העוגנים הראשונים כדמות אחת, הפועלת על בקבוק הקרם, האפוד הזוהר וקופסת המתנה במשפט יחיד וזורם.",
+  "finalStory": "רונלד מקדונלד הגיש לתרמילאי בשדה חמניות אפוד זוהר בתוך קופסת מתנה.",
+  "finalStoryReasoning": "חיבור שתי הדמויות מתוך העוגנים לסצנה קיומית אחת עם פועל יחיד כדי למנוע רשימת פעלים.",
+  "events": [
+    {
+      "at": "2026-11-22T06:45:20.413Z",
+      "type": "story_updated",
+      "story": "בילבו בגינס עקב אחרי תרמילאי שמורח בקבוק קרם על אפוד זוהר מתוך קופסת מתנה.",
+      "anchors": [
+        "בילבו בגינס",
+        "תרמילאי",
+        "בקבוק קרם הגנה",
+        "אפוד זוהר",
+        "קופסת מתנה"
+      ],
+      "storyReasoning": "חיבור בילבו והתרמילאי בסצנה אחת מרוכזת עם שלושת החפצים לפי הסדר."
+    },
+    {
+      "at": "2026-11-22T06:47:48.416Z",
+      "type": "swap",
+      "itemTitle": "לאכול את הכריך",
+      "fromAnchor": "משכן הוביט",
+      "toAnchor": "רונלד מקדונלד",
+      "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg",
+      "explanation": ""
+    },
+    {
+      "at": "2026-11-22T06:48:06.671Z",
+      "type": "dislike",
+      "itemTitle": "לאכול את הכריך",
+      "anchorName": "משכן הוביט",
+      "imageUrl": "/staged_images/pool/authentic_bilbo_baggins.jpg"
+    },
+    {
+      "at": "2026-11-22T06:48:07.072Z",
+      "type": "story_updated",
+      "story": "רונלד מקדונלד הגיש לתרמילאי באפוד זוהר קופסת מתנה שהכילה בקבוק קרם.",
+      "anchors": [
+        "רונלד מקדונלד",
+        "תרמילאי",
+        "בקבוק קרם הגנה",
+        "אפוד זוהר",
+        "קופסת מתנה"
+      ],
+      "storyReasoning": "חיבור רונלד מקדונלד והתרמילאי כדמויות הקיימות בעלילה שבה מוגשת קופסת המתנה עם הקרם."
+    },
+    {
+      "at": "2026-11-22T06:48:35.711Z",
+      "type": "like",
+      "itemTitle": "לאכול את הכריך",
+      "anchorName": "רונלד מקדונלד",
+      "imageUrl": "/staged_images/pool/ronald_mcdonald.jpg"
+    },
+    {
+      "at": "2026-11-22T06:49:57.869Z",
+      "type": "swap",
+      "itemTitle": "לוודא שאני יוצא ליום חופש",
+      "fromAnchor": "בקבוק קרם הגנה",
+      "toAnchor": "חמניות",
+      "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg",
+      "explanation": ""
+    },
+    {
+      "at": "2026-11-22T06:50:16.907Z",
+      "type": "story_updated",
+      "story": "רונלד מקדונלד הגיש לתרמילאי בשדה חמניות אפוד זוהר בתוך קופסת מתנה.",
+      "anchors": [
+        "רונלד מקדונלד",
+        "תרמילאי",
+        "חמניות",
+        "אפוד זוהר",
+        "קופסת מתנה"
+      ],
+      "storyReasoning": "חיבור שתי הדמויות מתוך העוגנים לסצנה קיומית אחת עם פועל יחיד כדי למנוע רשימת פעלים."
+    },
+    {
+      "at": "2026-11-22T06:50:17.379Z",
+      "type": "dislike",
+      "itemTitle": "לוודא שאני יוצא ליום חופש",
+      "anchorName": "בקבוק קרם הגנה",
+      "imageUrl": "/staged_images/pool/new_126_sunscreen_bottle.jpg"
+    },
+    {
+      "at": "2026-11-22T06:50:40.332Z",
+      "type": "like",
+      "itemTitle": "לוודא שאני יוצא ליום חופש",
+      "anchorName": "חמניות",
+      "imageUrl": "/staged_images/pool/item_467_שדה_חמניות.jpg"
+    }
+  ]
+}

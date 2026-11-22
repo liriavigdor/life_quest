@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, X, ListPlus, Loader2, Key, Check, ExternalLink, ShieldCheck, RefreshCw } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { sounds } from '../utils/sound';
-import { processTaskListWithSynergy } from '../utils/mnemonicPipelineOrchestrator';
+import { processTaskListChronologically } from '../utils/mnemonicPipelineOrchestrator';
+import { startSessionLog } from '../utils/sessionLogger';
 import { curateListWithAi } from '../utils/aiMnemonicCurator';
 import { 
   getGeminiApiKey, 
@@ -14,7 +15,9 @@ import {
 export function QuickListInputModal({
   isOpen,
   onClose,
-  onGenerateList
+  onGenerateList,
+  onStreamStationUpdate,
+  onAllStationsReady
 }) {
   const [textInput, setTextInput] = useState(
     'לסדר את החדר\nלקנות שוקולית\nשיעור נהיגה מחר ב10'
@@ -45,21 +48,51 @@ export function QuickListInputModal({
     sounds?.playTap?.();
 
     try {
-      // הפעלת צינור הסינרגיה של 5 המומחים (אסוציאציות, מאגר מקומי, צילום רשת ואריגת סיפור)
-      setCurationStatus('מפעיל את צוות המומחים (אסוציאציות, מאגר מקומי וצילום רשת)... 🏰✨');
-      const synergyResult = await processTaskListWithSynergy(parsedItems);
+      // עיבוד כרונולוגי מהיר: מכינים את תחנה #1 ראשונה ומשחררים מיד את השחקן לטיול!
+      setCurationStatus('מכין את תחנה #1 כדי שתוכל לצאת מיד לדרך... 🏰✨');
+      let firstReleased = false;
 
-      try {
-        confetti({
-          particleCount: 50,
-          spread: 60,
-          origin: { y: 0.7 }
-        });
-      } catch (_) {}
+      const streamPromise = processTaskListChronologically(parsedItems, {
+        onFirstReady: (initialPayload) => {
+          firstReleased = true;
+          try {
+            confetti({
+              particleCount: 45,
+              spread: 60,
+              origin: { y: 0.7 }
+            });
+          } catch (_) {}
+          sounds?.playLevelUp?.();
+          onGenerateList(initialPayload);
+          setIsCurating(false);
+          setCurationStatus('');
+          onClose();
+        },
+        onStationReady: (station, idx, allStations) => {
+          if (typeof onStreamStationUpdate === 'function') {
+            onStreamStationUpdate(station, idx, allStations);
+          }
+        },
+        onAllDone: (finalPayload) => {
+          startSessionLog({
+            rawItems: parsedItems,
+            stations: finalPayload?.stations || [],
+            grandFinaleStory: finalPayload?.grandFinaleStory || ''
+          }).catch(() => {});
+          if (typeof onAllStationsReady === 'function') {
+            onAllStationsReady(finalPayload);
+          }
+        }
+      });
 
-      sounds?.playLevelUp?.();
-      onGenerateList(synergyResult);
-      onClose();
+      // לא חוסמים את סגירת המודאל אחרי שתחנה #1 כבר שוחררה — תחנות 2..5 ממשיכות ברקע
+      streamPromise.catch((err) => {
+        console.error('Background chronological stream error:', err);
+        if (!firstReleased) {
+          setIsCurating(false);
+          setCurationStatus('');
+        }
+      });
     } catch (err) {
       console.error('Synergy Curation error:', err);
       try {
@@ -68,10 +101,9 @@ export function QuickListInputModal({
       } catch (_) {
         onGenerateList(parsedItems);
       }
-      onClose();
-    } finally {
       setIsCurating(false);
       setCurationStatus('');
+      onClose();
     }
   };
 

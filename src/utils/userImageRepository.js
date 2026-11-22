@@ -19,6 +19,7 @@ import { STAGED_TRIPLET_POOL } from '../data/stagedTripletPool.js';
 import { CURATED_USER_REPOSITORY_SEED, DISCARDED_STAGED_IDS } from '../data/curatedUserRepositorySeed.js';
 import { getAssociativeLeapBridges } from './associativeLeapGraph.js';
 import { getHebrewSynonyms } from './hebrewSynonymThesaurus.js';
+import { areHebrewWordsLinguisticallyLinked } from './hebrewLinguisticsEngine.js';
 
 const CURATED_SEED_BY_ID = new Map(
   (Array.isArray(CURATED_USER_REPOSITORY_SEED) ? CURATED_USER_REPOSITORY_SEED : []).map(item => [item.id, item])
@@ -224,12 +225,46 @@ function mergeCuratedSeedIntoList(existingList = []) {
           existing.isCuratedSeed = true;
           itemUpdated = true;
         }
+        if (seed.contextExplanations) {
+          existing.contextExplanations = {
+            ...(existing.contextExplanations || {}),
+            ...seed.contextExplanations
+          };
+        }
         if (itemUpdated) {
           toSyncToCloud.push(existing);
           changed = true;
         }
       }
     }
+  }
+
+  // החלת עריכות מקומיות משולחן האוצרות (BulkImageCurationDesk) מ-localStorage
+  if (typeof window !== 'undefined' && window.localStorage) {
+    try {
+      const rawEdits = window.localStorage.getItem('lifequest_staged_local_edits');
+      if (rawEdits) {
+        const editsMap = JSON.parse(rawEdits);
+        for (const [id, edit] of Object.entries(editsMap)) {
+          if (!edit || !byId.has(id)) continue;
+          const target = byId.get(id);
+          if (edit.title) {
+            target.title = edit.title;
+            target.name = edit.title;
+          }
+          if (Array.isArray(edit.keywords)) {
+            target.keywords = [...edit.keywords];
+            target.association = edit.keywords.join(', ');
+          }
+          if (edit.contextExplanations) {
+            target.contextExplanations = {
+              ...(target.contextExplanations || {}),
+              ...edit.contextExplanations
+            };
+          }
+        }
+      }
+    } catch (_) {}
   }
 
   const merged = Array.from(byId.values());
@@ -363,8 +398,8 @@ function setupFirestoreRealtimeSync() {
   notifyStatusListeners();
 
   try {
-    const colRef = collection(db, FIRESTORE_COLLECTION);
-    onSnapshot(colRef, async (snapshot) => {
+    let unsubscribe = null;
+    unsubscribe = onSnapshot(colRef, async (snapshot) => {
       cloudSyncStatus = 'online';
       cloudSyncError = null;
       notifyStatusListeners();
@@ -387,10 +422,14 @@ function setupFirestoreRealtimeSync() {
       persistAllToIndexedDB(mergedCloud.items);
       notifyListeners();
     }, (err) => {
-      console.warn('Firestore realtime sync error:', err);
-      cloudSyncStatus = 'error';
+      console.warn('Firestore realtime sync note (running smoothly on local IndexedDB):', err.message);
+      cloudSyncStatus = 'offline';
       cloudSyncError = err.message;
       notifyStatusListeners();
+      // Unsubscribe immediately on permission/precondition error to stop listen channel retry loops
+      if (typeof unsubscribe === 'function' && (err.code === 'permission-denied' || err.code === 'failed-precondition' || err.message?.includes('permission'))) {
+        try { unsubscribe(); } catch (_) {}
+      }
     });
   } catch (err) {
     console.warn('Error initializing Firestore listener:', err);
@@ -509,12 +548,15 @@ export async function saveUserImage({
   keywords = [],
   associatedTasks = [],
   caption = '',
+  contextExplanations = {},
   domain = 'general',
   uploaderName = '',
   source = 'user_uploaded',
   isUserApproved = false,
   qualityScore = 95,
-  emoji = '⭐'
+  emoji = '⭐',
+  replaceKeywords = false,
+  replaceAssociatedTasks = false
 }) {
   const cleanTitle = (title || '').trim();
   if (!cleanTitle && !imageUrl) {
@@ -538,38 +580,30 @@ export async function saveUserImage({
       .map(k => k.trim())
       .filter(Boolean);
   }
-  if (existingMatch && Array.isArray(existingMatch.keywords)) {
+  if (!replaceKeywords && existingMatch && Array.isArray(existingMatch.keywords)) {
     for (const ek of existingMatch.keywords) {
       if (ek && !parsedKeywords.includes(ek)) parsedKeywords.push(ek);
     }
   }
 
   // Merge associated full task phrases (e.g. "לקנות שוקולית", "שיעור נהיגה מחר ב10")
-  const mergedTasks = Array.from(new Set([
-    ...(Array.isArray(associatedTasks) ? associatedTasks.map(t => String(t).trim()).filter(Boolean) : []),
-    ...(Array.isArray(existingMatch?.associatedTasks) ? existingMatch.associatedTasks : [])
-  ]));
+  const mergedTasks = replaceAssociatedTasks
+    ? (Array.isArray(associatedTasks) ? associatedTasks.map(t => String(t).trim()).filter(Boolean) : [])
+    : Array.from(new Set([
+        ...(Array.isArray(associatedTasks) ? associatedTasks.map(t => String(t).trim()).filter(Boolean) : []),
+        ...(Array.isArray(existingMatch?.associatedTasks) ? existingMatch.associatedTasks : [])
+      ]));
 
-  const maxWords = (isUserApproved || existingMatch?.isUserApproved || source === 'user_positive_feedback' || source === 'user_liked_web') ? 6 : 4;
+  const maxWords = replaceKeywords ? 25 : ((isUserApproved || existingMatch?.isUserApproved || source === 'user_positive_feedback' || source === 'user_liked_web') ? 10 : 4);
 
-  // Clean keywords: extract significant tokens from multi-word phrases so stop words don't crowd out real anchors
+  // Clean keywords: preserve clean trimmed words
   const cleanList = [];
   for (const raw of parsedKeywords) {
     const str = String(raw).trim();
     if (!str) continue;
     if (toCanonicalKey(str) === toCanonicalKey(cleanTitle)) continue;
-    if (str.includes(' ')) {
-      const sigParts = extractSignificantTokens(str).filter(p => p.length > 1 && !p.includes('-') && !/^\d+$/.test(p));
-      for (const p of sigParts) {
-        if (toCanonicalKey(p) === toCanonicalKey(cleanTitle)) continue;
-        if (!cleanList.includes(p) && cleanList.length < maxWords) {
-          cleanList.push(p);
-        }
-      }
-    } else {
-      if (!cleanList.includes(str) && cleanList.length < maxWords) {
-        cleanList.push(str);
-      }
+    if (!cleanList.includes(str) && cleanList.length < maxWords) {
+      cleanList.push(str);
     }
   }
   parsedKeywords = cleanList.slice(0, maxWords);
@@ -586,6 +620,11 @@ export async function saveUserImage({
   const now = Date.now();
   const savedContributor = (uploaderName || existingMatch?.uploaderName || (typeof localStorage !== 'undefined' ? localStorage.getItem('lifequest_contributor_name') : '') || 'משתמש').trim();
 
+  const mergedExplanations = {
+    ...(existingMatch?.contextExplanations || {}),
+    ...(contextExplanations || {})
+  };
+
   const record = {
     id: imageId,
     title: cleanTitle || existingMatch?.title || 'תמונה ללא שם',
@@ -594,6 +633,7 @@ export async function saveUserImage({
     keywords: parsedKeywords,
     associatedTasks: mergedTasks,
     caption: (caption || existingMatch?.caption || '').trim(),
+    contextExplanations: mergedExplanations,
     domain: domain || existingMatch?.domain || 'general',
     type: 'user_uploaded',
     source: source || existingMatch?.source || 'user_uploaded',
@@ -628,6 +668,21 @@ export async function saveUserImage({
       });
     } else if (typeof localStorage !== 'undefined') {
       localStorage.setItem('lifequest_user_images_fallback', JSON.stringify(cachedUserImages));
+    }
+
+    // שמירת עדכון העריכה המקומית ב-localStorage לשולחן האוצרות
+    if (typeof localStorage !== 'undefined') {
+      try {
+        const rawEdits = localStorage.getItem('lifequest_staged_local_edits');
+        const editsMap = rawEdits ? JSON.parse(rawEdits) : {};
+        editsMap[imageId] = {
+          title: record.title,
+          keywords: record.keywords,
+          contextExplanations: record.contextExplanations,
+          isModified: true
+        };
+        localStorage.setItem('lifequest_staged_local_edits', JSON.stringify(editsMap));
+      } catch (_) {}
     }
   } catch (err) {
     console.warn('Error persisting user image locally:', err);
@@ -701,12 +756,31 @@ export async function approveAndSaveMnemonicImage({
     // Dev server endpoint not active (e.g. static build), continue with IndexedDB + Firestore persistence
   }
 
+  const contextExplanations = {};
+  if (explanation) {
+    if (cleanTask) {
+      contextExplanations[toCanonicalKey(cleanTask)] = explanation;
+      contextExplanations[cleanTask] = explanation;
+    }
+    if (cleanConcept) {
+      contextExplanations[toCanonicalKey(cleanConcept)] = explanation;
+      contextExplanations[cleanConcept] = explanation;
+    }
+    for (const tok of sigTokens) {
+      if (tok && tok.length > 2) {
+        contextExplanations[toCanonicalKey(tok)] = explanation;
+        contextExplanations[tok] = explanation;
+      }
+    }
+  }
+
   const savedRecord = await saveUserImage({
     title: cleanAnchor || cleanTask,
     imageUrl: finalLocalOrRemoteUrl,
     keywords: [cleanTask, cleanAnchor, cleanConcept, ...sigTokens].filter(Boolean),
     associatedTasks: [cleanTask, cleanAnchor].filter(Boolean),
     caption: explanation || (cleanTask !== cleanAnchor ? `${cleanTask} ➔ ${cleanAnchor}` : cleanAnchor),
+    contextExplanations,
     domain,
     source: 'user_positive_feedback',
     isUserApproved: true,
@@ -1226,85 +1300,31 @@ export function hebrewWordMatches(searchWord = '', targetText = '') {
     if (normSearch === n2 && targetTokens.some(t => normalizeHebrewLetters(t) === n1)) return true;
   }
 
-  // Search variants (in normalized form) - ללא גזירת אותיות שורש נאיבית שמשחיתה מילים
-  const searchVariants = new Set([normSearch]);
-
-  // Construct ending ה <-> ת (דמעה <-> דמעת)
-  if (normSearch.endsWith('ה') && normSearch.length >= 3) {
-    searchVariants.add(normSearch.slice(0, -1) + 'ת');
-    searchVariants.add(normSearch.slice(0, -1) + 'ות');
-  }
-  if (normSearch.endsWith('ת') && normSearch.length >= 3) {
-    searchVariants.add(normSearch.slice(0, -1) + 'ה');
-    searchVariants.add(normSearch.slice(0, -1) + 'ות');
-  }
-  if (normSearch.endsWith('ות') && normSearch.length >= 4) {
-    if (SPECIAL_PLURAL_STEM_MAP[normSearch]) {
-      for (const s of SPECIAL_PLURAL_STEM_MAP[normSearch]) searchVariants.add(s);
-    } else {
-      searchVariants.add(normSearch.slice(0, -2) + 'ה');
-      searchVariants.add(normSearch.slice(0, -2) + 'ת');
-      searchVariants.add(normSearch.slice(0, -2));
-    }
-  }
-  if (normSearch.endsWith('ימ') && normSearch.length >= 4) { // ים normalized is ימ
-    if (SPECIAL_PLURAL_STEM_MAP[normSearch]) {
-      for (const s of SPECIAL_PLURAL_STEM_MAP[normSearch]) searchVariants.add(s);
-    } else {
-      searchVariants.add(normSearch.slice(0, -2));
+  // מנוע לשוני בטוח — איסור מוחלט על "קילוף" אותיות/סיומות/תחיליות או התאמת תת-מחרוזת עיוורת!
+  // התאמה מותרת אך ורק על בסיס: מילה זהה, מיפוי מפורש (SPECIAL_PLURAL_STEM_MAP), או משפחה מורפולוגית מאומתת (hebrewLinguisticsEngine).
+  const explicitVariants = new Set([normSearch]);
+  if (SPECIAL_PLURAL_STEM_MAP[normSearch]) {
+    for (const s of SPECIAL_PLURAL_STEM_MAP[normSearch]) {
+      explicitVariants.add(normalizeHebrewLetters(s));
     }
   }
 
-  // Check each token in target
   for (const rawToken of targetTokens) {
     const normToken = normalizeHebrewLetters(rawToken);
     if (!normToken) continue;
 
-    if (searchVariants.has(normToken)) return true;
+    // 1. התאמה מלאה או מיפוי רבים/יחיד מפורש מהמילון
+    if (explicitVariants.has(normToken)) return true;
 
-    // Prefixes on target token: ONLY definite article 'ה' or conjunction 'ו'
-    const targetAllowedPrefixes = ['וה', 'ה', 'ו'];
-    for (const p of targetAllowedPrefixes) {
-      const normP = normalizeHebrewLetters(p);
-      if (normToken.startsWith(normP) && normToken.length - normP.length >= 3) {
-        const stripped = normToken.slice(normP.length);
-        if (searchVariants.has(stripped)) return true;
-      }
-    }
-
-    // Morphology on target token
-    if (normToken.endsWith('ת') && normToken.length >= 3) {
-      if (searchVariants.has(normToken.slice(0, -1) + 'ה')) return true;
-    }
-    if (normToken.endsWith('ות') && normToken.length >= 4) {
-      if (SPECIAL_PLURAL_STEM_MAP[normToken]) {
-        if (SPECIAL_PLURAL_STEM_MAP[normToken].some(s => searchVariants.has(s))) return true;
-      } else {
-        if (searchVariants.has(normToken.slice(0, -2) + 'ה')) return true;
-        if (searchVariants.has(normToken.slice(0, -2) + 'ת')) return true;
-        if (searchVariants.has(normToken.slice(0, -2))) return true;
-      }
-    }
-    if (normToken.endsWith('ימ') && normToken.length >= 4) {
-      if (SPECIAL_PLURAL_STEM_MAP[normToken]) {
-        if (SPECIAL_PLURAL_STEM_MAP[normToken].some(s => searchVariants.has(s))) return true;
-      } else {
-        if (searchVariants.has(normToken.slice(0, -2))) return true;
-      }
-    }
-
-    // Stem / Plural match (e.g. משקפיים <-> משקפי, פטריות <-> פטריה, כדורסל <-> כדור)
-    // Guard against false matches between different words: require length difference <= 3
-    if (normSearch.length >= 4 && normToken.length >= 4) {
-      const lenDiff = Math.abs(normToken.length - normSearch.length);
-      if (lenDiff <= 3 && (normToken.startsWith(normSearch) || normSearch.startsWith(normToken))) {
-        // Disallow חול / חולים collision in stem matching
-        if ((normSearch === 'חול' && normToken.startsWith('חולי')) ||
-            (normToken === 'חול' && normSearch.startsWith('חולי'))) {
-          continue;
-        }
+    if (SPECIAL_PLURAL_STEM_MAP[normToken]) {
+      if (SPECIAL_PLURAL_STEM_MAP[normToken].some(s => explicitVariants.has(normalizeHebrewLetters(s)))) {
         return true;
       }
+    }
+
+    // 2. קישור לשוני-מורפולוגי מאומת בלבד מתוך hebrewLinguisticsEngine (אפס קילוף אותיות!)
+    if (areHebrewWordsLinguisticallyLinked(rawSearch, rawToken)) {
+      return true;
     }
   }
 
@@ -1354,7 +1374,16 @@ const SEMANTIC_CONCEPT_EXPANSIONS = {
   'לישונ': ['שינה', 'מיטה', 'כרית', 'לילה', 'חלום'],
   'לרוצ': ['ריצה', 'ספורט', 'כושר', 'אימון', 'מהירות'],
   'לבשל': ['בישול', 'מטבח', 'אוכל', 'ארוחה', 'סיר'],
-  'להכינ': ['בישול', 'מטבח', 'ארוחה', 'אוכל']
+  'להכינ': ['בישול', 'מטבח', 'ארוחה', 'אוכל'],
+  'בלאגנ': ['בלאגן', 'בלגן', 'סדר', 'ניקיון', 'מטאטא', 'שואב אבק', 'פח'],
+  'בלאגן': ['בלאגן', 'בלגן', 'סדר', 'ניקיון', 'מטאטא', 'שואב אבק', 'פח'],
+  'בלגנ': ['בלגן', 'בלאגן', 'סדר', 'ניקיון', 'מטאטא', 'שואב אבק', 'פח'],
+  'בלגן': ['בלגן', 'בלאגן', 'סדר', 'ניקיון', 'מטאטא', 'שואב אבק', 'פח'],
+  'קשר': ['קשר', 'חיבור', 'גשר', 'לחדש קשר', 'טלפון', 'שיחה', 'חברים'],
+  'קשרימ': ['קשר', 'חיבור', 'גשר', 'לחדש קשר', 'טלפון', 'שיחה', 'חברים'],
+  'חיבור': ['חיבור', 'גשר', 'קשר', 'לחדש קשר', 'לפתח קשרים'],
+  'חברימ': ['חברים', 'חבר', 'חברות', 'חיבור', 'קשר', 'ידידות', 'פו הדב'],
+  'חברים': ['חברים', 'חבר', 'חברות', 'חיבור', 'קשר', 'ידידות', 'פו הדב']
 };
 
 const MODAL_AUXILIARY_WORDS = new Set([
@@ -1363,15 +1392,47 @@ const MODAL_AUXILIARY_WORDS = new Set([
 ]);
 
 /**
+ * החלת עריכות מקומיות מ-localStorage ישירות לתוך ה-Cache החי בזמן אמת
+ */
+export function applyStagedLocalEditsToCache() {
+  if (typeof window === 'undefined' || !window.localStorage || !cachedUserImages.length) return;
+  try {
+    const rawEdits = window.localStorage.getItem('lifequest_staged_local_edits');
+    if (!rawEdits) return;
+    const editsMap = JSON.parse(rawEdits);
+    for (const item of cachedUserImages) {
+      const edit = editsMap[item.id];
+      if (!edit) continue;
+      if (edit.title && item.title !== edit.title) {
+        item.title = edit.title;
+        item.name = edit.title;
+      }
+      if (Array.isArray(edit.keywords)) {
+        item.keywords = [...edit.keywords];
+        item.association = edit.keywords.join(', ');
+      }
+      if (edit.contextExplanations) {
+        item.contextExplanations = {
+          ...(item.contextExplanations || {}),
+          ...edit.contextExplanations
+        };
+      }
+    }
+  } catch (_) {}
+}
+
+/**
  * מחפש ומדרג את 5 התמונות המתאימות ביותר מתוך "המאגר שלי" (433 תמונות מאומתות) עבור משימה נתונה.
  * מתחשב בכל המילים במשפט (למשל "הילד צריך לאכול" יעדיף כרטיס שיש בו גם "ילד/ילדים" וגם "אוכל/ארוחה").
  */
 export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}) {
+  applyStagedLocalEditsToCache();
   if (!taskText || !cachedUserImages.length) return [];
   const rawClean = String(taskText).trim().toLowerCase();
   if (!rawClean) return [];
 
   const mode = typeof options === 'string' ? options : (options?.mode || 'all');
+  const minScore = typeof options === 'object' && typeof options?.minScore === 'number' ? options.minScore : 0;
 
   // פירוק המשימה לקבוצות מושגים (Concept Groups)
   const rawTokens = rawClean.split(/[,\s+./\-–—!?()[\]{}'"]+/).filter(Boolean);
@@ -1434,10 +1495,15 @@ export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}
     let score = 0;
     let matchedGroupsCount = 0;
 
-    // 1. התאמה מלאה לכותרת או למשימה משויכת (במצב ענפים בלבד לא מקדמים את החפץ עצמו!)
+    // שלושת חוקי הברזל הקוגניטיביים של LifeQuest:
+    // חוק 1: התאמה ישירה דרך ענף או משימה משויכת במאגר (עדיפות עליונה)
+    // חוק 2: מהות משותפת ישירה (Direct Shared Essence, כגון לחדש קשר ➔ גשר כי שניהם עוסקים בחיבור)
+    // חוק 3: הצגת האובייקט עצמו במילה (עדיפות אחרונה, גיבוי בטוח)
+
+    // 1. התאמה מלאה למשימה משויכת במאגר
     if (mode !== 'branches') {
-      if (itemTitle === rawClean || itemTasks.includes(rawClean)) {
-        score += 600;
+      if (itemTasks.includes(rawClean)) {
+        score += 650;
       }
     } else {
       // חוק הברזל של סוכן 1: במצב ענפים פוסלים כרטיס שנושאו (השורש) הוא החפץ עצמו!
@@ -1446,7 +1512,7 @@ export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}
       }
     }
 
-    // 2. בדיקת התאמה מול כל קבוצת מושגים במשפט
+    // 2. בדיקת התאמה מול כל קבוצת מושגים במשפט לפי 3 חוקי הברזל
     for (const group of conceptGroups) {
       let groupBest = 0;
       const origLow = group.original.toLowerCase();
@@ -1477,32 +1543,32 @@ export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}
             groupBest = Math.max(groupBest, isPrimaryTerm ? 300 : 150);
           }
         } else if (mode === 'branches') {
-          // סוכן 1: חיפוש ענפים ואסוציאציות בלבד (Branch Search) ללא שורש החפץ!
+          // סוכן 1: ענפים ומהות משותפת בלבד
           if (itemKeywords.includes(vLow)) {
-            groupBest = Math.max(groupBest, isPrimaryTerm ? 350 : 120);
+            // חוק 1: ענף מובהק ישיר במאגר — עדיפות עליונה!
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 520 : 260);
           } else {
+            // חוק 2: מהות משותפת ישירה (התאמה לשורש או ענף קרוב)
             for (const kw of itemKeywords) {
               if (kw === vLow || (vLow.length >= 3 && kw.length >= 3 && hebrewWordMatches(vLow, kw))) {
-                groupBest = Math.max(groupBest, isPrimaryTerm ? 250 : 90);
+                groupBest = Math.max(groupBest, isPrimaryTerm ? 380 : 170);
                 break;
               }
             }
           }
         } else {
-          // מצב משולב רגיל (Default / All)
-          if (itemTitle === vLow) {
-            groupBest = Math.max(groupBest, isPrimaryTerm ? 340 : 140);
-          } else if (itemKeywords.includes(vLow)) {
-            groupBest = Math.max(groupBest, isPrimaryTerm ? 300 : 95);
+          // מצב משולב רגיל (Default / All):
+          if (itemKeywords.includes(vLow)) {
+            // חוק 1: ענף ישיר במאגר — עדיפות עליונה מעל הכל!
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 500 : 260);
+          } else if (itemKeywords.some(kw => kw === vLow || (vLow.length >= 3 && kw.length >= 3 && hebrewWordMatches(vLow, kw)))) {
+            // חוק 2: מהות משותפת ישירה (עוסקים באותו רעיון מהותי, כמו קשר/גשר/חיבור)
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 380 : 180);
+          } else if (itemTitle === vLow) {
+            // חוק 3: התמונה מציגה את האובייקט עצמו במילה — עדיפות אחרונה, גיבוי בטוח
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 220 : 110);
           } else if (itemTitle && vLow.length >= 3 && hebrewWordMatches(vLow, itemTitle)) {
-            groupBest = Math.max(groupBest, isPrimaryTerm ? 220 : 90);
-          } else {
-            for (const kw of itemKeywords) {
-              if (kw === vLow || (vLow.length >= 3 && kw.length >= 3 && hebrewWordMatches(vLow, kw))) {
-                groupBest = Math.max(groupBest, isPrimaryTerm ? 200 : 80);
-                break;
-              }
-            }
+            groupBest = Math.max(groupBest, isPrimaryTerm ? 180 : 90);
           }
         }
       }
@@ -1518,7 +1584,7 @@ export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}
       score += matchedGroupsCount * 260;
     }
 
-    if (score > 0) {
+    if (score > 0 && score >= minScore) {
       scored.push({ item, score, matchedGroupsCount });
     }
   }
@@ -1538,7 +1604,25 @@ export function findBestUserImagesForTask(taskText = '', limit = 5, options = {}
     if (seenTitles.has(tKey) || seenUrls.has(uKey)) continue;
     seenTitles.add(tKey);
     seenUrls.add(uKey);
-    uniqueResults.push(s.item);
+
+    const itemCopy = { ...s.item };
+    if (s.item.contextExplanations) {
+      const canonTask = toCanonicalKey(rawClean);
+      itemCopy.explanation = s.item.contextExplanations[canonTask] || s.item.contextExplanations[rawClean] || '';
+      if (!itemCopy.explanation) {
+        for (const tok of rawTokens) {
+          const cTok = toCanonicalKey(tok);
+          if (s.item.contextExplanations[cTok]) {
+            itemCopy.explanation = s.item.contextExplanations[cTok];
+            break;
+          }
+        }
+      }
+    } else {
+      itemCopy.explanation = '';
+    }
+
+    uniqueResults.push(itemCopy);
     if (uniqueResults.length >= limit) break;
   }
 

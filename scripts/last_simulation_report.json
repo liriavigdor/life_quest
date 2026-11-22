@@ -1,0 +1,59 @@
+{
+  "firstReadyLatencyMs": 543,
+  "totalLatencyMs": 9800,
+  "stationsAudit": [
+    {
+      "stationNumber": 1,
+      "task": "להזמין כרטיסים להופעה של עומר אדם",
+      "coreConcept": "הופעה",
+      "anchor": "קלאפר קולנוע",
+      "imageUrl": "/staged_images/pool/new_145_clapperboard.jpg",
+      "score": 10,
+      "flaws": []
+    },
+    {
+      "stationNumber": 2,
+      "task": "לקחת את הרכב לבדיקת בלמים וטסט",
+      "coreConcept": "רכב לבדיקת בלמים וטסט",
+      "anchor": "משאית גרר",
+      "imageUrl": "/staged_images/pool/new_122_tow_truck.jpg",
+      "score": 10,
+      "flaws": []
+    },
+    {
+      "stationNumber": 3,
+      "task": "להכין מצגת תקציב רבעוני למנכ\"ל",
+      "coreConcept": "מצגת תקציב רבעוני למנכ ל",
+      "anchor": "מחשבון כיס",
+      "imageUrl": "/staged_images/pool/new_004_pocket_calculator.jpg",
+      "score": 10,
+      "flaws": []
+    },
+    {
+      "stationNumber": 4,
+      "task": "לקנות מתנה ליום הולדת של שירה",
+      "coreConcept": "מתנה",
+      "anchor": "סנטה קלאוס",
+      "imageUrl": "/staged_images/pool/new_104_santa_claus.jpg",
+      "score": 10,
+      "flaws": []
+    },
+    {
+      "stationNumber": 5,
+      "task": "לתקן את המזגן המטפטף בסלון",
+      "coreConcept": "מזגן",
+      "anchor": "סליל חוטים צבעוני",
+      "imageUrl": "/staged_images/pool/new_090_thread_spool.jpg",
+      "score": 10,
+      "flaws": []
+    }
+  ],
+  "storyAudit": {
+    "story": "סנטה קלאוס הפיל מחשבון כיס מתוך משאית גרר שצילמה קלאפר קולנוע עטוף בסליל חוטים.",
+    "flaws": [],
+    "score": 10
+  },
+  "overallScore": 100,
+  "flawsFound": [],
+  "remediationsApplied": []
+}
